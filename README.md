@@ -11,7 +11,7 @@ Ja, im Kern sind es ein paar Scripts die irgendwas machen. Aber für mich ist es
 
 R+MUNI ist eine Perspektive: etwas Sinnstiftendes zu schaffen, das vielleicht wirklich jemandem helfen kann — **ohne schlechtes Gewissen, ohne versteckte Abo-Fallen, ohne Hintertüren.**
 
-Das ist die Idee hinter MUNI. Und deshalb ist diese Lösung **kostenlos** — und das ist ein Prinzip, das für diesen Blueprint und alle seine Weiterentwicklungen gilt.
+Das ist die Idee hinter R+MUNI. Und deshalb ist diese Lösung **kostenlos** — und das ist ein Prinzip, das für diesen Blueprint und alle seine Weiterentwicklungen gilt.
 
 **R+MUNI** steht für **Resel's Multi Usable Norm Interface** — ein XML-basiertes Kreislaufsystem das Enterprise Architecture Visualisierung mit Prozessmodellierung vereint. Entwickelt für österreichische KMU bis maximal 50 User, die komplexe Fragestellungen (IT-Landschaften, Verwaltungsprozesse, Unternehmensentwicklung) mit freien Tools ganzheitlich darstellen wollen.
 
@@ -38,14 +38,14 @@ Yes, at its core it's a handful of scripts that do things. But to me, it's so mu
 
 R+MUNI is a perspective: to create something meaningful that might actually help someone — **no bad conscience, no hidden subscriptions, no catch.**
 
-That's the idea behind MUNI. And that's why this solution is **free** — and that is a principle that applies to this blueprint and all its future developments.
+That's the idea behind R+MUNI. And that's why this solution is **free** — and that is a principle that applies to this blueprint and all its future developments.
 
 **R+MUNI** stands for **Resel's Multi Usable Norm Interface** — an XML-based circular system that combines Enterprise Architecture visualization with process modeling. Designed for Austrian SMEs with up to 50 users who want to represent complex topics (IT landscapes, administrative processes, organizational development) holistically using free tools.
 
 ### What R+MUNI does
 - Connects **ArchiMate 3.2** (EA modeling) and **BPMN 2.0** (process modeling) through a shared XML foundation
-- Uses **Archi 5.8** as the master ID-providing system via the CSV interface
-- Automates workflows through a Python-based script runner (`flow.py`)
+- Uses **Archi 5.8** as the master ID-providing system via the CSV interface and OEF exports.
+- Automates workflows through a Python-based script runner (`flw00-scriptrunner.py`)
 - Stays **tool-agnostic** — strictly based on open standards, no proprietary dependencies
 - Exports valid BPMN 2.0 and ArchiMate OEF — directly importable into enterprise tools (e.g. ADONIS/ADOIT by BOC Group)
 
