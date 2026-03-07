@@ -13,7 +13,7 @@ R+MUNI ist eine Perspektive: etwas Sinnstiftendes zu schaffen, das vielleicht wi
 
 Das ist die Idee hinter R+MUNI. Und deshalb ist diese Lösung **kostenlos** — und das ist ein Prinzip, das für diesen Blueprint und alle seine Weiterentwicklungen gilt.
 
-**R+MUNI** steht für **Resel's Multi Usable Norm Interface** — ein XML-basiertes Kreislaufsystem das Enterprise Architecture Visualisierung mit Prozessmodellierung vereint. Entwickelt für österreichische KMU bis maximal 50 User, die komplexe Fragestellungen (IT-Landschaften, Verwaltungsprozesse, Unternehmensentwicklung) mit freien Tools ganzheitlich darstellen wollen.
+**R+MUNI** steht für **Multi Usable Norm Interface** — ein XML-basiertes Kreislaufsystem das Enterprise Architecture Visualisierung mit Prozessmodellierung vereint. Entwickelt für österreichische KMU bis maximal 50 User, die komplexe Fragestellungen (IT-Landschaften, Verwaltungsprozesse, Unternehmensentwicklung) mit freien Tools ganzheitlich darstellen wollen.
 
 ### Was R+MUNI macht
 - Verbindet **ArchiMate 3.2** (EA-Modellierung) https://www.opengroup.org/ und **BPMN 2.0** https://www.bpmn.org/ (Prozessmodellierung) über ein gemeinsames XML-Fundament
@@ -40,7 +40,7 @@ R+MUNI is a perspective: to create something meaningful that might actually help
 
 That's the idea behind R+MUNI. And that's why this solution is **free** — and that is a principle that applies to this blueprint and all its future developments.
 
-**R+MUNI** stands for **Resel's Multi Usable Norm Interface** — an XML-based circular system that combines Enterprise Architecture visualization with process modeling. Designed for Austrian SMEs with up to 50 users who want to represent complex topics (IT landscapes, administrative processes, organizational development) holistically using free tools.
+**R+MUNI** stands for **Multi Usable Norm Interface** — an XML-based circular system that combines Enterprise Architecture visualization with process modeling. Designed for Austrian SMEs with up to 50 users who want to represent complex topics (IT landscapes, administrative processes, organizational development) holistically using free tools.
 
 ### What R+MUNI does
 - Connects **ArchiMate 3.2** (EA modeling) and **BPMN 2.0** (process modeling) through a shared XML foundation
