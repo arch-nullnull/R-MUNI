@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns1="http://www.omg.org/spec/BPMN/20100524/DI" targetNamespace="http://example.com/bpmn"><bpmn:process id="id-b05d92f746d94431b312d6163dec3154" name="Business Process" isExecutable="true" /><ns1:BPMNDiagram id="BPMNDiagram_1"><ns1:BPMNPlane id="BPMNPlane_1" bpmnElement="id-b05d92f746d94431b312d6163dec3154" /></ns1:BPMNDiagram></bpmn:definitions>

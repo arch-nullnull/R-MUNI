@@ -1,0 +1,112 @@
+[2026-03-06T19:54:29] start M2B04 reconcile / enrich
+[2026-03-06T19:54:29] relevant models (context): ['"MUNI FLOW.xml"']
+[2026-03-06T19:54:29] archi business processes loaded: 18
+[2026-03-06T19:54:29] active BPMN processes before reconcile: 17
+[2026-03-06T19:54:29] reconcile process: id-3431625e8daa424b9f089c21d4ea6049 (BPU01-CSV 2 CSV.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:54:29] reconcile process: id-8d6586a812d04fa9aa1e0e646e1fd239 (BPU02-XLSX 2 CSV.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:54:29] reconcile process: id-0f0b8b3ec7104ab9a902e773a818553f (BUP00-3rd Party Import.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): R+Muni Architecture Modell.xml
+[2026-03-06T19:54:29] reconcile process: id-1393ce3e12f1498eb06cbefe32f0be91 (BUP00-CSV FLOW.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:54:29] reconcile process: id-6d76f68d89d44f9491a836e9e993d2d7 (BUP01-Lösung für Anforderung erarbeiten.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): R+Muni Architecture Modell.xml
+[2026-03-06T19:54:29] reconcile process: id-6132cbb6e22143e3a4a8f1e18ae8aabc (BUP02-Lösung präsentieren.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): R+Muni Architecture Modell.xml
+[2026-03-06T19:54:29] reconcile process: id-5e398e49cb0a4fbd889849a7e7c272c6 (BUP03-masterxml 2 CSV.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:54:29] reconcile process: id-ec42131fce17464ababb7bedfe11f468 (BUP03-R+MUNI anpassen.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): R+Muni Architecture Modell.xml
+[2026-03-06T19:54:29] reconcile process: id-8b98e9a157c845acb0fb8f0049826222 (BUP04-mastercsv2Assets.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:54:29] reconcile process: id-394ce819ab194ca09c10b6671ea3a587 (BUP04-R+MUNI entwickeln.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): R+Muni Architecture Modell.xml
+[2026-03-06T19:54:29] reconcile process: id-486ae814a4cf4dde90c3a130c6441454 (BUP05-R+MUNI installieren.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): R+Muni Architecture Modell.xml
+[2026-03-06T19:54:29] reconcile process: id-87df041b085a403e948d63e82b6dc556 (BUP05-XML FLOW.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:54:29] reconcile process: id-136c6e495f7944fe9d174e8e99401ca1 (BUP06-M2B FLOW.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:54:29] reconcile process: id-bfe411b764cb4400aa04321e5da21131 (BUP06-Schulung durchführen.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): R+Muni Architecture Modell.xml
+[2026-03-06T19:54:29] reconcile process: id-f2e451fc1a5040418d5ce92a8baa0d16 (BUP07-FLOW.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:54:29] reconcile process: id-5b10384809f94f15a0bc399b68f7cdf6 (BUP07-Visuelle Modelle erstellen.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): R+Muni Architecture Modell.xml
+[2026-03-06T19:54:29] reconcile process: id-2bc8d13549934e39bf40ae06c96980e8 (Business Process.bpmn)
+[2026-03-06T19:54:29] skip enrich (model not relevant): Importer.xml
+[2026-03-06T19:54:30] reconcile / enrich completed successfully | bootstrap_changes=[]
+[2026-03-06T19:54:30] stage artifacts may now be cleared
+[2026-03-06T19:55:47] start M2B04 reconcile / enrich
+[2026-03-06T19:55:47] relevant models (context): ['"MUNI FLOW.xml"']
+[2026-03-06T19:55:47] archi business processes loaded: 18
+[2026-03-06T19:55:47] active BPMN processes before reconcile: 9
+[2026-03-06T19:55:47] reconcile process: id-3431625e8daa424b9f089c21d4ea6049 (BPU01-CSV 2 CSV.bpmn)
+[2026-03-06T19:55:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:55:47] reconcile process: id-8d6586a812d04fa9aa1e0e646e1fd239 (BPU02-XLSX 2 CSV.bpmn)
+[2026-03-06T19:55:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:55:47] reconcile process: id-1393ce3e12f1498eb06cbefe32f0be91 (BUP00-CSV FLOW.bpmn)
+[2026-03-06T19:55:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:55:47] reconcile process: id-5e398e49cb0a4fbd889849a7e7c272c6 (BUP03-masterxml 2 CSV.bpmn)
+[2026-03-06T19:55:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:55:47] reconcile process: id-8b98e9a157c845acb0fb8f0049826222 (BUP04-mastercsv2Assets.bpmn)
+[2026-03-06T19:55:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:55:47] reconcile process: id-87df041b085a403e948d63e82b6dc556 (BUP05-XML FLOW.bpmn)
+[2026-03-06T19:55:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:55:47] reconcile process: id-136c6e495f7944fe9d174e8e99401ca1 (BUP06-M2B FLOW.bpmn)
+[2026-03-06T19:55:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:55:47] reconcile process: id-f2e451fc1a5040418d5ce92a8baa0d16 (BUP07-FLOW.bpmn)
+[2026-03-06T19:55:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:55:47] reconcile process: id-b05d92f746d94431b312d6163dec3154 (Business Process.bpmn)
+[2026-03-06T19:55:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T19:55:47] reconcile / enrich completed successfully | bootstrap_changes=[]
+[2026-03-06T19:55:47] stage artifacts may now be cleared
+[2026-03-06T20:02:49] start M2B04 reconcile / enrich
+[2026-03-06T20:02:49] relevant models (context): ['"MUNI FLOW.xml"']
+[2026-03-06T20:02:49] archi business processes loaded: 17
+[2026-03-06T20:02:49] active BPMN processes before reconcile: 9
+[2026-03-06T20:02:49] reconcile process: id-3431625e8daa424b9f089c21d4ea6049 (BPU01-CSV 2 CSV.bpmn)
+[2026-03-06T20:02:49] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T20:02:49] reconcile process: id-8d6586a812d04fa9aa1e0e646e1fd239 (BPU02-XLSX 2 CSV.bpmn)
+[2026-03-06T20:02:49] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T20:02:49] reconcile process: id-1393ce3e12f1498eb06cbefe32f0be91 (BUP00-CSV FLOW.bpmn)
+[2026-03-06T20:02:49] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T20:02:49] reconcile process: id-5e398e49cb0a4fbd889849a7e7c272c6 (BUP03-masterxml 2 CSV.bpmn)
+[2026-03-06T20:02:49] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T20:02:49] reconcile process: id-8b98e9a157c845acb0fb8f0049826222 (BUP04-mastercsv2Assets.bpmn)
+[2026-03-06T20:02:49] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T20:02:49] reconcile process: id-87df041b085a403e948d63e82b6dc556 (BUP05-XML FLOW.bpmn)
+[2026-03-06T20:02:49] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T20:02:49] reconcile process: id-136c6e495f7944fe9d174e8e99401ca1 (BUP06-M2B FLOW.bpmn)
+[2026-03-06T20:02:49] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T20:02:49] reconcile process: id-f2e451fc1a5040418d5ce92a8baa0d16 (BUP07-FLOW.bpmn)
+[2026-03-06T20:02:49] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-06T20:02:49] reconcile process: id-b05d92f746d94431b312d6163dec3154 (Business Process.bpmn)
+[2026-03-06T20:02:49] no Archi match for process id-b05d92f746d94431b312d6163dec3154 -> report only, no enrichment
+[2026-03-06T20:02:49] reconcile / enrich completed successfully | bootstrap_changes=[]
+[2026-03-06T20:02:49] stage artifacts may now be cleared
+[2026-03-07T00:34:47] start M2B04 reconcile / enrich
+[2026-03-07T00:34:47] relevant models (context): ['"MUNI FLOW.xml"']
+[2026-03-07T00:34:47] archi business processes loaded: 17
+[2026-03-07T00:34:47] active BPMN processes before reconcile: 9
+[2026-03-07T00:34:47] reconcile process: id-3431625e8daa424b9f089c21d4ea6049 (BPU01-CSV 2 CSV.bpmn)
+[2026-03-07T00:34:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-07T00:34:47] reconcile process: id-8d6586a812d04fa9aa1e0e646e1fd239 (BPU02-XLSX 2 CSV.bpmn)
+[2026-03-07T00:34:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-07T00:34:47] reconcile process: id-1393ce3e12f1498eb06cbefe32f0be91 (BUP00-CSV FLOW.bpmn)
+[2026-03-07T00:34:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-07T00:34:47] reconcile process: id-5e398e49cb0a4fbd889849a7e7c272c6 (BUP03-masterxml 2 CSV.bpmn)
+[2026-03-07T00:34:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-07T00:34:47] reconcile process: id-8b98e9a157c845acb0fb8f0049826222 (BUP04-mastercsv2Assets.bpmn)
+[2026-03-07T00:34:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-07T00:34:47] reconcile process: id-87df041b085a403e948d63e82b6dc556 (BUP05-XML FLOW.bpmn)
+[2026-03-07T00:34:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-07T00:34:47] reconcile process: id-136c6e495f7944fe9d174e8e99401ca1 (BUP06-M2B FLOW.bpmn)
+[2026-03-07T00:34:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-07T00:34:47] reconcile process: id-f2e451fc1a5040418d5ce92a8baa0d16 (BUP07-FLOW.bpmn)
+[2026-03-07T00:34:47] skip enrich (model not relevant): MUNI FLOW.xml
+[2026-03-07T00:34:47] reconcile process: id-b05d92f746d94431b312d6163dec3154 (Business Process.bpmn)
+[2026-03-07T00:34:47] no Archi match for process id-b05d92f746d94431b312d6163dec3154 -> report only, no enrichment
+[2026-03-07T00:34:47] reconcile / enrich completed successfully | bootstrap_changes=[]
+[2026-03-07T00:34:47] stage artifacts may now be cleared

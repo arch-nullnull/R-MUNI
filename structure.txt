@@ -1,0 +1,239 @@
+Auflistung der Ordnerpfade
+Volumeseriennummer : 5622-22F1
+C:.
+|   root.txt
+|   structure.txt
+|   
++---00-concept
+|   |   Install.txt
+|   |   
+|   +---00-governance
+|   |       Global_GOV.txt
+|   |       
+|   +---01-principles
+|   |       AI_DRIVEN_DEV_METHODE.txt
+|   |       CSV_FLOW_principles_S3.txt
+|   |       FLOW_SCRIPTRUNNER_principles_S4.txt
+|   |       HLP_principles_S3.txt
+|   |       M2B_FLOW_principles_S3.txt
+|   |       SCRIPT-BAUKASTEN.txt
+|   |       XML_FLOW_principles_S3.txt
+|   |       
+|   +---02-how2
+|   |       CSV_FLOW_How2_S3.txt
+|   |       FLOW_SCRIPTRUNNER_How2_S3.txt
+|   |       FLOW_SCRIPTRUNNER_How2_S4.txt
+|   |       HLP_How2_S3.txt
+|   |       M2B_FLOW_How2_S3.txt
+|   |       XML_FLOW_How2_S3.txt
+|   |       
+|   \---03-roesetta_stone
+|           Rosetta_Stone_Block1_Views.txt
+|           Rosetta_Stone_Block2_Artifacts_Scripts.txt
+|           Rosetta_Stone_Block3_Begriffe_Konzepte.txt
+|           
++---01-model
+|   +---00-archimate
+|   |   +---00-archimateactive
+|   |   |       MUNI EA Modell.archimate
+|   |   |       
+|   |   +---01-archimateactivesub
+|   |   |       Importer.archimate
+|   |   |       Importer.archimate.bak
+|   |   |       MUNI FLOW.archimate
+|   |   |       MUNI FLOW.archimate.bak
+|   |   |       Testi.archimate
+|   |   |       
+|   |   \---99-mappingmodel
+|   +---01-bpmn
+|   |   +---00-bpmnactive
+|   |   |       BPU01-CSV 2 CSV.bpmn
+|   |   |       BPU02-XLSX 2 CSV.bpmn
+|   |   |       BUP00-CSV FLOW.bpmn
+|   |   |       BUP03-masterxml 2 CSV.bpmn
+|   |   |       BUP04-mastercsv2Assets.bpmn
+|   |   |       BUP05-XML FLOW.bpmn
+|   |   |       BUP06-M2B FLOW.bpmn
+|   |   |       BUP07-FLOW.bpmn
+|   |   |       Business Process.bpmn
+|   |   |       
+|   |   \---99-bpmnMUNI
+|   \---02-xyvision
++---02-artifacts
+|   +---00-xml
+|   |   |   child_mapping.txt
+|   |   |   
+|   |   +---00-master
+|   |   |       master.xml
+|   |   |       master.xml.bak
+|   |   |       
+|   |   +---01-mapping
+|   |   |       bpmnmastercsvsync.txt
+|   |   |       M2Bmapping.txt
+|   |   |       mapping.txt
+|   |   |       mapping_ReadMe.txt
+|   |   |       mastercsvmapping.txt
+|   |   |       
+|   |   +---02-sync
+|   |   |       mastercsvsync.txt
+|   |   |       sync.txt
+|   |   |       
+|   |   +---03-child
+|   |   |   +---00-archimatechild
+|   |   |   |       Architecture.xml
+|   |   |   |       Importer.xml
+|   |   |   |       MUNI EA Modell.xml
+|   |   |   |       MUNI FLOW.xml
+|   |   |   |       R+Muni Architecture Modell.xml
+|   |   |   |       
+|   |   |   +---01-bpmnchild
+|   |   |   |       BPU01-CSV 2 CSV.bpmn
+|   |   |   |       
+|   |   |   \---02-xychild
+|   |   +---04-import
+|   |   \---99-exports
+|   +---01-scripts
+|   |       CSV00-validate_environment.py
+|   |       CSV01-validate_model.py
+|   |       CSV02-leer.py
+|   |       CSV03-resolve_run_scope.py
+|   |       CSV04-model-overview.py
+|   |       CSV05-create_master_csvs.py
+|   |       CSV06-append_child_to_master.py
+|   |       CSV07-xlsx_2_csv.py
+|   |       CSV08-properties2csv.py
+|   |       CSV09-masterxml2csv.py
+|   |       CSV10-masterCsv2Assets.py
+|   |       CSV99-export_snapshot.py
+|   |       HLP00_resolve_root.py
+|   |       HLP01_copy.py
+|   |       HLP02_move.py
+|   |       HLP03_clean.py
+|   |       HLP04_dirlog.py
+|   |       HLP05_context_structure.py
+|   |       HLP06_backup.py
+|   |       HLP07_restore.py
+|   |       HLP08_structure2csv.py
+|   |       jA01-Validierung Namen.ajs
+|   |       M2B00-root_resolve.py
+|   |       M2B01-master_extract.py
+|   |       M2B02-activate_model.py
+|   |       M2B03-clear.py
+|   |       M2B04-reconcile_enrich.py
+|   |       M2B05-writeback_master.py
+|   |       M2B06-scope_snapshot.py
+|   |       XML00-resolve_root.py
+|   |       XML01-collect_sources.py
+|   |       XML02-parse_child_xml.py
+|   |       XML03-build_index.py
+|   |       XML04-merge_master.py
+|   |       XML05-clear_merge.py
+|   |       XML06-finalize-master.py
+|   |       XML07-cleanup-artifacts.py
+|   |       
+|   +---02-csv
+|   |   +---00-master
+|   |   |       elements.csv
+|   |   |       properties.csv
+|   |   |       relations.csv
+|   |   |       
+|   |   +---01-mapping
+|   |   |       csvmapping.txt
+|   |   |       
+|   |   +---02-sync
+|   |   |       assetsexport-readme.txt
+|   |   |       assetsexport.txt
+|   |   |       csvexport.txt
+|   |   |       
+|   |   +---03-child
+|   |   |   +---00-archimatechild
+|   |   |   +---01-bpmnchild
+|   |   |   \---02-xychild
+|   |   +---04-import
+|   |   |       elements.csv
+|   |   |       properties.csv
+|   |   |       relations.csv
+|   |   |       
+|   |   \---99-exports
+|   +---03-XLSX
+|   |   +---00-master
+|   |   +---01-mapping
+|   |   |       csvmapping.txt
+|   |   |       propmapping.txt
+|   |   |       
+|   |   +---02-sync
+|   |   +---03-child
+|   |   |   +---00-archimatechild
+|   |   |   |       R+Muni Architecture Modell.xlsx
+|   |   |   |       R+MUNI ScopingPhase2_Value.xlsx
+|   |   |   |       
+|   |   |   +---01-bpmnchild
+|   |   |   \---02-xychild
+|   |   +---04-import
+|   |   \---99-exports
+|   +---04-flow
+|   |       flowmapping.txt
+|   |       flowtriggers.txt
+|   |       FLW00-scriptrunner.py
+|   |       FLW01-discover.py
+|   |       FLW02-map_elements.py
+|   |       
+|   \---05-reports
+|       +---00-archimate
+|       +---01-bpmn
+|       \---99-struktur
++---03-stages
+|   |   flowdiscover.txt
+|   |   flw01-discover.txt
+|   |   flw02-map_elements.txt
+|   |   model-scope.txt
+|   |   run-scope.txt
+|   |   run-scope_ReadMe.txt
+|   |   
+|   +---00-archimatearchive
+|   +---01-bpmnarchive
+|   |       BPU01-CSV 2 CSV.bpmn
+|   |       BPU02-XLSX 2 CSV.bpmn
+|   |       BUP00-CSV FLOW.bpmn
+|   |       BUP03-masterxml 2 CSV.bpmn
+|   |       BUP04-mastercsv2Assets.bpmn
+|   |       BUP05-XML FLOW.bpmn
+|   |       BUP06-M2B FLOW.bpmn
+|   |       BUP07-FLOW.bpmn
+|   |       Business Process.bpmn
+|   |       
+|   +---02-xyarchive
+|   +---03-masterxmlarchive
+|   \---99-logs
+|           CSV00-root.resolved.txt
+|           CSV00-validate_environment.log
+|           CSV01-validate_model.log
+|           CSV03-resolve_run_scope.log
+|           CSV04-model_overview.log
+|           flow.log
+|           flowdiscover.log
+|           flw00-scriptrunner.log
+|           flw01-discover.log
+|           flw02-map_elements.log
+|           M2B00-root-check.log
+|           M2B00-root.resolved.txt
+|           M2B03-clear.log
+|           M2B04-reconcile.log
+|           M2B05-writeback.log
+|           M2B06-scope_snapshot.log
+|           XML00-root.resolved.txt
+|           XML06-finalize-master.log
+|           XML07-cleanup-artifacts.log
+|           
+\---04-notes
+        FLOW_DEV_DOKU.txt
+        MUNI_CSV-FLOW-DEV-DOC.txt
+        MUNI_HLP_DEV_DOKU_S3.txt
+        MUNI_XML_M2B_FLOW_DEV_DOKU.txt
+        Sprint-DEV-Doku-BPMN-OEF-ExitPoint.txt
+        Sprint-DEV-Doku-CSV2Jira.txt
+        Sprint-DEV-Doku-FLW-Serie-S4.txt
+        Sprint-DEV-Doku-M2B01-RunScope.txt
+        STAGE3_FREEZE.txt
+        STAGE4_ZIELE.txt
+        

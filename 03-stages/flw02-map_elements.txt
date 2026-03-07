@@ -1,0 +1,2561 @@
+# flw02-map_elements.txt
+# Generiert: 2026-03-07 09:53:16
+#
+# ABSCHNITT 1 - Fertige Mapping-Zeilen
+#   serviceTask mit Trigger:Ja -> direkt in flowmapping.txt kopieren
+#   Scriptname wurde automatisch aus dem Task-Namen uebernommen
+#
+# ABSCHNITT 2 - Alle uebrigen Elemente (nur Referenz, auskommentiert)
+#
+# Gescannte Dateien : 6
+# Elemente gesamt   : 839
+# Davon Trigger:Ja  : 5
+#
+
+# ========================================================
+# ABSCHNITT 1 - Fertige Mapping-Zeilen
+# serviceTask + Trigger:Ja -> direkt kopierbar in flowmapping.txt
+# ========================================================
+
+# Datei: 02-artifacts\00-xml\03-child\01-bpmnchild\BPU01-CSV 2 CSV.bpmn
+# ------------------------------------------------------
+# Activity_0oba9ny                         | serviceTask          | "CSV00-validate_environment.py"
+Activity_0oba9ny=CSV00-validate_environment.py
+#
+# Activity_1ap0iye                         | serviceTask          | "CSV01-validate_model.py"
+Activity_1ap0iye=CSV01-validate_model.py
+#
+# Activity_16u81bj                         | serviceTask          | "CSV03-resolve_run_scope.py"
+Activity_16u81bj=CSV03-resolve_run_scope.py
+#
+# Activity_06otpyj                         | serviceTask          | "CSV04-model-overview.py"
+Activity_06otpyj=CSV04-model-overview.py
+#
+# Activity_1b1btjs                         | serviceTask          | "CSV05-create_master_csvs.py"
+Activity_1b1btjs=CSV05-create_master_csvs.py
+#
+
+# ========================================================
+# ABSCHNITT 2 - Uebrige Elemente (nur Referenz, auskommentiert)
+# ========================================================
+
+# Datei: 02-artifacts\00-xml\03-child\00-archimatechild\Architecture.xml
+# ------------------------------------------------------
+# id-081d94ae4980441e9b29dcc553b77aa0      | Resource             | "RES00-Eigenmittel"
+# id-081d94ae4980441e9b29dcc553b77aa0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6a2333e59af14a0fafb3acb889a9cd39      | Resource             | "RES01-Gaming Hardware"
+# id-6a2333e59af14a0fafb3acb889a9cd39=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2409c8327b9048cd800ad824e9b69e74      | Capability           | "CAP03-Projektmanagemen"
+# id-2409c8327b9048cd800ad824e9b69e74=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-36208904226a410cbfd08f8c171ea497      | Capability           | "CAP02-Modell Know How"
+# id-36208904226a410cbfd08f8c171ea497=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d2c06c8e7f184d0a87bae234afd35bb8      | Capability           | "CAP00-IT Infrastruktur Know How"
+# id-d2c06c8e7f184d0a87bae234afd35bb8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-977695ea242249bdb2b04041b936b8fc      | Capability           | "CAP01-Modellierungs Know How"
+# id-977695ea242249bdb2b04041b936b8fc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6e36fdfb918c4240acbee5fcf51faf94      | ValueStream          | "VAS04-R+MUNI"
+# id-6e36fdfb918c4240acbee5fcf51faf94=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9df74ba77e634bf19e046fbcdedeaf98      | ValueStream          | "VAS00-Enabling"
+# id-9df74ba77e634bf19e046fbcdedeaf98=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d0481fda2c9347638cd7f163f57ae765      | ValueStream          | "VAS02-Individualisierungen"
+# id-d0481fda2c9347638cd7f163f57ae765=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ee2df5d1790f4035914f33468504ddb6      | ValueStream          | "VAS05-Unterstützungsleistungen"
+# id-ee2df5d1790f4035914f33468504ddb6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b3b2b665e3dd4de7b72353031c0228be      | ValueStream          | "VAS01-Feature Upgrades"
+# id-b3b2b665e3dd4de7b72353031c0228be=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f25940021ed2491e882cbfc90aab9c0f      | CourseOfAction       | "COA00-R+MUNI 1.0 Internal Release"
+# id-f25940021ed2491e882cbfc90aab9c0f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2ef9b591145c4d6594e322bfd4b4d9c1      | ValueStream          | "VAS03-Klarheit über Fragestellungen"
+# id-2ef9b591145c4d6594e322bfd4b4d9c1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-32a504ae21274b1ba2809f15c3f99ca2      | BusinessActor        | "BUA00-R+MUNI Dude (ME)"
+# id-32a504ae21274b1ba2809f15c3f99ca2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-07de8542053d4739b7fa1a98bbe59798      | BusinessRole         | "BUR01-Entwickler"
+# id-07de8542053d4739b7fa1a98bbe59798=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-866783f5689b4893a8f70b6350ce0c2e      | BusinessRole         | "BUR02-Modellierer"
+# id-866783f5689b4893a8f70b6350ce0c2e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f116ad32a5f94363be4fa5093fba5e13      | BusinessRole         | "BUR00-Consultant"
+# id-f116ad32a5f94363be4fa5093fba5e13=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6ac1e83e5f504bab855953587a815128      | BusinessService      | "BUS03-PreSales Consultant Service"
+# id-6ac1e83e5f504bab855953587a815128=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ae45ebc72b884142adb642ba4fd338a5      | BusinessService      | "BUS00-First Time Setup"
+# id-ae45ebc72b884142adb642ba4fd338a5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-af9fcf6cc64a49528dbf268d944f5747      | BusinessService      | "BUS04-Visuelle Diagramm Service"
+# id-af9fcf6cc64a49528dbf268d944f5747=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4ef15ecc93914e9480ca060b037a7861      | BusinessService      | "BUS02-MUNI Schulungs Service"
+# id-4ef15ecc93914e9480ca060b037a7861=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-394ce819ab194ca09c10b6671ea3a587      | BusinessProcess      | "BUP04-R+MUNI entwickeln"
+# id-394ce819ab194ca09c10b6671ea3a587=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5b10384809f94f15a0bc399b68f7cdf6      | BusinessProcess      | "BUP07-Visuelle Modelle erstellen"
+# id-5b10384809f94f15a0bc399b68f7cdf6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6d76f68d89d44f9491a836e9e993d2d7      | BusinessProcess      | "BUP01-Lösung für Anforderung erarbeiten"
+# id-6d76f68d89d44f9491a836e9e993d2d7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6132cbb6e22143e3a4a8f1e18ae8aabc      | BusinessProcess      | "BUP02-Lösung präsentieren"
+# id-6132cbb6e22143e3a4a8f1e18ae8aabc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bfe411b764cb4400aa04321e5da21131      | BusinessProcess      | "BUP06-Schulung durchführen"
+# id-bfe411b764cb4400aa04321e5da21131=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-486ae814a4cf4dde90c3a130c6441454      | BusinessProcess      | "BUP05-R+MUNI installieren"
+# id-486ae814a4cf4dde90c3a130c6441454=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ec42131fce17464ababb7bedfe11f468      | BusinessProcess      | "BUP03-R+MUNI anpassen"
+# id-ec42131fce17464ababb7bedfe11f468=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0b7a5ed5e5204f918fe105b956a4c660      | BusinessService      | "BUS01-Individual Anpassungen"
+# id-0b7a5ed5e5204f918fe105b956a4c660=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2846035edbac4e1eac7b177be2423e6b      | BusinessObject       | "BUO04-Visuelle Darstellung"
+# id-2846035edbac4e1eac7b177be2423e6b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-db304cccdbbd45169fd50eeb4b7d1e0b      | BusinessObject       | "BUO02-Referenzdoku"
+# id-db304cccdbbd45169fd50eeb4b7d1e0b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-01eb201c03bb4d7c9844a47cfef98e15      | Product              | "PRO00-R+MUNI"
+# id-01eb201c03bb4d7c9844a47cfef98e15=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1cbdbc8e6f784df3a399105b7dab5a00      | BusinessObject       | "BUO00-FLOW"
+# id-1cbdbc8e6f784df3a399105b7dab5a00=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5dc55f30f09e4374bfe9272f8d296b86      | BusinessInterface    | "BUI00-Archimate Tool GUI"
+# id-5dc55f30f09e4374bfe9272f8d296b86=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fba788f076224c86933b5712d75db7c5      | BusinessInterface    | "BUI02-BPMN 2.0 Tool GUI"
+# id-fba788f076224c86933b5712d75db7c5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0f0b8b3ec7104ab9a902e773a818553f      | BusinessProcess      | "BUP00-3rd Party Import"
+# id-0f0b8b3ec7104ab9a902e773a818553f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d0181862971f480fa8be0970994b539d      | BusinessFunction     | "BUF00-3rd Party Importer"
+# id-d0181862971f480fa8be0970994b539d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a9a69e2bb4b049dd98a7b5c9ff6f14ae      | BusinessFunction     | "BUF05-Prozess Modellierer"
+# id-a9a69e2bb4b049dd98a7b5c9ff6f14ae=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c6d3e60758a9458999a60602f3a3b93e      | BusinessFunction     | "BUF01-Architektur & Business Modellierer"
+# id-c6d3e60758a9458999a60602f3a3b93e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1728306f843245c28cdf4c03f931735c      | BusinessFunction     | "BUF02-HTML Report erstellen"
+# id-1728306f843245c28cdf4c03f931735c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6bffa26862a54464b2b248ebe318aaf2      | BusinessFunction     | "BUF03-Image Export"
+# id-6bffa26862a54464b2b248ebe318aaf2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-515413fa45a343748eed2ef0e5bdc06f      | BusinessFunction     | "BUF04-Prozess Automation light"
+# id-515413fa45a343748eed2ef0e5bdc06f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-679267bc304a4ae9a219d825b129fd93      | BusinessInterface    | "BUI01-Editor GUI"
+# id-679267bc304a4ae9a219d825b129fd93=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3e7289a052c94b5d88d08a7e659241d3      | BusinessInterface    | "BUI03-HTML Web GUI"
+# id-3e7289a052c94b5d88d08a7e659241d3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-820007ce24d54d45baa6966d0e52c668      | BusinessObject       | "BUO01-HTML Report"
+# id-820007ce24d54d45baa6966d0e52c668=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-529381f99030453d81330cb99689cb2c      | BusinessObject       | "BUO03-Referenzmodelle"
+# id-529381f99030453d81330cb99689cb2c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-254704aef3534da5b3863619168df04b      | BusinessFunction     | "BUF06-Selbsthilfe"
+# id-254704aef3534da5b3863619168df04b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7ebdb2a2d877437b8d3b8945b31aff5e      | ApplicationComponent | "APC00-Archi 5.8"
+# id-7ebdb2a2d877437b8d3b8945b31aff5e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-09378af6e4e54c2bb56f37b056b411d0      | ApplicationInterface | "API00-Archi Gui"
+# id-09378af6e4e54c2bb56f37b056b411d0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c6a30b40e8e04dfeb8c9ae3b58ae9d0f      | ApplicationFunction  | "APF05-CSV Export"
+# id-c6a30b40e8e04dfeb8c9ae3b58ae9d0f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-47eece96f6ef4f8c887079832c9c8d32      | ApplicationFunction  | "APF00-Archmiate Modellierung"
+# id-47eece96f6ef4f8c887079832c9c8d32=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-04d63fc625ef46dd99d301c9d647a626      | ApplicationFunction  | "APF06-CSV Import"
+# id-04d63fc625ef46dd99d301c9d647a626=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8f6f20af5c0149b5aaf5f395b705cddf      | ApplicationFunction  | "APF16-Open Exchange Format Export"
+# id-8f6f20af5c0149b5aaf5f395b705cddf=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-31b2b9431eb741fe845bf7420bcb36b4      | ApplicationFunction  | "APF15-Open Exchange Format Import"
+# id-31b2b9431eb741fe845bf7420bcb36b4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e8080291c32346dcb551767309760561      | ApplicationFunction  | "APF09-EXCEL Export"
+# id-e8080291c32346dcb551767309760561=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ddc5d5f706b24d0482ae3f7e504c8638      | DataObject           | "DAO02-Archi CSV Stack"
+# id-ddc5d5f706b24d0482ae3f7e504c8638=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bc0b10d6225147619307d89e11def2b4      | DataObject           | "DAO04-Archi XML Stack"
+# id-bc0b10d6225147619307d89e11def2b4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a5a178d05fd94bd9ba6a199ddd6a6e21      | DataObject           | "DOA12-Main Archi <modellname>"
+# id-a5a178d05fd94bd9ba6a199ddd6a6e21=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-508d8fb39ffa4a62bd09d5abab1f79bd      | DataObject           | "DAO07-Sub Archi <modellname>"
+# id-508d8fb39ffa4a62bd09d5abab1f79bd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e7247550ca144a27a94f66268ab718ff      | DataObject           | "DAO03-Archi <modellname>.xlsx"
+# id-e7247550ca144a27a94f66268ab718ff=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8e3e68f7c3b54c6d996c1c65cd4d3eab      | ApplicationComponent | "APC01-Camunda Modeler"
+# id-8e3e68f7c3b54c6d996c1c65cd4d3eab=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f40225e3f9504ddfa56eb22b95fc3ce9      | ApplicationFunction  | "APF01-BPMN 2.0 Modellierung"
+# id-f40225e3f9504ddfa56eb22b95fc3ce9=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-afb6eefbbd0548699e65384387b61759      | DataObject           | "DAO05-BPMN<Prozessname>.bpmn"
+# id-afb6eefbbd0548699e65384387b61759=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c3eb6d0e5d344ee788f5eb1a41b1a95e      | ApplicationFunction  | "APF03-Camunda 7 Modelle"
+# id-c3eb6d0e5d344ee788f5eb1a41b1a95e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-01ab2c652ce64460b1b4e2932e725a6e      | ApplicationFunction  | "APF04-Camunda 8 Modelle"
+# id-01ab2c652ce64460b1b4e2932e725a6e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-df247b5f9ebb4d768ec0d00b795e3502      | ApplicationComponent | "APC03-FLOW Routine"
+# id-df247b5f9ebb4d768ec0d00b795e3502=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-48a16234b4e4448cb38d7d66c3ae8f87      | ApplicationFunction  | "APF14-Prozessautomatisierung light"
+# id-48a16234b4e4448cb38d7d66c3ae8f87=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5e8a5cc38c3341a1b92b5c6588d11027      | DataObject           | "DAO08-FLOW"
+# id-5e8a5cc38c3341a1b92b5c6588d11027=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2aaf978df8a5498288322fc2dc707c09      | ApplicationCollaboration | "ACO00-R+MUNI"
+# id-2aaf978df8a5498288322fc2dc707c09=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1e951c3ecb254860b2a829c8ca2895c3      | ApplicationComponent | "APC02-Crome Browser"
+# id-1e951c3ecb254860b2a829c8ca2895c3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a3a7ba26228142be94e11c8099b1f549      | ApplicationFunction  | "APF02-Brower Funktion"
+# id-a3a7ba26228142be94e11c8099b1f549=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-55bf18ce80c64078a01cd08d1249ce34      | DataObject           | "DAO10-Guidelines"
+# id-55bf18ce80c64078a01cd08d1249ce34=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-da9bf2a418c3489e8a3ad16632c02566      | ApplicationFunction  | "APF12-Reader Funkion"
+# id-da9bf2a418c3489e8a3ad16632c02566=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f0c53e2b0d4c45f78453cfe7ea090c5e      | ApplicationComponent | "APC04-Notepad ++"
+# id-f0c53e2b0d4c45f78453cfe7ea090c5e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ffd948a082514d22a9efa9f9c576d4b3      | DataObject           | "DAO09-Scripts"
+# id-ffd948a082514d22a9efa9f9c576d4b3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f65114adf355489496223cedcc6ab65b      | DataObject           | "DOA11-R+MUNI Info Files"
+# id-f65114adf355489496223cedcc6ab65b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1b2321b1993f432d867aab233c737a41      | ApplicationInterface | "API01-Camunda Modeler GUI"
+# id-1b2321b1993f432d867aab233c737a41=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7351980e1fd84ab1b1cef85e7f32a470      | ApplicationInterface | "API03-FLOW"
+# id-7351980e1fd84ab1b1cef85e7f32a470=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-def2bc7d7c89434f96b6ebb74efdaa19      | ApplicationInterface | "API04-Notepad++ GUI"
+# id-def2bc7d7c89434f96b6ebb74efdaa19=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-39f6158dcef44d1bbc05659f4ba42766      | ApplicationInterface | "API02-Crome GUI"
+# id-39f6158dcef44d1bbc05659f4ba42766=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-94f52e6fd1f644e7938c274d6da9f223      | ApplicationFunction  | "APF08-Editor"
+# id-94f52e6fd1f644e7938c274d6da9f223=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c30bd7d49b334338b26168831305c559      | ApplicationFunction  | "APF10-Selbsthilfeanleitung"
+# id-c30bd7d49b334338b26168831305c559=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-addcef0ebfe342a69591631d2e052ae1      | ApplicationFunction  | "APF07-EA Image Export"
+# id-addcef0ebfe342a69591631d2e052ae1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f1540c55f6c5425fad4108630fe705d0      | ApplicationFunction  | "APF13-Prozess Image Export"
+# id-f1540c55f6c5425fad4108630fe705d0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-09f50620d3b840568670d86b175bad08      | DataObject           | "DAO06-BPMN<Prozessname>.svg"
+# id-09f50620d3b840568670d86b175bad08=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0d2616a6f51b4263867f2d42d6176276      | DataObject           | "DAO00-Archi<modellname>.svg"
+# id-0d2616a6f51b4263867f2d42d6176276=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-73f92331be754642b7ec3de3649fa263      | ApplicationFunction  | "APF11-Image Export"
+# id-73f92331be754642b7ec3de3649fa263=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-330b8be07ec340f7ad5f737cdb2baaef      | Device               | "DEV00-Gaming PC"
+# id-330b8be07ec340f7ad5f737cdb2baaef=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-26ef9465c2b34a1186baeb41ef79f144      | SystemSoftware       | "SYS00-Windows 11 Enterprise"
+# id-26ef9465c2b34a1186baeb41ef79f144=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3801d23e5b0742caa1c245f5cc684659      | Artifact             | "<MUNI Installaionspfad>"
+# id-3801d23e5b0742caa1c245f5cc684659=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-67238b8b8bdf4bf087811d222bd6d35e      | Artifact             | "00-conecpt"
+# id-67238b8b8bdf4bf087811d222bd6d35e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c0889d4beb7e44f39c958afece722642      | TechnologyFunction   | "TEF00-Ordnerstruktur und Rechtevergabe"
+# id-c0889d4beb7e44f39c958afece722642=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-df54a4afebb940159e2e167c6bd51590      | Artifact             | "Aktives Modell <modelname>.archimate"
+# id-df54a4afebb940159e2e167c6bd51590=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5f5e6a2f8b2b4f05b93a6d4b150bbb7c      | SystemSoftware       | "SYS01-Python 3 run"
+# id-5f5e6a2f8b2b4f05b93a6d4b150bbb7c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7c959626b8a148edbaaa9cac7eeeabfd      | SystemSoftware       | "SYS02-Powershell 7.x"
+# id-7c959626b8a148edbaaa9cac7eeeabfd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8afbbd03b18345aab637c301ad02fdfc      | TechnologyFunction   | "TEF01-Ausführen von Applikationen"
+# id-8afbbd03b18345aab637c301ad02fdfc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fc24f92fe23e4e418f4e2d8d929ad4e8      | Artifact             | "00-governance"
+# id-fc24f92fe23e4e418f4e2d8d929ad4e8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f1759c4923a14c18a00a280ebc1bd5fb      | Artifact             | "01-principles"
+# id-f1759c4923a14c18a00a280ebc1bd5fb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-aa845dc3dd9643c0864ab4fb0a14f2e2      | Artifact             | "01-model"
+# id-aa845dc3dd9643c0864ab4fb0a14f2e2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e6c44296dec141d09e6e167b76c67dbc      | Artifact             | "00-archimate"
+# id-e6c44296dec141d09e6e167b76c67dbc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2432ddd6b6174763a7920664aabba94a      | Artifact             | "00-archimateactive"
+# id-2432ddd6b6174763a7920664aabba94a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-efb9dae04b7248078fca7c50c3990ddb      | Artifact             | "01-archimateactivesub"
+# id-efb9dae04b7248078fca7c50c3990ddb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-553b577e2b114fcbb065d0ca7906d8de      | Artifact             | "mappingmodel"
+# id-553b577e2b114fcbb065d0ca7906d8de=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b16e703ffbce4aab8ae8f9f2daff15b8      | Artifact             | "Sub Modell <modelname>.archimate"
+# id-b16e703ffbce4aab8ae8f9f2daff15b8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7cb68d3af8e64fe0bfbd8dd739fc94b2      | Artifact             | "01-bpmn"
+# id-7cb68d3af8e64fe0bfbd8dd739fc94b2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2029f33933f74f3db7ab866b8f818fea      | Artifact             | "00-bpmnactive"
+# id-2029f33933f74f3db7ab866b8f818fea=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-52b8b9907125440b811d94e566c9f3e5      | Artifact             | "99-bpmnMUNI"
+# id-52b8b9907125440b811d94e566c9f3e5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f90dd38c876e474789b2cf9ef0a3886c      | Artifact             | "02-xyvision"
+# id-f90dd38c876e474789b2cf9ef0a3886c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-703d177e06944d70a768e0e09972010c      | Artifact             | "02-artifacts"
+# id-703d177e06944d70a768e0e09972010c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-cf8e8ebe1a684325bbf38566363e7d60      | Artifact             | "00-xml"
+# id-cf8e8ebe1a684325bbf38566363e7d60=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4ff10a8a7da443eaa389772534133e18      | Artifact             | "00-master"
+# id-4ff10a8a7da443eaa389772534133e18=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6ecb132118034bb7893d155b74561da7      | Artifact             | "01-mapping"
+# id-6ecb132118034bb7893d155b74561da7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5adf2e1e934f4614b786aeb05587b22e      | Artifact             | "02-sync"
+# id-5adf2e1e934f4614b786aeb05587b22e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d669820fdab242a882edb06f096aef40      | Artifact             | "03-child"
+# id-d669820fdab242a882edb06f096aef40=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a2d84483c2fc4ed58ba1ece489eb123a      | Artifact             | "00-archimatechild"
+# id-a2d84483c2fc4ed58ba1ece489eb123a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7d00cf3f122b4354bbb1c365380a673d      | Artifact             | "01-bpmnchild"
+# id-7d00cf3f122b4354bbb1c365380a673d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-09988db47e204da982c24f8f7ee3ddbe      | Artifact             | "01-scripts"
+# id-09988db47e204da982c24f8f7ee3ddbe=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ae0e2f9a2f4e46a28c6ca18d18935123      | Artifact             | "CSV00-validate_environment.py"
+# id-ae0e2f9a2f4e46a28c6ca18d18935123=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3e3d4e768b0246649ef0b175e7aa197b      | Artifact             | "CSV01-validate_model.py"
+# id-3e3d4e768b0246649ef0b175e7aa197b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bfafc5e517ad4a21827af94f34798d37      | Artifact             | "CSV02-leer.py"
+# id-bfafc5e517ad4a21827af94f34798d37=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-11fa562d8b694b6485d113ff1110ddc7      | Artifact             | "CSV03-resolve_run_scope.py"
+# id-11fa562d8b694b6485d113ff1110ddc7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e717aa4d050d43c2a29b8b0c10952185      | Artifact             | "CSV04-model-overview.py"
+# id-e717aa4d050d43c2a29b8b0c10952185=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6aefe34537be438b82774c5552a470b4      | Artifact             | "CSV05-create_master_csvs.py"
+# id-6aefe34537be438b82774c5552a470b4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b2e07ba73c564d048c442eb768591a14      | Artifact             | "CSV06-append_child_to_master.py"
+# id-b2e07ba73c564d048c442eb768591a14=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3557941f7afc47e7883eccc6583c752b      | Artifact             | "CSV07-xlsx_2_csv.py"
+# id-3557941f7afc47e7883eccc6583c752b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-25c68fcab8104cc3b5e4b9c2732c4ff5      | Artifact             | "CSV08-properties2csv.py"
+# id-25c68fcab8104cc3b5e4b9c2732c4ff5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bad158ba97ab468e8efce12418304f8b      | Artifact             | "CSV09-masterxml2csv.py"
+# id-bad158ba97ab468e8efce12418304f8b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d61d05f588e04f9d97bfeccd1706a0b8      | Artifact             | "CSV99-export_snapshot.py"
+# id-d61d05f588e04f9d97bfeccd1706a0b8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-86384c38b4124983adac2f6b36c33752      | Artifact             | "XML00-resolve_root.py"
+# id-86384c38b4124983adac2f6b36c33752=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2dc3033da20c4816952e3e58e0a3d33b      | Artifact             | "CSV Scripts"
+# id-2dc3033da20c4816952e3e58e0a3d33b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-24a3882190604c2399da7ec4acd016f2      | Artifact             | "XML Scripts"
+# id-24a3882190604c2399da7ec4acd016f2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-64cbb37f1d6843c2995633f313d674e7      | Artifact             | "02-csv"
+# id-64cbb37f1d6843c2995633f313d674e7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8feba5bc365f4a0dbfa8ae8f39ef897d      | Artifact             | "00-master"
+# id-8feba5bc365f4a0dbfa8ae8f39ef897d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-98186bf641f849fd8a286e607a33dfef      | Artifact             | "01-sync"
+# id-98186bf641f849fd8a286e607a33dfef=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0abce2ba62ef496f9c1d531a1f5341c4      | Artifact             | "02-import"
+# id-0abce2ba62ef496f9c1d531a1f5341c4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-da0d67fcb40e49e6b17e35f090263ee6      | Artifact             | "03-child"
+# id-da0d67fcb40e49e6b17e35f090263ee6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bd4ab2865df44bc0ab417148472398ff      | Artifact             | "99-exports"
+# id-bd4ab2865df44bc0ab417148472398ff=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f69c0b641e39412a8c86b78e3d5a56c1      | Artifact             | "00-archimatechild"
+# id-f69c0b641e39412a8c86b78e3d5a56c1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bd546713d1e140b5bf7ab296f7276d28      | Artifact             | "01-bpmnchild"
+# id-bd546713d1e140b5bf7ab296f7276d28=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3b5c9f334a4045e9ad77dbacf4e1c13c      | Artifact             | "elements.csv"
+# id-3b5c9f334a4045e9ad77dbacf4e1c13c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c0ebc1f1f9064341b7c43020caac2445      | Artifact             | "properties.csv"
+# id-c0ebc1f1f9064341b7c43020caac2445=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7a4d61544fc34ea39ea45d4a563a95cf      | Artifact             | "relations.csv"
+# id-7a4d61544fc34ea39ea45d4a563a95cf=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bf9090f81a92404bbbd1125191516eae      | Artifact             | "Archi CSV Stack"
+# id-bf9090f81a92404bbbd1125191516eae=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4868113fba6d42e0a8c0002e62faf717      | Artifact             | "archimate3_Diagram.xsd"
+# id-4868113fba6d42e0a8c0002e62faf717=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-69cc2486fdeb4261a8ee5e56a10fe450      | Artifact             | "archimate3_Model.xsd"
+# id-69cc2486fdeb4261a8ee5e56a10fe450=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c9a6fc34ac91416d99e94efca7872082      | Artifact             | "archimate3_View.xsd"
+# id-c9a6fc34ac91416d99e94efca7872082=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-52a74f472229413fb03abd547a3605f2      | Artifact             | "<Modellname>.xml"
+# id-52a74f472229413fb03abd547a3605f2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-435b9a3c53a6429aac791296ddd53be3      | Artifact             | "Archi XML Stack"
+# id-435b9a3c53a6429aac791296ddd53be3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ef26482113a244f8857ca02291ce2458      | Artifact             | "SCRIPT-BAUKASTEN.txt"
+# id-ef26482113a244f8857ca02291ce2458=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8e1181a5967a4127b483d772c09bc098      | Artifact             | "master.generated.xml"
+# id-8e1181a5967a4127b483d772c09bc098=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1d34300233134d50bb7c594c8a0b2fe3      | Artifact             | "<Prozessname>.xml"
+# id-1d34300233134d50bb7c594c8a0b2fe3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5121e470344444bfa23f2f76357bf06a      | Artifact             | "<Prozessname>.xml"
+# id-5121e470344444bfa23f2f76357bf06a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1a1580f8317c44e5b3ba32abfd78c582      | Artifact             | "Flow.txt"
+# id-1a1580f8317c44e5b3ba32abfd78c582=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-cd65f4e4000340d78c3330f9021a097a      | Artifact             | "03-XLSX"
+# id-cd65f4e4000340d78c3330f9021a097a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2b5019588b4b43fc8bd6b83870520f6d      | Artifact             | "03-child"
+# id-2b5019588b4b43fc8bd6b83870520f6d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-128a29c03e7948b59826fd7cdbd652d6      | Artifact             | "<Prozessname>.xml"
+# id-128a29c03e7948b59826fd7cdbd652d6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3a519e2423c34ab890615eb7203844e4      | Artifact             | "00-achimatechild"
+# id-3a519e2423c34ab890615eb7203844e4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-335a90bca2c14a48b46b07f3ea293581      | Artifact             | "01-bpmnchild"
+# id-335a90bca2c14a48b46b07f3ea293581=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-10cb891001ee46b392e0e42580ec4927      | Artifact             | "99-export"
+# id-10cb891001ee46b392e0e42580ec4927=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bce924b71e1a436f9e2bb7387b035e44      | Artifact             | "<modelname>.xslx"
+# id-bce924b71e1a436f9e2bb7387b035e44=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-efd80e6da28b423090cf37edefc994a6      | Artifact             | "02-how2"
+# id-efd80e6da28b423090cf37edefc994a6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c463f8bb769045d69ad94d18966778e0      | Artifact             | "How2Flow.txt"
+# id-c463f8bb769045d69ad94d18966778e0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d78aa55ac77547968a751475900c99a6      | Artifact             | "child_mapping.txt"
+# id-d78aa55ac77547968a751475900c99a6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7a6404a95a9649a59043c11765f1caa9      | Artifact             | "fields.csv"
+# id-7a6404a95a9649a59043c11765f1caa9=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bbacb57e1c2a4dbc97e9ce2167dac02d      | Artifact             | "04-flow"
+# id-bbacb57e1c2a4dbc97e9ce2167dac02d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c179c9d2c3a34ceb8b5416623a766f5d      | Artifact             | "flow.py"
+# id-c179c9d2c3a34ceb8b5416623a766f5d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-16a5c562775c43f6a2e49313af8233ea      | Artifact             | "flowmapping.txt"
+# id-16a5c562775c43f6a2e49313af8233ea=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-57028807eae14229bdf48135c371658e      | Artifact             | "jArchi Scirpts"
+# id-57028807eae14229bdf48135c371658e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4285b27858de432b9c43a37a03be8650      | Artifact             | "03-stages"
+# id-4285b27858de432b9c43a37a03be8650=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-11f6aee99e68415d98c230336bab56b8      | Artifact             | "00-archimatearchive"
+# id-11f6aee99e68415d98c230336bab56b8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-49802e45151f45788dd846a5cd7ba3cd      | Artifact             | "01-bpmnarchive"
+# id-49802e45151f45788dd846a5cd7ba3cd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-541922a9acb0435085f01ffdc099b36f      | Artifact             | "99-logs"
+# id-541922a9acb0435085f01ffdc099b36f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7ad20f80e87e4742a893432b1af5cb59      | Artifact             | "jA01-Validierung Namen.ajs"
+# id-7ad20f80e87e4742a893432b1af5cb59=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-761cb0b011794169a2b59da607456ef0      | Artifact             | "FLOW Stack"
+# id-761cb0b011794169a2b59da607456ef0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-968c0fdb37f24c048fab4bd3fc03d3a7      | Material             | "MAT03-TOGAF 10 Guides"
+# id-968c0fdb37f24c048fab4bd3fc03d3a7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3d4fcfb5aad74f028f45d48cdc62d158      | Material             | "MAT02-Archimate 3.2 Guides"
+# id-3d4fcfb5aad74f028f45d48cdc62d158=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-724e6e7411f34c388c44f9c9f56ad865      | Material             | "MAT01-BPMN 2.0 Guides"
+# id-724e6e7411f34c388c44f9c9f56ad865=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8c7d81f165824a259ad1810b6de8aef8      | CommunicationNetwork | "CON00-Internet"
+# id-8c7d81f165824a259ad1810b6de8aef8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6b0d235775a645478a85fb1cade0ade2      | Node                 | "NOD00-Fritz Box Router"
+# id-6b0d235775a645478a85fb1cade0ade2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1e3d56c118704a8a9d0a13336f67cac7      | Artifact             | "02-xychild"
+# id-1e3d56c118704a8a9d0a13336f67cac7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-dcebe4b61e054f449ab256c1ff499faf      | Artifact             | "02-xychild"
+# id-dcebe4b61e054f449ab256c1ff499faf=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9af4b89994c64e31a69cd73cc332135a      | Artifact             | "02-xyarchive"
+# id-9af4b89994c64e31a69cd73cc332135a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5d1f453c2ff14226aa23b5c156dd3bd5      | Artifact             | "04-notes"
+# id-5d1f453c2ff14226aa23b5c156dd3bd5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8b04fa4d7fee40649b2fa0cdd1ec529d      | Artifact             | "root.txt"
+# id-8b04fa4d7fee40649b2fa0cdd1ec529d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-83b0b2e5f7024f82b15e01d2978819ad      | Artifact             | "context.txt"
+# id-83b0b2e5f7024f82b15e01d2978819ad=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-baf245d555b94f70b83708af87b1dd62      | Artifact             | "run-scope.txt"
+# id-baf245d555b94f70b83708af87b1dd62=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8df9225832b94a1284639ff6e1e65e58      | Artifact             | "struktur.txt"
+# id-8df9225832b94a1284639ff6e1e65e58=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a0fb68244ac643c1bf4759a5c77e709e      | TechnologyInterface  | "TEI01-Powershell Konsolen GUI"
+# id-a0fb68244ac643c1bf4759a5c77e709e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b2283085c7bc4b2da7e0e3984790f188      | TechnologyInterface  | "TEI00-OS GUI"
+# id-b2283085c7bc4b2da7e0e3984790f188=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-360a083ec5544500bf2c5f0c8d744d77      | Material             | "MAT00-Guides & Normen"
+# id-360a083ec5544500bf2c5f0c8d744d77=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d85c2a5a091347e0b4ea46c4fcc3cc49      | Artifact             | "R+MUNI help files"
+# id-d85c2a5a091347e0b4ea46c4fcc3cc49=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-134e9cb2112a4c6b8dc5c8b737e30379      | Artifact             | "05-Images"
+# id-134e9cb2112a4c6b8dc5c8b737e30379=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-971b93a7090948d899d956c060bf144a      | Artifact             | "00-archimateimages"
+# id-971b93a7090948d899d956c060bf144a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-72f7e53ad2404fe4bd04cc058df22d48      | Artifact             | "01-bpmnimages"
+# id-72f7e53ad2404fe4bd04cc058df22d48=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f288345be38644dc82e14aff003cdc2e      | Artifact             | "99-strukturimages"
+# id-f288345be38644dc82e14aff003cdc2e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1a430c86295b48caac4dc89a298993d0      | Artifact             | "Archi Export<modellname>.svg"
+# id-1a430c86295b48caac4dc89a298993d0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-31d70ca3d0fe4688bfdeed740e6d75e8      | Artifact             | "BPMN 2.0 Export<modellname>.svg (copy)"
+# id-31d70ca3d0fe4688bfdeed740e6d75e8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-81a40cfad3ea4c32a3ad2255d2df9036      | Artifact             | "XML01-collect_sources.py"
+# id-81a40cfad3ea4c32a3ad2255d2df9036=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2a0c64eafdd146f595e4c9c36445506b      | Artifact             | "XML02-parse_child_xml.py"
+# id-2a0c64eafdd146f595e4c9c36445506b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-412859ad3e5945c7b8c70acd1205e0cb      | Artifact             | "XML03-build_index.py"
+# id-412859ad3e5945c7b8c70acd1205e0cb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-40a277e6db974a81b38ae4d9207d2f33      | Artifact             | "XML04-merge_master.py"
+# id-40a277e6db974a81b38ae4d9207d2f33=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7b3c3acd71fc4145a323ecda218f8c04      | Artifact             | "child_mapping.txt"
+# id-7b3c3acd71fc4145a323ecda218f8c04=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3a676dde5eee4c849f894b89f3eb733c      | Artifact             | "mapping.txt"
+# id-3a676dde5eee4c849f894b89f3eb733c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-22563d53ff58435b9f01ab3133323226      | Artifact             | "How2Archi2CSVFlow.txt"
+# id-22563d53ff58435b9f01ab3133323226=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-18c51adb8cf5498c812099f895f87d2c      | Artifact             | "How2Master2BPMNProzess.txt"
+# id-18c51adb8cf5498c812099f895f87d2c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-aa3ac598714848d2bc34d4c59f8d53f2      | Artifact             | "How2MasterXMLFlow.txt"
+# id-aa3ac598714848d2bc34d4c59f8d53f2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1595c1343f6a47bb9cb4918e9bcdda2b      | Artifact             | "Global GOV.pdf"
+# id-1595c1343f6a47bb9cb4918e9bcdda2b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c873fabb598748a98d5ab2dea9f60768      | Artifact             | "XML05-clear_merge.py"
+# id-c873fabb598748a98d5ab2dea9f60768=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6e8348465c224de3afaa052a0d7509f6      | Artifact             | "XML06-finalize-master.py"
+# id-6e8348465c224de3afaa052a0d7509f6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a74e52f49a8440c3b02e71b071fb7a69      | Artifact             | "XML07-cleanup-artifacts.py"
+# id-a74e52f49a8440c3b02e71b071fb7a69=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7cf7e93e2d2f47a0925dc226bb40f3ac      | Artifact             | "csvexport.txt"
+# id-7cf7e93e2d2f47a0925dc226bb40f3ac=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c9c51291610344c1ae44f467853145b2      | Artifact             | "00-master"
+# id-c9c51291610344c1ae44f467853145b2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1a8d962cdfdb4013ab3df1f00819af7e      | Artifact             | "01-mapping"
+# id-1a8d962cdfdb4013ab3df1f00819af7e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6abab46b45b646ef8add25cc81067c4d      | Artifact             | "02-xychild"
+# id-6abab46b45b646ef8add25cc81067c4d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-903889af94ce41788e16b7c7a2b67d96      | Artifact             | "csvmapping.txt"
+# id-903889af94ce41788e16b7c7a2b67d96=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b0f4907896d84881a6eda85170ca138e      | Artifact             | "propmapping.txt"
+# id-b0f4907896d84881a6eda85170ca138e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a7fa6d94a699464588fcb77ba2a37801      | Artifact             | "05-images"
+# id-a7fa6d94a699464588fcb77ba2a37801=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-27b9e7c39621408780bd64d43ecca7d6      | Artifact             | "00-archimateimages"
+# id-27b9e7c39621408780bd64d43ecca7d6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bb4ffd52b8c948158aa2da566a1cbc46      | Artifact             | "01-bpmnimages"
+# id-bb4ffd52b8c948158aa2da566a1cbc46=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d01857362b694d19acdc32b3859e1fe6      | Artifact             | "99-strukturimages"
+# id-d01857362b694d19acdc32b3859e1fe6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3d790885e4c8467e83688fa09298f11b      | Artifact             | "model-scope.txt"
+# id-3d790885e4c8467e83688fa09298f11b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b73072a8c0e147efac4a5316927c70c3      | Artifact             | "Master 2 BPMN Cycle"
+# id-b73072a8c0e147efac4a5316927c70c3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5cd0f106affd4652a9dfacac89d85dfb      | Artifact             | "M2B00-root_resolve.py"
+# id-5cd0f106affd4652a9dfacac89d85dfb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bbc83b29394045f99435846d6a38b04f      | Artifact             | "M2B01-master_extract.py"
+# id-bbc83b29394045f99435846d6a38b04f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e65b56d9a85947a8ac88841130aab916      | Artifact             | "M2B02-activate_model.py"
+# id-e65b56d9a85947a8ac88841130aab916=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9d33612bea7944d7b8f9018f05974753      | Artifact             | "M2B03-clear.py"
+# id-9d33612bea7944d7b8f9018f05974753=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e5ab5d2846fc4a0e85e7d2ce2240ebb1      | Artifact             | "M2B04-reconcile_enrich.py"
+# id-e5ab5d2846fc4a0e85e7d2ce2240ebb1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-35a102086aab4a5098481707177ebaf6      | Stakeholder          | "STA00-Me ;)"
+# id-35a102086aab4a5098481707177ebaf6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f0f0f9edab974e42a6a0c2bfdfd0c2e0      | Principle            | "PRI02-Freie Software"
+# id-f0f0f9edab974e42a6a0c2bfdfd0c2e0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4eda9886e61e43adbe284fbe6679ee1a      | Requirement          | "REQ05-Praxis tauglich"
+# id-4eda9886e61e43adbe284fbe6679ee1a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d1d04a2ed3a54f7bb7bf81e7ccae4d75      | Requirement          | "REQ01-Leicht zu bedienen"
+# id-d1d04a2ed3a54f7bb7bf81e7ccae4d75=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-74363f1797494190ac7e9e2900fda900      | Principle            | "PRI04-Offene Normen und Guidelines"
+# id-74363f1797494190ac7e9e2900fda900=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1feb6dd351ce421c8cec6c3fee8c0f45      | Meaning              | "MEA00-Free 4 all"
+# id-1feb6dd351ce421c8cec6c3fee8c0f45=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5579e8de5ea74b94b41cd2ff1113d6f8      | Principle            | "PRI01-Freier Zugang zu Unterlagen"
+# id-5579e8de5ea74b94b41cd2ff1113d6f8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c50b64cab06049b9b724ce5d4ae94c89      | Requirement          | "REQ04-Visuell getrieben"
+# id-c50b64cab06049b9b724ce5d4ae94c89=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-16a08948c74f418ea2d1093df569b12c      | Requirement          | "REQ03-wartbar"
+# id-16a08948c74f418ea2d1093df569b12c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b41a83116fe2490387753d442f5303cf      | Principle            | "PRI03-Offen für Erweiterung"
+# id-b41a83116fe2490387753d442f5303cf=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5f48baf405e2434c8562e4be579f0816      | Driver               | "DRV00-Geiler Job"
+# id-5f48baf405e2434c8562e4be579f0816=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a629cbaa5892420cbf7ee173c114ae5c      | Assessment           | "ASS00-Mögliche Lösungen"
+# id-a629cbaa5892420cbf7ee173c114ae5c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-07aa42f89e8d404aa027971535a68236      | Outcome              | "OUT00-R+MUNI"
+# id-07aa42f89e8d404aa027971535a68236=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fa09164a4758456895d442486aff62ea      | Value                | "VAL00-Millionen Sachen"
+# id-fa09164a4758456895d442486aff62ea=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4efa44dd2e3d44a69f0945d0f16c195a      | Driver               | "DRV01-Wissbegierde"
+# id-4efa44dd2e3d44a69f0945d0f16c195a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-12679af793a742f0b3e5a6c196ca207d      | Goal                 | "GOA00-R+MUNI Release"
+# id-12679af793a742f0b3e5a6c196ca207d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9f87b3f035bc49ef981b4e32b4936ad6      | Driver               | "DRV02-Was mich motiviert!"
+# id-9f87b3f035bc49ef981b4e32b4936ad6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2e8003103e65443fa5bdb50a9142d97a      | Requirement          | "REQ02-Wie es sein sollt"
+# id-2e8003103e65443fa5bdb50a9142d97a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2a1f094032ac44b982bc88b695a59cec      | Principle            | "PRI00-Die Prinzipien sind mir wichtig"
+# id-2a1f094032ac44b982bc88b695a59cec=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a9c6b3622b6d4b55b8fbd0106eb6dfbb      | Meaning              | "MEA01-Wie ich denke"
+# id-a9c6b3622b6d4b55b8fbd0106eb6dfbb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5806af86e54f4bddadc9d002bb6e30f0      | Meaning              | "MEA02-Offen entwickelbar"
+# id-5806af86e54f4bddadc9d002bb6e30f0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0a367492b3df434f9737a64bdae55abd      | Requirement          | "REQ00-Kostenfreier Stack"
+# id-0a367492b3df434f9737a64bdae55abd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bbcc8e9085c14f17818bd61081881d05      | WorkPackage          | "Work Package"
+# id-bbcc8e9085c14f17818bd61081881d05=<SCRIPT_HIER_EINTRAGEN>
+#
+
+# Datei: 02-artifacts\00-xml\03-child\00-archimatechild\Importer.xml
+# ------------------------------------------------------
+# id-54664babd48f4913b0f6510db8755dd3      | Resource             | "Resource"
+# id-54664babd48f4913b0f6510db8755dd3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-db64f171f9114c8da5d2086ca4416e83      | Capability           | "Capability"
+# id-db64f171f9114c8da5d2086ca4416e83=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8a10df0fa5b44208837ef52dc9df94c0      | ValueStream          | "Value Stream"
+# id-8a10df0fa5b44208837ef52dc9df94c0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0071a9b8fbcd467dba90cc5d7f82bcca      | CourseOfAction       | "Course of Action"
+# id-0071a9b8fbcd467dba90cc5d7f82bcca=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-22efd022508a461c8736993347cf1497      | BusinessActor        | "Business Actor"
+# id-22efd022508a461c8736993347cf1497=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c473242dc2f74cde98b1859322c96e69      | BusinessRole         | "Business Role"
+# id-c473242dc2f74cde98b1859322c96e69=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-adc51032027f4b78a5290431c525a11b      | BusinessInterface    | "Business Interface"
+# id-adc51032027f4b78a5290431c525a11b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2bc8d13549934e39bf40ae06c96980e8      | BusinessProcess      | "Business Process"
+# id-2bc8d13549934e39bf40ae06c96980e8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a58d8d21613f45cbb4624cd17ba7a020      | BusinessFunction     | "Business Function"
+# id-a58d8d21613f45cbb4624cd17ba7a020=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-367eb34e44b8433e99311703cdf2575c      | BusinessInteraction  | "Business Interaction"
+# id-367eb34e44b8433e99311703cdf2575c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4312e59f96194527998f543af29e5993      | BusinessEvent        | "Business Event"
+# id-4312e59f96194527998f543af29e5993=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9e4de93916b4425e839bc45e68d8edd5      | BusinessService      | "Business Service"
+# id-9e4de93916b4425e839bc45e68d8edd5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3edccef337404c89af0e866344350501      | BusinessObject       | "Business Object"
+# id-3edccef337404c89af0e866344350501=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fe5f7953571846f7bc783a5f49e531de      | Contract             | "Contract"
+# id-fe5f7953571846f7bc783a5f49e531de=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f65aa1f0786b4121b92fa37e2effb6b3      | Representation       | "Representation"
+# id-f65aa1f0786b4121b92fa37e2effb6b3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-12566422b8cb4d449c05ecd46cd0d963      | Product              | "Product"
+# id-12566422b8cb4d449c05ecd46cd0d963=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-cc0d9dae567c4981b1cb2c6527a5c326      | ApplicationComponent | "Application Component"
+# id-cc0d9dae567c4981b1cb2c6527a5c326=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1a366e9a78494264a24f1594ee44c026      | ApplicationCollaboration | "Application Collaboration"
+# id-1a366e9a78494264a24f1594ee44c026=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8dbf0f7a10824dc7923ff7389f05700b      | ApplicationInterface | "Application Interface"
+# id-8dbf0f7a10824dc7923ff7389f05700b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-19686442ea94450cb3a518b60d176101      | ApplicationFunction  | "Application Function"
+# id-19686442ea94450cb3a518b60d176101=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2a6c5ec51212471f96e1398f2297f810      | ApplicationInteraction | "Application Interaction"
+# id-2a6c5ec51212471f96e1398f2297f810=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3f5e3fb2b466409fb877d82be46b34de      | ApplicationProcess   | "Application Process"
+# id-3f5e3fb2b466409fb877d82be46b34de=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-41f761e0fc274f23be41d98ed0ecf45c      | ApplicationEvent     | "Application Event"
+# id-41f761e0fc274f23be41d98ed0ecf45c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a8d2962157154ace949c6024260ed410      | ApplicationService   | "Application Service"
+# id-a8d2962157154ace949c6024260ed410=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c8932c5151004bfc922645f8327d0b26      | DataObject           | "Data Object"
+# id-c8932c5151004bfc922645f8327d0b26=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-27cbc4e7ef1a440c8b41b23173c1c9b4      | Node                 | "Node"
+# id-27cbc4e7ef1a440c8b41b23173c1c9b4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3d958e41125243eea03989eac6cb7e3a      | Device               | "Device"
+# id-3d958e41125243eea03989eac6cb7e3a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fef534a4d5c942f98317090b2e993928      | SystemSoftware       | "System Software"
+# id-fef534a4d5c942f98317090b2e993928=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-178b7cfc299041699cf0ce3ae45c211d      | TechnologyCollaboration | "Technology Collaboration"
+# id-178b7cfc299041699cf0ce3ae45c211d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ed8f8865476746788b8cbbfdbda7a643      | TechnologyInterface  | "Technology Interface"
+# id-ed8f8865476746788b8cbbfdbda7a643=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0b2a477169694ff1abd64ee3389d46ff      | Path                 | "Path"
+# id-0b2a477169694ff1abd64ee3389d46ff=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fcd6f81b946849c29a891e1e26fdafbb      | CommunicationNetwork | "Communication Network"
+# id-fcd6f81b946849c29a891e1e26fdafbb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9ce20ff439cd418cbbeee297c1801627      | TechnologyFunction   | "Technology Function"
+# id-9ce20ff439cd418cbbeee297c1801627=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9350e08633b942f586d70cb93ae32c84      | TechnologyProcess    | "Technology Process"
+# id-9350e08633b942f586d70cb93ae32c84=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-801ec37aaab442baadef2b6f9afe9705      | TechnologyInteraction | "Technology Interaction"
+# id-801ec37aaab442baadef2b6f9afe9705=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a78d4e3b3d554a9ebe48d1e48f10951a      | TechnologyEvent      | "Technology Event"
+# id-a78d4e3b3d554a9ebe48d1e48f10951a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1037f2c819fc4cec870f30a3366777c4      | TechnologyService    | "Technology Service"
+# id-1037f2c819fc4cec870f30a3366777c4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-731d26ee167340d3a9e612d57dba07d6      | Artifact             | "Artifact"
+# id-731d26ee167340d3a9e612d57dba07d6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-53b1fb1d650644e8a3cc04143c5e84b2      | Equipment            | "Equipment"
+# id-53b1fb1d650644e8a3cc04143c5e84b2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-04a6556144ff45408dedeaa75a320eea      | Equipment            | "Equipment"
+# id-04a6556144ff45408dedeaa75a320eea=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4f8cc30026af478ebd6bfb004ac45622      | Facility             | "Facility"
+# id-4f8cc30026af478ebd6bfb004ac45622=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7cfbf9bcef7e41a29763c0233dd24fd6      | DistributionNetwork  | "Distribution Network"
+# id-7cfbf9bcef7e41a29763c0233dd24fd6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-aa2eedbc654f4636a73a14f3286649a4      | Material             | "Material"
+# id-aa2eedbc654f4636a73a14f3286649a4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fd13e2b9f29b45fbb76e296ff3d2c442      | Stakeholder          | "Stakeholder"
+# id-fd13e2b9f29b45fbb76e296ff3d2c442=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-62572abe71654242809b67339965a5d3      | Driver               | "Driver"
+# id-62572abe71654242809b67339965a5d3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-26e1e8e751e74126a6d978621d6e627c      | Assessment           | "Assessment"
+# id-26e1e8e751e74126a6d978621d6e627c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bf0eaa63390e457aba14cd7ac6679751      | Goal                 | "Goal"
+# id-bf0eaa63390e457aba14cd7ac6679751=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-80f094f2bf1649a78ecede3d007a2c12      | Outcome              | "Outcome"
+# id-80f094f2bf1649a78ecede3d007a2c12=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4638494274ed45d2bb85035173ea3be9      | Principle            | "Principle"
+# id-4638494274ed45d2bb85035173ea3be9=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1491dfae821245a6bf252270ce1b1d26      | Requirement          | "Requirement"
+# id-1491dfae821245a6bf252270ce1b1d26=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c56fb3a8b9674ea0a0c12b12269a730d      | Constraint           | "Constraint"
+# id-c56fb3a8b9674ea0a0c12b12269a730d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9ff43e5a370e455cb948774923a7aaa9      | Meaning              | "Meaning"
+# id-9ff43e5a370e455cb948774923a7aaa9=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d081574e000b43f8ad4ca8f558d3d7a7      | Value                | "Value"
+# id-d081574e000b43f8ad4ca8f558d3d7a7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-06dfe8abed464e21b8ba652a4c432a33      | WorkPackage          | "Work Package"
+# id-06dfe8abed464e21b8ba652a4c432a33=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fe1222d5dfae4040b30c7f2cd69241a6      | Deliverable          | "Deliverable"
+# id-fe1222d5dfae4040b30c7f2cd69241a6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3f2ba834407a4cb8ae6d074faa8fde4b      | ImplementationEvent  | "Implementation Event"
+# id-3f2ba834407a4cb8ae6d074faa8fde4b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8f5c2e1c5b2a48809173d40c8227192d      | Plateau              | "Plateau"
+# id-8f5c2e1c5b2a48809173d40c8227192d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-186528d117834af19c147b88228fc7fa      | Gap                  | "Gap"
+# id-186528d117834af19c147b88228fc7fa=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ea1e4599aae14136aa780af634b8f01b      | Location             | "Location"
+# id-ea1e4599aae14136aa780af634b8f01b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-945a5b5add6d4933ad8eb06d7a559aec      | Grouping             | "Grouping"
+# id-945a5b5add6d4933ad8eb06d7a559aec=<SCRIPT_HIER_EINTRAGEN>
+#
+
+# Datei: 02-artifacts\00-xml\03-child\00-archimatechild\MUNI EA Modell.xml
+# ------------------------------------------------------
+# id-081d94ae4980441e9b29dcc553b77aa0      | Resource             | "RES00-Eigenmittel"
+# id-081d94ae4980441e9b29dcc553b77aa0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6a2333e59af14a0fafb3acb889a9cd39      | Resource             | "RES01-Gaming Hardware"
+# id-6a2333e59af14a0fafb3acb889a9cd39=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2409c8327b9048cd800ad824e9b69e74      | Capability           | "CAP03-Projektmanagemen"
+# id-2409c8327b9048cd800ad824e9b69e74=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-36208904226a410cbfd08f8c171ea497      | Capability           | "CAP02-Modell Know How"
+# id-36208904226a410cbfd08f8c171ea497=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d2c06c8e7f184d0a87bae234afd35bb8      | Capability           | "CAP00-IT Infrastruktur Know How"
+# id-d2c06c8e7f184d0a87bae234afd35bb8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-977695ea242249bdb2b04041b936b8fc      | Capability           | "CAP01-Modellierungs Know How"
+# id-977695ea242249bdb2b04041b936b8fc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6e36fdfb918c4240acbee5fcf51faf94      | ValueStream          | "VAS04-R+MUNI"
+# id-6e36fdfb918c4240acbee5fcf51faf94=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9df74ba77e634bf19e046fbcdedeaf98      | ValueStream          | "VAS00-Enabling"
+# id-9df74ba77e634bf19e046fbcdedeaf98=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d0481fda2c9347638cd7f163f57ae765      | ValueStream          | "VAS02-Individualisierungen"
+# id-d0481fda2c9347638cd7f163f57ae765=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ee2df5d1790f4035914f33468504ddb6      | ValueStream          | "VAS05-Unterstützungsleistungen"
+# id-ee2df5d1790f4035914f33468504ddb6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b3b2b665e3dd4de7b72353031c0228be      | ValueStream          | "VAS01-Feature Upgrades"
+# id-b3b2b665e3dd4de7b72353031c0228be=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f25940021ed2491e882cbfc90aab9c0f      | CourseOfAction       | "COA00-R+MUNI 1.0 Internal Release"
+# id-f25940021ed2491e882cbfc90aab9c0f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2ef9b591145c4d6594e322bfd4b4d9c1      | ValueStream          | "VAS03-Klarheit über Fragestellungen"
+# id-2ef9b591145c4d6594e322bfd4b4d9c1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-32a504ae21274b1ba2809f15c3f99ca2      | BusinessActor        | "BUA00-R+MUNI Dude (ME)"
+# id-32a504ae21274b1ba2809f15c3f99ca2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-07de8542053d4739b7fa1a98bbe59798      | BusinessRole         | "BUR01-Entwickler"
+# id-07de8542053d4739b7fa1a98bbe59798=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-866783f5689b4893a8f70b6350ce0c2e      | BusinessRole         | "BUR02-Modellierer"
+# id-866783f5689b4893a8f70b6350ce0c2e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f116ad32a5f94363be4fa5093fba5e13      | BusinessRole         | "BUR00-Consultant"
+# id-f116ad32a5f94363be4fa5093fba5e13=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6ac1e83e5f504bab855953587a815128      | BusinessService      | "BUS03-PreSales Consultant Service"
+# id-6ac1e83e5f504bab855953587a815128=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ae45ebc72b884142adb642ba4fd338a5      | BusinessService      | "BUS00-First Time Setup"
+# id-ae45ebc72b884142adb642ba4fd338a5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-af9fcf6cc64a49528dbf268d944f5747      | BusinessService      | "BUS04-Visuelle Diagramm Service"
+# id-af9fcf6cc64a49528dbf268d944f5747=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4ef15ecc93914e9480ca060b037a7861      | BusinessService      | "BUS02-MUNI Schulungs Service"
+# id-4ef15ecc93914e9480ca060b037a7861=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-394ce819ab194ca09c10b6671ea3a587      | BusinessProcess      | "BUP04-R+MUNI entwickeln"
+# id-394ce819ab194ca09c10b6671ea3a587=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5b10384809f94f15a0bc399b68f7cdf6      | BusinessProcess      | "BUP07-Visuelle Modelle erstellen"
+# id-5b10384809f94f15a0bc399b68f7cdf6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6d76f68d89d44f9491a836e9e993d2d7      | BusinessProcess      | "BUP01-Lösung für Anforderung erarbeiten"
+# id-6d76f68d89d44f9491a836e9e993d2d7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6132cbb6e22143e3a4a8f1e18ae8aabc      | BusinessProcess      | "BUP02-Lösung präsentieren"
+# id-6132cbb6e22143e3a4a8f1e18ae8aabc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bfe411b764cb4400aa04321e5da21131      | BusinessProcess      | "BUP06-Schulung durchführen"
+# id-bfe411b764cb4400aa04321e5da21131=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-486ae814a4cf4dde90c3a130c6441454      | BusinessProcess      | "BUP05-R+MUNI installieren"
+# id-486ae814a4cf4dde90c3a130c6441454=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ec42131fce17464ababb7bedfe11f468      | BusinessProcess      | "BUP03-R+MUNI anpassen"
+# id-ec42131fce17464ababb7bedfe11f468=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0b7a5ed5e5204f918fe105b956a4c660      | BusinessService      | "BUS01-Individual Anpassungen"
+# id-0b7a5ed5e5204f918fe105b956a4c660=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2846035edbac4e1eac7b177be2423e6b      | BusinessObject       | "BUO04-Visuelle Darstellung"
+# id-2846035edbac4e1eac7b177be2423e6b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-db304cccdbbd45169fd50eeb4b7d1e0b      | BusinessObject       | "BUO02-Referenzdoku"
+# id-db304cccdbbd45169fd50eeb4b7d1e0b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-01eb201c03bb4d7c9844a47cfef98e15      | Product              | "PRO00-R+MUNI"
+# id-01eb201c03bb4d7c9844a47cfef98e15=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1cbdbc8e6f784df3a399105b7dab5a00      | BusinessObject       | "BUO00-FLOW"
+# id-1cbdbc8e6f784df3a399105b7dab5a00=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5dc55f30f09e4374bfe9272f8d296b86      | BusinessInterface    | "BUI00-Archimate Tool GUI"
+# id-5dc55f30f09e4374bfe9272f8d296b86=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fba788f076224c86933b5712d75db7c5      | BusinessInterface    | "BUI02-BPMN 2.0 Tool GUI"
+# id-fba788f076224c86933b5712d75db7c5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0f0b8b3ec7104ab9a902e773a818553f      | BusinessProcess      | "BUP00-3rd Party Import"
+# id-0f0b8b3ec7104ab9a902e773a818553f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d0181862971f480fa8be0970994b539d      | BusinessFunction     | "BUF00-3rd Party Importer"
+# id-d0181862971f480fa8be0970994b539d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a9a69e2bb4b049dd98a7b5c9ff6f14ae      | BusinessFunction     | "BUF05-Prozess Modellierer"
+# id-a9a69e2bb4b049dd98a7b5c9ff6f14ae=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c6d3e60758a9458999a60602f3a3b93e      | BusinessFunction     | "BUF01-Architektur & Business Modellierer"
+# id-c6d3e60758a9458999a60602f3a3b93e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1728306f843245c28cdf4c03f931735c      | BusinessFunction     | "BUF02-HTML Report erstellen"
+# id-1728306f843245c28cdf4c03f931735c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6bffa26862a54464b2b248ebe318aaf2      | BusinessFunction     | "BUF03-Image Export"
+# id-6bffa26862a54464b2b248ebe318aaf2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-515413fa45a343748eed2ef0e5bdc06f      | BusinessFunction     | "BUF04-Prozess Automation light"
+# id-515413fa45a343748eed2ef0e5bdc06f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-679267bc304a4ae9a219d825b129fd93      | BusinessInterface    | "BUI01-Editor GUI"
+# id-679267bc304a4ae9a219d825b129fd93=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3e7289a052c94b5d88d08a7e659241d3      | BusinessInterface    | "BUI03-HTML Web GUI"
+# id-3e7289a052c94b5d88d08a7e659241d3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-820007ce24d54d45baa6966d0e52c668      | BusinessObject       | "BUO01-HTML Report"
+# id-820007ce24d54d45baa6966d0e52c668=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-529381f99030453d81330cb99689cb2c      | BusinessObject       | "BUO03-Referenzmodelle"
+# id-529381f99030453d81330cb99689cb2c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-254704aef3534da5b3863619168df04b      | BusinessFunction     | "BUF06-Selbsthilfe"
+# id-254704aef3534da5b3863619168df04b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7ebdb2a2d877437b8d3b8945b31aff5e      | ApplicationComponent | "APC00-Archi 5.8"
+# id-7ebdb2a2d877437b8d3b8945b31aff5e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-09378af6e4e54c2bb56f37b056b411d0      | ApplicationInterface | "API00-Archi Gui"
+# id-09378af6e4e54c2bb56f37b056b411d0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c6a30b40e8e04dfeb8c9ae3b58ae9d0f      | ApplicationFunction  | "APF05-CSV Export"
+# id-c6a30b40e8e04dfeb8c9ae3b58ae9d0f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-47eece96f6ef4f8c887079832c9c8d32      | ApplicationFunction  | "APF00-Archmiate Modellierung"
+# id-47eece96f6ef4f8c887079832c9c8d32=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-04d63fc625ef46dd99d301c9d647a626      | ApplicationFunction  | "APF06-CSV Import"
+# id-04d63fc625ef46dd99d301c9d647a626=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8f6f20af5c0149b5aaf5f395b705cddf      | ApplicationFunction  | "APF16-Open Exchange Format Export"
+# id-8f6f20af5c0149b5aaf5f395b705cddf=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-31b2b9431eb741fe845bf7420bcb36b4      | ApplicationFunction  | "APF15-Open Exchange Format Import"
+# id-31b2b9431eb741fe845bf7420bcb36b4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e8080291c32346dcb551767309760561      | ApplicationFunction  | "APF09-EXCEL Export"
+# id-e8080291c32346dcb551767309760561=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ddc5d5f706b24d0482ae3f7e504c8638      | DataObject           | "DAO02-Archi CSV Stack"
+# id-ddc5d5f706b24d0482ae3f7e504c8638=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bc0b10d6225147619307d89e11def2b4      | DataObject           | "DAO04-Archi XML Stack"
+# id-bc0b10d6225147619307d89e11def2b4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a5a178d05fd94bd9ba6a199ddd6a6e21      | DataObject           | "DOA12-Main Archi <modellname>"
+# id-a5a178d05fd94bd9ba6a199ddd6a6e21=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-508d8fb39ffa4a62bd09d5abab1f79bd      | DataObject           | "DAO07-Sub Archi <modellname>"
+# id-508d8fb39ffa4a62bd09d5abab1f79bd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e7247550ca144a27a94f66268ab718ff      | DataObject           | "DAO03-Archi <modellname>.xlsx"
+# id-e7247550ca144a27a94f66268ab718ff=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8e3e68f7c3b54c6d996c1c65cd4d3eab      | ApplicationComponent | "APC01-Camunda Modeler"
+# id-8e3e68f7c3b54c6d996c1c65cd4d3eab=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f40225e3f9504ddfa56eb22b95fc3ce9      | ApplicationFunction  | "APF01-BPMN 2.0 Modellierung"
+# id-f40225e3f9504ddfa56eb22b95fc3ce9=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-afb6eefbbd0548699e65384387b61759      | DataObject           | "DAO05-BPMN<Prozessname>.bpmn"
+# id-afb6eefbbd0548699e65384387b61759=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c3eb6d0e5d344ee788f5eb1a41b1a95e      | ApplicationFunction  | "APF03-Camunda 7 Modelle"
+# id-c3eb6d0e5d344ee788f5eb1a41b1a95e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-01ab2c652ce64460b1b4e2932e725a6e      | ApplicationFunction  | "APF04-Camunda 8 Modelle"
+# id-01ab2c652ce64460b1b4e2932e725a6e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-df247b5f9ebb4d768ec0d00b795e3502      | ApplicationComponent | "APC03-FLOW Routine"
+# id-df247b5f9ebb4d768ec0d00b795e3502=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-48a16234b4e4448cb38d7d66c3ae8f87      | ApplicationFunction  | "APF14-Prozessautomatisierung light"
+# id-48a16234b4e4448cb38d7d66c3ae8f87=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5e8a5cc38c3341a1b92b5c6588d11027      | DataObject           | "DAO08-FLOW"
+# id-5e8a5cc38c3341a1b92b5c6588d11027=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2aaf978df8a5498288322fc2dc707c09      | ApplicationCollaboration | "ACO00-R+MUNI"
+# id-2aaf978df8a5498288322fc2dc707c09=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1e951c3ecb254860b2a829c8ca2895c3      | ApplicationComponent | "APC02-Crome Browser"
+# id-1e951c3ecb254860b2a829c8ca2895c3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a3a7ba26228142be94e11c8099b1f549      | ApplicationFunction  | "APF02-Brower Funktion"
+# id-a3a7ba26228142be94e11c8099b1f549=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-55bf18ce80c64078a01cd08d1249ce34      | DataObject           | "DAO10-Guidelines"
+# id-55bf18ce80c64078a01cd08d1249ce34=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-da9bf2a418c3489e8a3ad16632c02566      | ApplicationFunction  | "APF12-Reader Funkion"
+# id-da9bf2a418c3489e8a3ad16632c02566=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f0c53e2b0d4c45f78453cfe7ea090c5e      | ApplicationComponent | "APC04-Notepad ++"
+# id-f0c53e2b0d4c45f78453cfe7ea090c5e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ffd948a082514d22a9efa9f9c576d4b3      | DataObject           | "DAO09-Scripts"
+# id-ffd948a082514d22a9efa9f9c576d4b3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f65114adf355489496223cedcc6ab65b      | DataObject           | "DOA11-R+MUNI Info Files"
+# id-f65114adf355489496223cedcc6ab65b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1b2321b1993f432d867aab233c737a41      | ApplicationInterface | "API01-Camunda Modeler GUI"
+# id-1b2321b1993f432d867aab233c737a41=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7351980e1fd84ab1b1cef85e7f32a470      | ApplicationInterface | "API03-FLOW"
+# id-7351980e1fd84ab1b1cef85e7f32a470=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-def2bc7d7c89434f96b6ebb74efdaa19      | ApplicationInterface | "API04-Notepad++ GUI"
+# id-def2bc7d7c89434f96b6ebb74efdaa19=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-39f6158dcef44d1bbc05659f4ba42766      | ApplicationInterface | "API02-Crome GUI"
+# id-39f6158dcef44d1bbc05659f4ba42766=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-94f52e6fd1f644e7938c274d6da9f223      | ApplicationFunction  | "APF08-Editor"
+# id-94f52e6fd1f644e7938c274d6da9f223=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c30bd7d49b334338b26168831305c559      | ApplicationFunction  | "APF10-Selbsthilfeanleitung"
+# id-c30bd7d49b334338b26168831305c559=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-addcef0ebfe342a69591631d2e052ae1      | ApplicationFunction  | "APF07-EA Image Export"
+# id-addcef0ebfe342a69591631d2e052ae1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f1540c55f6c5425fad4108630fe705d0      | ApplicationFunction  | "APF13-Prozess Image Export"
+# id-f1540c55f6c5425fad4108630fe705d0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-09f50620d3b840568670d86b175bad08      | DataObject           | "DAO06-BPMN<Prozessname>.svg"
+# id-09f50620d3b840568670d86b175bad08=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0d2616a6f51b4263867f2d42d6176276      | DataObject           | "DAO00-Archi<modellname>.svg"
+# id-0d2616a6f51b4263867f2d42d6176276=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-73f92331be754642b7ec3de3649fa263      | ApplicationFunction  | "APF11-Image Export"
+# id-73f92331be754642b7ec3de3649fa263=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-330b8be07ec340f7ad5f737cdb2baaef      | Device               | "DEV00-Gaming PC"
+# id-330b8be07ec340f7ad5f737cdb2baaef=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-26ef9465c2b34a1186baeb41ef79f144      | SystemSoftware       | "SYS00-Windows 11 Enterprise"
+# id-26ef9465c2b34a1186baeb41ef79f144=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c0889d4beb7e44f39c958afece722642      | TechnologyFunction   | "TEF00-Ordnerstruktur und Rechtevergabe"
+# id-c0889d4beb7e44f39c958afece722642=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5f5e6a2f8b2b4f05b93a6d4b150bbb7c      | SystemSoftware       | "SYS01-Python 3 run"
+# id-5f5e6a2f8b2b4f05b93a6d4b150bbb7c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7c959626b8a148edbaaa9cac7eeeabfd      | SystemSoftware       | "SYS02-Powershell 7.x"
+# id-7c959626b8a148edbaaa9cac7eeeabfd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8afbbd03b18345aab637c301ad02fdfc      | TechnologyFunction   | "TEF01-Ausführen von Applikationen"
+# id-8afbbd03b18345aab637c301ad02fdfc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-968c0fdb37f24c048fab4bd3fc03d3a7      | Material             | "MAT03-TOGAF 10 Guides"
+# id-968c0fdb37f24c048fab4bd3fc03d3a7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3d4fcfb5aad74f028f45d48cdc62d158      | Material             | "MAT02-Archimate 3.2 Guides"
+# id-3d4fcfb5aad74f028f45d48cdc62d158=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-724e6e7411f34c388c44f9c9f56ad865      | Material             | "MAT01-BPMN 2.0 Guides"
+# id-724e6e7411f34c388c44f9c9f56ad865=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8c7d81f165824a259ad1810b6de8aef8      | CommunicationNetwork | "CON00-Internet"
+# id-8c7d81f165824a259ad1810b6de8aef8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6b0d235775a645478a85fb1cade0ade2      | Node                 | "NOD00-Fritz Box Router"
+# id-6b0d235775a645478a85fb1cade0ade2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a0fb68244ac643c1bf4759a5c77e709e      | TechnologyInterface  | "TEI01-Powershell Konsolen GUI"
+# id-a0fb68244ac643c1bf4759a5c77e709e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b2283085c7bc4b2da7e0e3984790f188      | TechnologyInterface  | "TEI00-OS GUI"
+# id-b2283085c7bc4b2da7e0e3984790f188=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-360a083ec5544500bf2c5f0c8d744d77      | Material             | "MAT00-Guides & Normen"
+# id-360a083ec5544500bf2c5f0c8d744d77=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-35a102086aab4a5098481707177ebaf6      | Stakeholder          | "STA00-Me ;)"
+# id-35a102086aab4a5098481707177ebaf6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f0f0f9edab974e42a6a0c2bfdfd0c2e0      | Principle            | "PRI02-Freie Software"
+# id-f0f0f9edab974e42a6a0c2bfdfd0c2e0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4eda9886e61e43adbe284fbe6679ee1a      | Requirement          | "REQ05-Praxis tauglich"
+# id-4eda9886e61e43adbe284fbe6679ee1a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d1d04a2ed3a54f7bb7bf81e7ccae4d75      | Requirement          | "REQ01-Leicht zu bedienen"
+# id-d1d04a2ed3a54f7bb7bf81e7ccae4d75=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-74363f1797494190ac7e9e2900fda900      | Principle            | "PRI04-Offene Normen und Guidelines"
+# id-74363f1797494190ac7e9e2900fda900=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1feb6dd351ce421c8cec6c3fee8c0f45      | Meaning              | "MEA00-Free 4 all"
+# id-1feb6dd351ce421c8cec6c3fee8c0f45=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5579e8de5ea74b94b41cd2ff1113d6f8      | Principle            | "PRI01-Freier Zugang zu Unterlagen"
+# id-5579e8de5ea74b94b41cd2ff1113d6f8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c50b64cab06049b9b724ce5d4ae94c89      | Requirement          | "REQ04-Visuell getrieben"
+# id-c50b64cab06049b9b724ce5d4ae94c89=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-16a08948c74f418ea2d1093df569b12c      | Requirement          | "REQ03-wartbar"
+# id-16a08948c74f418ea2d1093df569b12c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b41a83116fe2490387753d442f5303cf      | Principle            | "PRI03-Offen für Erweiterung"
+# id-b41a83116fe2490387753d442f5303cf=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5f48baf405e2434c8562e4be579f0816      | Driver               | "DRV00-Geiler Job"
+# id-5f48baf405e2434c8562e4be579f0816=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a629cbaa5892420cbf7ee173c114ae5c      | Assessment           | "ASS00-Mögliche Lösungen"
+# id-a629cbaa5892420cbf7ee173c114ae5c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-07aa42f89e8d404aa027971535a68236      | Outcome              | "OUT00-R+MUNI"
+# id-07aa42f89e8d404aa027971535a68236=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fa09164a4758456895d442486aff62ea      | Value                | "VAL00-Millionen Sachen"
+# id-fa09164a4758456895d442486aff62ea=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4efa44dd2e3d44a69f0945d0f16c195a      | Driver               | "DRV01-Wissbegierde"
+# id-4efa44dd2e3d44a69f0945d0f16c195a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-12679af793a742f0b3e5a6c196ca207d      | Goal                 | "GOA00-R+MUNI Release"
+# id-12679af793a742f0b3e5a6c196ca207d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9f87b3f035bc49ef981b4e32b4936ad6      | Driver               | "DRV02-Was mich motiviert!"
+# id-9f87b3f035bc49ef981b4e32b4936ad6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2e8003103e65443fa5bdb50a9142d97a      | Requirement          | "REQ02-Wie es sein sollt"
+# id-2e8003103e65443fa5bdb50a9142d97a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2a1f094032ac44b982bc88b695a59cec      | Principle            | "PRI00-Die Prinzipien sind mir wichtig"
+# id-2a1f094032ac44b982bc88b695a59cec=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a9c6b3622b6d4b55b8fbd0106eb6dfbb      | Meaning              | "MEA01-Wie ich denke"
+# id-a9c6b3622b6d4b55b8fbd0106eb6dfbb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5806af86e54f4bddadc9d002bb6e30f0      | Meaning              | "MEA02-Offen entwickelbar"
+# id-5806af86e54f4bddadc9d002bb6e30f0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0a367492b3df434f9737a64bdae55abd      | Requirement          | "REQ00-Kostenfreier Stack"
+# id-0a367492b3df434f9737a64bdae55abd=<SCRIPT_HIER_EINTRAGEN>
+#
+
+# Datei: 02-artifacts\00-xml\03-child\00-archimatechild\MUNI FLOW.xml
+# ------------------------------------------------------
+# id-1393ce3e12f1498eb06cbefe32f0be91      | BusinessProcess      | "BUP00-CSV FLOW"
+# id-1393ce3e12f1498eb06cbefe32f0be91=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3431625e8daa424b9f089c21d4ea6049      | BusinessProcess      | "BPU01-CSV 2 CSV"
+# id-3431625e8daa424b9f089c21d4ea6049=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8d6586a812d04fa9aa1e0e646e1fd239      | BusinessProcess      | "BPU02-XLSX 2 CSV"
+# id-8d6586a812d04fa9aa1e0e646e1fd239=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5e398e49cb0a4fbd889849a7e7c272c6      | BusinessProcess      | "BUP03-masterxml2CSV"
+# id-5e398e49cb0a4fbd889849a7e7c272c6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8b98e9a157c845acb0fb8f0049826222      | BusinessProcess      | "BUP04-mastercsv2Assets"
+# id-8b98e9a157c845acb0fb8f0049826222=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-87df041b085a403e948d63e82b6dc556      | BusinessProcess      | "BUP05-XML FLOW"
+# id-87df041b085a403e948d63e82b6dc556=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-136c6e495f7944fe9d174e8e99401ca1      | BusinessProcess      | "BUP06-M2B FLOW"
+# id-136c6e495f7944fe9d174e8e99401ca1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f2e451fc1a5040418d5ce92a8baa0d16      | BusinessProcess      | "BUP07-FLOW"
+# id-f2e451fc1a5040418d5ce92a8baa0d16=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-07f6a1ba20284089a07feedb889ebf0a      | Artifact             | "XML Stack"
+# id-07f6a1ba20284089a07feedb889ebf0a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bafb66f26ac3434a8b1aeeac670afc87      | Artifact             | "XML00-resolve_root.py"
+# id-bafb66f26ac3434a8b1aeeac670afc87=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-29eaadf1d85e49719d9da65fe742641b      | Artifact             | "XML01-collect_sources.py"
+# id-29eaadf1d85e49719d9da65fe742641b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-989ed20da8e54aecb948b8aee2262c81      | Artifact             | "XML02-parse_child_xml.py"
+# id-989ed20da8e54aecb948b8aee2262c81=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a80d55857aad43578201aa49fdf50065      | Artifact             | "XML03-build_index.py"
+# id-a80d55857aad43578201aa49fdf50065=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-dfcff32751de454ab2382bb00d0fa817      | Artifact             | "XML04-merge_master.py"
+# id-dfcff32751de454ab2382bb00d0fa817=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9584aebb4c6a4270908b1ee5a03b4ba4      | Artifact             | "XML05-clear_merge.py"
+# id-9584aebb4c6a4270908b1ee5a03b4ba4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c46b9c924da746e0a0dbc369a466e093      | Artifact             | "XML06-finalize-master.py"
+# id-c46b9c924da746e0a0dbc369a466e093=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5cdf108963b342f38e87199b80fa08ca      | Artifact             | "XML07-cleanup-artifacts.py"
+# id-5cdf108963b342f38e87199b80fa08ca=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-92fece2374424122bd2c37707254a3e6      | Artifact             | "Aktives Modell <modelname>.archimate"
+# id-92fece2374424122bd2c37707254a3e6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8919a7825ffa47fd8fd8e1c66621cd6b      | Artifact             | "<Prozessname>.xml"
+# id-8919a7825ffa47fd8fd8e1c66621cd6b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6dfc245ddadc4c938965406ff39dca19      | Artifact             | "01-bpmnchild"
+# id-6dfc245ddadc4c938965406ff39dca19=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8bb1ba815b334d1a86188f4848e29de4      | Artifact             | "03-stages"
+# id-8bb1ba815b334d1a86188f4848e29de4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2436b167f3ec4b67a35751057032ea4e      | Artifact             | "root.txt"
+# id-2436b167f3ec4b67a35751057032ea4e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-06b685dca8a644b7a134c186b5cd5cb0      | Artifact             | "02-artifacts"
+# id-06b685dca8a644b7a134c186b5cd5cb0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5c2cbb3e91bd4e78ab19b506b0976031      | Artifact             | "03-child"
+# id-5c2cbb3e91bd4e78ab19b506b0976031=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-14aff2297b7548b5858ee5fade72e911      | Artifact             | "00-conecpt"
+# id-14aff2297b7548b5858ee5fade72e911=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9905bdf7d77140c4a931348041ad07ba      | Artifact             | "00-archimatechild"
+# id-9905bdf7d77140c4a931348041ad07ba=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c846f48a16ec4ad4a3715ced1331a677      | Artifact             | "01-bpmnarchive"
+# id-c846f48a16ec4ad4a3715ced1331a677=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ec4f2128d31d471e8e53aa6f61f4d1bf      | Artifact             | "02-xychild"
+# id-ec4f2128d31d471e8e53aa6f61f4d1bf=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9f1d90d506484706b90555fe3ee7d6e2      | TechnologyFunction   | "TEF00-Ordnerstruktur und Rechtevergabe"
+# id-9f1d90d506484706b90555fe3ee7d6e2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-906e905892e548608de51d46d11c0cdb      | Artifact             | "01-scripts"
+# id-906e905892e548608de51d46d11c0cdb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8e41f059f8f34d94acdc809d4f23ada4      | Artifact             | "mappingmodel"
+# id-8e41f059f8f34d94acdc809d4f23ada4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-16fad6daceea4c25afbd63a22036a05c      | Artifact             | "01-principles"
+# id-16fad6daceea4c25afbd63a22036a05c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c03f953b205848ba8f11b62529937975      | Artifact             | "Sub Modell <modelname>.archimate"
+# id-c03f953b205848ba8f11b62529937975=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fb78bb528d4e433cb5e8e4f4a2b29a5f      | Artifact             | "01-bpmn"
+# id-fb78bb528d4e433cb5e8e4f4a2b29a5f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-89dc358011344d50a2a3f6678c60c9a6      | Artifact             | "<modelname>.xslx"
+# id-89dc358011344d50a2a3f6678c60c9a6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-45bf382fdad848809c5342a8e77057b0      | Artifact             | "00-archimatearchive"
+# id-45bf382fdad848809c5342a8e77057b0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-41499844342c49a1a59cd4aabbd7cafc      | Artifact             | "99-export"
+# id-41499844342c49a1a59cd4aabbd7cafc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a323307c60964671bbe70e7c1b867da8      | Artifact             | "03-XLSX"
+# id-a323307c60964671bbe70e7c1b867da8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4c262f1af056436493d55536bf8d8ece      | Artifact             | "child_mapping.txt"
+# id-4c262f1af056436493d55536bf8d8ece=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-18dd7ab2be8d4c54a94a9fc3ae39223b      | Artifact             | "run-scope.txt"
+# id-18dd7ab2be8d4c54a94a9fc3ae39223b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0b1e96ecea35425da1cebdd44c3a51d6      | Artifact             | "00-bpmnactive"
+# id-0b1e96ecea35425da1cebdd44c3a51d6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6abe85a8d6aa4de8974138c5b4bb4e0c      | Artifact             | "02-xyvision"
+# id-6abe85a8d6aa4de8974138c5b4bb4e0c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-89342a51a5104ca29696b1658adb1653      | Artifact             | "01-mapping"
+# id-89342a51a5104ca29696b1658adb1653=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6e5c0dfb3096468ca6fbe4e045d8e9e1      | Artifact             | "00-archimateimages"
+# id-6e5c0dfb3096468ca6fbe4e045d8e9e1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8e14f139525542bba359e6a616155c2d      | Artifact             | "02-csv"
+# id-8e14f139525542bba359e6a616155c2d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-630e4b7e9d314e3998628d79704ec863      | Artifact             | "01-model"
+# id-630e4b7e9d314e3998628d79704ec863=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-693021fa584d4c6898fdad8daa807658      | Artifact             | "<Prozessname>.xml"
+# id-693021fa584d4c6898fdad8daa807658=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-19a088fae4cd4498a10b5ed26855c8b6      | Artifact             | "Archi CSV Stack"
+# id-19a088fae4cd4498a10b5ed26855c8b6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-eb3bb263bb9f41fc89cee68944165a94      | Artifact             | "relations.csv"
+# id-eb3bb263bb9f41fc89cee68944165a94=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-dad2065546e444a4904e6c70cb2f32e3      | Artifact             | "elements.csv"
+# id-dad2065546e444a4904e6c70cb2f32e3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a34f55d257234f7fa20f14845586b3a5      | Artifact             | "properties.csv"
+# id-a34f55d257234f7fa20f14845586b3a5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ff54c1a6e5c64e378bcebcc23e415d35      | Artifact             | "01-sync"
+# id-ff54c1a6e5c64e378bcebcc23e415d35=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a4f6528d4de5411fbda054cc02c4d1c5      | Artifact             | "03-child"
+# id-a4f6528d4de5411fbda054cc02c4d1c5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-255642a3db4b4ab0b6f00c0fde9ca65d      | Artifact             | "02-how2"
+# id-255642a3db4b4ab0b6f00c0fde9ca65d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-22c3a349e29c4b97bc1932a09440a28d      | Artifact             | "fields.csv"
+# id-22c3a349e29c4b97bc1932a09440a28d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9c05bd6a1dc143a798e925b1607a4ad1      | Artifact             | "mapping.txt"
+# id-9c05bd6a1dc143a798e925b1607a4ad1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-30cb53d4d36146329c2870e9e531e4e5      | Artifact             | "99-strukturimages"
+# id-30cb53d4d36146329c2870e9e531e4e5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ef4ae7dced5b492e9934adb6bce3fd0c      | Artifact             | "context.txt"
+# id-ef4ae7dced5b492e9934adb6bce3fd0c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-71cb3ab136a04237a86fa2a937d756c3      | Artifact             | "01-archimateactivesub"
+# id-71cb3ab136a04237a86fa2a937d756c3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1a3a87ff11bb4664b11e3b04b41be2fc      | Artifact             | "04-notes"
+# id-1a3a87ff11bb4664b11e3b04b41be2fc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bc547ea6e9ab412aacb7071d2e374229      | Artifact             | "Archi XML Stack"
+# id-bc547ea6e9ab412aacb7071d2e374229=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b593c22f709947638b16e64add7e990d      | Artifact             | "archimate3_Model.xsd"
+# id-b593c22f709947638b16e64add7e990d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e558094782ed4d08bbc31b83cf044e20      | Artifact             | "<Modellname>.xml"
+# id-e558094782ed4d08bbc31b83cf044e20=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2cb395e548a540c8baae3f899f7ecde5      | Artifact             | "archimate3_Diagram.xsd"
+# id-2cb395e548a540c8baae3f899f7ecde5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c4596a07c5504e4c85fa0427ef712b58      | Artifact             | "archimate3_View.xsd"
+# id-c4596a07c5504e4c85fa0427ef712b58=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3b6821ab5c624a91be21e0275aa69b4b      | Artifact             | "00-achimatechild"
+# id-3b6821ab5c624a91be21e0275aa69b4b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2533c44b0a984e66b8abda40f4a75b6e      | Artifact             | "01-bpmnchild"
+# id-2533c44b0a984e66b8abda40f4a75b6e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c191a3f8e5674f70b8f6292c2f7a5eb5      | Artifact             | "R+MUNI help files"
+# id-c191a3f8e5674f70b8f6292c2f7a5eb5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-33cec84cb4254f1e9c808176cfde8436      | Artifact             | "FLOW_SCRIPTRUNNER_principles_S3.txt"
+# id-33cec84cb4254f1e9c808176cfde8436=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ba91148db6b64ee89c4833158f88db42      | Artifact             | "SCRIPT-BAUKASTEN.txt"
+# id-ba91148db6b64ee89c4833158f88db42=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4f7f12b4330c484394ce962bad0eeeb1      | Artifact             | "FLOW_SCRIPTRUNNER_How2_S3.txt"
+# id-4f7f12b4330c484394ce962bad0eeeb1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-cc0af84e8e3f45e09c319a91a32ec897      | Artifact             | "CSV_FLOW_How2_S3.txt"
+# id-cc0af84e8e3f45e09c319a91a32ec897=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e010123cc6e847569d15066b4b32cb73      | Artifact             | "HLP_How2_S3.txt"
+# id-e010123cc6e847569d15066b4b32cb73=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6e618946a8bc44149ff1c3572980d947      | Artifact             | "Global GOV.pdf"
+# id-6e618946a8bc44149ff1c3572980d947=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ccb6bc9d07ea4899a1554fdf65258062      | Artifact             | "M2B_FLOW_How2_S3.txt"
+# id-ccb6bc9d07ea4899a1554fdf65258062=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c3fadf01b1f4402badad30cdcaa327e4      | Artifact             | "99-bpmnMUNI"
+# id-c3fadf01b1f4402badad30cdcaa327e4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-cba39da599364508b76fbeaa30fc52f8      | Artifact             | "master.generated.xml"
+# id-cba39da599364508b76fbeaa30fc52f8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-086beea937e649459cae69d0a8f9c442      | Artifact             | "00-archimateactive"
+# id-086beea937e649459cae69d0a8f9c442=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f63fc1f49d204c4aa6ca6f55d5c2ac81      | Artifact             | "05-Images"
+# id-f63fc1f49d204c4aa6ca6f55d5c2ac81=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9901256f206d4cba8c9a2204a0ea60bd      | Artifact             | "00-archimate"
+# id-9901256f206d4cba8c9a2204a0ea60bd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ca7bd9aef88a4fe9804f4d7f5d04870e      | Artifact             | "<Prozessname>.xml"
+# id-ca7bd9aef88a4fe9804f4d7f5d04870e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-235277fdf03a4e19956e2776c10b8773      | Artifact             | "00-master"
+# id-235277fdf03a4e19956e2776c10b8773=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-da31b582c0d34ac1b8f24a4916a855f7      | Artifact             | "child_mapping.txt"
+# id-da31b582c0d34ac1b8f24a4916a855f7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-622f124f00884a1f87cb0bb7fb53383e      | Artifact             | "00-xml"
+# id-622f124f00884a1f87cb0bb7fb53383e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b7574a7b092d46198ea3e5d46cdf334f      | Artifact             | "struktur.txt"
+# id-b7574a7b092d46198ea3e5d46cdf334f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c2cefd64e90346c182ad23c43ede76fd      | Artifact             | "Archi Export<modellname>.svg"
+# id-c2cefd64e90346c182ad23c43ede76fd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e476f1042d744a579f68152ae06aedf0      | Artifact             | "<MUNI Installaionspfad>"
+# id-e476f1042d744a579f68152ae06aedf0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b41115294b6f491ca603d213a9e71576      | Artifact             | "BPMN 2.0 Export<modellname>.svg (copy)"
+# id-b41115294b6f491ca603d213a9e71576=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7af8774ec9f4495daa4ab25210ca787f      | Artifact             | "02-sync"
+# id-7af8774ec9f4495daa4ab25210ca787f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-03daec5d29bd4b189ca2a5496252e5b7      | Artifact             | "00-governance"
+# id-03daec5d29bd4b189ca2a5496252e5b7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-afc66898b347400e922f0b5b730be0ba      | Artifact             | "01-bpmnchild"
+# id-afc66898b347400e922f0b5b730be0ba=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-08ebdb53c6424e198e2420265f77df9d      | Artifact             | "99-logs"
+# id-08ebdb53c6424e198e2420265f77df9d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9e056f29d0ef414cb59e97e0dddd26bd      | Artifact             | "00-archimatechild"
+# id-9e056f29d0ef414cb59e97e0dddd26bd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ab375f1a7ba0476dbe2094bb119ad2e5      | Artifact             | "FLOW Stack"
+# id-ab375f1a7ba0476dbe2094bb119ad2e5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-16ba8f76d2e14f9b86e9ca9dc56e30ee      | Artifact             | "flow.py"
+# id-16ba8f76d2e14f9b86e9ca9dc56e30ee=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-06c671c503a54f5f943a7c7b981fbfd8      | Artifact             | "flowmapping.txt"
+# id-06c671c503a54f5f943a7c7b981fbfd8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9018378080544ceabdbe43683aa6df2d      | Artifact             | "01-bpmnimages"
+# id-9018378080544ceabdbe43683aa6df2d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-44703bb8c25a4bc7b970e3569258c4b6      | Artifact             | "99-exports"
+# id-44703bb8c25a4bc7b970e3569258c4b6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7059aaa0f076480895a2b1eb11b98689      | Artifact             | "00-master"
+# id-7059aaa0f076480895a2b1eb11b98689=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-05b984b42a2341f9b9ef629cbcfba788      | Artifact             | "CSV Stack"
+# id-05b984b42a2341f9b9ef629cbcfba788=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-baa4841b6dd8418f9c024f861d47bf59      | Artifact             | "CSV00-validate_environment.py"
+# id-baa4841b6dd8418f9c024f861d47bf59=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e0191ed72d4042b39a9ef304f6881ead      | Artifact             | "CSV01-validate_model.py"
+# id-e0191ed72d4042b39a9ef304f6881ead=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-094cdbbde88247b6aeaa20d271264ede      | Artifact             | "CSV02-leer.py"
+# id-094cdbbde88247b6aeaa20d271264ede=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2e997ebf75a5429888b81725f8b48189      | Artifact             | "CSV03-resolve_run_scope.py"
+# id-2e997ebf75a5429888b81725f8b48189=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f0a5754f797c44acbcef4a3c321f5998      | Artifact             | "CSV04-model-overview.py"
+# id-f0a5754f797c44acbcef4a3c321f5998=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5728e0a79ca1472f8c31640237180e77      | Artifact             | "CSV05-create_master_csvs.py"
+# id-5728e0a79ca1472f8c31640237180e77=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0699461668eb4216b62dec82887521bd      | Artifact             | "CSV06-append_child_to_master.py"
+# id-0699461668eb4216b62dec82887521bd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f4fa780a9ba6490c912ce5ce953525f1      | Artifact             | "CSV07-xlsx_2_csv.py"
+# id-f4fa780a9ba6490c912ce5ce953525f1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-208c84ba2c9e49caacd4c1f947b3de61      | Artifact             | "CSV08-properties2csv.py"
+# id-208c84ba2c9e49caacd4c1f947b3de61=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8ec264da9f034c63af7d1bb8d7172d8e      | Artifact             | "CSV09-masterxml2csv.py"
+# id-8ec264da9f034c63af7d1bb8d7172d8e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7e81ae44cbc145d38fc4bca88fbcda3a      | Artifact             | "CSV99-export_snapshot.py"
+# id-7e81ae44cbc145d38fc4bca88fbcda3a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c5ed512bbd0449128f0158fa32312d3c      | Artifact             | "04-flow"
+# id-c5ed512bbd0449128f0158fa32312d3c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-993d7651ca474aecb5dcec2b1f3f12c2      | Artifact             | "03-child"
+# id-993d7651ca474aecb5dcec2b1f3f12c2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-62ce4ccfc17a4262923120c1dbd89759      | Artifact             | "02-xyarchive"
+# id-62ce4ccfc17a4262923120c1dbd89759=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-de59190d08084a388e565d0d8011eb0b      | Artifact             | "jArchi Scirpts"
+# id-de59190d08084a388e565d0d8011eb0b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f92597e4cb0b46dabba8381bde32c807      | Artifact             | "jA01-Validierung Namen.ajs"
+# id-f92597e4cb0b46dabba8381bde32c807=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-88dd36e30889463bb8a9837d12636ecb      | Artifact             | "02-xychild"
+# id-88dd36e30889463bb8a9837d12636ecb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-431fcd20fc54416c92b0dec9c56b2696      | Artifact             | "02-import"
+# id-431fcd20fc54416c92b0dec9c56b2696=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-de25f48ad4ec478d9b2bc32cefe7e748      | Artifact             | "csvexport.txt"
+# id-de25f48ad4ec478d9b2bc32cefe7e748=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1a6d3525d5054a8c96ec18a7e1da0281      | Artifact             | "00-master"
+# id-1a6d3525d5054a8c96ec18a7e1da0281=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8b2217d22dd543e6b53af478d13e476e      | Artifact             | "01-mapping"
+# id-8b2217d22dd543e6b53af478d13e476e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e269c4e7c8ae4ebab59f6c3343ffdace      | Artifact             | "02-xychild"
+# id-e269c4e7c8ae4ebab59f6c3343ffdace=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-25b12bd718974485b7ce4842d091dc58      | Artifact             | "csvmapping.txt"
+# id-25b12bd718974485b7ce4842d091dc58=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-206eef35195c44a7bf2f4326ac2f2d37      | Artifact             | "propmapping.txt"
+# id-206eef35195c44a7bf2f4326ac2f2d37=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-cb24c209dba2492b86d41b7665a66a42      | Artifact             | "05-images"
+# id-cb24c209dba2492b86d41b7665a66a42=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-58e6c8520ade4c84ba5cbdbe1a58dbfc      | Artifact             | "00-archimateimages"
+# id-58e6c8520ade4c84ba5cbdbe1a58dbfc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4f443466e6e3409eabb5aaf5085c79f3      | Artifact             | "01-bpmnimages"
+# id-4f443466e6e3409eabb5aaf5085c79f3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3d6fde8a819246a19f3f024a67b67a6f      | Artifact             | "99-strukturimages"
+# id-3d6fde8a819246a19f3f024a67b67a6f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5020d1ea7b3e402da7f0b518307db998      | Artifact             | "model-scope.txt"
+# id-5020d1ea7b3e402da7f0b518307db998=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-57aabc37640641ed978372ba1a0e9d73      | Artifact             | "M2B Stack"
+# id-57aabc37640641ed978372ba1a0e9d73=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a11bb4e82514467e8045cbb18a511b79      | Artifact             | "M2B00-root_resolve.py"
+# id-a11bb4e82514467e8045cbb18a511b79=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2f0815725ac34ea8835d7d96a8c1335b      | Artifact             | "M2B01-master_extract.py"
+# id-2f0815725ac34ea8835d7d96a8c1335b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c5af2c3deaf14fc3bd0be93b918dc798      | Artifact             | "M2B02-activate_model.py"
+# id-c5af2c3deaf14fc3bd0be93b918dc798=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-44d81207b1844b3e859aa0f1be6c88d0      | Artifact             | "M2B03-clear.py"
+# id-44d81207b1844b3e859aa0f1be6c88d0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-dffac2aa7bc9470890066b2945899e8d      | Artifact             | "M2B04-reconcile_enrich.py"
+# id-dffac2aa7bc9470890066b2945899e8d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-173180eb82994f94a2f32c9acbfdabdd      | Artifact             | "flowdiscover.py"
+# id-173180eb82994f94a2f32c9acbfdabdd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a67dbd1efb464154975322222a5bd8cd      | Artifact             | "flowtriggers.txt"
+# id-a67dbd1efb464154975322222a5bd8cd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b9e65e6f511143c588ccca1f8c260c69      | Artifact             | "M2B05-writeback_master.py"
+# id-b9e65e6f511143c588ccca1f8c260c69=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e514ddc3d0f645ba972f8c8a742d91ae      | Artifact             | "M2B06-scope_snapshot"
+# id-e514ddc3d0f645ba972f8c8a742d91ae=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b87a2a710fe449239ae407d258e078ca      | Artifact             | "HLP_principles_S3.txt"
+# id-b87a2a710fe449239ae407d258e078ca=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e488abe69ca64658ac42209afd2835d9      | Artifact             | "M2B_FLOW_principles_S3.txt"
+# id-e488abe69ca64658ac42209afd2835d9=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bb95c49b2e20486ba893d3a699fb0ccc      | Artifact             | "AI_DRIVEN_DEV_METHODE.txt"
+# id-bb95c49b2e20486ba893d3a699fb0ccc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b0be8a69d06f48978a6934f3a61f571b      | Artifact             | "CSV_FLOW_principles_S3.txt"
+# id-b0be8a69d06f48978a6934f3a61f571b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-66aac9016c6545948aa5c5f18983ae19      | Artifact             | "XML_FLOW_principles_S3.txt"
+# id-66aac9016c6545948aa5c5f18983ae19=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b973a232dadd4a79a7e0895092b07afc      | Artifact             | "XML_FLOW_How2_S3.txt"
+# id-b973a232dadd4a79a7e0895092b07afc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-00cf324bb2fa4fc5aa96f88a0f152c35      | Artifact             | "03-roesetta_stone"
+# id-00cf324bb2fa4fc5aa96f88a0f152c35=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-31233eb0dae34273bbf5731033eb55a2      | Artifact             | "Rosetta_Stone_Block1_Views.txt"
+# id-31233eb0dae34273bbf5731033eb55a2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ac1f6b202349420999ff13635ea8e206      | Artifact             | "Rosetta_Stone_Block2_Artifacts_Scripts.txt"
+# id-ac1f6b202349420999ff13635ea8e206=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a748d0502cea431a895155370b95249d      | Artifact             | "Rosetta_Stone_Block3_Begriffe_Konzepte.txt"
+# id-a748d0502cea431a895155370b95249d=<SCRIPT_HIER_EINTRAGEN>
+#
+
+# Datei: 02-artifacts\00-xml\03-child\00-archimatechild\R+Muni Architecture Modell.xml
+# ------------------------------------------------------
+# id-081d94ae4980441e9b29dcc553b77aa0      | Resource             | "RES00-Eigenmittel"
+# id-081d94ae4980441e9b29dcc553b77aa0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6a2333e59af14a0fafb3acb889a9cd39      | Resource             | "RES01-Gaming Hardware"
+# id-6a2333e59af14a0fafb3acb889a9cd39=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2409c8327b9048cd800ad824e9b69e74      | Capability           | "CAP03-Projektmanagemen"
+# id-2409c8327b9048cd800ad824e9b69e74=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-36208904226a410cbfd08f8c171ea497      | Capability           | "CAP02-Modell Know How"
+# id-36208904226a410cbfd08f8c171ea497=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d2c06c8e7f184d0a87bae234afd35bb8      | Capability           | "CAP00-IT Infrastruktur Know How"
+# id-d2c06c8e7f184d0a87bae234afd35bb8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-977695ea242249bdb2b04041b936b8fc      | Capability           | "CAP01-Modellierungs Know How"
+# id-977695ea242249bdb2b04041b936b8fc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6e36fdfb918c4240acbee5fcf51faf94      | ValueStream          | "VAS04-R+MUNI"
+# id-6e36fdfb918c4240acbee5fcf51faf94=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9df74ba77e634bf19e046fbcdedeaf98      | ValueStream          | "VAS00-Enabling"
+# id-9df74ba77e634bf19e046fbcdedeaf98=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d0481fda2c9347638cd7f163f57ae765      | ValueStream          | "VAS02-Individualisierungen"
+# id-d0481fda2c9347638cd7f163f57ae765=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ee2df5d1790f4035914f33468504ddb6      | ValueStream          | "VAS05-Unterstützungsleistungen"
+# id-ee2df5d1790f4035914f33468504ddb6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b3b2b665e3dd4de7b72353031c0228be      | ValueStream          | "VAS01-Feature Upgrades"
+# id-b3b2b665e3dd4de7b72353031c0228be=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f25940021ed2491e882cbfc90aab9c0f      | CourseOfAction       | "COA00-R+MUNI 1.0 Internal Release"
+# id-f25940021ed2491e882cbfc90aab9c0f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2ef9b591145c4d6594e322bfd4b4d9c1      | ValueStream          | "VAS03-Klarheit über Fragestellungen"
+# id-2ef9b591145c4d6594e322bfd4b4d9c1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-32a504ae21274b1ba2809f15c3f99ca2      | BusinessActor        | "BUA00-R+MUNI Dude (ME)"
+# id-32a504ae21274b1ba2809f15c3f99ca2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-07de8542053d4739b7fa1a98bbe59798      | BusinessRole         | "BUR01-Entwickler"
+# id-07de8542053d4739b7fa1a98bbe59798=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-866783f5689b4893a8f70b6350ce0c2e      | BusinessRole         | "BUR02-Modellierer"
+# id-866783f5689b4893a8f70b6350ce0c2e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f116ad32a5f94363be4fa5093fba5e13      | BusinessRole         | "BUR00-Consultant"
+# id-f116ad32a5f94363be4fa5093fba5e13=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6ac1e83e5f504bab855953587a815128      | BusinessService      | "BUS03-PreSales Consultant Service"
+# id-6ac1e83e5f504bab855953587a815128=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ae45ebc72b884142adb642ba4fd338a5      | BusinessService      | "BUS00-First Time Setup"
+# id-ae45ebc72b884142adb642ba4fd338a5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-af9fcf6cc64a49528dbf268d944f5747      | BusinessService      | "BUS04-Visuelle Diagramm Service"
+# id-af9fcf6cc64a49528dbf268d944f5747=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4ef15ecc93914e9480ca060b037a7861      | BusinessService      | "BUS02-MUNI Schulungs Service"
+# id-4ef15ecc93914e9480ca060b037a7861=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-394ce819ab194ca09c10b6671ea3a587      | BusinessProcess      | "BUP04-R+MUNI entwickeln"
+# id-394ce819ab194ca09c10b6671ea3a587=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5b10384809f94f15a0bc399b68f7cdf6      | BusinessProcess      | "BUP07-Visuelle Modelle erstellen"
+# id-5b10384809f94f15a0bc399b68f7cdf6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6d76f68d89d44f9491a836e9e993d2d7      | BusinessProcess      | "BUP01-Lösung für Anforderung erarbeiten"
+# id-6d76f68d89d44f9491a836e9e993d2d7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6132cbb6e22143e3a4a8f1e18ae8aabc      | BusinessProcess      | "BUP02-Lösung präsentieren"
+# id-6132cbb6e22143e3a4a8f1e18ae8aabc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bfe411b764cb4400aa04321e5da21131      | BusinessProcess      | "BUP06-Schulung durchführen"
+# id-bfe411b764cb4400aa04321e5da21131=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-486ae814a4cf4dde90c3a130c6441454      | BusinessProcess      | "BUP05-R+MUNI installieren"
+# id-486ae814a4cf4dde90c3a130c6441454=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ec42131fce17464ababb7bedfe11f468      | BusinessProcess      | "BUP03-R+MUNI anpassen"
+# id-ec42131fce17464ababb7bedfe11f468=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0b7a5ed5e5204f918fe105b956a4c660      | BusinessService      | "BUS01-Individual Anpassungen"
+# id-0b7a5ed5e5204f918fe105b956a4c660=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2846035edbac4e1eac7b177be2423e6b      | BusinessObject       | "BUO04-Visuelle Darstellung"
+# id-2846035edbac4e1eac7b177be2423e6b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-db304cccdbbd45169fd50eeb4b7d1e0b      | BusinessObject       | "BUO02-Referenzdoku"
+# id-db304cccdbbd45169fd50eeb4b7d1e0b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-01eb201c03bb4d7c9844a47cfef98e15      | Product              | "PRO00-R+MUNI"
+# id-01eb201c03bb4d7c9844a47cfef98e15=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1cbdbc8e6f784df3a399105b7dab5a00      | BusinessObject       | "BUO00-FLOW"
+# id-1cbdbc8e6f784df3a399105b7dab5a00=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5dc55f30f09e4374bfe9272f8d296b86      | BusinessInterface    | "BUI00-Archimate Tool GUI"
+# id-5dc55f30f09e4374bfe9272f8d296b86=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fba788f076224c86933b5712d75db7c5      | BusinessInterface    | "BUI02-BPMN 2.0 Tool GUI"
+# id-fba788f076224c86933b5712d75db7c5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0f0b8b3ec7104ab9a902e773a818553f      | BusinessProcess      | "BUP00-3rd Party Import"
+# id-0f0b8b3ec7104ab9a902e773a818553f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d0181862971f480fa8be0970994b539d      | BusinessFunction     | "BUF00-3rd Party Importer"
+# id-d0181862971f480fa8be0970994b539d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a9a69e2bb4b049dd98a7b5c9ff6f14ae      | BusinessFunction     | "BUF05-Prozess Modellierer"
+# id-a9a69e2bb4b049dd98a7b5c9ff6f14ae=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c6d3e60758a9458999a60602f3a3b93e      | BusinessFunction     | "BUF01-Architektur & Business Modellierer"
+# id-c6d3e60758a9458999a60602f3a3b93e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1728306f843245c28cdf4c03f931735c      | BusinessFunction     | "BUF02-HTML Report erstellen"
+# id-1728306f843245c28cdf4c03f931735c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6bffa26862a54464b2b248ebe318aaf2      | BusinessFunction     | "BUF03-Image Export"
+# id-6bffa26862a54464b2b248ebe318aaf2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-515413fa45a343748eed2ef0e5bdc06f      | BusinessFunction     | "BUF04-Prozess Automation light"
+# id-515413fa45a343748eed2ef0e5bdc06f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-679267bc304a4ae9a219d825b129fd93      | BusinessInterface    | "BUI01-Editor GUI"
+# id-679267bc304a4ae9a219d825b129fd93=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3e7289a052c94b5d88d08a7e659241d3      | BusinessInterface    | "BUI03-HTML Web GUI"
+# id-3e7289a052c94b5d88d08a7e659241d3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-820007ce24d54d45baa6966d0e52c668      | BusinessObject       | "BUO01-HTML Report"
+# id-820007ce24d54d45baa6966d0e52c668=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-529381f99030453d81330cb99689cb2c      | BusinessObject       | "BUO03-Referenzmodelle"
+# id-529381f99030453d81330cb99689cb2c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-254704aef3534da5b3863619168df04b      | BusinessFunction     | "BUF06-Selbsthilfe"
+# id-254704aef3534da5b3863619168df04b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7ebdb2a2d877437b8d3b8945b31aff5e      | ApplicationComponent | "APC00-Archi 5.8"
+# id-7ebdb2a2d877437b8d3b8945b31aff5e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-09378af6e4e54c2bb56f37b056b411d0      | ApplicationInterface | "API00-Archi Gui"
+# id-09378af6e4e54c2bb56f37b056b411d0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c6a30b40e8e04dfeb8c9ae3b58ae9d0f      | ApplicationFunction  | "APF05-CSV Export"
+# id-c6a30b40e8e04dfeb8c9ae3b58ae9d0f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-47eece96f6ef4f8c887079832c9c8d32      | ApplicationFunction  | "APF00-Archmiate Modellierung"
+# id-47eece96f6ef4f8c887079832c9c8d32=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-04d63fc625ef46dd99d301c9d647a626      | ApplicationFunction  | "APF06-CSV Import"
+# id-04d63fc625ef46dd99d301c9d647a626=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8f6f20af5c0149b5aaf5f395b705cddf      | ApplicationFunction  | "APF16-Open Exchange Format Export"
+# id-8f6f20af5c0149b5aaf5f395b705cddf=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-31b2b9431eb741fe845bf7420bcb36b4      | ApplicationFunction  | "APF15-Open Exchange Format Import"
+# id-31b2b9431eb741fe845bf7420bcb36b4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e8080291c32346dcb551767309760561      | ApplicationFunction  | "APF09-EXCEL Export"
+# id-e8080291c32346dcb551767309760561=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ddc5d5f706b24d0482ae3f7e504c8638      | DataObject           | "DAO02-Archi CSV Stack"
+# id-ddc5d5f706b24d0482ae3f7e504c8638=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bc0b10d6225147619307d89e11def2b4      | DataObject           | "DAO04-Archi XML Stack"
+# id-bc0b10d6225147619307d89e11def2b4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a5a178d05fd94bd9ba6a199ddd6a6e21      | DataObject           | "DOA12-Main Archi <modellname>"
+# id-a5a178d05fd94bd9ba6a199ddd6a6e21=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-508d8fb39ffa4a62bd09d5abab1f79bd      | DataObject           | "DAO07-Sub Archi <modellname>"
+# id-508d8fb39ffa4a62bd09d5abab1f79bd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e7247550ca144a27a94f66268ab718ff      | DataObject           | "DAO03-Archi <modellname>.xlsx"
+# id-e7247550ca144a27a94f66268ab718ff=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8e3e68f7c3b54c6d996c1c65cd4d3eab      | ApplicationComponent | "APC01-Camunda Modeler"
+# id-8e3e68f7c3b54c6d996c1c65cd4d3eab=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f40225e3f9504ddfa56eb22b95fc3ce9      | ApplicationFunction  | "APF01-BPMN 2.0 Modellierung"
+# id-f40225e3f9504ddfa56eb22b95fc3ce9=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-afb6eefbbd0548699e65384387b61759      | DataObject           | "DAO05-BPMN<Prozessname>.bpmn"
+# id-afb6eefbbd0548699e65384387b61759=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c3eb6d0e5d344ee788f5eb1a41b1a95e      | ApplicationFunction  | "APF03-Camunda 7 Modelle"
+# id-c3eb6d0e5d344ee788f5eb1a41b1a95e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-01ab2c652ce64460b1b4e2932e725a6e      | ApplicationFunction  | "APF04-Camunda 8 Modelle"
+# id-01ab2c652ce64460b1b4e2932e725a6e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-df247b5f9ebb4d768ec0d00b795e3502      | ApplicationComponent | "APC03-FLOW Routine"
+# id-df247b5f9ebb4d768ec0d00b795e3502=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-48a16234b4e4448cb38d7d66c3ae8f87      | ApplicationFunction  | "APF14-Prozessautomatisierung light"
+# id-48a16234b4e4448cb38d7d66c3ae8f87=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5e8a5cc38c3341a1b92b5c6588d11027      | DataObject           | "DAO08-FLOW"
+# id-5e8a5cc38c3341a1b92b5c6588d11027=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2aaf978df8a5498288322fc2dc707c09      | ApplicationCollaboration | "ACO00-R+MUNI"
+# id-2aaf978df8a5498288322fc2dc707c09=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1e951c3ecb254860b2a829c8ca2895c3      | ApplicationComponent | "APC02-Crome Browser"
+# id-1e951c3ecb254860b2a829c8ca2895c3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a3a7ba26228142be94e11c8099b1f549      | ApplicationFunction  | "APF02-Brower Funktion"
+# id-a3a7ba26228142be94e11c8099b1f549=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-55bf18ce80c64078a01cd08d1249ce34      | DataObject           | "DAO10-Guidelines"
+# id-55bf18ce80c64078a01cd08d1249ce34=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-da9bf2a418c3489e8a3ad16632c02566      | ApplicationFunction  | "APF12-Reader Funkion"
+# id-da9bf2a418c3489e8a3ad16632c02566=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f0c53e2b0d4c45f78453cfe7ea090c5e      | ApplicationComponent | "APC04-Notepad ++"
+# id-f0c53e2b0d4c45f78453cfe7ea090c5e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ffd948a082514d22a9efa9f9c576d4b3      | DataObject           | "DAO09-Scripts"
+# id-ffd948a082514d22a9efa9f9c576d4b3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f65114adf355489496223cedcc6ab65b      | DataObject           | "DOA11-R+MUNI Info Files"
+# id-f65114adf355489496223cedcc6ab65b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1b2321b1993f432d867aab233c737a41      | ApplicationInterface | "API01-Camunda Modeler GUI"
+# id-1b2321b1993f432d867aab233c737a41=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7351980e1fd84ab1b1cef85e7f32a470      | ApplicationInterface | "API03-FLOW"
+# id-7351980e1fd84ab1b1cef85e7f32a470=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-def2bc7d7c89434f96b6ebb74efdaa19      | ApplicationInterface | "API04-Notepad++ GUI"
+# id-def2bc7d7c89434f96b6ebb74efdaa19=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-39f6158dcef44d1bbc05659f4ba42766      | ApplicationInterface | "API02-Crome GUI"
+# id-39f6158dcef44d1bbc05659f4ba42766=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-94f52e6fd1f644e7938c274d6da9f223      | ApplicationFunction  | "APF08-Editor"
+# id-94f52e6fd1f644e7938c274d6da9f223=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c30bd7d49b334338b26168831305c559      | ApplicationFunction  | "APF10-Selbsthilfeanleitung"
+# id-c30bd7d49b334338b26168831305c559=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-addcef0ebfe342a69591631d2e052ae1      | ApplicationFunction  | "APF07-EA Image Export"
+# id-addcef0ebfe342a69591631d2e052ae1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f1540c55f6c5425fad4108630fe705d0      | ApplicationFunction  | "APF13-Prozess Image Export"
+# id-f1540c55f6c5425fad4108630fe705d0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-09f50620d3b840568670d86b175bad08      | DataObject           | "DAO06-BPMN<Prozessname>.svg"
+# id-09f50620d3b840568670d86b175bad08=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0d2616a6f51b4263867f2d42d6176276      | DataObject           | "DAO00-Archi<modellname>.svg"
+# id-0d2616a6f51b4263867f2d42d6176276=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-73f92331be754642b7ec3de3649fa263      | ApplicationFunction  | "APF11-Image Export"
+# id-73f92331be754642b7ec3de3649fa263=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-330b8be07ec340f7ad5f737cdb2baaef      | Device               | "DEV00-Gaming PC"
+# id-330b8be07ec340f7ad5f737cdb2baaef=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-26ef9465c2b34a1186baeb41ef79f144      | SystemSoftware       | "SYS00-Windows 11 Enterprise"
+# id-26ef9465c2b34a1186baeb41ef79f144=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3801d23e5b0742caa1c245f5cc684659      | Artifact             | "<MUNI Installaionspfad>"
+# id-3801d23e5b0742caa1c245f5cc684659=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-67238b8b8bdf4bf087811d222bd6d35e      | Artifact             | "00-conecpt"
+# id-67238b8b8bdf4bf087811d222bd6d35e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c0889d4beb7e44f39c958afece722642      | TechnologyFunction   | "TEF00-Ordnerstruktur und Rechtevergabe"
+# id-c0889d4beb7e44f39c958afece722642=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-df54a4afebb940159e2e167c6bd51590      | Artifact             | "Aktives Modell <modelname>.archimate"
+# id-df54a4afebb940159e2e167c6bd51590=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5f5e6a2f8b2b4f05b93a6d4b150bbb7c      | SystemSoftware       | "SYS01-Python 3 run"
+# id-5f5e6a2f8b2b4f05b93a6d4b150bbb7c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7c959626b8a148edbaaa9cac7eeeabfd      | SystemSoftware       | "SYS02-Powershell 7.x"
+# id-7c959626b8a148edbaaa9cac7eeeabfd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8afbbd03b18345aab637c301ad02fdfc      | TechnologyFunction   | "TEF01-Ausführen von Applikationen"
+# id-8afbbd03b18345aab637c301ad02fdfc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fc24f92fe23e4e418f4e2d8d929ad4e8      | Artifact             | "00-governance"
+# id-fc24f92fe23e4e418f4e2d8d929ad4e8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f1759c4923a14c18a00a280ebc1bd5fb      | Artifact             | "01-principles"
+# id-f1759c4923a14c18a00a280ebc1bd5fb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-aa845dc3dd9643c0864ab4fb0a14f2e2      | Artifact             | "01-model"
+# id-aa845dc3dd9643c0864ab4fb0a14f2e2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e6c44296dec141d09e6e167b76c67dbc      | Artifact             | "00-archimate"
+# id-e6c44296dec141d09e6e167b76c67dbc=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2432ddd6b6174763a7920664aabba94a      | Artifact             | "00-archimateactive"
+# id-2432ddd6b6174763a7920664aabba94a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-efb9dae04b7248078fca7c50c3990ddb      | Artifact             | "01-archimateactivesub"
+# id-efb9dae04b7248078fca7c50c3990ddb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-553b577e2b114fcbb065d0ca7906d8de      | Artifact             | "mappingmodel"
+# id-553b577e2b114fcbb065d0ca7906d8de=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b16e703ffbce4aab8ae8f9f2daff15b8      | Artifact             | "Sub Modell <modelname>.archimate"
+# id-b16e703ffbce4aab8ae8f9f2daff15b8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7cb68d3af8e64fe0bfbd8dd739fc94b2      | Artifact             | "01-bpmn"
+# id-7cb68d3af8e64fe0bfbd8dd739fc94b2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2029f33933f74f3db7ab866b8f818fea      | Artifact             | "00-bpmnactive"
+# id-2029f33933f74f3db7ab866b8f818fea=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-52b8b9907125440b811d94e566c9f3e5      | Artifact             | "99-bpmnMUNI"
+# id-52b8b9907125440b811d94e566c9f3e5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f90dd38c876e474789b2cf9ef0a3886c      | Artifact             | "02-xyvision"
+# id-f90dd38c876e474789b2cf9ef0a3886c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-703d177e06944d70a768e0e09972010c      | Artifact             | "02-artifacts"
+# id-703d177e06944d70a768e0e09972010c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-cf8e8ebe1a684325bbf38566363e7d60      | Artifact             | "00-xml"
+# id-cf8e8ebe1a684325bbf38566363e7d60=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4ff10a8a7da443eaa389772534133e18      | Artifact             | "00-master"
+# id-4ff10a8a7da443eaa389772534133e18=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6ecb132118034bb7893d155b74561da7      | Artifact             | "01-mapping"
+# id-6ecb132118034bb7893d155b74561da7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5adf2e1e934f4614b786aeb05587b22e      | Artifact             | "02-sync"
+# id-5adf2e1e934f4614b786aeb05587b22e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d669820fdab242a882edb06f096aef40      | Artifact             | "03-child"
+# id-d669820fdab242a882edb06f096aef40=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a2d84483c2fc4ed58ba1ece489eb123a      | Artifact             | "00-archimatechild"
+# id-a2d84483c2fc4ed58ba1ece489eb123a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7d00cf3f122b4354bbb1c365380a673d      | Artifact             | "01-bpmnchild"
+# id-7d00cf3f122b4354bbb1c365380a673d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-09988db47e204da982c24f8f7ee3ddbe      | Artifact             | "01-scripts"
+# id-09988db47e204da982c24f8f7ee3ddbe=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ae0e2f9a2f4e46a28c6ca18d18935123      | Artifact             | "CSV00-validate_environment.py"
+# id-ae0e2f9a2f4e46a28c6ca18d18935123=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3e3d4e768b0246649ef0b175e7aa197b      | Artifact             | "CSV01-validate_model.py"
+# id-3e3d4e768b0246649ef0b175e7aa197b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bfafc5e517ad4a21827af94f34798d37      | Artifact             | "CSV02-leer.py"
+# id-bfafc5e517ad4a21827af94f34798d37=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-11fa562d8b694b6485d113ff1110ddc7      | Artifact             | "CSV03-resolve_run_scope.py"
+# id-11fa562d8b694b6485d113ff1110ddc7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e717aa4d050d43c2a29b8b0c10952185      | Artifact             | "CSV04-model-overview.py"
+# id-e717aa4d050d43c2a29b8b0c10952185=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6aefe34537be438b82774c5552a470b4      | Artifact             | "CSV05-create_master_csvs.py"
+# id-6aefe34537be438b82774c5552a470b4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b2e07ba73c564d048c442eb768591a14      | Artifact             | "CSV06-append_child_to_master.py"
+# id-b2e07ba73c564d048c442eb768591a14=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3557941f7afc47e7883eccc6583c752b      | Artifact             | "CSV07-xlsx_2_csv.py"
+# id-3557941f7afc47e7883eccc6583c752b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-25c68fcab8104cc3b5e4b9c2732c4ff5      | Artifact             | "CSV08-properties2csv.py"
+# id-25c68fcab8104cc3b5e4b9c2732c4ff5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bad158ba97ab468e8efce12418304f8b      | Artifact             | "CSV09-masterxml2csv.py"
+# id-bad158ba97ab468e8efce12418304f8b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d61d05f588e04f9d97bfeccd1706a0b8      | Artifact             | "CSV99-export_snapshot.py"
+# id-d61d05f588e04f9d97bfeccd1706a0b8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-86384c38b4124983adac2f6b36c33752      | Artifact             | "XML00-resolve_root.py"
+# id-86384c38b4124983adac2f6b36c33752=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2dc3033da20c4816952e3e58e0a3d33b      | Artifact             | "CSV Scripts"
+# id-2dc3033da20c4816952e3e58e0a3d33b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-24a3882190604c2399da7ec4acd016f2      | Artifact             | "XML Scripts"
+# id-24a3882190604c2399da7ec4acd016f2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-64cbb37f1d6843c2995633f313d674e7      | Artifact             | "02-csv"
+# id-64cbb37f1d6843c2995633f313d674e7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8feba5bc365f4a0dbfa8ae8f39ef897d      | Artifact             | "00-master"
+# id-8feba5bc365f4a0dbfa8ae8f39ef897d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-98186bf641f849fd8a286e607a33dfef      | Artifact             | "01-sync"
+# id-98186bf641f849fd8a286e607a33dfef=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0abce2ba62ef496f9c1d531a1f5341c4      | Artifact             | "02-import"
+# id-0abce2ba62ef496f9c1d531a1f5341c4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-da0d67fcb40e49e6b17e35f090263ee6      | Artifact             | "03-child"
+# id-da0d67fcb40e49e6b17e35f090263ee6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bd4ab2865df44bc0ab417148472398ff      | Artifact             | "99-exports"
+# id-bd4ab2865df44bc0ab417148472398ff=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f69c0b641e39412a8c86b78e3d5a56c1      | Artifact             | "00-archimatechild"
+# id-f69c0b641e39412a8c86b78e3d5a56c1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bd546713d1e140b5bf7ab296f7276d28      | Artifact             | "01-bpmnchild"
+# id-bd546713d1e140b5bf7ab296f7276d28=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3b5c9f334a4045e9ad77dbacf4e1c13c      | Artifact             | "elements.csv"
+# id-3b5c9f334a4045e9ad77dbacf4e1c13c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c0ebc1f1f9064341b7c43020caac2445      | Artifact             | "properties.csv"
+# id-c0ebc1f1f9064341b7c43020caac2445=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7a4d61544fc34ea39ea45d4a563a95cf      | Artifact             | "relations.csv"
+# id-7a4d61544fc34ea39ea45d4a563a95cf=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bf9090f81a92404bbbd1125191516eae      | Artifact             | "Archi CSV Stack"
+# id-bf9090f81a92404bbbd1125191516eae=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4868113fba6d42e0a8c0002e62faf717      | Artifact             | "archimate3_Diagram.xsd"
+# id-4868113fba6d42e0a8c0002e62faf717=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-69cc2486fdeb4261a8ee5e56a10fe450      | Artifact             | "archimate3_Model.xsd"
+# id-69cc2486fdeb4261a8ee5e56a10fe450=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c9a6fc34ac91416d99e94efca7872082      | Artifact             | "archimate3_View.xsd"
+# id-c9a6fc34ac91416d99e94efca7872082=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-52a74f472229413fb03abd547a3605f2      | Artifact             | "<Modellname>.xml"
+# id-52a74f472229413fb03abd547a3605f2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-435b9a3c53a6429aac791296ddd53be3      | Artifact             | "Archi XML Stack"
+# id-435b9a3c53a6429aac791296ddd53be3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-ef26482113a244f8857ca02291ce2458      | Artifact             | "SCRIPT-BAUKASTEN.txt"
+# id-ef26482113a244f8857ca02291ce2458=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8e1181a5967a4127b483d772c09bc098      | Artifact             | "master.generated.xml"
+# id-8e1181a5967a4127b483d772c09bc098=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1d34300233134d50bb7c594c8a0b2fe3      | Artifact             | "<Prozessname>.xml"
+# id-1d34300233134d50bb7c594c8a0b2fe3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5121e470344444bfa23f2f76357bf06a      | Artifact             | "<Prozessname>.xml"
+# id-5121e470344444bfa23f2f76357bf06a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1a1580f8317c44e5b3ba32abfd78c582      | Artifact             | "Flow.txt"
+# id-1a1580f8317c44e5b3ba32abfd78c582=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-cd65f4e4000340d78c3330f9021a097a      | Artifact             | "03-XLSX"
+# id-cd65f4e4000340d78c3330f9021a097a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2b5019588b4b43fc8bd6b83870520f6d      | Artifact             | "03-child"
+# id-2b5019588b4b43fc8bd6b83870520f6d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-128a29c03e7948b59826fd7cdbd652d6      | Artifact             | "<Prozessname>.xml"
+# id-128a29c03e7948b59826fd7cdbd652d6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3a519e2423c34ab890615eb7203844e4      | Artifact             | "00-achimatechild"
+# id-3a519e2423c34ab890615eb7203844e4=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-335a90bca2c14a48b46b07f3ea293581      | Artifact             | "01-bpmnchild"
+# id-335a90bca2c14a48b46b07f3ea293581=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-10cb891001ee46b392e0e42580ec4927      | Artifact             | "99-export"
+# id-10cb891001ee46b392e0e42580ec4927=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bce924b71e1a436f9e2bb7387b035e44      | Artifact             | "<modelname>.xslx"
+# id-bce924b71e1a436f9e2bb7387b035e44=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-efd80e6da28b423090cf37edefc994a6      | Artifact             | "02-how2"
+# id-efd80e6da28b423090cf37edefc994a6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c463f8bb769045d69ad94d18966778e0      | Artifact             | "How2Flow.txt"
+# id-c463f8bb769045d69ad94d18966778e0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d78aa55ac77547968a751475900c99a6      | Artifact             | "child_mapping.txt"
+# id-d78aa55ac77547968a751475900c99a6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7a6404a95a9649a59043c11765f1caa9      | Artifact             | "fields.csv"
+# id-7a6404a95a9649a59043c11765f1caa9=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bbacb57e1c2a4dbc97e9ce2167dac02d      | Artifact             | "04-flow"
+# id-bbacb57e1c2a4dbc97e9ce2167dac02d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c179c9d2c3a34ceb8b5416623a766f5d      | Artifact             | "flow.py"
+# id-c179c9d2c3a34ceb8b5416623a766f5d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-16a5c562775c43f6a2e49313af8233ea      | Artifact             | "flowmapping.txt"
+# id-16a5c562775c43f6a2e49313af8233ea=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-57028807eae14229bdf48135c371658e      | Artifact             | "jArchi Scirpts"
+# id-57028807eae14229bdf48135c371658e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4285b27858de432b9c43a37a03be8650      | Artifact             | "03-stages"
+# id-4285b27858de432b9c43a37a03be8650=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-11f6aee99e68415d98c230336bab56b8      | Artifact             | "00-archimatearchive"
+# id-11f6aee99e68415d98c230336bab56b8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-49802e45151f45788dd846a5cd7ba3cd      | Artifact             | "01-bpmnarchive"
+# id-49802e45151f45788dd846a5cd7ba3cd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-541922a9acb0435085f01ffdc099b36f      | Artifact             | "99-logs"
+# id-541922a9acb0435085f01ffdc099b36f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7ad20f80e87e4742a893432b1af5cb59      | Artifact             | "jA01-Validierung Namen.ajs"
+# id-7ad20f80e87e4742a893432b1af5cb59=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-761cb0b011794169a2b59da607456ef0      | Artifact             | "FLOW Stack"
+# id-761cb0b011794169a2b59da607456ef0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-968c0fdb37f24c048fab4bd3fc03d3a7      | Material             | "MAT03-TOGAF 10 Guides"
+# id-968c0fdb37f24c048fab4bd3fc03d3a7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3d4fcfb5aad74f028f45d48cdc62d158      | Material             | "MAT02-Archimate 3.2 Guides"
+# id-3d4fcfb5aad74f028f45d48cdc62d158=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-724e6e7411f34c388c44f9c9f56ad865      | Material             | "MAT01-BPMN 2.0 Guides"
+# id-724e6e7411f34c388c44f9c9f56ad865=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8c7d81f165824a259ad1810b6de8aef8      | CommunicationNetwork | "CON00-Internet"
+# id-8c7d81f165824a259ad1810b6de8aef8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6b0d235775a645478a85fb1cade0ade2      | Node                 | "NOD00-Fritz Box Router"
+# id-6b0d235775a645478a85fb1cade0ade2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1e3d56c118704a8a9d0a13336f67cac7      | Artifact             | "02-xychild"
+# id-1e3d56c118704a8a9d0a13336f67cac7=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-dcebe4b61e054f449ab256c1ff499faf      | Artifact             | "02-xychild"
+# id-dcebe4b61e054f449ab256c1ff499faf=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9af4b89994c64e31a69cd73cc332135a      | Artifact             | "02-xyarchive"
+# id-9af4b89994c64e31a69cd73cc332135a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5d1f453c2ff14226aa23b5c156dd3bd5      | Artifact             | "04-notes"
+# id-5d1f453c2ff14226aa23b5c156dd3bd5=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8b04fa4d7fee40649b2fa0cdd1ec529d      | Artifact             | "root.txt"
+# id-8b04fa4d7fee40649b2fa0cdd1ec529d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-83b0b2e5f7024f82b15e01d2978819ad      | Artifact             | "context.txt"
+# id-83b0b2e5f7024f82b15e01d2978819ad=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-baf245d555b94f70b83708af87b1dd62      | Artifact             | "run-scope.txt"
+# id-baf245d555b94f70b83708af87b1dd62=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-8df9225832b94a1284639ff6e1e65e58      | Artifact             | "struktur.txt"
+# id-8df9225832b94a1284639ff6e1e65e58=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a0fb68244ac643c1bf4759a5c77e709e      | TechnologyInterface  | "TEI01-Powershell Konsolen GUI"
+# id-a0fb68244ac643c1bf4759a5c77e709e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b2283085c7bc4b2da7e0e3984790f188      | TechnologyInterface  | "TEI00-OS GUI"
+# id-b2283085c7bc4b2da7e0e3984790f188=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-360a083ec5544500bf2c5f0c8d744d77      | Material             | "MAT00-Guides & Normen"
+# id-360a083ec5544500bf2c5f0c8d744d77=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d85c2a5a091347e0b4ea46c4fcc3cc49      | Artifact             | "R+MUNI help files"
+# id-d85c2a5a091347e0b4ea46c4fcc3cc49=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-134e9cb2112a4c6b8dc5c8b737e30379      | Artifact             | "05-Images"
+# id-134e9cb2112a4c6b8dc5c8b737e30379=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-971b93a7090948d899d956c060bf144a      | Artifact             | "00-archimateimages"
+# id-971b93a7090948d899d956c060bf144a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-72f7e53ad2404fe4bd04cc058df22d48      | Artifact             | "01-bpmnimages"
+# id-72f7e53ad2404fe4bd04cc058df22d48=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f288345be38644dc82e14aff003cdc2e      | Artifact             | "99-strukturimages"
+# id-f288345be38644dc82e14aff003cdc2e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1a430c86295b48caac4dc89a298993d0      | Artifact             | "Archi Export<modellname>.svg"
+# id-1a430c86295b48caac4dc89a298993d0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-31d70ca3d0fe4688bfdeed740e6d75e8      | Artifact             | "BPMN 2.0 Export<modellname>.svg (copy)"
+# id-31d70ca3d0fe4688bfdeed740e6d75e8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-81a40cfad3ea4c32a3ad2255d2df9036      | Artifact             | "XML01-collect_sources.py"
+# id-81a40cfad3ea4c32a3ad2255d2df9036=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2a0c64eafdd146f595e4c9c36445506b      | Artifact             | "XML02-parse_child_xml.py"
+# id-2a0c64eafdd146f595e4c9c36445506b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-412859ad3e5945c7b8c70acd1205e0cb      | Artifact             | "XML03-build_index.py"
+# id-412859ad3e5945c7b8c70acd1205e0cb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-40a277e6db974a81b38ae4d9207d2f33      | Artifact             | "XML04-merge_master.py"
+# id-40a277e6db974a81b38ae4d9207d2f33=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7b3c3acd71fc4145a323ecda218f8c04      | Artifact             | "child_mapping.txt"
+# id-7b3c3acd71fc4145a323ecda218f8c04=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3a676dde5eee4c849f894b89f3eb733c      | Artifact             | "mapping.txt"
+# id-3a676dde5eee4c849f894b89f3eb733c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-22563d53ff58435b9f01ab3133323226      | Artifact             | "How2Archi2CSVFlow.txt"
+# id-22563d53ff58435b9f01ab3133323226=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-18c51adb8cf5498c812099f895f87d2c      | Artifact             | "How2Master2BPMNProzess.txt"
+# id-18c51adb8cf5498c812099f895f87d2c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-aa3ac598714848d2bc34d4c59f8d53f2      | Artifact             | "How2MasterXMLFlow.txt"
+# id-aa3ac598714848d2bc34d4c59f8d53f2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1595c1343f6a47bb9cb4918e9bcdda2b      | Artifact             | "Global GOV.pdf"
+# id-1595c1343f6a47bb9cb4918e9bcdda2b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c873fabb598748a98d5ab2dea9f60768      | Artifact             | "XML05-clear_merge.py"
+# id-c873fabb598748a98d5ab2dea9f60768=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6e8348465c224de3afaa052a0d7509f6      | Artifact             | "XML06-finalize-master.py"
+# id-6e8348465c224de3afaa052a0d7509f6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a74e52f49a8440c3b02e71b071fb7a69      | Artifact             | "XML07-cleanup-artifacts.py"
+# id-a74e52f49a8440c3b02e71b071fb7a69=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-7cf7e93e2d2f47a0925dc226bb40f3ac      | Artifact             | "csvexport.txt"
+# id-7cf7e93e2d2f47a0925dc226bb40f3ac=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c9c51291610344c1ae44f467853145b2      | Artifact             | "00-master"
+# id-c9c51291610344c1ae44f467853145b2=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1a8d962cdfdb4013ab3df1f00819af7e      | Artifact             | "01-mapping"
+# id-1a8d962cdfdb4013ab3df1f00819af7e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-6abab46b45b646ef8add25cc81067c4d      | Artifact             | "02-xychild"
+# id-6abab46b45b646ef8add25cc81067c4d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-903889af94ce41788e16b7c7a2b67d96      | Artifact             | "csvmapping.txt"
+# id-903889af94ce41788e16b7c7a2b67d96=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b0f4907896d84881a6eda85170ca138e      | Artifact             | "propmapping.txt"
+# id-b0f4907896d84881a6eda85170ca138e=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a7fa6d94a699464588fcb77ba2a37801      | Artifact             | "05-images"
+# id-a7fa6d94a699464588fcb77ba2a37801=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-27b9e7c39621408780bd64d43ecca7d6      | Artifact             | "00-archimateimages"
+# id-27b9e7c39621408780bd64d43ecca7d6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bb4ffd52b8c948158aa2da566a1cbc46      | Artifact             | "01-bpmnimages"
+# id-bb4ffd52b8c948158aa2da566a1cbc46=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d01857362b694d19acdc32b3859e1fe6      | Artifact             | "99-strukturimages"
+# id-d01857362b694d19acdc32b3859e1fe6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-3d790885e4c8467e83688fa09298f11b      | Artifact             | "model-scope.txt"
+# id-3d790885e4c8467e83688fa09298f11b=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b73072a8c0e147efac4a5316927c70c3      | Artifact             | "Master 2 BPMN Cycle"
+# id-b73072a8c0e147efac4a5316927c70c3=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5cd0f106affd4652a9dfacac89d85dfb      | Artifact             | "M2B00-root_resolve.py"
+# id-5cd0f106affd4652a9dfacac89d85dfb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bbc83b29394045f99435846d6a38b04f      | Artifact             | "M2B01-master_extract.py"
+# id-bbc83b29394045f99435846d6a38b04f=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e65b56d9a85947a8ac88841130aab916      | Artifact             | "M2B02-activate_model.py"
+# id-e65b56d9a85947a8ac88841130aab916=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9d33612bea7944d7b8f9018f05974753      | Artifact             | "M2B03-clear.py"
+# id-9d33612bea7944d7b8f9018f05974753=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-e5ab5d2846fc4a0e85e7d2ce2240ebb1      | Artifact             | "M2B04-reconcile_enrich.py"
+# id-e5ab5d2846fc4a0e85e7d2ce2240ebb1=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-35a102086aab4a5098481707177ebaf6      | Stakeholder          | "STA00-Me ;)"
+# id-35a102086aab4a5098481707177ebaf6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-f0f0f9edab974e42a6a0c2bfdfd0c2e0      | Principle            | "PRI02-Freie Software"
+# id-f0f0f9edab974e42a6a0c2bfdfd0c2e0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4eda9886e61e43adbe284fbe6679ee1a      | Requirement          | "REQ05-Praxis tauglich"
+# id-4eda9886e61e43adbe284fbe6679ee1a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-d1d04a2ed3a54f7bb7bf81e7ccae4d75      | Requirement          | "REQ01-Leicht zu bedienen"
+# id-d1d04a2ed3a54f7bb7bf81e7ccae4d75=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-74363f1797494190ac7e9e2900fda900      | Principle            | "PRI04-Offene Normen und Guidelines"
+# id-74363f1797494190ac7e9e2900fda900=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-1feb6dd351ce421c8cec6c3fee8c0f45      | Meaning              | "MEA00-Free 4 all"
+# id-1feb6dd351ce421c8cec6c3fee8c0f45=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5579e8de5ea74b94b41cd2ff1113d6f8      | Principle            | "PRI01-Freier Zugang zu Unterlagen"
+# id-5579e8de5ea74b94b41cd2ff1113d6f8=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-c50b64cab06049b9b724ce5d4ae94c89      | Requirement          | "REQ04-Visuell getrieben"
+# id-c50b64cab06049b9b724ce5d4ae94c89=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-16a08948c74f418ea2d1093df569b12c      | Requirement          | "REQ03-wartbar"
+# id-16a08948c74f418ea2d1093df569b12c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-b41a83116fe2490387753d442f5303cf      | Principle            | "PRI03-Offen für Erweiterung"
+# id-b41a83116fe2490387753d442f5303cf=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5f48baf405e2434c8562e4be579f0816      | Driver               | "DRV00-Geiler Job"
+# id-5f48baf405e2434c8562e4be579f0816=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a629cbaa5892420cbf7ee173c114ae5c      | Assessment           | "ASS00-Mögliche Lösungen"
+# id-a629cbaa5892420cbf7ee173c114ae5c=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-07aa42f89e8d404aa027971535a68236      | Outcome              | "OUT00-R+MUNI"
+# id-07aa42f89e8d404aa027971535a68236=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-fa09164a4758456895d442486aff62ea      | Value                | "VAL00-Millionen Sachen"
+# id-fa09164a4758456895d442486aff62ea=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-4efa44dd2e3d44a69f0945d0f16c195a      | Driver               | "DRV01-Wissbegierde"
+# id-4efa44dd2e3d44a69f0945d0f16c195a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-12679af793a742f0b3e5a6c196ca207d      | Goal                 | "GOA00-R+MUNI Release"
+# id-12679af793a742f0b3e5a6c196ca207d=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-9f87b3f035bc49ef981b4e32b4936ad6      | Driver               | "DRV02-Was mich motiviert!"
+# id-9f87b3f035bc49ef981b4e32b4936ad6=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2e8003103e65443fa5bdb50a9142d97a      | Requirement          | "REQ02-Wie es sein sollt"
+# id-2e8003103e65443fa5bdb50a9142d97a=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-2a1f094032ac44b982bc88b695a59cec      | Principle            | "PRI00-Die Prinzipien sind mir wichtig"
+# id-2a1f094032ac44b982bc88b695a59cec=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-a9c6b3622b6d4b55b8fbd0106eb6dfbb      | Meaning              | "MEA01-Wie ich denke"
+# id-a9c6b3622b6d4b55b8fbd0106eb6dfbb=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-5806af86e54f4bddadc9d002bb6e30f0      | Meaning              | "MEA02-Offen entwickelbar"
+# id-5806af86e54f4bddadc9d002bb6e30f0=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-0a367492b3df434f9737a64bdae55abd      | Requirement          | "REQ00-Kostenfreier Stack"
+# id-0a367492b3df434f9737a64bdae55abd=<SCRIPT_HIER_EINTRAGEN>
+#
+# id-bbcc8e9085c14f17818bd61081881d05      | WorkPackage          | "Work Package"
+# id-bbcc8e9085c14f17818bd61081881d05=<SCRIPT_HIER_EINTRAGEN>
+#
+
+# Datei: 02-artifacts\00-xml\03-child\01-bpmnchild\BPU01-CSV 2 CSV.bpmn
+# ------------------------------------------------------
+# Event_141ojog                            | startEvent           | "CSV Basis Setup"
+# Event_141ojog=<SCRIPT_HIER_EINTRAGEN>
+#
+# Event_0on2m2i                            | endEvent             | "CSV gecloned"
+# Event_0on2m2i=<SCRIPT_HIER_EINTRAGEN>
+#
+

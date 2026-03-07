@@ -1,0 +1,139 @@
+# ==========================================================
+# bpmnmastercsvsync.txt
+# Declarative BPMN -> Archi CSV Sync Mapping
+#
+# Purpose:
+# ----------------------------------------------------------
+# - Define WHICH BPMN element types are synced into master CSVs
+# - Define HOW each BPMN element maps to an ArchiMate type
+# - Define WHICH attribute is used as the 3rd-party ID reference
+# - Define WHICH property key is written to properties.csv
+#
+# Consumed by: CSV09-masterXml2Csv.py (PATH [2])
+#
+# Principles:
+# ----------------------------------------------------------
+# - Configuration, not logic
+# - Rules are evaluated in ORDER; first matching rule wins per element
+# - All BPMN namespace variants are handled transparently
+#   (BPMN 2.0, Camunda, Flowable, Activiti etc.)
+# - Matching against BPMN XML is LOCAL TAG NAME based (case-insensitive)
+# - Matching against Archi elements.csv is EXACT NAME (case-sensitive)
+#
+# Format:
+# ----------------------------------------------------------
+# 5-column CSV (no header row):
+#
+#   "bpmn_local_tag","bpmn_id_attribute","bpmn_name_attribute","archi_type","property_key"
+#
+# Column definitions:
+# ----------------------------------------------------------
+#
+#   bpmn_local_tag
+#     Local XML tag name in the .bpmn file to match against.
+#     Case-insensitive. Namespace prefix is ignored.
+#     Examples: process, subProcess, callActivity, task, userTask
+#
+#   bpmn_id_attribute
+#     Attribute on the BPMN element that holds the unique process ID.
+#     This value is stored in properties.csv as the 3rd-party reference.
+#     Typically: id
+#     Example value from BPMN: Process_1a2b3c4d
+#
+#   bpmn_name_attribute
+#     Attribute on the BPMN element that holds the human-readable name.
+#     Used for EXACT CASE-SENSITIVE matching against the Name column
+#     in elements.csv to find an existing Archi element.
+#     Typically: name
+#     Example value from BPMN: Antrag einreichen
+#
+#   archi_type
+#     ArchiMate element type to assign when NO matching element is found
+#     in elements.csv and a new stub element must be created.
+#     The new element is written WITHOUT an ID; Archi assigns one on import.
+#     Examples: BusinessProcess, ApplicationProcess, TechnologyProcess
+#
+#   property_key
+#     Key written to the Key column in properties.csv for this mapping.
+#     Using a source-system-specific prefix makes it easy to distinguish
+#     IDs from different systems in Archi.
+#     Examples: BPMN_ID, ERP_ID, SAP_ID, CAMUNDA_ID
+#
+# Sync behavior per rule:
+# ----------------------------------------------------------
+#   Name match found in elements.csv:
+#     -> append to properties.csv:
+#        ID = <archi element id>, Key = <property_key>, Value = <bpmn_id>
+#
+#   No name match:
+#     -> append to elements.csv:
+#        ID = (empty), Type = <archi_type>, Name = <bpmn_name>, ...
+#     -> append to properties.csv:
+#        ID = (empty), Key = <property_key>, Value = <bpmn_id>
+#     Archi assigns a new ID to the empty-ID element on CSV import.
+#
+# Notes:
+# ----------------------------------------------------------
+# - Elements with no bpmn_id_attribute value are SKIPPED with a warning
+# - Elements with no bpmn_name_attribute value get an empty Name in Archi
+# - Duplicate names within one run: only the first occurrence is matched;
+#   subsequent occurrences with the same name produce new elements
+# - This file is ONLY about BPMN -> Archi element sync
+# - Master scope selection belongs to run-scope.txt and csvmapping.txt
+# ==========================================================
+
+
+# ----------------------------------------------------------
+# ACTIVE RULES
+# ----------------------------------------------------------
+
+# Top-level process definition
+# Maps bpmn:process (or any namespace prefix) to BusinessProcess in Archi
+# Stores the BPMN process id as property BPMN_ID
+"process","id","name","BusinessProcess","BPMN_ID"
+
+
+# ----------------------------------------------------------
+# COMMON OPTIONAL EXTENSIONS (INACTIVE)
+# ----------------------------------------------------------
+
+# Sub-processes embedded inside a process
+#"subProcess","id","name","BusinessProcess","BPMN_ID"
+
+# Call activities (reusable process references)
+#"callActivity","id","name","BusinessProcess","BPMN_ID"
+
+# Tasks — map to BusinessFunction if modelled at function level
+#"task","id","name","BusinessFunction","BPMN_ID"
+#"userTask","id","name","BusinessFunction","BPMN_ID"
+#"serviceTask","id","name","ApplicationFunction","BPMN_ID"
+#"scriptTask","id","name","ApplicationFunction","BPMN_ID"
+#"sendTask","id","name","BusinessFunction","BPMN_ID"
+#"receiveTask","id","name","BusinessFunction","BPMN_ID"
+#"manualTask","id","name","BusinessFunction","BPMN_ID"
+#"businessRuleTask","id","name","BusinessFunction","BPMN_ID"
+
+# Participants / Pools — map to BusinessActor or BusinessRole
+#"participant","id","name","BusinessActor","BPMN_ID"
+
+# Lanes — map to BusinessRole
+#"lane","id","name","BusinessRole","BPMN_ID"
+
+# Events — if you want to track start/end events as ArchiMate events
+#"startEvent","id","name","BusinessEvent","BPMN_ID"
+#"endEvent","id","name","BusinessEvent","BPMN_ID"
+#"intermediateCatchEvent","id","name","BusinessEvent","BPMN_ID"
+#"intermediateThrowEvent","id","name","BusinessEvent","BPMN_ID"
+
+# ----------------------------------------------------------
+# FUTURE SOURCE EXAMPLES (INACTIVE)
+# ----------------------------------------------------------
+# Other source systems follow the same pattern but use a
+# different property_key to stay distinguishable in Archi.
+#
+# SAP process IDs:
+#"process","ProcessID","ProcessName","BusinessProcess","SAP_ID"
+#
+# ERP module references:
+#"module","id","name","ApplicationComponent","ERP_ID"
+# ==========================================================

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns1="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns3="http://www.omg.org/spec/DD/20100524/DI" targetNamespace="http://example.com/bpmn" exporter="Camunda Modeler" exporterVersion="5.43.1">
+  <bpmn:process id="id-3431625e8daa424b9f089c21d4ea6049" name="BPU01-CSV 2 CSV" isExecutable="true">
+    <bpmn:startEvent id="Event_141ojog" name="CSV Basis Setup">
+      <bpmn:outgoing>Flow_1ogcsl5</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_1ogcsl5" sourceRef="Event_141ojog" targetRef="Activity_0oba9ny" />
+    <bpmn:serviceTask id="Activity_0oba9ny" name="CSV00-validate_environment.py">
+      <bpmn:documentation>Trigger:Ja</bpmn:documentation>
+      <bpmn:incoming>Flow_1ogcsl5</bpmn:incoming>
+      <bpmn:outgoing>Flow_030u63l</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_030u63l" sourceRef="Activity_0oba9ny" targetRef="Activity_1ap0iye" />
+    <bpmn:serviceTask id="Activity_1ap0iye" name="CSV01-validate_model.py">
+      <bpmn:documentation>Trigger:Ja</bpmn:documentation>
+      <bpmn:incoming>Flow_030u63l</bpmn:incoming>
+      <bpmn:outgoing>Flow_1wcpz35</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1fb3na5">
+        <bpmn:targetRef>DataObjectReference_00f407w</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0fxidd9">
+        <bpmn:targetRef>DataObjectReference_133fk8u</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:dataObjectReference id="DataObjectReference_00f407w" name="model-scope.txt" dataObjectRef="DataObject_1ical2q" />
+    <bpmn:dataObject id="DataObject_1ical2q" />
+    <bpmn:task id="Activity_0k24wvw" name="CSV02-leer.py">
+      <bpmn:incoming>Flow_1wcpz35</bpmn:incoming>
+      <bpmn:outgoing>Flow_0crcyii</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1wcpz35" sourceRef="Activity_1ap0iye" targetRef="Activity_0k24wvw" />
+    <bpmn:dataObjectReference id="DataObjectReference_133fk8u" name="CSV01-validate_model.log" dataObjectRef="DataObject_1ijmcw5" />
+    <bpmn:dataObject id="DataObject_1ijmcw5" />
+    <bpmn:sequenceFlow id="Flow_0crcyii" sourceRef="Activity_0k24wvw" targetRef="Activity_16u81bj" />
+    <bpmn:serviceTask id="Activity_16u81bj" name="CSV03-resolve_run_scope.py">
+      <bpmn:documentation>Trigger:Ja</bpmn:documentation>
+      <bpmn:incoming>Flow_0crcyii</bpmn:incoming>
+      <bpmn:outgoing>Flow_1u4z0dy</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0dspn61">
+        <bpmn:targetRef>DataObjectReference_1y3jl97</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1f3swc3">
+        <bpmn:targetRef>DataObjectReference_1gqgyws</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1u4z0dy" sourceRef="Activity_16u81bj" targetRef="Activity_06otpyj" />
+    <bpmn:dataObjectReference id="DataObjectReference_1y3jl97" name="run-scope.txt" dataObjectRef="DataObject_0a135a0" />
+    <bpmn:dataObject id="DataObject_0a135a0" />
+    <bpmn:dataObjectReference id="DataObjectReference_1gqgyws" name="CSV03-resolve_run_scope.log" dataObjectRef="DataObject_0qqqzyd" />
+    <bpmn:dataObject id="DataObject_0qqqzyd" />
+    <bpmn:serviceTask id="Activity_06otpyj" name="CSV04-model-overview.py">
+      <bpmn:documentation>Trigger:Ja</bpmn:documentation>
+      <bpmn:incoming>Flow_1u4z0dy</bpmn:incoming>
+      <bpmn:outgoing>Flow_0v1qea0</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1gd7ihg">
+        <bpmn:targetRef>DataObjectReference_0qcaf7q</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0jd3x4l">
+        <bpmn:targetRef>DataObjectReference_1y3jl97</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0geknks">
+        <bpmn:targetRef>DataStoreReference_0ra5q1x</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0l1cnnl">
+        <bpmn:targetRef>DataStoreReference_17fmn68</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0azmd03">
+        <bpmn:targetRef>DataStoreReference_114dgn0</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:dataObjectReference id="DataObjectReference_0qcaf7q" name="CSV04-model_overview.log" dataObjectRef="DataObject_08sey2e" />
+    <bpmn:dataObject id="DataObject_08sey2e" />
+    <bpmn:dataStoreReference id="DataStoreReference_0ra5q1x" name="02-artifacts\00-xml\03-child\00-archimatechild" />
+    <bpmn:dataStoreReference id="DataStoreReference_17fmn68" name="02-artifacts\02-csv\03-child\00-archimatechild" />
+    <bpmn:dataStoreReference id="DataStoreReference_114dgn0" name="02-artifacts\03-XLSX\03-child\00-archimatechild" />
+    <bpmn:task id="Activity_06v6uyf" name="run-scope.txt&#10;editieren">
+      <bpmn:incoming>Flow_0v1qea0</bpmn:incoming>
+      <bpmn:outgoing>Flow_0plf2j0</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0v1qea0" sourceRef="Activity_06otpyj" targetRef="Activity_06v6uyf" />
+    <bpmn:sequenceFlow id="Flow_0plf2j0" sourceRef="Activity_06v6uyf" targetRef="Activity_1b1btjs" />
+    <bpmn:serviceTask id="Activity_1b1btjs" name="CSV05-create_master_csvs.py">
+      <bpmn:documentation>Trigger:Ja</bpmn:documentation>
+      <bpmn:incoming>Flow_0plf2j0</bpmn:incoming>
+      <bpmn:outgoing>Flow_0fbo397</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1f9phtm">
+        <bpmn:targetRef>DataStoreReference_17fmn68</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1q731sh">
+        <bpmn:targetRef>DataObjectReference_0m38ibk</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_0yylf44">
+        <bpmn:targetRef>DataStoreReference_1di16ig</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:dataObjectReference id="DataObjectReference_0m38ibk" name="Archi CSV Stack&#10;&#10;- elements.csv&#10;- relations.csv&#10;- properties.csv" dataObjectRef="DataObject_15sv6dv" />
+    <bpmn:dataObject id="DataObject_15sv6dv" />
+    <bpmn:dataStoreReference id="DataStoreReference_1di16ig" name="02-artifacts\02-csv\00-master" />
+    <bpmn:endEvent id="Event_0on2m2i" name="CSV gecloned">
+      <bpmn:incoming>Flow_0fbo397</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0fbo397" sourceRef="Activity_1b1btjs" targetRef="Event_0on2m2i" />
+    <bpmn:textAnnotation id="TextAnnotation_0cruy8r">
+      <bpmn:text>ist noch ohne Funktion und kann ausgelassen werden daher nicht als Service Task definiert</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1qzix03" associationDirection="None" sourceRef="Activity_0k24wvw" targetRef="TextAnnotation_0cruy8r" />
+  </bpmn:process>
+  <ns1:BPMNDiagram id="BPMNDiagram_1">
+    <ns1:BPMNPlane id="BPMNPlane_1" bpmnElement="id-3431625e8daa424b9f089c21d4ea6049">
+      <ns1:BPMNShape id="Event_141ojog_di" bpmnElement="Event_141ojog">
+        <ns2:Bounds x="152" y="282" width="36" height="36" />
+        <ns1:BPMNLabel>
+          <ns2:Bounds x="127" y="325" width="86" height="14" />
+        </ns1:BPMNLabel>
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="Activity_1e10940_di" bpmnElement="Activity_0oba9ny">
+        <ns2:Bounds x="240" y="260" width="100" height="80" />
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="Activity_04kuexp_di" bpmnElement="Activity_1ap0iye">
+        <ns2:Bounds x="400" y="260" width="100" height="80" />
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="DataObjectReference_00f407w_di" bpmnElement="DataObjectReference_00f407w">
+        <ns2:Bounds x="492" y="465" width="36" height="50" />
+        <ns1:BPMNLabel>
+          <ns2:Bounds x="470" y="522" width="79" height="14" />
+        </ns1:BPMNLabel>
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="Activity_0k24wvw_di" bpmnElement="Activity_0k24wvw">
+        <ns2:Bounds x="560" y="260" width="100" height="80" />
+        <ns1:BPMNLabel />
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="DataObjectReference_133fk8u_di" bpmnElement="DataObjectReference_133fk8u">
+        <ns2:Bounds x="362" y="465" width="36" height="50" />
+        <ns1:BPMNLabel>
+          <ns2:Bounds x="338" y="522" width="85" height="40" />
+        </ns1:BPMNLabel>
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="Activity_0j2vmkj_di" bpmnElement="Activity_16u81bj">
+        <ns2:Bounds x="720" y="260" width="100" height="80" />
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="DataObjectReference_1y3jl97_di" bpmnElement="DataObjectReference_1y3jl97">
+        <ns2:Bounds x="852" y="615" width="36" height="50" />
+        <ns1:BPMNLabel>
+          <ns2:Bounds x="838" y="672" width="65" height="14" />
+        </ns1:BPMNLabel>
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="DataObjectReference_1gqgyws_di" bpmnElement="DataObjectReference_1gqgyws">
+        <ns2:Bounds x="722" y="455" width="36" height="50" />
+        <ns1:BPMNLabel>
+          <ns2:Bounds x="696" y="512" width="88" height="40" />
+        </ns1:BPMNLabel>
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="Activity_1xps2dy_di" bpmnElement="Activity_06otpyj">
+        <ns2:Bounds x="880" y="260" width="100" height="80" />
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="DataObjectReference_0qcaf7q_di" bpmnElement="DataObjectReference_0qcaf7q">
+        <ns2:Bounds x="942" y="445" width="36" height="50" />
+        <ns1:BPMNLabel>
+          <ns2:Bounds x="918" y="502" width="85" height="40" />
+        </ns1:BPMNLabel>
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="DataStoreReference_0ra5q1x_di" bpmnElement="DataStoreReference_0ra5q1x">
+        <ns2:Bounds x="1055" y="455" width="50" height="50" />
+        <ns1:BPMNLabel>
+          <ns2:Bounds x="1042" y="512" width="77" height="40" />
+        </ns1:BPMNLabel>
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="DataStoreReference_17fmn68_di" bpmnElement="DataStoreReference_17fmn68">
+        <ns2:Bounds x="1145" y="455" width="50" height="50" />
+        <ns1:BPMNLabel>
+          <ns2:Bounds x="1131" y="512" width="78" height="40" />
+        </ns1:BPMNLabel>
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="DataStoreReference_114dgn0_di" bpmnElement="DataStoreReference_114dgn0">
+        <ns2:Bounds x="1235" y="455" width="50" height="50" />
+        <ns1:BPMNLabel>
+          <ns2:Bounds x="1216" y="512" width="88" height="40" />
+        </ns1:BPMNLabel>
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="Activity_06v6uyf_di" bpmnElement="Activity_06v6uyf">
+        <ns2:Bounds x="1060" y="260" width="100" height="80" />
+        <ns1:BPMNLabel />
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="Activity_04ra7eg_di" bpmnElement="Activity_1b1btjs">
+        <ns2:Bounds x="1240" y="260" width="100" height="80" />
+        <ns1:BPMNLabel />
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="DataObjectReference_0m38ibk_di" bpmnElement="DataObjectReference_0m38ibk">
+        <ns2:Bounds x="1372" y="455" width="36" height="50" />
+        <ns1:BPMNLabel>
+          <ns2:Bounds x="1351" y="512" width="81" height="66" />
+        </ns1:BPMNLabel>
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="DataStoreReference_1di16ig_di" bpmnElement="DataStoreReference_1di16ig">
+        <ns2:Bounds x="1465" y="455" width="50" height="50" />
+        <ns1:BPMNLabel>
+          <ns2:Bounds x="1453" y="512" width="74" height="27" />
+        </ns1:BPMNLabel>
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="Event_0on2m2i_di" bpmnElement="Event_0on2m2i">
+        <ns2:Bounds x="1422" y="282" width="36" height="36" />
+        <ns1:BPMNLabel>
+          <ns2:Bounds x="1405" y="325" width="71" height="14" />
+        </ns1:BPMNLabel>
+      </ns1:BPMNShape>
+      <ns1:BPMNShape id="TextAnnotation_0cruy8r_di" bpmnElement="TextAnnotation_0cruy8r">
+        <ns2:Bounds x="660" y="80" width="330" height="60" />
+        <ns1:BPMNLabel />
+      </ns1:BPMNShape>
+      <ns1:BPMNEdge id="Flow_1ogcsl5_di" bpmnElement="Flow_1ogcsl5">
+        <ns3:waypoint x="188" y="300" />
+        <ns3:waypoint x="240" y="300" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="Flow_030u63l_di" bpmnElement="Flow_030u63l">
+        <ns3:waypoint x="340" y="300" />
+        <ns3:waypoint x="400" y="300" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="DataOutputAssociation_1fb3na5_di" bpmnElement="DataOutputAssociation_1fb3na5">
+        <ns3:waypoint x="463" y="340" />
+        <ns3:waypoint x="502" y="465" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="DataOutputAssociation_0fxidd9_di" bpmnElement="DataOutputAssociation_0fxidd9">
+        <ns3:waypoint x="435" y="340" />
+        <ns3:waypoint x="389" y="465" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="Flow_1wcpz35_di" bpmnElement="Flow_1wcpz35">
+        <ns3:waypoint x="500" y="300" />
+        <ns3:waypoint x="560" y="300" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="Flow_0crcyii_di" bpmnElement="Flow_0crcyii">
+        <ns3:waypoint x="660" y="300" />
+        <ns3:waypoint x="720" y="300" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="DataOutputAssociation_0dspn61_di" bpmnElement="DataOutputAssociation_0dspn61">
+        <ns3:waypoint x="782" y="340" />
+        <ns3:waypoint x="863" y="615" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="DataOutputAssociation_1f3swc3_di" bpmnElement="DataOutputAssociation_1f3swc3">
+        <ns3:waypoint x="763" y="340" />
+        <ns3:waypoint x="744" y="455" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="Flow_1u4z0dy_di" bpmnElement="Flow_1u4z0dy">
+        <ns3:waypoint x="820" y="300" />
+        <ns3:waypoint x="880" y="300" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="DataOutputAssociation_1gd7ihg_di" bpmnElement="DataOutputAssociation_1gd7ihg">
+        <ns3:waypoint x="937" y="340" />
+        <ns3:waypoint x="956" y="445" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="DataOutputAssociation_0jd3x4l_di" bpmnElement="DataOutputAssociation_0jd3x4l">
+        <ns3:waypoint x="923" y="340" />
+        <ns3:waypoint x="872" y="615" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="DataOutputAssociation_0geknks_di" bpmnElement="DataOutputAssociation_0geknks">
+        <ns3:waypoint x="963" y="340" />
+        <ns3:waypoint x="1059" y="455" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="DataOutputAssociation_0l1cnnl_di" bpmnElement="DataOutputAssociation_0l1cnnl">
+        <ns3:waypoint x="978" y="336" />
+        <ns3:waypoint x="1145" y="461" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="DataOutputAssociation_0azmd03_di" bpmnElement="DataOutputAssociation_0azmd03">
+        <ns3:waypoint x="980" y="327" />
+        <ns3:waypoint x="1235" y="466" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="Flow_0v1qea0_di" bpmnElement="Flow_0v1qea0">
+        <ns3:waypoint x="980" y="300" />
+        <ns3:waypoint x="1060" y="300" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="Flow_0plf2j0_di" bpmnElement="Flow_0plf2j0">
+        <ns3:waypoint x="1160" y="300" />
+        <ns3:waypoint x="1240" y="300" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="DataOutputAssociation_1f9phtm_di" bpmnElement="DataOutputAssociation_1f9phtm">
+        <ns3:waypoint x="1263" y="340" />
+        <ns3:waypoint x="1185" y="455" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="DataOutputAssociation_1q731sh_di" bpmnElement="DataOutputAssociation_1q731sh">
+        <ns3:waypoint x="1312" y="340" />
+        <ns3:waypoint x="1376" y="455" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="DataOutputAssociation_0yylf44_di" bpmnElement="DataOutputAssociation_0yylf44">
+        <ns3:waypoint x="1333" y="339" />
+        <ns3:waypoint x="1465" y="458" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="Flow_0fbo397_di" bpmnElement="Flow_0fbo397">
+        <ns3:waypoint x="1340" y="300" />
+        <ns3:waypoint x="1422" y="300" />
+      </ns1:BPMNEdge>
+      <ns1:BPMNEdge id="Association_1qzix03_di" bpmnElement="Association_1qzix03">
+        <ns3:waypoint x="630" y="260" />
+        <ns3:waypoint x="688" y="140" />
+      </ns1:BPMNEdge>
+    </ns1:BPMNPlane>
+  </ns1:BPMNDiagram>
+</bpmn:definitions>

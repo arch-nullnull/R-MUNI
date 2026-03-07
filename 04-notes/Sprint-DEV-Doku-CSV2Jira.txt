@@ -1,0 +1,329 @@
+================================================================================
+SPRINT DEV-DOKUMENTATION
+================================================================================
+Projekt         : IMS Blueprint
+Sprint-Bezeichnung : SPRINT-CSV10-JiraAssetsExport
+Datum           : 2026-03-04
+Stage           : 4 (aktiv)
+Status          : Dev-Dokumentation (nicht auditpflichtig per GOV 10.8)
+Erstellt durch  : Entwickler + Claude (Pair-Session)
+================================================================================
+
+
+--------------------------------------------------------------------------------
+1. STAGE-KONTEXT UND SPRINT-BEGRÜNDUNG
+--------------------------------------------------------------------------------
+
+1.1 Stage-Modell (Ist-Zustand)
+-------------------------------
+Stage 3  FREEZE
+         Stage 3 ist eingefroren. Änderungen ausschließlich für Bugfixing
+         zulässig. Neue Features sind in Stage 3 nicht erlaubt.
+
+Stage 4  AKTIV
+         Aktuelle Entwicklungsphase. Neue Features und Erweiterungen des
+         Blueprints werden hier umgesetzt.
+
+1.2 Auslöser (gemäß GOV 10.3 / 10.5)
+---------------------------------------
+Auslöser-Typ : Feature-Zuwachs (Entwicklerwunsch)
+
+Begründung   : Der IMS Blueprint verfügt über eine etablierte Pipeline zur
+               Transformation von master.xml in Archi-kompatible CSV-Dateien
+               (CSV09). Eine Synchronisation der Modelldaten mit Jira Assets
+               war bisher nicht vorgesehen.
+
+               Der Bedarf entstand aus dem Wunsch, ArchiMate- und BPMN-Objekte
+               aus dem master.xml direkt als Assets in Jira (Atlassian Cloud,
+               Free-Tier) verwalten zu können – ohne kostenpflichtige Connector-
+               Apps oder API-Abhängigkeiten.
+
+Fachlicher   : Jira Assets ermöglicht strukturierte Objektverwaltung im
+Mehrwert       bestehenden Atlassian-Stack (ims-blueprint-ticketsystem.atlassian.
+               net). Durch die CSV-Import-Fähigkeit von Jira Assets können
+               ArchiMate-Elemente, BPMN-Prozesse und deren Properties direkt
+               als konfigurierbare Objekte im Ticketsystem sichtbar gemacht
+               werden – wartbar, reproduzierbar, ohne Vendor-Lock-in.
+
+Spin-Off     : Da Stage 3 eingefroren ist, wurde CSV10 als eigenständiges
+               Modul in Stage 4 entwickelt. CSV09 (Stage 3) bleibt unverändert.
+               CSV10 liest aus dem master.xml direkt – keine Abhängigkeit zu
+               den Archi-CSVs aus CSV09.
+
+Governance-  : CSV10 erzeugt keine implizite Governance-Änderung. Die
+Konformität    bestehende Pipeline (CSV09 → Archi-Import) bleibt vollständig
+               erhalten. CSV10 ist eine additive Erweiterung.
+
+
+--------------------------------------------------------------------------------
+2. ZIELDEFINITION (gemäß GOV 10.6)
+--------------------------------------------------------------------------------
+
+Ziel         : Entwicklung eines Python-Scripts (CSV10-masterCsv2Assets.py),
+               das master.xml direkt in Jira-Assets-kompatible CSV-Dateien
+               transformiert, gruppiert nach semantischen Objektkategorien,
+               gesteuert über eine externe Konfigurationsdatei.
+
+Abgrenzung   : CSV10 ersetzt CSV09 nicht. CSV10 ist ein eigenständiger
+               Exportpfad ausschließlich für Jira Assets.
+
+Überprüfbar  : Erfolgskriterium ist die fehlerfreie Ausführung gegen ein
+               reales master.xml (worst-case: doppelte IDs, leere sourceModel-
+               Attribute, gemischte ArchiMate/BPMN-Namespaces) sowie die
+               korrekte Erzeugung von 7 gruppierten CSV-Dateien mit
+               vollständigem Filtermapping.
+
+
+--------------------------------------------------------------------------------
+3. TECHNISCHE ENTSCHEIDUNGEN
+--------------------------------------------------------------------------------
+
+3.1 Direktlesend aus master.xml (nicht aus Archi-CSVs)
+--------------------------------------------------------
+Entscheidung : CSV10 liest master.xml direkt, nicht die von CSV09 erzeugten
+               Archi-CSVs (elements.csv / properties.csv / relations.csv).
+
+Begründung   : Die Archi-CSVs sind auf das Archi-Importformat ausgerichtet
+               (ID, Type, Name, Documentation, Specialization). Jira Assets
+               benötigt ein flaches, spaltenorientiertes Format mit einem
+               objectKey, dynamischen Property-Spalten und Gruppen-CSVs pro
+               Objektkategorie. Eine Transformation aus den Archi-CSVs hätte
+               einen Zwischenschritt mit Informationsverlust erzeugt.
+               master.xml enthält alle Originaldaten inkl. sourceModel,
+               PropertyDefinitions und BPMN-Strukturen direkt zugänglich.
+
+3.2 7-Gruppen-Struktur statt Type-per-File
+-------------------------------------------
+Entscheidung : Die Ausgabe wird in 7 semantisch gruppierten CSV-Dateien
+               erzeugt, nicht in einer CSV pro ArchiMate-Typ.
+
+Begründung   : Bei vollständiger Typbreite (58+ ArchiMate-Typen im realen
+               master.xml) würde eine CSV-per-Typ zu einer unbeherrschbaren
+               Anzahl von Import-Konfigurationen in Jira Assets führen.
+               7 Gruppen spiegeln die semantische Struktur des ArchiMate-
+               Metamodells und bleiben dauerhaft wartbar.
+
+Gruppen      :
+               assets_processes.csv    Business-/Application-/Technology-Prozesse
+               assets_applications.csv IT-Systemkomponenten
+               assets_actors.csv       Personen, Rollen, Stakeholder
+               assets_technology.csv   Infrastruktur und Technologie
+               assets_motivation.csv   Strategie, Ziele, Anforderungen
+               assets_physical.csv     Physische Welt
+               assets_other.csv        Alle nicht klassifizierten Typen
+
+3.3 ID-Kollisionsstrategie: Merge als Default
+----------------------------------------------
+Entscheidung : Bei gleicher identifier über mehrere sourceModels wird per
+               Default die erste Instanz behalten (merge). Alle sourceModels
+               werden komma-separiert in der SourceModel-Spalte zusammengeführt.
+
+Begründung   : Das worst-case master.xml enthält 250 ID-Kollisionen, weil
+               Architecture.xml und R+Muni Architecture Modell.xml dieselben
+               Elemente spiegeln (synchronisierte Kopien). last_wins würde
+               sourceModel-Herkunft vernichten. prefix würde Duplikate in
+               Jira Assets erzeugen. merge ist verlustfrei und erzeugt
+               deterministische, eindeutige objectKeys.
+
+Alternative  : ID_STRATEGY=prefix oder last_wins über assetsexport.txt
+               aktivierbar, ohne Codeänderung.
+
+3.4 BPMN-Integration: Enrich statt Duplikat
+--------------------------------------------
+Entscheidung : BPMN-Prozesse die per Name mit einem ArchiMate-Element matchen
+               werden nicht als neue Objekte angelegt, sondern das bestehende
+               Element wird mit einer BPMN_ID-Spalte angereichert.
+               Ungematchte BPMN-Prozesse werden als neue Stub-Elemente
+               (ArchiType=BusinessProcess) angelegt.
+
+Begründung   : Das entspricht exakt der Match-Logik aus CSV09
+               (bpmnmastercsvsync.txt). Konsistenz zur bestehenden Pipeline
+               ist gewahrt. Keine Redundanz in Jira Assets.
+
+3.5 Synchronisationsstrategie: CSV manuell (nicht automatisiert)
+-----------------------------------------------------------------
+Entscheidung : Der Import nach Jira Assets erfolgt manuell über die Jira
+               Assets UI (CSV-Import-Funktion).
+
+Begründung   : Atlassian Free-Tier bietet Assets als Legacy-Bundle-Feature.
+               Der Status ist fragil (kann bei Atlassian-seitigem Cleanup
+               entfallen). Vollautomatisierung via Scheduled Automation +
+               Assets REST API wäre technisch möglich (kein Marketplace-
+               Connector nötig), wurde aber bewusst nicht implementiert um
+               keinen Pflegezwang auf einer unsicheren Feature-Basis zu
+               erzeugen. Manuelle Ausführung ist stabil, reproduzierbar
+               und blueprint-konform.
+
+3.6 Externe Konfiguration via assetsexport.txt
+-----------------------------------------------
+Entscheidung : Alle Exportparameter werden über eine externe Konfigurationsdatei
+               gesteuert. Das Script selbst wird nicht für Anpassungen
+               modifiziert.
+
+Begründung   : Entspricht dem bestehenden Blueprint-Muster (csvexport.txt in
+               CSV99, bpmnmastercsvsync.txt in CSV09). Governance-Konformität
+               durch Konsistenz der Steuerungsmechanismen.
+
+3.7 Relations: Default aus, opt-in via Config
+----------------------------------------------
+Entscheidung : Relations werden per Default nicht exportiert. Aktivierung
+               über INCLUDE_RELATIONS=true in assetsexport.txt.
+
+Begründung   : 712 Relations im Test-XML. Jira Assets Free-Tier hat
+               Objektlimits. Relations als eigenständige Assets erhöhen
+               die Objektanzahl erheblich ohne zwingenden Mehrwert im
+               aktuellen Stage. Opt-in-Prinzip schützt vor unbeabsichtigtem
+               Limit-Erreichen.
+
+
+--------------------------------------------------------------------------------
+4. ANALYSE-ERKENNTNISSE AUS DEM master.xml (worst-case)
+--------------------------------------------------------------------------------
+
+XML-Struktur (analysiert):
+  Direkte Kinder von <master>  : 2.602
+  ArchiMate-Elemente           : 560 (mit ID)
+  ArchiMate-Relations          : 712
+  BPMN definitions             : 14
+  PropertyDefinitions          : 5 (ID3Party, Type, Trigger, Type, BPMN_ID)
+
+sourceModels im XML:
+  Architecture.xml             : 250 Elemente
+  R+Muni Architecture Modell.xml : 250 Elemente (gespiegelt, 250 ID-Kollisionen)
+  Importer.xml                 : 60 Elemente
+
+BPMN-Match-Ergebnis:
+  12 BPMN-Prozesse matched auf ArchiMate-Elemente (Name-Match)
+  2  BPMN-Prozesse ohne Match → neue Stub-Elemente
+     - BUP00-Modellieren
+     - BUP01-Entwicklung
+
+Generierte CSVs (Testlauf):
+  assets_processes.csv         46 Zeilen  (inkl. BPMN_ID Spalte)
+  assets_other.csv            165 Zeilen  (inkl. ID3Party, Trigger, Type)
+  assets_motivation.csv        42 Zeilen
+  assets_applications.csv      20 Zeilen
+  assets_technology.csv        16 Zeilen
+  assets_actors.csv            13 Zeilen
+  assets_physical.csv          10 Zeilen
+  assets_relations.csv        712 Zeilen  (opt-in, nicht default)
+
+
+--------------------------------------------------------------------------------
+5. DATEI-INVENTAR
+--------------------------------------------------------------------------------
+
+5.1 Neu erstellte Dateien (Stage 4 / Sprint CSV10)
+----------------------------------------------------
+
+CSV10-masterCsv2Assets.py
+  Typ       : Python-Script
+  Ablage    : <BLUEPRINT_ROOT>/[script-verzeichnis]/
+  Zweck     : Transformiert master.xml in Jira-Assets-kompatible CSVs
+  Input     : 02-artifacts/00-xml/00-master/master.xml
+  Output    : 02-artifacts/02-csv/05-assets/*.csv
+  Config    : 02-artifacts/02-csv/02-sync/assetsexport.txt
+  Log       : 03-stages/99-logs/CSV10-masterCsv2Assets.log
+  Root      : Liest BLUEPRINT_ROOT aus root.txt (identisch zu CSV09)
+
+assetsexport.txt
+  Typ       : Konfigurationsdatei
+  Ablage    : 02-artifacts/02-csv/02-sync/assetsexport.txt
+  Zweck     : Steuerung des Exportverhaltens von CSV10
+  Optional  : Ja. Bei Fehlen laufen alle Defaults.
+  Inhalt    : Alle möglichen Direktiven inaktiv vordefiniert
+              (basierend auf extrahierten Typen aus master.xml)
+
+assetsexport-readme.txt
+  Typ       : Dokumentation
+  Ablage    : 02-artifacts/02-csv/02-sync/assetsexport-readme.txt
+  Zweck     : Erklärt alle Direktiven von assetsexport.txt mit Defaults
+
+5.2 Unveränderte Dateien (Stage 3 / kein Eingriff)
+----------------------------------------------------
+CSV09-masterXml2Csv.py    UNVERÄNDERT  (Stage 3 freeze respektiert)
+CSV99-export_snapshot.py  UNVERÄNDERT  (Stage 3 freeze respektiert)
+master.xml                UNVERÄNDERT  (Read-only Input)
+elements.csv              UNVERÄNDERT
+relations.csv             UNVERÄNDERT
+properties.csv            UNVERÄNDERT
+
+5.3 Neues Output-Verzeichnis
+-----------------------------
+02-artifacts/02-csv/05-assets/
+  Neues Verzeichnis, ausschließlich für Jira-Assets-Export.
+  Kein Konflikt mit bestehendem 04-import/ (Archi-Import).
+
+
+--------------------------------------------------------------------------------
+6. OFFENE PUNKTE / NEXT STEPS
+--------------------------------------------------------------------------------
+
+6.1 Erster echter Import in Jira Assets
+-----------------------------------------
+Status   : Ausstehend
+Aktion   : CSV10 gegen produktives master.xml ausführen, generierte CSVs
+           in Jira Assets (ims-blueprint-ticketsystem.atlassian.net) importieren.
+           Schema in Jira Assets vorab anlegen (Objekttypen pro Gruppe).
+Risiko   : Atlassian Free-Tier Objektlimit unbekannt. Bei 80k+ Einträgen
+           im produktiven master.xml muss geprüft werden ob Limit erreicht wird.
+           Empfehlung: Erst mit EXCLUDE_TYPE=Artifact testen (253 Einträge
+           alleine im Test-XML).
+
+6.2 Jira Assets Schema-Definition
+------------------------------------
+Status   : Ausstehend
+Aktion   : Für jede der 7 Gruppen einen Objekttyp in Jira Assets anlegen.
+           Spalten der CSV müssen den Attributen des Objekttyps entsprechen.
+           Mapping: objectKey → unique identifier attribute (für Updates).
+Hinweis  : Max. 120 Attribute pro Objekttyp (Atlassian-Limit ab 2025).
+
+6.3 Stabilisierung der Archi-IDs
+----------------------------------
+Status   : Offen (bewusst nicht in diesem Sprint adressiert)
+Aktion   : Im aktuellen worst-case XML sind 250 IDs doppelt (zwei gespiegelte
+           sourceModels). Für einen stabilen, inkrementellen Jira-Assets-Sync
+           wäre eine ID-Stabilisierung in master.xml vorteilhaft.
+           Solange merge-Strategie verwendet wird ist der Export korrekt,
+           aber objectKey ist nicht eindeutig einem sourceModel zuordenbar.
+
+6.4 Vollautomatisierung (zurückgestellt)
+-----------------------------------------
+Status   : Zurückgestellt (bewusste Entscheidung, siehe 3.5)
+Aktion   : Bei Stabilisierung des Atlassian-Feature-Status könnte
+           Scheduled Automation + Assets REST API ohne Marketplace-App
+           implementiert werden. Script ist dafür bereits vorbereitet
+           (CSV auf URL hinterlegen → Import-Config → Scheduled Trigger).
+
+6.5 Stage-Ende Dokumentation
+------------------------------
+Status   : Ausstehend (gemäß GOV 10.9 verpflichtend zum Stage-Ende)
+Aktion   : Diese Dev-Dokumentation ist nicht auditpflichtig (GOV 10.8).
+           Zum Stage-Ende ist eine vollständige, governance-konforme
+           Dokumentation zu erstellen. Alle hier getroffenen Entscheidungen
+           sind explizit nachzudokumentieren.
+
+
+--------------------------------------------------------------------------------
+7. GOVERNANCE-KONFORMITÄTSCHECK
+--------------------------------------------------------------------------------
+
+GOV 10.3  Zulässiger Auslöser        OK  Feature-Zuwachs (Entwicklerwunsch)
+GOV 10.5  Fachlicher Mehrwert        OK  Beschrieben in Abschnitt 1.2
+GOV 10.5  Keine implizite Gov-Änd.   OK  CSV09/CSV99 unverändert, additiv
+GOV 10.6  Ziel explizit definiert    OK  Abschnitt 2
+GOV 10.6  Ziel überprüfbar           OK  Testlauf erfolgreich dokumentiert
+GOV 10.7  Zwischenschritte           OK  Nicht vollständig dokumentiert,
+                                         normativ zugelassen
+GOV 10.8  Dev-Doku erstellt          OK  Dieses Dokument
+GOV 10.9  Stage-Ende Doku            OFFEN  Verpflichtend bei Stage-Abschluss
+GOV 10.10 Keine Gov-Regel aufgehoben OK  Dokumentationszeitpunkt verschoben,
+                                         keine Ausnahme
+GOV 10.5  Keine Architekturabw.      OK  Blueprint-Struktur, Naming-Convention
+                                         und Steuerungsmechanismen konsistent
+
+
+================================================================================
+END OF SPRINT DEV-DOKUMENTATION
+SPRINT-CSV10-JiraAssetsExport | Stage 4 | 2026-03-04
+================================================================================

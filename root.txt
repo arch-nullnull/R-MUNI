@@ -1,0 +1,14 @@
+# =========================================================
+# Archi Blueprint Root Configuration
+# =========================================================
+# Diese Datei definiert den physischen Installationspfad
+# des Archi Blueprints.
+#
+# Alle internen Pfade werden relativ zu diesem Root
+# aufgelöst.
+#
+# Keine andere Konfigurationsdatei enthält absolute Pfade.
+# =========================================================
+
+BLUEPRINT_ROOT=C:\Prototyping\MUNI
+<rootfolde>=C:\Prototyping\MUNI

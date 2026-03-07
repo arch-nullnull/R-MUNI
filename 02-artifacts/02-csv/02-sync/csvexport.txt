@@ -1,0 +1,114 @@
+# ==========================================================
+# csvexport.txt
+# Declarative Export Filter for CSV99
+#
+# Purpose:
+# ----------------------------------------------------------
+# - Define WHICH CSV element TYPES are EXCLUDED
+#   from the CSV99 import snapshot
+#
+# - Acts as HARD EXCLUSION LIST for CSV99
+#
+# Principles:
+# ----------------------------------------------------------
+# - Configuration, not logic
+# - One line = one TYPE
+# - Rules are OR-combined
+# - If a row's Type matches ANY entry here -> it is excluded
+#
+# Scope:
+# ----------------------------------------------------------
+# - Applies to:
+#   - elements.csv
+#   - properties.csv (if Type column exists)
+#   - relations.csv
+#
+# - CSV99 performs STRING-EXACT matching
+#
+# Important:
+# ----------------------------------------------------------
+# - NO wildcards
+# - NO XML syntax
+# - NO model selectors
+# - NO regex
+# - Case-sensitive
+#
+# This file is intentionally SIMPLE.
+# ==========================================================
+
+
+# ----------------------------------------------------------
+# ACTIVE RULES
+# ----------------------------------------------------------
+
+# Exclude Archi internal model container
+ArchimateModel
+
+
+# ----------------------------------------------------------
+# COMMON OPTIONAL EXAMPLES (INACTIVE)
+# ----------------------------------------------------------
+
+# Exclude grouping elements
+#Grouping
+
+# Exclude documentation-only elements
+#Meaning
+#Value
+
+# Exclude motivation layer elements
+#Assessment
+#Driver
+#Goal
+#Outcome
+#Principle
+#Requirement
+#Stakeholder
+
+# Exclude physical layer elements
+#Material
+#Device
+#Node
+#SystemSoftware
+#TechnologyInterface
+#TechnologyFunction
+
+# Exclude application internals
+#ApplicationFunction
+#ApplicationInterface
+#ApplicationCollaboration
+
+# Exclude data artifacts
+#Artifact
+#DataObject
+
+
+# ----------------------------------------------------------
+# RELATIONSHIP EXAMPLES (INACTIVE)
+# ----------------------------------------------------------
+
+# Exclude specialization relations
+#SpecializationRelationship
+
+# Exclude realization relations
+#RealizationRelationship
+
+# Exclude serving relations
+#ServingRelationship
+
+
+# ----------------------------------------------------------
+# NOTES
+# ----------------------------------------------------------
+# - CSV99 does NOT interpret model scope
+# - CSV99 does NOT interpret XML semantics
+# - CSV99 does NOT interpret wildcards
+#
+# - This file is ONLY about CSV import hygiene
+#
+# - Model selection belongs to:
+#   - csvmapping.txt (CSV03)
+#   - run-scope.txt (runtime)
+#
+# Keep this file boring and explicit.
+# ==========================================================

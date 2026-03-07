@@ -1,0 +1,39 @@
+SOURCE=archi
+MODEL=01-archimateactivesub/Importer.archimate.bak
+
+SOURCE=archi
+MODEL=01-archimateactivesub/MUNI FLOW.archimate.bak
+
+SOURCE=archi
+MODEL=Importer.archimate
+
+SOURCE=archi
+MODEL=MUNI EA Modell.archimate
+
+SOURCE=archi
+MODEL=MUNI FLOW.archimate
+
+SOURCE=archi
+MODEL=Testi.archimate
+
+SOURCE=OEF
+MODEL=Architecture.xml
+
+SOURCE=OEF
+MODEL=Importer.xml
+
+SOURCE=OEF
+MODEL=MUNI EA Modell.xml
+
+SOURCE=OEF
+MODEL=MUNI FLOW.xml
+
+SOURCE=OEF
+MODEL=R+Muni Architecture Modell.xml
+
+SOURCE=XLSX
+MODEL=R+MUNI ScopingPhase2_Value.xlsx
+
+SOURCE=XLSX
+MODEL=R+Muni Architecture Modell.xlsx
+

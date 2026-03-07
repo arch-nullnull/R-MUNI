@@ -1,0 +1,15 @@
+[HLP09] 2026-03-07 14:21:14 | Blueprint Root : C:\Prototyping\MUNI
+[HLP09] 2026-03-07 14:21:14 | Lese webconfig : C:\Prototyping\MUNI\02-artifacts\05-reports\webconfig.txt
+[HLP09] 2026-03-07 14:21:14 | Gestartet: 'MUNI EA Modell' | Port=8080 | Pfad=C:\Prototyping\MUNI\02-artifacts\05-reports\00-archimate\MUNI EA Modell
+[HLP09] 2026-03-07 14:21:14 | Aktive Server: 1 | Uebersprungen: 0
+[HLP09] 2026-03-07 14:21:31 | Alle Server gestoppt (STRG+C)
+[HLP09] 2026-03-07 14:24:22 | Blueprint Root : C:\Prototyping\MUNI
+[HLP09] 2026-03-07 14:24:22 | Lese webconfig : C:\Prototyping\MUNI\02-artifacts\05-reports\webconfig.txt
+[HLP09] 2026-03-07 14:24:22 | Gestartet: 'MUNI EA Modell' | Port=8080 | Pfad=C:\Prototyping\MUNI\02-artifacts\05-reports\00-archimate\MUNI EA Modell
+[HLP09] 2026-03-07 14:24:22 | Aktive Server: 1 | Uebersprungen: 0
+[HLP09] 2026-03-07 14:26:05 | Alle Server gestoppt (STRG+C)
+[HLP09] 2026-03-07 14:27:18 | Blueprint Root : C:\Prototyping\MUNI
+[HLP09] 2026-03-07 14:27:18 | Lese webconfig : C:\Prototyping\MUNI\02-artifacts\05-reports\webconfig.txt
+[HLP09] 2026-03-07 14:27:18 | Gestartet: 'MUNI EA Modell' | Port=8080 | Pfad=C:\Prototyping\MUNI\02-artifacts\05-reports\00-archimate\MUNI EA Modell
+[HLP09] 2026-03-07 14:27:18 | Gestartet: 'MUNI FLOW' | Port=8081 | Pfad=C:\Prototyping\MUNI\02-artifacts\05-reports\00-archimate\MUNI FLOW
+[HLP09] 2026-03-07 14:27:18 | Aktive Server: 2 | Uebersprungen: 0

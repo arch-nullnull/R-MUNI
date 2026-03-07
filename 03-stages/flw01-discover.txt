@@ -1,0 +1,77 @@
+# flw01-discover.txt
+# Generated: 2026-03-07 09:53:10
+# Use this as reference when writing flowtriggers.txt
+# CONFIGURED     = matched in flowtriggers.txt
+# NOT CONFIGURED = not yet mapped
+#
+
+# ------------------------------------------------------------
+# ARCHI – available element_type values
+# ------------------------------------------------------------
+element_type = ApplicationCollaboration            # 4 file(s) | NOT CONFIGURED
+element_type = ApplicationComponent                # 4 file(s) | NOT CONFIGURED
+element_type = ApplicationEvent                    # 1 file(s) | NOT CONFIGURED
+element_type = ApplicationFunction                 # 4 file(s) | NOT CONFIGURED
+element_type = ApplicationInteraction              # 1 file(s) | NOT CONFIGURED
+element_type = ApplicationInterface                # 4 file(s) | NOT CONFIGURED
+element_type = ApplicationProcess                  # 1 file(s) | NOT CONFIGURED
+element_type = ApplicationService                  # 1 file(s) | NOT CONFIGURED
+element_type = Artifact                            # 4 file(s) | NOT CONFIGURED
+element_type = Assessment                          # 4 file(s) | NOT CONFIGURED
+element_type = BusinessActor                       # 4 file(s) | NOT CONFIGURED
+element_type = BusinessEvent                       # 1 file(s) | NOT CONFIGURED
+element_type = BusinessFunction                    # 4 file(s) | NOT CONFIGURED
+element_type = BusinessInteraction                 # 1 file(s) | NOT CONFIGURED
+element_type = BusinessInterface                   # 4 file(s) | NOT CONFIGURED
+element_type = BusinessObject                      # 4 file(s) | NOT CONFIGURED
+element_type = BusinessProcess                     # 5 file(s) | NOT CONFIGURED
+element_type = BusinessRole                        # 4 file(s) | NOT CONFIGURED
+element_type = BusinessService                     # 4 file(s) | NOT CONFIGURED
+element_type = Capability                          # 4 file(s) | NOT CONFIGURED
+element_type = CommunicationNetwork                # 4 file(s) | NOT CONFIGURED
+element_type = Constraint                          # 1 file(s) | NOT CONFIGURED
+element_type = Contract                            # 1 file(s) | NOT CONFIGURED
+element_type = CourseOfAction                      # 4 file(s) | NOT CONFIGURED
+element_type = DataObject                          # 4 file(s) | NOT CONFIGURED
+element_type = Deliverable                         # 1 file(s) | NOT CONFIGURED
+element_type = Device                              # 4 file(s) | NOT CONFIGURED
+element_type = DistributionNetwork                 # 1 file(s) | NOT CONFIGURED
+element_type = Driver                              # 4 file(s) | NOT CONFIGURED
+element_type = Equipment                           # 1 file(s) | NOT CONFIGURED
+element_type = Facility                            # 1 file(s) | NOT CONFIGURED
+element_type = Gap                                 # 1 file(s) | NOT CONFIGURED
+element_type = Goal                                # 4 file(s) | NOT CONFIGURED
+element_type = Grouping                            # 1 file(s) | NOT CONFIGURED
+element_type = ImplementationEvent                 # 1 file(s) | NOT CONFIGURED
+element_type = Location                            # 1 file(s) | NOT CONFIGURED
+element_type = Material                            # 4 file(s) | NOT CONFIGURED
+element_type = Meaning                             # 4 file(s) | NOT CONFIGURED
+element_type = Node                                # 4 file(s) | NOT CONFIGURED
+element_type = Outcome                             # 4 file(s) | NOT CONFIGURED
+element_type = Path                                # 1 file(s) | NOT CONFIGURED
+element_type = Plateau                             # 1 file(s) | NOT CONFIGURED
+element_type = Principle                           # 4 file(s) | NOT CONFIGURED
+element_type = Product                             # 4 file(s) | NOT CONFIGURED
+element_type = Representation                      # 1 file(s) | NOT CONFIGURED
+element_type = Requirement                         # 4 file(s) | NOT CONFIGURED
+element_type = Resource                            # 4 file(s) | NOT CONFIGURED
+element_type = Stakeholder                         # 4 file(s) | NOT CONFIGURED
+element_type = SystemSoftware                      # 4 file(s) | NOT CONFIGURED
+element_type = TechnologyCollaboration             # 1 file(s) | NOT CONFIGURED
+element_type = TechnologyEvent                     # 1 file(s) | NOT CONFIGURED
+element_type = TechnologyFunction                  # 5 file(s) | NOT CONFIGURED
+element_type = TechnologyInteraction               # 1 file(s) | NOT CONFIGURED
+element_type = TechnologyInterface                 # 4 file(s) | NOT CONFIGURED
+element_type = TechnologyProcess                   # 1 file(s) | NOT CONFIGURED
+element_type = TechnologyService                   # 1 file(s) | NOT CONFIGURED
+element_type = Value                               # 4 file(s) | NOT CONFIGURED
+element_type = ValueStream                         # 4 file(s) | NOT CONFIGURED
+element_type = WorkPackage                         # 3 file(s) | CONFIGURED -> [archi_workpackage]  order=10  dispatch_key=property:Type
+
+# ------------------------------------------------------------
+# BPMN – available element_tag values
+# ------------------------------------------------------------
+element_tag  = endEvent                            # 1 file(s) | NOT CONFIGURED
+element_tag  = serviceTask                         # 1 file(s) | CONFIGURED -> [bpmn_servicetask]  order=20  dispatch_key=attr:id
+element_tag  = startEvent                          # 1 file(s) | NOT CONFIGURED
+

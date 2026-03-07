@@ -1,0 +1,12 @@
+ACTIVE_MODELS:
+- MUNI EA Modell.archimate
+
+ACTIVE_SUB_MODELS:
+- Importer.archimate
+- MUNI FLOW.archimate
+- Testi.archimate
+
+OTHER_ARCHIMATE_FILES:
+- 01-archimateactivesub/Importer.archimate.bak
+- 01-archimateactivesub/MUNI FLOW.archimate.bak
+

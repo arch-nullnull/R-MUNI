@@ -1,0 +1,86 @@
+# ==========================================================
+# M2Bmapping.txt
+# Filter rules for Master → BPMN (M2B)
+#
+# Purpose:
+# - Define WHICH Archi BusinessProcess elements
+#   are materialized as BPMN processes
+#
+# Scope:
+# - Applied ONLY in M2B01 (master extract)
+# - Acts as HARD FILTER
+#
+# Semantics:
+# - If NO rule matches → element is ignored
+# - Rules act ONLY as selectors (no transformation)
+# - If a rule matches → COMPLETE element is processed
+# - No IDs are used as filter criteria
+#
+# Supported filter dimensions:
+# - Archi source model name (sourceModel)
+# - Element xsi:type
+#
+# Syntax:
+# archi[model=<pattern>]-element-xsi:type="<Type>"
+#
+# Notes:
+# - <pattern> supports wildcards (*)
+# - Matching is substring-based
+# - Multiple rules are OR-combined
+# ==========================================================
+
+archi[model="MUNI FLOW.xml"]-element-xsi:type="BusinessProcess"
+
+# ----------------------------------------------------------
+# ACTIVE RULE (CURRENT SETUP)
+# ----------------------------------------------------------
+# Include ALL BusinessProcess elements
+# from Archi models whose filename contains "Process"
+#
+# Example:
+# sourceModel="BusinessProcess.xml"
+# sourceModel="CoreProcessLandscape.xml"
+#
+#archi[model=*]-element-xsi:type="BusinessProcess"
+
+
+
+# ----------------------------------------------------------
+# EXAMPLE RULES (INACTIVE / DOCUMENTATION)
+# ----------------------------------------------------------
+
+# ----------------------------------------------------------
+# Include BusinessProcesses from productive models only
+# ----------------------------------------------------------
+#archi[model=*Production*]-element-xsi:type="BusinessProcess"
+#archi[model=*Core*]-element-xsi:type="BusinessProcess"
+
+
+# ----------------------------------------------------------
+# Exclude vision or draft models explicitly
+# (keep them in Archi, but do NOT materialize as BPMN)
+# ----------------------------------------------------------
+#archi[model=*Vision*]-element-xsi:type="BusinessProcess"
+#archi[model=*Draft*]-element-xsi:type="BusinessProcess"
+
+
+# ----------------------------------------------------------
+# Exclude importer / technical staging models
+# ----------------------------------------------------------
+#archi[model=*Importer*]-element-xsi:type="BusinessProcess"
+
+
+# ----------------------------------------------------------
+# Example: allow only a specific domain slice
+# ----------------------------------------------------------
+#archi[model=*Sales*]-element-xsi:type="BusinessProcess"
+#archi[model=*Finance*]-element-xsi:type="BusinessProcess"
+
+
+# ----------------------------------------------------------
+# Notes for future extension:
+#
+# - Additional dimensions (e.g. layer, viewpoint)
+#   can be added without changing M2B01 flow
+# - Mapping file is configuration, not logic
+# ----------------------------------------------------------

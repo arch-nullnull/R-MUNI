@@ -1,0 +1,238 @@
+================================================================================
+SPRINT DEV-DOKUMENTATION
+================================================================================
+Projekt             : R+MUNI Blueprint
+Sprint-Bezeichnung  : SPRINT-M2B01-RunScopeFilter
+Datum               : 2026-03-06
+Stage               : 4 (aktiv)
+Status              : Dev-Dokumentation (nicht auditpflichtig per GOV 10.8)
+Erstellt durch      : Entwickler + Claude (Pair-Session)
+================================================================================
+
+
+--------------------------------------------------------------------------------
+1. STAGE-KONTEXT UND SPRINT-BEGRÜNDUNG
+--------------------------------------------------------------------------------
+
+1.1 Stage-Modell (Ist-Zustand)
+-------------------------------
+Stage 3  FREEZE
+         Stage 3 ist eingefroren. Änderungen ausschließlich für Bugfixing
+         zulässig. Neue Features sind in Stage 3 nicht erlaubt.
+
+Stage 4  AKTIV
+         Aktuelle Entwicklungsphase. Neue Features und Erweiterungen des
+         Blueprints werden hier umgesetzt.
+
+1.2 Auslöser (gemäß GOV 10.3 / 10.5)
+---------------------------------------
+Auslöser-Typ : Feature-Zuwachs (Entwicklerwunsch)
+
+Begründung   : Der R+MUNI Blueprint verfügt über eine etablierte
+               run-scope.txt Konfigurationsdatei die deklarativ steuert
+               welche Modelle in welchen Flows aktiv sind.
+
+               SOURCE=BPMN in run-scope.txt ist bereits als Konzept
+               vorhanden und wird von CSV09 korrekt gelesen. M2B01
+               ignoriert run-scope.txt jedoch vollständig und liest
+               stattdessen direkt aus master.xml — gefiltert nur durch
+               M2Bmapping.txt.
+
+               Sobald mehrere OEF Modelle bereitgestellt werden (z.B.
+               Importer.xml, MUNI EA Modell.xml, MUNI FLOW.xml) enthält
+               master.xml BusinessProcess Elemente aus ALLEN Modellen.
+               M2B01 erstellt daraus BPMN Hüllen für alle gefundenen
+               Prozesse — was zu einem ABORT wegen zu vieler Hüllen führt.
+
+               Der Entwickler hat run-scope.txt bereits korrekt konfiguriert:
+                 SOURCE=BPMN
+                 MODEL=MUNI FLOW.xml
+               Diese Konfiguration wird von M2B01 jedoch nicht respektiert.
+
+Fachlicher   : run-scope.txt ist das zentrale Steuerungsdokument des
+Mehrwert       Blueprints. Die Konsistenz zwischen der deklarierten
+               Absicht (run-scope.txt) und der tatsächlichen Ausführung
+               (M2B01) ist ein Kernprinzip des Systems.
+               Nach dieser Erweiterung genügt es SOURCE=BPMN in
+               run-scope.txt zu setzen um zu steuern welche Modelle
+               BPMN Hüllen erhalten — ohne M2Bmapping.txt anpassen
+               zu müssen.
+
+Governance-  : M2B01 erhält eine additive Erweiterung. Die bestehende
+Konformität    M2Bmapping.txt Filterlogik bleibt vollständig erhalten
+               und wirkt als zweiter Filter (HARD FILTER). Stage 3
+               Scripts bleiben unverändert.
+
+
+--------------------------------------------------------------------------------
+2. ZIELDEFINITION (gemäß GOV 10.6)
+--------------------------------------------------------------------------------
+
+Ziel         : M2B01-master_extract.py wird so erweitert dass es
+               run-scope.txt liest und SOURCE=BPMN Einträge als
+               Modellfilter für die BPMN Hüllen-Erstellung verwendet.
+               Nur BusinessProcess Elemente deren sourceModel einem
+               aktiven SOURCE=BPMN MODEL= Eintrag entspricht werden
+               zu BPMN Hüllen materialisiert.
+
+Abgrenzung   : M2Bmapping.txt bleibt als zweiter Filter (HARD FILTER)
+               vollständig aktiv. run-scope.txt wirkt als vorgelagerter
+               erster Filter (SCOPE FILTER). Beide Filter müssen
+               zutreffen damit eine Hülle erstellt wird.
+
+Überprüfbar  : Erfolgskriterium ist die fehlerfreie Ausführung von M2B01
+               gegen ein master.xml das BusinessProcesses aus mehreren
+               Modellen enthält — wobei nur Prozesse aus dem in
+               run-scope.txt deklarierten BPMN Modell als Hüllen
+               materialisiert werden.
+
+
+--------------------------------------------------------------------------------
+3. IST-ZUSTAND — PROBLEMANALYSE
+--------------------------------------------------------------------------------
+
+3.1 Kausalkette des Problems
+-----------------------------
+  mapping.txt: archi[*]
+      ↓
+  XML04 nimmt ALLE Elemente aus ALLEN Archi Modellen
+      ↓
+  master.xml enthält BusinessProcesses aus:
+    - Importer.xml        (Überblicksmodell — keine Hüllen gewünscht)
+    - MUNI EA Modell.xml  (Applikationsmodell — keine Hüllen gewünscht)
+    - MUNI FLOW.xml       (Prozessmodell — Hüllen gewünscht!)
+      ↓
+  M2B01 liest master.xml → findet BusinessProcesses aus ALLEN Modellen
+      ↓
+  M2Bmapping.txt: archi[model=*]-element-xsi:type="BusinessProcess"
+      ↓
+  Zu viele Hüllen erkannt → ABORT
+
+3.2 Warum mapping.txt archi[*] korrekt ist
+-------------------------------------------
+  mapping.txt steuert NUR was ins master.xml kommt.
+  archi[*] ist der gewünschte Default — alles soll im
+  master.xml verfügbar sein. Das ist kein Fehler.
+
+3.3 Warum M2Bmapping.txt nicht die Lösung ist
+-----------------------------------------------
+  M2Bmapping.txt könnte auf ein spezifisches Modell eingeschränkt
+  werden. Das wäre jedoch eine statische Lösung die die Flexibilität
+  des run-scope.txt Konzepts untergräbt.
+  Der Entwickler hat run-scope.txt bereits korrekt für diesen
+  Zweck konfiguriert — die Implementierung muss das respektieren.
+
+3.4 Die Lücke
+--------------
+  M2B01 wurde nie beigebracht run-scope.txt zu lesen.
+  CSV09 macht es vor — M2B01 soll dasselbe Prinzip anwenden.
+
+
+--------------------------------------------------------------------------------
+4. SOLL-ZUSTAND — TECHNISCHE LÖSUNG
+--------------------------------------------------------------------------------
+
+4.1 Filterlogik nach Erweiterung
+----------------------------------
+  run-scope.txt SOURCE=BPMN   →  Scope Filter (neu)     Ebene 1
+  M2Bmapping.txt              →  Hard Filter (bestehend) Ebene 2
+
+  Beide Filter müssen zutreffen.
+  Ist run-scope.txt leer (keine SOURCE=BPMN Einträge) →
+  Verhalten wie bisher (kein Filter auf sourceModel).
+
+4.2 Änderung in M2B01
+-----------------------
+  M2B01-master_extract.py erhält eine neue Funktion:
+
+    read_bpmn_scope(run_scope_path) -> list[str]
+
+  Diese Funktion liest run-scope.txt und gibt alle MODEL=
+  Werte zurück deren SOURCE=BPMN aktiv ist (nicht auskommentiert).
+
+  Die bestehende Filterlogik wird um eine Prüfung erweitert:
+    element.get("sourceModel") in bpmn_scope
+
+  Ist bpmn_scope leer → kein zusätzlicher Filter (Rückwärtskompatibilität).
+
+4.3 Rückwärtskompatibilität
+-----------------------------
+  Wenn SOURCE=BPMN in run-scope.txt nicht vorhanden oder
+  alle Einträge auskommentiert sind verhält sich M2B01
+  exakt wie bisher. Keine Breaking Change.
+
+4.4 Keine Änderung an
+-----------------------
+  - mapping.txt          (bleibt archi[*])
+  - M2Bmapping.txt       (bleibt als Hard Filter aktiv)
+  - run-scope.txt        (bleibt exakt so wie vom Entwickler konfiguriert)
+  - Alle Stage 3 Scripts (bleiben unberührt)
+
+
+--------------------------------------------------------------------------------
+5. KONFIGURATION NACH SPRINT
+--------------------------------------------------------------------------------
+
+run-scope.txt (unverändert — funktioniert jetzt korrekt):
+  SOURCE=BPMN
+  MODEL=MUNI FLOW.xml
+  → M2B01 erstellt nur Hüllen für Prozesse aus MUNI FLOW.xml
+
+M2Bmapping.txt (unverändert — bleibt als Hard Filter):
+  archi[model=*]-element-xsi:type="BusinessProcess"
+  → Alle BusinessProcess Typen sind zulässig
+
+Ergebnis:
+  Nur BusinessProcesses aus MUNI FLOW.xml die vom Typ
+  BusinessProcess sind werden zu BPMN Hüllen materialisiert.
+
+
+--------------------------------------------------------------------------------
+6. OFFENE PUNKTE / NEXT STEPS
+--------------------------------------------------------------------------------
+
+6.1 Implementierung M2B01
+---------------------------
+Status   : Ausstehend
+Aktion   : read_bpmn_scope() Funktion implementieren und
+           in bestehende Filterlogik integrieren.
+           Testlauf gegen master.xml mit mehreren Modellen.
+
+6.2 Testszenarien
+------------------
+Status   : Ausstehend
+Aktion   : Test 1 — run-scope.txt mit SOURCE=BPMN MODEL=MUNI FLOW.xml
+                     → nur MUNI FLOW Prozesse erhalten Hüllen
+           Test 2 — run-scope.txt ohne SOURCE=BPMN
+                     → Verhalten wie bisher (Rückwärtskompatibilität)
+           Test 3 — run-scope.txt mit mehreren SOURCE=BPMN Einträgen
+                     → alle deklarierten Modelle erhalten Hüllen
+
+6.3 Stage-Ende Dokumentation
+------------------------------
+Status   : Ausstehend (gemäß GOV 10.9 verpflichtend zum Stage-Ende)
+Aktion   : Diese Dev-Dokumentation ist nicht auditpflichtig (GOV 10.8).
+           Zum Stage-Ende ist eine vollständige governance-konforme
+           Dokumentation zu erstellen.
+
+
+--------------------------------------------------------------------------------
+7. GOVERNANCE-KONFORMITÄTSCHECK
+--------------------------------------------------------------------------------
+
+GOV 10.3  Zulässiger Auslöser        OK  Feature-Zuwachs (Entwicklerwunsch)
+GOV 10.5  Fachlicher Mehrwert        OK  Beschrieben in Abschnitt 1.2
+GOV 10.5  Keine implizite Gov-Änd.   OK  M2Bmapping.txt + Stage 3 unverändert
+GOV 10.6  Ziel explizit definiert    OK  Abschnitt 2
+GOV 10.6  Ziel überprüfbar           OK  Testszenarien in Abschnitt 6.2
+GOV 10.7  Zwischenschritte           OK  Normativ zugelassen
+GOV 10.8  Dev-Doku erstellt          OK  Dieses Dokument
+GOV 10.9  Stage-Ende Doku            OFFEN  Verpflichtend bei Stage-Abschluss
+GOV 10.10 Keine Gov-Regel aufgehoben OK  Dokumentationszeitpunkt verschoben
+GOV 10.5  Keine Architekturabw.      OK  Additiv, rückwärtskompatibel
+
+
+================================================================================
+END OF SPRINT DEV-DOKUMENTATION
+SPRINT-M2B01-RunScopeFilter | Stage 4 | 2026-03-06
+================================================================================

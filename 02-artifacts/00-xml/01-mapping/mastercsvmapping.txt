@@ -1,0 +1,71 @@
+# ==========================================================
+# mastercsvmapping.txt
+# CSV09 – Master XML → CSV Projection Mapping
+#
+# PURPOSE
+# ----------------------------------------------------------
+# Declarative projection of master.xml into Archi CSV import
+# structures.
+#
+# CSV09:
+#   - reads master.xml (stage copy)
+#   - applies run-scope.txt (SOURCE=MASTER)
+#   - projects XML fields into CSV columns
+#
+# NO filtering
+# NO merging
+# NO defaults
+# NO repair
+#
+# ----------------------------------------------------------
+# SYNTAX
+# ----------------------------------------------------------
+#
+# <xml-path> :: <target-csv> :: <target-column>
+#
+# xml-path:
+#   - Namespace-aware XPath
+#   - Prefix "a:" refers to ArchiMate namespace
+#
+# target-column:
+#   - "@attr"  → XML attribute
+#   - "."      → text() of current element
+#   - "a:tag"  → child element text
+#
+# ==========================================================
+
+
+# ==========================================================
+# ELEMENTS
+# ==========================================================
+
+.//a:element :: elements.csv :: @identifier
+.//a:element :: elements.csv :: @xsi:type
+.//a:element :: elements.csv :: a:name
+.//a:element :: elements.csv :: @sourceModel
+
+
+# ==========================================================
+# RELATIONSHIPS
+# ==========================================================
+
+.//a:relationship :: relations.csv :: @identifier
+.//a:relationship :: relations.csv :: @xsi:type
+.//a:relationship :: relations.csv :: @source
+.//a:relationship :: relations.csv :: @target
+.//a:relationship :: relations.csv :: @sourceModel
+
+
+# ==========================================================
+# PROPERTIES (CSV08 compatible)
+# ==========================================================
+
+.//a:element/a:properties/a:property :: properties.csv :: @propertyDefinitionRef
+.//a:element/a:properties/a:property/a:value :: properties.csv :: .
+.//a:element :: properties.csv :: @identifier
+.//a:element :: properties.csv :: @sourceModel
+
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

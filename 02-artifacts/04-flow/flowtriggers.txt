@@ -1,0 +1,106 @@
+# flowtriggers.txt
+# =================
+#
+# Definiert, welche XML-Elemente als Trigger erkannt werden.
+# flow.py liest diese Datei und baut die Detection-Logik dynamisch auf.
+# Kein Hardcoding mehr in flow.py nötig.
+#
+# --------------------------------------------------------------------
+# Syntax-Referenz
+# --------------------------------------------------------------------
+#
+# [section_name]
+#   Beliebiger Name, muss eindeutig sein.
+#   Mehrere Sektionen desselben Modelltyps sind erlaubt (z.B. archi_wp, archi_ap).
+#
+# order = <n>
+#   Pflichtfeld. Ganzzahl. Bestimmt die Ausführungsreihenfolge der Scripts.
+#   Niedrigere Zahl = früher ausgeführt.
+#   Gleiche order-Werte = Reihenfolge untereinander undefiniert (vermeiden).
+#
+# source = archi | bpmn
+#   Welche Detection-Engine wird verwendet.
+#
+# element_tag = <tag>
+#   Lokaler XML-Tag-Name (Namespace-agnostisch), der untersucht wird.
+#
+# element_type = <value>
+#   (Optional) Wert des xsi:type-Attributs, der übereinstimmen muss.
+#   Leer lassen oder weglassen = kein Filter auf type.
+#
+# condition.<n> = property:<Name>=<Wert>
+#   Für Archi: Property-Name und erwarteter Wert (AND-verknüpft).
+#
+# condition.<n> = tag:<TagName>:<Enthält-Text>
+#   Für BPMN: Kind-Element muss den angegebenen Text enthalten (AND-verknüpft).
+#
+# dispatch_key = property:<PropertyName>
+#   Dispatch-Key kommt aus einer Archi-Property.
+#
+# dispatch_key = attr:<Attributname>
+#   Dispatch-Key kommt aus einem XML-Attribut des Elements.
+#
+# Alle condition.<n> müssen zutreffen (AND).
+# <n> ist beliebig (1, 2, 3 oder a, b ... – nur zur Lesbarkeit).
+# --------------------------------------------------------------------
+
+
+# --------------------------------------------------------------------
+# Archi OEF 5.8 – WorkPackage Trigger
+# --------------------------------------------------------------------
+# Erkennt WorkPackage-Elemente mit Property "Trigger=Ja".
+# Dispatch-Key kommt aus Property "Type".
+#
+# Testet gegen: mini.xml
+# --------------------------------------------------------------------
+
+[archi_workpackage]
+order           = 10
+source          = archi
+element_tag     = element
+element_type    = WorkPackage
+condition.1     = property:Trigger=Ja
+dispatch_key    = property:Type
+
+
+# --------------------------------------------------------------------
+# BPMN 2.0 – Camunda 7 & 8 – serviceTask Trigger
+# --------------------------------------------------------------------
+# Erkennt serviceTask-Elemente, deren <documentation> "Trigger:Ja" enthält.
+# Dispatch-Key ist das id-Attribut des Tasks.
+#
+# Testet gegen: Triggerminimal.bpmn
+# --------------------------------------------------------------------
+
+[bpmn_servicetask]
+order           = 20
+source          = bpmn
+element_tag     = serviceTask
+condition.1     = tag:documentation:Trigger:Ja
+dispatch_key    = attr:id
+
+
+# --------------------------------------------------------------------
+# Erweiterungsbeispiele (auskommentiert)
+# --------------------------------------------------------------------
+#
+# Zweiter Archi-Trigger für ApplicationProcess:
+#
+# [archi_applicationprocess]
+# order           = 30
+# source          = archi
+# element_tag     = element
+# element_type    = ApplicationProcess
+# condition.1     = property:Trigger=Ja
+# condition.2     = property:Status=Active
+# dispatch_key    = property:Type
+#
+# Zweiter BPMN-Trigger für sendTask:
+#
+# [bpmn_sendtask]
+# order           = 40
+# source          = bpmn
+# element_tag     = sendTask
+# condition.1     = tag:documentation:Trigger:Ja
+# dispatch_key    = attr:id
+# --------------------------------------------------------------------

@@ -1,0 +1,9 @@
+# --------------------------------------------------
+# child_mapping.txt
+# Source folders to be ingested by Mastersync
+# Format:
+# <source_type> - <relative_folder_from_root>
+# --------------------------------------------------
+
+archi - 02-artifacts/00-xml/03-child/00-archimatechild
+bpmn - 02-artifacts/00-xml/03-child/01-bpmnchild

@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:ns1="http://www.omg.org/spec/BPMN/20100524/DI" targetNamespace="http://example.com/bpmn"><bpmn:process id="id-8d6586a812d04fa9aa1e0e646e1fd239" name="BPU02-XLSX 2 CSV" isExecutable="true" /><ns1:BPMNDiagram id="BPMNDiagram_1"><ns1:BPMNPlane id="BPMNPlane_1" bpmnElement="id-8d6586a812d04fa9aa1e0e646e1fd239" /></ns1:BPMNDiagram></bpmn:definitions>

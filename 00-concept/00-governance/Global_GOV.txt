@@ -1,0 +1,131 @@
+10.1 Zweck dieses Kapitels
+----------------------------
+Dieses Kapitel definiert die verbindlichen Regeln für den Einsatz von Sprints
+innerhalb der MUNI-Governance.
+
+Ziel ist es:
+- zielorientierte Umsetzungsphasen unter bewusst reduzierter Prozesssicht
+  zu ermöglichen
+- auf Fehler oder Feature-Zuwachs kontrolliert reagieren zu können
+- die Lern- und Reifeintention der Governance nicht zu unterlaufen
+
+Sprints sind kein Ersatz für die bestehende Governance, sondern eine explizit
+geregelte Sonderform ihrer Anwendung.
+
+
+10.2 Definition Sprint
+-----------------------
+Ein Sprint ist eine zeitlich begrenzte Umsetzungsphase, die auf ein vorab
+explizit definiertes Ziel ausgerichtet ist.
+
+Für einen Sprint gilt:
+- das Ziel ist verbindlich
+- der Weg zum Ziel ist nicht vollständig vorgegeben
+- die vollständige Abbildung aller Zwischenschritte ist nicht erforderlich
+
+Ein Sprint ist kein governance-freier Raum.
+
+
+10.3 Zulässige Auslöser für Sprints
+-------------------------------------
+Ein Sprint ist ausschließlich zulässig, wenn er durch einen der folgenden
+Auslöser begründet ist:
+- Fehlerbehebung
+- Feature-Zuwachs
+
+Andere Auslöser sind unzulässig.
+
+
+10.4 Fehler als Sprint-Auslöser
+---------------------------------
+Ein Sprint darf ausgelöst werden, wenn:
+- ein fachlicher, struktureller oder technischer Fehler vorliegt
+- der Fehler explizit benannt und abgegrenzt ist
+- eine reguläre Umsetzung den Fehler nicht angemessen adressieren würde
+
+Fehler im Sinne dieses Kapitels sind Abweichungen vom intendierten
+Systemzustand, nicht Abweichungen von Governance-Regeln.
+
+
+10.5 Feature-Zuwachs als Sprint-Auslöser
+-----------------------------------------
+Ein Sprint darf ausgelöst werden, wenn ein Feature-Zuwachs umgesetzt werden
+soll.
+
+Feature-Zuwachs kann ausgelöst sein durch:
+- einen Entwicklerwunsch
+- einen Kundenwunsch
+
+Für Feature-Zuwachs gilt:
+- der Wunsch ist explizit zu benennen
+- der fachliche Mehrwert ist zu beschreiben
+- der Zuwachs erzeugt keine implizite Governance-Änderung
+
+Feature-Zuwachs rechtfertigt keine Abweichung von Architektur-, Integrations-
+oder Identitätsprinzipien.
+
+
+10.6 Zieldefinition als zwingende Voraussetzung
+-------------------------------------------------
+Für jeden Sprint gilt verbindlich:
+- das Ziel ist explizit definiert
+- das Ziel ist eindeutig einem zulässigen Auslöser zugeordnet
+- das Ziel ist überprüfbar und abgegrenzt
+
+Ohne explizite Zieldefinition existiert kein Sprint.
+
+
+10.7 Umgang mit Zwischenschritten
+----------------------------------
+Während eines Sprints gilt:
+- Zwischenschritte müssen nicht vollständig dokumentiert werden
+- der Ablauf darf Lücken enthalten
+- Entscheidungen dürfen situativ getroffen werden
+
+Diese Regelung stellt keine Abweichung von der Governance, sondern eine
+normativ zugelassene Einschränkung der Dokumentationspflicht dar.
+
+
+10.8 Dokumentation während des Sprints
+----------------------------------------
+Während eines Sprints werden ausschließlich Dev-Dokumentationen erstellt.
+
+Für diese gilt:
+- sie dienen der späteren Nachvollziehbarkeit
+- sie müssen eine vollständige Rekonstruktion ermöglichen
+- sie sind während des Sprints nicht auditpflichtig
+
+Dev-Dokumentationen ersetzen keine finale Dokumentation.
+
+
+10.9 Dokumentation zum Stage-Ende
+-----------------------------------
+Spätestens zum Stage-Ende eines Sprints gilt:
+- vollständige Dokumentation ist verpflichtend
+- alle relevanten Entscheidungen sind explizit nachzudokumentieren
+- Governance-Konformität ist herzustellen und prüfbar
+
+Ein Sprint gilt erst mit abgeschlossener Dokumentation als beendet.
+
+
+10.10 Verhältnis zur bestehenden Governance
+--------------------------------------------
+Für Sprints gilt:
+- keine Governance-Regel wird aufgehoben
+- ausschließlich der Zeitpunkt der Dokumentation wird verschoben
+- es entsteht keine neue Ausnahme- oder Präzedenzwirkung
+
+Alle Ergebnisse eines Sprints unterliegen vollständig der bestehenden
+Governance.
+
+
+10.11 Lern- und Reifeaspekt von Sprints
+-----------------------------------------
+Sprints sind bewusst Teil des Lern- und Reifemodells der MUNI-Governance.
+
+Sie dienen dazu:
+- Spannungen zwischen Zielorientierung und Disziplin erfahrbar zu machen
+- die Grenzen reduzierter Dokumentation zu erkennen
+- Verantwortung für nachträgliche Explizitheit zu übernehmen
+
+Missbrauch von Sprints untergräbt das Lernziel.

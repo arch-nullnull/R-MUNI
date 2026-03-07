@@ -1,0 +1,264 @@
+================================================================================
+SPRINT DEV-DOKUMENTATION
+================================================================================
+Projekt            : R+MUNI Blueprint
+Sprint-Bezeichnung : SPRINT-FLW-Serie-S4-Umbenennung-FLW02
+Datum              : 2026-03-07
+Stage              : 4 (aktiv)
+Status             : Dev-Dokumentation (nicht auditpflichtig per GOV 10.8)
+Erstellt durch     : Entwickler + Claude (Pair-Session)
+================================================================================
+
+
+--------------------------------------------------------------------------------
+1. STAGE-KONTEXT UND SPRINT-BEGRÜNDUNG
+--------------------------------------------------------------------------------
+
+1.1 Stage-Modell (Ist-Zustand)
+-------------------------------
+Stage 3  FREEZE
+         Stage 3 ist eingefroren. Änderungen ausschließlich für Bugfixing
+         zulässig. Neue Features sind in Stage 3 nicht erlaubt.
+
+Stage 4  AKTIV
+         Aktuelle Entwicklungsphase. Neue Features und Erweiterungen des
+         Blueprints werden hier umgesetzt.
+
+1.2 Auslöser (gemäß GOV 10.3 / 10.5)
+---------------------------------------
+Auslöser-Typ : Feature-Zuwachs + Strukturbereinigung (Entwicklerwunsch)
+
+Begründung   : Die bestehende FLOW-Reihe (flow.py, flowdiscover.py) verwendete
+               keine konsistente Namenskonvention. Alle anderen Script-Serien
+               im Blueprint folgen dem Schema KÜRZEL<Nr>-<name>.py.
+               Die FLOW-Reihe war davon ausgenommen – ein bewusster Kompromiss
+               aus Stage 3 der in Stage 4 bereinigt wird.
+
+               Parallel entstand der Bedarf nach einem neuen Diagnosewerkzeug:
+               flowdiscover.py zeigt welche Typen/Tags vorhanden sind – aber
+               nicht welche konkreten Element-IDs und Namen dahinterstecken.
+               Für die manuelle Befüllung von flowmapping.txt musste man
+               bisher das BPMN-XML direkt öffnen und IDs manuell nachschlagen.
+
+Fachlicher   : Durch die Umbenennung auf FLW-Schema wird die FLOW-Reihe
+Mehrwert       vollständig blueprint-konform. FLW02 eliminiert den manuellen
+               Schritt beim Befüllen von flowmapping.txt – insbesondere durch
+               die Sonderregel die den Task-Namen direkt als Scriptnamen
+               übernimmt wenn Trigger:Ja gesetzt ist.
+
+Governance-  : Die Umbenennung betrifft ausschließlich Stage-4-Artefakte.
+Konformität    flow.py und flowdiscover.py waren Stage-3-Scripts – sie werden
+               nicht verändert sondern durch neue S4-Scripts ersetzt.
+               Stage-3-Freeze wird respektiert: keine Logikänderung,
+               nur Umbenennung + Namensanpassung in Ausgaben und Logs.
+
+
+--------------------------------------------------------------------------------
+2. ZIELDEFINITION (gemäß GOV 10.6)
+--------------------------------------------------------------------------------
+
+Ziel 1       : Umbenennung der FLOW-Reihe auf FLW-Namensschema.
+               flow.py        → FLW00-scriptrunner.py
+               flowdiscover.py → FLW01-discover.py
+
+Ziel 2       : Entwicklung FLW02-map_elements.py –
+               ein neues Diagnosewerkzeug das alle BPMN/Archi-Elemente mit
+               ID + Name + Typ ausgibt und für serviceTask mit Trigger:Ja
+               fertige flowmapping.txt Zeilen erzeugt.
+
+Ziel 3       : Aktualisierung der Dokumentation (Principles, How2, Dev-Doku)
+               auf FLW-Schema + FLW02.
+
+Abgrenzung   : Keine Änderung der Trigger-Logik in FLW00.
+               Keine Änderung an flowtriggers.txt oder flowmapping.txt Format.
+               FLW02 ist ein reines Lesewerkzeug – es verändert nichts.
+
+Überprüfbar  : Erfolgskriterium ist die fehlerfreie Ausführung aller drei
+               FLW-Scripts gegen die bestehende Blueprint-Struktur sowie
+               die korrekte Ausgabe von flw02-map_elements.txt mit
+               fertigen Mapping-Zeilen für serviceTask Elemente mit Trigger:Ja.
+
+
+--------------------------------------------------------------------------------
+3. TECHNISCHE ENTSCHEIDUNGEN
+--------------------------------------------------------------------------------
+
+3.1 Umbenennung ohne Logikänderung
+------------------------------------
+Entscheidung : FLW00 und FLW01 sind inhaltlich identisch mit flow.py und
+               flowdiscover.py. Geändert wurden ausschließlich:
+               - Docstring-Titel
+               - Log-Prefix ([FLOW] → [FLW00], [FLOWDISCOVER] → [FLW01])
+               - Logfile-Namen (flow.log → flw00-scriptrunner.log,
+                                flowdiscover.log → flw01-discover.log)
+               - Output-txt Name (flowdiscover.txt → flw01-discover.txt)
+
+Begründung   : Minimaler Eingriff. Keine Regressionsgefahr.
+               Logfile-Namen wurden angepasst damit alte Logs von S3
+               und neue Logs von S4 nicht vermischt werden.
+
+3.2 FLW02 – Sonderregel Scriptname aus Task-Name
+--------------------------------------------------
+Entscheidung : Bei BPMN serviceTask mit documentation="Trigger:Ja" wird
+               der name-Wert des Tasks direkt als Scriptname übernommen.
+               Ergebnis: Activity_0abc123=CSV01-validate_model.py
+               → direkt kopierbar in flowmapping.txt.
+
+Begründung   : Der Scriptname als Task-Name ist eine natürliche Konvention
+               die im Workflow bereits gelebt wird. Die Automatisierung
+               dieses Schritts eliminiert manuelles Nachschlagen und
+               Tippfehler beim Übertragen von IDs.
+               Die Sonderregel gilt bewusst nur für serviceTask – andere
+               Task-Typen haben keine definierte Script-Semantik im Blueprint.
+
+Alternative  : Alle Elemente hätten automatisch Scriptnamen bekommen können.
+               Abgelehnt: zu viel implizite Magie, Verwechslungsgefahr mit
+               echten Element-Namen die keine Scripts sind.
+
+3.3 FLW02 – Zweisektiger Output
+---------------------------------
+Entscheidung : flw02-map_elements.txt ist in zwei Abschnitte geteilt:
+               Abschnitt 1 – Fertige Mapping-Zeilen (serviceTask + Trigger:Ja)
+               Abschnitt 2 – Alle übrigen Elemente (auskommentiert, Referenz)
+
+Begründung   : Klare Trennung zwischen "direkt verwendbar" und "nur Übersicht".
+               Der Nutzer sieht sofort was er kopieren kann und was nicht.
+               Abschnitt 2 verhindert Informationsverlust ohne Abschnitt 1
+               unübersichtlich zu machen.
+
+3.4 Warnung bei fehlendem Scriptname
+--------------------------------------
+Entscheidung : serviceTask mit Trigger:Ja aber ohne name-Wert erzeugt
+               einen Platzhalter <SCRIPT_HIER_EINTRAGEN> + sichtbare Warnung
+               in Konsole und Log.
+
+Begründung   : Silent failure wäre gefährlich – flowmapping.txt würde
+               einen ungültigen Eintrag bekommen. Explizite Warnung
+               erzwingt bewusste Nachpflege im Modell.
+
+3.5 Alte Scripts archiviert, nicht gelöscht
+---------------------------------------------
+Entscheidung : flow.py und flowdiscover.py werden ins Archiv verschoben,
+               nicht gelöscht.
+
+Begründung   : Stage-3-Artefakte bleiben als read-only Referenz erhalten.
+               Blueprint-Prinzip: nichts geht verloren, alles ist
+               nachvollziehbar.
+
+
+--------------------------------------------------------------------------------
+4. DATEI-INVENTAR
+--------------------------------------------------------------------------------
+
+4.1 Neue Dateien (Stage 4 / Sprint FLW)
+-----------------------------------------
+
+FLW00-scriptrunner.py
+  Typ     : Python-Script
+  Ablage  : 02-artifacts/04-flow/
+  Zweck   : Orchestrator – ersetzt flow.py
+  Log     : 03-stages/99-logs/flw00-scriptrunner.log (append)
+  Änderung: Umbenennung + Log-Prefix/Namen angepasst, Logik identisch
+
+FLW01-discover.py
+  Typ     : Python-Script
+  Ablage  : 02-artifacts/04-flow/
+  Zweck   : Typ-Scanner – ersetzt flowdiscover.py
+  Ausgabe : 03-stages/flw01-discover.txt
+  Log     : 03-stages/99-logs/flw01-discover.log
+  Änderung: Umbenennung + Log-Prefix/Namen angepasst, Logik identisch
+
+FLW02-map_elements.py
+  Typ     : Python-Script (neu)
+  Ablage  : 02-artifacts/04-flow/
+  Zweck   : Element-ID-Scanner – Referenz für flowmapping.txt
+  Ausgabe : 03-stages/flw02-map_elements.txt
+  Log     : 03-stages/99-logs/flw02-map_elements.log
+
+FLOW_SCRIPTRUNNER_principles_S4.txt
+  Typ     : Dokumentation
+  Ablage  : 00-concept/01-principles/
+  Zweck   : Principles der FLW-Serie (ersetzt S3-Version)
+
+FLOW_SCRIPTRUNNER_How2_S4.txt
+  Typ     : Dokumentation
+  Ablage  : 00-concept/02-how2/
+  Zweck   : How2 der FLW-Serie (ersetzt S3-Version)
+
+4.2 Archivierte Dateien (Stage 3 → Archiv)
+--------------------------------------------
+flow.py              ARCHIVIERT  (ersetzt durch FLW00-scriptrunner.py)
+flowdiscover.py      ARCHIVIERT  (ersetzt durch FLW01-discover.py)
+FLOW_SCRIPTRUNNER_principles_S3.txt  ARCHIVIERT
+FLOW_SCRIPTRUNNER_How2_S3.txt        ARCHIVIERT
+
+4.3 Unveränderte Dateien
+--------------------------
+flowtriggers.txt     UNVERÄNDERT  (Konfiguration bleibt identisch)
+flowmapping.txt      UNVERÄNDERT  (Konfiguration bleibt identisch)
+
+
+--------------------------------------------------------------------------------
+5. OFFENE PUNKTE / NEXT STEPS
+--------------------------------------------------------------------------------
+
+5.1 BPMN-Dateien in 01-bpmnchild ablegen
+------------------------------------------
+Status  : Offen
+Aktion  : FLW01 und FLW02 scannen 02-artifacts/00-xml/03-child/01-bpmnchild/
+          Dieser Ordner ist aktuell leer. BPMN-Dateien liegen in
+          01-model/01-bpmn/00-bpmnactive/.
+          Workflow klären: Kopie nach 01-bpmnchild bei jedem Export?
+          Oder Scan-Pfad in FLW01/FLW02 anpassen?
+
+5.2 structure.txt aktualisieren
+---------------------------------
+Status  : Offen (Markus pflegt selbst)
+Aktion  : 04-flow/ Abschnitt anpassen:
+          flow.py / flowdiscover.py → FLW00 / FLW01 / FLW02
+          S3-Principles/How2 → Archiv, S4-Versionen ergänzen
+
+5.3 Confluence aktualisieren
+------------------------------
+Status  : Offen
+Aktion  : How2 S4 und Principles S4 in Confluence übertragen.
+          Alte S3-Seiten als veraltet markieren oder ersetzen.
+
+5.4 Jira Ticket anlegen
+-------------------------
+Status  : Offen
+Aktion  : User Story für FLW02 in Jira anlegen.
+          Akzeptanzkriterium: flw02-map_elements.txt mit korrekten
+          Mapping-Zeilen für alle serviceTask mit Trigger:Ja.
+
+5.5 Stage-Ende Dokumentation
+------------------------------
+Status  : Ausstehend (gemäß GOV 10.9 verpflichtend zum Stage-Ende)
+Aktion  : Alle Sprint-Entscheidungen in governance-konforme
+          Stage-Dokumentation überführen.
+
+
+--------------------------------------------------------------------------------
+6. GOVERNANCE-KONFORMITÄTSCHECK
+--------------------------------------------------------------------------------
+
+GOV 10.3  Zulässiger Auslöser        OK  Feature-Zuwachs + Strukturbereinigung
+GOV 10.5  Fachlicher Mehrwert        OK  Beschrieben in Abschnitt 1.2
+GOV 10.5  Keine implizite Gov-Änd.   OK  flowtriggers.txt / flowmapping.txt
+                                         unverändert, additiv
+GOV 10.6  Ziel explizit definiert    OK  Abschnitt 2
+GOV 10.6  Ziel überprüfbar           OK  Alle drei Scripts erfolgreich getestet
+GOV 10.7  Zwischenschritte           OK  Nicht vollständig dokumentiert,
+                                         normativ zugelassen
+GOV 10.8  Dev-Doku erstellt          OK  Dieses Dokument
+GOV 10.9  Stage-Ende Doku            OFFEN  Verpflichtend bei Stage-Abschluss
+GOV 10.10 Keine Gov-Regel aufgehoben OK  Stage-3-Freeze respektiert,
+                                         keine Logikänderung
+Stage-3-  Scripts archiviert         OK  flow.py / flowdiscover.py ins Archiv,
+Freeze                                   nicht verändert
+
+
+================================================================================
+END OF SPRINT DEV-DOKUMENTATION
+SPRINT-FLW-Serie-S4-Umbenennung-FLW02 | Stage 4 | 2026-03-07
+================================================================================

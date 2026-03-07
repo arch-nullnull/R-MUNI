@@ -1,0 +1,38 @@
+# ===========================================================
+# R+MUNI Report Server - Konfiguration
+# ===========================================================
+# Ablage : 02-artifacts/05-reports/webconfig.txt
+# Zweck  : Definiert welche HTML Reports auf welchem Port
+#          vom HLP09-serve_report.py bereitgestellt werden.
+#
+# Format:
+#   NAME=Anzeigename des Reports
+#   PATH=relativer/pfad/vom/reports/ordner/aus
+#   PORT=Port-Nummer (muss eindeutig sein)
+#
+# Regeln:
+#   - Jeder Port darf nur einmal vorkommen
+#   - PATH ist relativ zu 02-artifacts/05-reports/
+#   - Leerzeile trennt Eintraege
+#   - Zeilen mit # sind Kommentare
+#   - Ordner ohne index.html werden uebersprungen (Warnung)
+#
+# Ports Empfehlung:
+#   ArchiMate Reports : 8080 - 8089
+#   BPMN Reports      : 8090 - 8099
+#   Struktur Reports  : 8100 - 8109
+# ===========================================================
+
+
+# -----------------------------------------------------------
+# ArchiMate Reports
+# -----------------------------------------------------------
+
+NAME=MUNI EA Modell
+PATH=00-archimate/MUNI EA Modell
+PORT=8080
+
+NAME=MUNI FLOW
+PATH=00-archimate/MUNI FLOW
+PORT=8081
+

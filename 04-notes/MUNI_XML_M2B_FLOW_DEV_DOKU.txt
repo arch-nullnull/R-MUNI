@@ -1,0 +1,1093 @@
+==============================================================
+DEV DOKUMENTATION
+MUNI XML FLOW + M2B FLOW
+==============================================================
+Version    : 1.0
+Erstellt   : 2026-03-02
+Flows      : XML00-XML07 | M2B00-M2B06
+Sprache    : Deutsch
+Format     : Plain Text / ASCII
+==============================================================
+
+
+==============================================================
+INHALTSVERZEICHNIS
+==============================================================
+
+  1.  Uebersicht & Ziel
+  2.  Gesamtarchitektur
+  3.  Ordnerstruktur
+  4.  Konfigurationsfiles
+  5.  XML FLOW  (XML00 - XML07)
+  6.  M2B FLOW  (M2B00 - M2B06)
+  7.  Datenpfade & Artefakte
+  8.  Namespace Referenz
+  9.  Fehlerbehandlung & Logs
+  10. Bekannte Einschraenkungen
+  11. Changelog Fixes
+
+
+==============================================================
+1. UEBERSICHT & ZIEL
+==============================================================
+
+Der MUNI Flow besteht aus zwei aufeinander aufbauenden
+Pipeline-Serien die gemeinsam einen stabilen, aggregierten
+XML Master-Stand erzeugen und pflegen.
+
+ZIEL:
+  Heterogene Modellquellen (ArchiMate OEF + Camunda BPMN)
+  werden in einem einzigen master.xml zusammengefuehrt.
+  Dieses master.xml dient als Quelldatei fuer:
+    - CSV Export / Reimport in Archi 5.8
+    - Bereitstellung von BPMN Prozesshüllen fuer Camunda 7
+    - Spaetere Attributanreicherung ueber separate Flows
+
+PRINZIPIEN:
+  - Deterministische, auditierbare Verarbeitung
+  - Deklarative Konfiguration (keine Logik in Config-Files)
+  - Explizite Trennlinien zwischen Stages
+  - Keine impliziten Annahmen
+  - IDs werden NIEMALS veraendert
+  - XML ist die einzige Quelle der Wahrheit
+
+
+==============================================================
+2. GESAMTARCHITEKTUR
+==============================================================
+
+QUELLEN                  XML FLOW                  MASTER
+--------                 --------                  ------
+
+Archi OEF *.xml  ----+
+                      |
+                      +--> XML00  Root auflösen
+                      |
+                      +--> XML01  Quellen sammeln
+                      |
+                      +--> XML02  XML parsen
+                      |
+                      +--> XML03  Index bauen
+                      |
+                      +--> XML04  Master mergen  ---> master.generated.xml
+                      |
+                      +--> XML05  Duplikate lösen -> master.cleared.xml
+                      |
+Camunda *.bpmn   ----+
+                      |
+                      +--> XML06  Master fixieren --> master.xml
+                      |
+                      +--> XML07  Aufräumen
+
+
+           master.xml
+               |
+               v
+           M2B FLOW
+               |
+               +--> M2B00  Root auflösen
+               |
+               +--> M2B01  Prozesse extrahieren --> BPMN Hüllen
+               |
+               +--> M2B02  Hüllen aktivieren
+               |
+               |    [ Camunda 7 Modeler ]
+               |    Prozesse mit Tasks, Dokumentation,
+               |    Service Tasks etc. anreichern
+               |
+               +--> M2B05  Angereicherte BPMN zurückschreiben
+               |                --> master.xml aktualisiert
+               |
+               +--> M2B06  Snapshot in run-scope.txt schreiben
+
+
+OPTIONAL (separater Flow, nicht in dieser Doku):
+  master.xml --> CSV Export --> Archi Reimport --> stabile IDs
+
+
+==============================================================
+3. ORDNERSTRUKTUR
+==============================================================
+
+<rootfolder>/
+|
+|-- root.txt                              Pflichtfile: BLUEPRINT_ROOT=...
+|
+|-- 01-model/
+|   |-- 01-bpmn/
+|       |-- 00-bpmnactive/               Aktive *.bpmn (Camunda Modeler Quelle)
+|
+|-- 02-artifacts/
+|   |-- 00-xml/
+|   |   |-- 00-master/
+|   |   |   |-- master.xml               STABILER MASTER (Zieldatei)
+|   |   |   |-- master.xml.bak           Auto-Backup vor Schreiboperationen
+|   |   |   |-- master.generated.xml     XML04 Zwischenartefakt *
+|   |   |   |-- master.cleared.xml       XML05 Zwischenartefakt *
+|   |   |
+|   |   |-- 01-mapping/
+|   |   |   |-- mapping.txt              XML04 Filterregeln
+|   |   |   |-- sync.txt                 XML05 Konsolidierungsregeln
+|   |   |   |-- M2Bmapping.txt           M2B01 Filterregeln
+|   |   |   |-- run-scope.txt            M2B Flow Konfiguration + Snapshot
+|   |   |
+|   |   |-- 02-sync/
+|   |   |   |-- sync.txt                 Alias fuer XML05 (siehe 01-mapping)
+|   |   |
+|   |   |-- 03-child/
+|   |       |-- 00-archimatechild/       *.xml Archi OEF Exporte (Quelldaten)
+|   |       |-- 01-bpmnchild/            *.bpmn Camunda Exporte (Quelldaten)
+|   |
+|   |-- 01-scripts/                      Alle Python Scripts (XML + M2B)
+|
+|-- 03-stages/
+    |-- 00-archimatearchive/             XML01-XML03 Zwischenartefakte Archi
+    |-- 01-bpmnarchive/                  XML01-XML03 + M2B01 Zwischenartefakte BPMN
+    |-- 99-logs/                         Alle *.log + *.resolved.txt Dateien
+
+* wird von XML07 am Ende des Flows automatisch geloescht
+
+
+==============================================================
+4. KONFIGURATIONSFILES
+==============================================================
+
+--------------------------------------------------------------
+4.1  root.txt
+--------------------------------------------------------------
+Pflichtfile. Definiert den absoluten oder relativen Root-Pfad
+des Projekts.
+
+Format:
+  BLUEPRINT_ROOT=<pfad>
+
+Beispiel:
+  BLUEPRINT_ROOT=C:\Prototyping\Modelle\Archi\Blueprint
+
+Regeln:
+  - Genau ein BLUEPRINT_ROOT Eintrag erlaubt
+  - Kommentare mit # erlaubt
+  - Relativer Pfad wird relativ zur root.txt aufgeloest
+
+
+--------------------------------------------------------------
+4.2  child_mapping.txt
+--------------------------------------------------------------
+Definiert welche Quellordner vom XML Flow eingelesen werden.
+
+Format:
+  <source_type> - <relativer_pfad_vom_root>
+
+Werte fuer source_type:
+  archi   ArchiMate OEF *.xml Dateien
+  bpmn    Camunda *.bpmn Dateien
+
+Beispiel:
+  archi - 02-artifacts/00-xml/03-child/00-archimatechild
+  bpmn  - 02-artifacts/00-xml/03-child/01-bpmnchild
+
+Hinweis: Leerzeichen um den Bindestrich werden via strip()
+         bereinigt. Pfade duerfen weitere Bindestriche enthalten.
+
+
+--------------------------------------------------------------
+4.3  mapping.txt
+--------------------------------------------------------------
+Deklarative Filterregeln fuer XML04.
+Bestimmt WELCHE Objekte aus Child-Modellen in master.xml
+uebernommen werden.
+
+SYNTAX:
+  <source>[<model-filter>]-<entry-point>+<filter>+<filter>
+
+Trennzeichen:
+  -   trennt source[model] VON entry-point     (genau einmal)
+  +   trennt entry-point VON Attributfiltern   (beliebig oft)
+  []  umschliesst optionalen Model-Filter
+
+Bestandteile:
+  source        archi | bpmn
+  model-filter  Dateiname oder Wildcard (*), optional
+  entry-point   XML Elementname (element, relationship,
+                bpmn:serviceTask, ...)
+  filter        Attributfilter, AND-kombiniert
+
+WICHTIG: Attributfilter IMMER mit + trennen, NIEMALS mit -
+         Ein - nach dem entry-point wuerde als neuer
+         entry-point-Teil interpretiert werden!
+
+Beispiele:
+
+  archi-*
+  --> Alle Archi Objekte aus allen Modellen
+
+  archi-element+xsi:type="SystemSoftware"
+  --> Nur SystemSoftware Elemente
+
+  archi[*Architecture*]-element+xsi:type="SystemSoftware"
+  --> SystemSoftware nur aus Modellen mit "Architecture" im Namen
+
+  bpmn-bpmn:serviceTask
+  --> Alle BPMN Service Tasks
+
+  bpmn-bpmn:serviceTask+bpmn:documentation>Trigger:Ja<
+  --> Nur Service Tasks mit Dokumentation "Trigger:Ja"
+
+Verhalten ohne Regeln:
+  Existiert keine Regel fuer eine Quelle -> ALLES wird uebernommen
+
+Merge-Semantik:
+  Trifft eine Regel zu -> VOLLSTAENDIGER Subtree wird uebernommen
+  Filter entscheiden nur OB, nicht WAS uebernommen wird
+
+
+--------------------------------------------------------------
+4.4  sync.txt
+--------------------------------------------------------------
+Deklarative Konsolidierungsregeln fuer XML05.
+Bestimmt WIE bereits im master.xml vorhandene Objekte
+zusammengefuehrt werden.
+
+SYNTAX:
+  <source>-<entry-point>+<filter>+<filter> :: <action>
+
+Actions:
+  merge    Duplikat wird in kanonisches Element geloest
+  keep     Element bleibt unveraendert
+  ignore   Mehrdeutige Situation, nur Logging
+
+Filter-Tokens:
+  has:id            Element hat "id" Attribut
+  has:identifier    Element hat "identifier" Attribut
+  no:identifier     Element hat kein "identifier" Attribut
+  same:type         Merge nur wenn xsi:type uebereinstimmt
+  same:sourceSystem Merge nur wenn sourceSystem uebereinstimmt
+
+Beispiel:
+  archi-element+has:id+no:identifier+same:type :: merge
+  --> Externe-ID Elemente werden in kanonische Identifier-Elemente
+      gemergt wenn Typ und sourceSystem uebereinstimmen
+
+Regeln:
+  - Top-Down Auswertung
+  - Kein Match -> Objekt bleibt unveraendert
+  - same:* Filter werden erst waehrend des Merge geprueft
+
+
+--------------------------------------------------------------
+4.5  M2Bmapping.txt
+--------------------------------------------------------------
+Filterregeln fuer M2B01.
+Bestimmt WELCHE Archi BusinessProcess Elemente als
+BPMN Huellenfiles materialisiert werden.
+
+SYNTAX:
+  archi[model=<pattern>]-element-xsi:type="<Type>"
+
+Beispiele:
+
+  archi[model=*]-element-xsi:type="BusinessProcess"
+  --> Alle BusinessProcess Elemente aus allen Modellen
+
+  archi[model=*Production*]-element-xsi:type="BusinessProcess"
+  --> Nur aus Modellen mit "Production" im Namen
+
+Semantik:
+  - Kein Match -> Element wird ignoriert (HARD FILTER)
+  - Wildcard * im model-Pattern matcht alles
+  - Mehrere Regeln sind ODER-kombiniert
+  - Filter entscheiden nur OB, nie WAS verarbeitet wird
+
+
+--------------------------------------------------------------
+4.6  run-scope.txt
+--------------------------------------------------------------
+Konfigurationsfile fuer den M2B Flow.
+Definiert welche Quellmodelle und Systeme aktiv sind.
+Wird von M2B06 um einen maschinenlesbaren Snapshot erweitert.
+
+Format aktive Eintraege:
+  SOURCE=<type>
+  MODEL=<modellname>
+
+Unterstuetzte SOURCE-Typen:
+  OEF     ArchiMate OEF Export
+  MASTER  Master XML Referenzmodell
+  BPMN    BPMN Vergleichsbasis fuer M2B Flow
+
+Kommentierte Eintraege (#) werden von allen Scripts ignoriert.
+
+SNAPSHOT Block (generiert von M2B06):
+  Beginnt mit:  # SNAPSHOT_START
+  Endet mit:    # SNAPSHOT_END
+  Inhalt:       #SNAPSHOT_SOURCE= und #SNAPSHOT_MODEL= Zeilen
+
+Der Snapshot wird bei jedem M2B06 Lauf vollstaendig ersetzt.
+Er dient als Referenz fuer nachgelagerte Flows (z.B. CSV Flow).
+
+Beispiel nach M2B06 Lauf:
+  SOURCE=OEF
+  MODEL=R+Muni Architecture Modell.xml
+
+  SOURCE=MASTER
+  MODEL=R+Muni Architecture Modell.xml
+
+  SOURCE=BPMN
+  MODEL=R+Muni Architecture Modell.xml
+
+  # SNAPSHOT_START
+  # =====================================================
+  # MASTER.XML SNAPSHOT - generated by M2B06
+  # Last updated: 2026-03-01T10:00:00
+  # =====================================================
+  # --- sourceSystem: archi ---
+  #SNAPSHOT_SOURCE=archi
+  #SNAPSHOT_MODEL=R+Muni Architecture Modell.xml
+  #
+  # --- sourceSystem: bpmn ---
+  #SNAPSHOT_SOURCE=bpmn
+  #SNAPSHOT_MODEL=BUP00-3rd Party Import.bpmn
+  # =====================================================
+  # SNAPSHOT_END
+
+
+==============================================================
+5. XML FLOW  (XML00 - XML07)
+==============================================================
+
+Zweck:
+  Aggregation heterogener Modellquellen (Archi OEF + BPMN)
+  zu einem stabilen master.xml.
+
+Ausfuehrungsreihenfolge (strikt einzuhalten):
+  XML00 -> XML01 -> XML02 -> XML03 -> XML04 -> XML05 -> XML06 -> XML07
+
+Datenpfad:
+  Child-Dateien
+      |
+      v
+  XML01-sources.resolved.txt  (pro Quelle)
+      |
+      v
+  XML02-parsed.txt  (pro Quelle)
+      |
+      v
+  XML03-index.xml  (pro Quelle)
+      |
+      v
+  master.generated.xml
+      |
+      v
+  master.cleared.xml
+      |
+      v
+  master.xml  [STABIL]
+
+
+--------------------------------------------------------------
+XML00  root_resolve.py
+--------------------------------------------------------------
+Zweck:
+  Liest root.txt, loest BLUEPRINT_ROOT auf und persistiert
+  den absoluten Pfad als Artefakt.
+
+Eingabe:
+  <rootfolder>/root.txt
+
+Ausgabe:
+  <rootfolder>/03-stages/99-logs/XML00-root.resolved.txt
+  <rootfolder>/03-stages/99-logs/XML00-root.log
+
+Logik:
+  1. root.txt im erwarteten Pfad suchen
+     (../.. relativ zum Script)
+  2. BLUEPRINT_ROOT= Zeile lesen (genau eine erlaubt)
+  3. Absoluten Pfad aufloesen
+  4. Verzeichnis-Existenz pruefen
+  5. Resolved-Pfad schreiben
+
+Fehler:
+  - root.txt nicht gefunden          -> EXIT 1
+  - Mehrere BLUEPRINT_ROOT Eintraege -> EXIT 1
+  - Pfad existiert nicht             -> EXIT 1
+
+
+--------------------------------------------------------------
+XML01  collect_sources.py
+--------------------------------------------------------------
+Zweck:
+  Liest child_mapping.txt und sammelt alle relevanten
+  Dateien aus den deklarierten Quellordnern.
+
+Eingabe:
+  <root>/03-stages/99-logs/XML00-root.resolved.txt
+  <root>/02-artifacts/00-xml/child_mapping.txt
+
+Ausgabe (pro source_type):
+  <root>/03-stages/00-archimatearchive/XML01-sources.resolved.txt
+  <root>/03-stages/01-bpmnarchive/XML01-sources.resolved.txt
+  <root>/03-stages/99-logs/XML01-sources.log
+
+Dateifilter:
+  archi  -> *.xml
+  bpmn   -> *.bpmn
+
+Format XML01-sources.resolved.txt:
+  SOURCE_TYPE=archi
+  SOURCE_FOLDER=02-artifacts/00-xml/03-child/00-archimatechild
+
+  FILE=02-artifacts/.../Modell.xml
+  FILE=...
+
+
+--------------------------------------------------------------
+XML02  parse_child_xml.py
+--------------------------------------------------------------
+Zweck:
+  Parst jede Quelldatei und extrahiert strukturelle
+  Basismetadaten (Root-Tag, Namespace).
+
+Eingabe:
+  XML01-sources.resolved.txt (pro Quelle)
+
+Ausgabe:
+  <root>/03-stages/00-archimatearchive/XML02-parsed.txt
+  <root>/03-stages/01-bpmnarchive/XML02-parsed.txt
+  <root>/03-stages/99-logs/XML02-parse.log
+
+Format XML02-parsed.txt:
+  FILE=<relativer_pfad>
+  STATUS=ok | error | missing
+  ROOT_TAG=<tag>
+  NAMESPACE=<uri>
+
+
+--------------------------------------------------------------
+XML03  build_index.py
+--------------------------------------------------------------
+Zweck:
+  Baut einen deterministischen, minimalen Index aller
+  Objekte pro Modelldatei. Kein Content-Duplikat,
+  nur Referenzen + Kernattribute.
+
+Eingabe:
+  XML01-sources.resolved.txt (pro Quelle)
+  Original XML/BPMN Quelldateien
+
+Ausgabe:
+  <root>/03-stages/00-archimatearchive/XML03-index.xml
+  <root>/03-stages/01-bpmnarchive/XML03-index.xml
+  <root>/03-stages/99-logs/XML03-index.log
+
+Format XML03-index.xml:
+  <index version="1" source="archi" created="...">
+    <model file="..." name="...">
+      <entry kind="element" id="..." tag="..." xsi_type="..." name="..."/>
+      <entry kind="relationship" id="..." .../>
+    </model>
+  </index>
+
+Archi Index-Kriterien:
+  Elemente mit "identifier" Attribut aus folgenden Tags:
+  element, relationship, item, view, node, connection,
+  folder, propertyDefinition, property
+
+BPMN Index-Kriterien:
+  Alle Elemente mit "id" Attribut
+  kind = "bpmn:<localname>"
+
+
+--------------------------------------------------------------
+XML04  merge_master.py
+--------------------------------------------------------------
+Zweck:
+  Wendet mapping.txt Filterregeln auf XML03-Index an,
+  laedt passende Objekte aus Original-XML und schreibt
+  vollstaendige Subtrees in master.generated.xml.
+
+Eingabe:
+  <root>/03-stages/00-archimatearchive/XML03-index.xml
+  <root>/03-stages/01-bpmnarchive/XML03-index.xml
+  <root>/02-artifacts/00-xml/01-mapping/mapping.txt
+  Original XML/BPMN Quelldateien
+
+Ausgabe:
+  <root>/02-artifacts/00-xml/00-master/master.generated.xml
+  <root>/03-stages/99-logs/XML04-merge.log
+
+Ablauf:
+  1. mapping.txt Regeln parsen und loggen
+  2. Pro Quelle (archi, bpmn):
+     a. XML03-index.xml laden
+     b. Regeln gegen Index matchen
+     c. Deduplizierung: (model_file, entry_id) -> kein
+        Doppeleintrag bei ueberlappenden Regeln
+     d. Original-XML laden und Subtree suchen
+     e. sourceSystem= und sourceModel= annotieren
+     f. In master root einfuegen
+  3. master.generated.xml schreiben
+
+Annotationen die XML04 setzt:
+  sourceSystem   "archi" oder "bpmn"
+  sourceModel    Dateiname des Quellmodells
+
+WICHTIG:
+  - Mapping wirkt NUR als Filter
+  - IDs werden NIEMALS veraendert
+  - Append-Only, keine Deduplizierungs-Logik
+
+
+--------------------------------------------------------------
+XML05  clear_merge.py
+--------------------------------------------------------------
+Zweck:
+  Loest logische Duplikate im master.generated.xml anhand
+  der sync.txt Regeln auf.
+
+Abhaengigkeit:
+  Benoetigt lxml (nicht stdlib ET)
+  Installation: pip install lxml
+
+Eingabe:
+  <root>/02-artifacts/00-xml/00-master/master.generated.xml
+  <root>/02-artifacts/00-xml/02-sync/sync.txt
+
+Ausgabe:
+  <root>/02-artifacts/00-xml/00-master/master.cleared.xml
+  <root>/03-stages/99-logs/XML05-clear_merge.log
+
+Tag-Matching:
+  lxml liefert Tags im Format {namespace-uri}localname.
+  XML05 verwendet strip_ns() und sourceSystem-Attribut
+  fuer den Abgleich, NICHT den Namespace-String direkt.
+
+  BPMN Source-Check:
+    sourceSystem="bpmn"
+    ODER lokalname in bekannter BPMN-Tag-Liste
+
+  Archi Source-Check:
+    sourceSystem="archi"
+    ODER lokalname in bekannter Archi-Tag-Liste
+
+
+--------------------------------------------------------------
+XML06  finalize-master.py
+--------------------------------------------------------------
+Zweck:
+  Fixiert master.cleared.xml als stabilen master.xml.
+  Keine Transformation, keine Validierung.
+  Existiert ausschliesslich um den stabilen Zustand
+  explizit zu materialisieren.
+
+Eingabe:
+  <root>/02-artifacts/00-xml/00-master/master.cleared.xml
+
+Ausgabe:
+  <root>/02-artifacts/00-xml/00-master/master.xml
+  <root>/03-stages/99-logs/XML06-finalize-master.log
+
+
+--------------------------------------------------------------
+XML07  cleanup-artifacts.py
+--------------------------------------------------------------
+Zweck:
+  Entfernt alle Zwischenartefakte der Stages XML00-XML05.
+  Haelt master.xml und XML06 Logs.
+
+Geloeschte Artefakte:
+  00-master/master.generated.xml
+  00-master/master.cleared.xml
+  00-archimatearchive/XML0*-*.{txt,xml}
+  01-bpmnarchive/XML0*-*.{txt,xml}
+  99-logs/XML0*-*.log  (nur XML00-XML05)
+
+Behalten:
+  master.xml
+  XML06-finalize-master.log
+  XML07-cleanup-artifacts.log
+  Alle anderen Dateien (Safety Snapshots etc.)
+
+
+==============================================================
+6. M2B FLOW  (M2B00 - M2B06)
+==============================================================
+
+Zweck:
+  Extraktion von BusinessProcess Elementen aus master.xml
+  als BPMN Prozesshuellenfiles fuer Camunda 7 Modeler.
+  Nach der Anreicherung in Camunda werden die Prozesse
+  zurueck in master.xml geschrieben.
+
+Ausfuehrungsreihenfolge:
+
+  INITIAL (Huellenbereitstellung):
+    M2B00 -> M2B01 -> M2B02
+
+  NACH CAMUNDA BEARBEITUNG (Rueckschreiben):
+    M2B05 -> M2B06
+
+  OPTIONAL (Bereinigung Zwischenartefakte):
+    M2B03
+
+  RECONCILE (nach Master-Stand Aenderung):
+    M2B04
+
+Datenpfad:
+
+  master.xml
+      |
+      v
+  M2B01 --> *.bpmn Huellenfiles (03-stages/01-bpmnarchive/)
+      |
+      v
+  M2B02 --> *.bpmn aktiviert (01-model/01-bpmn/00-bpmnactive/)
+      |
+      v
+  [ Camunda 7 Modeler ]
+  Tasks, Gateways, Service Tasks, Dokumentation hinzufuegen
+      |
+      v
+  M2B05 --> angereicherte *.bpmn zurueck in master.xml
+      |
+      v
+  M2B06 --> Snapshot in run-scope.txt
+
+
+--------------------------------------------------------------
+M2B00  root_resolve.py
+--------------------------------------------------------------
+Zweck:
+  Autonome Root-Aufloesung fuer den M2B Flow.
+  Unabhaengig von XML00 (kein Aufruf, keine Abhaengigkeit).
+
+Eingabe (Fast-Path):
+  <root>/03-stages/99-logs/XML00-root.resolved.txt
+  (wird wiederverwendet wenn vorhanden)
+
+Eingabe (Fallback):
+  <rootfolder>/root.txt
+
+Ausgabe:
+  <root>/03-stages/99-logs/M2B00-root.resolved.txt
+  <root>/03-stages/99-logs/M2B00-root-check.log
+
+Hinweis:
+  M2B00 schreibt ein EIGENES resolved.txt (M2B00-).
+  Alle nachfolgenden M2B Scripts verwenden jedoch
+  Path(__file__).resolve().parents[2] direkt und
+  lesen M2B00-root.resolved.txt NICHT.
+  M2B00 ist dennoch sinnvoll als expliziter
+  Validierungsschritt am Anfang des Flows.
+
+
+--------------------------------------------------------------
+M2B01  master_extract.py
+--------------------------------------------------------------
+Zweck:
+  Liest alle BusinessProcess Elemente aus master.xml,
+  wendet M2Bmapping.txt als HARD FILTER an und erstellt
+  BPMN 2.0 Huellenfiles.
+
+Eingabe:
+  <root>/02-artifacts/00-xml/00-master/master.xml
+  <root>/02-artifacts/00-xml/01-mapping/M2Bmapping.txt
+
+Ausgabe:
+  <root>/03-stages/01-bpmnarchive/<Prozessname>.bpmn
+  (pro gefiltertem BusinessProcess)
+
+BPMN Huelle enthaelt:
+  <bpmn:definitions>
+    <bpmn:process id="<archi-identifier>"
+                  name="<prozessname>"
+                  isExecutable="true"/>
+    <bpmndi:BPMNDiagram>
+      <bpmndi:BPMNPlane/>
+    </bpmndi:BPMNDiagram>
+  </bpmn:definitions>
+
+Besonderheiten:
+  - process id = Archi identifier (niemals veraendert)
+  - Dateiname = bereinigter Prozessname
+  - Erlaubte Sonderzeichen im Dateinamen: - _ . + Leerzeichen
+  - Kein Ueberschreiben: existiert bereits ein BPMN fuer
+    diese process id -> SKIP
+  - Kein Abort bei bestehenden Files
+
+Name-Extraktion aus master.xml:
+  Bevorzugt: <name xml:lang="de">
+  Fallback:  erstes <name> Element (beliebige Sprache)
+  Fallback2: Archi identifier als Dateiname
+
+
+--------------------------------------------------------------
+M2B02  activate_model.py
+--------------------------------------------------------------
+Zweck:
+  Kopiert BPMN Huellenfiles aus dem Staging-Ordner
+  in den aktiven Modellordner fuer Camunda Modeler.
+
+Eingabe:
+  <root>/03-stages/01-bpmnarchive/*.bpmn
+
+Ausgabe:
+  <root>/01-model/01-bpmn/00-bpmnactive/*.bpmn
+
+Regeln:
+  - Kein Ueberschreiben bestehender aktiver Files
+  - Kein Erstellen fehlender Verzeichnisse (Abort statt Create)
+  - Kein XML Parsing, keine Inhaltsaenderung
+
+
+--------------------------------------------------------------
+M2B03  clear.py
+--------------------------------------------------------------
+Zweck:
+  Bereinigt M2B Zwischenartefakte nach erfolgreichem Flow.
+
+Geloescht:
+  03-stages/01-bpmnarchive/M2B*  (Files + Verzeichnisse)
+  03-stages/99-logs/M2B01-*.log
+  03-stages/99-logs/M2B02-*.log
+
+Behalten:
+  M2B00-root.resolved.txt
+  M2B03-*.log
+  Aktive *.bpmn in 00-bpmnactive/ (NIEMALS beruehrt)
+
+Hinweis:
+  BPMN Huellenfiles in 01-bpmnarchive/ beginnen NICHT
+  mit "M2B" im Namen (Dateiname = Prozessname).
+  M2B03 loescht diese daher NICHT automatisch.
+
+
+--------------------------------------------------------------
+M2B04  reconcile_enrich.py
+--------------------------------------------------------------
+Zweck:
+  Gleicht aktive BPMN Prozesse mit Archi master.xml ab
+  und reichert erlaubte Metadaten an.
+
+Eingabe:
+  <root>/01-model/01-bpmn/00-bpmnactive/*.bpmn
+  <root>/02-artifacts/00-xml/00-master/master.xml
+  <root>/02-artifacts/00-xml/01-mapping/M2Bmapping.txt
+
+Ausgabe:
+  Aktualisierte *.bpmn Files (in-place)
+  <root>/03-stages/99-logs/M2B04-reconcile.log
+
+Ablauf:
+  1. Snapshot aller aktiven Prozess-IDs (GUARD)
+  2. Archi master.xml parsen -> BusinessProcess Index
+  3. Bootstrap-Check: ist "Process_Example_001" aktiv?
+     - JA + genau 1 Mapping-Kandidat: ID ersetzen
+     - JA + mehrere Kandidaten: SKIP (nur Logging)
+     - NEIN: kein Bootstrap
+  4. Pro aktiver BPMN:
+     a. process id gegen Archi Index abgleichen
+     b. Mapping-Kontext pruefen (relevant_models)
+     c. name= aus Archi uebertragen (safe_write)
+  5. Guard: Prozess-ID-Menge darf sich nur durch
+     explizit deklarierte Bootstrap-Aenderungen veraendern
+
+Angereicherte Felder:
+  name=  (aus Archi BusinessProcess name)
+
+GARANTIEN:
+  - Kein Erstellen neuer BPMN Prozesse
+  - Keine ID-Aenderungen ausser explizitem Bootstrap
+  - Keine Leerwerte werden geschrieben
+
+
+--------------------------------------------------------------
+M2B05  writeback_master.py
+--------------------------------------------------------------
+Zweck:
+  Schreibt alle angereicherten *.bpmn Files aus dem
+  aktiven Modellordner zurueck in master.xml.
+  *.bpmn gewinnt bei Konflikten immer (neueste Quelle).
+
+Eingabe:
+  <root>/01-model/01-bpmn/00-bpmnactive/*.bpmn
+  <root>/02-artifacts/00-xml/00-master/master.xml
+
+Ausgabe:
+  <root>/02-artifacts/00-xml/00-master/master.xml  (in-place)
+  <root>/02-artifacts/00-xml/00-master/master.xml.bak
+  <root>/03-stages/99-logs/M2B05-writeback.log
+
+Strategie pro *.bpmn:
+  1. process id aus <bpmn:definitions> extrahieren
+  2. In master.xml nach <definitions> Block mit
+     gleicher process id suchen
+  3a. NICHT gefunden -> an master.xml anhaengen (APPEND)
+  3b. GEFUNDEN -> an gleicher Position ersetzen (REPLACE)
+  4. Annotationen setzen:
+     sourceSystem="bpmn"
+     sourceModel="<dateiname>.bpmn"
+  5. master root: last-updated + last-updated-by setzen
+
+Huelle-Erkennung:
+  BPMN Files ohne Tasks/Events/Gateways werden als
+  "hull-only" markiert (Logging) aber dennoch
+  vollstaendig zurueckgeschrieben.
+
+GARANTIEN:
+  - Archi Elemente (sourceSystem=archi) werden NIEMALS
+    veraendert oder geloescht
+  - Backup vor jedem Schreibvorgang
+  - Keine ID-Veraenderungen
+
+
+--------------------------------------------------------------
+M2B06  scope_snapshot.py
+--------------------------------------------------------------
+Zweck:
+  Scannt master.xml nach allen eindeutigen
+  sourceSystem/sourceModel Kombinationen und schreibt
+  einen strukturierten Snapshot-Block in run-scope.txt.
+  Dient als Referenz fuer nachgelagerte Flows.
+
+Eingabe:
+  <root>/02-artifacts/00-xml/00-master/master.xml
+  <root>/02-artifacts/00-xml/01-mapping/run-scope.txt
+
+Ausgabe:
+  <root>/02-artifacts/00-xml/01-mapping/run-scope.txt
+  (in-place, Snapshot Block wird ersetzt)
+  <root>/03-stages/99-logs/M2B06-scope_snapshot.log
+
+Snapshot-Block Format:
+  # SNAPSHOT_START
+  # =====================================================
+  # MASTER.XML SNAPSHOT - generated by M2B06
+  # Last updated: <iso-timestamp>
+  # =====================================================
+  # --- sourceSystem: archi ---
+  #SNAPSHOT_SOURCE=archi
+  #SNAPSHOT_MODEL=R+Muni Architecture Modell.xml
+  #
+  # --- sourceSystem: bpmn ---
+  #SNAPSHOT_SOURCE=bpmn
+  #SNAPSHOT_MODEL=BUP00-3rd Party Import.bpmn
+  # =====================================================
+  # SNAPSHOT_END
+
+Regeln:
+  - Aktive SOURCE= Eintraege werden NIEMALS veraendert
+  - Alter Snapshot Block wird vollstaendig ersetzt
+  - Snapshot-Zeilen beginnen mit # (nie aktiv)
+  - Sortierung: nach sourceSystem, dann sourceModel
+  - Platzierung: am Ende von run-scope.txt
+
+
+==============================================================
+7. DATENPFADE & ARTEFAKTE
+==============================================================
+
+PERSISTENTE ARTEFAKTE (bleiben nach Flow-Ende):
++-------------------------------------------+------------------+
+| Datei                                     | Erzeugt von      |
++-------------------------------------------+------------------+
+| 00-master/master.xml                      | XML06            |
+| 00-master/master.xml.bak                  | M2B05, M2B06     |
+| 01-mapping/run-scope.txt                  | Manuell + M2B06  |
+| 99-logs/XML06-finalize-master.log         | XML06            |
+| 99-logs/XML07-cleanup-artifacts.log       | XML07            |
+| 99-logs/M2B04-reconcile.log               | M2B04            |
+| 99-logs/M2B05-writeback.log               | M2B05            |
+| 99-logs/M2B06-scope_snapshot.log          | M2B06            |
+| 01-bpmn/00-bpmnactive/*.bpmn              | M2B02            |
++-------------------------------------------+------------------+
+
+TEMPORAERE ARTEFAKTE (werden geloescht):
++-------------------------------------------+------------------+
+| Datei                                     | Geloescht von    |
++-------------------------------------------+------------------+
+| 00-master/master.generated.xml            | XML07            |
+| 00-master/master.cleared.xml              | XML07            |
+| 00-archimatearchive/XML0*-*               | XML07            |
+| 01-bpmnarchive/XML0*-*                    | XML07            |
+| 99-logs/XML00-XML05 *.log                 | XML07            |
+| 99-logs/M2B01-*.log                       | M2B03            |
+| 99-logs/M2B02-*.log                       | M2B03            |
++-------------------------------------------+------------------+
+
+
+==============================================================
+8. NAMESPACE REFERENZ
+==============================================================
+
+ArchiMate OEF:
+  http://www.opengroup.org/xsd/archimate/3.0/
+
+BPMN 2.0:
+  http://www.omg.org/spec/BPMN/20100524/MODEL
+
+BPMN DI:
+  http://www.omg.org/spec/BPMN/20100524/DI
+
+XSI:
+  http://www.w3.org/2001/XMLSchema-instance
+  Attribut: {http://www.w3.org/2001/XMLSchema-instance}type
+  Kurzform: xsi:type
+
+XML Lang:
+  http://www.w3.org/XML/1998/namespace
+  Attribut: {http://www.w3.org/XML/1998/namespace}lang
+  Kurzform: xml:lang
+
+Camunda Extensions:
+  http://camunda.org/schema/zeebe/1.0
+  http://camunda.org/schema/1.0/bpmn
+  http://camunda.org/schema/modeler/1.0
+
+WICHTIG fuer Namespace-Handling:
+  lxml und stdlib ET liefern Tags als {namespace-uri}localname.
+  Alle Scripts verwenden strip_ns() / split("}") zur Extraktion
+  des lokalen Namens. Namespace-URIs werden NIEMALS direkt
+  als String-Vergleich verwendet.
+
+
+==============================================================
+9. FEHLERBEHANDLUNG & LOGS
+==============================================================
+
+Log-Level Konventionen:
+  [OK]        Stage erfolgreich abgeschlossen
+  [SKIP]      Element uebersprungen (kein Fehler)
+  [WARN]      Hinweis, Flow laeuft weiter
+  [ERROR]     Fehler bei einzelnem Element, Flow laeuft weiter
+  [ABORT]     Kritischer Fehler, Flow wird beendet (sys.exit(1))
+  [MATCH]     Erfolgreich abgeglichenes Element
+  [NO-MATCH]  Kein Treffer (kein Fehler)
+  [AMBIGUOUS] Mehrdeutiger Treffer, keine Aktion
+
+Exit Codes:
+  0   Erfolgreich
+  1   Kritischer Fehler (nach ABORT)
+
+Typische ABORT Szenarien:
+  - root.txt nicht gefunden
+  - master.xml nicht vorhanden
+  - Pflichtverzeichnisse fehlen
+  - XML Parsing Fehler an Kerndateien
+
+Log-Dateien Ablageort:
+  <root>/03-stages/99-logs/
+
+Backup-Strategie:
+  M2B05 und M2B06 legen vor jedem Schreibvorgang
+  automatisch ein master.xml.bak an.
+  Bei Problemen: master.xml.bak -> master.xml kopieren.
+
+
+==============================================================
+10. BEKANNTE EINSCHRAENKUNGEN
+==============================================================
+
+1. XML05 benoetigt lxml
+   stdlib ET genuegt nicht. lxml muss installiert sein:
+     pip install lxml
+
+2. mapping.txt: Attributfilter mit + trennen
+   Der Bindestrich (-) ist ausschliesslich dem Trenner
+   zwischen source[model] und entry-point vorbehalten.
+   Attributfilter IMMER mit + anhaengen:
+     RICHTIG:  archi-element+xsi:type="SystemSoftware"
+     FALSCH:   archi-element-xsi:type="SystemSoftware"
+
+3. BPMN Prozess-IDs muessen Archi Identifiern entsprechen
+   Damit M2B05 den Rueckschreib-Match korrekt durchfuehren
+   kann muss die process id im BPMN File dem Archi
+   identifier entsprechen. M2B01 stellt das sicher.
+
+4. M2B04 Bootstrap nur fuer einzelne Placeholder
+   Bootstrap (Process_Example_001 -> echte ID) greift
+   nur wenn GENAU 1 Mapping-Kandidat existiert.
+   Bei mehreren Kandidaten: manuelle Zuweisung noetig.
+
+5. master.xml waechst mit jedem Durchlauf
+   Der XML Flow ist append-only. Aeltere Versionen von
+   Objekten bleiben erhalten. Gewuenscht: letzter Stand
+   ist immer am Ende des Files. Der CSV Flow muss dies
+   beruecksichtigen.
+
+6. Sonderzeichen in Prozessnamen
+   Erlaubt in Dateinamen: Buchstaben, Zahlen, - _ . + Leerzeichen
+   Alle anderen Zeichen werden von safe_filename() entfernt.
+
+
+==============================================================
+11. CHANGELOG FIXES
+==============================================================
+
+--------------------------------------------------------------
+Session 1 Fixes (XML Flow)
+--------------------------------------------------------------
+
+FIX 1: mapping.txt - Falscher Attributfilter-Trenner
+  Problem:  Attributfilter nutzten - statt +
+            archi-element-xsi:type="SystemSoftware"
+            wurde als ein langer entry-point interpretiert
+  Fix:      mapping.txt korrigiert auf + als Trenner
+            archi-element+xsi:type="SystemSoftware"
+  Betroffen: mapping.txt, XML04 parse_rule()
+
+FIX 2: XML04 parse_rule() - Robustes Parsing fuer model[filter]
+  Problem:  split("-",1) funktionierte nicht korrekt wenn
+            ein [model-filter] vorhanden war
+  Fix:      Brackets werden zuerst extrahiert, dann beim
+            naechsten - gesplittet
+  Betroffen: XML04-merge_master.py
+
+FIX 3: XML05 match_selector() - BPMN Tag-Matching mit lxml
+  Problem:  "bpmn" not in element.tag prueft auf Namespace-URI
+            die das Wort "bpmn" nicht enthalten muss
+            endswith("bpmn:serviceTask") niemals True bei lxml
+  Fix:      strip_ns() + sourceSystem-Attribut fuer Match
+            Lokaler Tagname wird via split("}") extrahiert
+  Betroffen: XML05-clear_merge.py
+
+FIX 4: XML04 collect_matches() - Deduplizierung
+  Problem:  Ueberlappende Regeln (archi-* + archi-element+...)
+            fuehrten zu Mehrfacheintraegen im master.xml
+  Fix:      Dedup-Set auf (model_file, entry_id) Basis
+  Betroffen: XML04-merge_master.py
+
+--------------------------------------------------------------
+Session 2 Fixes (M2B Flow)
+--------------------------------------------------------------
+
+FIX 5: M2B04 Bootstrap-Guard - Falscher ABORT
+  Problem:  ABORT wenn mehr als 1 BusinessProcess in
+            master.xml vorhanden -> blockierte gesamten Flow
+            sobald reale Daten vorhanden
+  Fix:      Bootstrap prueft nur ob Process_Example_001
+            aktiv ist. KEIN ABORT bei mehreren Kandidaten,
+            nur Logging und Skip des Bootstrap
+  Betroffen: M2B04-reconcile_enrich.py
+
+FIX 6: M2B01 - Placeholder statt echter master.xml Extraktion
+  Problem:  archi_processes war hardcodiert als Testliste,
+            master.xml wurde nie gelesen
+  Fix:      extract_processes_from_master() liest master.xml
+            direkt und extrahiert alle BusinessProcess Elemente
+  Betroffen: M2B01-master_extract.py
+
+FIX 7: M2B01 safe_filename() - + Zeichen wurde entfernt
+  Problem:  R+MUNI wurde zu RMUNI im Dateinamen
+  Fix:      + zu erlaubten Zeichen in keepchars ergaenzt
+  Betroffen: M2B01-master_extract.py
+
+FIX 8: M2Bmapping.txt - model=*Process* zu restriktiv
+  Problem:  Pattern *Process* matchte kein Modell da der
+            Dateiname "R+Muni Architecture Modell.xml" kein
+            "Process" enthaelt -> alle 8 Prozesse gefiltert
+  Fix:      archi[model=*]-element-xsi:type="BusinessProcess"
+  Betroffen: M2Bmapping.txt (Konfiguration, kein Script)
+
+==============================================================
+ENDE DER DOKUMENTATION
+==============================================================

@@ -1,0 +1,202 @@
+﻿/* 
+===========================================================
+ NAMENSKONVENTION VALIDIERUNG – ARCHI 5.7 (jArchi)
+===========================================================
+
+ ZWECK
+ -----
+ Dieses Script validiert die verbindliche Naming-Konvention
+ gemäß Governance-Spezifikation.
+
+ Die Validierung ist:
+   - rein lesend (keine Modelländerungen)
+   - deterministisch
+   - auditfest
+   - tool-sicher (keine Modellüberschreitung)
+
+-----------------------------------------------------------
+ NAMING-REGEL
+-----------------------------------------------------------
+
+ FORMAT:
+   PREFIX-DESCRIPTION
+
+ PREFIX:
+   - exakt 5 Zeichen
+   - alphanumerisch (A–Z, a–z, 0–9)
+   - keine Sonderzeichen
+   - keine Bindestriche
+
+ DESCRIPTION:
+   - mindestens 1 Zeichen
+   - darf KEINEN Bindestrich "-" enthalten
+   - keine Längenbegrenzung
+
+-----------------------------------------------------------
+ AUSGABE
+-----------------------------------------------------------
+
+ KONSOLE:
+   - vollständige Fehlerliste
+   - geeignet für Audits und technische Analyse
+
+ POPUP:
+   - gruppiert nach Fehlertyp
+   - maximal 30 Einträge pro Kategorie
+   - endanwenderfreundlich
+
+===========================================================
+*/
+
+// ---------------------------------------------------------
+// Initiale Konsolenausgabe
+// ---------------------------------------------------------
+console.log("=== Starte Namensvalidierung ===");
+
+// ---------------------------------------------------------
+// Java Swing für Popup-Fenster
+// ---------------------------------------------------------
+var JOptionPane = Java.type("javax.swing.JOptionPane");
+
+// ---------------------------------------------------------
+// Statistik-Zähler
+// ---------------------------------------------------------
+let total = 0;      // Anzahl geprüfter Elemente
+let errors = 0;     // Anzahl fehlerhafter Elemente
+
+// ---------------------------------------------------------
+// Fehlergruppen (für strukturierte Ausgabe)
+// ---------------------------------------------------------
+let errorGroups = {
+    segmentCount: [],   // falsche Segmentanzahl
+    prefix: [],         // ungültiger PREFIX
+    description: []     // ungültige DESCRIPTION
+};
+
+// ---------------------------------------------------------
+// Maximale Anzahl Popup-Einträge pro Kategorie
+// ---------------------------------------------------------
+const POPUP_LIMIT = 30;
+
+// ---------------------------------------------------------
+// Iteration über ALLE Elemente des AKTIVEN Modells
+// (kein Zugriff auf andere Modelle)
+// ---------------------------------------------------------
+$(model).find("element").each(e => {
+
+    total++;
+
+    const name = e.name || "";
+    const parts = name.split("-");
+    let hasError = false;
+
+    // =====================================================
+    // PRÜFUNG 1: SEGMENTANZAHL
+    // Erwartet exakt 2 Segmente: PREFIX-DESCRIPTION
+    // =====================================================
+    if (parts.length !== 2) {
+
+        console.log(
+            "[CHECK SEGMENT COUNT] Erwartet: PREFIX-DESCRIPTION → Name: " + name
+        );
+
+        errorGroups.segmentCount.push(name);
+        hasError = true;
+
+    } else {
+
+        const prefix = parts[0];
+        const description = parts[1];
+
+        // =================================================
+        // PRÜFUNG 2: PREFIX
+        // - exakt 5 alphanumerische Zeichen
+        // =================================================
+        if (!/^[A-Za-z0-9]{5}$/.test(prefix)) {
+
+            console.log(
+                "[CHECK PREFIX] Ungültiger PREFIX → " +
+                prefix + " | Name: " + name
+            );
+
+            errorGroups.prefix.push(name);
+            hasError = true;
+        }
+
+        // =================================================
+        // PRÜFUNG 3: DESCRIPTION
+        // - mindestens 1 Zeichen
+        // - KEIN Bindestrich "-"
+        // - KEINE Längenbegrenzung
+        // =================================================
+        if (!/^[^-]+$/.test(description)) {
+
+            console.log(
+                "[CHECK DESCRIPTION] DESCRIPTION darf kein '-' enthalten → " +
+                description + " | Name: " + name
+            );
+
+            errorGroups.description.push(name);
+            hasError = true;
+        }
+    }
+
+    if (hasError) {
+        errors++;
+    }
+});
+
+// ---------------------------------------------------------
+// Konsolen-Zusammenfassung
+// ---------------------------------------------------------
+console.log("=== Validierung abgeschlossen ===");
+console.log("Geprüfte Elemente: " + total);
+console.log("Fehlerhafte Elemente: " + errors);
+console.log("Gültige Elemente: " + (total - errors));
+
+// ---------------------------------------------------------
+// Hilfsfunktion: Popup-Abschnitt erzeugen
+// ---------------------------------------------------------
+function buildGroupSection(title, list) {
+
+    if (list.length === 0) {
+        return title + ": keine Fehler\n\n";
+    }
+
+    let limited = list.slice(0, POPUP_LIMIT);
+
+    let more = list.length > POPUP_LIMIT
+        ? "\n  ... weitere Fehler siehe Konsole\n\n"
+        : "\n\n";
+
+    let section = title + " (" + list.length + "):\n";
+
+    limited.forEach(n => {
+        section += "  - " + n + "\n";
+    });
+
+    return section + more;
+}
+
+// ---------------------------------------------------------
+// Popup-Text zusammensetzen
+// ---------------------------------------------------------
+let popupMessage =
+    "Validierung abgeschlossen\n\n" +
+    "Geprüfte Elemente: " + total + "\n" +
+    "Fehlerhafte Elemente: " + errors + "\n" +
+    "Gültige Elemente: " + (total - errors) + "\n\n" +
+    "=== Fehlerdetails ===\n\n" +
+    buildGroupSection("Segmentanzahl-Fehler", errorGroups.segmentCount) +
+    buildGroupSection("PREFIX-Fehler", errorGroups.prefix) +
+    buildGroupSection("DESCRIPTION-Fehler", errorGroups.description);
+
+// ---------------------------------------------------------
+// Popup anzeigen
+// ---------------------------------------------------------
+JOptionPane.showMessageDialog(
+    null,
+    popupMessage,
+    "Naming-Konvention – Ergebnis",
+    JOptionPane.INFORMATION_MESSAGE
+);

@@ -1,0 +1,79 @@
+# assetsexport.txt
+# Jira Assets Export Config for CSV10-masterCsv2Assets.py
+# All entries inactive - uncomment to activate
+
+# --- ID Collision Strategy ---
+# ID_STRATEGY=merge
+# ID_STRATEGY=last_wins
+# ID_STRATEGY=prefix
+
+# --- Relations ---
+# INCLUDE_RELATIONS=true
+
+# --- SourceModel Column ---
+# INCLUDE_SOURCE_MODEL=true
+
+# --- Restrict to specific sourceModel ---
+# INCLUDE_SOURCEMODEL=Architecture.xml
+# INCLUDE_SOURCEMODEL=R+Muni Architecture Modell.xml
+# INCLUDE_SOURCEMODEL=Importer.xml
+
+# --- Exclude ArchiMate Types ---
+# EXCLUDE_TYPE=Artifact
+# EXCLUDE_TYPE=ApplicationFunction
+# EXCLUDE_TYPE=DataObject
+# EXCLUDE_TYPE=BusinessProcess
+# EXCLUDE_TYPE=BusinessFunction
+# EXCLUDE_TYPE=Requirement
+# EXCLUDE_TYPE=ValueStream
+# EXCLUDE_TYPE=ApplicationInterface
+# EXCLUDE_TYPE=BusinessService
+# EXCLUDE_TYPE=BusinessObject
+# EXCLUDE_TYPE=ApplicationComponent
+# EXCLUDE_TYPE=Principle
+# EXCLUDE_TYPE=Capability
+# EXCLUDE_TYPE=Material
+# EXCLUDE_TYPE=BusinessInterface
+# EXCLUDE_TYPE=Meaning
+# EXCLUDE_TYPE=SystemSoftware
+# EXCLUDE_TYPE=Driver
+# EXCLUDE_TYPE=Resource
+# EXCLUDE_TYPE=TechnologyFunction
+# EXCLUDE_TYPE=TechnologyInterface
+# EXCLUDE_TYPE=Product
+# EXCLUDE_TYPE=Outcome
+# EXCLUDE_TYPE=Goal
+# EXCLUDE_TYPE=ApplicationCollaboration
+# EXCLUDE_TYPE=BusinessActor
+# EXCLUDE_TYPE=Device
+# EXCLUDE_TYPE=Stakeholder
+# EXCLUDE_TYPE=Node
+# EXCLUDE_TYPE=CommunicationNetwork
+# EXCLUDE_TYPE=Assessment
+# EXCLUDE_TYPE=WorkPackage
+# EXCLUDE_TYPE=CourseOfAction
+# EXCLUDE_TYPE=Value
+# EXCLUDE_TYPE=Equipment
+# EXCLUDE_TYPE=Path
+# EXCLUDE_TYPE=TechnologyService
+# EXCLUDE_TYPE=TechnologyCollaboration
+# EXCLUDE_TYPE=Gap
+# EXCLUDE_TYPE=ApplicationInteraction
+# EXCLUDE_TYPE=BusinessInteraction
+# EXCLUDE_TYPE=ImplementationEvent
+# EXCLUDE_TYPE=ApplicationProcess
+# EXCLUDE_TYPE=ApplicationEvent
+# EXCLUDE_TYPE=BusinessEvent
+# EXCLUDE_TYPE=Facility
+# EXCLUDE_TYPE=DistributionNetwork
+# EXCLUDE_TYPE=TechnologyInteraction
+# EXCLUDE_TYPE=Plateau
+# EXCLUDE_TYPE=TechnologyProcess
+# EXCLUDE_TYPE=Grouping
+# EXCLUDE_TYPE=TechnologyEvent
+# EXCLUDE_TYPE=ApplicationService
+# EXCLUDE_TYPE=Constraint
+# EXCLUDE_TYPE=Location
+# EXCLUDE_TYPE=Representation
+# EXCLUDE_TYPE=Deliverable
+# EXCLUDE_TYPE=Contract

@@ -1,0 +1,4 @@
+# Mapping Properties <-> "properties.csv" für CSV08 Anreicherung
+"Owner Id","Properties","ID","properties.csv"
+"Key","Properties","Key","properties.csv"
+"Value","Properties","Value","properties.csv"

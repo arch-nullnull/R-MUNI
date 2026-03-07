@@ -1,0 +1,91 @@
+# ==========================================================
+# csvmapping.txt
+# Declarative Scope Mapping for CSV Flow
+#
+# Purpose:
+# - Define WHICH source models are included in the current run
+# - Acts as HARD FILTER for CSV03-resolve_run_scope
+#
+# Principles:
+# ----------------------------------------------------------
+# - Mapping is configuration, not logic
+# - Rules are OR-combined
+# - If NO rule matches -> model is NOT in scope
+# - CSV03 extracts ONLY the model selector (model=...)
+# - Element/type selectors are ignored by CSV03
+#
+# Supported dimensions (current):
+# - source system (archi, masterxml, xlsx, ...)
+# - model name pattern (wildcards supported)
+#
+# Syntax:
+# <source>[model=<pattern>]-<ignored-part>
+#
+# Notes:
+# - <pattern> supports wildcards (*)
+# - Matching is substring-based
+# - CSV03 does NOT interpret element/type filters
+# ==========================================================
+
+
+# ----------------------------------------------------------
+# ACTIVE RULES (TEST SETUP)
+# ----------------------------------------------------------
+# Include ALL models from ALL sources
+# (useful for initial wiring tests)
+#
+archi[model=*.*]-element-xsi:type="*"
+
+
+# ----------------------------------------------------------
+# REAL-WORLD EXAMPLES (INACTIVE / DOCUMENTATION)
+# ----------------------------------------------------------
+
+# ----------------------------------------------------------
+# Example 1: Include only process-related Archi models
+# ----------------------------------------------------------
+#archi[model=*Process*]-element-xsi:type="BusinessProcess"
+
+
+# ----------------------------------------------------------
+# Example 2: Include core landscape models only
+# ----------------------------------------------------------
+#archi[model=*Core*]-element-xsi:type="ApplicationComponent"
+
+
+# ----------------------------------------------------------
+# Example 3: Exclude importer / technical staging models
+# (by simply not matching them)
+# ----------------------------------------------------------
+#archi[model=*Production*]-element-xsi:type="*"
+#archi[model=*Landscape*]-element-xsi:type="*"
+
+
+# ----------------------------------------------------------
+# Example 4: Include multiple model families explicitly
+# ----------------------------------------------------------
+#archi[model=*Sales*]-element-xsi:type="*"
+#archi[model=*Finance*]-element-xsi:type="*"
+#archi[model=*HR*]-element-xsi:type="*"
+
+
+# ----------------------------------------------------------
+# Example 5: Include master.xml as additional source
+# ----------------------------------------------------------
+#masterxml[model=master.xml]-element="*"
+
+
+# ----------------------------------------------------------
+# Example 6: XLSX-based source models (future extension)
+# ----------------------------------------------------------
+#xlsx[model=*Import*]-sheet="*"
+
+
+# ----------------------------------------------------------
+# Notes for future extension:
+#
+# - Additional dimensions (layer, viewpoint, tags)
+#   can be added without changing CSV03
+# - CSV03 will continue to extract ONLY model selectors
+# - Element-level semantics belong to later stages
+# ==========================================================

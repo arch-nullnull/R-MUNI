@@ -1,0 +1,119 @@
+# ==========================================================
+# sync.txt
+# Declarative Clear & Merge Rules for XML05
+#
+# This file defines how objects already present in the
+# current master XML are consolidated.
+#
+# IMPORTANT PRINCIPLES:
+# ----------------------------------------------------------
+# - Rules are evaluated top-down
+# - Rules select objects, actions define consolidation
+# - Identifier is the primary identity anchor
+# - External IDs are merge candidates, never leading
+# - If NO rule matches -> object remains untouched
+# - Merge safety is explicitly declared using same:* filters
+# ==========================================================
+
+
+# ----------------------------------------------------------
+# GENERAL SYNTAX
+# ----------------------------------------------------------
+#
+# <source>-<entry-point>+filter+filter :: <action>
+#
+# Parts:
+#   source            : archi | bpmn
+#   entry-point       : element | relationship | bpmn:serviceTask | *
+#   filters           : optional, AND-combined using "+"
+#   action            : merge | keep | ignore
+#
+# If action is omitted -> keep
+#
+# FILTER TOKENS
+# ----------------------------------------------------------
+# has:id              -> element has attribute "id"
+# has:identifier      -> element has attribute "identifier"
+# no:identifier       -> element has no attribute "identifier"
+#
+# same:type           -> merge only if xsi:type matches
+# same:sourceSystem   -> merge only if sourceSystem matches
+#
+# Filters starting with "same:" are evaluated during merge.
+# ----------------------------------------------------------
+
+
+# ==========================================================
+# ARCHI CONSOLIDATION RULES
+# ==========================================================
+
+
+# ----------------------------------------------------------
+# 1) Merge external-ID-only elements into canonical identifier
+# ----------------------------------------------------------
+# Meaning:
+# - Element has external id
+# - Element has no identifier
+# - Exactly one canonical element with identifier exists
+# - Merge is allowed only if type and sourceSystem match
+#
+# Result:
+# - Canonical element remains
+# - External-ID-only element is removed
+# ----------------------------------------------------------
+archi-element+has:id+no:identifier+same:type+same:sourceSystem :: merge
+
+
+# ----------------------------------------------------------
+# 2) Keep external-ID-only elements if no identifier exists
+# ----------------------------------------------------------
+# Meaning:
+# - Element has external id
+# - No canonical identifier element exists
+#
+# Result:
+# - Element remains untouched
+# ----------------------------------------------------------
+archi-element+has:id+no:identifier :: keep
+
+
+# ----------------------------------------------------------
+# 3) Ignore ambiguous identity situations
+# ----------------------------------------------------------
+# Meaning:
+# - Multiple canonical candidates exist
+#
+# Result:
+# - Element remains untouched
+# - Situation is logged as ambiguous
+# ----------------------------------------------------------
+archi-element+has:id+no:identifier :: ignore
+
+
+# ==========================================================
+# BPMN CONSOLIDATION RULES
+# ==========================================================
+
+
+# ----------------------------------------------------------
+# 4) Merge BPMN service tasks by identifier
+# ----------------------------------------------------------
+# Meaning:
+# - Service task has identifier
+#
+# Result:
+# - Duplicate tasks without identifier are removed
+# ----------------------------------------------------------
+bpmn-bpmn:serviceTask+has:identifier :: merge
+
+
+# ==========================================================
+# NOTES
+# ==========================================================
+#
+# - Selection defines which objects are affected
+# - Actions define how consolidation is performed
+# - No implicit fallback logic exists
+# - All actions are logged by XML05
+#
+# ==========================================================

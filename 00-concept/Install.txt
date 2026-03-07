@@ -1,0 +1,177 @@
+================================================================================
+R+MUNI – INSTALLATIONSANLEITUNG
+Stage 3 | Frozen | R+MUNI Blueprint
+================================================================================
+Erstellt    : 2026-03-02
+Stage       : S3 – FROZEN (read-only Referenz)
+Ablageort   : 00-concept/RMUNI_Installation_S3.txt
+================================================================================
+
+
+1. ÜBERSICHT
+--------------------------------------------------------------------------------
+R+MUNI läuft auf Windows 11 und Linux ohne Datenbankserver, Webserver oder
+Container. Alle Komponenten sind kostenlos und open source.
+
+Entwickelt und getestet auf Windows 11 Enterprise.
+Linux kompatibel — alle Scripts verwenden os.path (keine hardcodierten Pfade).
+macOS theoretisch kompatibel, nicht offiziell getestet.
+
+
+2. PFLICHTKOMPONENTEN
+--------------------------------------------------------------------------------
+Ohne diese Komponenten ist R+MUNI nicht lauffähig.
+
+
+2.1 Python 3.10 oder höher
+  Download : https://www.python.org/downloads/
+  Hinweis  : Bei Windows Installation "Add Python to PATH" aktivieren.
+  Prüfen   : python --version
+
+  Benötigte Pakete (nach Python-Installation):
+    pip install lxml
+    pip install openpyxl
+
+  lxml     → zwingend für XML05-clear_merge.py
+  openpyxl → zwingend für CSV07 und CSV08 (XLSX Verarbeitung)
+
+
+2.2 Archi 5.x
+  Download : https://www.archimatetool.com/download/
+  Lizenz   : kostenlos, open source
+  Zweck    : ArchiMate Modellierung, OEF Export, Basis für master.xml
+
+  Plugin jArchi (empfohlen):
+  Download : https://www.archimatetool.com/plugins/
+  Zweck    : JavaScript Scripting innerhalb Archi
+             Basis für zukünftige Stage 4 Automatisierungen
+  Hinweis  : jArchi basiert auf einer JavaScript Engine (GraalVM)
+             JSTool in Notepad++ ist dazu das passende Gegenstück
+
+
+2.3 Camunda Modeler
+  Download : https://camunda.com/download/modeler/
+  Lizenz   : kostenlos
+  Zweck    : BPMN 2.0 Modellierung, Prozessanreicherung
+  Empfehlung: Camunda 7 Format verwenden (Blueprint optimiert darauf)
+
+
+2.4 Blueprint Ordnerstruktur
+  Die Verzeichnisstruktur gemäß structure.txt muss vor dem ersten
+  Script-Lauf vollständig vorhanden sein.
+
+  root.txt im Blueprint-Root muss korrekt befüllt sein:
+    BLUEPRINT_ROOT=<absoluter oder relativer Pfad>
+
+  Relativer Pfad wird relativ zur Position von root.txt aufgelöst.
+
+
+3. EMPFOHLENE WERKZEUGE
+--------------------------------------------------------------------------------
+Nicht zwingend für den Script-Betrieb — aber für die tägliche Arbeit
+mit dem Blueprint praktisch unverzichtbar.
+
+
+3.1 Notepad++ (aktuelle Version)
+  Download : https://notepad-plus-plus.org/downloads/
+  Lizenz   : kostenlos, open source
+  Zweck    : Editieren von XML, CSV, txt, BPMN, Python Scripts
+
+  Plugins (über Plugin Admin installierbar):
+
+  PFLICHT für R+MUNI Arbeit:
+    XML Tools      → XML formatieren, validieren, xpath
+                     https://github.com/morbac/xmltools
+    XML Navigator  → Baumstruktur von master.xml und BPMN sichtbar machen
+                     https://github.com/wpsurfer/nppxmlnavigator
+    CSV Lint       → Master CSVs auf Struktur und Encoding prüfen
+                     https://github.com/BdR76/CSVLint
+    CSVQuery       → CSV Inhalte direkt abfragen ohne Excel
+                     https://github.com/jonathanpotts/NppCsvQuery
+    NPPEXEC        → Scripts direkt aus Notepad++ starten
+                     https://github.com/d0vgan/nppexec
+    Compare        → Dateiversionen vergleichen (mapping.txt, run-scope.txt)
+                     https://github.com/pnedev/compare-plugin
+
+  NÜTZLICH für R+MUNI Arbeit:
+    Python Scripts → Python Automatisierungen direkt in Notepad++
+                     https://github.com/bruderstein/PythonScript
+    Converter      → Encoding prüfen und auf UTF-8 konvertieren
+                     Wichtig: CSV und XML müssen UTF-8 sein für Archi Import
+                     https://github.com/npp-plugins/converter
+    JSTool         → JavaScript formatieren (jArchi Scripts)
+                     https://github.com/npp-plugins/jstool
+    Explorer       → Dateibrowser direkt in Notepad++
+                     https://github.com/npp-plugins/explorer
+
+  NICHT R+MUNI spezifisch (historisch mitinstalliert):
+    Code Alignment → Code-Ästhetik, kein funktionaler Bezug
+    MIME Tools     → Base64 etc., kein direkter Blueprint-Bezug
+    NPPExport      → Export zu HTML/RTF, kein Blueprint-Bezug
+
+
+3.2 PowerShell 7
+  Download : https://github.com/PowerShell/PowerShell/releases
+  Lizenz   : kostenlos, open source
+  Zweck    : Scripts starten, Ordnerstruktur verwalten,
+             Batch-Operationen im Blueprint-Verzeichnis
+  Hinweis  : PowerShell 7 läuft auch auf Linux und macOS
+  Prüfen   : pwsh --version
+
+
+4. ENCODING HINWEIS
+--------------------------------------------------------------------------------
+Alle Dateien im Blueprint müssen UTF-8 sein — ohne BOM empfohlen.
+
+Betrifft besonders:
+  - Master CSVs (elements.csv, relations.csv, properties.csv)
+  - mapping.txt, csvmapping.txt, propmapping.txt
+  - flowtriggers.txt, flowmapping.txt
+  - root.txt
+
+Prüfen und konvertieren: Notepad++ → Encoding Menü → UTF-8
+Oder via Converter Plugin für Batch-Konvertierung.
+
+Archi Import schlägt bei falschem Encoding ohne klare Fehlermeldung fehl.
+
+
+5. INSTALLATIONS-REIHENFOLGE EMPFEHLUNG
+--------------------------------------------------------------------------------
+1. Python installieren + PATH setzen
+2. pip install lxml openpyxl
+3. Archi 5.x installieren
+4. jArchi Plugin in Archi installieren
+5. Camunda Modeler installieren
+6. Notepad++ installieren
+7. Notepad++ Plugins über Plugin Admin installieren
+8. PowerShell 7 installieren
+9. Blueprint Ordnerstruktur anlegen
+10. root.txt befüllen
+11. CSV00 ausführen als erster Funktionstest
+
+
+6. ERSTER FUNKTIONSTEST
+--------------------------------------------------------------------------------
+Nach der Installation:
+
+  python 02-artifacts/01-scripts/CSV00-validate_environment.py
+
+Erwartete Ausgabe:
+  [CSV00] OK | root resolved -> .../03-stages/99-logs/CSV00-root.resolved.txt
+
+Wenn das läuft ist die Basis korrekt installiert.
+
+
+7. VERSIONSHINWEISE
+--------------------------------------------------------------------------------
+Entwickelt und getestet mit:
+  Python     : 3.10+
+  Archi      : 5.x
+  Camunda    : Modeler aktuell, Format Camunda 7
+  Notepad++  : aktuelle Version
+  PowerShell : 7.x
+  Windows    : 11 Enterprise
+
+Stage 3 ist Beta. Blueprint funktional aber nicht für Endanwender
+gehärtet. Für produktiven Einsatz auf eigenem System geeignet.
+================================================================================

@@ -1,0 +1,96 @@
+# ==========================================================
+# mastercsvsync.txt
+# CSV09 – Productive XML → CSV Synchronisation Mapping
+#
+# PURPOSE
+# ----------------------------------------------------------
+# This file defines the ACTUAL materialisation from the
+# staged master.xml into Archi-compatible CSV import files.
+#
+# One OBJECT (Element, Relationship, Property) results in
+# exactly ONE CSV ROW.
+#
+# This file is intentionally:
+#   - object-centric
+#   - readable
+#   - stable
+#   - future-proof
+#
+# No XPath logic here.
+# No filtering here.
+# No defaults.
+# No repair.
+#
+# Scope is already applied BEFORE this step.
+#
+# ----------------------------------------------------------
+# FORMAT
+# ----------------------------------------------------------
+#
+# "Headname","ObjectType","CSV_Column","CSV_File","XML_Source"
+#
+# Headname:
+#   - Human readable / documentation only
+#
+# ObjectType:
+#   - ELEMENT
+#   - RELATIONSHIP
+#   - PROPERTY
+#
+# CSV_Column:
+#   - Target column name in CSV
+#
+# CSV_File:
+#   - Target CSV file
+#
+# XML_Source:
+#   - Relative to the current object
+#   - "@attr"        → XML attribute
+#   - "a:child"      → child element text
+#   - "."            → text() of current element
+#   - "../@attr"     → attribute of parent object
+#
+# Namespace prefix "a:" refers to:
+#   http://www.opengroup.org/xsd/archimate/3.0
+#
+# ==========================================================
+
+
+# ==========================================================
+# ELEMENTS  → elements.csv
+# ==========================================================
+
+"Name","ELEMENT","Name","elements.csv","a:name"
+"Type","ELEMENT","Type","elements.csv","@xsi:type"
+"Id","ELEMENT","ID","elements.csv","@identifier"
+"Documentation","ELEMENT","Documentation","elements.csv","a:documentation"
+"Specialization","ELEMENT","Specialization","elements.csv","@xsi:type"
+"Source Model","ELEMENT","SourceModel","elements.csv","@sourceModel"
+
+
+# ==========================================================
+# RELATIONSHIPS → relations.csv
+# ==========================================================
+
+"Name","RELATIONSHIP","Name","relations.csv","a:name"
+"Type","RELATIONSHIP","Type","relations.csv","@xsi:type"
+"Id","RELATIONSHIP","ID","relations.csv","@identifier"
+"Source Id","RELATIONSHIP","Source","relations.csv","@source"
+"Target Id","RELATIONSHIP","Target","relations.csv","@target"
+"Specialization","RELATIONSHIP","Specialization","relations.csv","@xsi:type"
+"Source Model","RELATIONSHIP","SourceModel","relations.csv","@sourceModel"
+
+
+# ==========================================================
+# PROPERTIES (event-based) → properties.csv
+# ==========================================================
+
+"Owner Id","PROPERTY","ID","properties.csv","../@identifier"
+"Key","PROPERTY","Key","properties.csv","@propertyDefinitionRef"
+"Value","PROPERTY","Value","properties.csv","."
+"Source Model","PROPERTY","SourceModel","properties.csv","../@sourceModel"
+
+
+# ==========================================================
+# END OF FILE
+# ==========================================================

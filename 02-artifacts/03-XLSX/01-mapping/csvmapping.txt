@@ -1,0 +1,23 @@
+#ich bin das mapping damit CoPilot und ich nicht irgendwann durchdrehen ;)
+#Beispiel 
+#"XLSX_Headname","Mappenname","CSV_Headname","Filename.extension"
+
+#Mapping XLSX Mappe Elements <-> elements.csv
+"Name","Elements","Name","elements.csv"
+"Type","Elements","Type","elements.csv"
+"Id","Elements","ID","elements.csv"
+"Documentation","Elements","Documentation","elements.csv"
+"Specialization","Elements","Specialization","elements.csv"
+
+
+#Mapping XLSX Relationships <-> "relations.csv"
+"Name","Relationships","Name","relations.csv"
+"Type","Relationships","Type","relations.csv"
+"Id","Relationships","ID","relations.csv"
+"Documentation","Relationships","Documentation","relations.csv"
+#"Source","Relationships", kein CSV Bezug vorhanden 
+"Source Id","Relationships","Source","relations.csv"
+#"Target","Relationships",kein CSV Bezug vorhanden
+"Target Id","Relationships","Target","relations.csv"
+"Specialization","Relationships","Specialization","relations.csv"
+
