@@ -10,5 +10,5 @@
 # Keine andere Konfigurationsdatei enthält absolute Pfade.
 # =========================================================
 
-BLUEPRINT_ROOT=C:\Prototyping\MUNI
-<rootfolde>=C:\Prototyping\MUNI
+BLUEPRINT_ROOT=C:\Prototyping\R+MUNI
+<rootfolde>=C:\Prototyping\R+MUNI
