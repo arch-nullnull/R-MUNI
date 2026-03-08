@@ -1,10 +1,11 @@
 ================================================================================
 R+MUNI – INSTALLATIONSANLEITUNG
-Stage 3 | Frozen | R+MUNI Blueprint
+Stage 4 | Aktiv | R+MUNI Blueprint
 ================================================================================
 Erstellt    : 2026-03-02
-Stage       : S3 – FROZEN (read-only Referenz)
-Ablageort   : 00-concept/RMUNI_Installation_S3.txt
+Aktualisiert: 2026-03-08
+Stage       : S4 – AKTIV
+Ablageort   : 00-concept/Install.txt
 ================================================================================
 
 
@@ -119,9 +120,150 @@ mit dem Blueprint praktisch unverzichtbar.
   Prüfen   : pwsh --version
 
 
-4. ENCODING HINWEIS
+4. ATLASSIAN INTEGRATION (FREE PLAN)
+--------------------------------------------------------------------------------
+R+MUNI nutzt den Atlassian Free Plan für Ticketing, Dokumentation und
+EA-Objekt-Verlinkung. Kein kostenpflichtiges Feature, kein Marketplace-App.
+
+
+4.1 Jira (Free)
+  URL      : https://www.atlassian.com/software/jira
+  Lizenz   : kostenlos bis 10 User
+  Zweck    : Ticketing, Sprint-Verwaltung, EA-Objekt-Verlinkung via ATL-Flow
+
+  Jira Projekte im Blueprint:
+    IMS Blueprint  → Service Management, Entwicklungs-Tickets (bestehend)
+    R+MUNI EA      → EA-Objekte aus ArchiMate (MUNIEA, angelegt Stage 4)
+                     9 Komponenten 1:1 ArchiMate 3.2 Layer
+
+  ATL-Flow Voraussetzung:
+    Jira Projekt R+MUNI EA (Key: MUNIEA) muss angelegt sein
+    9 Komponenten manuell anlegen:
+      Strategy, Business, Application, Technology & Physical,
+      Motivation, Implementation & Migration, Relations, Other, Views
+
+
+4.2 Confluence (Free)
+  URL      : https://www.atlassian.com/software/confluence
+  Lizenz   : kostenlos bis 10 User
+  Zweck    : Projektdokumentation, EA-Objekt-Darstellung via Jira-Issues-Makro
+
+  Confluence Jira-Issues-Makro:
+    Ermöglicht tabellarische Darstellung der EA-Objekte aus Jira direkt
+    in Confluence-Seiten — ohne HTML-Upload, ohne iframe, live.
+    Makro → "Jira Issues" → JQL Filter nach Komponente und/oder Label.
+
+  Beispiel JQL:
+    Alle Business Layer Objekte:   component = "Business"
+    Spezifischer ArchiType:        labels = "ApplicationComponent"
+    Kombiniert:                    component = "Application" AND labels = "DataObject"
+
+
+4.3 GitHub (Free) — optional
+  URL      : https://github.com
+  Lizenz   : kostenlos (Public und Private Repos)
+  Zweck    : Versionierung des Blueprints, Open-Source Bereitstellung
+  Hinweis  : Atlassian Free Plan unterstützt GitHub Integration nativ
+             (Jira ↔ GitHub Commits/PRs verknüpfbar ohne Marketplace-App)
+  Status   : Optional — nicht zwingend für Blueprint-Betrieb
+
+
+5. VISUELLE ERWEITERUNGEN
+--------------------------------------------------------------------------------
+
+5.1 draw.io (diagrams.net)
+  Download : https://www.drawio.com/
+  Lizenz   : kostenlos, open source
+  Zweck    : Rein visuelle Diagramme die nicht ArchiMate- oder BPMN-normiert
+             sein müssen — z.B. Infrastruktur-Skizzen, Übersichtsdiagramme,
+             ad-hoc Visualisierungen für Kundenpräsentationen
+  Formate  : Eigenes XML-Format (.drawio), Export als PNG/SVG/PDF
+  Hinweis  : draw.io ist KEIN Ersatz für Archi oder Camunda Modeler.
+             Für normkonforme ArchiMate/BPMN Modellierung immer Archi
+             bzw. Camunda Modeler verwenden.
+             Status im Blueprint: inkludiert, Verwendung situativ
+
+
+6. ENTERPRISE UPGRADE-PFADE
+--------------------------------------------------------------------------------
+R+MUNI ist als KMU-Einstiegslösung konzipiert. Für Organisationen die in
+professionelle Enterprise-Plattformen wachsen möchten, gibt es validierte
+bzw. dokumentierte Migrationspfade aus dem Blueprint heraus.
+
+Grundprinzip: Die konsequente Einhaltung von BPMN 2.0 und ArchiMate 3.2 Norm
+ohne tool-eigene Erweiterungen ist die Voraussetzung für alle Upgrade-Pfade.
+
+
+6.0 HINWEIS: Tool-Agnostik als Designprinzip
+  R+MUNI ist tool-agnostisch. Jedes Tool im Blueprint ist prinzipiell
+  austauschbar — vorausgesetzt das Ersatz-Tool unterstützt die jeweilige
+  Norm (BPMN 2.0 bzw. ArchiMate 3.2).
+
+  Camunda 7 Community Edition hat im Oktober 2025 sein End-of-Life erreicht.
+  Da R+MUNI ausschließlich normkonforme BPMN 2.0 Dateien erzeugt (keine
+  Camunda-spezifischen Erweiterungen), können diese mit jedem BPMN 2.0
+  kompatiblen Modeler bearbeitet werden — inkl. Camunda Modeler für
+  Camunda 8, ADONIS, oder alternativen Open-Source Tools.
+  Das EOL von Camunda 7 hat damit keine Auswirkung auf den Blueprint-Betrieb.
+
+  Validiert am 2026-03-07: R+MUNI Artefakte sind direkt in ADONIS und ADOIT
+  importierbar — ohne Nachbearbeitung, ohne Konvertierung.
+
+
+6.1 ADONIS (BOC-Group) — BPMN Migration
+  URL      : https://www.boc-group.com/de/adonis/
+  Lizenz   : kostenpflichtig (Enterprise)
+  Zweck    : Enterprise Business Process Management
+  Format   : BPMN 2.0 Import (.bpmn)
+
+  Migration aus R+MUNI:
+    R+MUNI BPMN-Dateien (Camunda Modeler, Standard-Export) sind direkt
+    in ADONIS importierbar. Kein Tooling-Brückenbedarf, kein Datenverlust.
+    Voraussetzung: Strikt normkonforme BPMN 2.0 Modellierung (Blueprint-Standard).
+
+
+6.2 ADOIT (BOC-Group) — ArchiMate Migration
+  URL      : https://www.boc-group.com/de/adoit/
+  Lizenz   : kostenpflichtig (Enterprise)
+  Zweck    : Enterprise Architecture Management
+  Format   : OEF Import (.oef — Open Exchange Format)
+
+  Migration aus R+MUNI:
+    R+MUNI ArchiMate-Modelle (Archi 5.x OEF Export) sind direkt
+    in ADOIT importierbar. Kein Tooling-Brückenbedarf, kein Datenverlust.
+    Voraussetzung: Strikt normkonforme ArchiMate 3.2 Modellierung (Blueprint-Standard).
+
+  Hinweis: Die konsequente Einhaltung von BPMN 2.0 und ArchiMate 3.2 Norm
+           ohne tool-eigene Erweiterungen ist nicht nur eine Design-Entscheidung —
+           sie ist durch den BOC-Import empirisch validiert (2026-03-07).
+
+
+6.3 Camunda 8 — BPMN Prozessausführung (Enterprise)
+  URL      : https://camunda.com/
+  Lizenz   : kostenpflichtig (SaaS oder Self-Hosted)
+  Zweck    : Enterprise Process Orchestration und Automatisierung
+  Format   : BPMN 2.0 (Camunda 8 Modeler oder kompatibler Editor)
+
+  Upgrade aus R+MUNI:
+    Da R+MUNI ausschließlich normkonforme BPMN 2.0 Modelle erzeugt,
+    sind diese direkt im Camunda Modeler für Camunda 8 nutzbar.
+    Kein Tool-Wechsel nötig — der Camunda Modeler unterstützt beide
+    Versionen. BPMN-Dateien können ohne Anpassung weiterverwendet werden,
+    sofern keine Camunda-7-spezifischen Execution-Extensions genutzt wurden
+    (Blueprint-Standard: keine tool-eigenen Erweiterungen).
+
+  Hinweis: Camunda 8 ist eine vollständig neu architekturierte Plattform
+           (cloud-native, Zeebe Engine). Der Upgrade-Pfad betrifft primär
+           die Prozessausführung (Engine), nicht die Modellierung.
+           Für reine Modellierungszwecke (Blueprint-Scope) ist kein
+           Camunda-Upgrade erforderlich.
+
+
+7. ENCODING HINWEIS
 --------------------------------------------------------------------------------
 Alle Dateien im Blueprint müssen UTF-8 sein — ohne BOM empfohlen.
+Ausnahme: jira_ea_import.csv (ATL02 Output) wird mit UTF-8 BOM erzeugt
+          da Jira CSV-Import BOM für korrekte Zeichenerkennung benötigt.
 
 Betrifft besonders:
   - Master CSVs (elements.csv, relations.csv, properties.csv)
@@ -135,7 +277,7 @@ Oder via Converter Plugin für Batch-Konvertierung.
 Archi Import schlägt bei falschem Encoding ohne klare Fehlermeldung fehl.
 
 
-5. INSTALLATIONS-REIHENFOLGE EMPFEHLUNG
+8. INSTALLATIONS-REIHENFOLGE EMPFEHLUNG
 --------------------------------------------------------------------------------
 1. Python installieren + PATH setzen
 2. pip install lxml openpyxl
@@ -149,8 +291,15 @@ Archi Import schlägt bei falschem Encoding ohne klare Fehlermeldung fehl.
 10. root.txt befüllen
 11. CSV00 ausführen als erster Funktionstest
 
+Optional (je nach Use Case):
+12. Atlassian Free Plan einrichten (Jira + Confluence)
+    → Jira Projekt R+MUNI EA anlegen (Key: MUNIEA)
+    → 9 Komponenten anlegen (ArchiMate Layer)
+13. GitHub Repo anlegen und mit Jira verknüpfen
+14. draw.io installieren
 
-6. ERSTER FUNKTIONSTEST
+
+9. ERSTER FUNKTIONSTEST
 --------------------------------------------------------------------------------
 Nach der Installation:
 
@@ -162,16 +311,17 @@ Erwartete Ausgabe:
 Wenn das läuft ist die Basis korrekt installiert.
 
 
-7. VERSIONSHINWEISE
+10. VERSIONSHINWEISE
 --------------------------------------------------------------------------------
 Entwickelt und getestet mit:
   Python     : 3.10+
   Archi      : 5.x
-  Camunda    : Modeler aktuell, Format Camunda 7
+  Camunda    : Modeler aktuell, BPMN 2.0 normkonform (Camunda 7 + 8 kompatibel)
   Notepad++  : aktuelle Version
   PowerShell : 7.x
   Windows    : 11 Enterprise
+  Atlassian  : Free Plan (Jira + Confluence)
+  draw.io    : aktuelle Version
 
-Stage 3 ist Beta. Blueprint funktional aber nicht für Endanwender
-gehärtet. Für produktiven Einsatz auf eigenem System geeignet.
+Stage 4 ist aktiv. Blueprint funktional und produktiv im Einsatz.
 ================================================================================

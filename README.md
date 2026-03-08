@@ -45,6 +45,7 @@ Das ist die Idee hinter R+MUNI. Und deshalb ist diese Lösung **kostenlos** — 
 
 - Filterlogiken vereinfachen (Usability verbessern)
 - Asset Lookup im Netzwerk über Python Scripting und anschließendes Archimate Modell über CSV
+- Camunda 7 Community Edition (Version noch nicht klar) für Prozessautomatisierung in den Blueprint integrieren. 
 
 ---
 
