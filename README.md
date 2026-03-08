@@ -28,6 +28,7 @@ Das ist die Idee hinter R+MUNI. Und deshalb ist diese Lösung **kostenlos** — 
 - Startet Archi HTML Reports und hostet diese unter eigenem Namen (mehrere HTML Reports auf Port-Ebene)
 - 3rd Party Integration über CSV-Routinen in ArchiMate 3.2 bzw. master.xml Kreislauf
 - Archi XLSX Export – CSV Importformat damit man auch über XLSX arbeiten und wieder zurückführen kann (manuelle 3rd Party Integration über Excel) ⚠️ Archi Patron sowie Excel Voraussetzung
+- Archi Modell Import in Jira als Issue um es auch in der Freeedition als "Assetlight" verwenden zu können. 
 
 ---
 
@@ -42,8 +43,8 @@ Das ist die Idee hinter R+MUNI. Und deshalb ist diese Lösung **kostenlos** — 
 
 ### Was noch geplant ist
 
-- Atlassian Free Integration der ArchiMate-Welt
 - Filterlogiken vereinfachen (Usability verbessern)
+- Asset Lookup im Netzwerk über Python Scripting und anschließendes Archimate Modell über CSV
 
 ---
 
