@@ -28,7 +28,7 @@ Das ist die Idee hinter R+MUNI. Und deshalb ist diese Lösung **kostenlos** — 
 - Startet Archi HTML Reports und hostet diese unter eigenem Namen (mehrere HTML Reports auf Port-Ebene)
 - 3rd Party Integration über CSV-Routinen in ArchiMate 3.2 bzw. master.xml Kreislauf
 - Archi XLSX Export – CSV Importformat damit man auch über XLSX arbeiten und wieder zurückführen kann (manuelle 3rd Party Integration über Excel) ⚠️ Archi Patron sowie Excel Voraussetzung
-- Archi Modell Import in Jira als Issue um es auch in der Freeedition als "Assetlight" verwenden zu können. 
+- Archi Modell Import in Jira als Issue um es auch in der Free Edition als "Assetlight" verwenden zu können.
 
 ---
 
@@ -44,8 +44,8 @@ Das ist die Idee hinter R+MUNI. Und deshalb ist diese Lösung **kostenlos** — 
 ### Was noch geplant ist
 
 - Filterlogiken vereinfachen (Usability verbessern)
-- Asset Lookup im Netzwerk über Python Scripting und anschließendes Archimate Modell über CSV
-- Camunda 7 Community Edition (Version noch nicht klar) für Prozessautomatisierung in den Blueprint integrieren. 
+- Asset Lookup im Netzwerk über Python Scripting und anschließendes ArchiMate Modell über CSV
+- Camunda 7 Community Edition für Prozessautomatisierung in den Blueprint integrieren
 
 ---
 
@@ -84,6 +84,7 @@ Dieses Projekt ist Open Source und kostenlos nutzbar. Keine Abos. Keine versteck
 *R+MUNI — entwickelt von [EUMAXL](https://github.com/EUMAXL) · Österreich*
 
 ---
+---
 
 ## 🇬🇧 English
 
@@ -110,6 +111,7 @@ That's the idea behind R+MUNI. And that's why this solution is **free** — and 
 - Launches Archi HTML Reports and hosts them under their own name (multiple HTML reports at port level)
 - 3rd party integration via CSV routines into ArchiMate 3.2 and the master.xml cycle
 - Archi XLSX Export – CSV import format so you can work via XLSX and feed it back in (manual 3rd party integration via Excel) ⚠️ Requires Archi Patron and Excel
+- Archi model import into Jira as issues — enabling "asset-light" usage even in the Free Edition
 
 ---
 
@@ -124,5 +126,42 @@ That's the idea behind R+MUNI. And that's why this solution is **free** — and 
 
 ### What's planned
 
-- Atlassian Free integration for the ArchiMate world
 - Simplifying filter logic (improving usability)
+- Network asset lookup via Python scripting with subsequent ArchiMate model via CSV
+- Integrating Camunda 7 Community Edition for process automation into the blueprint
+
+---
+
+## 🛠️ Tech Stack
+
+| Tool | Role |
+|------|------|
+| [Archi 5.8](https://www.archimatetool.com/) — [Support the Developer ❤️](https://www.archimatetool.com/donate/) | EA Modeling · Master ID System · CSV Interface |
+| [Camunda Modeler (Camunda 7)](https://camunda.com/download/modeler/) | BPMN 2.0 Process Modeling |
+| [Python 3](https://www.python.org/) | Automation · Script Flows · Data Processing |
+| [Notepad++](https://notepad-plus-plus.org/) | Config & Script Editing |
+| [Claude (claude.ai)](https://claude.ai/) | AI-Driven Development by Anthropic |
+
+---
+
+## 🤖 AI-Driven Development
+
+This project was built using an **AI-Driven Development** approach.
+
+All code was authored with **Claude (claude.ai) by Anthropic** — guided by a non-developer using domain expertise in Enterprise Architecture, process modeling and complex organizational questions.
+
+> **~320 hours** of learning, developing and refining methodology
+> **~€ 550** personal investment
+> **1 person. Free time. Real conviction.**
+
+The AI-Driven Development methodology itself is documented as part of the R+MUNI blueprint (`AI_DRIVEN_DEV_METHODE.txt`).
+
+---
+
+## 📄 License
+
+This project is open source and free to use. No subscriptions. No hidden costs. No catch.
+
+---
+
+*R+MUNI — built by [EUMAXL](https://github.com/EUMAXL) · Austria*
