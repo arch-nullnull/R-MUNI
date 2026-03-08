@@ -1,2 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" targetNamespace="http://example.com/bpmn"><bpmn:process id="id-87df041b085a403e948d63e82b6dc556" name="BUP05-XML FLOW" isExecutable="true" /><bpmndi:BPMNDiagram id="BPMNDiagram_1"><bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="id-87df041b085a403e948d63e82b6dc556" /></bpmndi:BPMNDiagram></bpmn:definitions>

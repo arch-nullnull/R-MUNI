@@ -23,7 +23,6 @@ C:.
 |   |       XML_FLOW_principles_S3.txt
 |   |       
 |   +---02-how2
-|   |       ATL_CSV_Konfig_Jira_Mapping.txt
 |   |       ATL_FLOW_How2_S4.txt
 |   |       CSV_FLOW_How2_S3.txt
 |   |       FLOW_SCRIPTRUNNER_How2_S4.txt
@@ -95,47 +94,48 @@ C:.
 |   |   +---04-import
 |   |   \---99-exports
 |   +---01-scripts
-|   |       ATL00-validate_atl_scope.py
-|   |       ATL01-masterXml2AtlCsv.py
-|   |       ATL02-atlCsv2JiraCsv.py
-|   |       CSV00-validate_environment.py
-|   |       CSV01-validate_model.py
-|   |       CSV02-leer.py
-|   |       CSV03-resolve_run_scope.py
-|   |       CSV04-model-overview.py
-|   |       CSV05-create_master_csvs.py
-|   |       CSV06-append_child_to_master.py
-|   |       CSV07-xlsx_2_csv.py
-|   |       CSV08-properties2csv.py
-|   |       CSV09-masterxml2csv.py
-|   |       CSV99-export_snapshot.py
-|   |       HLP00_resolve_root.py
-|   |       HLP01_copy.py
-|   |       HLP02_move.py
-|   |       HLP03_clean.py
-|   |       HLP04_dirlog.py
-|   |       HLP05_context_structure.py
-|   |       HLP06_backup.py
-|   |       HLP07_restore.py
-|   |       HLP08_structure2csv.py
-|   |       HLP09-serve_report.py
-|   |       jA01-Validierung Namen.ajs
-|   |       M2B00-root_resolve.py
-|   |       M2B01-master_extract.py
-|   |       M2B02-activate_model.py
-|   |       M2B03-clear.py
-|   |       M2B04-reconcile_enrich.py
-|   |       M2B05-writeback_master.py
-|   |       M2B06-scope_snapshot.py
-|   |       XML00-resolve_root.py
-|   |       XML01-collect_sources.py
-|   |       XML02-parse_child_xml.py
-|   |       XML03-build_index.py
-|   |       XML04-merge_master.py
-|   |       XML05-clear_merge.py
-|   |       XML06-finalize-master.py
-|   |       XML07-cleanup-artifacts.py
-|   |       
+|   |   |   ATL00-validate_atl_scope.py
+|   |   |   ATL01-masterXml2AtlCsv.py
+|   |   |   ATL02-atlCsv2JiraCsv.py
+|   |   |   CSV00-validate_environment.py
+|   |   |   CSV01-validate_model.py
+|   |   |   CSV02-leer.py
+|   |   |   CSV03-resolve_run_scope.py
+|   |   |   CSV04-model-overview.py
+|   |   |   CSV05-create_master_csvs.py
+|   |   |   CSV06-append_child_to_master.py
+|   |   |   CSV07-xlsx_2_csv.py
+|   |   |   CSV08-properties2csv.py
+|   |   |   CSV09-masterxml2csv.py
+|   |   |   CSV99-export_snapshot.py
+|   |   |   HLP00_resolve_root.py
+|   |   |   HLP01_copy.py
+|   |   |   HLP02_move.py
+|   |   |   HLP03_clean.py
+|   |   |   HLP04_dirlog.py
+|   |   |   HLP05_context_structure.py
+|   |   |   HLP06_backup.py
+|   |   |   HLP07_restore.py
+|   |   |   HLP08_structure2csv.py
+|   |   |   HLP09-serve_report.py
+|   |   |   jA01-Validierung Namen.ajs
+|   |   |   M2B00-root_resolve.py
+|   |   |   M2B01-master_extract.py
+|   |   |   M2B02-activate_model.py
+|   |   |   M2B03-clear.py
+|   |   |   M2B04-reconcile_enrich.py
+|   |   |   M2B05-writeback_master.py
+|   |   |   M2B06-scope_snapshot.py
+|   |   |   XML00-resolve_root.py
+|   |   |   XML01-collect_sources.py
+|   |   |   XML02-parse_child_xml.py
+|   |   |   XML03-build_index.py
+|   |   |   XML04-merge_master.py
+|   |   |   XML05-clear_merge.py
+|   |   |   XML06-finalize-master.py
+|   |   |   XML07-cleanup-artifacts.py
+|   |   |   
+|   |   \---jArchi
 |   +---02-csv
 |   |   +---00-master
 |   |   |       elements.csv
@@ -192,25 +192,11 @@ C:.
 |   |   
 |   +---00-archimatearchive
 |   +---01-bpmnarchive
-|   |       BPU01-CSV 2 CSV.bpmn
-|   |       BPU02-XLSX 2 CSV.bpmn
-|   |       BUP00-CSV FLOW.bpmn
-|   |       BUP03-masterxml 2 CSV.bpmn
-|   |       BUP04-mastercsv2Assets.bpmn
-|   |       BUP05-XML FLOW.bpmn
-|   |       BUP06-M2B FLOW.bpmn
-|   |       BUP07-FLOW.bpmn
-|   |       Business Process.bpmn
-|   |       
 |   +---02-xyarchive
 |   +---03-masterxmlarchive
 |   \---99-logs
-|           ATL00-root.resolved.txt
-|           ATL00-validate_atl_scope.log
-|           ATL01-masterXml2AtlCsv.log
-|           ATL02-atlCsv2JiraCsv.log
-|           
 \---04-notes
+        ATL_CSV_Konfig_Jira_Mapping.txt
         FLOW_DEV_DOKU.txt
         MUNI_CSV-FLOW-DEV-DOC.txt
         MUNI_HLP_DEV_DOKU_S3.txt
