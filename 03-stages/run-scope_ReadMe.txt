@@ -6,7 +6,8 @@
 # CSV = ob elements,properties sowie relations.csv vorhanden sind. 
 # MASTER = welche OEF Modelle für den CSV 2 XML run relevant sind und im Flow berücksichtigt werden sollen. 
 # BPMN = Welche Modelle in den M2B Flow berücksichtigt werden sollen. 
-# FLOW = für das FLOW FLOW relevante Modelle und werden aus den SNAPHOTS kopiert. 
+# FLOW = für das FLOW FLOW relevante Modelle und werden aus den SNAPHOTS kopiert.
+# ATL = Atlassian "Asset light" sync um Assets nicht verwenden zu müssen.  
 # SNAPSHOT_START = eine Momentaufnahme welche Modelle alle aus welchen Welten im master.xml berücksichtigt sind. Dient zum einfachen kopieren und hat keinen Einfluss.
 # Ist kein Modell ausgewählt wird im FLOW KEINES berücksichtigt.   
 # 
@@ -43,6 +44,9 @@ SOURCE=MASTER
 MODEL=Importer.xml
 
 SOURCE=BPMN
+MODEL=Business Process.bpmn
+
+SOURCE=ATL
 MODEL=Business Process.bpmn
 
 # SNAPSHOT_START

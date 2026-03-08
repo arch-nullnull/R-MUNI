@@ -11,4 +11,4 @@
 # =========================================================
 
 BLUEPRINT_ROOT=C:\Prototyping\R+MUNI
-<rootfolde>=C:\Prototyping\R+MUNI
+<rootfolder>=C:\Prototyping\R+MUNI
