@@ -1,0 +1,27 @@
+[ATL00] 2026-03-08 10:53:28 | root.txt: C:\Prototyping\R+MUNI\root.txt
+[ATL00] 2026-03-08 10:53:28 | BLUEPRINT_ROOT (raw): C:\Prototyping\R+MUNI
+[ATL00] 2026-03-08 10:53:28 | Root-Pfad aufgelöst: C:\Prototyping\R+MUNI
+[ATL00] 2026-03-08 10:53:28 | Lese run-scope.txt: C:\Prototyping\R+MUNI\03-stages\run-scope.txt
+[ATL00] 2026-03-08 10:53:28 | ATL Scope gefunden: MODEL=MUNI FLOW.xml
+[ATL00] 2026-03-08 10:53:28 | ATL Scope: 1 Modell(e) aktiv: ['MUNI FLOW.xml']
+[ATL00] 2026-03-08 10:53:28 | master.xml OK: C:\Prototyping\R+MUNI\02-artifacts\00-xml\00-master\master.xml
+[ATL00] 2026-03-08 10:53:28 | Ordner OK: C:\Prototyping\R+MUNI\03-stages\00-archimatearchive
+[ATL00] 2026-03-08 10:53:28 | ERROR | Erforderlicher Ordner fehlt: C:\Prototyping\R+MUNI\02-artifacts\05-reports\00-archimate\99-ATL
+  → Bitte Ordner manuell anlegen: 02-artifacts\05-reports\00-archimate\99-ATL
+[ATL00] 2026-03-08 10:56:33 | root.txt: C:\Prototyping\R+MUNI\root.txt
+[ATL00] 2026-03-08 10:56:33 | BLUEPRINT_ROOT (raw): C:\Prototyping\R+MUNI
+[ATL00] 2026-03-08 10:56:33 | Root-Pfad aufgelöst: C:\Prototyping\R+MUNI
+[ATL00] 2026-03-08 10:56:33 | Lese run-scope.txt: C:\Prototyping\R+MUNI\03-stages\run-scope.txt
+[ATL00] 2026-03-08 10:56:33 | ATL Scope gefunden: MODEL=MUNI FLOW.xml
+[ATL00] 2026-03-08 10:56:33 | ATL Scope: 1 Modell(e) aktiv: ['MUNI FLOW.xml']
+[ATL00] 2026-03-08 10:56:33 | master.xml OK: C:\Prototyping\R+MUNI\02-artifacts\00-xml\00-master\master.xml
+[ATL00] 2026-03-08 10:56:33 | Ordner OK: C:\Prototyping\R+MUNI\03-stages\00-archimatearchive
+[ATL00] 2026-03-08 10:56:33 | Ordner OK: C:\Prototyping\R+MUNI\03-stages\99-logs
+[ATL00] 2026-03-08 10:56:33 | Geschrieben: C:\Prototyping\R+MUNI\03-stages\99-logs\ATL00-root.resolved.txt
+[ATL00] 2026-03-08 10:56:33 | ────────────────────────────────────────────────────────────
+[ATL00] 2026-03-08 10:56:33 | ATL00 ERFOLGREICH
+[ATL00] 2026-03-08 10:56:33 |   Root       : C:\Prototyping\R+MUNI
+[ATL00] 2026-03-08 10:56:33 |   ATL Modelle: ['MUNI FLOW.xml']
+[ATL00] 2026-03-08 10:56:33 |   master.xml : OK
+[ATL00] 2026-03-08 10:56:33 |   Ordner     : OK
+[ATL00] 2026-03-08 10:56:33 | ────────────────────────────────────────────────────────────

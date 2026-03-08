@@ -1,0 +1,31 @@
+[ATL02] 2026-03-08 10:56:44 | ============================================================
+[ATL02] 2026-03-08 10:56:44 | ATL02 START | 2026-03-08 10:56:44
+[ATL02] 2026-03-08 10:56:44 | BLUEPRINT_ROOT: C:\Prototyping\R+MUNI
+[ATL02] 2026-03-08 10:56:44 | ------------------------------------------------------------
+[ATL02] 2026-03-08 10:56:44 | Lese Layer-CSVs...
+[ATL02] 2026-03-08 10:56:44 |   Nicht gefunden (übersprungen): atl_strategy.csv
+[ATL02] 2026-03-08 10:56:44 |   Gelesen: atl_business.csv | 8 Zeilen
+[ATL02] 2026-03-08 10:56:44 |   Nicht gefunden (übersprungen): atl_application.csv
+[ATL02] 2026-03-08 10:56:44 |   Gelesen: atl_technology.csv | 129 Zeilen
+[ATL02] 2026-03-08 10:56:44 |   Nicht gefunden (übersprungen): atl_motivation.csv
+[ATL02] 2026-03-08 10:56:44 |   Nicht gefunden (übersprungen): atl_implementation.csv
+[ATL02] 2026-03-08 10:56:44 |   Nicht gefunden (übersprungen): atl_relations.csv
+[ATL02] 2026-03-08 10:56:44 |   Nicht gefunden (übersprungen): atl_other.csv
+[ATL02] 2026-03-08 10:56:44 | ------------------------------------------------------------
+[ATL02] 2026-03-08 10:56:44 | Schreibe Jira-Import-CSV...
+[ATL02] 2026-03-08 10:56:44 |   Geschrieben: jira_ea_import.csv | 137 Zeilen
+[ATL02] 2026-03-08 10:56:44 | ------------------------------------------------------------
+[ATL02] 2026-03-08 10:56:44 | Zeilen pro Layer:
+[ATL02] 2026-03-08 10:56:44 |   Strategy                           0 Zeilen
+[ATL02] 2026-03-08 10:56:44 |   Business                           8 Zeilen
+[ATL02] 2026-03-08 10:56:44 |   Application                        0 Zeilen
+[ATL02] 2026-03-08 10:56:44 |   Technology & Physical            129 Zeilen
+[ATL02] 2026-03-08 10:56:44 |   Motivation                         0 Zeilen
+[ATL02] 2026-03-08 10:56:44 |   Implementation & Migration         0 Zeilen
+[ATL02] 2026-03-08 10:56:44 |   Relations                          0 Zeilen
+[ATL02] 2026-03-08 10:56:44 |   Other                              0 Zeilen
+[ATL02] 2026-03-08 10:56:44 |   GESAMT                           137 Zeilen
+[ATL02] 2026-03-08 10:56:44 | ------------------------------------------------------------
+[ATL02] 2026-03-08 10:56:44 | Output: C:\Prototyping\R+MUNI\03-stages\00-archimatearchive\jira_ea_import.csv
+[ATL02] 2026-03-08 10:56:44 | ============================================================
+[ATL02] 2026-03-08 10:56:44 | ATL02 ERFOLGREICH

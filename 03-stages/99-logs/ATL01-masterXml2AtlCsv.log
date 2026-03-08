@@ -1,0 +1,20 @@
+[ATL01] 2026-03-08 10:56:40 | ============================================================
+[ATL01] 2026-03-08 10:56:40 | ATL01 START | 2026-03-08 10:56:40
+[ATL01] 2026-03-08 10:56:40 | BLUEPRINT_ROOT: C:\Prototyping\R+MUNI
+[ATL01] 2026-03-08 10:56:40 | ATL Scope aktiv: MODEL=MUNI FLOW.xml
+[ATL01] 2026-03-08 10:56:40 | ATL Scope: ['MUNI FLOW.xml']
+[ATL01] 2026-03-08 10:56:40 | ------------------------------------------------------------
+[ATL01] 2026-03-08 10:56:40 | Parse master.xml: C:\Prototyping\R+MUNI\02-artifacts\00-xml\00-master\master.xml
+[ATL01] 2026-03-08 10:56:40 | Property-Definitionen gefunden: 0
+[ATL01] 2026-03-08 10:56:40 | Parse abgeschlossen | Elemente=137 Uebersprungen=2597 ID-Kollisionen=0 BPMN-Match=0 BPMN-Neu=0
+[ATL01] 2026-03-08 10:56:40 | ------------------------------------------------------------
+[ATL01] 2026-03-08 10:56:40 | Schreibe Output-Dateien...
+[ATL01] 2026-03-08 10:56:40 |   Geschrieben:   129 Zeilen -> atl_technology.csv
+[ATL01] 2026-03-08 10:56:40 |   Geschrieben:     8 Zeilen -> atl_business.csv
+[ATL01] 2026-03-08 10:56:40 | ------------------------------------------------------------
+[ATL01] 2026-03-08 10:56:40 | Ausgabe-Ordner: C:\Prototyping\R+MUNI\03-stages\00-archimatearchive
+[ATL01] 2026-03-08 10:56:40 | Dateien geschrieben (2):
+[ATL01] 2026-03-08 10:56:40 |   atl_business.csv
+[ATL01] 2026-03-08 10:56:40 |   atl_technology.csv
+[ATL01] 2026-03-08 10:56:40 | ============================================================
+[ATL01] 2026-03-08 10:56:40 | ATL01 ERFOLGREICH

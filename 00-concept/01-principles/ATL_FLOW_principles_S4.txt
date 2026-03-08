@@ -1,0 +1,223 @@
+================================================================================
+ATL FLOW – PRINCIPLES
+Stage 4 | Aktiv | R+MUNI Blueprint
+================================================================================
+Erstellt    : 2026-03-08
+Stage       : S4 – AKTIV
+Ablageort   : 00-concept/01-principles/ATL_FLOW_principles_S4.txt
+================================================================================
+
+
+1. ZWECK UND DESIGNPHILOSOPHIE
+--------------------------------------------------------------------------------
+Der ATL Flow transformiert ArchiMate-Objekte aus master.xml in
+Atlassian-kompatible Formate (Jira CSV-Import) und stellt diese über
+das native Jira-Issues-Makro in Confluence dar.
+
+Kernprinzip: ATL ist ein eigenständiger Spin-Off der CSV-Reihe. Er liest
+master.xml direkt (nicht die Archi-CSVs aus CSV09) und erzeugt temporäre
+Import-Fragmente — keine dauerhaften Reports.
+
+Der ATL Flow erzeugt KEINEN Modellinhalt. Er transportiert bestehende
+ArchiMate-Objekte in ein für Atlassian importierbares Format.
+
+Abgrenzung: ATL ersetzt CSV10 (Jira Assets Export, inaktiv seit Free-Downgrade).
+ATL hat keinen Einfluss auf CSV-, XML-, M2B- oder HLP-Flows.
+
+
+2. STUFEN-PRINZIP (STAGE-ISOLATION)
+--------------------------------------------------------------------------------
+Jede Stage ist autark ausführbar und hängt nur von den Artefakten der
+vorherigen Stages ab.
+
+Abhängigkeitskette:
+  ATL00 → ATL01 → ATL02
+
+Unterbrechungsregel: Schlägt eine Stage fehl, bricht der Flow ab.
+Kein Silent-Fail, kein Weiterlaufen mit Teilresultat.
+
+ATL00 ist Pflicht-Voraussetzung für alle Folge-Scripts. Ohne ATL00-root.resolved.txt
+starten ATL01 und ATL02 nicht.
+
+
+3. ROOT-AUFLÖSUNG
+--------------------------------------------------------------------------------
+ATL00 löst BLUEPRINT_ROOT auf und schreibt das Ergebnis nach:
+  03-stages/99-logs/ATL00-root.resolved.txt
+
+ATL01 und ATL02 lesen ausschließlich aus ATL00-root.resolved.txt.
+Kein Script darf den Pfad hardcoden.
+
+Die resolved.txt ist der Beweis dass ATL00 erfolgreich war.
+Fehlt sie → Folge-Scripts brechen mit klarer Fehlermeldung ab.
+
+
+4. SOURCE=ATL ALS SCOPE-STEUERUNG
+--------------------------------------------------------------------------------
+run-scope.txt steuert welche Modelle ATL01 verarbeitet.
+ATL-Scripts lesen ausschließlich SOURCE=ATL Pairs.
+Alle anderen SOURCE-Typen werden von ATL ignoriert.
+
+Format eines aktiven ATL-Eintrags:
+  SOURCE=ATL
+  MODEL=<Dateiname des Modells>
+
+Beispiel:
+  SOURCE=ATL
+  MODEL=R+Muni Architecture Modell.xml
+
+Eine kommentierte Zeile (#) macht den Eintrag inaktiv.
+Kein aktives SOURCE=ATL Pair → ATL00 bricht ab (Hard fail).
+
+Rückwärtskompatibilität: Bestehende SOURCE=ARCHIMATE, SOURCE=BPMN etc.
+Einträge bleiben unverändert. Zero Impact auf andere Flows.
+
+
+5. OUTPUT-KLASSEN UND ABLAGEORTE
+--------------------------------------------------------------------------------
+Der ATL Flow kennt ausschließlich temporäre Outputs (Import-Fragmente).
+Es gibt keinen dauerhaften Report-Output.
+
+Temporäre Outputs (nach Verwendung wertlos):
+  03-stages/00-archimatearchive/
+    atl_processes.csv         Gruppen-CSV Prozesse & Funktionen
+    atl_applications.csv      Gruppen-CSV Applikationen & Systeme
+    atl_actors.csv            Gruppen-CSV Akteure & Rollen
+    atl_technology.csv        Gruppen-CSV Technologie & Infrastruktur
+    atl_motivation.csv        Gruppen-CSV Motivation & Strategie
+    atl_physical.csv          Gruppen-CSV Physische Welt
+    atl_other.csv             Gruppen-CSV Sonstige Objekte
+    jira_ea_import.csv        Jira Issue Import (alle Gruppen zusammen)
+
+Kein Report-Ordner. 02-artifacts/05-reports/ wird von ATL nicht verwendet.
+
+
+6. 7-GRUPPEN-STRUKTUR
+--------------------------------------------------------------------------------
+ATL01 gruppiert alle ArchiMate-Elemente in 7 semantische Kategorien.
+Diese Struktur ist identisch zur (inaktiven) CSV10-Logik.
+
+Gruppen und ihre ArchiMate-Typen:
+
+  atl_processes     BusinessProcess, BusinessFunction, BusinessService,
+                    BusinessInteraction, ApplicationProcess,
+                    ApplicationFunction, TechnologyProcess
+
+  atl_applications  ApplicationComponent, ApplicationService,
+                    ApplicationInterface, ApplicationCollaboration,
+                    ApplicationEvent, SystemSoftware
+
+  atl_actors        BusinessActor, BusinessRole, BusinessInterface,
+                    Stakeholder
+
+  atl_technology    Node, Device, TechnologyService, TechnologyFunction,
+                    TechnologyInterface, TechnologyCollaboration,
+                    TechnologyEvent, CommunicationNetwork, Path
+
+  atl_motivation    Goal, Requirement, Principle, Constraint, Driver,
+                    Assessment, Outcome, Value, Meaning, Capability,
+                    ValueStream
+
+  atl_physical      Equipment, Facility, Material, DistributionNetwork,
+                    Location
+
+  atl_other         DataObject, BusinessObject, Artifact, Representation,
+                    Deliverable, Contract, Product, Resource, WorkPackage,
+                    Plateau, Gap, CourseOfAction, Grouping,
+                    ImplementationEvent, BusinessEvent,
+                    ApplicationInteraction, TechnologyInteraction
+
+Nicht klassifizierte Typen landen automatisch in atl_other (Warnung im Log).
+
+
+7. ID-KOLLISIONSSTRATEGIE
+--------------------------------------------------------------------------------
+Gleiche identifier über mehrere sourceModels → merge (Default, unveränderlich).
+Erste Instanz gewinnt. SourceModel wird komma-separiert zusammengeführt.
+
+Hintergrund: master.xml enthält gespiegelte Modelle mit identischen IDs
+(z.B. Architecture.xml und R+Muni Architecture Modell.xml). Merge ist
+verlustfrei und erzeugt deterministische, eindeutige objectKeys.
+
+Der ATL-Scope-Filter (SOURCE=ATL MODEL=...) reduziert ID-Kollisionen
+bereits erheblich — nur das konfigurierte Modell wird verarbeitet.
+
+
+8. BPMN-INTEGRATION
+--------------------------------------------------------------------------------
+BPMN-Prozesse die per Name mit einem ArchiMate-Element matchen werden
+nicht als neue Objekte angelegt, sondern das bestehende Element wird mit
+einer BPMN_ID-Spalte angereichert (Enrich-Prinzip).
+
+Ungematchte BPMN-Prozesse werden als neue Stub-Elemente angelegt
+(ArchiType=BusinessProcess).
+
+Dieses Verhalten ist identisch zur CSV10-Logik und konsistent mit
+bpmnmastercsvsync.txt.
+
+
+9. JIRA CSV-FORMAT
+--------------------------------------------------------------------------------
+ATL02 erzeugt eine Standard-Jira-Issues-CSV (nicht Jira Assets).
+
+Pflichtfelder (Jira-Vorgabe):
+  Summary     Name des EA-Objekts (Fallback: [ArchiType] objectKey)
+  Issue Type  immer "Task"
+
+Zusatzfelder:
+  Description  Beschreibung + EA-Kontext (objectKey, ArchiType, Gruppe)
+  Labels       ArchiType ohne Leerzeichen (z.B. ApplicationComponent)
+  EA-ObjectKey Archi identifier (Referenz-ID für Verlinkung)
+  EA-ArchiType ArchiMate Typ (lesbar)
+  EA-Group     Semantische Gruppe
+  EA-SourceModel Herkunftsmodell
+
+Encoding: UTF-8 mit BOM (Jira CSV-Import Anforderung für Sonderzeichen).
+
+Labels-Regel: Leerzeichen werden durch Underscore ersetzt.
+Jira Labels erlauben keine Leerzeichen.
+
+
+10. CONFLUENCE-DARSTELLUNG
+--------------------------------------------------------------------------------
+EA-Objekte werden in Confluence über das native Jira-Issues-Makro
+dargestellt — kein separates HTML-Script, kein Report-Upload.
+
+Voraussetzung: Jira-Import (ATL02) muss abgeschlossen sein.
+
+JQL-Filter Beispiele für das Jira-Issues-Makro:
+  labels = ApplicationComponent     → alle Applikations-Komponenten
+  labels = BusinessProcess          → alle Business-Prozesse
+  labels = BusinessActor            → alle Akteure
+  project = "R+MUNI" AND labels = Goal  → Ziele im R+MUNI Projekt
+
+Vorteil: Live-Darstellung — Änderungen in Jira werden sofort in
+Confluence sichtbar ohne erneuten Script-Lauf.
+
+
+11. MKDIR-VERBOT
+--------------------------------------------------------------------------------
+ATL-Scripts legen keine Ordner an.
+Alle benötigten Ordner müssen vor dem ersten Lauf existieren.
+ATL00 prüft die Existenz und bricht ab wenn ein Ordner fehlt.
+
+Benötigte Ordner (müssen manuell angelegt werden):
+  03-stages/00-archimatearchive/
+  03-stages/99-logs/
+
+
+12. LOG-VERHALTEN
+--------------------------------------------------------------------------------
+Jede Stage schreibt ein eigenes Log nach 03-stages/99-logs/:
+  ATL00-validate_atl_scope.log
+  ATL01-masterXml2AtlCsv.log
+  ATL02-atlCsv2JiraCsv.log
+
+Logs werden bei jedem Lauf überschrieben (kein Versioning).
+Alle relevanten Entscheidungen, Warnungen und Zählerstände werden geloggt.
+Konsolen-Output ist identisch zum Log-Output (kein Silent-Running).
+
+
+================================================================================
+ATL FLOW PRINCIPLES | S4 | ENDE
+================================================================================

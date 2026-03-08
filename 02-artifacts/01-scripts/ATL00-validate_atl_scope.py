@@ -41,7 +41,7 @@ RUN_SCOPE_REL  = os.path.join("03-stages", "run-scope.txt")
 # Ausgabe-Ordner die geprüft werden müssen
 REQUIRED_DIRS = [
     os.path.join("03-stages", "00-archimatearchive"),
-    os.path.join("02-artifacts", "05-reports", "00-archimate", "99-ATL"),
+    os.path.join("03-stages", "99-logs"),
 ]
 
 

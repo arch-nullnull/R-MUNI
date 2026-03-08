@@ -1,0 +1,248 @@
+================================================================================
+ATL FLOW – HOW2 (Poweruser)
+Stage 4 | Aktiv | R+MUNI Blueprint
+================================================================================
+Erstellt    : 2026-03-08
+Stage       : S4 – AKTIV
+Ablageort   : 00-concept/02-how2/ATL_FLOW_How2_S4.txt
+================================================================================
+
+
+VORAUSSETZUNGEN
+--------------------------------------------------------------------------------
+- Python 3.10+ (keine externen Pakete erforderlich)
+- BLUEPRINT_ROOT korrekt in root.txt eingetragen
+- Ordnerstruktur gemäß structure.txt vorhanden
+- run-scope.txt enthält ein aktives SOURCE=ATL Pair
+- master.xml in 02-artifacts/00-xml/00-master/ vorhanden
+
+
+================================================================================
+SCHRITT 0 – run-scope.txt VORBEREITEN
+================================================================================
+
+Datei: 03-stages/run-scope.txt
+
+Folgendes Pair muss aktiv (uncommentiert) eingetragen sein:
+
+  SOURCE=ATL
+  MODEL=R+Muni Architecture Modell.xml
+
+Regeln:
+  - Beide Zeilen müssen direkt untereinander stehen
+  - Keine Leerzeile zwischen SOURCE= und MODEL=
+  - Kein führendes # (sonst inaktiv)
+  - MODEL= muss exakt dem Dateinamen im child-Ordner entsprechen
+
+ACHTUNG: Bestehende SOURCE=ARCHIMATE oder SOURCE=BPMN Einträge bleiben
+unverändert — ATL liest nur SOURCE=ATL, andere Flows ignorieren ihn.
+
+
+================================================================================
+SCHRITT 1 – ATL00: SCOPE UND VORAUSSETZUNGEN PRÜFEN
+================================================================================
+
+  cd 02-artifacts/01-scripts/
+  python ATL00-validate_atl_scope.py
+
+Was passiert:
+  → Root-Pfad aus root.txt auflösen
+  → run-scope.txt auf aktives SOURCE=ATL Pair prüfen
+  → master.xml auf Existenz und Lesbarkeit prüfen
+  → Ausgabe-Ordner prüfen (03-stages/00-archimatearchive/ und 99-logs/)
+  → Schreibt: 03-stages/99-logs/ATL00-root.resolved.txt
+  → Schreibt: 03-stages/99-logs/ATL00-validate_atl_scope.log
+
+Bei Fehler (Hard fail):
+  Kein SOURCE=ATL in run-scope.txt  → Schritt 0 wiederholen
+  master.xml nicht gefunden         → Pfad in root.txt prüfen
+  Ordner fehlt                      → Ordner manuell anlegen
+
+
+================================================================================
+SCHRITT 2 – ATL01: MASTER.XML IN GRUPPEN-CSVs TRANSFORMIEREN
+================================================================================
+
+  python ATL01-masterXml2AtlCsv.py
+
+Was passiert:
+  → ATL00-root.resolved.txt lesen (Root-Pfad)
+  → run-scope.txt lesen → SOURCE=ATL Modelle ermitteln
+  → master.xml parsen (nur Elemente des ATL-Scope-Modells)
+  → 560+ Elemente in 7 semantische Gruppen aufteilen
+  → BPMN-Prozesse per Name-Match anreichern
+  → ID-Kollisionen per merge behandeln
+  → Schreibt: 03-stages/00-archimatearchive/atl_*.csv (7 Dateien)
+  → Schreibt: 03-stages/99-logs/ATL01-masterXml2AtlCsv.log
+
+Erwartete Ausgabe-Dateien:
+  atl_processes.csv       ~46 Zeilen
+  atl_applications.csv    ~20 Zeilen
+  atl_actors.csv          ~13 Zeilen
+  atl_technology.csv      ~16 Zeilen
+  atl_motivation.csv      ~42 Zeilen
+  atl_physical.csv        ~10 Zeilen
+  atl_other.csv          ~165 Zeilen
+
+Hinweis: Dateien werden bei jedem Lauf überschrieben.
+
+
+================================================================================
+SCHRITT 3 – ATL02: GRUPPEN-CSVs IN JIRA-IMPORT-CSV UMWANDELN
+================================================================================
+
+  python ATL02-atlCsv2JiraCsv.py
+
+Was passiert:
+  → ATL00-root.resolved.txt lesen (Root-Pfad)
+  → Alle 7 atl_*.csv aus 03-stages/00-archimatearchive/ lesen
+  → Pro Zeile eine Jira-Issue-Zeile bauen:
+      Summary    = Name (Fallback: [ArchiType] objectKey)
+      Issue Type = Task
+      Labels     = ArchiType (Leerzeichen → Underscore)
+      Description = Beschreibung + EA-Kontext
+  → Alle Gruppen in einer CSV zusammenführen
+  → Schreibt: 03-stages/00-archimatearchive/jira_ea_import.csv
+  → Schreibt: 03-stages/99-logs/ATL02-atlCsv2JiraCsv.log
+
+Erwartete Ausgabe:
+  jira_ea_import.csv  ~312 Zeilen (alle Gruppen zusammen)
+  Encoding: UTF-8 mit BOM
+
+
+================================================================================
+SCHRITT 4 – JIRA CSV-IMPORT DURCHFÜHREN
+================================================================================
+
+1. Jira öffnen → dein Projekt wählen
+
+2. Im Projekt-Menü:
+   Project Settings → Import → CSV
+
+3. Datei hochladen:
+   03-stages/00-archimatearchive/jira_ea_import.csv
+
+4. Feld-Mapping in Jira UI prüfen:
+   Summary      → Summary        (Pflicht — muss gemappt sein)
+   Issue Type   → Issue Type     (Pflicht — muss gemappt sein)
+   Description  → Description
+   Labels       → Labels
+   Priority     → Priority       (leer = Medium, kann ignoriert werden)
+   EA-ObjectKey → [ignorieren oder Custom Field]
+   EA-ArchiType → [ignorieren oder Custom Field]
+   EA-Group     → [ignorieren oder Custom Field]
+   EA-SourceModel → [ignorieren oder Custom Field]
+
+5. Import starten → Jira erzeugt Issues für alle EA-Objekte
+
+ACHTUNG: Beim zweiten Import entstehen Duplikate.
+Empfehlung: Vor erneutem Import die EA-Issues in Jira löschen
+(Filter: labels = EA_Object oder Issue Type = Task + Label-Filter).
+
+
+================================================================================
+SCHRITT 5 – CONFLUENCE JIRA-ISSUES-MAKRO EINRICHTEN
+================================================================================
+
+Voraussetzung: Schritt 4 (Jira-Import) abgeschlossen.
+
+1. Confluence Seite öffnen (oder neue Seite anlegen)
+   Empfehlung: Eine Seite pro Gruppe oder eine Übersichtsseite
+
+2. Seite bearbeiten → + (Einfügen) → Makro suchen → "Jira Issues"
+
+3. Im Makro-Dialog:
+   Verbindung: dein Atlassian Site wählen
+   JQL-Filter eingeben, z.B.:
+
+   Alle EA-Objekte:
+     project = "DEIN-PROJEKT" AND issuetype = Task AND labels in
+     (ApplicationComponent, BusinessProcess, BusinessActor, Node,
+      Goal, Equipment, DataObject)
+
+   Nur Applikationen:
+     labels = ApplicationComponent
+
+   Nur Prozesse:
+     labels = BusinessProcess OR labels = ApplicationProcess
+
+   Nur Akteure:
+     labels = BusinessActor OR labels = BusinessRole OR labels = Stakeholder
+
+   Nur Technologie:
+     labels = Node OR labels = Device OR labels = SystemSoftware
+
+   Nur Motivation:
+     labels = Goal OR labels = Requirement OR labels = Principle
+
+4. Spalten konfigurieren (empfohlen):
+   Summary, Labels, Description
+
+5. Speichern → Confluence zeigt die EA-Objekte als live Tabelle
+
+Vorteil: Ändert sich ein EA-Objekt in Jira, aktualisiert sich
+die Confluence-Seite automatisch ohne erneuten Script-Lauf.
+
+
+================================================================================
+FEHLERBEHANDLUNG
+================================================================================
+
+FEHLER: ATL00-root.resolved.txt nicht gefunden
+→ ATL00 muss vor ATL01/ATL02 ausgeführt werden
+→ cd 02-artifacts/01-scripts/ && python ATL00-validate_atl_scope.py
+
+FEHLER: Kein aktives SOURCE=ATL Pair in run-scope.txt
+→ run-scope.txt öffnen (03-stages/run-scope.txt)
+→ SOURCE=ATL / MODEL=... Pair uncommentieren oder eintragen
+
+FEHLER: master.xml nicht gefunden
+→ Pfad prüfen: 02-artifacts/00-xml/00-master/master.xml
+→ XML Flow (XML00–XML07) muss vorher ausgeführt worden sein
+
+FEHLER: Ausgabe-Ordner fehlt
+→ 03-stages/00-archimatearchive/ manuell anlegen
+→ ATL00 neu ausführen
+
+FEHLER: Keine atl_*.csv beim ATL02-Lauf
+→ ATL01 muss vor ATL02 ausgeführt werden
+→ Prüfen ob 03-stages/00-archimatearchive/ Dateien enthält
+
+FEHLER: Jira-Import — "Summary darf nicht leer sein"
+→ ATL02-Log prüfen auf WARNUNG: Leeres Summary
+→ Betroffene Objekte in master.xml haben keinen Namen
+→ Fallback [ArchiType] objectKey greift automatisch — sollte nicht auftreten
+
+
+================================================================================
+DATEIEN UND ABLAGEN
+================================================================================
+
+Scripts:
+  02-artifacts/01-scripts/ATL00-validate_atl_scope.py
+  02-artifacts/01-scripts/ATL01-masterXml2AtlCsv.py
+  02-artifacts/01-scripts/ATL02-atlCsv2JiraCsv.py
+
+Temporäre Outputs (werden bei jedem Lauf überschrieben):
+  03-stages/00-archimatearchive/atl_processes.csv
+  03-stages/00-archimatearchive/atl_applications.csv
+  03-stages/00-archimatearchive/atl_actors.csv
+  03-stages/00-archimatearchive/atl_technology.csv
+  03-stages/00-archimatearchive/atl_motivation.csv
+  03-stages/00-archimatearchive/atl_physical.csv
+  03-stages/00-archimatearchive/atl_other.csv
+  03-stages/00-archimatearchive/jira_ea_import.csv
+
+Logs:
+  03-stages/99-logs/ATL00-root.resolved.txt
+  03-stages/99-logs/ATL00-validate_atl_scope.log
+  03-stages/99-logs/ATL01-masterXml2AtlCsv.log
+  03-stages/99-logs/ATL02-atlCsv2JiraCsv.log
+
+Konfiguration:
+  03-stages/run-scope.txt  (SOURCE=ATL Pair manuell eintragen)
+
+
+================================================================================
+ATL FLOW HOW2 | S4 | ENDE
+================================================================================

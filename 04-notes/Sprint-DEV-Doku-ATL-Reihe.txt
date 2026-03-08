@@ -1,0 +1,365 @@
+================================================================================
+SPRINT DEV-DOKUMENTATION
+================================================================================
+Projekt         : R+MUNI Blueprint
+Sprint-Bezeichnung : SPRINT-ATL01-AtlassianIntegration
+Datum           : 2026-03-08
+Stage           : 4 (aktiv)
+Status          : Dev-Dokumentation (nicht auditpflichtig per GOV 10.8)
+Erstellt durch  : Entwickler + Claude (Pair-Session)
+Vorgänger-Sprint: SPRINT-CSV10-JiraAssetsExport (2026-03-04)
+================================================================================
+
+
+--------------------------------------------------------------------------------
+1. STAGE-KONTEXT UND SPRINT-BEGRÜNDUNG
+--------------------------------------------------------------------------------
+
+1.1 Stage-Modell (Ist-Zustand)
+-------------------------------
+Stage 3  FREEZE
+         Stage 3 ist eingefroren. Änderungen ausschließlich für Bugfixing
+         zulässig. Neue Features sind in Stage 3 nicht erlaubt.
+
+Stage 4  AKTIV
+         Aktuelle Entwicklungsphase. Neue Features und Erweiterungen des
+         Blueprints werden hier umgesetzt.
+
+1.2 Auslöser (gemäß GOV 10.3 / 10.5)
+---------------------------------------
+Auslöser-Typ : Architekturentscheid + Feature-Zuwachs (Entwicklerwunsch)
+
+Vorgeschichte: Im Sprint SPRINT-CSV10-JiraAssetsExport (2026-03-04) wurde
+               CSV10-masterCsv2Assets.py entwickelt um ArchiMate-Objekte
+               aus master.xml als Jira Assets zu exportieren.
+
+               Nach dem Downgrade des Atlassian Service Collection Bundles
+               auf Free-Tier wurde festgestellt: Jira Assets ist im Free-Plan
+               NICHT nutzbar (kein CSV-Import, keine Schemas, keine Objekte).
+               Assets erfordert mindestens Service Collection Standard.
+
+               CSV10 wurde daher aus dem aktiven Blueprint entfernt
+               (nicht gelöscht — verschwindet: nicht referenziert, nicht
+               getriggert, nicht dokumentiert als aktives Script).
+
+Neues Ziel   : ArchiMate 3.2 Objekte aus master.xml sollen in Jira verlinkbar
+               und über das Jira-Issues-Makro in Confluence sichtbar sein —
+               ohne kostenpflichtige Atlassian-Features, ohne externe
+               App-Abhängigkeiten, vollständig auf Basis von Free-Tier.
+
+Fachlicher   : ArchiMate als "verbindende Welt" — IT-Landschaft, Verlinkung
+Mehrwert       von Scripts/Files zu EA-Objekten in Jira-Tickets. EA-Objekte
+               als Jira-Issues mit ArchiType als Label ermöglichen:
+               - Verlinkung in Jira-Tickets (Issue-Link)
+               - Tabellarische Darstellung in Confluence via Jira-Issues-Makro
+                 (Label-Filter z.B. labels = ApplicationComponent)
+               - Kein separater HTML-Report nötig — Jira ist die Quelle
+
+Spin-Off     : Die ATL-Reihe ist ein bewusster Spin-Off aus der CSV-Reihe.
+               CSV10 wird durch ATL01 funktional ersetzt (gleiche Parse-Logik,
+               gleiche 7-Gruppen-Struktur), jedoch mit korrektem Präfix,
+               korrekten Pfaden und als Teil eines eigenständigen Flows.
+               CSV09 und alle anderen CSV-Scripts bleiben vollständig
+               unverändert.
+
+Governance-  : Die ATL-Reihe erzeugt keine implizite Governance-Änderung.
+Konformität    Bestehende Flows (CSV, XML, M2B, HLP, FLW) bleiben vollständig
+               erhalten. ATL ist eine additive, eigenständige Reihe.
+
+
+--------------------------------------------------------------------------------
+2. ZIELDEFINITION (gemäß GOV 10.6)
+--------------------------------------------------------------------------------
+
+Ziel         : Entwicklung der ATL-Reihe (ATL00–ATL02) als eigenständiger
+               Atlassian-Integrations-Flow im R+MUNI Blueprint.
+
+               ATL00: Scope und Voraussetzungen prüfen
+               ATL01: master.xml → 7x atl_*.csv (Gruppen, temporär)
+               ATL02: atl_*.csv → jira_ea_import.csv (temporär)
+
+Abgrenzung   : ATL ersetzt CSV10 funktional, nicht CSV09.
+               ATL liest master.xml direkt (wie CSV10).
+               ATL erzeugt keine Archi-Import-CSVs (das bleibt CSV09).
+               ATL hat keinen Einfluss auf XML-, M2B- oder HLP-Flows.
+               Confluence-Darstellung erfolgt über das native Jira-Issues-Makro
+               — kein separates HTML-Script, kein Report-Ordner.
+
+Überprüfbar  : Erfolgskriterium ist die fehlerfreie Ausführung der gesamten
+               ATL-Kette (ATL00 → ATL01 → ATL02) gegen ein reales master.xml
+               sowie:
+               - 7 atl_*.csv korrekt gruppiert in 03-stages/00-archimatearchive/
+               - 1 jira_ea_import.csv in 03-stages/00-archimatearchive/
+               - Erfolgreicher CSV-Import in Jira (Issues mit Labels)
+               - Jira-Issues-Makro in Confluence zeigt EA-Objekte korrekt
+
+
+--------------------------------------------------------------------------------
+3. ARCHITEKTURENTSCHEIDUNGEN
+--------------------------------------------------------------------------------
+
+3.1 Neue Script-Reihe ATL statt Erweiterung CSV
+-------------------------------------------------
+Entscheidung : Die Atlassian-Integration erhält eine eigene Script-Reihe
+               (ATL) statt als CSV11+ in die CSV-Reihe integriert zu werden.
+
+Begründung   : Die CSV-Reihe ist auf Archi CSV-Import/Export ausgerichtet.
+               Die ATL-Reihe hat einen grundlegend anderen Output-Typ
+               (CSV für Jira Issues — nicht für Archi).
+               Eigenständige Reihe = klare Abgrenzung, eigenständiger Scope,
+               kein Eingriff in die Stage-3-freeze-konforme CSV-Reihe.
+
+3.2 SOURCE=ATL als neuer run-scope.txt Typ
+-------------------------------------------
+Entscheidung : run-scope.txt wird um einen neuen SOURCE-Typ SOURCE=ATL
+               erweitert. Pair-Konvention identisch zu allen anderen Flows.
+
+Format       :
+               SOURCE=ATL
+               MODEL=R+Muni Architecture Modell.xml
+
+Begründung   : Konsistenz zum bestehenden Pair-System (SOURCE=ARCHIMATE,
+               SOURCE=BPMN etc.). ATL-Scripts lesen ausschließlich SOURCE=ATL,
+               alle anderen Scripts ignorieren diesen Typ vollständig.
+               Rückwärtskompatibel, zero Impact auf bestehende Flows.
+
+3.3 Alle ATL-Outputs temporär in 03-stages/00-archimatearchive/
+----------------------------------------------------------------
+Entscheidung : Alle ATL-Outputs (atl_*.csv und jira_ea_import.csv) landen
+               in 03-stages/00-archimatearchive/ — kein Report-Ordner,
+               kein 99-ATL Unterordner.
+
+Begründung   : jira_ea_import.csv ist ein Import-Fragment — nach dem
+               Jira-Import wertlos. Es ist kein dauerhafter Report.
+               Die Blueprint-Logik ist eindeutig:
+                 Temporäres Zwischenprodukt → 03-stages/
+                 Dauerhafter Report         → 02-artifacts/05-reports/
+               jira_ea_import.csv fällt klar in die erste Kategorie.
+
+               Konsequenz: Der Ordner 02-artifacts/05-reports/00-archimate/99-ATL/
+               wird nicht benötigt und nicht angelegt.
+
+3.4 Confluence-Darstellung via Jira-Issues-Makro (kein HTML-Script)
+---------------------------------------------------------------------
+Entscheidung : Kein dediziertes HTML-Script (ursprünglich als ATL02 geplant,
+               verworfen). Confluence-Darstellung erfolgt ausschließlich
+               über das native Jira-Issues-Makro mit Label-Filter.
+
+Begründung   : R+MUNI verfügt bereits über einen vollständigen, interaktiven
+               Archi HTML Report (lokal via HLP09). Eine zusätzliche flache
+               HTML-Tabelle in Confluence wäre qualitativ schlechter und
+               redundant. Das Jira-Issues-Makro ist auf Confluence Free
+               verfügbar, zeigt EA-Objekte live (kein manueller Sync),
+               und filtert direkt nach ArchiType-Labels. Kein HTML-Upload,
+               kein iframe, keine HTML-Makro-Abhängigkeit.
+
+Verwendung   : Confluence Seite bearbeiten → Makro → "Jira Issues"
+               JQL-Filter: labels = ApplicationComponent
+               → Zeigt alle EA-Objekte dieser Gruppe als Tabelle
+
+3.5 Jira CSV-Import: Issues statt Assets
+------------------------------------------
+Entscheidung : ATL02 erzeugt Standard-Jira-Issues (Type: Task) statt
+               Jira-Assets-Objekte.
+
+Begründung   : Jira Assets ist im Free-Plan nicht nutzbar (Kernproblem
+               dieses Sprints). Standard-Jira-Issues sind auf Free verfügbar,
+               unbegrenzt, ohne Objektlimit. ArchiType als Label ermöglicht
+               Filterung und Gruppierung ohne Custom Schema.
+
+3.6 ATL00-root.resolved.txt als Ketten-Ankerpunkt
+---------------------------------------------------
+Entscheidung : ATL01 und ATL02 lesen den Root-Pfad aus
+               ATL00-root.resolved.txt (erzeugt von ATL00).
+
+Begründung   : ATL00 ist der Validierungsschritt der sicherstellt dass
+               alle Voraussetzungen erfüllt sind. Wenn ATL00 nicht gelaufen
+               ist, sollen Folge-Scripts hart fehlschlagen mit klarer
+               Fehlermeldung. Die resolved.txt ist der Beweis dass
+               ATL00 erfolgreich war.
+
+3.7 CSV10 — Ablösung ohne Löschung
+------------------------------------
+Entscheidung : CSV10-masterCsv2Assets.py wird nicht gelöscht.
+               Es verschwindet aus dem aktiven Blueprint:
+               - Nicht in flowmapping.txt registriert
+               - Nicht in ATL-Doku referenziert als aktives Script
+               - Nicht getriggert
+               - Bleibt als historisches Artefakt in 02-artifacts/01-scripts/
+
+Begründung   : GOV-konform. Kein Löschen von Artefakten ohne expliziten
+               Cleanup-Sprint. Der Originalcode bleibt erhalten falls
+               Assets zu einem späteren Zeitpunkt verfügbar wird.
+
+
+--------------------------------------------------------------------------------
+4. ANALYSE-ERKENNTNISSE AUS DEM master.xml (Teststand)
+--------------------------------------------------------------------------------
+
+XML-Struktur (aus SPRINT-CSV10, unverändert gültig):
+  Direkte Kinder von <master>  : 2.602
+  ArchiMate-Elemente           : 560 (mit ID)
+  ArchiMate-Relations          : 712
+  BPMN definitions             : 14
+  PropertyDefinitions          : 5 (ID3Party, Type, Trigger, Type, BPMN_ID)
+
+sourceModels im XML:
+  Architecture.xml               : 250 Elemente
+  R+Muni Architecture Modell.xml : 250 Elemente (gespiegelt, 250 ID-Kollisionen)
+  Importer.xml                   : 60 Elemente
+
+ATL-Scope (SOURCE=ATL):
+  MODEL=R+Muni Architecture Modell.xml
+  Nur dieses Modell wird durch ATL01 verarbeitet.
+  ID-Kollisionen aus Architecture.xml fallen durch Scope-Filter heraus.
+
+Erwartete ATL-Outputs (geschätzt auf Basis Teststand):
+  atl_processes.csv       ~46 Zeilen
+  atl_other.csv          ~165 Zeilen
+  atl_motivation.csv      ~42 Zeilen
+  atl_applications.csv    ~20 Zeilen
+  atl_technology.csv      ~16 Zeilen
+  atl_actors.csv          ~13 Zeilen
+  atl_physical.csv        ~10 Zeilen
+  jira_ea_import.csv      ~312 Zeilen (alle Gruppen zusammengeführt)
+
+
+--------------------------------------------------------------------------------
+5. DATEI-INVENTAR
+--------------------------------------------------------------------------------
+
+5.1 Aktive Scripts der ATL-Reihe (Stage 4)
+-------------------------------------------
+
+ATL00-validate_atl_scope.py
+  Typ       : Python-Script (ATL-Serie)
+  Ablage    : 02-artifacts/01-scripts/ATL00-validate_atl_scope.py
+  Zweck     : Root auflösen, run-scope.txt auf SOURCE=ATL prüfen,
+              master.xml und Ausgabe-Ordner prüfen
+  Input     : root.txt, 03-stages/run-scope.txt,
+              02-artifacts/00-xml/00-master/master.xml
+  Output    : 03-stages/99-logs/ATL00-root.resolved.txt
+  Log       : 03-stages/99-logs/ATL00-validate_atl_scope.log
+  Hard fail : Kein SOURCE=ATL in run-scope.txt, master.xml fehlt,
+              Ordner fehlen
+
+ATL01-masterXml2AtlCsv.py
+  Typ       : Python-Script (ATL-Serie)
+  Ablage    : 02-artifacts/01-scripts/ATL01-masterXml2AtlCsv.py
+  Zweck     : master.xml → 7x atl_*.csv (Gruppen-Transformation)
+  Input     : ATL00-root.resolved.txt, run-scope.txt (SOURCE=ATL),
+              02-artifacts/00-xml/00-master/master.xml
+  Output    : 03-stages/00-archimatearchive/atl_*.csv (temporär)
+  Log       : 03-stages/99-logs/ATL01-masterXml2AtlCsv.log
+  Logik     : Identisch zu CSV10, aber Scope-Filter SOURCE=ATL,
+              korrekte Pfade, ATL-Präfix
+
+ATL02-atlCsv2JiraCsv.py
+  Typ       : Python-Script (ATL-Serie)
+  Ablage    : 02-artifacts/01-scripts/ATL02-atlCsv2JiraCsv.py
+  Zweck     : atl_*.csv → jira_ea_import.csv (Jira Issue Import)
+  Input     : ATL00-root.resolved.txt,
+              03-stages/00-archimatearchive/atl_*.csv
+  Output    : 03-stages/00-archimatearchive/jira_ea_import.csv (temporär)
+  Log       : 03-stages/99-logs/ATL02-atlCsv2JiraCsv.log
+  Jira      : UTF-8 BOM, Issue Type=Task, Labels=ArchiType
+  Hinweis   : Nach erfolgreichem Jira-Import wertlos (Import-Fragment)
+
+5.2 run-scope.txt Erweiterung
+-------------------------------
+Neues Pair (manuell durch Entwickler einzutragen):
+  SOURCE=ATL
+  MODEL=R+Muni Architecture Modell.xml
+
+5.3 Nicht benötigte / entfallene Artefakte
+-------------------------------------------
+02-artifacts/05-reports/00-archimate/99-ATL/
+  Status : Wird nicht angelegt — kein Report-Output in ATL-Reihe
+
+ATL02-atlCsv2ConfluenceHtml.py  (ursprünglich geplant, verworfen)
+  Status : Nicht umgesetzt
+  Grund  : Archi HTML Report (HLP09) bereits vorhanden und qualitativ
+           besser. Jira-Issues-Makro ersetzt Confluence-HTML vollständig.
+
+ATL03-atlCsv2JiraCsv.py  (Zwischenversion, ersetzt durch ATL02)
+  Status : Verworfen — falsche Nummerierung, falscher Output-Pfad
+  Ersetzt durch: ATL02-atlCsv2JiraCsv.py
+
+5.4 Abgelöste / inaktive Dateien
+----------------------------------
+CSV10-masterCsv2Assets.py
+  Status : Inaktiv (verschwindet aus Blueprint, nicht gelöscht)
+  Grund  : Jira Assets auf Free-Plan nicht nutzbar
+  Ablage : 02-artifacts/01-scripts/ (bleibt als historisches Artefakt)
+
+
+--------------------------------------------------------------------------------
+6. OFFENE PUNKTE / NEXT STEPS
+--------------------------------------------------------------------------------
+
+6.1 Jira CSV-Import testen
+----------------------------
+Status   : Ausstehend
+Aktion   : jira_ea_import.csv in Jira importieren:
+           Jira → Project Settings → Import → CSV
+           Feld-Mapping prüfen:
+             Summary    → Summary (Pflicht)
+             Issue Type → Issue Type (Pflicht)
+             Description → Description
+             Labels     → Labels
+Hinweis  : Jira Free: unbegrenzte Issues, kein Objektlimit.
+
+6.2 Confluence Jira-Issues-Makro einrichten
+---------------------------------------------
+Status   : Ausstehend (abhängig von 6.1)
+Aktion   : Nach erfolgreichem Jira-Import:
+           Confluence Seite bearbeiten → Makro → "Jira Issues"
+           JQL-Filter je Gruppe, z.B.:
+             labels = ApplicationComponent
+             labels = BusinessProcess
+           Eine Confluence-Seite pro Gruppe oder alle auf einer Seite.
+
+6.3 flowmapping.txt für ATL-Reihe
+------------------------------------
+Status   : Ausstehend
+Aktion   : ATL00, ATL01, ATL02 in flowmapping.txt registrieren damit
+           der Scriptrunner (FLW00) die ATL-Reihe als Flow erkennt.
+
+6.4 structure.txt aktualisieren
+---------------------------------
+Status   : Ausstehend (User-Aufgabe)
+Aktion   : ATL-Scripts in Script-Liste eintragen.
+           99-ATL Ordner ist nicht anzulegen — entfällt.
+
+6.5 Stage-Ende Dokumentation
+------------------------------
+Status   : Ausstehend (gemäß GOV 10.9 verpflichtend zum Stage-Ende)
+Aktion   : Diese Dev-Dokumentation ist nicht auditpflichtig (GOV 10.8).
+           Zum Stage-Ende ist eine vollständige, governance-konforme
+           Dokumentation zu erstellen.
+
+
+--------------------------------------------------------------------------------
+7. GOVERNANCE-KONFORMITÄTSCHECK
+--------------------------------------------------------------------------------
+
+GOV 10.3  Zulässiger Auslöser        OK  Feature-Zuwachs + Architekturentscheid
+                                         (Atlassian Free-Downgrade als Auslöser)
+GOV 10.5  Fachlicher Mehrwert        OK  Beschrieben in Abschnitt 1.2
+GOV 10.5  Keine implizite Gov-Änd.   OK  CSV/XML/M2B/HLP/FLW unverändert,
+                                         ATL ist additiv
+GOV 10.6  Ziel explizit definiert    OK  Abschnitt 2
+GOV 10.6  Ziel überprüfbar           OK  Testläufe ATL00–ATL02 erfolgreich
+GOV 10.7  Zwischenschritte           OK  Normativ zugelassen
+GOV 10.8  Dev-Doku erstellt          OK  Dieses Dokument
+GOV 10.9  Stage-Ende Doku            OFFEN  Verpflichtend bei Stage-Abschluss
+GOV 10.10 Keine Gov-Regel aufgehoben OK  Naming-Convention, Blueprint-Struktur
+                                         und Steuerungsmechanismen konsistent
+GOV 10.5  Keine Architekturabw.      OK  ATL-Reihe additiv, eigenständig,
+                                         kein Eingriff in bestehende Flows
+
+
+================================================================================
+END OF SPRINT DEV-DOKUMENTATION
+SPRINT-ATL01-AtlassianIntegration | Stage 4 | 2026-03-08
+================================================================================
