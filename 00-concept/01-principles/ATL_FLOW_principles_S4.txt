@@ -36,8 +36,8 @@ Abhängigkeitskette:
 Unterbrechungsregel: Schlägt eine Stage fehl, bricht der Flow ab.
 Kein Silent-Fail, kein Weiterlaufen mit Teilresultat.
 
-ATL00 ist Pflicht-Voraussetzung für alle Folge-Scripts. Ohne ATL00-root.resolved.txt
-starten ATL01 und ATL02 nicht.
+ATL00 ist Pflicht-Voraussetzung für alle Folge-Scripts. Ohne
+ATL00-root.resolved.txt starten ATL01 und ATL02 nicht.
 
 
 3. ROOT-AUFLÖSUNG
@@ -80,142 +80,179 @@ Es gibt keinen dauerhaften Report-Output.
 
 Temporäre Outputs (nach Verwendung wertlos):
   03-stages/00-archimatearchive/
-    atl_processes.csv         Gruppen-CSV Prozesse & Funktionen
-    atl_applications.csv      Gruppen-CSV Applikationen & Systeme
-    atl_actors.csv            Gruppen-CSV Akteure & Rollen
-    atl_technology.csv        Gruppen-CSV Technologie & Infrastruktur
-    atl_motivation.csv        Gruppen-CSV Motivation & Strategie
-    atl_physical.csv          Gruppen-CSV Physische Welt
-    atl_other.csv             Gruppen-CSV Sonstige Objekte
-    jira_ea_import.csv        Jira Issue Import (alle Gruppen zusammen)
+    atl_<layer>.csv       Eine CSV pro Layer der Objekte enthält
+                          (nur befüllte Layer erzeugen eine Datei)
+    jira_ea_import.csv    Jira Issue Import (alle Layer zusammen)
 
 Kein Report-Ordner. 02-artifacts/05-reports/ wird von ATL nicht verwendet.
+Ordner 02-artifacts/05-reports/00-archimate/99-ATL/ wird nicht angelegt.
 
 
-6. 7-GRUPPEN-STRUKTUR
+6. LAYER-STRUKTUR (1:1 ARCHIMATE 3.2)
 --------------------------------------------------------------------------------
-ATL01 gruppiert alle ArchiMate-Elemente in 7 semantische Kategorien.
-Diese Struktur ist identisch zur (inaktiven) CSV10-Logik.
+ATL01 gruppiert ArchiMate-Elemente nach dem offiziellen ArchiMate 3.2
+Layer-Modell. Dateiname und Layer-Name sind direkt abgeleitet.
 
-Gruppen und ihre ArchiMate-Typen:
+  atl_strategy.csv        Strategy
+    Capability, ValueStream, CourseOfAction, Resource
 
-  atl_processes     BusinessProcess, BusinessFunction, BusinessService,
-                    BusinessInteraction, ApplicationProcess,
-                    ApplicationFunction, TechnologyProcess
+  atl_business.csv        Business
+    BusinessActor, BusinessRole, BusinessCollaboration,
+    BusinessInterface, BusinessProcess, BusinessFunction,
+    BusinessInteraction, BusinessEvent, BusinessService,
+    BusinessObject, Contract, Representation, Product
 
-  atl_applications  ApplicationComponent, ApplicationService,
-                    ApplicationInterface, ApplicationCollaboration,
-                    ApplicationEvent, SystemSoftware
+  atl_application.csv     Application
+    ApplicationComponent, ApplicationCollaboration,
+    ApplicationInterface, ApplicationFunction,
+    ApplicationInteraction, ApplicationProcess,
+    ApplicationEvent, ApplicationService, DataObject
 
-  atl_actors        BusinessActor, BusinessRole, BusinessInterface,
-                    Stakeholder
+  atl_technology.csv      Technology & Physical
+    Node, Device, SystemSoftware, TechnologyCollaboration,
+    TechnologyInterface, Path, CommunicationNetwork,
+    TechnologyFunction, TechnologyInteraction,
+    TechnologyProcess, TechnologyEvent, TechnologyService,
+    Artifact, Equipment, Facility, DistributionNetwork, Material
 
-  atl_technology    Node, Device, TechnologyService, TechnologyFunction,
-                    TechnologyInterface, TechnologyCollaboration,
-                    TechnologyEvent, CommunicationNetwork, Path
+  atl_motivation.csv      Motivation
+    Stakeholder, Driver, Assessment, Goal, Outcome,
+    Principle, Requirement, Constraint, Meaning, Value
 
-  atl_motivation    Goal, Requirement, Principle, Constraint, Driver,
-                    Assessment, Outcome, Value, Meaning, Capability,
-                    ValueStream
+  atl_implementation.csv  Implementation & Migration
+    WorkPackage, Deliverable, ImplementationEvent, Plateau, Gap
 
-  atl_physical      Equipment, Facility, Material, DistributionNetwork,
-                    Location
+  atl_relations.csv       Relations
+    AssociationRelationship, CompositionRelationship,
+    AggregationRelationship, AssignmentRelationship,
+    RealizationRelationship, ServingRelationship,
+    AccessRelationship, InfluenceRelationship,
+    TriggeringRelationship, FlowRelationship,
+    SpecializationRelationship
 
-  atl_other         DataObject, BusinessObject, Artifact, Representation,
-                    Deliverable, Contract, Product, Resource, WorkPackage,
-                    Plateau, Gap, CourseOfAction, Grouping,
-                    ImplementationEvent, BusinessEvent,
-                    ApplicationInteraction, TechnologyInteraction
+  atl_other.csv           Other
+    Grouping, Location, Junction
+    (+ alle unbekannten Typen als Fallback)
 
-Nicht klassifizierte Typen landen automatisch in atl_other (Warnung im Log).
+Hinweis: Nur Layer die Objekte enthalten erzeugen eine CSV-Datei.
+Nicht klassifizierte Typen landen in atl_other (Warnung im Log).
+
+Hinweis Views: Views (DiagramModel etc.) sind keine Elemente in master.xml
+und erzeugen keine CSV. Die Jira-Komponente "Views" ist für manuelle
+Einträge reserviert.
 
 
-7. ID-KOLLISIONSSTRATEGIE
+7. ZWEISTUFIGE FILTERUNG IN JIRA
 --------------------------------------------------------------------------------
-Gleiche identifier über mehrere sourceModels → merge (Default, unveränderlich).
+ATL02 befüllt zwei Jira-Felder für unterschiedliche Filtergranularität:
+
+  Component/s  =  Layer-Name     (grob — 9 vordefinierte Werte)
+                                  z.B. "Application"
+  Labels       =  ArchiType      (fein — alle ArchiTypes als Stichwort)
+                                  z.B. "ApplicationComponent"
+
+Vorteil: Grob-Filter via Komponente (wenige, stabile Werte, vordefiniert
+im Projekt). Fein-Filter via Stichwort (automatisch, kein manueller Aufwand).
+Beide Filter gleichzeitig nutzbar in Jira-Suche und Confluence-Makro.
+
+Labels-Regel: Leerzeichen → Underscore (Jira-Anforderung).
+Komponenten-Regel: Exakter Name muss im Jira-Projekt vordefiniert sein.
+
+Jira-Projekt R+MUNI EA (MUNIEA) — 9 Komponenten:
+  Strategy, Business, Application, Technology & Physical,
+  Motivation, Implementation & Migration, Relations, Other, Views
+
+
+8. MERGE-LOGIK (EXTERNAL ISSUE ID)
+--------------------------------------------------------------------------------
+ATL02 schreibt den objectKey (Archi-ID) in das Feld "External issue ID".
+
+Erster Import  → Issue wird neu angelegt
+                 External issue ID = objectKey gespeichert
+
+Zweiter Import → Jira findet External issue ID
+                 → Update statt Duplikat
+
+Voraussetzung: Beim Jira-Import muss "External issue ID" auf
+"Externe Vorgangs-ID" gemappt werden.
+
+Konsequenz: Der ATL Flow ist beliebig oft wiederholbar ohne manuelle
+Bereinigung in Jira.
+
+
+9. ID-KOLLISIONSSTRATEGIE (ATL01)
+--------------------------------------------------------------------------------
+Gleiche identifier über mehrere sourceModels → merge (Default).
 Erste Instanz gewinnt. SourceModel wird komma-separiert zusammengeführt.
-
-Hintergrund: master.xml enthält gespiegelte Modelle mit identischen IDs
-(z.B. Architecture.xml und R+Muni Architecture Modell.xml). Merge ist
-verlustfrei und erzeugt deterministische, eindeutige objectKeys.
 
 Der ATL-Scope-Filter (SOURCE=ATL MODEL=...) reduziert ID-Kollisionen
 bereits erheblich — nur das konfigurierte Modell wird verarbeitet.
 
 
-8. BPMN-INTEGRATION
+10. BPMN-INTEGRATION
 --------------------------------------------------------------------------------
-BPMN-Prozesse die per Name mit einem ArchiMate-Element matchen werden
-nicht als neue Objekte angelegt, sondern das bestehende Element wird mit
-einer BPMN_ID-Spalte angereichert (Enrich-Prinzip).
+BPMN-Prozesse die per Name mit einem ArchiMate-Element matchen →
+Enrich-Prinzip: bestehendes Element erhält BPMN_ID Spalte.
 
-Ungematchte BPMN-Prozesse werden als neue Stub-Elemente angelegt
-(ArchiType=BusinessProcess).
+Ungematchte BPMN-Prozesse → neues Stub-Element (ArchiType=BusinessProcess,
+Layer=Business).
 
-Dieses Verhalten ist identisch zur CSV10-Logik und konsistent mit
-bpmnmastercsvsync.txt.
+Konsistent mit bpmnmastercsvsync.txt.
 
 
-9. JIRA CSV-FORMAT
+11. JIRA CSV-FORMAT
 --------------------------------------------------------------------------------
-ATL02 erzeugt eine Standard-Jira-Issues-CSV (nicht Jira Assets).
+ATL02 erzeugt Standard-Jira-Issues-CSV (nicht Jira Assets).
+Encoding: UTF-8 mit BOM.
+Issue Type: immer "Task".
 
-Pflichtfelder (Jira-Vorgabe):
-  Summary     Name des EA-Objekts (Fallback: [ArchiType] objectKey)
-  Issue Type  immer "Task"
-
-Zusatzfelder:
-  Description  Beschreibung + EA-Kontext (objectKey, ArchiType, Gruppe)
-  Labels       ArchiType ohne Leerzeichen (z.B. ApplicationComponent)
-  EA-ObjectKey Archi identifier (Referenz-ID für Verlinkung)
-  EA-ArchiType ArchiMate Typ (lesbar)
-  EA-Group     Semantische Gruppe
-  EA-SourceModel Herkunftsmodell
-
-Encoding: UTF-8 mit BOM (Jira CSV-Import Anforderung für Sonderzeichen).
-
-Labels-Regel: Leerzeichen werden durch Underscore ersetzt.
-Jira Labels erlauben keine Leerzeichen.
+Spalten (in Reihenfolge):
+  Summary           Pflicht — Name des EA-Objekts
+  Issue Type        Pflicht — "Task"
+  Description       Beschreibung + EA-Kontext
+  Component/s       Layer-Name (Jira Komponente, vordefiniert)
+  Labels            ArchiType (Stichwort, fein)
+  External issue ID objectKey (Merge-Schlüssel)
+  EA-ObjectKey      objectKey (Referenz-ID für Verlinkung)
+  EA-ArchiType      ArchiType (lesbar)
+  EA-Layer          Layer-Name (redundant zu Component/s)
+  EA-SourceModel    Herkunftsmodell
 
 
-10. CONFLUENCE-DARSTELLUNG
+12. CONFLUENCE-DARSTELLUNG
 --------------------------------------------------------------------------------
-EA-Objekte werden in Confluence über das native Jira-Issues-Makro
-dargestellt — kein separates HTML-Script, kein Report-Upload.
+EA-Objekte in Confluence via natives Jira-Issues-Makro — kein HTML-Script.
 
-Voraussetzung: Jira-Import (ATL02) muss abgeschlossen sein.
+Voraussetzung: Jira-Import (ATL02) abgeschlossen.
 
-JQL-Filter Beispiele für das Jira-Issues-Makro:
-  labels = ApplicationComponent     → alle Applikations-Komponenten
-  labels = BusinessProcess          → alle Business-Prozesse
-  labels = BusinessActor            → alle Akteure
-  project = "R+MUNI" AND labels = Goal  → Ziele im R+MUNI Projekt
+JQL-Beispiele:
+  Grob (Layer):   component = "Application"
+  Fein (Typ):     labels = "ApplicationComponent"
+  Kombiniert:     component = "Business" AND labels = "BusinessProcess"
+  Alles:          project = MUNIEA
 
-Vorteil: Live-Darstellung — Änderungen in Jira werden sofort in
-Confluence sichtbar ohne erneuten Script-Lauf.
+Live-Darstellung — Änderungen in Jira sofort in Confluence sichtbar.
 
 
-11. MKDIR-VERBOT
+13. MKDIR-VERBOT
 --------------------------------------------------------------------------------
 ATL-Scripts legen keine Ordner an.
-Alle benötigten Ordner müssen vor dem ersten Lauf existieren.
-ATL00 prüft die Existenz und bricht ab wenn ein Ordner fehlt.
+ATL00 prüft Existenz und bricht ab wenn ein Ordner fehlt.
 
-Benötigte Ordner (müssen manuell angelegt werden):
+Benötigte Ordner (manuell anlegen):
   03-stages/00-archimatearchive/
   03-stages/99-logs/
 
 
-12. LOG-VERHALTEN
+14. LOG-VERHALTEN
 --------------------------------------------------------------------------------
 Jede Stage schreibt ein eigenes Log nach 03-stages/99-logs/:
   ATL00-validate_atl_scope.log
   ATL01-masterXml2AtlCsv.log
   ATL02-atlCsv2JiraCsv.log
 
-Logs werden bei jedem Lauf überschrieben (kein Versioning).
-Alle relevanten Entscheidungen, Warnungen und Zählerstände werden geloggt.
-Konsolen-Output ist identisch zum Log-Output (kein Silent-Running).
+Logs werden bei jedem Lauf überschrieben.
+Konsolen-Output ist identisch zum Log-Output.
 
 
 ================================================================================

@@ -15,10 +15,39 @@ VORAUSSETZUNGEN
 - Ordnerstruktur gemäß structure.txt vorhanden
 - run-scope.txt enthält ein aktives SOURCE=ATL Pair
 - master.xml in 02-artifacts/00-xml/00-master/ vorhanden
+- Jira-Projekt R+MUNI EA (MUNIEA) vorhanden
+- 9 Komponenten im Projekt angelegt (siehe Abschnitt Jira-Vorbereitung)
 
 
 ================================================================================
-SCHRITT 0 – run-scope.txt VORBEREITEN
+SCHRITT 0 – JIRA-VORBEREITUNG (einmalig)
+================================================================================
+
+Projekt: R+MUNI EA (Key: MUNIEA, Typ: Kanban)
+
+Folgende 9 Komponenten müssen im Projekt vorhanden sein:
+  Strategy
+  Business
+  Application
+  Technology & Physical
+  Motivation
+  Implementation & Migration
+  Relations
+  Other
+  Views
+
+Anlegen: Jira → R+MUNI EA → Projekteinstellungen → Komponenten
+
+ACHTUNG: Die Komponentennamen müssen EXAKT so geschrieben sein wie oben.
+ATL02 schreibt diese Strings in die CSV — Jira matched beim Import auf
+den exakten Namen.
+
+"Views" ist für manuelle Einträge reserviert — ATL02 befüllt diese
+Komponente nicht automatisch.
+
+
+================================================================================
+SCHRITT 1 – run-scope.txt VORBEREITEN
 ================================================================================
 
 Datei: 03-stages/run-scope.txt
@@ -29,159 +58,168 @@ Folgendes Pair muss aktiv (uncommentiert) eingetragen sein:
   MODEL=R+Muni Architecture Modell.xml
 
 Regeln:
-  - Beide Zeilen müssen direkt untereinander stehen
-  - Keine Leerzeile zwischen SOURCE= und MODEL=
+  - Beide Zeilen direkt untereinander, keine Leerzeile dazwischen
   - Kein führendes # (sonst inaktiv)
-  - MODEL= muss exakt dem Dateinamen im child-Ordner entsprechen
+  - MODEL= muss exakt dem Modellnamen in master.xml entsprechen
 
-ACHTUNG: Bestehende SOURCE=ARCHIMATE oder SOURCE=BPMN Einträge bleiben
-unverändert — ATL liest nur SOURCE=ATL, andere Flows ignorieren ihn.
+Bestehende SOURCE=ARCHIMATE oder SOURCE=BPMN Einträge bleiben unverändert.
 
 
 ================================================================================
-SCHRITT 1 – ATL00: SCOPE UND VORAUSSETZUNGEN PRÜFEN
+SCHRITT 2 – ATL00: SCOPE UND VORAUSSETZUNGEN PRÜFEN
 ================================================================================
 
   cd 02-artifacts/01-scripts/
-  python ATL00-validate_atl_scope.py
+  py ATL00-validate_atl_scope.py
 
 Was passiert:
   → Root-Pfad aus root.txt auflösen
   → run-scope.txt auf aktives SOURCE=ATL Pair prüfen
   → master.xml auf Existenz und Lesbarkeit prüfen
-  → Ausgabe-Ordner prüfen (03-stages/00-archimatearchive/ und 99-logs/)
+  → Ordner prüfen: 03-stages/00-archimatearchive/ + 03-stages/99-logs/
   → Schreibt: 03-stages/99-logs/ATL00-root.resolved.txt
   → Schreibt: 03-stages/99-logs/ATL00-validate_atl_scope.log
 
-Bei Fehler (Hard fail):
-  Kein SOURCE=ATL in run-scope.txt  → Schritt 0 wiederholen
-  master.xml nicht gefunden         → Pfad in root.txt prüfen
-  Ordner fehlt                      → Ordner manuell anlegen
+Erwartete Konsolenausgabe (Erfolg):
+  [ATL00] OK | ATL Scope validiert -> 1 Modell(e) aktiv
+
+Bei Fehler:
+  Kein SOURCE=ATL  → Schritt 1 wiederholen
+  master.xml fehlt → Pfad in root.txt prüfen, XML Flow ausführen
+  Ordner fehlt     → Ordner manuell anlegen, dann ATL00 wiederholen
 
 
 ================================================================================
-SCHRITT 2 – ATL01: MASTER.XML IN GRUPPEN-CSVs TRANSFORMIEREN
+SCHRITT 3 – ATL01: MASTER.XML IN LAYER-CSVs TRANSFORMIEREN
 ================================================================================
 
-  python ATL01-masterXml2AtlCsv.py
+  py ATL01-masterXml2AtlCsv.py
 
 Was passiert:
-  → ATL00-root.resolved.txt lesen (Root-Pfad)
-  → run-scope.txt lesen → SOURCE=ATL Modelle ermitteln
-  → master.xml parsen (nur Elemente des ATL-Scope-Modells)
-  → 560+ Elemente in 7 semantische Gruppen aufteilen
+  → ATL00-root.resolved.txt lesen
+  → run-scope.txt → SOURCE=ATL Modelle ermitteln
+  → master.xml parsen (nur Scope-Modell)
+  → Elemente nach ArchiMate 3.2 Layer gruppieren
   → BPMN-Prozesse per Name-Match anreichern
   → ID-Kollisionen per merge behandeln
-  → Schreibt: 03-stages/00-archimatearchive/atl_*.csv (7 Dateien)
+  → Schreibt: 03-stages/00-archimatearchive/atl_<layer>.csv
+    (nur Layer die Objekte enthalten erzeugen eine Datei)
   → Schreibt: 03-stages/99-logs/ATL01-masterXml2AtlCsv.log
 
-Erwartete Ausgabe-Dateien:
-  atl_processes.csv       ~46 Zeilen
-  atl_applications.csv    ~20 Zeilen
-  atl_actors.csv          ~13 Zeilen
-  atl_technology.csv      ~16 Zeilen
-  atl_motivation.csv      ~42 Zeilen
-  atl_physical.csv        ~10 Zeilen
-  atl_other.csv          ~165 Zeilen
+Erwartete Konsolenausgabe (Erfolg):
+  [ATL01] OK | N Datei(en) -> 03-stages/00-archimatearchive/
 
 Hinweis: Dateien werden bei jedem Lauf überschrieben.
 
 
 ================================================================================
-SCHRITT 3 – ATL02: GRUPPEN-CSVs IN JIRA-IMPORT-CSV UMWANDELN
+SCHRITT 4 – ATL02: LAYER-CSVs IN JIRA-IMPORT-CSV UMWANDELN
 ================================================================================
 
-  python ATL02-atlCsv2JiraCsv.py
+  py ATL02-atlCsv2JiraCsv.py
 
 Was passiert:
-  → ATL00-root.resolved.txt lesen (Root-Pfad)
-  → Alle 7 atl_*.csv aus 03-stages/00-archimatearchive/ lesen
+  → ATL00-root.resolved.txt lesen
+  → Alle atl_*.csv aus 03-stages/00-archimatearchive/ lesen
   → Pro Zeile eine Jira-Issue-Zeile bauen:
-      Summary    = Name (Fallback: [ArchiType] objectKey)
-      Issue Type = Task
-      Labels     = ArchiType (Leerzeichen → Underscore)
-      Description = Beschreibung + EA-Kontext
-  → Alle Gruppen in einer CSV zusammenführen
+      Summary           = Name (Fallback: [ArchiType] objectKey)
+      Issue Type        = Task
+      Component/s       = Layer-Name (Jira Komponente)
+      Labels            = ArchiType (Stichwort, Leerzeichen → Underscore)
+      External issue ID = objectKey (Merge-Schlüssel)
+  → Alle Layer in einer CSV zusammenführen
   → Schreibt: 03-stages/00-archimatearchive/jira_ea_import.csv
   → Schreibt: 03-stages/99-logs/ATL02-atlCsv2JiraCsv.log
 
-Erwartete Ausgabe:
-  jira_ea_import.csv  ~312 Zeilen (alle Gruppen zusammen)
-  Encoding: UTF-8 mit BOM
+Erwartete Konsolenausgabe (Erfolg):
+  [ATL02] OK | N Zeilen -> 03-stages/00-archimatearchive/jira_ea_import.csv
+
+Hinweis: Datei wird bei jedem Lauf überschrieben.
 
 
 ================================================================================
-SCHRITT 4 – JIRA CSV-IMPORT DURCHFÜHREN
+SCHRITT 5 – JIRA CSV-IMPORT DURCHFÜHREN
 ================================================================================
 
-1. Jira öffnen → dein Projekt wählen
+1. Jira öffnen → Projekt R+MUNI EA (MUNIEA)
 
-2. Im Projekt-Menü:
-   Project Settings → Import → CSV
+2. Import starten:
+   Im Projekt → ... (drei Punkte oben rechts) → Importieren → CSV
 
 3. Datei hochladen:
    03-stages/00-archimatearchive/jira_ea_import.csv
 
-4. Feld-Mapping in Jira UI prüfen:
-   Summary      → Summary        (Pflicht — muss gemappt sein)
-   Issue Type   → Issue Type     (Pflicht — muss gemappt sein)
-   Description  → Description
-   Labels       → Labels
-   Priority     → Priority       (leer = Medium, kann ignoriert werden)
-   EA-ObjectKey → [ignorieren oder Custom Field]
-   EA-ArchiType → [ignorieren oder Custom Field]
-   EA-Group     → [ignorieren oder Custom Field]
-   EA-SourceModel → [ignorieren oder Custom Field]
+4. Einstellungen:
+   Trennzeichen : Komma
+   Encoding     : UTF-8 (BOM wird automatisch erkannt)
+   Vorhandene Konfiguration: NEIN (kein Haken)
 
-5. Import starten → Jira erzeugt Issues für alle EA-Objekte
+5. Feld-Mapping (Pflicht):
+   Summary             → Zusammenfassung      (Pflicht)
+   Issue Type          → Vorgangstyp          (Pflicht, Wert: Task/Aufgabe)
+   External issue ID   → Externe Vorgangs-ID  (Merge-Schlüssel — wichtig!)
+   Description         → Beschreibung
+   Component/s         → Komponente/n
+   Labels              → Stichwörter
 
-ACHTUNG: Beim zweiten Import entstehen Duplikate.
-Empfehlung: Vor erneutem Import die EA-Issues in Jira löschen
-(Filter: labels = EA_Object oder Issue Type = Task + Label-Filter).
+   EA-ObjectKey, EA-ArchiType, EA-Layer, EA-SourceModel:
+   → Können ignoriert oder auf Custom Fields gemappt werden
+
+6. Import starten
+
+Erwartetes Ergebnis:
+  Erster Import  → Issues werden neu angelegt
+  Zweiter Import → Issues werden aktualisiert (kein Duplikat)
+                   Voraussetzung: External issue ID korrekt gemappt
+
+WICHTIG: "Externe Vorgangs-ID" beim Mapping nicht vergessen —
+das ist der Schlüssel für saubere Updates beim zweiten Import.
 
 
 ================================================================================
-SCHRITT 5 – CONFLUENCE JIRA-ISSUES-MAKRO EINRICHTEN
+SCHRITT 6 – CONFLUENCE JIRA-ISSUES-MAKRO EINRICHTEN
 ================================================================================
 
-Voraussetzung: Schritt 4 (Jira-Import) abgeschlossen.
+Voraussetzung: Schritt 5 (Jira-Import) abgeschlossen.
 
-1. Confluence Seite öffnen (oder neue Seite anlegen)
-   Empfehlung: Eine Seite pro Gruppe oder eine Übersichtsseite
+1. Confluence Seite bearbeiten → + → Makro → "Jira Issues"
 
-2. Seite bearbeiten → + (Einfügen) → Makro suchen → "Jira Issues"
-
-3. Im Makro-Dialog:
-   Verbindung: dein Atlassian Site wählen
-   JQL-Filter eingeben, z.B.:
+2. JQL-Filter eingeben:
 
    Alle EA-Objekte:
-     project = "DEIN-PROJEKT" AND issuetype = Task AND labels in
-     (ApplicationComponent, BusinessProcess, BusinessActor, Node,
-      Goal, Equipment, DataObject)
+     project = MUNIEA
 
-   Nur Applikationen:
-     labels = ApplicationComponent
+   Nach Layer (Komponente, grob):
+     project = MUNIEA AND component = "Application"
+     project = MUNIEA AND component = "Business"
+     project = MUNIEA AND component = "Technology & Physical"
 
-   Nur Prozesse:
-     labels = BusinessProcess OR labels = ApplicationProcess
+   Nach ArchiType (Stichwort, fein):
+     project = MUNIEA AND labels = "ApplicationComponent"
+     project = MUNIEA AND labels = "BusinessProcess"
+     project = MUNIEA AND labels = "Node"
 
-   Nur Akteure:
-     labels = BusinessActor OR labels = BusinessRole OR labels = Stakeholder
+   Kombiniert:
+     project = MUNIEA AND component = "Business" AND labels = "BusinessProcess"
 
-   Nur Technologie:
-     labels = Node OR labels = Device OR labels = SystemSoftware
+3. Spalten empfohlen: Summary, Component/s, Labels, Description
 
-   Nur Motivation:
-     labels = Goal OR labels = Requirement OR labels = Principle
+4. Speichern → live Tabelle in Confluence
 
-4. Spalten konfigurieren (empfohlen):
-   Summary, Labels, Description
 
-5. Speichern → Confluence zeigt die EA-Objekte als live Tabelle
+================================================================================
+WIEDERHOLUNG NACH MODELLÄNDERUNGEN
+================================================================================
 
-Vorteil: Ändert sich ein EA-Objekt in Jira, aktualisiert sich
-die Confluence-Seite automatisch ohne erneuten Script-Lauf.
+Wenn das ArchiMate-Modell in Archi geändert wurde:
+
+1. XML Flow ausführen (XML00 → XML07) → master.xml aktualisieren
+2. ATL Flow ausführen (ATL00 → ATL01 → ATL02)
+3. jira_ea_import.csv erneut in Jira importieren
+   → External issue ID sorgt für Update statt Duplikat
+4. Confluence aktualisiert sich automatisch (live via Makro)
+
+Kein manuelles Löschen in Jira erforderlich.
 
 
 ================================================================================
@@ -190,28 +228,30 @@ FEHLERBEHANDLUNG
 
 FEHLER: ATL00-root.resolved.txt nicht gefunden
 → ATL00 muss vor ATL01/ATL02 ausgeführt werden
-→ cd 02-artifacts/01-scripts/ && python ATL00-validate_atl_scope.py
+→ py ATL00-validate_atl_scope.py
 
-FEHLER: Kein aktives SOURCE=ATL Pair in run-scope.txt
-→ run-scope.txt öffnen (03-stages/run-scope.txt)
+FEHLER: Kein aktives SOURCE=ATL Pair
+→ 03-stages/run-scope.txt öffnen
 → SOURCE=ATL / MODEL=... Pair uncommentieren oder eintragen
 
 FEHLER: master.xml nicht gefunden
-→ Pfad prüfen: 02-artifacts/00-xml/00-master/master.xml
 → XML Flow (XML00–XML07) muss vorher ausgeführt worden sein
+→ Pfad: 02-artifacts/00-xml/00-master/master.xml
 
 FEHLER: Ausgabe-Ordner fehlt
 → 03-stages/00-archimatearchive/ manuell anlegen
-→ ATL00 neu ausführen
+→ ATL00 erneut ausführen
 
 FEHLER: Keine atl_*.csv beim ATL02-Lauf
 → ATL01 muss vor ATL02 ausgeführt werden
-→ Prüfen ob 03-stages/00-archimatearchive/ Dateien enthält
 
-FEHLER: Jira-Import — "Summary darf nicht leer sein"
-→ ATL02-Log prüfen auf WARNUNG: Leeres Summary
-→ Betroffene Objekte in master.xml haben keinen Namen
-→ Fallback [ArchiType] objectKey greift automatisch — sollte nicht auftreten
+FEHLER: Jira — Komponente wird nicht erkannt
+→ Komponentennamen in Jira prüfen (exakte Schreibweise erforderlich)
+→ Jira → R+MUNI EA → Projekteinstellungen → Komponenten
+
+FEHLER: Jira — Duplikate beim zweiten Import
+→ "Externe Vorgangs-ID" beim Feld-Mapping nicht vergessen
+→ External issue ID muss auf Externe Vorgangs-ID gemappt sein
 
 
 ================================================================================
@@ -224,13 +264,9 @@ Scripts:
   02-artifacts/01-scripts/ATL02-atlCsv2JiraCsv.py
 
 Temporäre Outputs (werden bei jedem Lauf überschrieben):
-  03-stages/00-archimatearchive/atl_processes.csv
-  03-stages/00-archimatearchive/atl_applications.csv
-  03-stages/00-archimatearchive/atl_actors.csv
+  03-stages/00-archimatearchive/atl_business.csv
   03-stages/00-archimatearchive/atl_technology.csv
-  03-stages/00-archimatearchive/atl_motivation.csv
-  03-stages/00-archimatearchive/atl_physical.csv
-  03-stages/00-archimatearchive/atl_other.csv
+  03-stages/00-archimatearchive/atl_<weitere layer bei Bedarf>.csv
   03-stages/00-archimatearchive/jira_ea_import.csv
 
 Logs:
@@ -240,7 +276,13 @@ Logs:
   03-stages/99-logs/ATL02-atlCsv2JiraCsv.log
 
 Konfiguration:
-  03-stages/run-scope.txt  (SOURCE=ATL Pair manuell eintragen)
+  03-stages/run-scope.txt   (SOURCE=ATL Pair manuell eintragen)
+
+Jira:
+  Projekt   : R+MUNI EA (MUNIEA)
+  Typ       : Kanban
+  Komponent.: Strategy, Business, Application, Technology & Physical,
+              Motivation, Implementation & Migration, Relations, Other, Views
 
 
 ================================================================================
