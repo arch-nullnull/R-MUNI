@@ -124,3 +124,30 @@ Mit dieser Definition ist Stage 4:
 	• GOV‑konform
 Stage 3 bleibt fixiert und geschützt.
 Stage 4 darf wirken, ohne zu verzerren.
+
+11. Strategische Meilensteine
+Dieses Kapitel dokumentiert strategisch relevante Fakten und Ereignisse, die
+keinen Sprint-Charakter haben, aber fuer die Nachvollziehbarkeit von Stage 4
+festgehalten werden.
+
+Charakter: rein informativ, kein Eingriff, keine Logikveraenderung, additiv.
+
+11.1 CEO-Freigabe - Interner Testbetrieb
+  Datum             : 2026-03-09
+  Ereignis          : Freigabe durch Unternehmensleitung fuer internen Testbetrieb
+  Scope             : Interner Einsatz im eigenen Unternehmen
+  Entwicklungsstand : Beta - explizit kommuniziert und akzeptiert
+  Hinweis           : Oeffnung fuer Dritte gemaess Abschnitt 3 (GOV-konform):
+                      Entwicklungsstatus und Risiken wurden explizit genannt.
+  GOV-Relevanz      : Keine neue Stage, kein Sprint - strategische Feststellung.
+
+11.2 Beta-Tester - Schulungskonzept R+MUNI
+  Datum         : 2026-03-09
+  Ereignis      : Erster Beta-Tester gewonnen zur Mitentwicklung des
+                  R+MUNI Schulungskonzepts
+  Fokus         : Konzeptphase Schulung - kein operativer Schulungsbetrieb
+  Abgrenzung    : Schulungsbetrieb ist Stage 5+ Thema (vgl. Abschnitt 9 -
+                  Produkt- und Marktlogik gehoeren in nachfolgende Stages)
+  Erlaubt in S4 : Strukturelle Vorbereitung, konzeptionelle Erarbeitung
+  Nicht erlaubt : Operativer Betrieb, oeffentliche Veroeffentlichung, Vertrieb
+  GOV-Relevanz  : Keine neue Stage, kein Sprint - strategische Feststellung.

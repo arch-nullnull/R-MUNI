@@ -61,10 +61,42 @@ Ohne diese Komponenten ist R+MUNI nicht lauffähig.
   Die Verzeichnisstruktur gemäß structure.txt muss vor dem ersten
   Script-Lauf vollständig vorhanden sein.
 
+  Empfohlene Installation via ZIP (siehe Abschnitt 2.5):
+  Die ZIP-Variante enthält die vollständige Ordnerstruktur inkl. aller
+  Scripts und Konfigurationen — ohne Modelle ("clean").
+
   root.txt im Blueprint-Root muss korrekt befüllt sein:
     BLUEPRINT_ROOT=<absoluter oder relativer Pfad>
 
   Relativer Pfad wird relativ zur Position von root.txt aufgelöst.
+
+  Hinweis: Bei Installation nach C:\R+MUNI ist root.txt bereits korrekt
+           vorkonfiguriert und muss nicht angepasst werden.
+
+
+2.5 Blueprint ZIP — Schnellinstallation
+  Datei    : R+MUNI_clean.zip
+  Quelle   : GitHub Repository (R+MUNI Releases)
+  Inhalt   : Vollständige Ordnerstruktur, alle Scripts, alle Konfigurationen
+             Keine Modelle, keine persönlichen Daten ("clean")
+
+  Warum ZIP statt GitHub Clone:
+    GitHub kopiert keine leeren Ordner. Die Blueprint-Ordnerstruktur
+    enthält viele leere Verzeichnisse die für den Script-Betrieb zwingend
+    benötigt werden. Die ZIP löst dieses Problem — alle Ordner sind
+    vollständig enthalten.
+
+  Installation Schritt für Schritt:
+    1. R+MUNI_clean.zip herunterladen
+    2. ZIP entpacken nach C:\R+MUNI
+       Ergebnis: C:\R+MUNI\root.txt, C:\R+MUNI\02-artifacts\ usw.
+    3. Fertig — root.txt ist bereits auf C:\R+MUNI vorkonfiguriert.
+       Kein weiterer Anpassungsbedarf.
+
+  Anderes Installationsverzeichnis (z.B. D:\Projekte\MUNI):
+    root.txt mit Notepad++ öffnen und anpassen:
+      BLUEPRINT_ROOT=D:\Projekte\MUNI
+    Speichern. Fertig.
 
 
 3. EMPFOHLENE WERKZEUGE
@@ -279,24 +311,32 @@ Archi Import schlägt bei falschem Encoding ohne klare Fehlermeldung fehl.
 
 8. INSTALLATIONS-REIHENFOLGE EMPFEHLUNG
 --------------------------------------------------------------------------------
-1. Python installieren + PATH setzen
-2. pip install lxml openpyxl
-3. Archi 5.x installieren
-4. jArchi Plugin in Archi installieren
-5. Camunda Modeler installieren
-6. Notepad++ installieren
-7. Notepad++ Plugins über Plugin Admin installieren
-8. PowerShell 7 installieren
-9. Blueprint Ordnerstruktur anlegen
-10. root.txt befüllen
-11. CSV00 ausführen als erster Funktionstest
+
+8.1 Schnellinstallation via ZIP (empfohlen)
+  1.  Python installieren + PATH setzen
+  2.  pip install lxml openpyxl
+  3.  Archi 5.x installieren
+  4.  jArchi Plugin in Archi installieren
+  5.  Camunda Modeler installieren
+  6.  Notepad++ installieren
+  7.  Notepad++ Plugins über Plugin Admin installieren
+  8.  PowerShell 7 installieren
+  9.  R+MUNI_clean.zip nach C:\R+MUNI entpacken
+  10. CSV00 ausführen als erster Funktionstest
+      → root.txt muss NICHT angepasst werden bei C:\R+MUNI
+
+8.2 Manuelle Installation (alternatives Verzeichnis)
+  1.–8. wie oben
+  9.  Blueprint Ordnerstruktur manuell anlegen (gemäß structure.txt)
+  10. root.txt anpassen: BLUEPRINT_ROOT=<dein Pfad>
+  11. CSV00 ausführen als erster Funktionstest
 
 Optional (je nach Use Case):
-12. Atlassian Free Plan einrichten (Jira + Confluence)
-    → Jira Projekt R+MUNI EA anlegen (Key: MUNIEA)
-    → 9 Komponenten anlegen (ArchiMate Layer)
-13. GitHub Repo anlegen und mit Jira verknüpfen
-14. draw.io installieren
+  12. Atlassian Free Plan einrichten (Jira + Confluence)
+      → Jira Projekt R+MUNI EA anlegen (Key: MUNIEA)
+      → 9 Komponenten anlegen (ArchiMate Layer)
+  13. GitHub Repo anlegen und mit Jira verknüpfen
+  14. draw.io installieren
 
 
 9. ERSTER FUNKTIONSTEST
