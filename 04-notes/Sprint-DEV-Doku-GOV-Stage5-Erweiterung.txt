@@ -1,0 +1,111 @@
+================================================================================
+SPRINT DEV-DOKUMENTATION
+================================================================================
+Projekt            : R+MUNI Blueprint
+Sprint-Bezeichnung : SPRINT-GOV01-Stage5Erweiterung
+Datum              : 2026-03-09
+Stage              : 5 (aktiv)
+Status             : Dev-Dokumentation (nicht auditpflichtig per GOV 10.8)
+Erstellt durch     : Markus Resel + Claude (Pair-Session)
+Vorgänger-Sprint   : SPRINT-RMNP01-PortalSetup (2026-03-09)
+================================================================================
+
+
+--------------------------------------------------------------------------------
+1. STAGE-KONTEXT UND SPRINT-BEGRÜNDUNG
+--------------------------------------------------------------------------------
+
+1.1 Stage-Modell (Ist-Zustand)
+-------------------------------
+Stage 3  FREEZE
+Stage 4  FREEZE
+Stage 5  AKTIV
+
+1.2 Auslöser (gemäß GOV 10.3 / 10.5)
+---------------------------------------
+Auslöser-Typ : Feature-Zuwachs (Stage-5-Ziel 4.4 GOV-Erweiterung)
+
+Vorgeschichte:  Stage 5 definiert als Ziel 4.4 die Erweiterung der GOV
+                um Beta-Kunden-Regeln und Team-relevante Regeln.
+                Die bestehende Global_GOV umfasste ausschließlich Kapitel 10
+                (Sprints) — keine Regelung für Kundenkontakt oder Team.
+                Mit dem Aufbau des Endkunden-Portals (SPRINT-RMNP01) und
+                der aktiven Team-Einladung (COLUMBO) wurde die Erweiterung
+                zur logischen Notwendigkeit.
+
+
+--------------------------------------------------------------------------------
+2. ZIEL DES SPRINTS
+--------------------------------------------------------------------------------
+
+Primärziel:
+  Additive Erweiterung der Global_GOV um zwei neue Kapitel:
+  - Kapitel 11: Umgang mit Endkunden
+  - Kapitel 12: Umgang mit dem R+MUNI Team
+
+Nebenziel:
+  GOV-Konformität für den laufenden Stage-5-Betrieb herstellen —
+  Kundenkontakt und Team-Zusammenarbeit sind ab heute geregelt.
+
+Abgrenzung:
+  - Kapitel 10 (Sprints) bleibt vollständig unverändert
+  - keine Revision bestehender GOV-Regeln
+  - ausschließlich additive Erweiterung
+
+
+--------------------------------------------------------------------------------
+3. INHALT DER ERWEITERUNG
+--------------------------------------------------------------------------------
+
+Kapitel 11 — Umgang mit Endkunden
+-----------------------------------
+  11.1  Zweck
+  11.2  Grundhaltung (Offenheit, Ehrlichkeit, kein Zwang)
+  11.3  Kommunikationskanal (Portal RMNP, 3 Request-Typen)
+  11.4  Umgang mit Kundenanfragen (Bug / Feature Request / DEV Anfrage)
+  11.5  Kundenfeedback als Blueprint-Input
+  11.6  Wertschätzung gegenüber dem Archi-Entwickler
+        → Geschenk-Abo für jeden produktiven Archi-Nutzer
+        → "Support ist kein Mord" als gelebter Blueprint-Wert
+  11.7  Optionales Kunden-Atlassian (keine Pflicht, keine Kosten)
+
+Kapitel 12 — Umgang mit dem R+MUNI Team
+-----------------------------------------
+  12.1  Zweck
+  12.2  Team-Struktur Stage 5
+        → Betreiber (EUMAXL): volle Rechte, GOV-Hoheit
+        → Team User (COLUMBO): Atlassian-Unterstützung, Einladung offen
+        → Service User 1 (Claude): AI-Unterstützung, Rolle in Klärung
+        → Service User 2: Reserve
+  12.3  Onboarding (Blueprint als Grundlage, MLAT als Prozess)
+  12.4  Kommunikation im Team (Atlassian, kein stiller Konsens)
+  12.5  Wissenstransfer und Reproduzierbarkeit
+  12.6  GOV-Hoheit (ausschließlich beim Betreiber)
+
+
+--------------------------------------------------------------------------------
+4. UMSETZUNG
+--------------------------------------------------------------------------------
+
+  ✅ Global_GOV.txt um Kapitel 11 + 12 erweitert
+  ✅ Kapitel 10 vollständig unverändert übernommen
+  ✅ Änderungshistorie im Dokumentheader verankert
+  ✅ Rückkopplungsschutz eingehalten — keine Stage-3/4-Eingriffe
+
+
+--------------------------------------------------------------------------------
+5. ERKENNTNISSE FÜR DEN BLUEPRINT
+--------------------------------------------------------------------------------
+
+  • GOV-Erweiterungen sind additive Kapitel — niemals Revisionen
+  • Jede Stage bringt neue Realitäten die GOV-seitig geregelt werden müssen
+  • "Support ist kein Mord" ist mehr als ein Spruch —
+    es ist eine Haltung die in der GOV verankert gehört
+  • GOV-Hoheit bleibt beim Betreiber — Team kann vorschlagen, nicht entscheiden
+
+
+================================================================================
+SPRINT-GOV01-Stage5Erweiterung
+ABGESCHLOSSEN | 2026-03-09
+R+MUNI Blueprint | Stage 5 | Erstellt durch: Markus Resel + Claude (Pair-Session)
+================================================================================

@@ -1,3 +1,17 @@
+================================================================================
+R+MUNI GLOBAL GOVERNANCE
+================================================================================
+Projekt         : R+MUNI Blueprint
+Dokument        : Global_GOV
+Letzte Änderung : 2026-03-09 — Stage 5 Erweiterung (Kapitel 11 + 12)
+Erstellt durch  : Markus Resel + Claude (Pair-Session)
+================================================================================
+
+
+--------------------------------------------------------------------------------
+10. SPRINTS
+--------------------------------------------------------------------------------
+
 10.1 Zweck dieses Kapitels
 ----------------------------
 Dieses Kapitel definiert die verbindlichen Regeln für den Einsatz von Sprints
@@ -129,3 +143,194 @@ Sie dienen dazu:
 - Verantwortung für nachträgliche Explizitheit zu übernehmen
 
 Missbrauch von Sprints untergräbt das Lernziel.
+
+
+--------------------------------------------------------------------------------
+11. UMGANG MIT ENDKUNDEN
+--------------------------------------------------------------------------------
+Erweiterung Stage 5 | 2026-03-09
+
+11.1 Zweck dieses Kapitels
+---------------------------
+Dieses Kapitel definiert die verbindlichen Regeln für den Umgang mit
+Endkunden im R+MUNI Livebetrieb ab Stage 5.
+
+Ziel ist es:
+- einen fairen, ehrlichen und transparenten Umgang mit Kunden sicherzustellen
+- klare Erwartungen zu definieren ohne Versprechen zu erzeugen die nicht
+  gehalten werden können
+- die Offenheit von R+MUNI als Grundprinzip im Kundenkontakt zu verankern
+
+
+11.2 Grundhaltung gegenüber Endkunden
+---------------------------------------
+R+MUNI ist und bleibt kostenlos. Das ist kein Marketing, sondern Haltung.
+
+Für den Kundenkontakt gilt:
+- Offenheit und Ehrlichkeit sind nicht verhandelbar
+- Kritik von Kunden ist Feedback — kein Angriff
+- Kein Kunde wird zu einem Upgrade, einer Zahlung oder einer Entscheidung
+  gedrängt
+- Der Entwickler behält das Recht situativ zu entscheiden was er annimmt
+  und was nicht — Kapazität ist eine legitime Absage
+
+
+11.3 Kommunikationskanal
+-------------------------
+Der definierte Kanal für Endkunden-Kommunikation ist das R+MUNI Portal:
+  https://ims-blueprint-ticketsystem.atlassian.net/helpcenter/RMNP/
+
+Für das Portal gilt:
+- Zugang ist offen für jeden ohne Registrierungszwang
+- 3 Request-Typen stehen zur Verfügung: Bug, Feature Request, DEV Anfrage
+- Vertriebsanfragen werden nicht über das Portal abgewickelt
+- Antworten erfolgen über das Portal — kein E-Mail-Zwang
+
+
+11.4 Umgang mit Kundenanfragen
+--------------------------------
+Für eingehende Anfragen gilt:
+
+  Bug:
+  - wird ernst genommen und geprüft
+  - Rückmeldung erfolgt sobald möglich — keine SLA, kein Versprechen
+  - Bugfix erfordert explizite Freigabe durch den Entwickler (GOV 10.4)
+
+  Feature Request:
+  - wird gesammelt und bewertet
+  - kein Automatismus zur Umsetzung
+  - Kundenwunsch kann Sprint-Auslöser sein (GOV 10.5)
+
+  DEV Anfrage:
+  - wird gelesen und situativ bewertet
+  - ob daraus eine Leistung wird entscheidet der Entwickler
+  - Kapazität und Workload sind legitime Entscheidungskriterien
+  - keine implizite Zusage durch Annahme der Anfrage
+
+
+11.5 Kundenfeedback als Blueprint-Input
+-----------------------------------------
+Feedback aus dem Livebetrieb darf:
+- in Stage-5-Entwicklung einfließen
+- als Grundlage für GOV-Erweiterungen dienen
+- BPMN Default Flow Prioritäten beeinflussen
+
+Feedback darf nicht:
+- Stage-3/4-Kernlogik verändern
+- ohne expliziten Entwicklerentscheid umgesetzt werden
+
+
+11.6 Wertschätzung gegenüber dem Archi-Entwickler
+---------------------------------------------------
+Archi ist ein kostenloses Open-Source-Tool ohne Kaufmodell.
+Der Entwickler lebt von freiwilligen Beiträgen.
+
+R+MUNI wäre ohne Archi nicht möglich — das ist keine Floskel, sondern Fakt.
+
+Für jeden Beta-Kunden der Archi produktiv nutzt gilt daher als Grundsatz:
+- Der Entwickler (EUMAXL) vermittelt bewusst ein Geschenk-Abo an den
+  Archi-Entwickler als Zeichen der Wertschätzung
+- Das ist keine Marketing-Maßnahme und kein Zwang
+- Es ist gelebte Haltung: wer von einem Tool profitiert, trägt es mit
+- Dieser Grundsatz ist im R+MUNI Blueprint und README verankert
+
+Kurzform: Support ist kein Mord — und wer gute Werkzeuge nutzt,
+          sollte denen danken die sie bauen.
+
+
+11.7 Optionales Kunden-Atlassian
+----------------------------------
+Kunden können ein eigenes Atlassian Free Bundle aufbauen.
+
+Dafür gilt:
+- es ist eine Option, kein Standard und kein Zwang
+- der Entwickler kann dabei begleitend unterstützen — als bewusste Leistung
+- R+MUNI bleibt das Tool, der Entwickler vermittelt bei Bedarf
+  spezialisierte Atlassian-Expertise weiter
+- kein Kunde wird zu einem kostenpflichtigen Atlassian-Plan gedrängt
+
+
+--------------------------------------------------------------------------------
+12. UMGANG MIT DEM R+MUNI TEAM
+--------------------------------------------------------------------------------
+Erweiterung Stage 5 | 2026-03-09
+
+12.1 Zweck dieses Kapitels
+---------------------------
+Dieses Kapitel definiert die verbindlichen Regeln für den Aufbau und
+den Betrieb des R+MUNI Teams ab Stage 5.
+
+R+MUNI wächst vom Ein-Mann-Projekt zur strukturierten Zusammenarbeit.
+Diese Regeln sichern dieses Wachstum ohne die Kernprinzipien zu gefährden.
+
+
+12.2 Team-Struktur (Stage 5)
+------------------------------
+Das R+MUNI Team besteht in Stage 5 aus folgenden Rollen:
+
+  Betreiber (EUMAXL / Markus Resel):
+  - volle Rechte und Projektverantwortung
+  - einzige Instanz für Stage-Entscheide und GOV-Änderungen
+  - einzige Instanz für Bugfix-Freigaben in Stage 3/4
+
+  Team User (COLUMBO — Einladung offen):
+  - volle Atlassian-Rechte im R+MUNI Bundle
+  - unterstützt im Atlassian-Umfeld
+  - kein eigenständiger Stage-Entscheid ohne Betreiber-Freigabe
+
+  Service User 1 (Claude):
+  - AI-Unterstützung im Entwicklungs- und Dokumentationsumfeld
+  - konkrete Atlassian-Rolle wird in Stage 5 geklärt (Rovo AI oder
+    Prozessrolle)
+  - kein eigenständiger Entscheid ohne Betreiber-Freigabe
+
+  Service User 2:
+  - Reserve — noch nicht vergeben
+
+  Kunden und weitere Team-User:
+  - nach Bedarf, innerhalb Free-Plan-Limits
+
+
+12.3 Onboarding neuer Team-Mitglieder
+---------------------------------------
+Für das Onboarding gilt:
+- Blueprint ist die Grundlage — kein Wissenstransfer ohne Blueprint-Basis
+- Neue Team-Mitglieder erhalten Zugang zur R+MUNI Dokumentation
+  vor dem ersten operativen Einsatz
+- Rollen und Rechte werden explizit vergeben — kein impliziter Zuwachs
+- Atlassian-Zugang erfolgt gemäß BETA ONBOARDING — MLAT Dokument
+
+
+12.4 Kommunikation im Team
+----------------------------
+Für die interne Team-Kommunikation gilt:
+- Atlassian (Jira + Confluence) ist die primäre Arbeitsplattform
+- Entscheidungen werden dokumentiert — kein stiller Konsens
+- Der Betreiber hat das letzte Wort bei Konflikten
+
+
+12.5 Wissenstransfer und Reproduzierbarkeit
+---------------------------------------------
+Für den Wissenstransfer gilt:
+- Der Blueprint ist so zu pflegen dass ein neues Team-Mitglied
+  ohne mündliche Übergabe arbeitsfähig wird
+- Sprint Dev-Dokumentationen sind vollständig und nachvollziehbar
+- GOV-Entscheide werden immer schriftlich festgehalten
+
+
+12.6 GOV-Hoheit
+-----------------
+Die GOV-Hoheit liegt ausschließlich beim Betreiber.
+
+Für GOV-Änderungen gilt:
+- nur der Betreiber kann GOV-Änderungen initiieren und freigeben
+- GOV-Erweiterungen sind additiv — keine Revision bestehender Kapitel
+- jede GOV-Änderung wird dokumentiert mit Datum und Begründung
+- Team-Mitglieder können GOV-Änderungen vorschlagen — entscheiden nicht
+
+
+================================================================================
+R+MUNI GLOBAL GOVERNANCE
+Kapitel 10 (Stage 3) | Kapitel 11-12 (Stage 5 | 2026-03-09)
+R+MUNI Blueprint | Markus Resel + Claude (Pair-Session)
+================================================================================
