@@ -4,6 +4,7 @@ C:.
 |   .gitattributes
 |   Install.txt
 |   LICENSE
+|   R+MUNI _ clean.zip
 |   README.md
 |   root.txt
 |   structure.txt
@@ -35,6 +36,7 @@ C:.
 |           Rosetta_Stone_Block1_Views.txt
 |           Rosetta_Stone_Block2_Artifacts_Scripts.txt
 |           Rosetta_Stone_Block3_Begriffe_Konzepte.txt
+|           Rosetta_Stone_Block4_Stage4_Ablauf.txt
 |           
 +---01-model
 |   +---00-archimate
@@ -42,8 +44,6 @@ C:.
 |   |   |       MUNI EA Modell.archimate
 |   |   |       
 |   |   +---01-archimateactivesub
-|   |   |       Importer.archimate
-|   |   |       Importer.archimate.bak
 |   |   |       MUNI FLOW.archimate
 |   |   |       MUNI FLOW.archimate.bak
 |   |   |       
@@ -67,9 +67,6 @@ C:.
 |   |   |   child_mapping.txt
 |   |   |   
 |   |   +---00-master
-|   |   |       master.xml
-|   |   |       master.xml.bak
-|   |   |       
 |   |   +---01-mapping
 |   |   |       bpmnmastercsvsync.txt
 |   |   |       M2Bmapping.txt
@@ -83,7 +80,6 @@ C:.
 |   |   |       
 |   |   +---03-child
 |   |   |   +---00-archimatechild
-|   |   |   |       Importer.xml
 |   |   |   |       MUNI EA Modell.xml
 |   |   |   |       MUNI FLOW.xml
 |   |   |   |       
@@ -118,7 +114,6 @@ C:.
 |   |   |   HLP07_restore.py
 |   |   |   HLP08_structure2csv.py
 |   |   |   HLP09-serve_report.py
-|   |   |   jA01-Validierung Namen.ajs
 |   |   |   M2B00-root_resolve.py
 |   |   |   M2B01-master_extract.py
 |   |   |   M2B02-activate_model.py
@@ -136,12 +131,10 @@ C:.
 |   |   |   XML07-cleanup-artifacts.py
 |   |   |   
 |   |   \---jArchi
+|   |           jA01-Validierung Namen.ajs
+|   |           
 |   +---02-csv
 |   |   +---00-master
-|   |   |       elements.csv
-|   |   |       properties.csv
-|   |   |       relations.csv
-|   |   |       
 |   |   +---01-mapping
 |   |   |       csvmapping.txt
 |   |   |       
@@ -155,10 +148,6 @@ C:.
 |   |   |   +---01-bpmnchild
 |   |   |   \---02-xychild
 |   |   +---04-import
-|   |   |       elements.csv
-|   |   |       properties.csv
-|   |   |       relations.csv
-|   |   |       
 |   |   \---99-exports
 |   +---03-XLSX
 |   |   +---00-master
@@ -197,15 +186,12 @@ C:.
 |   \---99-logs
 \---04-notes
         ATL_CSV_Konfig_Jira_Mapping.txt
-        FLOW_DEV_DOKU.txt
-        MUNI_CSV-FLOW-DEV-DOC.txt
-        MUNI_HLP_DEV_DOKU_S3.txt
-        MUNI_XML_M2B_FLOW_DEV_DOKU.txt
         Sprint-DEV-Doku-ATL-Reihe.txt
         Sprint-DEV-Doku-BPMN-OEF-ExitPoint.txt
         Sprint-DEV-Doku-FLW-Serie-S4.txt
         Sprint-DEV-Doku-HLP09-ReportServer.txt
         Sprint-DEV-Doku-M2B01-RunScope.txt
         STAGE3_FREEZE.txt
-        STAGE4_ZIELE.txt
+        STAGE4_FREEZE.txt
+        STAGE5_ZIELE.txt
         
