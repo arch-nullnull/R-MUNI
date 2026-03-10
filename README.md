@@ -1,5 +1,5 @@
 # R+MUNI
-### Open Source EA & Process Modeling Toolset Beta 0.3x
+### Open Source EA & Process Modeling Toolset Beta 0.5x
 
 ---
 
@@ -82,6 +82,8 @@ Dieses Projekt ist Open Source und kostenlos nutzbar. Keine Abos. Keine versteck
 ---
 
 *R+MUNI — entwickelt von [EUMAXL](https://github.com/EUMAXL) · Österreich*
+
+https://ims-blueprint-ticketsystem.atlassian.net/helpcenter/RMNP/article/26443786 wenn es Probleme geben solle und das nicht gleich über Git Hub laufen soll. 
 
 ---
 ---

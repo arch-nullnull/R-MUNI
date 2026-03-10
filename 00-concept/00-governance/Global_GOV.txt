@@ -9,6 +9,1208 @@ Erstellt durch  : Markus Resel + Claude (Pair-Session)
 
 
 --------------------------------------------------------------------------------
+1. ZWECK, INTENTION UND CHARAKTER DER GOVERNANCE
+--------------------------------------------------------------------------------
+
+1.1 Zweck dieser Governance
+-----------------------------
+Diese Governance definiert die verbindlichen Regeln, Prinzipien und Leitplanken
+für das Blueprint-Projekt.
+
+Ziel dieser Governance ist es:
+- ein konsistentes, langfristig stabiles Architektur- und Integrationsmodell
+  zu ermöglichen
+- explizite, nachvollziehbare und auditfähige Entscheidungen sicherzustellen
+- implizite Annahmen, verdeckte Logik und stillschweigende Abweichungen
+  systematisch auszuschließen
+- ein bewusstes Lern- und Reifemodell für Architektur-, Integrations- und
+  Automatisierungsdisziplin zu etablieren
+
+Diese Governance ist kein Begleitdokument, sondern integraler Bestandteil
+des Blueprint-Systems.
+
+
+1.2 Charakter des Blueprint-Projekts
+--------------------------------------
+Das Blueprint-Projekt ist bewusst als Lern- und Reifeprojekt konzipiert.
+
+Es verfolgt nicht das Ziel, kurzfristig maximale Effizienz zu erreichen,
+sondern:
+- strukturelle Klarheit aufzubauen
+- langfristige Stabilität zu sichern
+- disziplinierte Modellierung zu erlernen und zu verankern
+- die Konsequenzen expliziter Governance erfahrbar zu machen
+
+Lerninhalte, Reifezustände und bewusste Einschränkungen sind daher kein
+Nebenprodukt, sondern Teil der Governance.
+
+
+1.3 Governance als Lerninstrument
+-----------------------------------
+Governance wird in diesem Projekt nicht als Kontrollmechanismus verstanden,
+sondern als Lerninstrument.
+
+Sie dient dazu:
+- Denkdisziplin zu erzwingen
+- implizite Abkürzungen sichtbar zu machen
+- Modellierungs- und Integrationsfehler frühzeitig zu erkennen
+- langfristige Auswirkungen von Entscheidungen nachvollziehbar zu machen
+
+Die Strenge der Governance ist bewusst gewählt und Teil des Lernziels.
+
+
+1.4 Abgrenzung zu Prozess- und Projektgovernance
+--------------------------------------------------
+Diese Governance ist:
+- keine Projektmanagement-Governance
+- keine Prozessbeschreibung
+- keine Rollen- oder Verantwortlichkeitsdefinition
+
+Sie definiert ausschließlich:
+- was modelliert, integriert und automatisiert werden darf
+- wie Identität, Führung und Ableitung zu erfolgen haben
+- welche Regeln unveränderlich gelten
+
+Organisatorische oder operative Prozesse sind nicht Bestandteil dieser
+Governance.
+
+
+1.5 Verbindlichkeit und Geltungsbereich
+-----------------------------------------
+Diese Governance gilt verbindlich für:
+- alle Architektur-, Integrations- und Automatisierungsartefakte
+- alle Modellierungs-, Synchronisations- und Re-Materialisierungsprozesse
+- alle manuellen und automatisierten Eingriffe in das Blueprint-System
+
+Es existieren keine governance-freien Bereiche.
+
+
+1.6 Explizitheit als Grundprinzip
+-----------------------------------
+Ein zentrales Ziel dieser Governance ist die vollständige Explizitheit aller
+relevanten Entscheidungen.
+
+Für das gesamte Blueprint-System gilt:
+- Entscheidungen werden explizit getroffen
+- Regeln werden explizit formuliert
+- Abweichungen werden explizit dokumentiert
+- Ableitungen erfolgen explizit
+
+Implizite Logik ist unzulässig.
+
+
+1.7 Langfristige Perspektive
+------------------------------
+Diese Governance ist auf langfristige Nutzung ausgelegt.
+
+Sie priorisiert:
+- Stabilität über Komfort
+- Nachvollziehbarkeit über Geschwindigkeit
+- Disziplin über kurzfristige Optimierung
+
+Kurzfristige Vereinfachungen rechtfertigen keine Abweichungen von den
+definierten Regeln.
+
+
+1.8 Abschluss des Kapitels
+----------------------------
+Dieses Kapitel definiert Zweck, Intention und Charakter der Governance des
+Blueprint-Projekts.
+
+Die folgenden Kapitel konkretisieren diese Intention in Form von:
+- Begriffsklärungen
+- Architektur- und Modellprinzipien
+- Integrations- und Ableitungslogik
+- verbindlichen Regeln und Hard Facts
+
+
+--------------------------------------------------------------------------------
+2. GRUNDBEGRIFFE UND ABGRENZUNGEN
+--------------------------------------------------------------------------------
+
+2.1 Zweck dieses Kapitels
+---------------------------
+Dieses Kapitel definiert die grundlegenden Begriffe und Abgrenzungen, die für
+das Verständnis und die korrekte Anwendung dieser Governance erforderlich sind.
+
+Ziel ist es:
+- Mehrdeutigkeiten zu vermeiden
+- implizite Interpretationen auszuschließen
+- eine einheitliche Lesart aller folgenden Kapitel sicherzustellen
+
+Alle Begriffe werden normativ verwendet.
+
+
+2.2 Objekt
+-----------
+Ein Objekt ist eine eindeutig identifizierbare Einheit innerhalb des
+Blueprint-Systems.
+
+Ein Objekt:
+- besitzt eine stabile Identität
+- existiert unabhängig von Darstellung, Tool oder Format
+- kann in unterschiedlichen Artefakten repräsentiert werden
+
+Ein Objekt ist nicht gleichzusetzen mit seiner visuellen Darstellung oder
+seinem technischen Vorkommen.
+
+
+2.3 Identität
+--------------
+Die Identität eines Objekts beschreibt dessen eindeutige und dauerhafte
+Existenz.
+
+Für die Identität gilt:
+- sie ist unabhängig von Name, Typ oder Darstellung
+- sie bleibt über alle Iterationen hinweg stabil
+- sie ist die Grundlage aller Integrations- und Ableitungsprozesse
+
+Identität ist nicht interpretierbar.
+
+
+2.4 Objekt-ID
+--------------
+Die Objekt-ID ist die technische Repräsentation der Identität eines Objekts.
+
+Für die Objekt-ID gilt:
+- sie ist eindeutig
+- sie ist stabil
+- sie ist repository-weit gültig
+- sie ist der alleinige Referenzanker für Integration und Automatisierung
+
+Objektnamen oder Tool-IDs ersetzen keine Objekt-ID.
+
+
+2.5 Name
+---------
+Der Name eines Objekts dient der menschlichen Lesbarkeit und Wiedererkennung.
+
+Für den Namen gilt:
+- er ist nicht identitätsstiftend
+- er kann geändert werden, ohne die Identität zu verändern
+- er enthält keine implizite Semantik
+
+Der Name ist ein Hilfsmittel, kein Steuerungsinstrument.
+
+
+2.6 Semantik
+-------------
+Semantik beschreibt die fachliche Bedeutung eines Objekts.
+
+Semantik:
+- ist explizit zu dokumentieren
+- ist nicht Bestandteil der Identität
+- darf nicht implizit aus Namen, Typen oder Beziehungen abgeleitet werden
+
+Semantik entsteht durch Beschreibung, nicht durch Interpretation.
+
+
+2.7 Führung
+------------
+Führung beschreibt, welche Quelle für eine Information verbindlich ist.
+
+Für Führung gilt:
+- sie wird explizit festgelegt
+- sie kann feldgenau variieren
+- sie ist nicht implizit
+
+Ohne explizite Führungsdefinition existiert keine Führung.
+
+
+2.8 Integration
+----------------
+Integration bezeichnet die kontrollierte Zusammenführung von Informationen
+aus unterschiedlichen Quellen.
+
+Integration:
+- erfolgt regelbasiert
+- ist deterministisch
+- ist reproduzierbar
+- respektiert die definierte Führungslogik
+
+Integration ist kein Zusammenkopieren von Daten.
+
+
+2.9 Ableitung
+--------------
+Ableitung beschreibt die Überführung von Architektur- oder
+Integrationsinformationen in andere Artefakte oder Formate.
+
+Für Ableitung gilt:
+- sie ist explizit definiert
+- sie ist nachvollziehbar
+- sie erzeugt keine neue Identität
+- sie wirkt nicht rück auf die Quelle
+
+Ableitung ist keine Interpretation.
+
+
+2.10 Rückwirkung
+-----------------
+Rückwirkung bezeichnet jede Veränderung eines führenden Artefakts durch ein
+abgeleitetes Artefakt.
+
+Rückwirkungen sind grundsätzlich unzulässig, sofern sie nicht explizit
+geregelt sind.
+
+
+2.11 Reife und Lernen
+----------------------
+Reife beschreibt den Grad der Disziplin, Explizitheit und Stabilität im
+Umgang mit dem Blueprint-System.
+
+Lernen ist integraler Bestandteil dieser Governance und umfasst:
+- das bewusste Einhalten von Regeln
+- das Erkennen von Abkürzungen und impliziten Annahmen
+- das Verstehen langfristiger Konsequenzen
+
+Reife entsteht durch Anwendung der Governance, nicht durch Umgehung.
+
+
+2.12 Implizit vs. Explizit
+---------------------------
+Implizit bedeutet:
+- nicht dokumentiert
+- nicht nachvollziehbar
+- interpretationsabhängig
+
+Explizit bedeutet:
+- klar formuliert
+- dokumentiert
+- reproduzierbar
+
+Diese Governance bevorzugt explizite Lösungen in allen Fällen.
+
+
+2.13 Abschluss des Kapitels
+-----------------------------
+Dieses Kapitel definiert die grundlegenden Begriffe und Abgrenzungen für das
+Blueprint-Governance-System.
+
+Alle folgenden Kapitel setzen diese Definitionen voraus und verwenden die
+Begriffe ausschließlich in diesem Sinne.
+
+
+--------------------------------------------------------------------------------
+3. GOVERNANCE-VERSTÄNDNIS UND REGELCHARAKTER
+--------------------------------------------------------------------------------
+
+3.1 Zweck dieses Kapitels
+---------------------------
+Dieses Kapitel definiert das grundlegende Verständnis von Governance innerhalb
+des Blueprint-Projekts.
+
+Ziel ist es:
+- den Charakter der Governance eindeutig festzulegen
+- Missverständnisse über Rolle, Reichweite und Verbindlichkeit auszuschließen
+- klarzustellen, dass Governance in diesem Projekt bewusst Teil des Lern- und
+  Reifemodells ist
+
+Dieses Kapitel beschreibt wie Governance zu verstehen ist, nicht wie sie
+umgesetzt wird.
+
+
+3.2 Governance als Regelwerk
+------------------------------
+Governance wird in diesem Projekt als verbindliches Regelwerk verstanden.
+
+Governance:
+- definiert zulässige und unzulässige Zustände
+- legt unveränderliche Prinzipien fest
+- begrenzt den Lösungsraum bewusst
+- ist unabhängig von Werkzeugen, Technologien oder Organisationsformen
+
+Governance ist kein Prozess, keine Empfehlung und keine Sammlung von
+Best Practices.
+
+
+3.3 Normativer Charakter
+-------------------------
+Alle in dieser Governance definierten Regeln sind normativ.
+
+Das bedeutet:
+- sie sind verbindlich
+- sie gelten unabhängig von Kontext oder Bequemlichkeit
+- sie sind nicht optional
+- sie sind nicht interpretationsabhängig
+
+Abweichungen sind nur zulässig, wenn sie explizit geregelt sind.
+
+
+3.4 Governance als Bestandteil des Lern- und Reifemodells
+----------------------------------------------------------
+Das Blueprint-Projekt ist bewusst als Lern- und Reifeprojekt angelegt.
+
+Governance ist dabei:
+- kein externes Kontrollinstrument
+- kein nachgelagerter Qualitätssicherungsmechanismus
+- sondern integraler Bestandteil des Lernziels
+
+Die Anwendung der Governance dient dazu, Disziplin, Explizitheit und
+langfristiges Denken zu erlernen und zu verankern.
+
+
+3.5 Bewusste Einschränkung als Gestaltungsprinzip
+--------------------------------------------------
+Die Governance schränkt bewusst ein.
+
+Diese Einschränkungen dienen dazu:
+- implizite Abkürzungen zu verhindern
+- verdeckte Komplexität sichtbar zu machen
+- langfristige Auswirkungen von Entscheidungen erfahrbar zu machen
+
+Einschränkungen sind kein Mangel, sondern ein zentrales Gestaltungsmittel
+dieses Projekts.
+
+
+3.6 Umgang mit Abweichungen
+-----------------------------
+Abweichungen von Governance-Regeln sind grundsätzlich unerwünscht.
+
+Sofern Abweichungen zugelassen sind, gelten folgende Grundsätze:
+- Abweichungen müssen explizit benannt werden
+- Abweichungen müssen nachvollziehbar begründet sein
+- Abweichungen erzeugen keine Präzedenzwirkung
+
+Implizite oder stillschweigende Abweichungen sind unzulässig.
+
+
+3.7 Keine implizite Weiterentwicklung
+--------------------------------------
+Diese Governance entwickelt sich nicht implizit weiter.
+
+Das bedeutet:
+- neue Regeln entstehen nicht durch Gewohnheit
+- neue Standards entstehen nicht durch Wiederholung
+- neue Bedeutungen entstehen nicht durch Interpretation
+
+Änderungen erfolgen ausschließlich durch bewusste, explizite Entscheidungen.
+
+
+3.8 Verhältnis von Erklärung und Regel
+----------------------------------------
+Diese Governance enthält sowohl erklärende als auch regelsetzende Inhalte.
+
+Dabei gilt:
+- erklärende Inhalte dienen dem Verständnis und der Lernintention
+- regelsetzende Inhalte sind verbindlich und nicht verhandelbar
+
+Beide sind gleichwertige Bestandteile dieser Governance.
+
+
+3.9 Abschluss des Kapitels
+----------------------------
+Dieses Kapitel definiert das grundlegende Governance-Verständnis des
+Blueprint-Projekts.
+
+Die folgenden Kapitel konkretisieren dieses Verständnis in Form von:
+- Architektur- und Modellprinzipien
+- Integrations- und Ableitungslogik
+- Artefaktrollen
+- Automatisierungs- und Validierungsregeln
+- expliziten Hard Facts
+
+
+--------------------------------------------------------------------------------
+4. ARCHITEKTUR- UND MODELLPRINZIPIEN
+--------------------------------------------------------------------------------
+
+4.1 Zweck dieses Kapitels
+---------------------------
+Dieses Kapitel definiert die grundlegenden Architektur- und Modellprinzipien
+des Blueprint-Systems.
+
+Ziel ist es:
+- eine konsistente und langfristig stabile Modellstruktur sicherzustellen
+- explizite, nachvollziehbare Modellierungsentscheidungen zu erzwingen
+- implizite Semantik, verdeckte Logik und tool-spezifische Abhängigkeiten
+  auszuschließen
+- Architekturdisziplin als bewusstes Lern- und Reifeziel zu verankern
+
+Die hier definierten Prinzipien gelten systemweit.
+
+
+4.2 Identitätsprimat
+---------------------
+Die Identität eines Objekts ist das zentrale Ordnungsprinzip des
+Blueprint-Systems.
+
+Für das Identitätsprimat gilt:
+- Identität ist unabhängig von Name, Typ oder Darstellung
+- Identität ist über alle Artefakte hinweg stabil
+- Identität ist Grundlage aller Integrations- und Ableitungsprozesse
+
+Alle Architektur- und Modellentscheidungen haben die Identität zu
+respektieren.
+
+
+4.3 Trennung von Struktur, Semantik und Darstellung
+-----------------------------------------------------
+Das Blueprint-System trennt strikt zwischen:
+- Struktur (Objekte, Beziehungen, Rollen)
+- Semantik (fachliche Bedeutung, Beschreibung)
+- Darstellung (Visualisierung, Tool-spezifische Repräsentation)
+
+Diese Trennung ist verbindlich und darf nicht aufgehoben werden.
+
+Semantik darf nicht aus Struktur oder Darstellung implizit abgeleitet werden.
+
+
+4.4 Explizitheit als Modellierungsprinzip
+------------------------------------------
+Alle relevanten Modellierungsentscheidungen sind explizit zu treffen.
+
+Für das Modell gilt:
+- keine impliziten Annahmen
+- keine verdeckte Logik
+- keine stillschweigende Interpretation
+
+Explizitheit ist Voraussetzung für Nachvollziehbarkeit, Integration und
+Automatisierung.
+
+
+4.5 Determinismus
+------------------
+Das Blueprint-System ist deterministisch aufgebaut.
+
+Das bedeutet:
+- gleiche Eingaben führen zu gleichen Ergebnissen
+- Integrations- und Ableitungsprozesse sind reproduzierbar
+- Modellzustände sind eindeutig bestimmbar
+
+Nicht-deterministisches Verhalten ist unzulässig.
+
+
+4.6 Langfristige Stabilität
+-----------------------------
+Architektur- und Modellentscheidungen sind auf langfristige Stabilität
+ausgelegt.
+
+Dabei gilt:
+- kurzfristige Vereinfachungen rechtfertigen keine strukturellen Kompromisse
+- Komfort ist kein Architekturprinzip
+- Stabilität hat Vorrang vor Geschwindigkeit
+
+Dieses Prinzip ist bewusst Teil des Lern- und Reifeziels.
+
+
+4.7 Tool-Unabhängigkeit
+------------------------
+Das Blueprint-Modell ist unabhängig von konkreten Werkzeugen oder Plattformen.
+
+Für die Modellierung gilt:
+- keine Tool-Semantik im Architekturmodell
+- keine impliziten Tool-Abhängigkeiten
+- keine Vermischung von Architektur und Ausführung
+
+Werkzeuge dienen der Umsetzung, nicht der Definition der Architektur.
+
+
+4.8 Architektur als Referenz, nicht als Ausführung
+----------------------------------------------------
+Architekturmodelle beschreiben:
+- Struktur
+- Rollen
+- Beziehungen
+
+Sie beschreiben nicht:
+- Ausführungslogik
+- technische Steuerung
+- Laufzeitverhalten
+
+Die Architektur ist Referenz, nicht Implementierung.
+
+
+4.9 Beziehungsprimat der Objektstabilität
+------------------------------------------
+Die Stabilität von Objekten hat Vorrang vor der Präzision von Beziehungen.
+
+Für Beziehungen gilt:
+- Objekttypen werden nicht geändert um Beziehungen zu ermöglichen
+- Ist keine normkonforme Beziehung zwischen zwei Objekten möglich, ist
+  Association als normkonformer Fallback zulässig
+- Beziehungstypen werden nicht semantisch überladen um fehlende
+  Beziehungstypen zu kompensieren
+- Import-Regelwerk definiert Objekttypen fix — kontextabhängige
+  Uminterpretation eines Objekttyps ist unzulässig
+
+Dieses Prinzip macht die Grenzen der ArchiMate-Norm sichtbar ohne die
+Objektstabilität zu opfern.
+
+
+4.10 Lern- und Reifeaspekt der Architekturprinzipien
+-----------------------------------------------------
+Die Einhaltung dieser Architektur- und Modellprinzipien ist bewusst Teil des
+Lern- und Reifemodells.
+
+Sie dient dazu:
+- diszipliniertes Denken zu fördern
+- langfristige Auswirkungen von Architekturentscheidungen sichtbar zu machen
+- implizite Abkürzungen zu erkennen und zu vermeiden
+
+Verstöße gegen diese Prinzipien untergraben das Lernziel des Projekts.
+
+
+4.11 Abschluss des Kapitels
+-----------------------------
+Dieses Kapitel definiert die verbindlichen Architektur- und Modellprinzipien
+des Blueprint-Systems.
+
+Die folgenden Kapitel konkretisieren diese Prinzipien in Form von:
+- Integrations- und Führungslogik
+- Artefaktrollen und Ebenentrennung
+- Automatisierungs- und Ableitungsregeln
+- verbindlichen Hard Facts
+
+
+--------------------------------------------------------------------------------
+5. INTEGRATION, FÜHRUNG UND ABLEITUNG
+--------------------------------------------------------------------------------
+
+5.1 Zweck dieses Kapitels
+---------------------------
+Dieses Kapitel definiert die verbindlichen Regeln für Integration, Führung und
+Ableitung innerhalb des Blueprint-Systems.
+
+Es legt fest:
+- wie Informationen zusammengeführt werden
+- welche Quelle für welche Information verbindlich ist
+- wie Ableitungen erfolgen dürfen
+- welche Rückwirkungen ausgeschlossen sind
+
+Integration und Ableitung sind zentrale Mechanismen des Blueprint-Systems und
+unterliegen strikter Governance.
+
+
+5.2 Integrationswahrheit
+-------------------------
+Für jede Information im Blueprint-System existiert genau eine
+Integrationswahrheit.
+
+Das bedeutet:
+- jede Information hat eine eindeutig definierte führende Quelle
+- konkurrierende Wahrheiten sind unzulässig
+- Integration ohne definierte Integrationswahrheit ist unzulässig
+
+Integrationswahrheit ist Voraussetzung für Konsistenz und Stabilität.
+
+
+5.3 Führung
+------------
+Führung beschreibt, welche Quelle für eine Information verbindlich ist.
+
+Für Führung gilt:
+- Führung wird explizit festgelegt
+- Führung kann feldgenau definiert werden
+- Führung ist unabhängig von Tool, Format oder Darstellung
+
+Ohne explizite Führungsdefinition existiert keine Führung.
+
+
+5.4 Überschreibung
+-------------------
+Überschreibungen erfolgen ausschließlich auf Basis der definierten
+Führungslogik.
+
+Dabei gilt:
+- führende Informationen überschreiben nicht-führende
+- nicht-führende Informationen dürfen führende nicht verändern
+- Überschreibungen sind deterministisch und reproduzierbar
+
+Implizite oder opportunistische Überschreibungen sind unzulässig.
+
+
+5.5 Integration
+----------------
+Integration bezeichnet die regelgeleitete Zusammenführung von Informationen
+aus unterschiedlichen Quellen.
+
+Integration:
+- respektiert Identität und Führung
+- erzeugt keine neue Identität
+- erzeugt keine neue Semantik
+- verändert keine führenden Informationen
+
+Integration ist kein Zusammenkopieren von Daten.
+
+
+5.6 Ableitung
+--------------
+Ableitung beschreibt die Überführung von Informationen in andere Artefakte
+oder Formate.
+
+Für Ableitung gilt:
+- sie ist explizit definiert
+- sie ist nachvollziehbar
+- sie erzeugt keine neue Identität
+- sie verändert keine führenden Informationen
+
+Ableitung ist eine Einbahnstraße.
+
+
+5.7 Keine Rückwirkung
+----------------------
+Abgeleitete Artefakte besitzen keine Rückwirkung auf ihre Quelle.
+
+Das bedeutet:
+- Änderungen in abgeleiteten Artefakten verändern keine Architektur- oder
+  Integrationsmodelle
+- Ausführungs- oder Darstellungsartefakte definieren keine neue Wahrheit
+- Rückwirkungen sind normativ ausgeschlossen
+
+Dieses Prinzip ist unverhandelbar.
+
+
+5.8 Trennung von Integration und Ableitung
+-------------------------------------------
+Integration und Ableitung sind strikt voneinander getrennt.
+
+- Integration führt Informationen zusammen
+- Ableitung materialisiert Informationen in andere Kontexte
+
+Eine Vermischung beider Konzepte ist unzulässig.
+
+
+5.9 Lern- und Reifeaspekt
+--------------------------
+Die strikte Regelung von Integration, Führung und Ableitung ist bewusst Teil
+des Lern- und Reifemodells dieses Projekts.
+
+Sie dient dazu:
+- implizite Annahmen sichtbar zu machen
+- langfristige Auswirkungen von Integrationsentscheidungen zu verstehen
+- disziplinierte Modellpflege zu erlernen
+
+Abkürzungen untergraben dieses Ziel.
+
+
+5.10 Abschluss des Kapitels
+-----------------------------
+Dieses Kapitel definiert die verbindlichen Regeln für Integration, Führung
+und Ableitung im Blueprint-System.
+
+Die folgenden Kapitel konkretisieren diese Regeln in Bezug auf:
+- Artefaktrollen und Ebenentrennung
+- Automatisierung und Scripts
+- Qualität, Validierung und Audit
+- verbindliche Hard Facts
+
+
+--------------------------------------------------------------------------------
+6. ARTEFAKTROLLEN UND EBENENTRENNUNG
+--------------------------------------------------------------------------------
+
+6.1 Zweck dieses Kapitels
+---------------------------
+Dieses Kapitel definiert die Rollen unterschiedlicher Artefakte innerhalb des
+Blueprint-Systems sowie deren zulässige Beziehungen zueinander.
+
+Ziel ist es:
+- eine klare Trennung von Verantwortlichkeiten sicherzustellen
+- Vermischung von Architektur, Integration und Ausführung zu verhindern
+- Rückwirkungen und implizite Bedeutungsverschiebungen auszuschließen
+- die langfristige Stabilität des Modells zu sichern
+
+Artefaktrollen sind verbindlich und nicht austauschbar.
+
+
+6.2 Artefakt
+-------------
+Ein Artefakt ist eine konkrete Repräsentation von Informationen in einem
+bestimmten Kontext, Format oder Werkzeug.
+
+Ein Artefakt:
+- repräsentiert Objekte, besitzt aber keine eigene Identität
+- ist kontext- und zweckgebunden
+- unterliegt einer klar definierten Rolle
+
+Artefakte sind Träger von Information, nicht deren Ursprung.
+
+
+6.3 Führendes Artefakt
+-----------------------
+Ein führendes Artefakt definiert die verbindliche Wahrheit für bestimmte
+Informationen.
+
+Für führende Artefakte gilt:
+- sie sind explizit als führend definiert
+- sie besitzen keine implizite Führung
+- sie sind Referenz für Integration und Ableitung
+
+Ohne explizite Definition existiert kein führendes Artefakt.
+
+
+6.4 Architekturartefakte
+-------------------------
+Architekturartefakte beschreiben die strukturelle Referenz des
+Blueprint-Systems.
+
+Sie enthalten:
+- Objekte und deren Beziehungen
+- Rollen und Struktur
+- keine Ausführungslogik
+- keine Tool- oder Plattformsemantik
+
+Architekturartefakte sind führend für Struktur, nicht für Ausführung.
+
+
+6.5 Integrationsartefakte
+--------------------------
+Integrationsartefakte dienen der Zusammenführung von Informationen aus
+unterschiedlichen Quellen.
+
+Für Integrationsartefakte gilt:
+- sie folgen der definierten Integrations- und Führungslogik
+- sie erzeugen keine neue Identität
+- sie verändern keine Architekturprinzipien
+- sie enthalten keine implizite Semantik
+
+Integrationsartefakte sind abgeleitet, nicht führend.
+
+
+6.6 Abgeleitete Artefakte
+--------------------------
+Abgeleitete Artefakte materialisieren Informationen für spezifische Zwecke.
+
+Beispiele sind:
+- Prozessmodelle
+- Ausführungsmodelle
+- technische Konfigurationen
+- Visualisierungen
+
+Für abgeleitete Artefakte gilt:
+- sie besitzen keine Führungswirkung
+- sie erzeugen keine neue Wahrheit
+- sie wirken nicht rück auf Architektur oder Integration
+
+
+6.7 Ebenentrennung
+-------------------
+Das Blueprint-System trennt strikt zwischen folgenden Ebenen:
+- Architektur
+- Integration
+- Ableitung / Ausführung
+
+Diese Ebenen sind logisch getrennt und dürfen nicht vermischt werden.
+
+Eine Ebene darf keine Regeln für eine andere Ebene definieren.
+
+
+6.8 Keine Rückwirkung zwischen Ebenen
+--------------------------------------
+Rückwirkungen zwischen Ebenen sind normativ ausgeschlossen.
+
+Das bedeutet:
+- Änderungen in abgeleiteten Artefakten verändern keine Architektur
+- Integrationsartefakte definieren keine neue Architektursemantik
+- Ausführungsartefakte besitzen keine Governance-Wirkung
+
+Dieses Prinzip ist unverhandelbar.
+
+
+6.9 Lern- und Reifeaspekt der Ebenentrennung
+---------------------------------------------
+Die strikte Ebenentrennung ist bewusst Teil des Lern- und Reifemodells dieses
+Projekts.
+
+Sie dient dazu:
+- Verantwortlichkeiten klar zu erkennen
+- implizite Bedeutungsverschiebungen zu vermeiden
+- langfristige Auswirkungen von Vermischung sichtbar zu machen
+
+Disziplin in der Ebenentrennung ist ein zentrales Reifeziel.
+
+
+6.10 Abschluss des Kapitels
+-----------------------------
+Dieses Kapitel definiert die verbindlichen Artefaktrollen und die
+Ebenentrennung im Blueprint-System.
+
+Die folgenden Kapitel konkretisieren diese Regeln in Bezug auf:
+- Automatisierung und Scripts
+- Qualität, Validierung und Audit
+- verbindliche Hard Facts
+
+
+--------------------------------------------------------------------------------
+7. AUTOMATISIERUNG UND SCRIPTS
+--------------------------------------------------------------------------------
+
+7.1 Zweck dieses Kapitels
+---------------------------
+Dieses Kapitel definiert die verbindlichen Regeln für den Einsatz von
+Automatisierung und Scripts im Blueprint-System.
+
+Ziel ist es:
+- Automatisierung kontrolliert und nachvollziehbar einzusetzen
+- implizite Logik und verdeckte Semantik zu verhindern
+- Reproduzierbarkeit und Auditierbarkeit sicherzustellen
+- Automatisierung als Lern- und Reifeinstrument zu nutzen
+
+Automatisierung dient der Unterstützung der Governance, nicht deren Umgehung.
+
+
+7.2 Rolle von Automatisierung
+------------------------------
+Automatisierung ist ein Hilfsmittel zur Umsetzung explizit definierter Regeln.
+
+Für Automatisierung gilt:
+- sie ersetzt keine Governance-Entscheidungen
+- sie interpretiert keine Modellinhalte
+- sie erzeugt keine neue Semantik
+- sie trifft keine impliziten Annahmen
+
+Automatisierung folgt Regeln, sie definiert keine.
+
+
+7.3 Script als Governance-Artefakt
+------------------------------------
+Scripts sind explizite Governance-Artefakte.
+
+Ein Script:
+- erfüllt genau eine fachlich klar beschreibbare Aufgabe
+- ist deterministisch
+- ist reproduzierbar
+- ist nachvollziehbar
+
+Scripts sind Teil des Systems und unterliegen denselben Governance-Regeln wie
+andere Artefakte.
+
+
+7.4 Script-Disziplin
+---------------------
+Für Scripts gelten verbindliche Disziplinregeln:
+- ein Script erfüllt genau eine fachliche Wirkung
+- Scripts enthalten keine implizite Semantik
+- Scripts interpretieren keine Modellinhalte
+- Scripts verändern keine Governance-Regeln
+
+Mehrdeutige oder multifunktionale Scripts sind unzulässig.
+
+
+7.5 Script-Benennung
+---------------------
+Scripts unterliegen verbindlichen Benennungsregeln.
+
+Für die Benennung gilt:
+- der Name beschreibt die fachliche Wirkung
+- der Name enthält keine technischen Implementierungsdetails
+- der Name enthält keine Versions- oder Laufzeitinformationen
+
+Script-Namen dienen der Nachvollziehbarkeit, nicht der Steuerung.
+
+
+7.6 Automatisierung und Identität
+-----------------------------------
+Automatisierung respektiert die Identität von Objekten.
+
+Für automatisierte Prozesse gilt:
+- keine automatische Erzeugung neuer Identitäten
+- keine implizite Änderung bestehender Identitäten
+- keine Rekonstruktion von Identität durch Heuristiken
+
+Identität ist nicht automatisierbar.
+
+
+7.7 Automatisierung und Integration
+-------------------------------------
+Automatisierung folgt der definierten Integrations- und Führungslogik.
+
+Das bedeutet:
+- automatisierte Integration respektiert Führungsdefinitionen
+- automatisierte Prozesse überschreiben keine führenden Informationen
+- automatisierte Prozesse erzeugen keine neue Integrationswahrheit
+
+Automatisierung verstärkt Regeln, sie ersetzt sie nicht.
+
+
+7.8 Automatisierung und Ableitung
+----------------------------------
+Automatisierte Ableitungen:
+- sind explizit definiert
+- sind nachvollziehbar
+- erzeugen keine neue Identität
+- besitzen keine Rückwirkung
+
+Automatisierte Ableitung ist eine technische Umsetzung expliziter Regeln.
+
+
+7.9 Lern- und Reifeaspekt der Automatisierung
+----------------------------------------------
+Der Einsatz von Automatisierung ist bewusst Teil des Lern- und Reifemodells.
+
+Er dient dazu:
+- die Grenzen automatisierbarer Entscheidungen zu erkennen
+- implizite Annahmen sichtbar zu machen
+- Disziplin im Umgang mit Regeln zu erlernen
+
+Automatisierung ohne Disziplin untergräbt das Lernziel.
+
+
+7.10 Abschluss des Kapitels
+-----------------------------
+Dieses Kapitel definiert die verbindlichen Regeln für Automatisierung und
+Scripts im Blueprint-System.
+
+Die folgenden Kapitel konkretisieren diese Regeln in Bezug auf:
+- Qualität, Validierung und Audit
+- verbindliche Hard Facts
+
+
+--------------------------------------------------------------------------------
+8. QUALITÄT, VALIDIERUNG UND AUDIT
+--------------------------------------------------------------------------------
+
+8.1 Zweck dieses Kapitels
+---------------------------
+Dieses Kapitel definiert die Anforderungen an Qualität, Validierung und
+Auditierbarkeit des Blueprint-Systems.
+
+Ziel ist es:
+- die Konsistenz und Stabilität des Modells sicherzustellen
+- Fehler, Inkonsistenzen und implizite Annahmen frühzeitig zu erkennen
+- die Nachvollziehbarkeit aller relevanten Entscheidungen zu gewährleisten
+- das Blueprint-System dauerhaft prüf- und erklärbar zu halten
+
+Qualität ist kein nachgelagerter Schritt, sondern integraler Bestandteil
+der Governance.
+
+
+8.2 Qualitätsverständnis
+-------------------------
+Qualität im Blueprint-System bedeutet:
+- strukturelle Konsistenz
+- eindeutige Identität
+- explizite Semantik
+- regelkonforme Integration und Ableitung
+
+Qualität wird nicht subjektiv bewertet, sondern regelbasiert festgestellt.
+
+
+8.3 Validierung
+----------------
+Validierung bezeichnet die systematische Prüfung des Blueprint-Systems gegen
+die definierten Governance-Regeln.
+
+Für Validierung gilt:
+- sie ist deterministisch
+- sie ist reproduzierbar
+- sie ist regelbasiert
+- sie ist unabhängig von Werkzeugen oder Darstellungen
+
+Validierung prüft Konformität, nicht Zweckmäßigkeit.
+
+
+8.4 Validierungsgegenstände
+-----------------------------
+Validiert werden insbesondere:
+- Identitätskonsistenz
+- Einhaltung der Führungs- und Integrationslogik
+- korrekte Ebenentrennung
+- regelkonforme Ableitung
+- Einhaltung der Script-Disziplin
+
+Nicht validierbare Zustände sind unzulässig.
+
+
+8.5 Fehler und Abweichungen
+-----------------------------
+Fehler sind Abweichungen von den definierten Regeln.
+
+Für Fehler gilt:
+- sie sind explizit zu identifizieren
+- sie sind nachvollziehbar zu dokumentieren
+- sie sind nicht stillschweigend zu korrigieren
+
+Abweichungen ohne Dokumentation sind unzulässig.
+
+
+8.6 Auditierbarkeit
+--------------------
+Das Blueprint-System ist auditierbar aufgebaut.
+
+Auditierbarkeit bedeutet:
+- alle relevanten Entscheidungen sind nachvollziehbar
+- alle Regeln sind explizit dokumentiert
+- alle automatisierten Schritte sind reproduzierbar
+- alle Abweichungen sind sichtbar
+
+Auditierbarkeit ist Voraussetzung für langfristige Stabilität.
+
+
+8.7 Reproduzierbarkeit
+-----------------------
+Reproduzierbarkeit ist ein zentrales Qualitätsmerkmal.
+
+Für das System gilt:
+- gleiche Eingaben führen zu gleichen Ergebnissen
+- Integrations- und Ableitungsprozesse sind wiederholbar
+- Modellzustände sind eindeutig rekonstruierbar
+
+Nicht reproduzierbare Zustände sind unzulässig.
+
+
+8.8 Lern- und Reifeaspekt von Qualität und Audit
+-------------------------------------------------
+Qualitätssicherung und Audit sind bewusst Teil des Lern- und Reifemodells.
+
+Sie dienen dazu:
+- diszipliniertes Arbeiten zu verankern
+- implizite Annahmen sichtbar zu machen
+- langfristige Auswirkungen von Regelverstößen zu verstehen
+
+Qualität entsteht durch Regelbefolgung, nicht durch Korrektur im Nachhinein.
+
+
+8.9 Abschluss des Kapitels
+----------------------------
+Dieses Kapitel definiert die verbindlichen Anforderungen an Qualität,
+Validierung und Audit im Blueprint-System.
+
+Das folgende Kapitel fasst die nicht verhandelbaren Regeln des Systems in
+Form von Hard Facts zusammen.
+
+
+--------------------------------------------------------------------------------
+9. HARD FACTS
+--------------------------------------------------------------------------------
+
+9.1 Allgemeiner Regelcharakter
+--------------------------------
+Die in diesem Kapitel aufgeführten Regeln sind nicht verhandelbar.
+
+Sie gelten:
+- systemweit
+- unabhängig von Kontext, Werkzeug oder Zweck
+- ohne Ausnahmen, sofern nicht explizit geregelt
+
+Verstöße gegen diese Regeln sind unzulässig.
+
+
+9.2 Identität
+--------------
+- Jedes Objekt besitzt genau eine Identität.
+- Identität ist ausschließlich über die Objekt-ID definiert.
+- Namen, Typen oder Darstellungen sind nicht identitätsstiftend.
+- Objekt-IDs sind stabil und dürfen nicht geändert werden.
+- Automatische Erzeugung neuer Objekt-IDs ist unzulässig.
+
+
+9.3 ID-Reparatur und Blockade
+------------------------------
+- ID-Reparatur ist nur zulässig, wenn die Identität eindeutig
+  rekonstruierbar ist.
+- ID-Reparatur darf keine semantische Annahme erfordern.
+- Ist Identität nicht eindeutig bestimmbar, ist der Vorgang zu blockieren.
+- Blockade ist einem falschen Import vorzuziehen.
+
+
+9.4 Namen
+----------
+- Namen dienen ausschließlich der Lesbarkeit.
+- Namen enthalten keine implizite Semantik.
+- Namensänderungen verändern keine Identität.
+- Namen dürfen nicht zur Steuerung von Integration oder Ableitung
+  verwendet werden.
+
+
+9.5 Führung und Integrationswahrheit
+--------------------------------------
+- Für jede Information existiert genau eine führende Quelle.
+- Führung ist explizit festzulegen.
+- Führung kann feldgenau definiert werden.
+- Ohne definierte Führung ist keine Integration zulässig.
+- Nicht-führende Informationen dürfen führende nicht überschreiben.
+
+
+9.6 Integration
+----------------
+- Integration erfolgt ausschließlich regelbasiert.
+- Integration erzeugt keine neue Identität.
+- Integration erzeugt keine neue Semantik.
+- Integration respektiert die definierte Führungslogik.
+- Implizite Integration ist unzulässig.
+
+
+9.7 CSV und Transportformate
+-----------------------------
+- CSV-Dateien sind reine Transportformate.
+- CSV-Dateien enthalten keine implizite Semantik.
+- CSV-Dateien erzeugen keine Identität.
+- CSV-Dateien überschreiben keine führenden Informationen.
+
+
+9.8 Ableitung
+--------------
+- Ableitung ist explizit definiert.
+- Ableitung erzeugt keine neue Identität.
+- Ableitung verändert keine führenden Informationen.
+- Ableitung wirkt nicht rück auf die Quelle.
+- Ableitung ist eine Einbahnstraße.
+
+
+9.9 Artefaktrollen
+-------------------
+- Architekturartefakte sind führend für Struktur.
+- Integrationsartefakte sind nicht führend.
+- Abgeleitete Artefakte besitzen keine Führungswirkung.
+- Ausführungsartefakte definieren keine Architektur.
+
+
+9.10 Ebenentrennung
+--------------------
+- Architektur, Integration und Ableitung sind strikt getrennt.
+- Eine Ebene definiert keine Regeln für eine andere Ebene.
+- Rückwirkungen zwischen Ebenen sind unzulässig.
+
+
+9.11 Automatisierung und Scripts
+---------------------------------
+- Scripts erfüllen genau eine fachliche Wirkung.
+- Scripts sind deterministisch und reproduzierbar.
+- Scripts interpretieren keine Modellinhalte.
+- Scripts erzeugen keine neue Semantik.
+- Scripts verändern keine Governance-Regeln.
+
+
+9.12 Tool-Unabhängigkeit
+-------------------------
+- Architekturmodelle enthalten keine Tool-Semantik.
+- Tool-spezifische Einschränkungen rechtfertigen keine Architekturänderungen.
+- Werkzeuge besitzen keine Governance-Wirkung.
+- Objekttypen sind stabil und werden nicht zur Ermöglichung von Beziehungen
+  geändert.
+- Ist keine normkonforme Beziehung möglich, ist Association als zulässiger
+  Fallback zu verwenden.
+- Beziehungstypen werden nicht semantisch überladen.
+
+
+9.13 Qualität und Validierung
+------------------------------
+- Modellzustände müssen validierbar sein.
+- Validierung ist deterministisch und reproduzierbar.
+- Nicht validierbare Zustände sind unzulässig.
+- Fehler dürfen nicht stillschweigend korrigiert werden.
+
+
+9.14 Audit
+-----------
+- Alle relevanten Entscheidungen sind nachvollziehbar.
+- Alle automatisierten Schritte sind reproduzierbar.
+- Alle Abweichungen sind dokumentiert.
+- Nicht auditierbare Zustände sind unzulässig.
+
+
+9.15 Abschluss des Kapitels
+-----------------------------
+Dieses Kapitel definiert die verbindlichen Hard Facts des
+Blueprint-Governance-Systems.
+
+Alle vorhergehenden Kapitel dienen dem Verständnis dieser Regeln.
+Dieses Kapitel definiert ihre Geltung.
+
+
+--------------------------------------------------------------------------------
 10. SPRINTS
 --------------------------------------------------------------------------------
 
@@ -268,7 +1470,7 @@ Diese Regeln sichern dieses Wachstum ohne die Kernprinzipien zu gefährden.
 ------------------------------
 Das R+MUNI Team besteht in Stage 5 aus folgenden Rollen:
 
-  Betreiber (EUMAXL / Markus Resel):
+  Betreiber (EUMAXL):
   - volle Rechte und Projektverantwortung
   - einzige Instanz für Stage-Entscheide und GOV-Änderungen
   - einzige Instanz für Bugfix-Freigaben in Stage 3/4
@@ -331,6 +1533,6 @@ Für GOV-Änderungen gilt:
 
 ================================================================================
 R+MUNI GLOBAL GOVERNANCE
-Kapitel 10 (Stage 3) | Kapitel 11-12 (Stage 5 | 2026-03-09)
+Kapitel 1-9 (Stage 3) | Kapitel 10 (Stage 3) | Kapitel 11-12 (Stage 5 | 2026-03-09)
 R+MUNI Blueprint | Markus Resel + Claude (Pair-Session)
 ================================================================================
