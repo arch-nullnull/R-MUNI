@@ -38,7 +38,7 @@ HULL_DIR = STAGE_DIR / "01-bpmnarchive"
 
 MASTER_XML = ROOT_DIR / "02-artifacts" / "00-xml" / "00-master" / "master.xml"
 MAPPING_FILE = ROOT_DIR / "02-artifacts" / "00-xml" / "01-mapping" / "M2Bmapping.txt"
-RUN_SCOPE_FILE = ROOT_DIR / "02-artifacts" / "00-xml" / "01-mapping" / "run-scope.txt"
+RUN_SCOPE_FILE = ROOT_DIR / "03-stages" / "run-scope.txt"
 
 NS_BPMN = "http://www.omg.org/spec/BPMN/20100524/MODEL"
 NS_BPMNDI = "http://www.omg.org/spec/BPMN/20100524/DI"

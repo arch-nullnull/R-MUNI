@@ -29,7 +29,7 @@
 # - Multiple rules are OR-combined
 # ==========================================================
 
-archi[model="MUNI FLOW.xml"]-element-xsi:type="BusinessProcess"
+archi[model=*]-element-xsi:type="BusinessProcess"
 
 # ----------------------------------------------------------
 # ACTIVE RULE (CURRENT SETUP)

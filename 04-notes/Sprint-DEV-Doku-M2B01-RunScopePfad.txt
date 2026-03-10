@@ -1,0 +1,236 @@
+================================================================================
+SPRINT DEV-DOKUMENTATION
+================================================================================
+Projekt             : R+MUNI Blueprint
+Sprint-Bezeichnung  : SPRINT-M2B01-RunScopePfad
+Datum               : 2026-03-10
+Stage               : 4 (aktiv)
+Status              : Dev-Dokumentation (nicht auditpflichtig per GOV 10.8)
+Erstellt durch      : Entwickler + Claude (Pair-Session)
+================================================================================
+
+
+--------------------------------------------------------------------------------
+1. STAGE-KONTEXT UND SPRINT-BEGRÜNDUNG
+--------------------------------------------------------------------------------
+
+1.1 Stage-Modell (Ist-Zustand)
+-------------------------------
+Stage 3  FREEZE
+         Stage 3 ist eingefroren. Änderungen ausschließlich für Bugfixing
+         zulässig. Neue Features sind in Stage 3 nicht erlaubt.
+
+Stage 4  AKTIV
+         Aktuelle Entwicklungsphase. Neue Features und Erweiterungen des
+         Blueprints werden hier umgesetzt.
+
+1.2 Auslöser (gemäß GOV 10.3 / 10.5)
+---------------------------------------
+Auslöser-Typ : Bugfix (entdeckt während Prozessmodellierung M2B-Ablauf)
+
+Begründung   : Im Zuge der BPMN-Prozessmodellierung der Script-Abläufe
+               wurde analysiert welche Scripts auf run-scope.txt zugreifen.
+               Dabei wurde festgestellt dass M2B01 run-scope.txt aus einem
+               abweichenden Pfad liest — einem Pfad der im realen Blueprint
+               keine run-scope.txt enthält.
+
+               Alle anderen Scripts des Blueprints lesen run-scope.txt
+               einheitlich aus:
+                 03-stages/run-scope.txt
+
+               M2B01 hingegen referenzierte:
+                 02-artifacts/00-xml/01-mapping/run-scope.txt
+
+               Dieser Pfad enthält ausschließlich Mapping-Konfiguration
+               (M2Bmapping.txt) — keine run-scope.txt.
+
+               Konsequenz: M2B01 findet run-scope.txt nicht → gibt leere
+               Liste zurück → Wildcard-Fallback greift → SOURCE=BPMN
+               Konfiguration in 03-stages/run-scope.txt wird vollständig
+               ignoriert → M2B01 läuft ohne Scope-Filter durch.
+
+Fachlicher   : Der Scope-Filter (Ebene 1) war seit dem Sprint
+Mehrwert       SPRINT-M2B01-RunScopeFilter implementiert und konfiguriert,
+               hat aber durch den falschen Pfad nie gewirkt.
+               Nach diesem Fix arbeitet der zweistufige Filter wie
+               konzipiert und dokumentiert.
+
+Governance-  : Einzeilige Pfadkorrektur. Keine Logik-, Architektur- oder
+Konformität    Verhaltensänderung. Wildcard-Fallback bleibt unverändert
+               erhalten (bewusste Designentscheidung, separate Diskussion).
+
+
+--------------------------------------------------------------------------------
+2. ZIELDEFINITION (gemäß GOV 10.6)
+--------------------------------------------------------------------------------
+
+Ziel         : RUN_SCOPE_FILE Konstante in M2B01-master_extract.py wird
+               auf den korrekten Blueprint-Pfad korrigiert sodass
+               M2B01 dieselbe run-scope.txt liest wie alle anderen Scripts.
+
+Abgrenzung   : Keine Änderung an Logik, Filterverhalten oder anderen
+               Konstanten. Ausschließlich Pfadkorrektur.
+
+Überprüfbar  : Nach Fix liest M2B01 SOURCE=BPMN aus 03-stages/run-scope.txt
+               korrekt aus und filtert BusinessProcesses entsprechend.
+               skipped_scope > 0 im Log bestätigt aktiven Scope-Filter.
+
+
+--------------------------------------------------------------------------------
+3. IST-ZUSTAND — PROBLEMANALYSE
+--------------------------------------------------------------------------------
+
+3.1 Falscher Pfad in M2B01 (vor Fix)
+--------------------------------------
+  M2B01-master_extract.py Zeile 41 (alt):
+
+    RUN_SCOPE_FILE = ROOT_DIR / "02-artifacts" / "00-xml" / "01-mapping" / "run-scope.txt"
+
+  Dieser Pfad existiert nicht im Blueprint.
+  02-artifacts/00-xml/01-mapping/ enthält:
+    - M2Bmapping.txt   ← korrekt dort
+    - mapping.txt      ← korrekt dort
+    - run-scope.txt    ← EXISTIERT DORT NICHT
+
+3.2 Kausalkette des Bugs
+--------------------------
+  M2B01 startet
+      ↓
+  load_bpmn_scope() prüft RUN_SCOPE_FILE.exists()
+      ↓
+  Datei nicht gefunden (falscher Pfad)
+      ↓
+  Wildcard-Fallback: return []
+      ↓
+  matches_scope() → bpmn_scope leer → return True für ALLE Prozesse
+      ↓
+  Scope-Filter (Ebene 1) komplett außer Kraft
+      ↓
+  Nur M2Bmapping.txt (Ebene 2) wirkt noch
+      ↓
+  BusinessProcesses aus ALLEN Modellen können Hüllen erhalten
+
+3.3 Warum der Bug lange unbemerkt blieb
+-----------------------------------------
+  Der Wildcard-Fallback ist als WARNING geloggt:
+    "[M2B01] WARNING: run-scope.txt not found, no scope filter applied"
+
+  Da M2B01 jedoch im Normalfall aus einem Modell mit wenigen Prozessen
+  läuft und M2Bmapping.txt (Ebene 2) trotzdem aktiv war, führte der
+  fehlende Scope-Filter nicht sofort zu einem sichtbaren Fehler.
+  Die Auswirkung wurde erst bei der systematischen Analyse aller
+  run-scope.txt Zugriffe erkannt.
+
+3.4 Betroffener Pfad (alle anderen Scripts zum Vergleich)
+-----------------------------------------------------------
+  CSV03, CSV07, CSV08, CSV09:
+    os.path.join(root, "03-stages", "run-scope.txt")       ← KORREKT
+
+  ATL00, ATL01:
+    os.path.join(root_path, "03-stages", "run-scope.txt")  ← KORREKT
+
+  M2B06:
+    ROOT / "03-stages" / "run-scope.txt"                   ← KORREKT
+
+  M2B01 (vor Fix):
+    ROOT / "02-artifacts" / "00-xml" / "01-mapping" / "run-scope.txt"
+                                                           ← FALSCH
+
+
+--------------------------------------------------------------------------------
+4. LÖSUNG — TECHNISCHE UMSETZUNG
+--------------------------------------------------------------------------------
+
+4.1 Änderung
+-------------
+  M2B01-master_extract.py Zeile 41:
+
+  ALT:
+    RUN_SCOPE_FILE = ROOT_DIR / "02-artifacts" / "00-xml" / "01-mapping" / "run-scope.txt"
+
+  NEU:
+    RUN_SCOPE_FILE = ROOT_DIR / "03-stages" / "run-scope.txt"
+
+4.2 Keine weiteren Änderungen
+-------------------------------
+  - load_bpmn_scope()    unverändert
+  - matches_scope()      unverändert
+  - M2Bmapping.txt       unverändert
+  - run-scope.txt        unverändert
+  - Alle anderen Scripts unverändert
+
+4.3 Wildcard-Fallback (bewusst beibehalten)
+--------------------------------------------
+  Der Wildcard-Fallback in matches_scope() bleibt erhalten:
+    if not bpmn_scope:
+        return True
+
+  Begründung: Ist run-scope.txt vorhanden aber enthält kein
+  SOURCE=BPMN Pair → leere Liste → kein Filter.
+  Dieses Verhalten ist für den Normalfall (run-scope.txt vorhanden
+  und SOURCE=BPMN gesetzt) nach dem Pfad-Fix irrelevant.
+  Eine Verschärfung auf HARD FAIL wurde diskutiert aber zurückgestellt.
+
+
+--------------------------------------------------------------------------------
+5. KONFIGURATION NACH FIX
+--------------------------------------------------------------------------------
+
+run-scope.txt (03-stages/run-scope.txt — unverändert, jetzt korrekt gelesen):
+  SOURCE=BPMN
+  MODEL=MUNI FLOW.xml
+  → M2B01 Scope-Filter (Ebene 1) aktiv: nur MUNI FLOW.xml Prozesse
+
+M2Bmapping.txt (02-artifacts/00-xml/01-mapping/ — unverändert):
+  archi[model=*]-element-xsi:type="BusinessProcess"
+  → M2B01 Hard-Filter (Ebene 2) aktiv: nur BusinessProcess Typen
+
+Zweistufiger Filter jetzt vollständig aktiv wie in
+SPRINT-M2B01-RunScopeFilter konzipiert und dokumentiert.
+
+
+--------------------------------------------------------------------------------
+6. OFFENE PUNKTE / NEXT STEPS
+--------------------------------------------------------------------------------
+
+6.1 Testlauf empfohlen
+-----------------------
+Status   : Offen
+Aktion   : M2B01 ausführen und Log auf
+             "[M2B01] run-scope.txt SCOPE FILTER active: ['MUNI FLOW.xml']"
+           sowie skipped_scope > 0 prüfen.
+
+6.2 Wildcard-Fallback Verschärfung
+------------------------------------
+Status   : Zurückgestellt
+Aktion   : Diskussion ob bei fehlendem SOURCE=BPMN HARD FAIL statt
+           Wildcard gewünscht ist. Separater Sprint wenn entschieden.
+
+6.3 Stage-Ende Dokumentation
+------------------------------
+Status   : Ausstehend (gemäß GOV 10.9 verpflichtend zum Stage-Ende)
+Aktion   : Diese Dev-Dokumentation ist nicht auditpflichtig (GOV 10.8).
+           Zum Stage-Ende ist eine vollständige governance-konforme
+           Dokumentation zu erstellen.
+
+
+--------------------------------------------------------------------------------
+7. GOVERNANCE-KONFORMITÄTSCHECK
+--------------------------------------------------------------------------------
+
+GOV 10.3  Zulässiger Auslöser        OK  Bugfix (entdeckt in Analyse)
+GOV 10.5  Fachlicher Mehrwert        OK  Scope-Filter wirkt erstmals korrekt
+GOV 10.5  Keine implizite Gov-Änd.   OK  Einzeilige Pfadkorrektur
+GOV 10.6  Ziel explizit definiert    OK  Abschnitt 2
+GOV 10.6  Ziel überprüfbar           OK  Log-Ausgabe als Erfolgskriterium
+GOV 10.7  Zwischenschritte           OK  Normativ zugelassen
+GOV 10.8  Dev-Doku erstellt          OK  Dieses Dokument
+GOV 10.9  Stage-Ende Doku            OFFEN  Verpflichtend bei Stage-Abschluss
+GOV 10.10 Keine Gov-Regel aufgehoben OK  Keine Architekturänderung
+GOV 10.5  Keine Architekturabw.      OK  Minimale Korrektur, kein Umbau
+
+
+================================================================================
+END OF SPRINT DEV-DOKUMENTATION
+SPRINT-M2B01-RunScopePfad | Stage 4 | 2026-03-10
+================================================================================

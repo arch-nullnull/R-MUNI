@@ -569,6 +569,7 @@ Format: &lt;source_type> - &lt;relative_folder_from_root>&#xD;
       <property key="Type" value="File"/>
     </element>
     <element xsi:type="archimate:Artifact" name="jArchi" id="id-496d58d10a3f4d27aa4268e7fc43efa0">
+      <documentation>Folder für jArchi Scripts wurden aus den R+MUNI Python Script Folder rausgelöst bzw. in einen Unterordner migriert. (Keine Auswirkungen)</documentation>
       <property key="Type" value="Folder"/>
     </element>
   </folder>
