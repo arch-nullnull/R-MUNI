@@ -1,26 +1,30 @@
 SOURCE=archi
-MODEL=MUNI FLOW.archimate
+MODEL=00-archimateactive/log-0.txt
 
-SOURCE=OEF
-MODEL=MUNI FLOW.xml
+SOURCE=archi
+MODEL=00-archimateactive/log-0.txt.lck
+
+SOURCE=archi
+MODEL=01-archimateactivesub/MUNI FLOW.archimate.bak
+
+SOURCE=archi
+MODEL=MUNI EA Modell.archimate
+
+SOURCE=archi
+MODEL=MUNI FLOW.archimate
 
 SOURCE=OEF
 MODEL=MUNI EA Modell.xml
 
-#SOURCE=CSV
-#MODEL=elements.csv
-
-#SOURCE=CSV
-#MODEL=properties.csv
-
-#SOURCE=CSV
-#MODEL=relations.csv
-
-SOURCE=MASTER
+SOURCE=OEF
 MODEL=MUNI FLOW.xml
 
-SOURCE=BPMN
-MODEL=MUNI FLOW.xml
+SOURCE=CSV
+MODEL=MUNI FLOWelements.csv
 
-SOURCE=ATL
-MODEL=MUNI FLOW.xml
+SOURCE=CSV
+MODEL=MUNI FLOWproperties.csv
+
+SOURCE=CSV
+MODEL=MUNI FLOWrelations.csv
+

@@ -1,0 +1,13 @@
+[CSV06] 2026-03-11 07:16:21 | run-scope.txt: kein aktives SOURCE=CSV — Fallback auf Standardnamen
+[CSV06] 2026-03-11 07:16:21 | Child CSV fehlt, übersprungen: elements.csv
+[CSV06] 2026-03-11 07:16:21 | Child CSV fehlt, übersprungen: relations.csv
+[CSV06] 2026-03-11 07:16:21 | Child CSV fehlt, übersprungen: properties.csv
+[CSV06] 2026-03-11 07:20:14 | run-scope.txt SOURCE=CSV aktiv: ['MUNI FLOWelements.csv', 'MUNI FLOWproperties.csv', 'MUNI FLOWrelations.csv']
+[CSV06] 2026-03-11 07:20:14 | Master CSV fehlt, übersprungen: FLOWelements.csv
+[CSV06] 2026-03-11 07:20:14 | Master CSV fehlt, übersprungen: FLOWproperties.csv
+[CSV06] 2026-03-11 07:20:14 | Master CSV fehlt, übersprungen: FLOWrelations.csv
+[CSV06] 2026-03-11 07:25:44 | run-scope.txt SOURCE=CSV aktiv: ['MUNI FLOWelements.csv', 'MUNI FLOWproperties.csv', 'MUNI FLOWrelations.csv']
+[CSV06] 2026-03-11 07:25:44 | 175 Zeilen aus MUNI FLOWelements.csv → elements.csv eingefügt
+[CSV06] 2026-03-11 07:25:44 | 207 Zeilen aus MUNI FLOWproperties.csv → properties.csv eingefügt
+[CSV06] 2026-03-11 07:25:44 | 191 Zeilen aus MUNI FLOWrelations.csv → relations.csv eingefügt
+[CSV06] 2026-03-11 07:25:44 | Append-Zyklus abgeschlossen

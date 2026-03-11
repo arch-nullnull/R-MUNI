@@ -9,3 +9,25 @@
 [CSV01] 2026-03-10 19:47:31 |  - MUNI FLOW.archimate.bak [BACKUP]
 [CSV01] 2026-03-10 19:47:31 | Scanning folder: 99-mappingmodel
 [CSV01] 2026-03-10 19:47:31 | Wrote model scope artifact: C:\Prototyping\R+MUNI\03-stages\model-scope.txt
+[CSV01] 2026-03-11 07:16:01 | Resolved root path: C:\Prototyping\R+MUNI
+[CSV01] 2026-03-11 07:16:01 | Inspecting ArchiMate root: C:\Prototyping\R+MUNI\01-model\00-archimate
+[CSV01] 2026-03-11 07:16:01 | Scanning folder: 00-archimateactive
+[CSV01] 2026-03-11 07:16:01 |  - MUNI EA Modell.archimate [ARCHIMATE]
+[CSV01] 2026-03-11 07:16:01 |  - log-0.txt [OTHER]
+[CSV01] 2026-03-11 07:16:01 |  - log-0.txt.lck [OTHER]
+[CSV01] 2026-03-11 07:16:01 | Scanning folder: 01-archimateactivesub
+[CSV01] 2026-03-11 07:16:01 |  - MUNI FLOW.archimate [ARCHIMATE]
+[CSV01] 2026-03-11 07:16:01 |  - MUNI FLOW.archimate.bak [BACKUP]
+[CSV01] 2026-03-11 07:16:01 | Scanning folder: 99-mappingmodel
+[CSV01] 2026-03-11 07:16:01 | Wrote model scope artifact: C:\Prototyping\R+MUNI\03-stages\model-scope.txt
+[CSV01] 2026-03-11 07:18:50 | Resolved root path: C:\Prototyping\R+MUNI
+[CSV01] 2026-03-11 07:18:50 | Inspecting ArchiMate root: C:\Prototyping\R+MUNI\01-model\00-archimate
+[CSV01] 2026-03-11 07:18:50 | Scanning folder: 00-archimateactive
+[CSV01] 2026-03-11 07:18:50 |  - MUNI EA Modell.archimate [ARCHIMATE]
+[CSV01] 2026-03-11 07:18:50 |  - log-0.txt [OTHER]
+[CSV01] 2026-03-11 07:18:50 |  - log-0.txt.lck [OTHER]
+[CSV01] 2026-03-11 07:18:50 | Scanning folder: 01-archimateactivesub
+[CSV01] 2026-03-11 07:18:50 |  - MUNI FLOW.archimate [ARCHIMATE]
+[CSV01] 2026-03-11 07:18:50 |  - MUNI FLOW.archimate.bak [BACKUP]
+[CSV01] 2026-03-11 07:18:50 | Scanning folder: 99-mappingmodel
+[CSV01] 2026-03-11 07:18:50 | Wrote model scope artifact: C:\Prototyping\R+MUNI\03-stages\model-scope.txt

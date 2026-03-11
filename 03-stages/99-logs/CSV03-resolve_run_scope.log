@@ -8,3 +8,23 @@
 [CSV03] 2026-03-10 19:47:39 | Model matched: MUNI EA Modell.archimate (pattern=*.*)
 [CSV03] 2026-03-10 19:47:39 | Model matched: MUNI FLOW.archimate (pattern=*.*)
 [CSV03] 2026-03-10 19:47:39 | Run scope written with 5 model(s)
+[CSV03] 2026-03-11 07:16:08 | Resolved root path: C:\Prototyping\R+MUNI
+[CSV03] 2026-03-11 07:16:08 | Models available from model-scope: 5
+[CSV03] 2026-03-11 07:16:08 | Active mapping rules: 1
+[CSV03] 2026-03-11 07:16:08 | Extracted model patterns: ['*.*']
+[CSV03] 2026-03-11 07:16:08 | Model matched: 00-archimateactive/log-0.txt (pattern=*.*)
+[CSV03] 2026-03-11 07:16:08 | Model matched: 00-archimateactive/log-0.txt.lck (pattern=*.*)
+[CSV03] 2026-03-11 07:16:08 | Model matched: 01-archimateactivesub/MUNI FLOW.archimate.bak (pattern=*.*)
+[CSV03] 2026-03-11 07:16:08 | Model matched: MUNI EA Modell.archimate (pattern=*.*)
+[CSV03] 2026-03-11 07:16:08 | Model matched: MUNI FLOW.archimate (pattern=*.*)
+[CSV03] 2026-03-11 07:16:08 | Run scope written with 5 model(s)
+[CSV03] 2026-03-11 07:18:56 | Resolved root path: C:\Prototyping\R+MUNI
+[CSV03] 2026-03-11 07:18:56 | Models available from model-scope: 5
+[CSV03] 2026-03-11 07:18:56 | Active mapping rules: 1
+[CSV03] 2026-03-11 07:18:56 | Extracted model patterns: ['*.*']
+[CSV03] 2026-03-11 07:18:56 | Model matched: 00-archimateactive/log-0.txt (pattern=*.*)
+[CSV03] 2026-03-11 07:18:56 | Model matched: 00-archimateactive/log-0.txt.lck (pattern=*.*)
+[CSV03] 2026-03-11 07:18:56 | Model matched: 01-archimateactivesub/MUNI FLOW.archimate.bak (pattern=*.*)
+[CSV03] 2026-03-11 07:18:56 | Model matched: MUNI EA Modell.archimate (pattern=*.*)
+[CSV03] 2026-03-11 07:18:56 | Model matched: MUNI FLOW.archimate (pattern=*.*)
+[CSV03] 2026-03-11 07:18:56 | Run scope written with 5 model(s)

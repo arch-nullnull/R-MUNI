@@ -1,0 +1,225 @@
+================================================================================
+SPRINT DEV-DOKUMENTATION
+================================================================================
+Projekt             : R+MUNI Blueprint
+Sprint-Bezeichnung  : SPRINT-CSV06-RunScopeAware
+Datum               : 2026-03-11
+Stage               : 4 (Bugfix — explizite Freigabe durch Entwickler)
+Status              : Dev-Dokumentation (nicht auditpflichtig per GOV 10.8)
+Erstellt durch      : Entwickler + Claude (Pair-Session)
+================================================================================
+
+
+--------------------------------------------------------------------------------
+1. STAGE-KONTEXT UND SPRINT-BEGRÜNDUNG
+--------------------------------------------------------------------------------
+
+1.1 Stage-Modell (Ist-Zustand)
+-------------------------------
+Stage 4  FREEZE
+         Bugfixing mit expliziter Entwicklerfreigabe zulässig.
+
+Stage 5  AKTIV
+         Dieser Fix ist Voraussetzung für den geplanten
+         SPRINT-CSV-Refactoring in Stage 5.
+
+1.2 Auslöser (gemäß GOV 10.3 / 10.5)
+---------------------------------------
+Auslöser-Typ : Bugfix + Feature-Enabler
+
+Begründung   : Archi 5.x unterstützt beim CSV-Export ein konfigurierbares
+               "File prefix". Damit können mehrere Modelle parallel in
+               denselben child-Ordner exportiert werden:
+                 MUNI FLOWelements.csv
+                 MUNI FLOWrelations.csv
+                 MUNI FLOWproperties.csv
+
+               CSV06 suchte bisher hardcoded nach:
+                 elements.csv / relations.csv / properties.csv
+
+               Damit war der Archi File Prefix vollständig nutzlos —
+               CSV06 fand die Dateien nicht und übersprang sie still.
+
+               Zusätzlich waren in run-scope.txt SOURCE=CSV Einträge
+               bereits auskommentiert vorbereitet — die Implementierung
+               fehlte jedoch.
+
+Fachlicher   : Mehrere Archi-Modelle können nun parallel in den
+Mehrwert       child-Ordner exportiert und über run-scope.txt gesteuert
+               in die Master-CSVs eingepflegt werden.
+               Fallback auf Standardnamen bleibt erhalten —
+               keine Breaking Change für bestehende Setups.
+
+Governance-  : Additiver Bugfix. Keine Logikänderung am Append-Verhalten.
+Konformität    CSV99 und alle anderen Scripts bleiben unberührt.
+
+
+--------------------------------------------------------------------------------
+2. ZIELDEFINITION (gemäß GOV 10.6)
+--------------------------------------------------------------------------------
+
+Ziel         : CSV06-append_child_to_master.py liest Dateinamen aus
+               run-scope.txt SOURCE=CSV Einträgen statt hardcoded.
+               Master-Dateiname wird via endswith aus den Standardnamen
+               abgeleitet — unabhängig vom verwendeten Prefix.
+
+Abgrenzung   : Kein Eingriff in Append-Logik, Newline-Handling oder
+               Master-Struktur. Ausschließlich Dateinamen-Auflösung
+               wird erweitert.
+
+Überprüfbar  : Erfolgreich wenn run-scope.txt SOURCE=CSV aktiv ist und
+               Log zeigt:
+                 "X Zeilen aus MUNI FLOWelements.csv → elements.csv"
+
+
+--------------------------------------------------------------------------------
+3. IST-ZUSTAND — PROBLEMANALYSE
+--------------------------------------------------------------------------------
+
+3.1 Hardcoded Dateinamen (vor Fix)
+------------------------------------
+  CSV06 Zeile 62 (alt):
+    files = ["elements.csv", "relations.csv", "properties.csv"]
+
+  Keine Verbindung zu run-scope.txt.
+  Archi File Prefix wird vollständig ignoriert.
+
+3.2 Bereits vorbereitete run-scope.txt Einträge
+-------------------------------------------------
+  In run-scope.txt waren SOURCE=CSV Einträge auskommentiert vorhanden:
+    #SOURCE=CSV
+    #MODEL=elements.csv
+
+  Das Konzept war gedacht — die Implementierung fehlte.
+
+3.3 Master-Dateiname Problem
+------------------------------
+  child-Ordner : MUNI FLOWelements.csv  (mit Prefix, kein Leerzeichen)
+  master-Ordner: elements.csv           (immer Standardname)
+
+  Ein einfaches split(" ") versagt wenn kein Leerzeichen zwischen
+  Prefix und Dateiname liegt (z.B. "MUNI FLOWelements.csv").
+  Lösung: endswith gegen FALLBACK_FILES — funktioniert unabhängig
+  von Leerzeichen im Prefix.
+
+
+--------------------------------------------------------------------------------
+4. LÖSUNG — TECHNISCHE UMSETZUNG
+--------------------------------------------------------------------------------
+
+4.1 Neue Funktion read_csv_scope()
+------------------------------------
+  Liest run-scope.txt und gibt alle aktiven SOURCE=CSV / MODEL= Werte
+  als Liste zurück. Kommentierte Zeilen und SNAPSHOT-Zeilen werden
+  ignoriert.
+
+  Fallback: Datei fehlt oder kein aktiver SOURCE=CSV Eintrag →
+  leere Liste → Fallback auf FALLBACK_FILES greift.
+
+4.2 Master-Dateiname Auflösung
+--------------------------------
+  ALT:
+    master_fname = fname.split(" ")[-1] if " " in fname else fname
+
+  NEU:
+    master_fname = next((f for f in FALLBACK_FILES if fname.endswith(f)), fname)
+
+  Beispiele:
+    "MUNI FLOWelements.csv"  → "elements.csv"   ✓
+    "MUNI FLOW elements.csv" → "elements.csv"   ✓
+    "elements.csv"           → "elements.csv"   ✓
+
+4.3 Fallback bleibt erhalten
+------------------------------
+  Kein aktives SOURCE=CSV in run-scope.txt →
+    files = FALLBACK_FILES = ["elements.csv", "relations.csv", "properties.csv"]
+  Verhalten identisch zur alten Version. Keine Breaking Change.
+
+4.4 Bugfix log() Aufruf
+-------------------------
+  Letzter log() Aufruf fehlte log_path Argument → TypeError.
+  Behoben: log("Append-Zyklus abgeschlossen", log_path)
+
+
+--------------------------------------------------------------------------------
+5. KONFIGURATION NACH FIX
+--------------------------------------------------------------------------------
+
+run-scope.txt (SOURCE=CSV aktiviert):
+  SOURCE=CSV
+  MODEL=MUNI FLOWelements.csv
+
+  SOURCE=CSV
+  MODEL=MUNI FLOWproperties.csv
+
+  SOURCE=CSV
+  MODEL=MUNI FLOWrelations.csv
+
+Archi Export Einstellung:
+  File prefix : MUNI FLOW
+  Output Files: MUNI FLOWelements.csv
+                MUNI FLOWrelations.csv
+                MUNI FLOWproperties.csv
+
+
+--------------------------------------------------------------------------------
+6. TESTERGEBNIS
+--------------------------------------------------------------------------------
+
+Testlauf 2026-03-11:
+
+  [CSV06] run-scope.txt SOURCE=CSV aktiv:
+          ['MUNI FLOWelements.csv', 'MUNI FLOWproperties.csv', 'MUNI FLOWrelations.csv']
+  [CSV06] 175 Zeilen aus MUNI FLOWelements.csv  → elements.csv  eingefügt
+  [CSV06] 207 Zeilen aus MUNI FLOWproperties.csv → properties.csv eingefügt
+  [CSV06] 191 Zeilen aus MUNI FLOWrelations.csv  → relations.csv  eingefügt
+  [CSV06] Append-Zyklus abgeschlossen
+
+Status: OK
+
+
+--------------------------------------------------------------------------------
+7. OFFENE PUNKTE / NEXT STEPS
+--------------------------------------------------------------------------------
+
+7.1 Reimport prüfen
+--------------------
+Status   : Offen (läuft parallel zur Doku-Erstellung)
+Aktion   : CSV99 Export Snapshot und Archi Reimport validieren.
+           Erwartung: kein Eingriff nötig — master-Ordner Standardnamen
+           unverändert.
+
+7.2 SPRINT-CSV-Refactoring
+---------------------------
+Status   : Definiert, noch nicht gestartet
+Aktion   : Dieser Fix ist Voraussetzung für CSV10+ / XLSX00 / MaM00.
+           Sprint Definition siehe Sprint-DEF-CSV-Refactoring.txt.
+
+7.3 Stage-Ende Dokumentation
+------------------------------
+Status   : Ausstehend (gemäß GOV 10.9 verpflichtend zum Stage-Ende)
+Aktion   : Diese Dev-Dokumentation ist nicht auditpflichtig (GOV 10.8).
+           Zum Stage-Ende ist eine vollständige governance-konforme
+           Dokumentation zu erstellen.
+
+
+--------------------------------------------------------------------------------
+8. GOVERNANCE-KONFORMITÄTSCHECK
+--------------------------------------------------------------------------------
+
+GOV 10.3  Zulässiger Auslöser        OK  Bugfix mit Entwicklerfreigabe
+GOV 10.5  Fachlicher Mehrwert        OK  Archi File Prefix nutzbar
+GOV 10.5  Keine implizite Gov-Änd.   OK  Additiv, Fallback erhalten
+GOV 10.6  Ziel explizit definiert    OK  Abschnitt 2
+GOV 10.6  Ziel überprüfbar           OK  Testergebnis Abschnitt 6
+GOV 10.7  Zwischenschritte           OK  Normativ zugelassen
+GOV 10.8  Dev-Doku erstellt          OK  Dieses Dokument
+GOV 10.9  Stage-Ende Doku            OFFEN  Verpflichtend bei Stage-Abschluss
+GOV 10.10 Keine Gov-Regel aufgehoben OK  Keine Architekturänderung
+Stage 4   Bugfix Freigabe            OK  Explizite Freigabe durch Entwickler
+
+
+================================================================================
+END OF SPRINT DEV-DOKUMENTATION
+SPRINT-CSV06-RunScopeAware | Stage 4 | 2026-03-11
+================================================================================

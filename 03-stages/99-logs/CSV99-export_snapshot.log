@@ -1,0 +1,7 @@
+[CSV99] 2026-03-11 07:26:43 | === CSV99 RUN START ===
+[CSV99] 2026-03-11 07:26:43 | csvexport loaded: {'ArchimateModel'}
+[CSV99] 2026-03-11 07:26:43 | elements.csv | EXCLUDED TYPE | {'ID': 'id-a8b28c5bc51846598f34e4230d77d01d', 'Type': 'ArchimateModel', 'Name': 'MUNI FLOW', 'Documentation': 'MUNI FLOW beschreibt die R+Muni interne File und Ordner sowie Script Struktur und Verbindet die für das FLOW Script notwendigen Prozesse mit den Foldern. Dient als Dokumentation und Übersichtsmodell und Denkmodell für mich. ', 'Specialization': ''}
+[CSV99] 2026-03-11 07:26:43 | elements.csv | WRITTEN | 174 rows
+[CSV99] 2026-03-11 07:26:43 | properties.csv | WRITTEN | 207 rows
+[CSV99] 2026-03-11 07:26:43 | relations.csv | WRITTEN | 191 rows
+[CSV99] 2026-03-11 07:26:43 | CSV99 completed successfully

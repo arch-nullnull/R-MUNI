@@ -7,3 +7,24 @@
 [CSV04] 2026-03-10 19:47:45 | Found OEF artifact: MUNI EA Modell.xml
 [CSV04] 2026-03-10 19:47:45 | Found OEF artifact: MUNI FLOW.xml
 [CSV04] 2026-03-10 19:47:45 | Flat source inventory written to run-scope.txt
+[CSV04] 2026-03-11 07:16:12 | Resolved root path: C:\Prototyping\R+MUNI
+[CSV04] 2026-03-11 07:16:12 | Found Archi model: 00-archimateactive/log-0.txt
+[CSV04] 2026-03-11 07:16:12 | Found Archi model: 00-archimateactive/log-0.txt.lck
+[CSV04] 2026-03-11 07:16:12 | Found Archi model: 01-archimateactivesub/MUNI FLOW.archimate.bak
+[CSV04] 2026-03-11 07:16:12 | Found Archi model: MUNI EA Modell.archimate
+[CSV04] 2026-03-11 07:16:12 | Found Archi model: MUNI FLOW.archimate
+[CSV04] 2026-03-11 07:16:12 | Found OEF artifact: MUNI EA Modell.xml
+[CSV04] 2026-03-11 07:16:12 | Found OEF artifact: MUNI FLOW.xml
+[CSV04] 2026-03-11 07:16:12 | Flat source inventory written to run-scope.txt
+[CSV04] 2026-03-11 07:19:23 | Resolved root path: C:\Prototyping\R+MUNI
+[CSV04] 2026-03-11 07:19:23 | Found Archi model: 00-archimateactive/log-0.txt
+[CSV04] 2026-03-11 07:19:23 | Found Archi model: 00-archimateactive/log-0.txt.lck
+[CSV04] 2026-03-11 07:19:23 | Found Archi model: 01-archimateactivesub/MUNI FLOW.archimate.bak
+[CSV04] 2026-03-11 07:19:23 | Found Archi model: MUNI EA Modell.archimate
+[CSV04] 2026-03-11 07:19:23 | Found Archi model: MUNI FLOW.archimate
+[CSV04] 2026-03-11 07:19:23 | Found OEF artifact: MUNI EA Modell.xml
+[CSV04] 2026-03-11 07:19:23 | Found OEF artifact: MUNI FLOW.xml
+[CSV04] 2026-03-11 07:19:23 | Found CSV artifact: MUNI FLOWelements.csv
+[CSV04] 2026-03-11 07:19:23 | Found CSV artifact: MUNI FLOWproperties.csv
+[CSV04] 2026-03-11 07:19:23 | Found CSV artifact: MUNI FLOWrelations.csv
+[CSV04] 2026-03-11 07:19:23 | Flat source inventory written to run-scope.txt
