@@ -1,0 +1,10 @@
+# Obsidian Einstellungen
+.obsidian/
+
+# Windows System-Dateien
+Thumbs.db
+desktop.ini
+
+# Temporäre Dateien
+*.tmp
+*.bak
