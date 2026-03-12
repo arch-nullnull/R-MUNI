@@ -4,44 +4,28 @@ C:.
 |   .gitattributes
 |   Install.txt
 |   LICENSE
-|   R+MUNI _ clean.zip
 |   README.md
 |   root.txt
 |   structure.txt
 |   
-+---00-concept
-|   +---00-governance
-|   |       Global_GOV.txt
-|   |       
-|   +---01-principles
-|   |       AI_DRIVEN_DEV_METHODE.txt
-|   |       ATL_FLOW_principles_S4.txt
-|   |       CSV_FLOW_principles_S3.txt
-|   |       FLOW_SCRIPTRUNNER_principles_S4.txt
-|   |       HLP_principles_S3.txt
-|   |       M2B_FLOW_principles_S3.txt
-|   |       SCRIPT-BAUKASTEN.txt
-|   |       XML_FLOW_principles_S3.txt
-|   |       
-|   +---02-how2
-|   |       ATL_FLOW_How2_S4.txt
-|   |       CSV_FLOW_How2_S3.txt
-|   |       FLOW_SCRIPTRUNNER_How2_S4.txt
-|   |       HLP09_How2_S4.txt
-|   |       HLP_How2_S3.txt
-|   |       M2B_FLOW_How2_S3.txt
-|   |       XML_FLOW_How2_S3.txt
-|   |       
-|   \---03-roesetta_stone
-|           Rosetta_Stone_Block1_Views.txt
-|           Rosetta_Stone_Block2_Artifacts_Scripts.txt
-|           Rosetta_Stone_Block3_Begriffe_Konzepte.txt
-|           Rosetta_Stone_Block4_Stage4_Ablauf.txt
-|           
++---.obsidian
+|   |   app.json
+|   |   appearance.json
+|   |   community-plugins.json
+|   |   core-plugins.json
+|   |   workspace.json
+|   |   
+|   \---plugins
+|       \---obsidian-importer
+|               main.js
+|               manifest.json
+|               styles.css
+|               
 +---01-model
 |   +---00-archimate
 |   |   +---00-archimateactive
 |   |   |       MUNI EA Modell.archimate
+|   |   |       MUNI EA Modell.archimate.bak
 |   |   |       
 |   |   +---01-archimateactivesub
 |   |   |       MUNI FLOW.archimate
@@ -135,6 +119,10 @@ C:.
 |   |           
 |   +---02-csv
 |   |   +---00-master
+|   |   |       elements.csv
+|   |   |       properties.csv
+|   |   |       relations.csv
+|   |   |       
 |   |   +---01-mapping
 |   |   |       csvmapping.txt
 |   |   |       
@@ -145,9 +133,17 @@ C:.
 |   |   |       
 |   |   +---03-child
 |   |   |   +---00-archimatechild
+|   |   |   |       MUNI FLOWelements.csv
+|   |   |   |       MUNI FLOWproperties.csv
+|   |   |   |       MUNI FLOWrelations.csv
+|   |   |   |       
 |   |   |   +---01-bpmnchild
 |   |   |   \---02-xychild
 |   |   +---04-import
+|   |   |       elements.csv
+|   |   |       properties.csv
+|   |   |       relations.csv
+|   |   |       
 |   |   \---99-exports
 |   +---03-XLSX
 |   |   +---00-master
@@ -173,25 +169,25 @@ C:.
 |       |   webconfig.txt
 |       |   
 |       +---00-archimate
+|       |       VIE04-Structure View.svg
+|       |       
 |       +---01-bpmn
 |       \---99-struktur
-+---03-stages
-|   |   run-scope.txt
-|   |   run-scope_ReadMe.txt
-|   |   
-|   +---00-archimatearchive
-|   +---01-bpmnarchive
-|   +---02-xyarchive
-|   +---03-masterxmlarchive
-|   \---99-logs
-\---04-notes
-        ATL_CSV_Konfig_Jira_Mapping.txt
-        Sprint-DEV-Doku-ATL-Reihe.txt
-        Sprint-DEV-Doku-BPMN-OEF-ExitPoint.txt
-        Sprint-DEV-Doku-FLW-Serie-S4.txt
-        Sprint-DEV-Doku-HLP09-ReportServer.txt
-        Sprint-DEV-Doku-M2B01-RunScope.txt
-        STAGE3_FREEZE.txt
-        STAGE4_FREEZE.txt
-        STAGE5_ZIELE.txt
-        
+\---03-stages
+    |   model-scope.txt
+    |   run-scope.txt
+    |   run-scope_ReadMe.txt
+    |   
+    +---00-archimatearchive
+    +---01-bpmnarchive
+    +---02-xyarchive
+    +---03-masterxmlarchive
+    \---99-logs
+            CSV00-root.resolved.txt
+            CSV00-validate_environment.log
+            CSV01-validate_model.log
+            CSV03-resolve_run_scope.log
+            CSV04-model_overview.log
+            CSV06-append.log
+            CSV99-export_snapshot.log
+            
