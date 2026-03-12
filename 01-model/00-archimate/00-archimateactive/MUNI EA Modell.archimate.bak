@@ -43,7 +43,6 @@
   <folder name="Business" id="id-439d624205af49dfb60ac93d20054f67" type="business">
     <element xsi:type="archimate:BusinessActor" name="BUA00-R+MUNI Dude (ME)" id="id-32a504ae21274b1ba2809f15c3f99ca2">
       <documentation>Total cooler Type der nichts besseres zu tun hat als das in seiner Freizeit zu machen ;)</documentation>
-      <property key="Type" value="Guides &amp; Normen"/>
     </element>
     <element xsi:type="archimate:BusinessRole" name="BUR01-Entwickler" id="id-07de8542053d4739b7fa1a98bbe59798"/>
     <element xsi:type="archimate:BusinessRole" name="BUR02-Modellierer" id="id-866783f5689b4893a8f70b6350ce0c2e"/>

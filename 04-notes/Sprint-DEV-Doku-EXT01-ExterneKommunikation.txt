@@ -1,0 +1,242 @@
+================================================================================
+SPRINT DEV-DOKUMENTATION
+================================================================================
+Projekt            : R+MUNI Blueprint
+Sprint-Bezeichnung : SPRINT-EXT01-ExterneKommunikation
+Datum              : 2026-03-12
+Stage              : 5 (aktiv)
+Status             : Dev-Dokumentation (nicht auditpflichtig per GOV 10.8)
+Erstellt durch     : EUMAXL + Claude (Pair-Session)
+Vorgänger-Sprint   : SPRINT-RMNP01-PortalSetup (2026-03-09)
+================================================================================
+
+
+--------------------------------------------------------------------------------
+1. STAGE-KONTEXT UND SPRINT-BEGRÜNDUNG
+--------------------------------------------------------------------------------
+
+1.1 Stage-Modell (Ist-Zustand)
+-------------------------------
+Stage 3  FREEZE
+         Stage 3 ist eingefroren. Änderungen ausschließlich für Bugfixing
+         zulässig. Neue Features sind in Stage 3 nicht erlaubt.
+
+Stage 4  FREEZE
+         Stage 4 ist eingefroren. Alle Scripts und Logik read-only.
+         Kein Eingriff zulässig außer explizit freigegebene Bugfixes.
+
+Stage 5  AKTIV
+         Erste Außenwirkungsphase. Realer Betrieb, Kundenkontakt,
+         Ökosystem-Aufbau. Erweiterungen additiv, kein Eingriff in S3/S4.
+
+1.2 Auslöser (gemäß GOV 10.3 / 10.5)
+---------------------------------------
+Auslöser-Typ : Strategische Kurskorrektur (Stage-5-Erfahrung aus Livebetrieb)
+
+Vorgeschichte:  Im Rahmen von SPRINT-RMNP01 wurde das Atlassian JSM/CSM
+                Portal als Endkunden-Einstieg aufgebaut. Im Livebetrieb
+                (2026-03-12) wurden folgende Free-Plan-Grenzen aufgedeckt:
+
+                  - JSM Portal: kein anonymer Zugang ohne Login (Paid Feature)
+                  - Confluence: keine öffentlichen Seiten ohne Login (Paid Feature)
+                  - Confluence ↔ Jira Live-Verknüpfungen: eingeschränkt im Free
+
+                Erkenntnis: Atlassian ist als Pflicht-Säule für Endkunden
+                nicht vereinbar mit der R+MUNI Philosophie (kostenlos, offen,
+                kein Zwang, tool-agnostisch).
+
+Entscheidung:   Atlassian wird aus der Pflicht-Säule zur Option degradiert.
+                Externe Kommunikation und öffentliche Außenseite werden
+                auf GitHub / GitHub Pages verlagert.
+                Atlassian bleibt im Blueprint als "wenn du es ohnehin hast"
+                Option dokumentiert — kein Eingriff in bestehende Struktur.
+
+
+--------------------------------------------------------------------------------
+2. ZIEL DES SPRINTS
+--------------------------------------------------------------------------------
+
+Primärziel:
+  Definition und Dokumentation der neuen externen Kommunikationsstrategie
+  für R+MUNI auf Basis von GitHub / GitHub Pages / Markdown / Obsidian.
+
+Nebenziel:
+  Atlassian im Blueprint sauber als Option (nicht Pflicht) verankern.
+  GOV-Erweiterung um die neue Kommunikationsstrategie.
+
+Abgrenzung:
+  - Kein Eingriff in Stage 3/4 Scripts
+  - Atlassian-Setup bleibt erhalten — wird nicht abgebaut, nur neu bewertet
+  - SPRINT-RMNP01 bleibt als dokumentierter Lernschritt im Blueprint
+  - Kein Atlassian-Bashing — sachliche Neubewertung
+
+
+--------------------------------------------------------------------------------
+3. KONZEPTENTSCHEIDUNGEN (Pair-Session)
+--------------------------------------------------------------------------------
+
+3.1 Strategische Grundsatzentscheidung
+----------------------------------------
+Entschieden: Atlassian = Option, nicht Säule
+
+  Begründung:
+  - R+MUNI Philosophie: kostenlos, offen, kein Zwang, tool-agnostisch
+  - Atlassian Free zwingt Kunden in eine kostenpflichtige Welt
+    sobald sie die Basisfunktionen wirklich nutzen wollen
+  - EUMAXL will kein "Atlassian Enabler" sein
+  - Kunden sollen nicht durch R+MUNI in eine Tool-Abhängigkeit geführt werden
+
+  Was bleibt:
+  - Atlassian bleibt als persönliches Arbeitsmittel von EUMAXL
+  - JSM Portal RMNP bleibt aktiv als Feedback-Kanal
+  - Confluence bleibt für interne Blueprint-Dokumentation
+  - Blueprint dokumentiert Atlassian als eine von mehreren Optionen
+
+3.2 Neue Externe Kommunikationsstrategie
+-----------------------------------------
+Entschieden: GitHub-zentrierte Außenseite
+
+  Kanal A — GitHub Repository (bereits vorhanden)
+    github.com/arch-nullnull/R-MUNI
+    → Öffentlich, kein Login, für jeden zugänglich
+    → README.md als primärer Einstiegspunkt
+    → Install.txt, Doku direkt im Repo
+
+  Kanal B — GitHub Pages (neu, nächster Schritt)
+    arch-nullnull.github.io/R-MUNI (oder eigene Domain optional)
+    → Statische Website, kostenlos, wirklich öffentlich
+    → Basiert auf Markdown — kein CMS, kein Aufwand
+    → Inhalt: Projektbeschreibung, How-To, Blog-Posts (KI-Erfahrungen)
+
+  Kanal C — Atlassian JSM Portal (bleibt als Option)
+    https://ims-blueprint-ticketsystem.atlassian.net/helpcenter/RMNP/
+    → Feedback-Kanal für Kunden die einen Atlassian Account haben
+    → Kein Zwang — GitHub Issues als Alternative
+
+3.3 Toolstack für externe Kommunikation
+-----------------------------------------
+Entschieden: Obsidian + GitHub
+
+  Obsidian (kostenlos, lokal)
+    → Markdown Editor mit Live-Preview
+    → Bilder per Drag & Drop
+    → Graph View für Verlinkungen (passt zu EUMAXL's Strukturdenken)
+    → Git Plugin → direkter Push zu GitHub ohne Kommandozeile
+    → Kein Cloud-Zwang, lokale Dateien
+
+  GitHub
+    → Versionierung aller Inhalte
+    → GitHub Pages für öffentliche Website
+    → GitHub Issues als offener Feedback-Kanal (Alternative zu JSM)
+
+  Markdown (.md)
+    → Standard-Format, tool-agnostisch
+    → Direkt im Blueprint verwendbar
+    → Keine Abhängigkeit von proprietären Formaten
+
+3.4 Inhalte der externen Kommunikation
+----------------------------------------
+Geplante Inhalte für GitHub Pages:
+
+  Pflicht-Inhalte:
+    → Projektbeschreibung R+MUNI (Was ist es? Für wen?)
+    → Installations-Anleitung (vereinfacht, Link auf Install.txt)
+    → Kontakt / Feedback (Link auf JSM Portal + GitHub Issues)
+
+  Optionale Inhalte (iterativ):
+    → Blog-Reihe "KI-Erfahrungen" (bereits in Confluence begonnen)
+      Erster Post: "Ich bin ein Code-Noob" — kann direkt übernommen werden
+    → How-To Guides (aus Blueprint-Doku adaptiert)
+    → Changelog / Release Notes
+
+3.5 Atlassian Neubewertung im Blueprint
+-----------------------------------------
+Neue Einstufung:
+
+  JSM/CSM Portal   → Option A für Feedback (für Atlassian-User)
+  Confluence       → Persönliches Arbeitsmittel EUMAXL, internes Wiki
+  Jira             → Persönliches Ticketing EUMAXL, internes Backlog
+  GitHub Issues    → Option B für Feedback (offen, kein Login)
+
+  Dokumentation im Blueprint:
+  → Atlassian-Setup bleibt als "How-To wenn du Atlassian nutzt" erhalten
+  → SPRINT-RMNP01 bleibt als Blueprint-Lernschritt dokumentiert
+  → Kein Kunde wird zu Atlassian gezwungen oder geführt
+
+
+--------------------------------------------------------------------------------
+4. UMSETZUNG — OFFENE SCHRITTE
+--------------------------------------------------------------------------------
+
+4.1 Sofortmaßnahmen (diese Session / nächste Session)
+-------------------------------------------------------
+  [ ] Confluence "Externes Wiki" Startseite korrigieren
+      → Satz "100% öffentlich erreichbar" entfernen oder korrigieren
+      → Hinweis: "Login mit kostenlosem Atlassian Account erforderlich"
+
+  [ ] Obsidian installieren
+      → Download: https://obsidian.md (kostenlos)
+      → Git Plugin installieren und mit GitHub verbinden
+
+  [ ] GitHub Repository README.md aufwerten
+      → Projektbeschreibung überarbeiten
+      → Klarer Einstiegspunkt für neue Nutzer
+
+4.2 Nächste Sprint-Schritte (eigener Sprint EXT02)
+----------------------------------------------------
+  [ ] GitHub Pages aktivieren
+      → In GitHub Repository Settings → Pages → Branch auswählen
+      → Erste Seite: index.md mit Projektbeschreibung
+
+  [ ] Blog-Post "Ich bin ein Code-Noob" übertragen
+      → Inhalt liegt in Confluence "Externes Wiki"
+      → Als Markdown aufbereiten und in GitHub Pages publizieren
+
+  [ ] GitHub Issues als Feedback-Kanal konfigurieren
+      → Issue Templates anlegen (Bug, Feature Request, Frage)
+      → Link in README.md und GitHub Pages
+
+4.3 Blueprint-Anpassungen (GOV-Erweiterung)
+---------------------------------------------
+  [ ] GOV Kapitel 11.3 aktualisieren
+      → Kommunikationskanal erweitern um GitHub Issues
+      → Atlassian Portal als Option A, GitHub Issues als Option B
+
+  [ ] STAGE5_ZIELE.txt — Ziel 4.1 anpassen
+      → Atlassian Frontend "für Kunden" → "für EUMAXL intern"
+      → Neue Formulierung: GitHub Pages als öffentliche Außenseite
+
+
+--------------------------------------------------------------------------------
+5. ERKENNTNISSE FÜR DEN BLUEPRINT
+--------------------------------------------------------------------------------
+
+  • Free Plan Grenzen sind kein Bug — sie sind Atlassian's Geschäftsmodell
+    → Wer Free nutzt muss mit Einschränkungen leben oder zahlen
+    → Für R+MUNI Philosophie nicht akzeptabel als Pflicht-Säule
+
+  • Tool-Agnostik ist ein aktiver Schutz für Kunden
+    → Kein Tool darf zur impliziten Pflicht werden durch R+MUNI
+    → GitHub ist offener, versioniert, kostenlos — passt besser
+
+  • Obsidian + GitHub = wartbare Kombination ohne Vendor Lock-in
+    → Markdown bleibt in der Hand des Entwicklers
+    → Kein CMS, kein Abo, kein Upgrade-Druck
+
+  • SPRINT-RMNP01 war kein Fehler — es war notwendige Erfahrung
+    → Atlassian ausprobieren war richtig
+    → Die Grenzen sind jetzt dokumentiert und für andere nutzbar
+    → "Fail fast, document well" ist AI-Driven Development in Reinform
+
+  • Atlassian bleibt wertvoll — als persönliches Arbeitsmittel
+    → Jira für eigenes Ticketing — unersetzt
+    → Confluence für interne Doku — gut genug
+    → JSM Portal für Kunden die ohnehin Atlassian nutzen — okay
+    → Pflicht für alle Kunden — nein
+
+
+================================================================================
+SPRINT-EXT01-ExterneKommunikation
+ABGESCHLOSSEN (Konzept) | 2026-03-12
+R+MUNI Blueprint | Stage 5 | Erstellt durch: EUMAXL + Claude (Pair-Session)
+================================================================================
