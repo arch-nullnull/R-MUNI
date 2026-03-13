@@ -1,0 +1,6 @@
+[ATL00] 2026-03-13 01:18:04 | root.cfg gelesen — Root: C:\Prototyping\R+MUNI
+[ATL00] 2026-03-13 01:18:04 | <stages>    : C:\Prototyping\R+MUNI\02-stages
+[ATL00] 2026-03-13 01:18:04 | <artifacts> : C:\Prototyping\R+MUNI\01-artifacts
+[ATL00] 2026-03-13 01:18:04 | Lese run-scope.txt: C:\Prototyping\R+MUNI\02-stages\run-scope.txt
+[ATL00] 2026-03-13 01:18:04 | ERROR | Kein aktives SOURCE=ATL / MODEL= Pair in run-scope.txt gefunden.
+  → Bitte run-scope.txt prüfen und SOURCE=ATL + MODEL=<name> eintragen.

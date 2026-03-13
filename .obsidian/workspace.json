@@ -179,7 +179,17 @@
   },
   "active": "d7417ffa3364471e",
   "lastOpenFiles": [
-    "Neuer Ordner",
-    "structure.txt"
+    "01-artifacts/01-scripts/HLP09-serve_report (1).py",
+    "01-artifacts/01-scripts/HLP08_structure2csv (1).py",
+    "01-artifacts/01-scripts/M2B06-scope_snapshot (1).py",
+    "01-artifacts/01-scripts/M2B05-writeback_master (1).py",
+    "01-artifacts/01-scripts/M2B04-reconcile_enrich (1).py",
+    "01-artifacts/01-scripts/M2B03-clear (1).py",
+    "01-artifacts/01-scripts/M2B02-activate_model (1).py",
+    "01-artifacts/01-scripts/M2B01-master_extract (1).py",
+    "01-artifacts/01-scripts/ATL02-atlCsv2JiraCsv (1).py",
+    "01-artifacts/01-scripts/ATL01-masterXml2AtlCsv (1).py",
+    "01-artifacts/01-scripts/XML07-cleanup-artifacts (1).py",
+    "01-artifacts/05-reports/00-archimate/VIE04-Structure View.svg"
   ]
 }

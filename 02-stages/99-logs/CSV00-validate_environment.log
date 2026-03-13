@@ -1,0 +1,24 @@
+[CSV00] 2026-03-10 19:47:28 | root.txt: C:\Prototyping\R+MUNI\root.txt
+[CSV00] 2026-03-10 19:47:28 | BLUEPRINT_ROOT raw: C:\Prototyping\R+MUNI
+[CSV00] 2026-03-10 19:47:28 | Resolved root path: C:\Prototyping\R+MUNI
+[CSV00] 2026-03-10 19:47:28 | Wrote: C:\Prototyping\R+MUNI\03-stages\99-logs\CSV00-root.resolved.txt
+[CSV00] 2026-03-11 07:15:57 | root.txt: C:\Prototyping\R+MUNI\root.txt
+[CSV00] 2026-03-11 07:15:57 | BLUEPRINT_ROOT raw: C:\Prototyping\R+MUNI
+[CSV00] 2026-03-11 07:15:57 | Resolved root path: C:\Prototyping\R+MUNI
+[CSV00] 2026-03-11 07:15:57 | Wrote: C:\Prototyping\R+MUNI\03-stages\99-logs\CSV00-root.resolved.txt
+[CSV00] 2026-03-11 07:18:48 | root.txt: C:\Prototyping\R+MUNI\root.txt
+[CSV00] 2026-03-11 07:18:48 | BLUEPRINT_ROOT raw: C:\Prototyping\R+MUNI
+[CSV00] 2026-03-11 07:18:48 | Resolved root path: C:\Prototyping\R+MUNI
+[CSV00] 2026-03-11 07:18:48 | Wrote: C:\Prototyping\R+MUNI\03-stages\99-logs\CSV00-root.resolved.txt
+[CSV00] 2026-03-12 21:47:28 | root.txt: C:\Prototyping\R+MUNI\root.txt
+[CSV00] 2026-03-12 21:47:28 | BLUEPRINT_ROOT raw: C:\Prototyping\R+MUNI
+[CSV00] 2026-03-12 21:47:28 | Resolved root path: C:\Prototyping\R+MUNI
+[CSV00] 2026-03-12 21:47:28 | Wrote: C:\Prototyping\R+MUNI\03-stages\99-logs\CSV00-root.resolved.txt
+[CSV00] 2026-03-13 01:16:28 | root.cfg gelesen — Root: C:\Prototyping\R+MUNI
+[CSV00] 2026-03-13 01:16:28 | <stages>    : C:\Prototyping\R+MUNI\02-stages
+[CSV00] 2026-03-13 01:16:28 | <models>    : C:\Prototyping\R+MUNI\00-model
+[CSV00] 2026-03-13 01:16:28 | <artifacts> : C:\Prototyping\R+MUNI\01-artifacts
+[CSV00] 2026-03-13 01:16:28 | Ordner OK: <models> = C:\Prototyping\R+MUNI\00-model
+[CSV00] 2026-03-13 01:16:28 | Ordner OK: <artifacts> = C:\Prototyping\R+MUNI\01-artifacts
+[CSV00] 2026-03-13 01:16:28 | Ordner OK: <stages> = C:\Prototyping\R+MUNI\02-stages
+[CSV00] 2026-03-13 01:16:28 | Geschrieben: C:\Prototyping\R+MUNI\02-stages\99-logs\CSV00-root.resolved.txt

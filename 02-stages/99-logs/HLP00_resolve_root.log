@@ -1,0 +1,12 @@
+[HLP00] 2026-03-13 01:09:47 | root.cfg gefunden : C:\Prototyping\R+MUNI\root.cfg
+[HLP00] 2026-03-13 01:09:47 | ──────────────────────────────────────────────────
+[HLP00] 2026-03-13 01:09:47 |   <rootfolder>    = C:\Prototyping\R+MUNI  [OK - Ordner vorhanden]
+[HLP00] 2026-03-13 01:09:47 |   <models>        = C:\Prototyping\R+MUNI\00-model  [OK - Ordner vorhanden]
+[HLP00] 2026-03-13 01:09:47 |   <artifacts>     = C:\Prototyping\R+MUNI\01-artifacts  [OK - Ordner vorhanden]
+[HLP00] 2026-03-13 01:09:47 |   <stages>        = C:\Prototyping\R+MUNI\02-stages  [OK - Ordner vorhanden]
+[HLP00] 2026-03-13 01:09:47 |   <apps>          = C:\Prototyping\R+MUNI Apps  [OK - Ordner vorhanden]
+[HLP00] 2026-03-13 01:09:47 |   <doku>          = C:\Prototyping\R+MUNI Doku\R+MUNI Doku-internal  [OK - Ordner vorhanden]
+[HLP00] 2026-03-13 01:09:47 |   <dokupublic>    = C:\Prototyping\R+MUNI Doku\R+MUNI Doku-public  [OK - Ordner vorhanden]
+[HLP00] 2026-03-13 01:09:47 |   <creative>      = C:\Prototyping\R+MUNI Doku\R+MUNI Doku-creative  [OK - Ordner vorhanden]
+[HLP00] 2026-03-13 01:09:47 | ──────────────────────────────────────────────────
+[HLP00] 2026-03-13 01:09:47 | root.cfg erfolgreich gelesen — 8 Variablen aufgelöst.
