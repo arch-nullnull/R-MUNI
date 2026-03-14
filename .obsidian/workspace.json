@@ -11,10 +11,32 @@
             "id": "d7417ffa3364471e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Neuer Tab"
+              "title": "README"
+            }
+          }
+        ]
+      },
+      {
+        "id": "1fed651fc6ea44dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f44636df0c845fd4",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "graph",
+              "state": {},
+              "pinned": true,
+              "icon": "lucide-git-fork",
+              "title": "Graph-Ansicht"
             }
           }
         ]
@@ -177,8 +199,9 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "d7417ffa3364471e",
+  "active": "f44636df0c845fd4",
   "lastOpenFiles": [
+    "README.md",
     "01-artifacts/01-scripts/HLP09-serve_report (1).py",
     "01-artifacts/01-scripts/HLP08_structure2csv (1).py",
     "01-artifacts/01-scripts/M2B06-scope_snapshot (1).py",
@@ -189,7 +212,6 @@
     "01-artifacts/01-scripts/M2B01-master_extract (1).py",
     "01-artifacts/01-scripts/ATL02-atlCsv2JiraCsv (1).py",
     "01-artifacts/01-scripts/ATL01-masterXml2AtlCsv (1).py",
-    "01-artifacts/01-scripts/XML07-cleanup-artifacts (1).py",
     "01-artifacts/05-reports/00-archimate/VIE04-Structure View.svg"
   ]
 }

@@ -19,6 +19,7 @@
     <element xsi:type="archimate:BusinessProcess" name="BUP06-M2B FLOW" id="id-136c6e495f7944fe9d174e8e99401ca1"/>
     <element xsi:type="archimate:BusinessProcess" name="BUP00-FLOW" id="id-f2e451fc1a5040418d5ce92a8baa0d16">
       <documentation>Scriptrunner R+MUNI. Der Esel macht aus Snips was brauchbares. </documentation>
+      <property key="BPMN_ID"/>
     </element>
   </folder>
   <folder name="Application" id="id-5f1f51a518c64641b6168247c712c282" type="application"/>
