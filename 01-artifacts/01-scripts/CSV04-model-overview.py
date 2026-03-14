@@ -55,21 +55,43 @@ def read_root(script_dir: str) -> str:
 
 
 def read_scope_models(scope_path: str) -> list[str]:
+    """
+    Liest SOURCE=archi / MODEL= Paare aus run-scope.txt.
+    Nur Einträge mit Endung .archimate werden übernommen —
+    .bak, log-0.txt und andere Archi-interne Dateien werden ignoriert.
+    """
     models = []
+    current_source = None
     with open(scope_path, "r", encoding="utf-8") as f:
         for line in f:
-            if line.startswith("MODEL="):
-                models.append(line.strip().split("=", 1)[1])
+            line = line.strip()
+            if line.startswith("SOURCE="):
+                current_source = line.split("=", 1)[1].strip().lower()
+            elif line.startswith("MODEL="):
+                model = line.split("=", 1)[1].strip()
+                if current_source == "archi":
+                    # Nur .archimate Dateien — keine .bak, log-0.txt etc.
+                    if model.lower().endswith(".archimate"):
+                        models.append(model)
     return models
 
 
-def list_files(directory: str) -> list[str]:
+def list_files(directory: str, extensions: tuple = ()) -> list[str]:
+    """
+    Listet Dateien in einem Ordner.
+    extensions: Tuple von erlaubten Endungen z.B. (".xml",)
+    Leeres Tuple = alle Dateien (kein Filter).
+    """
     if not os.path.isdir(directory):
         return []
-    return sorted(
-        f for f in os.listdir(directory)
-        if os.path.isfile(os.path.join(directory, f))
-    )
+    result = []
+    for f in sorted(os.listdir(directory)):
+        if not os.path.isfile(os.path.join(directory, f)):
+            continue
+        if extensions and not f.lower().endswith(extensions):
+            continue
+        result.append(f)
+    return result
 
 
 def main():
@@ -94,21 +116,21 @@ def main():
         entries.append(("archi", model))
         log(f"Found Archi model: {model}", log_path)
 
-    # --- OEF artifacts ---
+    # --- OEF artifacts (nur .xml — .xsd Schemadateien werden ignoriert) ---
     oef_dir = os.path.join(root, "01-artifacts", "00-xml", "03-child", "00-archimatechild")
-    for f in list_files(oef_dir):
+    for f in list_files(oef_dir, extensions=(".xml",)):
         entries.append(("OEF", f))
         log(f"Found OEF artifact: {f}", log_path)
 
-    # --- XLSX artifacts ---
+    # --- XLSX artifacts (nur .xlsx) ---
     xlsx_dir = os.path.join(root, "01-artifacts", "03-XLSX", "03-child", "00-archimatechild")
-    for f in list_files(xlsx_dir):
+    for f in list_files(xlsx_dir, extensions=(".xlsx",)):
         entries.append(("XLSX", f))
         log(f"Found XLSX artifact: {f}", log_path)
 
-    # --- CSV artifacts ---
+    # --- CSV artifacts (nur .csv) ---
     csv_dir = os.path.join(root, "01-artifacts", "02-csv", "03-child", "00-archimatechild")
-    for f in list_files(csv_dir):
+    for f in list_files(csv_dir, extensions=(".csv",)):
         entries.append(("CSV", f))
         log(f"Found CSV artifact: {f}", log_path)
 

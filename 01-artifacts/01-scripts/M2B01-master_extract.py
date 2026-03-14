@@ -35,6 +35,7 @@ ROOT_DIR = Path(__file__).resolve().parents[2]
 
 STAGE_DIR = ROOT_DIR / "02-stages"
 HULL_DIR = STAGE_DIR / "01-bpmnarchive"
+ACTIVE_DIR = ROOT_DIR / "00-model" / "01-bpmn" / "00-bpmnactive"
 
 MASTER_XML = ROOT_DIR / "01-artifacts" / "00-xml" / "00-master" / "master.xml"
 MAPPING_FILE = ROOT_DIR / "01-artifacts" / "00-xml" / "01-mapping" / "M2Bmapping.txt"
@@ -185,25 +186,34 @@ def matches_mapping(proc: dict, rules: list) -> bool:
 def bpmn_exists(process_id: str, target_filename: str | None = None) -> bool:
     """
     Prueft ob eine BPMN Datei fuer diesen Prozess bereits existiert.
-    Zwei Kriterien (OR):
-      1. Eine Datei enthaelt <process id=process_id>  (ID-Match)
-      2. Eine Datei hat denselben Zieldateinamen       (Name-Match)
-    Verhindert Duplikate wenn safe_filename() dasselbe BPMN
-    unter leicht abweichendem Dateinamen ablegen wuerde.
+    Drei Kriterien (OR):
+      1. Eine Datei in HULL_DIR enthaelt <process id=process_id>  (ID-Match Archiv)
+      2. Eine Datei in ACTIVE_DIR enthaelt <process id=process_id> (ID-Match Active)
+      3. Eine Datei in HULL_DIR hat denselben Zieldateinamen       (Name-Match)
+
+    Wichtig: ID-Match hat immer Vorrang vor Name-Match.
+    Externe BPMN Dateien (Camunda-generierte IDs) liegen im active-Ordner
+    und werden ueber ID-Match erkannt bevor eine neue Huelle erstellt wird.
     """
-    for file in HULL_DIR.glob("*.bpmn"):
-        # Kriterium 2: Dateiname-Match (schnell, kein XML-Parsen noetig)
-        if target_filename and file.stem == target_filename:
-            return True
-        # Kriterium 1: ID-Match im XML
-        try:
-            tree = ET.parse(file)
-            root = tree.getroot()
-            proc = root.find(f".//{bpmn('process')}")
-            if proc is not None and proc.get("id") == process_id:
+    # Kriterium 3: Dateiname-Match im Archiv (schnell, kein XML-Parsen noetig)
+    if target_filename:
+        for file in HULL_DIR.glob("*.bpmn"):
+            if file.stem == target_filename:
                 return True
-        except ET.ParseError:
+
+    # Kriterium 1+2: ID-Match in beiden Ordnern
+    for search_dir in (HULL_DIR, ACTIVE_DIR):
+        if not search_dir.exists():
             continue
+        for file in search_dir.glob("*.bpmn"):
+            try:
+                tree = ET.parse(file)
+                root = tree.getroot()
+                proc = root.find(f".//{bpmn('process')}")
+                if proc is not None and proc.get("id") == process_id:
+                    return True
+            except ET.ParseError:
+                continue
     return False
 
 

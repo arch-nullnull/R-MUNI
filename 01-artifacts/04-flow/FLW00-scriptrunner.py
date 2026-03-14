@@ -57,23 +57,23 @@ def init_log(path: str) -> None:
 # ---------------------------------------------------------------------------
 
 def _read_root_value(root_file: str) -> str:
-    """Liest BLUEPRINT_ROOT aus root.txt – ohne log() Abhängigkeit."""
+    """Liest <rootfolder> aus root.cfg – ohne log() Abhängigkeit."""
     with open(root_file, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
-            if line.startswith("BLUEPRINT_ROOT="):
+            if line.startswith("<rootfolder>="):
                 return line.split("=", 1)[1].strip()
     return None
 
 
 def resolve_blueprint_root() -> str:
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    root_file  = os.path.abspath(os.path.join(script_dir, "..", "..", "root.txt"))
+    root_file  = os.path.abspath(os.path.join(script_dir, "..", "..", "root.cfg"))
 
     if not os.path.isfile(root_file):
-        abort(f"root.txt not found: {root_file}")
+        abort(f"root.cfg not found: {root_file}")
 
     root_value = None
     with open(root_file, "r", encoding="utf-8") as f:
@@ -81,13 +81,13 @@ def resolve_blueprint_root() -> str:
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
-            if line.startswith("BLUEPRINT_ROOT="):
+            if line.startswith("<rootfolder>="):
                 if root_value is not None:
-                    abort("multiple BLUEPRINT_ROOT entries found")
+                    abort("multiple <rootfolder> entries found")
                 root_value = line.split("=", 1)[1].strip()
 
     if not root_value:
-        abort("BLUEPRINT_ROOT missing or empty")
+        abort("<rootfolder> missing or empty")
 
     if not os.path.isabs(root_value):
         root_value = os.path.abspath(
@@ -95,7 +95,7 @@ def resolve_blueprint_root() -> str:
         )
 
     if not os.path.isdir(root_value):
-        abort(f"resolved BLUEPRINT_ROOT does not exist: {root_value}")
+        abort(f"resolved <rootfolder> does not exist: {root_value}")
 
     log(f"Blueprint root resolved: {root_value}")
     return root_value
@@ -389,7 +389,7 @@ def run_script(script_path: str, cwd: str) -> None:
 
 def main() -> None:
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    root_file  = os.path.abspath(os.path.join(script_dir, "..", "..", "root.txt"))
+    root_file  = os.path.abspath(os.path.join(script_dir, "..", "..", "root.cfg"))
 
     pre_root = None
     if os.path.isfile(root_file):
@@ -400,16 +400,16 @@ def main() -> None:
             )
 
     log_path = os.path.join(
-        pre_root or ".", "03-stages", "99-logs", "flw00-scriptrunner.log"
+        pre_root or ".", "02-stages", "99-logs", "flw00-scriptrunner.log"
     )
     init_log(log_path)
 
     blueprint_root = resolve_blueprint_root()
 
-    xml_root      = os.path.join(blueprint_root, "02-artifacts", "00-xml", "03-child")
-    scripts_dir   = os.path.join(blueprint_root, "02-artifacts", "01-scripts")
-    mapping_file  = os.path.join(blueprint_root, "02-artifacts", "04-flow", "flowmapping.txt")
-    triggers_file = os.path.join(blueprint_root, "02-artifacts", "04-flow", "flowtriggers.txt")
+    xml_root      = os.path.join(blueprint_root, "01-artifacts", "00-xml", "03-child")
+    scripts_dir   = os.path.join(blueprint_root, "01-artifacts", "01-scripts")
+    mapping_file  = os.path.join(blueprint_root, "01-artifacts", "04-flow", "flowmapping.txt")
+    triggers_file = os.path.join(blueprint_root, "01-artifacts", "04-flow", "flowtriggers.txt")
 
     mapping = load_mapping(mapping_file)
     rules   = load_trigger_rules(triggers_file)

@@ -263,6 +263,18 @@ def main():
         root, "01-artifacts", "00-xml", "00-master", "master.generated.xml"
     )
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
+
+    # Namespace-Präfixe registrieren damit ET sie beim Schreiben
+    # korrekt erhält und nicht zu ns0:, ns1: etc. umbenennt.
+    # Ohne diese Registrierung gehen xsi:type Werte wie
+    # "Relationship:CompositionRelationship" verloren.
+    ET.register_namespace("xsi",          "http://www.w3.org/2001/XMLSchema-instance")
+    ET.register_namespace("",             "http://www.opengroup.org/xsd/archimate/3.0/")
+    ET.register_namespace("bpmn",         "http://www.omg.org/spec/BPMN/20100524/MODEL")
+    ET.register_namespace("dc",           "http://www.omg.org/spec/DD/20100524/DC")
+    ET.register_namespace("di",           "http://www.omg.org/spec/DD/20100524/DI")
+    ET.register_namespace("bpmndi",       "http://www.omg.org/spec/BPMN/20100524/DI")
+
     ET.ElementTree(master_root).write(out_path, encoding="utf-8", xml_declaration=True)
 
     print("[XML04] OK | master merge completed")

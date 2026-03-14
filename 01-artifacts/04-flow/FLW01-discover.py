@@ -13,8 +13,8 @@ Zeigt zusaetzlich fuer jeden gefundenen Typ/Tag:
   - welchen order-Wert die Regel hat
 
 Ausgabe:
-  - 03-stages/99-logs/flw01-discover.log  (detailliert, mit Fundorten)
-  - 03-stages/flw01-discover.txt          (kompakt, Referenz fuer flowtriggers.txt)
+  - 02-stages/99-logs/flw01-discover.log  (detailliert, mit Fundorten)
+  - 02-stages/flw01-discover.txt          (kompakt, Referenz fuer flowtriggers.txt)
 """
 
 import os
@@ -61,10 +61,10 @@ def is_bpmn(root: ET.Element) -> bool:
 
 def resolve_blueprint_root() -> str:
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    root_file  = os.path.abspath(os.path.join(script_dir, "..", "..", "root.txt"))
+    root_file  = os.path.abspath(os.path.join(script_dir, "..", "..", "root.cfg"))
 
     if not os.path.isfile(root_file):
-        print(f"[FLW01] ABORT: root.txt not found: {root_file}")
+        print(f"[FLW01] ABORT: root.cfg not found: {root_file}")
         sys.exit(1)
 
     root_value = None
@@ -73,12 +73,12 @@ def resolve_blueprint_root() -> str:
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
-            if line.startswith("BLUEPRINT_ROOT="):
+            if line.startswith("<rootfolder>="):
                 root_value = line.split("=", 1)[1].strip()
                 break
 
     if not root_value:
-        print("[FLW01] ABORT: BLUEPRINT_ROOT missing or empty")
+        print("[FLW01] ABORT: <rootfolder> missing or empty")
         sys.exit(1)
 
     if not os.path.isabs(root_value):
@@ -328,10 +328,10 @@ def write_summary(path: str, ts: str,
 def main() -> None:
     blueprint_root = resolve_blueprint_root()
 
-    xml_root      = os.path.join(blueprint_root, "02-artifacts", "00-xml", "03-child")
-    triggers_file = os.path.join(blueprint_root, "02-artifacts", "04-flow", "flowtriggers.txt")
-    log_path      = os.path.join(blueprint_root, "03-stages", "99-logs", "flw01-discover.log")
-    txt_path      = os.path.join(blueprint_root, "03-stages", "flw01-discover.txt")
+    xml_root      = os.path.join(blueprint_root, "01-artifacts", "00-xml", "03-child")
+    triggers_file = os.path.join(blueprint_root, "01-artifacts", "04-flow", "flowtriggers.txt")
+    log_path      = os.path.join(blueprint_root, "02-stages", "99-logs", "flw01-discover.log")
+    txt_path      = os.path.join(blueprint_root, "02-stages", "flw01-discover.txt")
 
     os.makedirs(os.path.dirname(log_path), exist_ok=True)
     os.makedirs(os.path.dirname(txt_path), exist_ok=True)

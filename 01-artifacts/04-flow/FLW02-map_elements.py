@@ -17,8 +17,8 @@ Alle anderen Elemente (kein Trigger:Ja) erscheinen als auskommentierte
 Referenz-Zeilen — zur Übersicht, aber nicht zum direkten Einfügen.
 
 Ausgabe:
-  - 03-stages/99-logs/flw02-map_elements.log  (detailliert)
-  - 03-stages/flw02-map_elements.txt          (Referenz für flowmapping.txt)
+  - 02-stages/99-logs/flw02-map_elements.log  (detailliert)
+  - 02-stages/flw02-map_elements.txt          (Referenz für flowmapping.txt)
 """
 
 import os
@@ -80,10 +80,10 @@ def has_trigger_ja(elem: ET.Element) -> bool:
 
 def resolve_blueprint_root() -> str:
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    root_file  = os.path.abspath(os.path.join(script_dir, "..", "..", "root.txt"))
+    root_file  = os.path.abspath(os.path.join(script_dir, "..", "..", "root.cfg"))
 
     if not os.path.isfile(root_file):
-        print(f"[FLW02] ABORT: root.txt nicht gefunden: {root_file}")
+        print(f"[FLW02] ABORT: root.cfg nicht gefunden: {root_file}")
         sys.exit(1)
 
     root_value = None
@@ -92,12 +92,12 @@ def resolve_blueprint_root() -> str:
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
-            if line.startswith("BLUEPRINT_ROOT="):
+            if line.startswith("<rootfolder>="):
                 root_value = line.split("=", 1)[1].strip()
                 break
 
     if not root_value:
-        print("[FLW02] ABORT: BLUEPRINT_ROOT fehlt oder ist leer in root.txt")
+        print("[FLW02] ABORT: <rootfolder> fehlt oder ist leer in root.cfg")
         sys.exit(1)
 
     if not os.path.isabs(root_value):
@@ -357,9 +357,9 @@ def write_mapping_reference(path: str, ts: str,
 def main() -> None:
     blueprint_root = resolve_blueprint_root()
 
-    xml_root  = os.path.join(blueprint_root, "02-artifacts", "00-xml", "03-child")
-    log_path  = os.path.join(blueprint_root, "03-stages", "99-logs", "flw02-map_elements.log")
-    txt_path  = os.path.join(blueprint_root, "03-stages", "flw02-map_elements.txt")
+    xml_root  = os.path.join(blueprint_root, "01-artifacts", "00-xml", "03-child")
+    log_path  = os.path.join(blueprint_root, "02-stages", "99-logs", "flw02-map_elements.log")
+    txt_path  = os.path.join(blueprint_root, "02-stages", "flw02-map_elements.txt")
 
     os.makedirs(os.path.dirname(log_path), exist_ok=True)
     os.makedirs(os.path.dirname(txt_path), exist_ok=True)

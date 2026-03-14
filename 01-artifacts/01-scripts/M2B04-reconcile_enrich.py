@@ -292,8 +292,7 @@ def main():
 
         # Enrich: Metadaten aus Archi uebertragen
         if pid not in archi_index:
-            log(f"no Archi match for process {pid} -> report only, no enrichment")
-            tree.write(file, encoding="utf-8", xml_declaration=True)
+            log(f"no Archi match for process {pid} -> report only, no write")
             continue
 
         archi = archi_index[pid]
@@ -302,12 +301,21 @@ def main():
         if relevant_models:
             if not any(m in (archi.get("sourceModel") or "") for m in relevant_models):
                 log(f"skip enrich (model not relevant): {archi.get('sourceModel')}")
-                tree.write(file, encoding="utf-8", xml_declaration=True)
                 continue
 
-        safe_write(proc, "name", archi.get("name"))
+        # Nur schreiben wenn sich tatsaechlich etwas geaendert hat
+        changed = False
+        new_name = (archi.get("name") or "").strip()
+        if new_name and proc.get("name") != new_name:
+            proc.set("name", new_name)
+            log(f"enriched name -> '{new_name}'")
+            changed = True
 
-        tree.write(file, encoding="utf-8", xml_declaration=True)
+        if changed:
+            tree.write(file, encoding="utf-8", xml_declaration=True)
+            log(f"written: {file.name}")
+        else:
+            log(f"no changes: {file.name} -> skip write")
 
     # --------------------------------------------------
     # Guard: keine illegalen Prozess-Aenderungen

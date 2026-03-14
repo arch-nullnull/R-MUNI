@@ -90,7 +90,7 @@ def resolve_root() -> Path:
         if candidate.exists():
             for line in candidate.read_text(encoding="utf-8").splitlines():
                 line = line.strip()
-                if line.startswith("BLUEPRINT_ROOT=") or line.startswith("<rootfolde>="):
+                if line.startswith("BLUEPRINT_ROOT=") or line.startswith("<rootfolder>="):
                     value = line.split("=", 1)[1].strip()
                     return Path(value)
             break
@@ -218,6 +218,28 @@ def load_bpmn_mapping(mapping_path: Path, logger: logging.Logger) -> list[dict]:
         raise ValueError("bpmnmastercsvsync.txt contains no active rules")
     return rules
 
+
+
+
+# ===========================================================
+# ARCHI TYPE NORMALISIERUNG
+# ===========================================================
+
+# Archi OEF XML speichert Relationship-Typen ohne 'Relationship'-Suffix.
+# Beispiel OEF:  xsi:type="Composition"
+# Archi CSV:     Type="CompositionRelationship"
+
+RELATIONSHIP_TYPES = {
+    "Association", "Access", "Influence", "Realization",
+    "Serving", "Assignment", "Aggregation", "Composition",
+    "Flow", "Triggering", "Specialization",
+}
+
+def normalize_relationship_type(etype: str) -> str:
+    """Haengt 'Relationship' an bekannte ArchiMate Relationship-Typen an."""
+    if etype in RELATIONSHIP_TYPES:
+        return etype + "Relationship"
+    return etype
 
 # ===========================================================
 # ARCHI ELEMENT PARSER
@@ -478,7 +500,7 @@ def main():
         # --- ArchiMate relationship ---
         elif source_sys == "archi" and local_tag == "relationship":
             eid   = child.get("identifier")
-            etype = child.get(f"{xsi}type", "")
+            etype = normalize_relationship_type(child.get(f"{xsi}type", ""))
             name_el = child.find(f"{a}name")
             name    = name_el.text.strip() if (name_el is not None and name_el.text) else ""
             doc_el  = child.find(f"{a}documentation")

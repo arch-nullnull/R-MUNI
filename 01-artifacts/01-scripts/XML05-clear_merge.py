@@ -2,61 +2,85 @@
 # ==========================================================
 # XML05-clear_merge.py
 #
-# PURPOSE
+# ZWECK
 # ----------------------------------------------------------
-# Apply declarative consolidation rules to the current
-# master XML in order to resolve logical duplicates and
-# produce a fixed, consistent output state.
+# Konsolidierungsregeln aus sync.txt auf das aktuelle
+# master.generated.xml anwenden.
+# Logische Duplikate aufloesen, bereinigten Output schreiben.
 #
-# The script executes exactly what is declared in sync.txt.
-# No implicit decisions are made.
+# Das Script fuehrt aus was in sync.txt deklariert ist.
+# Keine impliziten Entscheidungen.
+#
+# Inputs:
+#   <root>/01-artifacts/00-xml/00-master/master.generated.xml
+#   <root>/01-artifacts/00-xml/02-sync/sync.txt
+#
+# Output:
+#   <root>/01-artifacts/00-xml/00-master/master.cleared.xml
+#
+# Log:
+#   <root>/02-stages/99-logs/XML05-clear_merge.log
+#
+# Basis: Cleaning Run 5.5 | Stage 5
+# Bibliothek: xml.etree.ElementTree (Standard — kein lxml)
 # ==========================================================
 
 import os
+import sys
+import xml.etree.ElementTree as ET
 from datetime import datetime
-from lxml import etree
 
 
 # ==========================================================
-# STAGE 0 – PATH RESOLUTION
+# STAGE 0 – PFAD-AUFLOESUNG
 # ==========================================================
 
 def resolve_root() -> str:
+    """
+    Liest den Root-Pfad aus XML00-root.resolved.txt.
+    Die Datei liegt zwei Ebenen ueber dem Script-Ordner
+    im 02-stages/99-logs Verzeichnis.
+    """
     script_dir = os.path.abspath(os.path.dirname(__file__))
     resolved_path = os.path.abspath(
         os.path.join(script_dir, "..", "..", "02-stages", "99-logs", "XML00-root.resolved.txt")
     )
     if not os.path.isfile(resolved_path):
-        raise RuntimeError(f"XML00-root.resolved.txt not found at: {resolved_path}")
+        raise RuntimeError(f"XML00-root.resolved.txt nicht gefunden: {resolved_path}")
     with open(resolved_path, "r", encoding="utf-8") as f:
         root = f.readline().strip()
     if not root or not os.path.isdir(root):
-        raise RuntimeError(f"Invalid root path in XML00-root.resolved.txt: {root}")
+        raise RuntimeError(f"Ungueltiger Root-Pfad in XML00-root.resolved.txt: {root}")
     return root
 
 
 # ==========================================================
-# STAGE 1 – LOAD INPUTS
+# STAGE 1 – INPUTS LADEN
 # ==========================================================
 
-def load_master(path):
-    return etree.parse(path)
+def load_master(path: str) -> ET.ElementTree:
+    """Laedt master.generated.xml als ElementTree."""
+    return ET.parse(path)
 
-def load_sync_rules(path):
+
+def load_sync_rules(path: str) -> list:
+    """
+    Liest sync.txt und gibt eine Liste von Regel-Dicts zurueck.
+    Format pro Zeile: <selector> :: <action>
+    Ohne :: wird action="keep" angenommen.
+    """
     rules = []
     with open(path, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
-
             if "::" in line:
                 selector, action = line.split("::", 1)
                 action = action.strip()
             else:
                 selector = line
                 action = "keep"
-
             rules.append({
                 "selector": selector.strip(),
                 "action": action
@@ -65,17 +89,21 @@ def load_sync_rules(path):
 
 
 # ==========================================================
-# STAGE 2 – BUILD OBJECT INDEX
+# STAGE 2 – OBJEKT-INDEX AUFBAUEN
 # ==========================================================
 
-def build_index(tree):
+def build_index(tree: ET.ElementTree) -> dict:
+    """
+    Erstellt einen Index aller Elemente im Baum.
+    Indiziert nach 'identifier' (Archi-Anker) und 'id' (externe ID).
+    """
     index = {
         "all": [],
         "by_identifier": {},
         "by_external_id": {}
     }
 
-    for elem in tree.xpath("//*"):
+    for elem in tree.getroot().iter():
         index["all"].append(elem)
 
         identifier = elem.get("identifier")
@@ -91,66 +119,66 @@ def build_index(tree):
 
 
 # ==========================================================
-# STAGE 3 – SELECTOR MATCHING
+# STAGE 3 – NAMESPACE-HANDLING & SELECTOR-MATCHING
 # ==========================================================
 
-def strip_ns(tag):
+def strip_ns(tag: str) -> str:
     """
-    Entfernt den XML-Namespace aus einem lxml-Tag.
+    Entfernt den XML-Namespace-Prefix aus einem ET-Tag.
     Aus '{http://...}serviceTask' wird 'serviceTask'.
+    Aus 'bpmn:serviceTask' (ohne geschwungene Klammer) bleibt es unveraendert.
     """
     if tag and tag.startswith("{") and "}" in tag:
         return tag.split("}", 1)[1]
     return tag
 
 
-def match_selector(selector, element):
+def match_selector(selector: str, element: ET.Element) -> bool:
     """
+    Prueft ob ein Element auf einen Selector passt.
+
     Selector-Format: <source>-<entry-point>+filter+filter
 
-    WICHTIG: lxml-Tags haben das Format {namespace-uri}localname.
-    Wir arbeiten hier immer mit dem lokalen Namen (strip_ns) und dem
-    sourceSystem-Attribut fuer source-Checks, damit Namespace-URIs
-    den Matching-Prozess nicht stoeren.
+    source:      archi | bpmn
+    entry-point: lokaler Tag-Name oder * fuer Wildcard
+    filter:      has:id | has:identifier | no:identifier | same:* (wird spaeter geprueft)
     """
     if "-" not in selector:
         return False
 
     source, rest = selector.split("-", 1)
-
     local_tag = strip_ns(element.tag)
     source_system = element.get("sourceSystem", "")
 
-    # Source-Check: archi
+    # --- Source-Check: archi ---
     if source == "archi":
-        # ArchiMate-Elemente: entweder ueber sourceSystem-Annotation (gesetzt von XML04)
-        # oder ueber typische lokale Tagnamen aus dem OEF-Export
         is_archi = (
             source_system == "archi"
-            or local_tag in ("element", "relationship", "item", "view",
-                             "node", "connection", "folder", "propertyDefinition")
+            or local_tag in (
+                "element", "relationship", "item", "view",
+                "node", "connection", "folder", "propertyDefinition"
+            )
         )
         if not is_archi:
             return False
 
-    # Source-Check: bpmn
+    # --- Source-Check: bpmn ---
     if source == "bpmn":
-        # BPMN-Elemente: entweder ueber sourceSystem-Annotation (gesetzt von XML04)
-        # oder lokalen Tag-Namen der typisch BPMN-spezifisch ist
-        # NICHT mehr via 'bpmn' in element.tag, da Namespace-URI diese Prueung bricht!
         is_bpmn = (
             source_system == "bpmn"
-            or local_tag in ("serviceTask", "process", "startEvent", "endEvent",
-                             "sequenceFlow", "userTask", "subProcess", "callActivity",
-                             "exclusiveGateway", "parallelGateway", "inclusiveGateway",
-                             "intermediateCatchEvent", "intermediateThrowEvent",
-                             "boundaryEvent", "documentation", "definitions",
-                             "extensionElements")
+            or local_tag in (
+                "serviceTask", "process", "startEvent", "endEvent",
+                "sequenceFlow", "userTask", "subProcess", "callActivity",
+                "exclusiveGateway", "parallelGateway", "inclusiveGateway",
+                "intermediateCatchEvent", "intermediateThrowEvent",
+                "boundaryEvent", "documentation", "definitions",
+                "extensionElements"
+            )
         )
         if not is_bpmn:
             return False
 
-    # entry-point + Filter trennen
+    # --- Entry-Point und Filter trennen ---
     if "+" in rest:
         entry_point, filters_str = rest.split("+", 1)
         filters = filters_str.split("+")
@@ -160,18 +188,16 @@ def match_selector(selector, element):
 
     entry_point = entry_point.strip()
 
-    # entry-point matching: bpmn:serviceTask -> lokaler Name ist 'serviceTask'
-    # entry_point kann 'bpmn:serviceTask' oder 'element' oder '*' sein
+    # --- Entry-Point matching ---
+    # 'bpmn:serviceTask' -> lokaler Vergleich mit 'serviceTask'
     if entry_point != "*":
-        # Normalisieren: 'bpmn:serviceTask' -> 'serviceTask' fuer lokalen Vergleich
         ep_local = entry_point.split(":")[-1] if ":" in entry_point else entry_point
         if local_tag != ep_local:
             return False
 
-    # Filter-Tokens auswerten
+    # --- Filter-Tokens auswerten ---
     for flt in filters:
         flt = flt.strip()
-
         if flt == "has:id" and not element.get("id"):
             return False
         if flt == "has:identifier" and not element.get("identifier"):
@@ -179,36 +205,59 @@ def match_selector(selector, element):
         if flt == "no:identifier" and element.get("identifier"):
             return False
         if flt.startswith("same:"):
-            continue  # wird waehrend des Merge-Vorgangs geprueft
+            continue  # wird beim Merge-Vorgang geprueft
 
     return True
 
 
 # ==========================================================
-# STAGE 4 – CONSOLIDATION ACTIONS
+# STAGE 4 – KONSOLIDIERUNGS-AKTIONEN
 # ==========================================================
 
-def merge_objects(canonical, duplicate, log):
-    parent = duplicate.getparent()
+def find_parent(tree: ET.ElementTree, child: ET.Element):
+    """
+    Sucht das Eltern-Element eines gegebenen Elements im Baum.
+    ET hat kein .getparent() — daher manuell suchen.
+    """
+    for parent in tree.getroot().iter():
+        if child in list(parent):
+            return parent
+    return None
+
+
+def merge_objects(tree: ET.ElementTree, canonical: ET.Element,
+                  duplicate: ET.Element, log: list) -> None:
+    """Entfernt das Duplikat aus dem Baum."""
+    parent = find_parent(tree, duplicate)
     if parent is not None:
         parent.remove(duplicate)
         log.append(
-            f"MERGE: removed duplicate id={duplicate.get('id')} "
-            f"into identifier={canonical.get('identifier')}"
+            f"MERGE: duplicate entfernt id={duplicate.get('id')} "
+            f"-> canonical identifier={canonical.get('identifier')}"
+        )
+    else:
+        log.append(
+            f"MERGE: kein Parent gefunden fuer id={duplicate.get('id')} — uebersprungen"
         )
 
-def keep_object(obj, log):
+
+def keep_object(obj: ET.Element, log: list) -> None:
     log.append(f"KEEP: id={obj.get('id')}")
 
-def ignore_object(obj, log):
+
+def ignore_object(obj: ET.Element, log: list) -> None:
     log.append(f"IGNORE: id={obj.get('id')}")
 
 
 # ==========================================================
-# STAGE 5 – APPLY RULES
+# STAGE 5 – REGELN ANWENDEN
 # ==========================================================
 
-def apply_rules(tree, rules, index, log):
+def apply_rules(tree: ET.ElementTree, rules: list, index: dict, log: list) -> None:
+    """
+    Wendet alle Regeln aus sync.txt auf den Baum an.
+    Arbeitet auf einer Kopie der Element-Liste um Mutations-Probleme zu vermeiden.
+    """
     for rule in rules:
         selector = rule["selector"]
         action = rule["action"]
@@ -217,40 +266,34 @@ def apply_rules(tree, rules, index, log):
             if not match_selector(selector, elem):
                 continue
 
-            identifier = elem.get("identifier")
             external_id = elem.get("id")
 
-            if action == "merge" and external_id and not identifier:
+            if action == "merge" and external_id and not elem.get("identifier"):
                 candidates = index["by_external_id"].get(external_id, [])
                 canonicals = [e for e in candidates if e.get("identifier")]
 
                 if len(canonicals) == 1:
                     canonical = canonicals[0]
 
+                    # same:type Pruefung
                     if "same:type" in selector:
-                        if canonical.get(
-                            "{http://www.w3.org/2001/XMLSchema-instance}type"
-                        ) != elem.get(
-                            "{http://www.w3.org/2001/XMLSchema-instance}type"
-                        ):
-                            log.append(
-                                f"SKIP: type mismatch id={external_id}"
-                            )
+                        xsi_ns = "{http://www.w3.org/2001/XMLSchema-instance}type"
+                        if canonical.get(xsi_ns) != elem.get(xsi_ns):
+                            log.append(f"SKIP: type mismatch id={external_id}")
                             continue
 
+                    # same:sourceSystem Pruefung
                     if "same:sourceSystem" in selector:
                         if canonical.get("sourceSystem") != elem.get("sourceSystem"):
-                            log.append(
-                                f"SKIP: sourceSystem mismatch id={external_id}"
-                            )
+                            log.append(f"SKIP: sourceSystem mismatch id={external_id}")
                             continue
 
-                    merge_objects(canonical, elem, log)
+                    merge_objects(tree, canonical, elem, log)
 
+                elif len(canonicals) == 0:
+                    log.append(f"SKIP: kein canonical fuer id={external_id}")
                 else:
-                    log.append(
-                        f"AMBIGUOUS: id={external_id} candidates={len(canonicals)}"
-                    )
+                    log.append(f"AMBIGUOUS: id={external_id} | candidates={len(canonicals)}")
 
             elif action == "keep":
                 keep_object(elem, log)
@@ -260,54 +303,64 @@ def apply_rules(tree, rules, index, log):
 
 
 # ==========================================================
-# STAGE 6 – WRITE OUTPUT
+# STAGE 6 – OUTPUT SCHREIBEN
 # ==========================================================
 
-def write_output(tree, path):
-    tree.write(
-        path,
-        pretty_print=True,
-        xml_declaration=True,
-        encoding="UTF-8"
-    )
+def write_output(tree: ET.ElementTree, path: str) -> None:
+    """Schreibt den bereinigten Baum als XML-Datei."""
+    ET.indent(tree.getroot(), space="  ")
+    tree.write(path, encoding="utf-8", xml_declaration=True)
 
-def write_log(entries, path):
+
+def write_log(entries: list, path: str) -> None:
+    """Schreibt das Log in eine Textdatei."""
     with open(path, "w", encoding="utf-8") as f:
         for line in entries:
             f.write(line + "\n")
 
 
 # ==========================================================
-# STAGE 7 – MAIN FLOW
+# STAGE 7 – MAIN
 # ==========================================================
 
-def main():
+def main() -> None:
     ROOT = resolve_root()
 
-    XML_DIR = os.path.join(ROOT, "01-artifacts", "00-xml")
-    MASTER_IN = os.path.join(XML_DIR, "00-master", "master.generated.xml")
+    XML_DIR    = os.path.join(ROOT, "01-artifacts", "00-xml")
+    MASTER_IN  = os.path.join(XML_DIR, "00-master", "master.generated.xml")
     MASTER_OUT = os.path.join(XML_DIR, "00-master", "master.cleared.xml")
-    SYNC_FILE = os.path.join(XML_DIR, "02-sync", "sync.txt")
-    LOG_DIR = os.path.join(ROOT, "02-stages", "99-logs")
-    LOG_FILE = os.path.join(LOG_DIR, "XML05-clear_merge.log")
+    SYNC_FILE  = os.path.join(XML_DIR, "02-sync", "sync.txt")
+    LOG_DIR    = os.path.join(ROOT, "02-stages", "99-logs")
+    LOG_FILE   = os.path.join(LOG_DIR, "XML05-clear_merge.log")
+
+    # Pflicht-Dateien pruefen
+    for p in [MASTER_IN, SYNC_FILE]:
+        if not os.path.isfile(p):
+            print(f"[XML05] ERROR | Datei fehlt: {p}", file=sys.stderr)
+            sys.exit(1)
 
     log = []
-    log.append("==================================================")
+    log.append("=" * 50)
     log.append(f"XML05 STARTED: {datetime.utcnow().isoformat()}")
 
-    tree = load_master(MASTER_IN)
+    tree  = load_master(MASTER_IN)
     rules = load_sync_rules(SYNC_FILE)
     index = build_index(tree)
+
+    log.append(f"master geladen: {MASTER_IN}")
+    log.append(f"sync-regeln geladen: {len(rules)} Regeln")
+    log.append(f"index aufgebaut: {len(index['all'])} Elemente")
 
     apply_rules(tree, rules, index, log)
 
     write_output(tree, MASTER_OUT)
 
-    log.append(f"OUTPUT WRITTEN: {MASTER_OUT}")
+    log.append(f"OUTPUT GESCHRIEBEN: {MASTER_OUT}")
     log.append(f"XML05 COMPLETED: {datetime.utcnow().isoformat()}")
-    log.append("==================================================")
+    log.append("=" * 50)
 
     write_log(log, LOG_FILE)
+    print(f"[XML05] OK | master cleared -> {MASTER_OUT}")
 
 
 if __name__ == "__main__":

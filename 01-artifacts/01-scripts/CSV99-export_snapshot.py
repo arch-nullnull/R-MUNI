@@ -18,10 +18,10 @@
 #   - Import folder files are overwritten
 #
 # Output:
-#   <root>/02-artifacts/02-csv/04-import
+#   <root>/01-artifacts/02-csv/04-import
 #
 # Logging:
-#   <root>/03-stages/99-logs/CSV99-export_snapshot.log
+#   <root>/02-stages/99-logs/CSV99-export_snapshot.log
 
 import csv
 import os
@@ -69,24 +69,24 @@ def main():
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     root_file = os.path.join(
-        script_dir, "..", "..", "03-stages", "99-logs", "CSV00-root.resolved.txt"
+        script_dir, "..", "..", "02-stages", "99-logs", "CSV00-root.resolved.txt"
     )
 
     with open(root_file, encoding="utf-8") as f:
         root = f.readline().strip()
 
-    log_dir = os.path.join(root, "03-stages", "99-logs")
+    log_dir = os.path.join(root, "02-stages", "99-logs")
     os.makedirs(log_dir, exist_ok=True)
     log_path = os.path.join(log_dir, "CSV99-export_snapshot.log")
 
     log("=== CSV99 RUN START ===", log_path)
 
-    master_dir = os.path.join(root, "02-artifacts", "02-csv", "00-master")
-    import_dir = os.path.join(root, "02-artifacts", "02-csv", "04-import")
+    master_dir = os.path.join(root, "01-artifacts", "02-csv", "00-master")
+    import_dir = os.path.join(root, "01-artifacts", "02-csv", "04-import")
     os.makedirs(import_dir, exist_ok=True)
 
     export_filter_path = os.path.join(
-        root, "02-artifacts", "02-csv", "02-sync", "csvexport.txt"
+        root, "01-artifacts", "02-csv", "02-sync", "csvexport.txt"
     )
     export_filter = load_export_filter(export_filter_path)
 

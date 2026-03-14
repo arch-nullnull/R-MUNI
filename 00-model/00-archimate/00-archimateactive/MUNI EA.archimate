@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="MUNI EA Modell" id="id-5579a330bf134248ba775c56a8321aab" version="5.0.0">
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="MUNI EA" id="id-5579a330bf134248ba775c56a8321aab" version="5.0.0">
   <folder name="Strategy" id="id-e22d76a92689465dafb47f0364e8440d" type="strategy">
     <element xsi:type="archimate:Resource" name="RES00-Eigenmittel" id="id-081d94ae4980441e9b29dcc553b77aa0">
       <documentation>Wir haben keinen Sponsor oder Unterstützer für R+MUNI daher finanzieren wir uns aus Eigenmittel</documentation>
@@ -447,7 +447,7 @@
     <element xsi:type="archimate:InfluenceRelationship" id="id-d7d25677097f40e492fd0b251d5459a8" source="id-9f87b3f035bc49ef981b4e32b4936ad6" target="id-2e8003103e65443fa5bdb50a9142d97a"/>
   </folder>
   <folder name="Views" id="id-8cd4c7114a6d4080911a3cfeb60f17d9" type="diagrams">
-    <folder name="R+MUNI CORE Modelle" id="id-3bb5f5602aac43d589d86d84a1c69e88">
+    <folder name="R+MUNI CORE" id="id-3bb5f5602aac43d589d86d84a1c69e88">
       <documentation>CORE Layer für weitere Arbeiten und dient als Basis für mögliche Ansätze.</documentation>
       <element xsi:type="archimate:ArchimateDiagramModel" name="VIE03-Application View" id="id-aebab7c604454c0b971d41936a00cf9c">
         <child xsi:type="archimate:DiagramObject" id="id-f9c6cda7f9e04f8095689b5d24c51802" archimateElement="id-7ebdb2a2d877437b8d3b8945b31aff5e">
@@ -873,7 +873,7 @@
         </child>
         <documentation>Einfacher Hardware View ist nicht mehr einfach ein PC und Internet ist vollkommen ausreichend. Das Design ermöglicht es auch auf Linux laufen zu lassen. </documentation>
       </element>
-      <element xsi:type="archimate:ArchimateDiagramModel" name="VIE05-Tracing Core Layer" id="id-88746505561c41a98ca96ac75e1c9fa9">
+      <element xsi:type="archimate:ArchimateDiagramModel" name="VIE06-Tracing Core Layer" id="id-88746505561c41a98ca96ac75e1c9fa9">
         <child xsi:type="archimate:DiagramObject" id="id-8de26533735441a096d1514a46de003c" targetConnections="id-c65d6a46c11a4f0c9ec40bced8fd1a99" archimateElement="id-afb6eefbbd0548699e65384387b61759">
           <bounds x="729" y="714" width="120" height="55"/>
         </child>
@@ -1228,7 +1228,7 @@
         </child>
         <documentation>Die Übersicht meiner vermutlichen Fähigkeiten sowie Ressourcen auch wenn es wenig ist wir schaffen das ;) </documentation>
       </element>
-      <element xsi:type="archimate:ArchimateDiagramModel" name="VIE06Tracing Bus-Str-Mot Layer" id="id-64d26233941348b19f8238f921718fe0">
+      <element xsi:type="archimate:ArchimateDiagramModel" name="VIE07Tracing Bus-Str-Mot Layer" id="id-64d26233941348b19f8238f921718fe0">
         <child xsi:type="archimate:DiagramObject" id="id-0f75e290c8e741c7b5a6658b5584ba61" archimateElement="id-32a504ae21274b1ba2809f15c3f99ca2">
           <bounds x="96" y="336" width="120" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-76c41872fa39421bbd02b9437ba12893" source="id-0f75e290c8e741c7b5a6658b5584ba61" target="id-cd4b9ba87962453999d5052251e38909" archimateRelationship="id-e2cf8bdf5e22428fb3e3154d58407f1b"/>
@@ -1258,7 +1258,7 @@
         </child>
         <documentation>Verbindet simpel die Layer Motivation - Strategie sowie Busniess Element für ein durchgängies tracing. </documentation>
       </element>
-      <element xsi:type="archimate:ArchimateDiagramModel" name="VIE07-Implementation View" id="id-3d72e20a1bd24a3888d052419b4ecbf1"/>
+      <element xsi:type="archimate:ArchimateDiagramModel" name="VIE05-Implementation View" id="id-3d72e20a1bd24a3888d052419b4ecbf1"/>
     </folder>
     <element xsi:type="archimate:ArchimateDiagramModel" name="Work View" id="id-3fc60ec1792443ccb579ff5501ef7d7b"/>
   </folder>
