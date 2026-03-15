@@ -31,12 +31,13 @@ desktop.ini
 
 
 # ---------------------------------------------------------
-# [2] LOGS & RUN-PROTOKOLLE
+# [2] LOGS & RUN-PROTOKOLLE & jArchi examples
 #     03-stages/99-logs/ enthält Laufzeit-Logs
 #     → nur lokal relevant, nicht für Blueprint-Übergabe
 # ---------------------------------------------------------
 
 03-stages/99-logs/
+01-artifacts/01-scripts/examples/
 *.log
 
 
@@ -103,8 +104,6 @@ desktop.ini
 
 # root.cfg
 # root.txt → wird NICHT ignoriert, enthält Beispielpfade als Doku
-# → Hinweis: Nutzer muss Pfade nach dem Clone anpassen!
-
 
 # ---------------------------------------------------------
 # [9] VIRTUELLE UMGEBUNGEN & LOKALE PYTHON-SETUP
