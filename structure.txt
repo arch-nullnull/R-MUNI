@@ -2,9 +2,10 @@ Auflistung der Ordnerpfade
 Volumeseriennummer : 5622-22F1
 C:.
 |   .gitattributes
-|   gitignore
+|   .gitignore
 |   Install.txt
 |   LICENSE
+|   R+MUNI - Clean.zip
 |   README.md
 |   root.cfg
 |   root.txt
@@ -15,6 +16,7 @@ C:.
 |   |   appearance.json
 |   |   community-plugins.json
 |   |   core-plugins.json
+|   |   graph.json
 |   |   workspace.json
 |   |   
 |   \---plugins
@@ -26,11 +28,14 @@ C:.
 +---00-model
 |   +---00-archimate
 |   |   +---00-archimateactive
+|   |   |       log-0.txt
+|   |   |       log-0.txt.lck
 |   |   |       MUNI EA.archimate
 |   |   |       
 |   |   +---01-archimateactivesub
 |   |   |       MUNI FLOW.archimate
 |   |   |       MUNI FLOW.archimate.bak
+|   |   |       MUNI IMPO.archimate
 |   |   |       
 |   |   \---99-mappingmodel
 |   +---01-bpmn
@@ -55,6 +60,12 @@ C:.
 |   |   |       
 |   |   +---03-child
 |   |   |   +---00-archimatechild
+|   |   |   |       archimate3_Diagram.xsd
+|   |   |   |       archimate3_Model.xsd
+|   |   |   |       archimate3_View.xsd
+|   |   |   |       MUNI EA.xml
+|   |   |   |       MUNI FLOW.xml
+|   |   |   |       
 |   |   |   +---01-bpmnchild
 |   |   |   \---02-xychild
 |   |   +---04-import
@@ -121,6 +132,13 @@ C:.
 |   |   |       
 |   |   +---03-child
 |   |   |   +---00-archimatechild
+|   |   |   |       MUNI EAelements.csv
+|   |   |   |       MUNI EAproperties.csv
+|   |   |   |       MUNI EArelations.csv
+|   |   |   |       MUNI FLOWelements.csv
+|   |   |   |       MUNI FLOWproperties.csv
+|   |   |   |       MUNI FLOWrelations.csv
+|   |   |   |       
 |   |   |   +---01-bpmnchild
 |   |   |   |       BUP01-CSV 2 CSV.bpmn
 |   |   |   |       
@@ -136,6 +154,9 @@ C:.
 |   |   +---02-sync
 |   |   +---03-child
 |   |   |   +---00-archimatechild
+|   |   |   |       MUNI EA.xlsx
+|   |   |   |       MUNI FLOW.xlsx
+|   |   |   |       
 |   |   |   +---01-bpmnchild
 |   |   |   \---02-xychild
 |   |   +---04-import
@@ -153,6 +174,9 @@ C:.
 |       +---00-archimate
 |       +---01-bpmn
 |       \---99-html
++---02-artifacts
+|   \---01-scripts
+|       \---jArchi
 \---02-stages
     |   run-scope.txt
     |   run-scope_ReadMe.txt

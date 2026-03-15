@@ -14,18 +14,18 @@
 # ---------------------------------------------------------
 
 # Archi Backup-Dateien (automatisch erzeugt)
-*.archimate.bak
-*.bak
+.archimate.bak
+.bak
 
 # Python Cache & Bytecode
-# __pycache__/
+ __pycache__/
 # *.py[cod]
 # *.pyo
 
 # Temporäre Arbeitsverzeichnisse / OS-Dateien
-# Thumbs.db
-# desktop.ini
-# .DS_Store
+Thumbs.db
+desktop.ini
+.DS_Store
 *.tmp
 *.temp
 
@@ -37,7 +37,7 @@
 # ---------------------------------------------------------
 
 03-stages/99-logs/
-# *.log
+*.log
 
 
 # ---------------------------------------------------------
@@ -68,10 +68,10 @@
 #     → zu groß / zu häufig wechselnd für Versionierung
 # ---------------------------------------------------------
 
-# 03-stages/00-archimatearchive/
-# 03-stages/01-bpmnarchive/
-# 03-stages/02-xyarchive/
-# 03-stages/03-masterxmlarchive/
+03-stages/00-archimatearchive/
+03-stages/01-bpmnarchive/
+03-stages/02-xyarchive/
+03-stages/03-masterxmlarchive/
 
 
 # ---------------------------------------------------------
@@ -125,12 +125,3 @@ env/
 # *.npp_session
 
 
-# ---------------------------------------------------------
-# HINWEIS FÜR NEUE NUTZER
-# =========================================================
-# Nach dem Klonen des Repos:
-# 1. root.txt öffnen und BLUEPRINT_ROOT auf deinen lokalen
-#    Pfad setzen, z.B.: BLUEPRINT_ROOT=C:\Dein\Pfad\R+MUNI
-# 2. Python-Abhängigkeiten installieren (siehe Install.txt)
-# 3. CSV00-validate_environment.py ausführen zum Prüfen
-# =========================================================

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="MUNI IMPO" id="id-debe8c15c7d3403c80250b1904c20e2c" version="5.0.0">
+  <folder name="Strategy" id="id-9ae431bc17cf4836bff2c995946b80f7" type="strategy"/>
+  <folder name="Business" id="id-459f473a248d428bb84fcb902c066c91" type="business"/>
+  <folder name="Application" id="id-cd4ece1cbbc045c9976e242b30e503a7" type="application"/>
+  <folder name="Technology &amp; Physical" id="id-9e1de5f059d84e17a8e8a59aad0e1fe1" type="technology"/>
+  <folder name="Motivation" id="id-073eb1a90cb14352abeed7ce3c03a552" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-333c2f1977774d4da16a01844b6cba71" type="implementation_migration"/>
+  <folder name="Other" id="id-dcb1ec16c2554905a2ef046a816edfff" type="other"/>
+  <folder name="Relations" id="id-2cb34a1ea0b5476ea8418e5fbbb57f43" type="relations"/>
+  <folder name="Views" id="id-68c41a2e45b34b3f891d2b5324918e2d" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Default View" id="id-0b7f2f033fb04bda912297bae6473b5e"/>
+  </folder>
+</archimate:model>
