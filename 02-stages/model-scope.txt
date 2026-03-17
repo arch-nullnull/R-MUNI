@@ -4,7 +4,6 @@ ACTIVE_MODELS:
 ACTIVE_SUB_MODELS:
 - MUNI FLOW.archimate
 - MUNI IMPO.archimate
-- MUNI TESTI.archimate
 
 OTHER_ARCHIMATE_FILES:
 - 00-archimateactive/log-0.txt

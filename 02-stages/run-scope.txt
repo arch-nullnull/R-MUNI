@@ -1,10 +1,10 @@
 
 SOURCE=archi
-MODEL=MUNI TESTI.archimate
+MODEL=MUNI IMPO.archimate
 
 SOURCE=OEF
-MODEL=MUNI TESTI.xml
+MODEL=muni2import.xml
 
 SOURCE=MASTER
-MODEL=MUNI TESTI.xml
+MODEL=muni2import.xml
 

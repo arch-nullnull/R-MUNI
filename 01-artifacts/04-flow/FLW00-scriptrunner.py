@@ -170,12 +170,21 @@ def load_trigger_rules(path: str) -> list:
         for ck in sorted(k for k in raw if k.startswith("condition.")):
             conditions.append(_parse_condition(section, ck, raw[ck].strip()))
 
-        if not conditions:
+        # Wildcard-Modus: scriptTask darf ohne Condition laufen
+        # (kein condition.<n> = alle scriptTask-Elemente werden ausgeführt)
+        # Alle anderen Sektionen benötigen weiterhin mindestens eine Condition.
+        element_tag_raw = raw.get("element_tag", "").strip()
+        if not conditions and element_tag_raw != "scriptTask":
             abort(f"[{section}] at least one condition.<n> is required")
 
         dk_raw = raw.get("dispatch_key", "").strip()
-        if not dk_raw:
+
+        # scriptTask: kein dispatch_key nötig — documentation wird intern
+        # als Scriptname verwendet. Alle anderen Sektionen benötigen dispatch_key.
+        if not dk_raw and element_tag_raw != "scriptTask":
             abort(f"[{section}] dispatch_key is required")
+
+        dispatch_key = _parse_dispatch_key(section, dk_raw) if dk_raw else None
 
         rules.append({
             "section":      section,
@@ -184,7 +193,7 @@ def load_trigger_rules(path: str) -> list:
             "element_tag":  element_tag,
             "element_type": element_type,
             "conditions":   conditions,
-            "dispatch_key": _parse_dispatch_key(section, dk_raw),
+            "dispatch_key": dispatch_key,
         })
 
     rules.sort(key=lambda r: r["order"])
@@ -334,8 +343,18 @@ def _detect_bpmn(root: ET.Element, rule: dict) -> list:
         }
         if not _check_conditions(rule["conditions"], tag_contents=tag_contents):
             continue
-        key = _resolve_dispatch_key(rule["dispatch_key"], task, {})
+
+        # scriptTask: kein dispatch_key konfiguriert →
+        # documentation-Inhalt direkt als Scriptname verwenden.
+        # Leer = SKIP (kein Fehler, kein Abbruch).
+        if rule["dispatch_key"] is None:
+            key = tag_contents.get("documentation", "").strip()
+        else:
+            key = _resolve_dispatch_key(rule["dispatch_key"], task, {})
+
         if not key:
+            task_name = task.attrib.get("name", "(kein Name)")
+            log(f"  SKIP (keine documentation): scriptTask '{task_name}'")
             continue
         triggers.append({
             "source":  "bpmn",
@@ -406,34 +425,45 @@ def main() -> None:
 
     blueprint_root = resolve_blueprint_root()
 
-    xml_root      = os.path.join(blueprint_root, "01-artifacts", "00-xml", "03-child")
-    scripts_dir   = os.path.join(blueprint_root, "01-artifacts", "01-scripts")
-    mapping_file  = os.path.join(blueprint_root, "01-artifacts", "04-flow", "flowmapping.txt")
-    triggers_file = os.path.join(blueprint_root, "01-artifacts", "04-flow", "flowtriggers.txt")
+    # Flow-Ordner: BPMN und ArchiMate Flows getrennt gespeichert
+    flow_bpmn_root  = os.path.join(blueprint_root, "01-artifacts", "04-flow", "01-bpmnFLW")
+    flow_archi_root = os.path.join(blueprint_root, "01-artifacts", "04-flow", "00-archimateFLW")
+    scripts_dir     = os.path.join(blueprint_root, "01-artifacts", "01-scripts")
+    mapping_file    = os.path.join(blueprint_root, "01-artifacts", "04-flow", "flowmapping.txt")
+    triggers_file   = os.path.join(blueprint_root, "01-artifacts", "04-flow", "flowtriggers.txt")
 
     mapping = load_mapping(mapping_file)
     rules   = load_trigger_rules(triggers_file)
 
-    # Phase 1: alle Trigger aus allen Dateien sammeln
+    # Phase 1: alle Trigger aus BPMN- und ArchiMate-Flow-Ordnern sammeln
     all_triggers = []
 
-    for dirpath, _, files in os.walk(xml_root):
-        for fn in sorted(files):
-            if not fn.lower().endswith((".xml", ".bpmn", ".archimate")):
-                continue
-            path = os.path.join(dirpath, fn)
-            rel  = os.path.relpath(path, blueprint_root)
-            log(f"SCAN: {rel}")
-            try:
-                tree = ET.parse(path)
-            except Exception as e:
-                abort(f"invalid XML: {rel} ({e})")
-            root_elem = tree.getroot()
-            found = detect_triggers(root_elem, rules)
-            for t in found:
-                log(f"  TRIGGER [order={t['order']}] [{t['section']}] "
-                    f"key={t['key']} info={t['info']}")
-            all_triggers.extend(found)
+    scan_roots = [
+        ("bpmn",   flow_bpmn_root),
+        ("archi",  flow_archi_root),
+    ]
+
+    for scan_type, scan_root in scan_roots:
+        if not os.path.isdir(scan_root):
+            log(f"SKIP (Ordner nicht vorhanden): {scan_root}")
+            continue
+        for dirpath, _, files in os.walk(scan_root):
+            for fn in sorted(files):
+                if not fn.lower().endswith((".xml", ".bpmn", ".archimate")):
+                    continue
+                path = os.path.join(dirpath, fn)
+                rel  = os.path.relpath(path, blueprint_root)
+                log(f"SCAN [{scan_type}]: {rel}")
+                try:
+                    tree = ET.parse(path)
+                except Exception as e:
+                    abort(f"invalid XML: {rel} ({e})")
+                root_elem = tree.getroot()
+                found = detect_triggers(root_elem, rules)
+                for t in found:
+                    log(f"  TRIGGER [order={t['order']}] [{t['section']}] "
+                        f"key={t['key']} info={t['info']}")
+                all_triggers.extend(found)
 
     log(f"Detected {len(all_triggers)} trigger(s)")
 
@@ -445,10 +475,17 @@ def main() -> None:
     # Phase 3: Scripts ausfuehren
     executed = 0
     for t in all_triggers:
-        script_name = mapping.get(t["key"])
-        if not script_name:
-            log(f"SKIP (unmapped): key={t['key']} [{t['section']}]")
-            continue
+        # scriptTask: key = documentation-Inhalt = direkt der Scriptname.
+        # Kein flowmapping.txt Lookup noetig.
+        # Leer = bereits in _detect_bpmn gefiltert, kommt hier nicht an.
+        if t["section"] == "bpmn_scripttask":
+            script_name = t["key"]
+        else:
+            # ArchiMate WorkPackage und serviceTask: Lookup via flowmapping.txt
+            script_name = mapping.get(t["key"])
+            if not script_name:
+                log(f"SKIP (unmapped): key={t['key']} [{t['section']}]")
+                continue
         script_path = os.path.join(scripts_dir, script_name)
         if not os.path.isfile(script_path):
             abort(f"mapped script not found: {script_path}")

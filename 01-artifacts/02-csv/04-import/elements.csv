@@ -1,205 +1,285 @@
-"ID","Type","Name","Documentation","Specialization"
-"id-a8b28c5bc51846598f34e4230d77d01d","ArchimateModel","MUNI FLOW","MUNI FLOW beschreibt die R+Muni interne File und Ordner sowie Script Struktur und Verbindet die für das FLOW Script notwendigen Prozesse mit den Foldern. Dient als Dokumentation und Übersichtsmodell und Denkmodell für mich. ",""
-"id-f2e451fc1a5040418d5ce92a8baa0d16","BusinessProcess","BUP00-FLOW","Scriptrunner R+MUNI. Der Esel macht aus Snips was brauchbares. ",""
-"id-3431625e8daa424b9f089c21d4ea6049","BusinessProcess","BUP01-CSV 2 CSV","Archi CSV <-> CSV Import Archi (war mein erster Test nur für übertragungen von Modell zu Modell sinnhaft wenn man editieren möchte geht und das XLXS Plugin nicht hat. ",""
-"id-8d6586a812d04fa9aa1e0e646e1fd239","BusinessProcess","BUP02-XLSX 2 CSV","Archi 5.8 - unterstützungspflichtiges Plugin - XLSX - CSV - Archi CSV Import ",""
-"id-5e398e49cb0a4fbd889849a7e7c272c6","BusinessProcess","BUP03-masterxml2CSV","Der CORE Teil dieses Flows er überträgt diese aus den unterschiedlichsten Systemen stammenden master.xml Daten in ein CSV von Archi Import lesbares Format. ",""
-"id-8b98e9a157c845acb0fb8f0049826222","BusinessProcess","BUP04-ATL FLOW","Neuer Sprint für Integration in Atlassian Assets",""
-"id-87df041b085a403e948d63e82b6dc556","BusinessProcess","BUP05-XML FLOW","",""
-"id-136c6e495f7944fe9d174e8e99401ca1","BusinessProcess","BUP06-M2B FLOW","",""
-"id-3b6821ab5c624a91be21e0275aa69b4b","Artifact","=""00-achimatechild""","XLSX Exportfolder für Archi 2 XLSX Exports",""
-"id-9901256f206d4cba8c9a2204a0ea60bd","Artifact","=""00-archimate""","",""
-"id-58e6c8520ade4c84ba5cbdbe1a58dbfc","Artifact","=""00-archimate""","",""
-"id-086beea937e649459cae69d0a8f9c442","Artifact","=""00-archimateactive""","",""
-"id-45bf382fdad848809c5342a8e77057b0","Artifact","=""00-archimatearchive""","Archiv und Fragmentfiles aus Archimate Flows ",""
-"id-9905bdf7d77140c4a931348041ad07ba","Artifact","=""00-archimatechild""","",""
-"id-9e056f29d0ef414cb59e97e0dddd26bd","Artifact","=""00-archimatechild""","",""
-"id-0b1e96ecea35425da1cebdd44c3a51d6","Artifact","=""00-bpmnactive""","Beschreibt die aktiven Modelle",""
-"id-03daec5d29bd4b189ca2a5496252e5b7","Artifact","=""00-governance""","",""
-"id-235277fdf03a4e19956e2776c10b8773","Artifact","=""00-master""","",""
-"id-7059aaa0f076480895a2b1eb11b98689","Artifact","=""00-master""","",""
-"id-1a6d3525d5054a8c96ec18a7e1da0281","Artifact","=""00-master""","",""
-"id-630e4b7e9d314e3998628d79704ec863","Artifact","=""00-model""","Aktive Modelle für R+MUNI ",""
-"id-622f124f00884a1f87cb0bb7fb53383e","Artifact","=""00-xml""","",""
-"id-71cb3ab136a04237a86fa2a937d756c3","Artifact","=""01-archimateactivesub""","",""
-"id-06b685dca8a644b7a134c186b5cd5cb0","Artifact","=""01-artifacts""","Die wirkliche R+MUNI mit seinen Scripts und Artifakten die er zum arbeiten benötigt. ",""
-"id-fb78bb528d4e433cb5e8e4f4a2b29a5f","Artifact","=""01-bpmn""","",""
-"id-4f443466e6e3409eabb5aaf5085c79f3","Artifact","=""01-bpmn""","",""
-"id-c846f48a16ec4ad4a3715ced1331a677","Artifact","=""01-bpmnarchive""","Fragmente und Archiv Kopien in R+MUNI selbst",""
-"id-6dfc245ddadc4c938965406ff39dca19","Artifact","=""01-bpmnchild""","",""
-"id-2533c44b0a984e66b8abda40f4a75b6e","Artifact","=""01-bpmnchild""","",""
-"id-afc66898b347400e922f0b5b730be0ba","Artifact","=""01-bpmnchild""","",""
-"id-89342a51a5104ca29696b1658adb1653","Artifact","=""01-mapping""","",""
-"id-8b2217d22dd543e6b53af478d13e476e","Artifact","=""01-mapping""","",""
-"id-5d5d90ce47c34d09840050513c9ae419","Artifact","=""01-mapping""","",""
-"id-16fad6daceea4c25afbd63a22036a05c","Artifact","=""01-principles""","",""
-"id-906e905892e548608de51d46d11c0cdb","Artifact","=""01-scripts""","",""
-"id-ff54c1a6e5c64e378bcebcc23e415d35","Artifact","=""01-sync""","",""
-"id-8e14f139525542bba359e6a616155c2d","Artifact","=""02-csv""","",""
-"id-255642a3db4b4ab0b6f00c0fde9ca65d","Artifact","=""02-how2""","",""
-"id-431fcd20fc54416c92b0dec9c56b2696","Artifact","=""02-import""","",""
-"id-7af8774ec9f4495daa4ab25210ca787f","Artifact","=""02-sync""","",""
-"id-fe426a4f4ff5442ea9c5a38e422b242c","Artifact","=""02-sync""","Nur in der Vorbereitung falls wir hier noch sync Regeln dedinieren müssten.",""
-"id-62ce4ccfc17a4262923120c1dbd89759","Artifact","=""02-xyarchive""","Für ander Apps und XML Typen als Archiv vorgesehen",""
-"id-ec4f2128d31d471e8e53aa6f61f4d1bf","Artifact","=""02-xychild""","Zukünftige App oder Sync XML",""
-"id-88dd36e30889463bb8a9837d12636ecb","Artifact","=""02-xychild""","",""
-"id-e269c4e7c8ae4ebab59f6c3343ffdace","Artifact","=""02-xychild""","",""
-"id-6abe85a8d6aa4de8974138c5b4bb4e0c","Artifact","=""02-xyvision""","Zukünftige Modelle oder Applikationsfiles die in R+MUNI integriert werden sollen. ",""
-"id-5c2cbb3e91bd4e78ab19b506b0976031","Artifact","=""03-child""","Exportfolder für XLSX Childs (Quelle für Übernahme in CSV)",""
-"id-a4f6528d4de5411fbda054cc02c4d1c5","Artifact","=""03-child""","",""
-"id-993d7651ca474aecb5dcec2b1f3f12c2","Artifact","=""03-child""","",""
-"id-00cf324bb2fa4fc5aa96f88a0f152c35","Artifact","=""03-roesetta_stone""","Folder für meine Übersetzungen von meinem Sprachgebrauch in TOGAF und Archimate sowie BPMN Norm",""
-"id-8bb1ba815b334d1a86188f4848e29de4","Artifact","=""03-stages""","Alles was kurz besteht wie logs und Heimat von run-scope.txt   ",""
-"id-a323307c60964671bbe70e7c1b867da8","Artifact","=""03-XLSX""","",""
-"id-c5ed512bbd0449128f0158fa32312d3c","Artifact","=""04-flow""","",""
-"id-c6d0bf46129d4291b8bbfe524fd3cfcf","Artifact","=""04-import""","Reimport Folder für CSV 2 Archi",""
-"id-d6cb3a10ade24d4c95c64436e4e5dac7","Artifact","=""04-import""","",""
-"id-cb24c209dba2492b86d41b7665a66a42","Artifact","=""05-reports""","",""
-"id-c3fadf01b1f4402badad30cdcaa327e4","Artifact","99-bpmnMUNI","Ordner für R+MUNI Spezifische BPMN 2.0 Diagrammabläufe ",""
-"id-41499844342c49a1a59cd4aabbd7cafc","Artifact","99-exports","",""
-"id-44703bb8c25a4bc7b970e3569258c4b6","Artifact","99-exports","",""
-"id-3d6fde8a819246a19f3f024a67b67a6f","Artifact","99-html","",""
-"id-08ebdb53c6424e198e2420265f77df9d","Artifact","99-logs","Ordner für Logfiles und Referenzfiles für Flows",""
-"id-8e41f059f8f34d94acdc809d4f23ada4","Artifact","99-mappingmodel","Stellt ",""
-"id-440af9c0e55345b3a1e3448be505e262","Artifact","<FLOWname>.xml","R+MUNI eigene FLOW BPMN Prozesse (vorbereitet) copy 2 child wenn es in FLOW berücksichtigt werden soll. ",""
-"id-e558094782ed4d08bbc31b83cf044e20","Artifact","<Modellname>.xml","",""
-"id-e46436ca5b804dbba9a5e8fd87c3d97e","Artifact","<modelname>.xml","Identer Modellname für OEF Export wie Modellname in Archi",""
-"id-89dc358011344d50a2a3f6678c60c9a6","Artifact","<modelname>.xslx","Export aus Archi im XLSX Format bisher der einzige Case",""
-"id-e476f1042d744a579f68152ae06aedf0","Artifact","<MUNI Installaionspfad>","Installationspfad von der MUNI Strutkur ",""
-"id-8919a7825ffa47fd8fd8e1c66621cd6b","Artifact","<Prozessname>.xml","Active Prozesse werden als File mit dem Prozessnamen abgelegt und bilden die akive Strutkur",""
-"id-693021fa584d4c6898fdad8daa807658","Artifact","<Prozessname>.xml","Child vom XML Folder",""
-"id-ca7bd9aef88a4fe9804f4d7f5d04870e","Artifact","<Prozessname>.xml","Child für FLOW relevant was dort liegt!! ",""
-"id-bb95c49b2e20486ba893d3a699fb0ccc","Artifact","AI_DRIVEN_DEV_METHODE.txt","Methode des arbeitens mit KI in der R+MUNI Umgebung. No Code Know How Blueprint. ",""
-"id-92fece2374424122bd2c37707254a3e6","Artifact","Aktives Modell <modelname>.archimate","Aktives Modell (Big Picture) eigentliche Hauptaussage bzw. Zweck des gewählten Modellansatzes",""
-"id-800a11d4c09d43d690350c25fb60bca4","Artifact","Archi","Archi 5.x Installationsordner",""
-"id-19a088fae4cd4498a10b5ed26855c8b6","Artifact","Archi CSV Stack","Export Format für CSV bzw. auch Importformat",""
-"id-c2cefd64e90346c182ad23c43ede76fd","Artifact","Archi Export<modellname>.svg","",""
-"id-bc547ea6e9ab412aacb7071d2e374229","Artifact","Archi XML Stack","Import Folder für XML OEF Exports aus Archi 5.x",""
-"id-2cb395e548a540c8baae3f899f7ecde5","Artifact","archimate3_Diagram.xsd","Schema File",""
-"id-b593c22f709947638b16e64add7e990d","Artifact","archimate3_Model.xsd","Schema File",""
-"id-c4596a07c5504e4c85fa0427ef712b58","Artifact","archimate3_View.xsd","Schema File",""
-"id-716f43a57214409e922b3f5d01420fd7","Artifact","assetsexport-readme.txt","Readme für assetexport.txt",""
-"id-22c3a349e29c4b97bc1932a09440a28d","Artifact","assetsexport.txt","Beschreibt die Sync Felder für den CSV Export glaub ich ;) ",""
-"id-3f93e67e61e5441f900e03e6c37d4af3","Artifact","ATL Stack","Die Scriptreihe die unser MUNI Umgebung in die Atlassian Welt entlässt. ",""
-"id-a14bb7207d074d228a88c1caee7082a4","Artifact","ATL00-validate_atl_scope.py","",""
-"id-975951e262744047a77dfa592bf0aea4","Artifact","ATL01-masterXml2AtlCsv.py","",""
-"id-695da33de5634e57b5bf02baf8ecc1bd","Artifact","ATL02-atlCsv2JiraCsv.py","Migriert die Daten in die CSV´s zum Einlesen (Eines pro Archi Folder)  ",""
-"id-8c2208d5c5df4be284794ab9f404b03a","Artifact","ATL_FLOW_How2_S4.txt","Beschreibung des ATL Flows CSV -> Jira ",""
-"id-084c5e77971b4df4a9ef00f7627d2038","Artifact","ATL_FLOW_principles_S4.txt","ATL beschreibt die Scriptsfolge für den Export aus unserer Umgebung und den manuellen CSV Import auf Basis Issue in Jira um die Kosten für Asset zu sparen und dennoch die Möglichkeit der Verknüpfung gewährleisten zu können.",""
-"id-e9b15a87838f46a39fc842c2ee56fd3c","Artifact","backlog","Alles was schon geplant ist aber noch nicht umgesetzt bzw. in einem anderen Stage behandelt wird",""
-"id-b41115294b6f491ca603d213a9e71576","Artifact","BPMN 2.0 Export<modellname>.svg","",""
-"id-3cfcb6ce914841a79c9cbfc32cea687e","Artifact","bpmnmastercsvsync.txt","mapping Filter File für M2B in den master.xml zum csv??? sync bin mir nicht mehr sicher ;) ",""
-"id-e57be1466af34b90b536dff4b9213584","Artifact","Camunda Modeler","",""
-"id-da31b582c0d34ac1b8f24a4916a855f7","Artifact","child_mapping.txt","Dort werden die relevanten Ordner reverenziert die für den Sync herangezogen werden",""
-"id-05b984b42a2341f9b9ef629cbcfba788","Artifact","CSV Stack","Sammlung aller CSV Script Files",""
-"id-baa4841b6dd8418f9c024f861d47bf59","Artifact","CSV00-validate_environment.py","Evaluiert das Installationsverzeichnis",""
-"id-e0191ed72d4042b39a9ef304f6881ead","Artifact","CSV01-validate_model.py","Evaluiert verfügbare Modelle in den Child Foldern und im Activen und Subfolder",""
-"id-094cdbbde88247b6aeaa20d271264ede","Artifact","CSV02-leer.py","wurde eingespart aber noch als Platzhalter belassen da der Flow noch in der Beta ist. ",""
-"id-2e997ebf75a5429888b81725f8b48189","Artifact","CSV03-resolve_run_scope.py","Script das das File run-scope.txt erstellt das als Scope Filter für Scripts dient.",""
-"id-f0a5754f797c44acbcef4a3c321f5998","Artifact","CSV04-model-overview.py","",""
-"id-5728e0a79ca1472f8c31640237180e77","Artifact","CSV05-create_master_csvs.py","",""
-"id-0699461668eb4216b62dec82887521bd","Artifact","CSV06-append_child_to_master.py","",""
-"id-f4fa780a9ba6490c912ce5ce953525f1","Artifact","CSV07-xlsx_2_csv.py","",""
-"id-208c84ba2c9e49caacd4c1f947b3de61","Artifact","CSV08-properties2csv.py","",""
-"id-8ec264da9f034c63af7d1bb8d7172d8e","Artifact","CSV09-masterxml2csv.py","",""
-"id-7e81ae44cbc145d38fc4bca88fbcda3a","Artifact","CSV99-export_snapshot.py","",""
-"id-cc0af84e8e3f45e09c319a91a32ec897","Artifact","CSV_FLOW_How2_S3.txt","Helpfile für CSV Flow Ablauf",""
-"id-b0be8a69d06f48978a6934f3a61f571b","Artifact","CSV_FLOW_principles_S3.txt","",""
-"id-de25f48ad4ec478d9b2bc32cefe7e748","Artifact","csvexport.txt","Beschreibt die Sync Felder für den CSV Export glaub ich ;) ",""
-"id-25b12bd718974485b7ce4842d091dc58","Artifact","csvmapping.txt","Konfig File für CSV Filter",""
-"id-c83dfb24eb1d4639b61860d7c95b0053","Artifact","csvmapping.txt","Mapping Informationen für CSV Umgebung was genau ka mehr ;) ",""
-"id-a8209d5acf654d42b9dd08938b40033d","Artifact","Doku","Sicherungskopien aus Doku Umgebungen wie z.B Confluence Word Exports oder veraltete Doku",""
-"id-dee1402e457143a685365c7a66286578","Artifact","draw.io","",""
-"id-47e45cf4f0164a9d8f56d25d20c09ee2","Artifact","eclipseopenjdk","",""
-"id-dad2065546e444a4904e6c70cb2f32e3","Artifact","elements.csv","",""
-"id-ab375f1a7ba0476dbe2094bb119ad2e5","Artifact","FLOW Stack","Ordner für den FLOW Scriptrunner und seine Konfig Files (losgelöst von Scripts)",""
-"id-4f7f12b4330c484394ce962bad0eeeb1","Artifact","FLOW_SCRIPTRUNNER_How2_S3.txt","Beschreibung Flow Ablauf",""
-"id-33cec84cb4254f1e9c808176cfde8436","Artifact","FLOW_SCRIPTRUNNER_principles_S3.txt","Beschreibung der FLOW Umgebung ",""
-"id-06c671c503a54f5f943a7c7b981fbfd8","Artifact","flowmapping.txt","Beschreibt welcher Trigger zu welchem Script gehört. ",""
-"id-a67dbd1efb464154975322222a5bd8cd","Artifact","flowtriggers.txt","",""
-"id-16ba8f76d2e14f9b86e9ca9dc56e30ee","Artifact","FLW00-scriptrunner.py","User Herzstück für die Script gesteuerte Triggerübernahme aus Archimate und BPMN Modellen. ",""
-"id-173180eb82994f94a2f32c9acbfdabdd","Artifact","FLW01-discover.py","",""
-"id-56493df8e5d4470397b4360e8b440d51","Artifact","FLW02-map_elements.py","",""
-"id-917732b2e2a44239b94d49defe7fedd8","Artifact","Git","",""
-"id-75f0f4d03ae94469a1f82c641ae07efe","Artifact","gitignore","Nimmt Dinge aus dem GIT HUB die man nicht will",""
-"id-6e618946a8bc44149ff1c3572980d947","Artifact","Global GOV.pdf","R+MUNI hat für die Entwicklung eine GOV Entwickelt die jedem frei zur Verfügung steht der direkt in dem Projekt mitarbeiten möchte",""
-"id-c29221a788c649f1bd00de92cae5b55f","Artifact","HLP Stack","Help Scripts für das Baukastensystem um nicht in jeden FLOW der ""Rad"" neu erfinden zu müssen. ACHTUNG die sind noch nicht getestet und dienen zur Zeit nur als Gedächtnisstüze damit ich alle HLP Files mal erstelle die man so brauchen wird final. ",""
-"id-db84bec12cf14f329aa9e6c299012a24","Artifact","HLP00_resolve_root.py","Soll in Zukunft die x resolve_root in den unterschiedlichen flows ersetzen. ",""
-"id-63ab754659df49609222beeab0c65154","Artifact","HLP01_copy.py","Einfaches copy script für diverse ""Bauskasten"" aufgaben vorbereitet. ",""
-"id-378f4505f56d4046a35ac18ccb941f6f","Artifact","HLP02_move.py","",""
-"id-6e1f6dc5a79e4c81b19e17fd9f1319cd","Artifact","HLP03_clean.py","Cleaning Help File für Bauskastensystem",""
-"id-785b963d85f54335931c2f4ee87e6afe","Artifact","HLP04_dirlog.py","Baukasten Helper File für directory lookup Funktionen",""
-"id-16f7853348814da1982a9862f807c267","Artifact","HLP05_context_structure.py","",""
-"id-1083fb22840348d89967936fcbcf3396","Artifact","HLP06_backup.py","Helperfile für Archiv Funktionen gedacht",""
-"id-4d9d4a030f5c4e7a989440e34aaac7d1","Artifact","HLP07_restore.py","Backup ohne Restore ist nur minder sinnvoll ;) Daher auch ein Helper Script um den Restore durchführen zu können.  ",""
-"id-6f8b1e95067c4def9e146f1fd2cc0350","Artifact","HLP08_structure2csv.py","Helper Script das mir Structure.txt Files ""flach"" macht um sie später Importieren zu können. Hintergrund ist das ich die Struktur hier gerne einfach erstellen will können. (untested) ",""
-"id-6b80db0a2fd74312811154b57d972b43","Artifact","HLP09-serve_report.py","Checkt ob die Folder alle richtig verlinkt sind und dient als neue root Auflösung",""
-"id-e010123cc6e847569d15066b4b32cb73","Artifact","HLP_How2_S3.txt","Help Files und ihr Hintergrund. ",""
-"id-b87a2a710fe449239ae407d258e078ca","Artifact","HLP_principles_S3.txt","Beschreibung der ""Helper Scripts"" im Baukasten.",""
-"id-569834ac1347477788c8b79046748507","Artifact","inkscape","",""
-"id-71f653cd31fb47aebc621d7e0d3bf167","Artifact","Install.txt","Beschreibung wie man Harcore MUNI installieren kann ;). ",""
-"id-f92597e4cb0b46dabba8381bde32c807","Artifact","jA01-Validierung Namen.ajs","Ceckt namen ob sie der Namenskonvention entsprechen",""
-"id-496d58d10a3f4d27aa4268e7fc43efa0","Artifact","jArchi","Folder für jArchi Scripts wurden aus den R+MUNI Python Script Folder rausgelöst bzw. in einen Unterordner migriert. (Keine Auswirkungen)",""
-"id-de59190d08084a388e565d0d8011eb0b","Artifact","jArchi Scirpts","",""
-"id-c78d54addf50439eb240a43662bfabfa","Artifact","Keepass","",""
-"id-4d04c2b70c0947b68548598a4dd119b6","Artifact","LICENSE","GNU 3.0 License Info für GIT HUB",""
-"id-57aabc37640641ed978372ba1a0e9d73","Artifact","M2B Stack","Sync Zyklus zwischen master.xml und BPMN 2.0 Modellen. ",""
-"id-a11bb4e82514467e8045cbb18a511b79","Artifact","M2B00-root_resolve.py","",""
-"id-2f0815725ac34ea8835d7d96a8c1335b","Artifact","M2B01-master_extract.py","",""
-"id-c5af2c3deaf14fc3bd0be93b918dc798","Artifact","M2B02-activate_model.py","",""
-"id-44d81207b1844b3e859aa0f1be6c88d0","Artifact","M2B03-clear.py","",""
-"id-dffac2aa7bc9470890066b2945899e8d","Artifact","M2B04-reconcile_enrich.py","",""
-"id-b9e65e6f511143c588ccca1f8c260c69","Artifact","M2B05-writeback_master.py","",""
-"id-e514ddc3d0f645ba972f8c8a742d91ae","Artifact","M2B06-scope_snapshot","",""
-"id-ccb6bc9d07ea4899a1554fdf65258062","Artifact","M2B_FLOW_How2_S3.txt","Unser Kreislauf für das mapping.xml wird hier beschrieben",""
-"id-e488abe69ca64658ac42209afd2835d9","Artifact","M2B_FLOW_principles_S3.txt","master.xml -> <Businessprozess>.bpmn ",""
-"id-749de06e628149bca3c07646c9e01cdf","Artifact","M2Bmapping.txt","Vermutlich ist das auch ein Filter für M2B was überhaupt als ""Prozess"" zu werten ist wenn ich das richtig in Erinnerung habe. ",""
-"id-9c05bd6a1dc143a798e925b1607a4ad1","Artifact","mapping.txt","Bildet den ""Filter"" für die Überleitung in das Master",""
-"id-ba3835bdf6f6492697320b465a758b2b","Artifact","mapping_ReadMe.txt","Erklärung für das mapping.txt File ",""
-"id-cba39da599364508b76fbeaa30fc52f8","Artifact","master.generated.xml","Generierter Master für den austausch zwischen Modellen und als Quelle für den Reimport. ",""
-"id-68c8f9bd497a475790981bfb85e580f8","Artifact","mastercsvmapping.txt","Master csv mapping.txt was alles vom master.xml in das csv übernommen werden muss und wie es umgeschrieben werden soll.",""
-"id-fab26a3251aa4bb5bd784ca77eeda6d4","Artifact","mastercsvsync.txt","mastercsvsync wenn ich noch wüsste für was ich das wieder habe aber ich nehme an es ist ein Filter mapping file ;) ",""
-"id-5020d1ea7b3e402da7f0b518307db998","Artifact","model-scope.txt","Scope File (Output aus Script das schaut welche Modelle vorliegen) ",""
-"id-1f20cdeb0fc94298be8c6a5a6e1bff63","Artifact","Modelle","Archiv Ordner für Modelle und Vorlagen aus alten Stages und Co. ",""
-"id-ecd33c84c5fd48e7a1982cb1e144ccc4","Artifact","Notepad++","",""
-"id-c596c79e19be4659a572d8cdd3486756","Artifact","Obsidian","",""
-"id-0afb851a06504cc59b177a4c7decfe0c","Artifact","Powershell","",""
-"id-a34f55d257234f7fa20f14845586b3a5","Artifact","properties.csv","",""
-"id-206eef35195c44a7bf2f4326ac2f2d37","Artifact","propmapping.txt","Globale Regeln werden zusätzlich zu csvmapping.txt herangezogen um ganze Inhalte zu Filtern in Modellen (clearing Funktion teilweise) ",""
-"id-6261f253030f4da891f825e4a8579520","Artifact","python","",""
-"id-207154f7a6c343c8a492f7e699f4fd8b","Artifact","R+MUNI Apps","",""
-"id-dc1183b8b70440de97e777ea5f85537f","Artifact","R+MUNI Archiv","Archiv Ordner für alle Archi relevanten Dokumente und Dumps die nicht direkt im MUNI verarbeitet werden. ",""
-"id-5eca62a8da4449e8935fbf211d62f84f","Artifact","R+MUNI Doku","",""
-"id-4184897695b1437e9a8abd3b394d7d3f","Artifact","R+MUNI Doku-creative","Ordner für Präsentationen und Images   Git Hub Sync private",""
-"id-6132341792af48a8bd9b5f8e30c266ed","Artifact","R+MUNI Doku-internal","Interne Dokumentationen   Git Hub Sync private ",""
-"id-ecfc031a67ab4002bcbf2fcb57bc342f","Artifact","R+MUNI Doku-public","Die ursprüngliche 00 Doku ",""
-"id-c191a3f8e5674f70b8f6292c2f7a5eb5","Artifact","R+MUNI help files","Dokufiles, readme, how2, beschreibende Modelle und was man sonst noch so brauchen kann. ",""
-"id-f43387cbebf74ffa98b73c6bd861a965","Artifact","README.md","",""
-"id-eb3bb263bb9f41fc89cee68944165a94","Artifact","relations.csv","",""
-"id-2436b167f3ec4b67a35751057032ea4e","Artifact","root.cfg","Beschreibt den Installationspfade und Referenzfolder",""
-"id-31233eb0dae34273bbf5731033eb55a2","Artifact","Rosetta_Stone_Block1_Views.txt","""Übersetzung"" von TOGAF Views in meine Welt",""
-"id-ac1f6b202349420999ff13635ea8e206","Artifact","Rosetta_Stone_Block2_Artifacts_Scripts.txt","Artifakte und ihre Erklärung von R+MUNI und meiner Welt",""
-"id-a748d0502cea431a895155370b95249d","Artifact","Rosetta_Stone_Block3_Begriffe_Konzepte.txt","Erklärung von Begriffen in meinem Konzept in TOGAF & CO.",""
-"id-691c8a3864fd4766ba5e3790227da0b4","Artifact","Rosetta_Stone_Block4_Stage4_Ablauf.txt","Erklärung von Begriffen in meinem Konzept in TOGAF & CO.",""
-"id-18dd7ab2be8d4c54a94a9fc3ae39223b","Artifact","run-scope.txt","Outcome File für Scope bestimmung Archi CSV Scripts. Wurde zum generellen Master Deklarationsfile ausgebaut über das in den jeweiligen Scripts über SOURCE der Inhalt gezogen wird. ",""
-"id-e3e632857d2a4ff888a5efcac30a51e2","Artifact","run-scope.txt","Herzstück in Sachen Modellauswahl für die unterschiedlichen Anwendungen",""
-"id-cfed9abdbe3b4ca0b48c02db476b2132","Artifact","run-scope_ReadMe.txt","Kleines ""help"" File für die run-scope.txt Logik",""
-"id-ba91148db6b64ee89c4833158f88db42","Artifact","SCRIPT-BAUKASTEN.txt","Beschreibung Script Baukasten",""
-"id-c45bb8a39a384488a9e4bc7b76a6e73f","Artifact","Scripts","ANGST Script kopien bevor wir sie übersetzen",""
-"id-2ceb5fa4fd6a457baf6c35df7671f54d","Artifact","sprints","Aktuell und Vergangene Sprint Dokumentationen",""
-"id-b7574a7b092d46198ea3e5d46cdf334f","Artifact","structure.txt","Referenz für Folder check und stellt die Struktur dar wird mittels Powershell Befehl tree /A /F > strukture.txt ausgelöst direkte Eingabe in Konsole",""
-"id-c03f953b205848ba8f11b62529937975","Artifact","Sub Modell <modelname>.archimate","Beschreibt die Sub Modelle des Aktiven Modelles ",""
-"id-a7f79b7496304c3783f0d57385a30cdc","Artifact","sync.txt","Sync File ;) ",""
-"id-359715e787ea4f29995d156a3030c35e","Artifact","webconfig.txt","""Webserver"" Konfig für Port und relevante Modelle",""
-"id-07f6a1ba20284089a07feedb889ebf0a","Artifact","XML Stack","Sammlung aller XML Script Files",""
-"id-bafb66f26ac3434a8b1aeeac670afc87","Artifact","XML00-resolve_root.py","Ermittelt im root.txt die <rootfolder> information von der aus die Struktur relativ aufgelöst wird.",""
-"id-29eaadf1d85e49719d9da65fe742641b","Artifact","XML01-collect_sources.py","Liest die betroffenen Folder für den Import ein und wird über die Datei child_mapping.txt dekaliert",""
-"id-989ed20da8e54aecb948b8aee2262c81","Artifact","XML02-parse_child_xml.py","",""
-"id-a80d55857aad43578201aa49fdf50065","Artifact","XML03-build_index.py","",""
-"id-dfcff32751de454ab2382bb00d0fa817","Artifact","XML04-merge_master.py","",""
-"id-9584aebb4c6a4270908b1ee5a03b4ba4","Artifact","XML05-clear_merge.py","",""
-"id-c46b9c924da746e0a0dbc369a466e093","Artifact","XML06-finalize-master.py","",""
-"id-5cdf108963b342f38e87199b80fa08ca","Artifact","XML07-cleanup-artifacts.py","",""
-"id-b973a232dadd4a79a7e0895092b07afc","Artifact","XML_FLOW_How2_S3.txt","Flow Beschreibung für den master.xml intenen run von OEF - master.xml und im Kreis dort. ",""
-"id-66aac9016c6545948aa5c5f18983ae19","Artifact","XML_FLOW_principles_S3.txt","Beschreibung des XML Flows ",""
-"id-9f1d90d506484706b90555fe3ee7d6e2","TechnologyFunction","TEF00-Ordnerstruktur und Rechtevergabe","Das ist ein nicht EA konformes mapping der Ordner und Filestruktur und geht viel zu tief ins Detail um als EA Modell gültigkeit zu haben. Es ist ein Ersatz um keinen Toolbruch zu generieren ist aber überraschend gut geeignet wenn man simple Verbindungen und Attribute verwendet. Wurde jedoch aus dem EA Modell migriert um die Übersicht in MUNI FLOW zu verbessern.  ",""
+ID,Type,Name,Documentation,Specialization
+id-01a87cff38954e2b951c3ca8692ef61f,Artifact,Application Interaction.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Interaction.ajs | Tiefe: 6,
+id-02532c262ab1409980c89f5891ca608a,Artifact,Aggregation Relationship.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Aggregation Relationship.ajs | Tiefe: 6,
+id-03ca025fb08e46d2970a7e2903d01bbf,Artifact,main.js,Datei | Pfad: .obsidian/plugins/obsidian-importer/main.js | Tiefe: 4,
+id-03ed18b6e2a84f449c5e087f07ade58c,Artifact,04-import,Ordner | Pfad: 01-artifacts/00-xml/04-import | Tiefe: 3,
+id-0435284fc6b142ba9e9f87fce50c1ded,Artifact,bpmnmastercsvsync.txt,Datei | Pfad: 01-artifacts/00-xml/01-mapping/bpmnmastercsvsync.txt | Tiefe: 4,
+id-044458e30ff3422495926e50103a54dd,Artifact,mapping.txt,Datei | Pfad: 01-artifacts/00-xml/01-mapping/mapping.txt | Tiefe: 4,
+id-050be3e179f04fb986a7302f664110ce,Artifact,CLE51-stages_archimate.py,Datei | Pfad: 01-artifacts/01-scripts/CLE51-stages_archimate.py | Tiefe: 3,
+id-0615f131ce3842d2bc139f186465c71a,Artifact,sync.txt,Datei | Pfad: 01-artifacts/00-xml/02-sync/sync.txt | Tiefe: 4,
+id-06468f3b677a4b819b9a5675d1b5bcf5,Artifact,elements.csv,Datei | Pfad: 01-artifacts/02-csv/04-import/elements.csv | Tiefe: 4,
+id-0817f4f21efc4b4ca82fcecabecbc8cb,Artifact,plugins,Ordner | Pfad: .obsidian/plugins | Tiefe: 2,
+id-0a57f372ce8b4c71a5f270780b4c6c43,Artifact,MUNI EA.xml,Datei | Pfad: 01-artifacts/00-xml/03-child/00-archimatechild/MUNI EA.xml | Tiefe: 5,
+id-0acc38ba00704fbc8692f1c29051100d,Artifact,M2B07-scope_snapshot.py,Datei | Pfad: 01-artifacts/01-scripts/M2B07-scope_snapshot.py | Tiefe: 3,
+id-0b0ad0b07f414f53aeaf8f88c800af1c,Artifact,__pycache__,Ordner | Pfad: 01-artifacts/01-scripts/__pycache__ | Tiefe: 3,
+id-0c841182f06f463cbd28862b0c7ca0d6,Artifact,Business Process.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Process.ajs | Tiefe: 6,
+id-0cc115d43e3d466f9b26ecde7d95ac02,Artifact,Equipment.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Equipment.ajs | Tiefe: 6,
+id-1044a953fd934b0eb558a7aa8a9fd233,Artifact,ATL02-atlCsv2JiraCsv.py,Datei | Pfad: 01-artifacts/01-scripts/ATL02-atlCsv2JiraCsv.py | Tiefe: 3,
+id-114411d9f3ac4c3eaae49732b61c7489,Artifact,model-scope.txt,Datei | Pfad: 02-stages/model-scope.txt | Tiefe: 2,
+id-11ddfb46906a4587a006711a04e8ea5b,Artifact,run-scope_ReadMe.txt,Datei | Pfad: 02-stages/run-scope_ReadMe.txt | Tiefe: 2,
+id-12e8098b18cb4f6ba10311d9840e92e4,Artifact,README.md,Datei | Pfad: README.md | Tiefe: 1,
+id-132aee7f167c4fcf809504662699ccb0,Artifact,HLP02_move.py,Datei | Pfad: 01-artifacts/01-scripts/HLP02_move.py | Tiefe: 3,
+id-13d7f2ec2cf44d4da514c326315343fa,Artifact,CSV00-validate_environment.py,Datei | Pfad: 01-artifacts/01-scripts/CSV00-validate_environment.py | Tiefe: 3,
+id-149d8a16d010450dbaaf334a06b12494,Artifact,99-html,Ordner | Pfad: 01-artifacts/05-reports/99-html | Tiefe: 3,
+id-15b90b8e724b42bfb46073a370f5868d,Artifact,Triggering Relationship.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Triggering Relationship.ajs | Tiefe: 6,
+id-17ab257994314318b65d60511c871782,Artifact,MUNI FLOW.xml,Datei | Pfad: 01-artifacts/00-xml/03-child/00-archimatechild/MUNI FLOW.xml | Tiefe: 5,
+id-18121cbe65584f7ab4cd4994e0f794eb,Artifact,CLE24-csv_import.py,Datei | Pfad: 01-artifacts/01-scripts/CLE24-csv_import.py | Tiefe: 3,
+id-1856ee15703b41dbaa0dd0e0535bfcec,Artifact,XML02-parse_child_xml.py,Datei | Pfad: 01-artifacts/01-scripts/XML02-parse_child_xml.py | Tiefe: 3,
+id-18bd43fc297f4cd0a04ed8a6d337dd94,Artifact,2. Business,Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business | Tiefe: 5,
+id-19aca32b7ecb4b34a5fdaab954fd1850,Artifact,workspace.json,Datei | Pfad: .obsidian/workspace.json | Tiefe: 2,
+id-1abbfd53785e4c96993143efc5dae289,Artifact,CSV07-xlsx_2_csv.py,Datei | Pfad: 01-artifacts/01-scripts/CSV07-xlsx_2_csv.py | Tiefe: 3,
+id-1b8b6e8b5d94461eae91108ae401b892,Artifact,assetsexport.txt,Datei | Pfad: 01-artifacts/02-csv/02-sync/assetsexport.txt | Tiefe: 4,
+id-1b9104ec83c14bd99004fdfb9d9f05a9,Artifact,XML03-build_index.py,Datei | Pfad: 01-artifacts/01-scripts/XML03-build_index.py | Tiefe: 3,
+id-1ca2d4187a3c4feda531a77865918b75,Artifact,Work Package.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/6. Implementation & Migration/Work Package.ajs | Tiefe: 6,
+id-1de8cc6f61d24696b4edec907abe8dc9,Artifact,00-model,Ordner | Pfad: 00-model | Tiefe: 1,
+id-1f9d9971991b4a5dad237adbb1fe1483,Artifact,CSV08-properties2csv.py,Datei | Pfad: 01-artifacts/01-scripts/CSV08-properties2csv.py | Tiefe: 3,
+id-1fb52a84b5974fd0aefd005c63b5bb6a,Artifact,CLE43-reports_html.py,Datei | Pfad: 01-artifacts/01-scripts/CLE43-reports_html.py | Tiefe: 3,
+id-207f347e36884687ac4ed56d61fcbbe7,Artifact,00-archimatechild,Ordner | Pfad: 01-artifacts/00-xml/03-child/00-archimatechild | Tiefe: 4,
+id-214b3a2c16234e89b6be8be560063512,Artifact,CLE32-xlsx_archimate_child.py,Datei | Pfad: 01-artifacts/01-scripts/CLE32-xlsx_archimate_child.py | Tiefe: 3,
+id-217fb8b7a37643328f625dcc452e2767,Artifact,CLE50-stages_all.py,Datei | Pfad: 01-artifacts/01-scripts/CLE50-stages_all.py | Tiefe: 3,
+id-220090094c3b40319c6b961252bf2102,Artifact,1. Strategy,Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/1. Strategy | Tiefe: 5,
+id-226b9b68d0bf493e9778213dd52ab82e,Artifact,Outcome.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Outcome.ajs | Tiefe: 6,
+id-22869f17f74d4c8384afc1d77ddfdafe,Artifact,3. Application,Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application | Tiefe: 5,
+id-22ccda39bba14e14937485292d4de82c,Artifact,02-csv,Ordner | Pfad: 01-artifacts/02-csv | Tiefe: 2,
+id-230bdba764534165b12da4cfba393f1c,Artifact,Deliverable.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/6. Implementation & Migration/Deliverable.ajs | Tiefe: 6,
+id-23703de34ca74bcd850e8529474ae259,Artifact,Contract.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Contract.ajs | Tiefe: 6,
+id-23b433d2edf7431797ddef53f21f4ec8,Artifact,Application Event.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Event.ajs | Tiefe: 6,
+id-24b7d0625c3045cbac5ef4301556228a,Artifact,03-XLSX,Ordner | Pfad: 01-artifacts/03-XLSX | Tiefe: 2,
+id-25373c33b57f4fb3a8b63d3a6c55bd25,Artifact,CLE34-xlsx_import.py,Datei | Pfad: 01-artifacts/01-scripts/CLE34-xlsx_import.py | Tiefe: 3,
+id-25471bef35124c7cab7cf58938f7bf27,Artifact,CSV04-model-overview.py,Datei | Pfad: 01-artifacts/01-scripts/CSV04-model-overview.py | Tiefe: 3,
+id-25c976e362fe4750916b08ffed97492c,Artifact,CLE42-reports_bpmn.py,Datei | Pfad: 01-artifacts/01-scripts/CLE42-reports_bpmn.py | Tiefe: 3,
+id-27f445dee62c48729fb334e59283f3b0,Artifact,examples,Ordner | Pfad: 01-artifacts/01-scripts/examples | Tiefe: 3,
+id-28248cf6472d4edba53eb56a9cef4382,Artifact,01-bpmnchild,Ordner | Pfad: 01-artifacts/00-xml/03-child/01-bpmnchild | Tiefe: 4,
+id-2885424439774e509572ac107c7d9bb9,Artifact,02-sync,Ordner | Pfad: 01-artifacts/03-XLSX/02-sync | Tiefe: 3,
+id-2926dd79756f461db9e991c82c9d69a9,Artifact,Write to File and Open in Browser.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Write to File and Open in Browser.ajs | Tiefe: 4,
+id-2a3020422e894ded8664e7b735ddbb6d,Artifact,relations.csv,Datei | Pfad: 01-artifacts/02-csv/04-import/relations.csv | Tiefe: 4,
+id-2ac10405b0d248e097e27d137d9d3734,Artifact,log-0.txt,Datei | Pfad: 00-model/00-archimate/00-archimateactive/log-0.txt | Tiefe: 4,
+id-2cf9d7eed5ad4b2db593a0e9ec3ae741,Artifact,ConvertConcept.lib.js,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/ConvertConcept.lib.js | Tiefe: 5,
+id-2d97e636e86b4f198414b3d71dd97e72,Artifact,Goal.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Goal.ajs | Tiefe: 6,
+id-2e97178c17dd462882939d93f6e1899e,Artifact,Open Model and list all Concepts.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Open Model and list all Concepts.ajs | Tiefe: 4,
+id-2f4f088fa3b4416690279e6860ac0eec,Artifact,HLP01_copy.py,Datei | Pfad: 01-artifacts/01-scripts/HLP01_copy.py | Tiefe: 3,
+id-313c9aafd578449ab57e3e2fecbaec73,Artifact,Heat.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Heat.ajs | Tiefe: 4,
+id-33cda08ba5cb41a69f14b7026801819a,Artifact,02-xychild,Ordner | Pfad: 01-artifacts/00-xml/03-child/02-xychild | Tiefe: 4,
+id-3486656fbf3a497ba1e5c033a18c10b2,Artifact,System Software.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/System Software.ajs | Tiefe: 6,
+id-34f1228d60994b5599a06e14b0ea270d,Artifact,Install.txt,Datei | Pfad: Install.txt | Tiefe: 1,
+id-34f5eef1c5af4a9f963551a082e13395,Artifact,CLE12-xml_archimate_child.py,Datei | Pfad: 01-artifacts/01-scripts/CLE12-xml_archimate_child.py | Tiefe: 3,
+id-36e45cb2ed444a4f975578c56d91593b,Artifact,Technology Function.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Technology Function.ajs | Tiefe: 6,
+id-37a9a260e8ca4588a2e953a46f28b59a,Artifact,CLE25-csv_export.py,Datei | Pfad: 01-artifacts/01-scripts/CLE25-csv_export.py | Tiefe: 3,
+id-38447e5179fd4441b3522fa15c24206f,Artifact,00-master,Ordner | Pfad: 01-artifacts/00-xml/00-master | Tiefe: 3,
+id-387290f14d5b47c1b5cbc43ef799a3ef,Artifact,HLP00_resolve_root.cpython-314.pyc,Datei | Pfad: 01-artifacts/01-scripts/__pycache__/HLP00_resolve_root.cpython-314.pyc | Tiefe: 4,
+id-3984986b97cc4ca3823291b4970e8b0c,Artifact,Business Service.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Service.ajs | Tiefe: 6,
+id-3b74961ac9ca45c5bc4499fbfb0e53a8,Artifact,Folder Management.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Folder Management.ajs | Tiefe: 4,
+id-3bcd9ea6eb2d4cd0927fff35d4818275,Artifact,Technology Interface.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Technology Interface.ajs | Tiefe: 6,
+id-3c41fd1c9b2f4c1a82a8995b71998f78,Artifact,CSV03-resolve_run_scope.py,Datei | Pfad: 01-artifacts/01-scripts/CSV03-resolve_run_scope.py | Tiefe: 3,
+id-3c8a9b4f1d3d447abc21e2037595a911,Artifact,archimate3_View.xsd,Datei | Pfad: 01-artifacts/00-xml/03-child/00-archimatechild/archimate3_View.xsd | Tiefe: 5,
+id-3cf56cec21ae4fb286209b0d2924ac35,Artifact,Set Bounds and Visual Attributes.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Set Bounds and Visual Attributes.ajs | Tiefe: 4,
+id-3ffa7ae2a3074d3b888eff755831646c,Artifact,Constraint.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Constraint.ajs | Tiefe: 6,
+id-423204850b2a4df5868cc2acbffad7c8,Artifact,MUNI FLOW.archimate,Datei | Pfad: 00-model/00-archimate/01-archimateactivesub/MUNI FLOW.archimate | Tiefe: 4,
+id-42425be474e54de2af942cbc59147280,Artifact,8. Relations,Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations | Tiefe: 5,
+id-443fb4c0e32c4d448e6fc941e3ab8854,Artifact,LICENSE,Ordner | Pfad: LICENSE | Tiefe: 1,
+id-44a5ce60b2344576896a84bbc62ba8d3,Artifact,jszip-101.js,Datei | Pfad: 01-artifacts/01-scripts/examples/lib/jszip-101.js | Tiefe: 5,
+id-44b274206b994affab023b643605f01e,Artifact,00-archimate,Ordner | Pfad: 01-artifacts/05-reports/00-archimate | Tiefe: 3,
+id-4607604c4eb84a03b1edb4112f9c5c6d,Artifact,run-scope.txt,Datei | Pfad: 02-stages/run-scope.txt | Tiefe: 2,
+id-46b2d7af4fdf4a9ea30fdbb335eb74dd,Artifact,structure.txt,Datei | Pfad: structure.txt | Tiefe: 1,
+id-486fde17df0e4136bdf209b141398e06,Artifact,CLE10-xml_master.py,Datei | Pfad: 01-artifacts/01-scripts/CLE10-xml_master.py | Tiefe: 3,
+id-4be638baa51940b09ab31f6740166947,Artifact,Principle.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Principle.ajs | Tiefe: 6,
+id-4f893e3de4af4d129c04f2466d640a42,Artifact,Export View Image.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Export View Image.ajs | Tiefe: 4,
+id-507ca8fc74ef462d8f3629338d420390,Artifact,Set Font Sizes.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Set Font Sizes.ajs | Tiefe: 4,
+id-50ad20e9349f4a5fb4b878dc38e04724,Artifact,CLE26-csv_no_id.py,Datei | Pfad: 01-artifacts/01-scripts/CLE26-csv_no_id.py | Tiefe: 3,
+id-514dc00a5cb1431b8b61cc4efbe5fb66,Artifact,CSV98-clean_master.py,Datei | Pfad: 01-artifacts/01-scripts/CSV98-clean_master.py | Tiefe: 3,
+id-55a39ff2d24a4b609b248a7693ad3b6d,Artifact,00-master,Ordner | Pfad: 01-artifacts/02-csv/00-master | Tiefe: 3,
+id-587e39b78e1c4a8c89f5c32fade6527a,Artifact,CLE21-csv_all_childs.py,Datei | Pfad: 01-artifacts/01-scripts/CLE21-csv_all_childs.py | Tiefe: 3,
+id-5989954b23ee40ef82a6ebf639e0fa6e,Artifact,CLE53-stages_logs.py,Datei | Pfad: 01-artifacts/01-scripts/CLE53-stages_logs.py | Tiefe: 3,
+id-59f31053d46a44b192345c3a9013f9e8,Artifact,CSV09-masterxml2csv.py,Datei | Pfad: 01-artifacts/01-scripts/CSV09-masterxml2csv.py | Tiefe: 3,
+id-5a59f3c229da4a64bc469afde5fb5f4b,Artifact,01-bpmnchild,Ordner | Pfad: 01-artifacts/03-XLSX/03-child/01-bpmnchild | Tiefe: 4,
+id-5cc4cd01188d4a86ab93bbdfb9851d0a,Artifact,Technology Interaction.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Technology Interaction.ajs | Tiefe: 6,
+id-5d224d8620624fe2a367fe9530982449,Artifact,M2B06-writeback_bpmn_id.py,Datei | Pfad: 01-artifacts/01-scripts/M2B06-writeback_bpmn_id.py | Tiefe: 3,
+id-5ebf79ef3e32414b91be390af7c9fada,Artifact,Technology Collaboration.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Technology Collaboration.ajs | Tiefe: 6,
+id-603d347ad75f4a9cb636dce687fd1386,Artifact,04-import,Ordner | Pfad: 01-artifacts/03-XLSX/04-import | Tiefe: 3,
+id-62d5acfcbbd145cc827dc8c4d10a5326,Artifact,CSV05-create_master_csvs.py,Datei | Pfad: 01-artifacts/01-scripts/CSV05-create_master_csvs.py | Tiefe: 3,
+id-62e22aa838084858b550df9d759ea33a,Artifact,HLP10-cleanup_property_definitions.py,Datei | Pfad: 01-artifacts/01-scripts/HLP10-cleanup_property_definitions.py | Tiefe: 3,
+id-658b0f9ca899480db62cd06640575399,Artifact,XML05-clear_merge.py,Datei | Pfad: 01-artifacts/01-scripts/XML05-clear_merge.py | Tiefe: 3,
+id-663e3f635b8c416babd455799678e126,Artifact,01-artifacts,Ordner | Pfad: 01-artifacts | Tiefe: 1,
+id-670c17731afc4fd28ee09d7fed4bc85e,Artifact,mapping_ReadMe.txt,Datei | Pfad: 01-artifacts/00-xml/01-mapping/mapping_ReadMe.txt | Tiefe: 4,
+id-689fa14e1a494714a13582f1a305e0fc,Artifact,Driver.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Driver.ajs | Tiefe: 6,
+id-68bafda0e32240c19236159226e8919f,Artifact,CLE31-xlsx_all_childs.py,Datei | Pfad: 01-artifacts/01-scripts/CLE31-xlsx_all_childs.py | Tiefe: 3,
+id-69026f83f73445eb8553c6d121c347c3,Artifact,HLP04_dirlog.py,Datei | Pfad: 01-artifacts/01-scripts/HLP04_dirlog.py | Tiefe: 3,
+id-6a42f41938864e098d2d2ab946f82e57,Artifact,Association Relationship.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Association Relationship.ajs | Tiefe: 6,
+id-6a6b1ea8e4284da5bc0551300e177133,Artifact,HLP05_context_structure.py,Datei | Pfad: 01-artifacts/01-scripts/HLP05_context_structure.py | Tiefe: 3,
+id-6b00a1ffb3a84c31a03831512deb8379,Artifact,00-archimate,Ordner | Pfad: 00-model/00-archimate | Tiefe: 2,
+id-6b77276f34504f18ba3b308e62bcc29f,Artifact,CSV06-append_child_to_master.py,Datei | Pfad: 01-artifacts/01-scripts/CSV06-append_child_to_master.py | Tiefe: 3,
+id-6bd8f61940ea45449374bc3852f4df3e,Artifact,Technology Event.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Technology Event.ajs | Tiefe: 6,
+id-6cd4efff480c4539a534914fe03db8ef,Artifact,csvmapping.txt,Datei | Pfad: 01-artifacts/03-XLSX/01-mapping/csvmapping.txt | Tiefe: 4,
+id-6d58d1e32bcb4c00967e6afabe22cfc1,Artifact,M2B05-writeback_master.py,Datei | Pfad: 01-artifacts/01-scripts/M2B05-writeback_master.py | Tiefe: 3,
+id-6ea7bbc8f9ee4a67adbc97778004f761,Artifact,Node.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Node.ajs | Tiefe: 6,
+id-6ed482df9ba542e8b5ade8069a42993a,Artifact,03-child,Ordner | Pfad: 01-artifacts/00-xml/03-child | Tiefe: 3,
+id-6ed7f0fb9d3e4684b3ea1c6d70f8b7e4,Artifact,Hello World.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Hello World.ajs | Tiefe: 4,
+id-6fcab1be6c54463fb61e344263a4de79,Artifact,ATL00-validate_atl_scope.py,Datei | Pfad: 01-artifacts/01-scripts/ATL00-validate_atl_scope.py | Tiefe: 3,
+id-70571ae7de81432792cda2ca396b641e,Artifact,flowtriggers.txt,Datei | Pfad: 01-artifacts/04-flow/flowtriggers.txt | Tiefe: 3,
+id-70bcf3b8cf2d4ed391c4092d93129b30,Artifact,Application Function.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Function.ajs | Tiefe: 6,
+id-72188aee8a9a44b0806f179361f14ce9,Artifact,community-plugins.json,Datei | Pfad: .obsidian/community-plugins.json | Tiefe: 2,
+id-736a31ac4f6643e7a86972e02453e76b,Artifact,mastercsvsync.txt,Datei | Pfad: 01-artifacts/00-xml/02-sync/mastercsvsync.txt | Tiefe: 4,
+id-74721f02d69641399e4b508d59799ba7,Artifact,Capability.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/1. Strategy/Capability.ajs | Tiefe: 6,
+id-74f119fcaefe4add90833519288a3565,Artifact,Business Interface.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Interface.ajs | Tiefe: 6,
+id-753e97506e894e9a9b3bec6682d820f5,Artifact,CSV02-leer.py,Datei | Pfad: 01-artifacts/01-scripts/CSV02-leer.py | Tiefe: 3,
+id-77163329838f43579f750fd8a6efe1c0,Artifact,04-flow,Ordner | Pfad: 01-artifacts/04-flow | Tiefe: 2,
+id-784c7e7fddf34f1b8b227c85baeb89e2,Artifact,03-child,Ordner | Pfad: 01-artifacts/02-csv/03-child | Tiefe: 3,
+id-78512620f9bb42318f13106c28de6ecd,Artifact,4. Technology & Physical,Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical | Tiefe: 5,
+id-7b011dabd62c487f9e861472c6dc99ed,Artifact,root.cfg,Datei | Pfad: root.cfg | Tiefe: 1,
+id-7b9e3f023f054d239f171c9658d73bbc,Artifact,CLE00-resolve_root.log,Datei | Pfad: 02-stages/99-logs/CLE00-resolve_root.log | Tiefe: 3,
+id-7be02b1e22574ea5a3d344ce33e47726,Artifact,Distribution Network.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Distribution Network.ajs | Tiefe: 6,
+id-7cfc378cb4b84c818f6ee2a4976ac642,Artifact,Statistics.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Statistics.ajs | Tiefe: 4,
+id-7d4a95f5ea0641eeae0f0f6f24376f23,Artifact,csvexport.txt,Datei | Pfad: 01-artifacts/02-csv/02-sync/csvexport.txt | Tiefe: 4,
+id-7e5b795d15c641ea8708a2fd64721814,Artifact,assetsexport-readme.txt,Datei | Pfad: 01-artifacts/02-csv/02-sync/assetsexport-readme.txt | Tiefe: 4,
+id-7f136f92462a428c961ca12fc9ce4617,Artifact,lib,Ordner | Pfad: 01-artifacts/01-scripts/examples/lib | Tiefe: 4,
+id-7f183e98f77741b4828ec059beb6a2c7,Artifact,archimate3_Model.xsd,Datei | Pfad: 01-artifacts/00-xml/03-child/00-archimatechild/archimate3_Model.xsd | Tiefe: 5,
+id-7f85a902e0584c6a94ff8be07b79c319,Artifact,01-archimateactivesub,Ordner | Pfad: 00-model/00-archimate/01-archimateactivesub | Tiefe: 3,
+id-80f3645d8075485d9f43c08c08b83826,Artifact,MUNI FLOW.archimate.bak,Datei | Pfad: 00-model/00-archimate/01-archimateactivesub/MUNI FLOW.archimate.bak | Tiefe: 4,
+id-81d1bd0eac1e41faab1b567564e84f83,Artifact,flowmapping.txt,Datei | Pfad: 01-artifacts/04-flow/flowmapping.txt | Tiefe: 3,
+id-81da0b92400c46b49a30812ac4545553,Artifact,XML00-resolve_root.py,Datei | Pfad: 01-artifacts/01-scripts/XML00-resolve_root.py | Tiefe: 3,
+id-826f02c5940847d188782f5e6e58ee54,Artifact,manifest.json,Datei | Pfad: .obsidian/plugins/obsidian-importer/manifest.json | Tiefe: 4,
+id-82c931a4124e40958746fa2fa19efa42,Artifact,CLE23-csv_bpmn_child.py,Datei | Pfad: 01-artifacts/01-scripts/CLE23-csv_bpmn_child.py | Tiefe: 3,
+id-831eac6131394fa99e770cd70aa28ab1,Artifact,XML04-merge_master.py,Datei | Pfad: 01-artifacts/01-scripts/XML04-merge_master.py | Tiefe: 3,
+id-832a1018fba94893a50f374709532d73,Artifact,CLE41-reports_archimate.py,Datei | Pfad: 01-artifacts/01-scripts/CLE41-reports_archimate.py | Tiefe: 3,
+id-83f5d7a56f8d498fbb8a77ae707ef26c,Artifact,99-logs,Ordner | Pfad: 02-stages/99-logs | Tiefe: 2,
+id-870e83bd70494f71aaacd8477ca416a9,Artifact,01-bpmn,Ordner | Pfad: 00-model/01-bpmn | Tiefe: 2,
+id-87a30a7a5496473782b501253cae5392,Artifact,Device.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Device.ajs | Tiefe: 6,
+id-8894a0299fac4c9d9ace2559607df98d,Artifact,styles.css,Datei | Pfad: .obsidian/plugins/obsidian-importer/styles.css | Tiefe: 4,
+id-889ec780ae4a40e2a49caca8e0accc14,Artifact,FLW02-map_elements.py,Datei | Pfad: 01-artifacts/04-flow/FLW02-map_elements.py | Tiefe: 3,
+id-893ec46b35a6440697acce794f256412,Artifact,.gitignore,Datei | Pfad: .gitignore | Tiefe: 1,
+id-89e0e01bb52540f190076a846f622f87,Artifact,02-sync,Ordner | Pfad: 01-artifacts/00-xml/02-sync | Tiefe: 3,
+id-8b0cd420d69c4081863af51ab7391eaf,Artifact,Stakeholder.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Stakeholder.ajs | Tiefe: 6,
+id-8bb33d9c52a940b186b6a89a54addfb7,Artifact,CLE20-csv_master.py,Datei | Pfad: 01-artifacts/01-scripts/CLE20-csv_master.py | Tiefe: 3,
+id-8bc6694f5c4948598a3f586b04841b02,Artifact,app.json,Datei | Pfad: .obsidian/app.json | Tiefe: 2,
+id-8c95d65486b74cbe8f98586af73abb7a,Artifact,Realization Relationship.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Realization Relationship.ajs | Tiefe: 6,
+id-8d41ea10f2734a3084a75a6d345615fa,Artifact,Business Interaction.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Interaction.ajs | Tiefe: 6,
+id-8d88873583dc49319db91dcd568a4479,Artifact,HLP09-serve_report.py,Datei | Pfad: 01-artifacts/01-scripts/HLP09-serve_report.py | Tiefe: 3,
+id-8f6e1390aacf42979c66e8c598e17401,Artifact,archimate3_Diagram.xsd,Datei | Pfad: 01-artifacts/00-xml/03-child/00-archimatechild/archimate3_Diagram.xsd | Tiefe: 5,
+id-901c99b88a224c729e25ce3cc395379f,Artifact,01-scripts,Ordner | Pfad: 01-artifacts/01-scripts | Tiefe: 2,
+id-911458e511f04600820c232495882fbf,Artifact,01-mapping,Ordner | Pfad: 01-artifacts/03-XLSX/01-mapping | Tiefe: 3,
+id-9136d63488da4cd8833cb1ee24b86b14,Artifact,01-bpmnchild,Ordner | Pfad: 01-artifacts/02-csv/03-child/01-bpmnchild | Tiefe: 4,
+id-91bb8576d773433f8ccf375bc66e75d9,Artifact,00-archimatechild,Ordner | Pfad: 01-artifacts/02-csv/03-child/00-archimatechild | Tiefe: 4,
+id-92230dc51fe34d8c911d26921ff74930,Artifact,00-archimatechild,Ordner | Pfad: 01-artifacts/03-XLSX/03-child/00-archimatechild | Tiefe: 4,
+id-922ec4786c5f46e2a57ffe3f70cd3be8,Artifact,HLP00_resolve_root.py,Datei | Pfad: 01-artifacts/01-scripts/HLP00_resolve_root.py | Tiefe: 3,
+id-93011b676afc4ca8a3eadaefa860652d,Artifact,HLP08_structure2xml.py,Datei | Pfad: 01-artifacts/01-scripts/HLP08_structure2xml.py | Tiefe: 3,
+id-930fba7d83754a7992af200f69acd6b9,Artifact,02-xyarchive,Ordner | Pfad: 02-stages/02-xyarchive | Tiefe: 2,
+id-9322f48482f842a394c1b78ea203204b,Artifact,Assessment.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Assessment.ajs | Tiefe: 6,
+id-93d71070fe994708b7536a1251fa88dc,Artifact,log-0.txt.lck,Datei | Pfad: 00-model/00-archimate/00-archimateactive/log-0.txt.lck | Tiefe: 4,
+id-93f68388037e4a539cf1e730a25cfc69,Artifact,CLE33-xlsx_bpmn_child.py,Datei | Pfad: 01-artifacts/01-scripts/CLE33-xlsx_bpmn_child.py | Tiefe: 3,
+id-941dfcdf00a8414dac232a4f8640a25e,Artifact,00-master,Ordner | Pfad: 01-artifacts/03-XLSX/00-master | Tiefe: 3,
+id-946e457346824d9bbe05644b7e1f1f43,Artifact,Technology Service.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Technology Service.ajs | Tiefe: 6,
+id-94ecfd2c7756491a81e8df3018285635,Artifact,Implementation Event.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/6. Implementation & Migration/Implementation Event.ajs | Tiefe: 6,
+id-95cc4b014c1942f988de9a6e7b965d58,Artifact,M2B00-root_resolve.py,Datei | Pfad: 01-artifacts/01-scripts/M2B00-root_resolve.py | Tiefe: 3,
+id-96014d17e41f4be291465fdf441a78ec,Artifact,Application Interface.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Interface.ajs | Tiefe: 6,
+id-97a660ffd3584189a577bf61e55a257c,Artifact,CSV01-validate_model.py,Datei | Pfad: 01-artifacts/01-scripts/CSV01-validate_model.py | Tiefe: 3,
+id-992086bbcfae40358c4b53b9dc0c50db,Artifact,05-reports,Ordner | Pfad: 01-artifacts/05-reports | Tiefe: 2,
+id-99fc6b24a9db4be0bb8cf555924e7b2b,Artifact,Value.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Value.ajs | Tiefe: 6,
+id-9be0debe417a40578b76cf8d899224b9,Artifact,appearance.json,Datei | Pfad: .obsidian/appearance.json | Tiefe: 2,
+id-9c37caf7d7754ee187e716b08348e98c,Artifact,Anonymize.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Anonymize.ajs | Tiefe: 4,
+id-9e6f8e0c35b340289112127c95a17b65,Artifact,Facility.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Facility.ajs | Tiefe: 6,
+id-9ecef4e51753424f9aad5f4073cd2278,Artifact,Specialization Relationship.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Specialization Relationship.ajs | Tiefe: 6,
+id-a1e7516ed05d4f049e6990efa56c5952,Artifact,HLP06_backup.py,Datei | Pfad: 01-artifacts/01-scripts/HLP06_backup.py | Tiefe: 3,
+id-a22a1f00c7ae487fa9d4edf1d7532b5a,Artifact,99-exports,Ordner | Pfad: 01-artifacts/00-xml/99-exports | Tiefe: 3,
+id-a325926e9be84ed884812fd91a5b187d,Artifact,03-child,Ordner | Pfad: 01-artifacts/03-XLSX/03-child | Tiefe: 3,
+id-a400b4af68fc4e6794c89ee1861c6a6e,Artifact,01-mapping,Ordner | Pfad: 01-artifacts/00-xml/01-mapping | Tiefe: 3,
+id-a470a803cbc4459d9a86e11b8f6624b9,Artifact,M2B03-clear.py,Datei | Pfad: 01-artifacts/01-scripts/M2B03-clear.py | Tiefe: 3,
+id-a4aff880e1ee4f11a6486e8782c89ed4,Artifact,MUNI EA.archimate,Datei | Pfad: 00-model/00-archimate/00-archimateactive/MUNI EA.archimate | Tiefe: 4,
+id-a55bcdeb9f3e4e05a7ca99e684ec2dc4,Artifact,02-xyvision,Ordner | Pfad: 00-model/02-xyvision | Tiefe: 2,
+id-a69330d8d4cc4868b93d748b8cabeb7c,Artifact,Plateau.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/6. Implementation & Migration/Plateau.ajs | Tiefe: 6,
+id-a6a667eda10e4fbfadc2359118753e6a,Artifact,CLE50-stages_all.log,Datei | Pfad: 02-stages/99-logs/CLE50-stages_all.log | Tiefe: 3,
+id-a7241d6ce0a44374bcf41d414df8858a,Artifact,Business Object.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Object.ajs | Tiefe: 6,
+id-a762109507b848d88ad460b0cd6d712f,Artifact,02-sync,Ordner | Pfad: 01-artifacts/02-csv/02-sync | Tiefe: 3,
+id-a78bb5fc69f244399a36260c0cb463ac,Artifact,02-stages,Ordner | Pfad: 02-stages | Tiefe: 1,
+id-a8a37f9a47494af78ad22fc5fd1b358e,Artifact,01-bpmn,Ordner | Pfad: 01-artifacts/05-reports/01-bpmn | Tiefe: 3,
+id-a8d13cb4d2444cd697a103fde5cebcbe,Artifact,Change type to,Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to | Tiefe: 4,
+id-aa4ac2446f084815b9b5a747547426ba,Artifact,Composition Relationship.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Composition Relationship.ajs | Tiefe: 6,
+id-aa72c16d3da54da7b0904556a1ea155f,Artifact,Product.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Product.ajs | Tiefe: 6,
+id-aaed3861ae2a4255aff52b2d2650dee5,Artifact,Technology Process.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Technology Process.ajs | Tiefe: 6,
+id-ac5528ff44dc4f01ace4bd04f2254336,Artifact,02-xychild,Ordner | Pfad: 01-artifacts/02-csv/03-child/02-xychild | Tiefe: 4,
+id-acdd390331ee4d6d9e98f8444339124d,Artifact,ATL01-masterXml2AtlCsv.py,Datei | Pfad: 01-artifacts/01-scripts/ATL01-masterXml2AtlCsv.py | Tiefe: 3,
+id-ad9aeb0f09f445168977232fc169fafe,Artifact,HLP07_restore.py,Datei | Pfad: 01-artifacts/01-scripts/HLP07_restore.py | Tiefe: 3,
+id-ade9220e077b4555a500a6b543988418,Artifact,propmapping.txt,Datei | Pfad: 01-artifacts/03-XLSX/01-mapping/propmapping.txt | Tiefe: 4,
+id-ae779d4a4efe4d30a1ed6c3a470f2367,Artifact,csvmapping.txt,Datei | Pfad: 01-artifacts/02-csv/01-mapping/csvmapping.txt | Tiefe: 4,
+id-b029b2e731414916a75a08423347052e,Artifact,Course of Action.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/1. Strategy/Course of Action.ajs | Tiefe: 6,
+id-b1c6a3315aa6440289ede7d72062b27f,Artifact,Grouping.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/7. Other/Grouping.ajs | Tiefe: 6,
+id-b3774706380b4c97b5875c8465d1448c,Artifact,child_mapping.txt,Datei | Pfad: 01-artifacts/00-xml/child_mapping.txt | Tiefe: 3,
+id-b41489f2ad4f49b58443c54edf260044,Artifact,Business Role.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Role.ajs | Tiefe: 6,
+id-b44985a3c3d94e89b3aa1d78dacac286,Artifact,CLE35-xlsx_export.py,Datei | Pfad: 01-artifacts/01-scripts/CLE35-xlsx_export.py | Tiefe: 3,
+id-b6354aa1cde64915a002c850cb305d30,Artifact,99-exports,Ordner | Pfad: 01-artifacts/02-csv/99-exports | Tiefe: 3,
+id-b89269c14cd14c9f99fe8399c21a0844,Artifact,webconfig.txt,Datei | Pfad: 01-artifacts/05-reports/webconfig.txt | Tiefe: 3,
+id-b8c7ceb667054568bfc6233d68e814da,Artifact,Meaning.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Meaning.ajs | Tiefe: 6,
+id-bace642b337143c895971cdd59976249,Artifact,Application Service.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Service.ajs | Tiefe: 6,
+id-bb9e532bc82f488887e280156fc01c1d,Artifact,Application Process.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Process.ajs | Tiefe: 6,
+id-bcaf6f9ab6aa4eb1a5ea4bdd479f656a,Artifact,Material.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Material.ajs | Tiefe: 6,
+id-bd707a2389414b76acbe907309522ad8,Artifact,02-xychild,Ordner | Pfad: 01-artifacts/03-XLSX/03-child/02-xychild | Tiefe: 4,
+id-bde68fb505894d0586f611decb1435e3,Artifact,Influence Relationship.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Influence Relationship.ajs | Tiefe: 6,
+id-be037bd49c6d47f2afb703b534dcdae4,Artifact,Change Concept Type.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change Concept Type.ajs | Tiefe: 4,
+id-be7a0ee8d1374dad8264bd90c257aa67,Artifact,00-archimatearchive,Ordner | Pfad: 02-stages/00-archimatearchive | Tiefe: 2,
+id-c1d96564a8774b67b687dd91d7227a2b,Artifact,Application Collaboration.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Collaboration.ajs | Tiefe: 6,
+id-c5e45102c4f0471cbda3a088fb8f44ac,Artifact,Business Event.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Event.ajs | Tiefe: 6,
+id-c69f9d0fc8ca4c25957bba09363bd690,Artifact,Console.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Console.ajs | Tiefe: 4,
+id-c89a2e93457e409eac789b26e07ce7e9,Artifact,Gap.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/6. Implementation & Migration/Gap.ajs | Tiefe: 6,
+id-c8ec194c7e1740959792716ab4e26203,Artifact,99-mappingmodel,Ordner | Pfad: 00-model/00-archimate/99-mappingmodel | Tiefe: 3,
+id-c93319cac7ee4c15a93e1699dd75c789,Artifact,CLE52-stages_bpmn.py,Datei | Pfad: 01-artifacts/01-scripts/CLE52-stages_bpmn.py | Tiefe: 3,
+id-c98cda8524a34212b7158f89c41cc75a,Artifact,Requirement.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Requirement.ajs | Tiefe: 6,
+id-cab823a961714f3c91ae7658378bc976,Artifact,01-bpmnarchive,Ordner | Pfad: 02-stages/01-bpmnarchive | Tiefe: 2,
+id-cb18bef97471441d85da7d0a28870b0f,Artifact,myexcel.js,Datei | Pfad: 01-artifacts/01-scripts/examples/lib/myexcel.js | Tiefe: 5,
+id-cb54f2aadea845ed8f788b1641754529,Artifact,Business Collaboration.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Collaboration.ajs | Tiefe: 6,
+id-cbf5c350c4e84b5a92149824daddeec5,Artifact,M2B02-activate_model.py,Datei | Pfad: 01-artifacts/01-scripts/M2B02-activate_model.py | Tiefe: 3,
+id-ccd36cf9694c4dcdade5da8c89e670e9,Artifact,CLE40-reports_all.py,Datei | Pfad: 01-artifacts/01-scripts/CLE40-reports_all.py | Tiefe: 3,
+id-cce897f1d77847a682cf0dcbcdd4d600,Artifact,Location.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/7. Other/Location.ajs | Tiefe: 6,
+id-ce7f1b31874f4e9cbf48fbaaab9cf3b5,Artifact,Artifact.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Artifact.ajs | Tiefe: 6,
+id-cf35be95754444e9a0637f12ee5baf60,Artifact,R+MUNI - clean.zip,Datei | Pfad: R+MUNI - clean.zip | Tiefe: 1,
+id-cfd8977bf5424fa48b235cf5631342c4,Artifact,Serving Relationship.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Serving Relationship.ajs | Tiefe: 6,
+id-d1e714e523e643fba0d7a5d87ece2ab2,Artifact,CLE15-xml_export.py,Datei | Pfad: 01-artifacts/01-scripts/CLE15-xml_export.py | Tiefe: 3,
+id-d1fdf6e1c50d448b883582726fa18280,Artifact,FLW00-scriptrunner.py,Datei | Pfad: 01-artifacts/04-flow/FLW00-scriptrunner.py | Tiefe: 3,
+id-d42322063aec4595a63a0a3bab831b2a,Artifact,Open Model and show Elements in Browser.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Open Model and show Elements in Browser.ajs | Tiefe: 4,
+id-d4638db8479143c1ac16584e8a339d55,Artifact,XML06-finalize-master.py,Datei | Pfad: 01-artifacts/01-scripts/XML06-finalize-master.py | Tiefe: 3,
+id-d46ffa19f31744d8a5e9e1c1e41ffc73,Artifact,Representation.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Representation.ajs | Tiefe: 6,
+id-d47fce1bf5834225be4918ba7ce238f4,Artifact,graph.json,Datei | Pfad: .obsidian/graph.json | Tiefe: 2,
+id-d4c37cbfd605493cb54e001ddf7296a4,Artifact,Path.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Path.ajs | Tiefe: 6,
+id-d4e84454bbfa43b488101513808a29b8,Artifact,04-import,Ordner | Pfad: 01-artifacts/02-csv/04-import | Tiefe: 3,
+id-d6e1da3247d04e46bdc2aecc3d74aba0,Artifact,FLW01-discover.py,Datei | Pfad: 01-artifacts/04-flow/FLW01-discover.py | Tiefe: 3,
+id-d9742cc8bb5f429f99b97c0274376f64,Artifact,Access Relationship.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Access Relationship.ajs | Tiefe: 6,
+id-ddc8edf80afb46148d79c16018cddf19,Artifact,Application Component.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Component.ajs | Tiefe: 6,
+id-ded8552cbedc403a99cbf2e1dc3c989a,Artifact,core-plugins.json,Datei | Pfad: .obsidian/core-plugins.json | Tiefe: 2,
+id-df7e01145c39463ea4514fcda76c6789,Artifact,CLE13-xml_bpmn_child.py,Datei | Pfad: 01-artifacts/01-scripts/CLE13-xml_bpmn_child.py | Tiefe: 3,
+id-e111d56a15484a1c975f275d369ecac6,Artifact,.gitattributes,Ordner | Pfad: .gitattributes | Tiefe: 1,
+id-e12fb19d23a740cb9867831a19b0f92e,Artifact,CLE30-xlsx_master.py,Datei | Pfad: 01-artifacts/01-scripts/CLE30-xlsx_master.py | Tiefe: 3,
+id-e1c7dae850b64f44b7bad974da279980,Artifact,MUNI IMPO.archimate,Datei | Pfad: 00-model/00-archimate/01-archimateactivesub/MUNI IMPO.archimate | Tiefe: 4,
+id-e1d72550c11b435db2471ca542c4ea1d,Artifact,obsidian-importer,Ordner | Pfad: .obsidian/plugins/obsidian-importer | Tiefe: 3,
+id-e3dc4a57b8f245158a8da1f361c91125,Artifact,CLE14-xml_import.py,Datei | Pfad: 01-artifacts/01-scripts/CLE14-xml_import.py | Tiefe: 3,
+id-e605352dd02d4c17a8f7a23805546dc7,Artifact,6. Implementation & Migration,Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/6. Implementation & Migration | Tiefe: 5,
+id-e646d8ec24a44a5ca5df9da95692c7ef,Artifact,.obsidian,Datei | Pfad: .obsidian | Tiefe: 1,
+id-e6784435f1a741f884f75cfb0c379fbf,Artifact,M2B04-reconcile_enrich.py,Datei | Pfad: 01-artifacts/01-scripts/M2B04-reconcile_enrich.py | Tiefe: 3,
+id-e6944b62926a4565862dab5d65fb2d07,Artifact,00-bpmnactive,Ordner | Pfad: 00-model/01-bpmn/00-bpmnactive | Tiefe: 3,
+id-e77b36f88dad4d1c968703724f027b02,Artifact,Export to Excel.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Export to Excel.ajs | Tiefe: 4,
+id-e82d65643ea648bbb90a53d91a3905c2,Artifact,jA01-Validierung Namen.ajs,Datei | Pfad: 01-artifacts/01-scripts/jA01-Validierung Namen.ajs | Tiefe: 3,
+id-e8af19d9ef8b4a74879d08d40294bec1,Artifact,HLP03_clean.py,Datei | Pfad: 01-artifacts/01-scripts/HLP03_clean.py | Tiefe: 3,
+id-e994655ccf614103a53b9afd00438517,Artifact,New Model with Elements and Relationship.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/New Model with Elements and Relationship.ajs | Tiefe: 4,
+id-ebdc31e62f0c4b37827df34c9f24fcb1,Artifact,Business Actor.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Actor.ajs | Tiefe: 6,
+id-edeb3d8aeb464117b83e70a23e348e09,Artifact,99-bpmnMUNI,Ordner | Pfad: 00-model/01-bpmn/99-bpmnMUNI | Tiefe: 3,
+id-ee07114a93554ce28e39cb45cadefe7a,Artifact,mastercsvmapping.txt,Datei | Pfad: 01-artifacts/00-xml/01-mapping/mastercsvmapping.txt | Tiefe: 4,
+id-ee6be8805ff840e485a54fc44b955062,Artifact,Create Views and Visual Objects.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Create Views and Visual Objects.ajs | Tiefe: 4,
+id-eec7293c2479470aba0bf914203fa872,Artifact,5. Motivation,Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation | Tiefe: 5,
+id-efc6f9d379014b7d9ff80342b9276440,Artifact,Business Function.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Function.ajs | Tiefe: 6,
+id-f104be8fe3ad47e6b2dfd46ecd0fc79f,Artifact,00-xml,Ordner | Pfad: 01-artifacts/00-xml | Tiefe: 2,
+id-f1dd3b97ae344f74975aa86054c26d05,Artifact,Assignment Relationship.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Assignment Relationship.ajs | Tiefe: 6,
+id-f21ccc236aad41faad72fbdd2173ce5d,Artifact,01-mapping,Ordner | Pfad: 01-artifacts/02-csv/01-mapping | Tiefe: 3,
+id-f28922ed1a154dd7bef08d2aa87e138d,Artifact,CLE00-resolve_root.py,Datei | Pfad: 01-artifacts/01-scripts/CLE00-resolve_root.py | Tiefe: 3,
+id-f31068c458bd454090a801ab20221bed,Artifact,7. Other,Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/7. Other | Tiefe: 5,
+id-f372f47361e5458681b2ff6ef2b3bb27,Artifact,XML01-collect_sources.py,Datei | Pfad: 01-artifacts/01-scripts/XML01-collect_sources.py | Tiefe: 3,
+id-f50d839587224588aec0dbafa8a68f9a,Artifact,M2Bmapping.txt,Datei | Pfad: 01-artifacts/00-xml/01-mapping/M2Bmapping.txt | Tiefe: 4,
+id-f5b256d92ab44412b81ec314d2272d13,Artifact,CSV99-export_snapshot.py,Datei | Pfad: 01-artifacts/01-scripts/CSV99-export_snapshot.py | Tiefe: 3,
+id-f5da88245054407ebd041666f44f45f4,Artifact,Communication Network.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology & Physical/Communication Network.ajs | Tiefe: 6,
+id-f6f087bc2b4743929592506680ff9afb,Artifact,Data Object.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Data Object.ajs | Tiefe: 6,
+id-f72afa8ac8e14d1181681ce9ddef64d5,Artifact,Flow Relationship.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Flow Relationship.ajs | Tiefe: 6,
+id-f7caca1ba9854f7392bfe92b0c771fab,Artifact,CLE11-xml_all_childs.py,Datei | Pfad: 01-artifacts/01-scripts/CLE11-xml_all_childs.py | Tiefe: 3,
+id-f90b927dd475405c9886bd6eb4a82d52,Artifact,M2B01-master_extract.py,Datei | Pfad: 01-artifacts/01-scripts/M2B01-master_extract.py | Tiefe: 3,
+id-f9787112b8cf4854b6580c9c3f5166ee,Artifact,Resource.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/1. Strategy/Resource.ajs | Tiefe: 6,
+id-faf4aaa9b6ce454d811983cac60deab5,Artifact,XML07-cleanup-artifacts.py,Datei | Pfad: 01-artifacts/01-scripts/XML07-cleanup-artifacts.py | Tiefe: 3,
+id-fb74c0799f6845a9b5d18699ed0f46a7,Artifact,00-archimateactive,Ordner | Pfad: 00-model/00-archimate/00-archimateactive | Tiefe: 3,
+id-fb86d10f58b54ac695ddee2856f060ff,Artifact,99-exports,Ordner | Pfad: 01-artifacts/03-XLSX/99-exports | Tiefe: 3,
+id-fbbfefe21d8447a6be836ee204eed357,Artifact,properties.csv,Datei | Pfad: 01-artifacts/02-csv/04-import/properties.csv | Tiefe: 4,
+id-fc486e8f4f8b49b09c31fcc88278eab0,Artifact,CLE22-csv_archimate_child.py,Datei | Pfad: 01-artifacts/01-scripts/CLE22-csv_archimate_child.py | Tiefe: 3,
+id-fffefcc5a8f34425bcbfdbf0bcf6fbbf,Artifact,Value Stream.ajs,Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/1. Strategy/Value Stream.ajs | Tiefe: 6,

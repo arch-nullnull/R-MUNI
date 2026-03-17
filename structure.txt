@@ -46,6 +46,8 @@ C:.
 |   |   |   child_mapping.txt
 |   |   |   
 |   |   +---00-master
+|   |   |       master.xml
+|   |   |       
 |   |   +---01-mapping
 |   |   |       bpmnmastercsvsync.txt
 |   |   |       M2Bmapping.txt
@@ -64,6 +66,7 @@ C:.
 |   |   |   |       archimate3_View.xsd
 |   |   |   |       MUNI EA.xml
 |   |   |   |       MUNI FLOW.xml
+|   |   |   |       muni2import.xml
 |   |   |   |       
 |   |   |   +---01-bpmnchild
 |   |   |   \---02-xychild
@@ -259,6 +262,10 @@ C:.
 |   |           
 |   +---02-csv
 |   |   +---00-master
+|   |   |       elements.csv
+|   |   |       properties.csv
+|   |   |       relations.csv
+|   |   |       
 |   |   +---01-mapping
 |   |   |       csvmapping.txt
 |   |   |       
@@ -273,8 +280,6 @@ C:.
 |   |   |   \---02-xychild
 |   |   +---04-import
 |   |   |       elements.csv
-|   |   |       properties.csv
-|   |   |       relations.csv
 |   |   |       
 |   |   \---99-exports
 |   +---03-XLSX
@@ -291,12 +296,14 @@ C:.
 |   |   +---04-import
 |   |   \---99-exports
 |   +---04-flow
-|   |       flowmapping.txt
-|   |       flowtriggers.txt
-|   |       FLW00-scriptrunner.py
-|   |       FLW01-discover.py
-|   |       FLW02-map_elements.py
-|   |       
+|   |   |   flowmapping.txt
+|   |   |   flowtriggers.txt
+|   |   |   FLW00-scriptrunner.py
+|   |   |   FLW01-discover.py
+|   |   |   FLW02-map_elements.py
+|   |   |   
+|   |   +---00-archimateFLW
+|   |   \---01-bpmnFLW
 |   \---05-reports
 |       |   webconfig.txt
 |       |   
@@ -313,5 +320,16 @@ C:.
     +---02-xyarchive
     \---99-logs
             CLE00-resolve_root.log
+            CLE26-csv_no_id.log
             CLE50-stages_all.log
+            CSV00-root.resolved.txt
+            CSV00-validate_environment.log
+            CSV01-validate_model.log
+            CSV09-masterXml2Csv.log
+            CSV98-clean_master.log
+            CSV98-clean_master_report.txt
+            CSV99-export_snapshot.log
+            XML00-root.resolved.txt
+            XML06-finalize-master.log
+            XML07-cleanup-artifacts.log
             

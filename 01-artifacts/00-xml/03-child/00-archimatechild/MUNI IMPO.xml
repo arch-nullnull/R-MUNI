@@ -1,0 +1,1448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd http://purl.org/dc/elements/1.1/ http://www.opengroup.org/xsd/archimate/3.1/dc.xsd" identifier="id-debe8c15c7d3403c80250b1904c20e2c">
+  <name xml:lang="de">MUNI IMPO</name>
+  <metadata>
+    <schema>Dublin Core</schema>
+    <schemaversion>1.1</schemaversion>
+    <dc:title>MLAT ReSales Mininmal</dc:title>
+    <dc:creator>MR</dc:creator>
+  </metadata>
+  <elements>
+    <element identifier="id-01a87cff38954e2b951c3ca8692ef61f" xsi:type="Artifact">
+      <name xml:lang="de">Application Interaction.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Interaction.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-02532c262ab1409980c89f5891ca608a" xsi:type="Artifact">
+      <name xml:lang="de">Aggregation Relationship.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Aggregation Relationship.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-03ca025fb08e46d2970a7e2903d01bbf" xsi:type="Artifact">
+      <name xml:lang="de">main.js</name>
+      <documentation xml:lang="de">Datei | Pfad: .obsidian/plugins/obsidian-importer/main.js | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-03ed18b6e2a84f449c5e087f07ade58c" xsi:type="Artifact">
+      <name xml:lang="de">04-import</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/00-xml/04-import | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-0435284fc6b142ba9e9f87fce50c1ded" xsi:type="Artifact">
+      <name xml:lang="de">bpmnmastercsvsync.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/00-xml/01-mapping/bpmnmastercsvsync.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-044458e30ff3422495926e50103a54dd" xsi:type="Artifact">
+      <name xml:lang="de">mapping.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/00-xml/01-mapping/mapping.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-050be3e179f04fb986a7302f664110ce" xsi:type="Artifact">
+      <name xml:lang="de">CLE51-stages_archimate.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE51-stages_archimate.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-0615f131ce3842d2bc139f186465c71a" xsi:type="Artifact">
+      <name xml:lang="de">sync.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/00-xml/02-sync/sync.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-06468f3b677a4b819b9a5675d1b5bcf5" xsi:type="Artifact">
+      <name xml:lang="de">elements.csv</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/02-csv/04-import/elements.csv | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-0817f4f21efc4b4ca82fcecabecbc8cb" xsi:type="Artifact">
+      <name xml:lang="de">plugins</name>
+      <documentation xml:lang="de">Ordner | Pfad: .obsidian/plugins | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-0a57f372ce8b4c71a5f270780b4c6c43" xsi:type="Artifact">
+      <name xml:lang="de">MUNI EA.xml</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/00-xml/03-child/00-archimatechild/MUNI EA.xml | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-0acc38ba00704fbc8692f1c29051100d" xsi:type="Artifact">
+      <name xml:lang="de">M2B07-scope_snapshot.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/M2B07-scope_snapshot.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-0b0ad0b07f414f53aeaf8f88c800af1c" xsi:type="Artifact">
+      <name xml:lang="de">__pycache__</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/01-scripts/__pycache__ | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-0c841182f06f463cbd28862b0c7ca0d6" xsi:type="Artifact">
+      <name xml:lang="de">Business Process.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Process.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-0cc115d43e3d466f9b26ecde7d95ac02" xsi:type="Artifact">
+      <name xml:lang="de">Equipment.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Equipment.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-1044a953fd934b0eb558a7aa8a9fd233" xsi:type="Artifact">
+      <name xml:lang="de">ATL02-atlCsv2JiraCsv.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/ATL02-atlCsv2JiraCsv.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-114411d9f3ac4c3eaae49732b61c7489" xsi:type="Artifact">
+      <name xml:lang="de">model-scope.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 02-stages/model-scope.txt | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-11ddfb46906a4587a006711a04e8ea5b" xsi:type="Artifact">
+      <name xml:lang="de">run-scope_ReadMe.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 02-stages/run-scope_ReadMe.txt | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-12e8098b18cb4f6ba10311d9840e92e4" xsi:type="Artifact">
+      <name xml:lang="de">README.md</name>
+      <documentation xml:lang="de">Datei | Pfad: README.md | Tiefe: 1</documentation>
+    </element>
+    <element identifier="id-132aee7f167c4fcf809504662699ccb0" xsi:type="Artifact">
+      <name xml:lang="de">HLP02_move.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/HLP02_move.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-13d7f2ec2cf44d4da514c326315343fa" xsi:type="Artifact">
+      <name xml:lang="de">CSV00-validate_environment.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CSV00-validate_environment.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-149d8a16d010450dbaaf334a06b12494" xsi:type="Artifact">
+      <name xml:lang="de">99-html</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/05-reports/99-html | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-15b90b8e724b42bfb46073a370f5868d" xsi:type="Artifact">
+      <name xml:lang="de">Triggering Relationship.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Triggering Relationship.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-17ab257994314318b65d60511c871782" xsi:type="Artifact">
+      <name xml:lang="de">MUNI FLOW.xml</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/00-xml/03-child/00-archimatechild/MUNI FLOW.xml | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-18121cbe65584f7ab4cd4994e0f794eb" xsi:type="Artifact">
+      <name xml:lang="de">CLE24-csv_import.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE24-csv_import.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-1856ee15703b41dbaa0dd0e0535bfcec" xsi:type="Artifact">
+      <name xml:lang="de">XML02-parse_child_xml.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/XML02-parse_child_xml.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-18bd43fc297f4cd0a04ed8a6d337dd94" xsi:type="Artifact">
+      <name xml:lang="de">2. Business</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-19aca32b7ecb4b34a5fdaab954fd1850" xsi:type="Artifact">
+      <name xml:lang="de">workspace.json</name>
+      <documentation xml:lang="de">Datei | Pfad: .obsidian/workspace.json | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-1abbfd53785e4c96993143efc5dae289" xsi:type="Artifact">
+      <name xml:lang="de">CSV07-xlsx_2_csv.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CSV07-xlsx_2_csv.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-1b8b6e8b5d94461eae91108ae401b892" xsi:type="Artifact">
+      <name xml:lang="de">assetsexport.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/02-csv/02-sync/assetsexport.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-1b9104ec83c14bd99004fdfb9d9f05a9" xsi:type="Artifact">
+      <name xml:lang="de">XML03-build_index.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/XML03-build_index.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-1ca2d4187a3c4feda531a77865918b75" xsi:type="Artifact">
+      <name xml:lang="de">Work Package.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/6. Implementation &amp; Migration/Work Package.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-1de8cc6f61d24696b4edec907abe8dc9" xsi:type="Artifact">
+      <name xml:lang="de">00-model</name>
+      <documentation xml:lang="de">Ordner | Pfad: 00-model | Tiefe: 1</documentation>
+    </element>
+    <element identifier="id-1f9d9971991b4a5dad237adbb1fe1483" xsi:type="Artifact">
+      <name xml:lang="de">CSV08-properties2csv.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CSV08-properties2csv.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-1fb52a84b5974fd0aefd005c63b5bb6a" xsi:type="Artifact">
+      <name xml:lang="de">CLE43-reports_html.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE43-reports_html.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-207f347e36884687ac4ed56d61fcbbe7" xsi:type="Artifact">
+      <name xml:lang="de">00-archimatechild</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/00-xml/03-child/00-archimatechild | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-214b3a2c16234e89b6be8be560063512" xsi:type="Artifact">
+      <name xml:lang="de">CLE32-xlsx_archimate_child.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE32-xlsx_archimate_child.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-217fb8b7a37643328f625dcc452e2767" xsi:type="Artifact">
+      <name xml:lang="de">CLE50-stages_all.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE50-stages_all.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-220090094c3b40319c6b961252bf2102" xsi:type="Artifact">
+      <name xml:lang="de">1. Strategy</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/1. Strategy | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-226b9b68d0bf493e9778213dd52ab82e" xsi:type="Artifact">
+      <name xml:lang="de">Outcome.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Outcome.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-22869f17f74d4c8384afc1d77ddfdafe" xsi:type="Artifact">
+      <name xml:lang="de">3. Application</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-22ccda39bba14e14937485292d4de82c" xsi:type="Artifact">
+      <name xml:lang="de">02-csv</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/02-csv | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-230bdba764534165b12da4cfba393f1c" xsi:type="Artifact">
+      <name xml:lang="de">Deliverable.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/6. Implementation &amp; Migration/Deliverable.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-23703de34ca74bcd850e8529474ae259" xsi:type="Artifact">
+      <name xml:lang="de">Contract.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Contract.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-23b433d2edf7431797ddef53f21f4ec8" xsi:type="Artifact">
+      <name xml:lang="de">Application Event.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Event.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-24b7d0625c3045cbac5ef4301556228a" xsi:type="Artifact">
+      <name xml:lang="de">03-XLSX</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/03-XLSX | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-25373c33b57f4fb3a8b63d3a6c55bd25" xsi:type="Artifact">
+      <name xml:lang="de">CLE34-xlsx_import.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE34-xlsx_import.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-25471bef35124c7cab7cf58938f7bf27" xsi:type="Artifact">
+      <name xml:lang="de">CSV04-model-overview.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CSV04-model-overview.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-25c976e362fe4750916b08ffed97492c" xsi:type="Artifact">
+      <name xml:lang="de">CLE42-reports_bpmn.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE42-reports_bpmn.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-27f445dee62c48729fb334e59283f3b0" xsi:type="Artifact">
+      <name xml:lang="de">examples</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/01-scripts/examples | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-28248cf6472d4edba53eb56a9cef4382" xsi:type="Artifact">
+      <name xml:lang="de">01-bpmnchild</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/00-xml/03-child/01-bpmnchild | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-2885424439774e509572ac107c7d9bb9" xsi:type="Artifact">
+      <name xml:lang="de">02-sync</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/03-XLSX/02-sync | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-2926dd79756f461db9e991c82c9d69a9" xsi:type="Artifact">
+      <name xml:lang="de">Write to File and Open in Browser.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Write to File and Open in Browser.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-2a3020422e894ded8664e7b735ddbb6d" xsi:type="Artifact">
+      <name xml:lang="de">relations.csv</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/02-csv/04-import/relations.csv | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-2ac10405b0d248e097e27d137d9d3734" xsi:type="Artifact">
+      <name xml:lang="de">log-0.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 00-model/00-archimate/00-archimateactive/log-0.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-2cf9d7eed5ad4b2db593a0e9ec3ae741" xsi:type="Artifact">
+      <name xml:lang="de">ConvertConcept.lib.js</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/ConvertConcept.lib.js | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-2d97e636e86b4f198414b3d71dd97e72" xsi:type="Artifact">
+      <name xml:lang="de">Goal.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Goal.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-2e97178c17dd462882939d93f6e1899e" xsi:type="Artifact">
+      <name xml:lang="de">Open Model and list all Concepts.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Open Model and list all Concepts.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-2f4f088fa3b4416690279e6860ac0eec" xsi:type="Artifact">
+      <name xml:lang="de">HLP01_copy.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/HLP01_copy.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-313c9aafd578449ab57e3e2fecbaec73" xsi:type="Artifact">
+      <name xml:lang="de">Heat.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Heat.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-33cda08ba5cb41a69f14b7026801819a" xsi:type="Artifact">
+      <name xml:lang="de">02-xychild</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/00-xml/03-child/02-xychild | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-3486656fbf3a497ba1e5c033a18c10b2" xsi:type="Artifact">
+      <name xml:lang="de">System Software.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/System Software.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-34f1228d60994b5599a06e14b0ea270d" xsi:type="Artifact">
+      <name xml:lang="de">Install.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: Install.txt | Tiefe: 1</documentation>
+    </element>
+    <element identifier="id-34f5eef1c5af4a9f963551a082e13395" xsi:type="Artifact">
+      <name xml:lang="de">CLE12-xml_archimate_child.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE12-xml_archimate_child.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-36e45cb2ed444a4f975578c56d91593b" xsi:type="Artifact">
+      <name xml:lang="de">Technology Function.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Technology Function.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-37a9a260e8ca4588a2e953a46f28b59a" xsi:type="Artifact">
+      <name xml:lang="de">CLE25-csv_export.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE25-csv_export.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-38447e5179fd4441b3522fa15c24206f" xsi:type="Artifact">
+      <name xml:lang="de">00-master</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/00-xml/00-master | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-387290f14d5b47c1b5cbc43ef799a3ef" xsi:type="Artifact">
+      <name xml:lang="de">HLP00_resolve_root.cpython-314.pyc</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/__pycache__/HLP00_resolve_root.cpython-314.pyc | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-3984986b97cc4ca3823291b4970e8b0c" xsi:type="Artifact">
+      <name xml:lang="de">Business Service.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Service.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-3b74961ac9ca45c5bc4499fbfb0e53a8" xsi:type="Artifact">
+      <name xml:lang="de">Folder Management.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Folder Management.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-3bcd9ea6eb2d4cd0927fff35d4818275" xsi:type="Artifact">
+      <name xml:lang="de">Technology Interface.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Technology Interface.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-3c41fd1c9b2f4c1a82a8995b71998f78" xsi:type="Artifact">
+      <name xml:lang="de">CSV03-resolve_run_scope.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CSV03-resolve_run_scope.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-3c8a9b4f1d3d447abc21e2037595a911" xsi:type="Artifact">
+      <name xml:lang="de">archimate3_View.xsd</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/00-xml/03-child/00-archimatechild/archimate3_View.xsd | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-3cf56cec21ae4fb286209b0d2924ac35" xsi:type="Artifact">
+      <name xml:lang="de">Set Bounds and Visual Attributes.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Set Bounds and Visual Attributes.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-3ffa7ae2a3074d3b888eff755831646c" xsi:type="Artifact">
+      <name xml:lang="de">Constraint.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Constraint.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-423204850b2a4df5868cc2acbffad7c8" xsi:type="Artifact">
+      <name xml:lang="de">MUNI FLOW.archimate</name>
+      <documentation xml:lang="de">Datei | Pfad: 00-model/00-archimate/01-archimateactivesub/MUNI FLOW.archimate | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-42425be474e54de2af942cbc59147280" xsi:type="Artifact">
+      <name xml:lang="de">8. Relations</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-443fb4c0e32c4d448e6fc941e3ab8854" xsi:type="Artifact">
+      <name xml:lang="de">LICENSE</name>
+      <documentation xml:lang="de">Ordner | Pfad: LICENSE | Tiefe: 1</documentation>
+    </element>
+    <element identifier="id-44a5ce60b2344576896a84bbc62ba8d3" xsi:type="Artifact">
+      <name xml:lang="de">jszip-101.js</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/lib/jszip-101.js | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-44b274206b994affab023b643605f01e" xsi:type="Artifact">
+      <name xml:lang="de">00-archimate</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/05-reports/00-archimate | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-4607604c4eb84a03b1edb4112f9c5c6d" xsi:type="Artifact">
+      <name xml:lang="de">run-scope.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 02-stages/run-scope.txt | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-46b2d7af4fdf4a9ea30fdbb335eb74dd" xsi:type="Artifact">
+      <name xml:lang="de">structure.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: structure.txt | Tiefe: 1</documentation>
+    </element>
+    <element identifier="id-486fde17df0e4136bdf209b141398e06" xsi:type="Artifact">
+      <name xml:lang="de">CLE10-xml_master.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE10-xml_master.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-4be638baa51940b09ab31f6740166947" xsi:type="Artifact">
+      <name xml:lang="de">Principle.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Principle.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-4f893e3de4af4d129c04f2466d640a42" xsi:type="Artifact">
+      <name xml:lang="de">Export View Image.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Export View Image.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-507ca8fc74ef462d8f3629338d420390" xsi:type="Artifact">
+      <name xml:lang="de">Set Font Sizes.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Set Font Sizes.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-50ad20e9349f4a5fb4b878dc38e04724" xsi:type="Artifact">
+      <name xml:lang="de">CLE26-csv_no_id.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE26-csv_no_id.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-514dc00a5cb1431b8b61cc4efbe5fb66" xsi:type="Artifact">
+      <name xml:lang="de">CSV98-clean_master.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CSV98-clean_master.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-55a39ff2d24a4b609b248a7693ad3b6d" xsi:type="Artifact">
+      <name xml:lang="de">00-master</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/02-csv/00-master | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-587e39b78e1c4a8c89f5c32fade6527a" xsi:type="Artifact">
+      <name xml:lang="de">CLE21-csv_all_childs.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE21-csv_all_childs.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-5989954b23ee40ef82a6ebf639e0fa6e" xsi:type="Artifact">
+      <name xml:lang="de">CLE53-stages_logs.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE53-stages_logs.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-59f31053d46a44b192345c3a9013f9e8" xsi:type="Artifact">
+      <name xml:lang="de">CSV09-masterxml2csv.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CSV09-masterxml2csv.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-5a59f3c229da4a64bc469afde5fb5f4b" xsi:type="Artifact">
+      <name xml:lang="de">01-bpmnchild</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/03-XLSX/03-child/01-bpmnchild | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-5cc4cd01188d4a86ab93bbdfb9851d0a" xsi:type="Artifact">
+      <name xml:lang="de">Technology Interaction.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Technology Interaction.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-5d224d8620624fe2a367fe9530982449" xsi:type="Artifact">
+      <name xml:lang="de">M2B06-writeback_bpmn_id.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/M2B06-writeback_bpmn_id.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-5ebf79ef3e32414b91be390af7c9fada" xsi:type="Artifact">
+      <name xml:lang="de">Technology Collaboration.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Technology Collaboration.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-603d347ad75f4a9cb636dce687fd1386" xsi:type="Artifact">
+      <name xml:lang="de">04-import</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/03-XLSX/04-import | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-62d5acfcbbd145cc827dc8c4d10a5326" xsi:type="Artifact">
+      <name xml:lang="de">CSV05-create_master_csvs.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CSV05-create_master_csvs.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-62e22aa838084858b550df9d759ea33a" xsi:type="Artifact">
+      <name xml:lang="de">HLP10-cleanup_property_definitions.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/HLP10-cleanup_property_definitions.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-658b0f9ca899480db62cd06640575399" xsi:type="Artifact">
+      <name xml:lang="de">XML05-clear_merge.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/XML05-clear_merge.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-663e3f635b8c416babd455799678e126" xsi:type="Artifact">
+      <name xml:lang="de">01-artifacts</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts | Tiefe: 1</documentation>
+    </element>
+    <element identifier="id-670c17731afc4fd28ee09d7fed4bc85e" xsi:type="Artifact">
+      <name xml:lang="de">mapping_ReadMe.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/00-xml/01-mapping/mapping_ReadMe.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-689fa14e1a494714a13582f1a305e0fc" xsi:type="Artifact">
+      <name xml:lang="de">Driver.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Driver.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-68bafda0e32240c19236159226e8919f" xsi:type="Artifact">
+      <name xml:lang="de">CLE31-xlsx_all_childs.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE31-xlsx_all_childs.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-69026f83f73445eb8553c6d121c347c3" xsi:type="Artifact">
+      <name xml:lang="de">HLP04_dirlog.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/HLP04_dirlog.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-6a42f41938864e098d2d2ab946f82e57" xsi:type="Artifact">
+      <name xml:lang="de">Association Relationship.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Association Relationship.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-6a6b1ea8e4284da5bc0551300e177133" xsi:type="Artifact">
+      <name xml:lang="de">HLP05_context_structure.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/HLP05_context_structure.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-6b00a1ffb3a84c31a03831512deb8379" xsi:type="Artifact">
+      <name xml:lang="de">00-archimate</name>
+      <documentation xml:lang="de">Ordner | Pfad: 00-model/00-archimate | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-6b77276f34504f18ba3b308e62bcc29f" xsi:type="Artifact">
+      <name xml:lang="de">CSV06-append_child_to_master.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CSV06-append_child_to_master.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-6bd8f61940ea45449374bc3852f4df3e" xsi:type="Artifact">
+      <name xml:lang="de">Technology Event.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Technology Event.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-6cd4efff480c4539a534914fe03db8ef" xsi:type="Artifact">
+      <name xml:lang="de">csvmapping.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/03-XLSX/01-mapping/csvmapping.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-6d58d1e32bcb4c00967e6afabe22cfc1" xsi:type="Artifact">
+      <name xml:lang="de">M2B05-writeback_master.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/M2B05-writeback_master.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-6ea7bbc8f9ee4a67adbc97778004f761" xsi:type="Artifact">
+      <name xml:lang="de">Node.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Node.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-6ed482df9ba542e8b5ade8069a42993a" xsi:type="Artifact">
+      <name xml:lang="de">03-child</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/00-xml/03-child | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-6ed7f0fb9d3e4684b3ea1c6d70f8b7e4" xsi:type="Artifact">
+      <name xml:lang="de">Hello World.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Hello World.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-6fcab1be6c54463fb61e344263a4de79" xsi:type="Artifact">
+      <name xml:lang="de">ATL00-validate_atl_scope.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/ATL00-validate_atl_scope.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-70571ae7de81432792cda2ca396b641e" xsi:type="Artifact">
+      <name xml:lang="de">flowtriggers.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/04-flow/flowtriggers.txt | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-70bcf3b8cf2d4ed391c4092d93129b30" xsi:type="Artifact">
+      <name xml:lang="de">Application Function.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Function.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-72188aee8a9a44b0806f179361f14ce9" xsi:type="Artifact">
+      <name xml:lang="de">community-plugins.json</name>
+      <documentation xml:lang="de">Datei | Pfad: .obsidian/community-plugins.json | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-736a31ac4f6643e7a86972e02453e76b" xsi:type="Artifact">
+      <name xml:lang="de">mastercsvsync.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/00-xml/02-sync/mastercsvsync.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-74721f02d69641399e4b508d59799ba7" xsi:type="Artifact">
+      <name xml:lang="de">Capability.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/1. Strategy/Capability.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-74f119fcaefe4add90833519288a3565" xsi:type="Artifact">
+      <name xml:lang="de">Business Interface.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Interface.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-753e97506e894e9a9b3bec6682d820f5" xsi:type="Artifact">
+      <name xml:lang="de">CSV02-leer.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CSV02-leer.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-77163329838f43579f750fd8a6efe1c0" xsi:type="Artifact">
+      <name xml:lang="de">04-flow</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/04-flow | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-784c7e7fddf34f1b8b227c85baeb89e2" xsi:type="Artifact">
+      <name xml:lang="de">03-child</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/02-csv/03-child | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-78512620f9bb42318f13106c28de6ecd" xsi:type="Artifact">
+      <name xml:lang="de">4. Technology &amp; Physical</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-7b011dabd62c487f9e861472c6dc99ed" xsi:type="Artifact">
+      <name xml:lang="de">root.cfg</name>
+      <documentation xml:lang="de">Datei | Pfad: root.cfg | Tiefe: 1</documentation>
+    </element>
+    <element identifier="id-7b9e3f023f054d239f171c9658d73bbc" xsi:type="Artifact">
+      <name xml:lang="de">CLE00-resolve_root.log</name>
+      <documentation xml:lang="de">Datei | Pfad: 02-stages/99-logs/CLE00-resolve_root.log | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-7be02b1e22574ea5a3d344ce33e47726" xsi:type="Artifact">
+      <name xml:lang="de">Distribution Network.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Distribution Network.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-7cfc378cb4b84c818f6ee2a4976ac642" xsi:type="Artifact">
+      <name xml:lang="de">Statistics.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Statistics.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-7d4a95f5ea0641eeae0f0f6f24376f23" xsi:type="Artifact">
+      <name xml:lang="de">csvexport.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/02-csv/02-sync/csvexport.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-7e5b795d15c641ea8708a2fd64721814" xsi:type="Artifact">
+      <name xml:lang="de">assetsexport-readme.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/02-csv/02-sync/assetsexport-readme.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-7f136f92462a428c961ca12fc9ce4617" xsi:type="Artifact">
+      <name xml:lang="de">lib</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/01-scripts/examples/lib | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-7f183e98f77741b4828ec059beb6a2c7" xsi:type="Artifact">
+      <name xml:lang="de">archimate3_Model.xsd</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/00-xml/03-child/00-archimatechild/archimate3_Model.xsd | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-7f85a902e0584c6a94ff8be07b79c319" xsi:type="Artifact">
+      <name xml:lang="de">01-archimateactivesub</name>
+      <documentation xml:lang="de">Ordner | Pfad: 00-model/00-archimate/01-archimateactivesub | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-80f3645d8075485d9f43c08c08b83826" xsi:type="Artifact">
+      <name xml:lang="de">MUNI FLOW.archimate.bak</name>
+      <documentation xml:lang="de">Datei | Pfad: 00-model/00-archimate/01-archimateactivesub/MUNI FLOW.archimate.bak | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-81d1bd0eac1e41faab1b567564e84f83" xsi:type="Artifact">
+      <name xml:lang="de">flowmapping.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/04-flow/flowmapping.txt | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-81da0b92400c46b49a30812ac4545553" xsi:type="Artifact">
+      <name xml:lang="de">XML00-resolve_root.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/XML00-resolve_root.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-826f02c5940847d188782f5e6e58ee54" xsi:type="Artifact">
+      <name xml:lang="de">manifest.json</name>
+      <documentation xml:lang="de">Datei | Pfad: .obsidian/plugins/obsidian-importer/manifest.json | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-82c931a4124e40958746fa2fa19efa42" xsi:type="Artifact">
+      <name xml:lang="de">CLE23-csv_bpmn_child.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE23-csv_bpmn_child.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-831eac6131394fa99e770cd70aa28ab1" xsi:type="Artifact">
+      <name xml:lang="de">XML04-merge_master.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/XML04-merge_master.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-832a1018fba94893a50f374709532d73" xsi:type="Artifact">
+      <name xml:lang="de">CLE41-reports_archimate.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE41-reports_archimate.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-83f5d7a56f8d498fbb8a77ae707ef26c" xsi:type="Artifact">
+      <name xml:lang="de">99-logs</name>
+      <documentation xml:lang="de">Ordner | Pfad: 02-stages/99-logs | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-870e83bd70494f71aaacd8477ca416a9" xsi:type="Artifact">
+      <name xml:lang="de">01-bpmn</name>
+      <documentation xml:lang="de">Ordner | Pfad: 00-model/01-bpmn | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-87a30a7a5496473782b501253cae5392" xsi:type="Artifact">
+      <name xml:lang="de">Device.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Device.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-8894a0299fac4c9d9ace2559607df98d" xsi:type="Artifact">
+      <name xml:lang="de">styles.css</name>
+      <documentation xml:lang="de">Datei | Pfad: .obsidian/plugins/obsidian-importer/styles.css | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-889ec780ae4a40e2a49caca8e0accc14" xsi:type="Artifact">
+      <name xml:lang="de">FLW02-map_elements.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/04-flow/FLW02-map_elements.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-893ec46b35a6440697acce794f256412" xsi:type="Artifact">
+      <name xml:lang="de">.gitignore</name>
+      <documentation xml:lang="de">Datei | Pfad: .gitignore | Tiefe: 1</documentation>
+    </element>
+    <element identifier="id-89e0e01bb52540f190076a846f622f87" xsi:type="Artifact">
+      <name xml:lang="de">02-sync</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/00-xml/02-sync | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-8b0cd420d69c4081863af51ab7391eaf" xsi:type="Artifact">
+      <name xml:lang="de">Stakeholder.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Stakeholder.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-8bb33d9c52a940b186b6a89a54addfb7" xsi:type="Artifact">
+      <name xml:lang="de">CLE20-csv_master.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE20-csv_master.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-8bc6694f5c4948598a3f586b04841b02" xsi:type="Artifact">
+      <name xml:lang="de">app.json</name>
+      <documentation xml:lang="de">Datei | Pfad: .obsidian/app.json | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-8c95d65486b74cbe8f98586af73abb7a" xsi:type="Artifact">
+      <name xml:lang="de">Realization Relationship.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Realization Relationship.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-8d41ea10f2734a3084a75a6d345615fa" xsi:type="Artifact">
+      <name xml:lang="de">Business Interaction.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Interaction.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-8d88873583dc49319db91dcd568a4479" xsi:type="Artifact">
+      <name xml:lang="de">HLP09-serve_report.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/HLP09-serve_report.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-8f6e1390aacf42979c66e8c598e17401" xsi:type="Artifact">
+      <name xml:lang="de">archimate3_Diagram.xsd</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/00-xml/03-child/00-archimatechild/archimate3_Diagram.xsd | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-901c99b88a224c729e25ce3cc395379f" xsi:type="Artifact">
+      <name xml:lang="de">01-scripts</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/01-scripts | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-911458e511f04600820c232495882fbf" xsi:type="Artifact">
+      <name xml:lang="de">01-mapping</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/03-XLSX/01-mapping | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-9136d63488da4cd8833cb1ee24b86b14" xsi:type="Artifact">
+      <name xml:lang="de">01-bpmnchild</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/02-csv/03-child/01-bpmnchild | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-91bb8576d773433f8ccf375bc66e75d9" xsi:type="Artifact">
+      <name xml:lang="de">00-archimatechild</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/02-csv/03-child/00-archimatechild | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-92230dc51fe34d8c911d26921ff74930" xsi:type="Artifact">
+      <name xml:lang="de">00-archimatechild</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/03-XLSX/03-child/00-archimatechild | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-922ec4786c5f46e2a57ffe3f70cd3be8" xsi:type="Artifact">
+      <name xml:lang="de">HLP00_resolve_root.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/HLP00_resolve_root.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-93011b676afc4ca8a3eadaefa860652d" xsi:type="Artifact">
+      <name xml:lang="de">HLP08_structure2xml.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/HLP08_structure2xml.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-930fba7d83754a7992af200f69acd6b9" xsi:type="Artifact">
+      <name xml:lang="de">02-xyarchive</name>
+      <documentation xml:lang="de">Ordner | Pfad: 02-stages/02-xyarchive | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-9322f48482f842a394c1b78ea203204b" xsi:type="Artifact">
+      <name xml:lang="de">Assessment.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Assessment.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-93d71070fe994708b7536a1251fa88dc" xsi:type="Artifact">
+      <name xml:lang="de">log-0.txt.lck</name>
+      <documentation xml:lang="de">Datei | Pfad: 00-model/00-archimate/00-archimateactive/log-0.txt.lck | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-93f68388037e4a539cf1e730a25cfc69" xsi:type="Artifact">
+      <name xml:lang="de">CLE33-xlsx_bpmn_child.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE33-xlsx_bpmn_child.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-941dfcdf00a8414dac232a4f8640a25e" xsi:type="Artifact">
+      <name xml:lang="de">00-master</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/03-XLSX/00-master | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-946e457346824d9bbe05644b7e1f1f43" xsi:type="Artifact">
+      <name xml:lang="de">Technology Service.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Technology Service.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-94ecfd2c7756491a81e8df3018285635" xsi:type="Artifact">
+      <name xml:lang="de">Implementation Event.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/6. Implementation &amp; Migration/Implementation Event.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-95cc4b014c1942f988de9a6e7b965d58" xsi:type="Artifact">
+      <name xml:lang="de">M2B00-root_resolve.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/M2B00-root_resolve.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-96014d17e41f4be291465fdf441a78ec" xsi:type="Artifact">
+      <name xml:lang="de">Application Interface.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Interface.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-97a660ffd3584189a577bf61e55a257c" xsi:type="Artifact">
+      <name xml:lang="de">CSV01-validate_model.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CSV01-validate_model.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-992086bbcfae40358c4b53b9dc0c50db" xsi:type="Artifact">
+      <name xml:lang="de">05-reports</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/05-reports | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-99fc6b24a9db4be0bb8cf555924e7b2b" xsi:type="Artifact">
+      <name xml:lang="de">Value.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Value.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-9be0debe417a40578b76cf8d899224b9" xsi:type="Artifact">
+      <name xml:lang="de">appearance.json</name>
+      <documentation xml:lang="de">Datei | Pfad: .obsidian/appearance.json | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-9c37caf7d7754ee187e716b08348e98c" xsi:type="Artifact">
+      <name xml:lang="de">Anonymize.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Anonymize.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-9e6f8e0c35b340289112127c95a17b65" xsi:type="Artifact">
+      <name xml:lang="de">Facility.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Facility.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-9ecef4e51753424f9aad5f4073cd2278" xsi:type="Artifact">
+      <name xml:lang="de">Specialization Relationship.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Specialization Relationship.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-a1e7516ed05d4f049e6990efa56c5952" xsi:type="Artifact">
+      <name xml:lang="de">HLP06_backup.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/HLP06_backup.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-a22a1f00c7ae487fa9d4edf1d7532b5a" xsi:type="Artifact">
+      <name xml:lang="de">99-exports</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/00-xml/99-exports | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-a325926e9be84ed884812fd91a5b187d" xsi:type="Artifact">
+      <name xml:lang="de">03-child</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/03-XLSX/03-child | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-a400b4af68fc4e6794c89ee1861c6a6e" xsi:type="Artifact">
+      <name xml:lang="de">01-mapping</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/00-xml/01-mapping | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-a470a803cbc4459d9a86e11b8f6624b9" xsi:type="Artifact">
+      <name xml:lang="de">M2B03-clear.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/M2B03-clear.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-a4aff880e1ee4f11a6486e8782c89ed4" xsi:type="Artifact">
+      <name xml:lang="de">MUNI EA.archimate</name>
+      <documentation xml:lang="de">Datei | Pfad: 00-model/00-archimate/00-archimateactive/MUNI EA.archimate | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-a55bcdeb9f3e4e05a7ca99e684ec2dc4" xsi:type="Artifact">
+      <name xml:lang="de">02-xyvision</name>
+      <documentation xml:lang="de">Ordner | Pfad: 00-model/02-xyvision | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-a69330d8d4cc4868b93d748b8cabeb7c" xsi:type="Artifact">
+      <name xml:lang="de">Plateau.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/6. Implementation &amp; Migration/Plateau.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-a6a667eda10e4fbfadc2359118753e6a" xsi:type="Artifact">
+      <name xml:lang="de">CLE50-stages_all.log</name>
+      <documentation xml:lang="de">Datei | Pfad: 02-stages/99-logs/CLE50-stages_all.log | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-a7241d6ce0a44374bcf41d414df8858a" xsi:type="Artifact">
+      <name xml:lang="de">Business Object.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Object.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-a762109507b848d88ad460b0cd6d712f" xsi:type="Artifact">
+      <name xml:lang="de">02-sync</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/02-csv/02-sync | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-a78bb5fc69f244399a36260c0cb463ac" xsi:type="Artifact">
+      <name xml:lang="de">02-stages</name>
+      <documentation xml:lang="de">Ordner | Pfad: 02-stages | Tiefe: 1</documentation>
+    </element>
+    <element identifier="id-a8a37f9a47494af78ad22fc5fd1b358e" xsi:type="Artifact">
+      <name xml:lang="de">01-bpmn</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/05-reports/01-bpmn | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-a8d13cb4d2444cd697a103fde5cebcbe" xsi:type="Artifact">
+      <name xml:lang="de">Change type to</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-aa4ac2446f084815b9b5a747547426ba" xsi:type="Artifact">
+      <name xml:lang="de">Composition Relationship.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Composition Relationship.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-aa72c16d3da54da7b0904556a1ea155f" xsi:type="Artifact">
+      <name xml:lang="de">Product.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Product.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-aaed3861ae2a4255aff52b2d2650dee5" xsi:type="Artifact">
+      <name xml:lang="de">Technology Process.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Technology Process.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-ac5528ff44dc4f01ace4bd04f2254336" xsi:type="Artifact">
+      <name xml:lang="de">02-xychild</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/02-csv/03-child/02-xychild | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-acdd390331ee4d6d9e98f8444339124d" xsi:type="Artifact">
+      <name xml:lang="de">ATL01-masterXml2AtlCsv.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/ATL01-masterXml2AtlCsv.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-ad9aeb0f09f445168977232fc169fafe" xsi:type="Artifact">
+      <name xml:lang="de">HLP07_restore.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/HLP07_restore.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-ade9220e077b4555a500a6b543988418" xsi:type="Artifact">
+      <name xml:lang="de">propmapping.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/03-XLSX/01-mapping/propmapping.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-ae779d4a4efe4d30a1ed6c3a470f2367" xsi:type="Artifact">
+      <name xml:lang="de">csvmapping.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/02-csv/01-mapping/csvmapping.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-b029b2e731414916a75a08423347052e" xsi:type="Artifact">
+      <name xml:lang="de">Course of Action.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/1. Strategy/Course of Action.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-b1c6a3315aa6440289ede7d72062b27f" xsi:type="Artifact">
+      <name xml:lang="de">Grouping.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/7. Other/Grouping.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-b3774706380b4c97b5875c8465d1448c" xsi:type="Artifact">
+      <name xml:lang="de">child_mapping.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/00-xml/child_mapping.txt | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-b41489f2ad4f49b58443c54edf260044" xsi:type="Artifact">
+      <name xml:lang="de">Business Role.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Role.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-b44985a3c3d94e89b3aa1d78dacac286" xsi:type="Artifact">
+      <name xml:lang="de">CLE35-xlsx_export.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE35-xlsx_export.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-b6354aa1cde64915a002c850cb305d30" xsi:type="Artifact">
+      <name xml:lang="de">99-exports</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/02-csv/99-exports | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-b89269c14cd14c9f99fe8399c21a0844" xsi:type="Artifact">
+      <name xml:lang="de">webconfig.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/05-reports/webconfig.txt | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-b8c7ceb667054568bfc6233d68e814da" xsi:type="Artifact">
+      <name xml:lang="de">Meaning.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Meaning.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-bace642b337143c895971cdd59976249" xsi:type="Artifact">
+      <name xml:lang="de">Application Service.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Service.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-bb9e532bc82f488887e280156fc01c1d" xsi:type="Artifact">
+      <name xml:lang="de">Application Process.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Process.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-bcaf6f9ab6aa4eb1a5ea4bdd479f656a" xsi:type="Artifact">
+      <name xml:lang="de">Material.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Material.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-bd707a2389414b76acbe907309522ad8" xsi:type="Artifact">
+      <name xml:lang="de">02-xychild</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/03-XLSX/03-child/02-xychild | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-bde68fb505894d0586f611decb1435e3" xsi:type="Artifact">
+      <name xml:lang="de">Influence Relationship.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Influence Relationship.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-be037bd49c6d47f2afb703b534dcdae4" xsi:type="Artifact">
+      <name xml:lang="de">Change Concept Type.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change Concept Type.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-be7a0ee8d1374dad8264bd90c257aa67" xsi:type="Artifact">
+      <name xml:lang="de">00-archimatearchive</name>
+      <documentation xml:lang="de">Ordner | Pfad: 02-stages/00-archimatearchive | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-c1d96564a8774b67b687dd91d7227a2b" xsi:type="Artifact">
+      <name xml:lang="de">Application Collaboration.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Collaboration.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-c5e45102c4f0471cbda3a088fb8f44ac" xsi:type="Artifact">
+      <name xml:lang="de">Business Event.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Event.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-c69f9d0fc8ca4c25957bba09363bd690" xsi:type="Artifact">
+      <name xml:lang="de">Console.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Console.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-c89a2e93457e409eac789b26e07ce7e9" xsi:type="Artifact">
+      <name xml:lang="de">Gap.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/6. Implementation &amp; Migration/Gap.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-c8ec194c7e1740959792716ab4e26203" xsi:type="Artifact">
+      <name xml:lang="de">99-mappingmodel</name>
+      <documentation xml:lang="de">Ordner | Pfad: 00-model/00-archimate/99-mappingmodel | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-c93319cac7ee4c15a93e1699dd75c789" xsi:type="Artifact">
+      <name xml:lang="de">CLE52-stages_bpmn.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE52-stages_bpmn.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-c98cda8524a34212b7158f89c41cc75a" xsi:type="Artifact">
+      <name xml:lang="de">Requirement.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation/Requirement.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-cab823a961714f3c91ae7658378bc976" xsi:type="Artifact">
+      <name xml:lang="de">01-bpmnarchive</name>
+      <documentation xml:lang="de">Ordner | Pfad: 02-stages/01-bpmnarchive | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-cb18bef97471441d85da7d0a28870b0f" xsi:type="Artifact">
+      <name xml:lang="de">myexcel.js</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/lib/myexcel.js | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-cb54f2aadea845ed8f788b1641754529" xsi:type="Artifact">
+      <name xml:lang="de">Business Collaboration.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Collaboration.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-cbf5c350c4e84b5a92149824daddeec5" xsi:type="Artifact">
+      <name xml:lang="de">M2B02-activate_model.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/M2B02-activate_model.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-ccd36cf9694c4dcdade5da8c89e670e9" xsi:type="Artifact">
+      <name xml:lang="de">CLE40-reports_all.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE40-reports_all.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-cce897f1d77847a682cf0dcbcdd4d600" xsi:type="Artifact">
+      <name xml:lang="de">Location.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/7. Other/Location.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-ce7f1b31874f4e9cbf48fbaaab9cf3b5" xsi:type="Artifact">
+      <name xml:lang="de">Artifact.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Artifact.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-cf35be95754444e9a0637f12ee5baf60" xsi:type="Artifact">
+      <name xml:lang="de">R+MUNI - clean.zip</name>
+      <documentation xml:lang="de">Datei | Pfad: R+MUNI - clean.zip | Tiefe: 1</documentation>
+    </element>
+    <element identifier="id-cfd8977bf5424fa48b235cf5631342c4" xsi:type="Artifact">
+      <name xml:lang="de">Serving Relationship.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Serving Relationship.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-d1e714e523e643fba0d7a5d87ece2ab2" xsi:type="Artifact">
+      <name xml:lang="de">CLE15-xml_export.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE15-xml_export.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-d1fdf6e1c50d448b883582726fa18280" xsi:type="Artifact">
+      <name xml:lang="de">FLW00-scriptrunner.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/04-flow/FLW00-scriptrunner.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-d42322063aec4595a63a0a3bab831b2a" xsi:type="Artifact">
+      <name xml:lang="de">Open Model and show Elements in Browser.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Open Model and show Elements in Browser.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-d4638db8479143c1ac16584e8a339d55" xsi:type="Artifact">
+      <name xml:lang="de">XML06-finalize-master.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/XML06-finalize-master.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-d46ffa19f31744d8a5e9e1c1e41ffc73" xsi:type="Artifact">
+      <name xml:lang="de">Representation.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Representation.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-d47fce1bf5834225be4918ba7ce238f4" xsi:type="Artifact">
+      <name xml:lang="de">graph.json</name>
+      <documentation xml:lang="de">Datei | Pfad: .obsidian/graph.json | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-d4c37cbfd605493cb54e001ddf7296a4" xsi:type="Artifact">
+      <name xml:lang="de">Path.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Path.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-d4e84454bbfa43b488101513808a29b8" xsi:type="Artifact">
+      <name xml:lang="de">04-import</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/02-csv/04-import | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-d6e1da3247d04e46bdc2aecc3d74aba0" xsi:type="Artifact">
+      <name xml:lang="de">FLW01-discover.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/04-flow/FLW01-discover.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-d9742cc8bb5f429f99b97c0274376f64" xsi:type="Artifact">
+      <name xml:lang="de">Access Relationship.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Access Relationship.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-ddc8edf80afb46148d79c16018cddf19" xsi:type="Artifact">
+      <name xml:lang="de">Application Component.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Application Component.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-ded8552cbedc403a99cbf2e1dc3c989a" xsi:type="Artifact">
+      <name xml:lang="de">core-plugins.json</name>
+      <documentation xml:lang="de">Datei | Pfad: .obsidian/core-plugins.json | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-df7e01145c39463ea4514fcda76c6789" xsi:type="Artifact">
+      <name xml:lang="de">CLE13-xml_bpmn_child.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE13-xml_bpmn_child.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-e111d56a15484a1c975f275d369ecac6" xsi:type="Artifact">
+      <name xml:lang="de">.gitattributes</name>
+      <documentation xml:lang="de">Ordner | Pfad: .gitattributes | Tiefe: 1</documentation>
+    </element>
+    <element identifier="id-e12fb19d23a740cb9867831a19b0f92e" xsi:type="Artifact">
+      <name xml:lang="de">CLE30-xlsx_master.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE30-xlsx_master.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-e1c7dae850b64f44b7bad974da279980" xsi:type="Artifact">
+      <name xml:lang="de">MUNI IMPO.archimate</name>
+      <documentation xml:lang="de">Datei | Pfad: 00-model/00-archimate/01-archimateactivesub/MUNI IMPO.archimate | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-e1d72550c11b435db2471ca542c4ea1d" xsi:type="Artifact">
+      <name xml:lang="de">obsidian-importer</name>
+      <documentation xml:lang="de">Ordner | Pfad: .obsidian/plugins/obsidian-importer | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-e3dc4a57b8f245158a8da1f361c91125" xsi:type="Artifact">
+      <name xml:lang="de">CLE14-xml_import.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE14-xml_import.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-e605352dd02d4c17a8f7a23805546dc7" xsi:type="Artifact">
+      <name xml:lang="de">6. Implementation &amp; Migration</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/6. Implementation &amp; Migration | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-e646d8ec24a44a5ca5df9da95692c7ef" xsi:type="Artifact">
+      <name xml:lang="de">.obsidian</name>
+      <documentation xml:lang="de">Datei | Pfad: .obsidian | Tiefe: 1</documentation>
+    </element>
+    <element identifier="id-e6784435f1a741f884f75cfb0c379fbf" xsi:type="Artifact">
+      <name xml:lang="de">M2B04-reconcile_enrich.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/M2B04-reconcile_enrich.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-e6944b62926a4565862dab5d65fb2d07" xsi:type="Artifact">
+      <name xml:lang="de">00-bpmnactive</name>
+      <documentation xml:lang="de">Ordner | Pfad: 00-model/01-bpmn/00-bpmnactive | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-e77b36f88dad4d1c968703724f027b02" xsi:type="Artifact">
+      <name xml:lang="de">Export to Excel.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Export to Excel.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-e82d65643ea648bbb90a53d91a3905c2" xsi:type="Artifact">
+      <name xml:lang="de">jA01-Validierung Namen.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/jA01-Validierung Namen.ajs | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-e8af19d9ef8b4a74879d08d40294bec1" xsi:type="Artifact">
+      <name xml:lang="de">HLP03_clean.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/HLP03_clean.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-e994655ccf614103a53b9afd00438517" xsi:type="Artifact">
+      <name xml:lang="de">New Model with Elements and Relationship.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/New Model with Elements and Relationship.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-ebdc31e62f0c4b37827df34c9f24fcb1" xsi:type="Artifact">
+      <name xml:lang="de">Business Actor.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Actor.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-edeb3d8aeb464117b83e70a23e348e09" xsi:type="Artifact">
+      <name xml:lang="de">99-bpmnMUNI</name>
+      <documentation xml:lang="de">Ordner | Pfad: 00-model/01-bpmn/99-bpmnMUNI | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-ee07114a93554ce28e39cb45cadefe7a" xsi:type="Artifact">
+      <name xml:lang="de">mastercsvmapping.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/00-xml/01-mapping/mastercsvmapping.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-ee6be8805ff840e485a54fc44b955062" xsi:type="Artifact">
+      <name xml:lang="de">Create Views and Visual Objects.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Create Views and Visual Objects.ajs | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-eec7293c2479470aba0bf914203fa872" xsi:type="Artifact">
+      <name xml:lang="de">5. Motivation</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/5. Motivation | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-efc6f9d379014b7d9ff80342b9276440" xsi:type="Artifact">
+      <name xml:lang="de">Business Function.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/2. Business/Business Function.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-f104be8fe3ad47e6b2dfd46ecd0fc79f" xsi:type="Artifact">
+      <name xml:lang="de">00-xml</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/00-xml | Tiefe: 2</documentation>
+    </element>
+    <element identifier="id-f1dd3b97ae344f74975aa86054c26d05" xsi:type="Artifact">
+      <name xml:lang="de">Assignment Relationship.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Assignment Relationship.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-f21ccc236aad41faad72fbdd2173ce5d" xsi:type="Artifact">
+      <name xml:lang="de">01-mapping</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/02-csv/01-mapping | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-f28922ed1a154dd7bef08d2aa87e138d" xsi:type="Artifact">
+      <name xml:lang="de">CLE00-resolve_root.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE00-resolve_root.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-f31068c458bd454090a801ab20221bed" xsi:type="Artifact">
+      <name xml:lang="de">7. Other</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/01-scripts/examples/Change type to/7. Other | Tiefe: 5</documentation>
+    </element>
+    <element identifier="id-f372f47361e5458681b2ff6ef2b3bb27" xsi:type="Artifact">
+      <name xml:lang="de">XML01-collect_sources.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/XML01-collect_sources.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-f50d839587224588aec0dbafa8a68f9a" xsi:type="Artifact">
+      <name xml:lang="de">M2Bmapping.txt</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/00-xml/01-mapping/M2Bmapping.txt | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-f5b256d92ab44412b81ec314d2272d13" xsi:type="Artifact">
+      <name xml:lang="de">CSV99-export_snapshot.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CSV99-export_snapshot.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-f5da88245054407ebd041666f44f45f4" xsi:type="Artifact">
+      <name xml:lang="de">Communication Network.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/4. Technology &amp; Physical/Communication Network.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-f6f087bc2b4743929592506680ff9afb" xsi:type="Artifact">
+      <name xml:lang="de">Data Object.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/3. Application/Data Object.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-f72afa8ac8e14d1181681ce9ddef64d5" xsi:type="Artifact">
+      <name xml:lang="de">Flow Relationship.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/8. Relations/Flow Relationship.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-f7caca1ba9854f7392bfe92b0c771fab" xsi:type="Artifact">
+      <name xml:lang="de">CLE11-xml_all_childs.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE11-xml_all_childs.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-f90b927dd475405c9886bd6eb4a82d52" xsi:type="Artifact">
+      <name xml:lang="de">M2B01-master_extract.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/M2B01-master_extract.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-f9787112b8cf4854b6580c9c3f5166ee" xsi:type="Artifact">
+      <name xml:lang="de">Resource.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/1. Strategy/Resource.ajs | Tiefe: 6</documentation>
+    </element>
+    <element identifier="id-faf4aaa9b6ce454d811983cac60deab5" xsi:type="Artifact">
+      <name xml:lang="de">XML07-cleanup-artifacts.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/XML07-cleanup-artifacts.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-fb74c0799f6845a9b5d18699ed0f46a7" xsi:type="Artifact">
+      <name xml:lang="de">00-archimateactive</name>
+      <documentation xml:lang="de">Ordner | Pfad: 00-model/00-archimate/00-archimateactive | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-fb86d10f58b54ac695ddee2856f060ff" xsi:type="Artifact">
+      <name xml:lang="de">99-exports</name>
+      <documentation xml:lang="de">Ordner | Pfad: 01-artifacts/03-XLSX/99-exports | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-fbbfefe21d8447a6be836ee204eed357" xsi:type="Artifact">
+      <name xml:lang="de">properties.csv</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/02-csv/04-import/properties.csv | Tiefe: 4</documentation>
+    </element>
+    <element identifier="id-fc486e8f4f8b49b09c31fcc88278eab0" xsi:type="Artifact">
+      <name xml:lang="de">CLE22-csv_archimate_child.py</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/CLE22-csv_archimate_child.py | Tiefe: 3</documentation>
+    </element>
+    <element identifier="id-fffefcc5a8f34425bcbfdbf0bcf6fbbf" xsi:type="Artifact">
+      <name xml:lang="de">Value Stream.ajs</name>
+      <documentation xml:lang="de">Datei | Pfad: 01-artifacts/01-scripts/examples/Change type to/1. Strategy/Value Stream.ajs | Tiefe: 6</documentation>
+    </element>
+  </elements>
+  <organizations>
+    <item>
+      <label xml:lang="de">Technology &amp; Physical</label>
+      <item identifierRef="id-01a87cff38954e2b951c3ca8692ef61f" />
+      <item identifierRef="id-02532c262ab1409980c89f5891ca608a" />
+      <item identifierRef="id-03ca025fb08e46d2970a7e2903d01bbf" />
+      <item identifierRef="id-03ed18b6e2a84f449c5e087f07ade58c" />
+      <item identifierRef="id-0435284fc6b142ba9e9f87fce50c1ded" />
+      <item identifierRef="id-044458e30ff3422495926e50103a54dd" />
+      <item identifierRef="id-050be3e179f04fb986a7302f664110ce" />
+      <item identifierRef="id-0615f131ce3842d2bc139f186465c71a" />
+      <item identifierRef="id-06468f3b677a4b819b9a5675d1b5bcf5" />
+      <item identifierRef="id-0817f4f21efc4b4ca82fcecabecbc8cb" />
+      <item identifierRef="id-0a57f372ce8b4c71a5f270780b4c6c43" />
+      <item identifierRef="id-0acc38ba00704fbc8692f1c29051100d" />
+      <item identifierRef="id-0b0ad0b07f414f53aeaf8f88c800af1c" />
+      <item identifierRef="id-0c841182f06f463cbd28862b0c7ca0d6" />
+      <item identifierRef="id-0cc115d43e3d466f9b26ecde7d95ac02" />
+      <item identifierRef="id-1044a953fd934b0eb558a7aa8a9fd233" />
+      <item identifierRef="id-114411d9f3ac4c3eaae49732b61c7489" />
+      <item identifierRef="id-11ddfb46906a4587a006711a04e8ea5b" />
+      <item identifierRef="id-12e8098b18cb4f6ba10311d9840e92e4" />
+      <item identifierRef="id-132aee7f167c4fcf809504662699ccb0" />
+      <item identifierRef="id-13d7f2ec2cf44d4da514c326315343fa" />
+      <item identifierRef="id-149d8a16d010450dbaaf334a06b12494" />
+      <item identifierRef="id-15b90b8e724b42bfb46073a370f5868d" />
+      <item identifierRef="id-17ab257994314318b65d60511c871782" />
+      <item identifierRef="id-18121cbe65584f7ab4cd4994e0f794eb" />
+      <item identifierRef="id-1856ee15703b41dbaa0dd0e0535bfcec" />
+      <item identifierRef="id-18bd43fc297f4cd0a04ed8a6d337dd94" />
+      <item identifierRef="id-19aca32b7ecb4b34a5fdaab954fd1850" />
+      <item identifierRef="id-1abbfd53785e4c96993143efc5dae289" />
+      <item identifierRef="id-1b8b6e8b5d94461eae91108ae401b892" />
+      <item identifierRef="id-1b9104ec83c14bd99004fdfb9d9f05a9" />
+      <item identifierRef="id-1ca2d4187a3c4feda531a77865918b75" />
+      <item identifierRef="id-1de8cc6f61d24696b4edec907abe8dc9" />
+      <item identifierRef="id-1f9d9971991b4a5dad237adbb1fe1483" />
+      <item identifierRef="id-1fb52a84b5974fd0aefd005c63b5bb6a" />
+      <item identifierRef="id-207f347e36884687ac4ed56d61fcbbe7" />
+      <item identifierRef="id-214b3a2c16234e89b6be8be560063512" />
+      <item identifierRef="id-217fb8b7a37643328f625dcc452e2767" />
+      <item identifierRef="id-220090094c3b40319c6b961252bf2102" />
+      <item identifierRef="id-226b9b68d0bf493e9778213dd52ab82e" />
+      <item identifierRef="id-22869f17f74d4c8384afc1d77ddfdafe" />
+      <item identifierRef="id-22ccda39bba14e14937485292d4de82c" />
+      <item identifierRef="id-230bdba764534165b12da4cfba393f1c" />
+      <item identifierRef="id-23703de34ca74bcd850e8529474ae259" />
+      <item identifierRef="id-23b433d2edf7431797ddef53f21f4ec8" />
+      <item identifierRef="id-24b7d0625c3045cbac5ef4301556228a" />
+      <item identifierRef="id-25373c33b57f4fb3a8b63d3a6c55bd25" />
+      <item identifierRef="id-25471bef35124c7cab7cf58938f7bf27" />
+      <item identifierRef="id-25c976e362fe4750916b08ffed97492c" />
+      <item identifierRef="id-27f445dee62c48729fb334e59283f3b0" />
+      <item identifierRef="id-28248cf6472d4edba53eb56a9cef4382" />
+      <item identifierRef="id-2885424439774e509572ac107c7d9bb9" />
+      <item identifierRef="id-2926dd79756f461db9e991c82c9d69a9" />
+      <item identifierRef="id-2a3020422e894ded8664e7b735ddbb6d" />
+      <item identifierRef="id-2ac10405b0d248e097e27d137d9d3734" />
+      <item identifierRef="id-2cf9d7eed5ad4b2db593a0e9ec3ae741" />
+      <item identifierRef="id-2d97e636e86b4f198414b3d71dd97e72" />
+      <item identifierRef="id-2e97178c17dd462882939d93f6e1899e" />
+      <item identifierRef="id-2f4f088fa3b4416690279e6860ac0eec" />
+      <item identifierRef="id-313c9aafd578449ab57e3e2fecbaec73" />
+      <item identifierRef="id-33cda08ba5cb41a69f14b7026801819a" />
+      <item identifierRef="id-3486656fbf3a497ba1e5c033a18c10b2" />
+      <item identifierRef="id-34f1228d60994b5599a06e14b0ea270d" />
+      <item identifierRef="id-34f5eef1c5af4a9f963551a082e13395" />
+      <item identifierRef="id-36e45cb2ed444a4f975578c56d91593b" />
+      <item identifierRef="id-37a9a260e8ca4588a2e953a46f28b59a" />
+      <item identifierRef="id-38447e5179fd4441b3522fa15c24206f" />
+      <item identifierRef="id-387290f14d5b47c1b5cbc43ef799a3ef" />
+      <item identifierRef="id-3984986b97cc4ca3823291b4970e8b0c" />
+      <item identifierRef="id-3b74961ac9ca45c5bc4499fbfb0e53a8" />
+      <item identifierRef="id-3bcd9ea6eb2d4cd0927fff35d4818275" />
+      <item identifierRef="id-3c41fd1c9b2f4c1a82a8995b71998f78" />
+      <item identifierRef="id-3c8a9b4f1d3d447abc21e2037595a911" />
+      <item identifierRef="id-3cf56cec21ae4fb286209b0d2924ac35" />
+      <item identifierRef="id-3ffa7ae2a3074d3b888eff755831646c" />
+      <item identifierRef="id-423204850b2a4df5868cc2acbffad7c8" />
+      <item identifierRef="id-42425be474e54de2af942cbc59147280" />
+      <item identifierRef="id-443fb4c0e32c4d448e6fc941e3ab8854" />
+      <item identifierRef="id-44a5ce60b2344576896a84bbc62ba8d3" />
+      <item identifierRef="id-44b274206b994affab023b643605f01e" />
+      <item identifierRef="id-4607604c4eb84a03b1edb4112f9c5c6d" />
+      <item identifierRef="id-46b2d7af4fdf4a9ea30fdbb335eb74dd" />
+      <item identifierRef="id-486fde17df0e4136bdf209b141398e06" />
+      <item identifierRef="id-4be638baa51940b09ab31f6740166947" />
+      <item identifierRef="id-4f893e3de4af4d129c04f2466d640a42" />
+      <item identifierRef="id-507ca8fc74ef462d8f3629338d420390" />
+      <item identifierRef="id-50ad20e9349f4a5fb4b878dc38e04724" />
+      <item identifierRef="id-514dc00a5cb1431b8b61cc4efbe5fb66" />
+      <item identifierRef="id-55a39ff2d24a4b609b248a7693ad3b6d" />
+      <item identifierRef="id-587e39b78e1c4a8c89f5c32fade6527a" />
+      <item identifierRef="id-5989954b23ee40ef82a6ebf639e0fa6e" />
+      <item identifierRef="id-59f31053d46a44b192345c3a9013f9e8" />
+      <item identifierRef="id-5a59f3c229da4a64bc469afde5fb5f4b" />
+      <item identifierRef="id-5cc4cd01188d4a86ab93bbdfb9851d0a" />
+      <item identifierRef="id-5d224d8620624fe2a367fe9530982449" />
+      <item identifierRef="id-5ebf79ef3e32414b91be390af7c9fada" />
+      <item identifierRef="id-603d347ad75f4a9cb636dce687fd1386" />
+      <item identifierRef="id-62d5acfcbbd145cc827dc8c4d10a5326" />
+      <item identifierRef="id-62e22aa838084858b550df9d759ea33a" />
+      <item identifierRef="id-658b0f9ca899480db62cd06640575399" />
+      <item identifierRef="id-663e3f635b8c416babd455799678e126" />
+      <item identifierRef="id-670c17731afc4fd28ee09d7fed4bc85e" />
+      <item identifierRef="id-689fa14e1a494714a13582f1a305e0fc" />
+      <item identifierRef="id-68bafda0e32240c19236159226e8919f" />
+      <item identifierRef="id-69026f83f73445eb8553c6d121c347c3" />
+      <item identifierRef="id-6a42f41938864e098d2d2ab946f82e57" />
+      <item identifierRef="id-6a6b1ea8e4284da5bc0551300e177133" />
+      <item identifierRef="id-6b00a1ffb3a84c31a03831512deb8379" />
+      <item identifierRef="id-6b77276f34504f18ba3b308e62bcc29f" />
+      <item identifierRef="id-6bd8f61940ea45449374bc3852f4df3e" />
+      <item identifierRef="id-6cd4efff480c4539a534914fe03db8ef" />
+      <item identifierRef="id-6d58d1e32bcb4c00967e6afabe22cfc1" />
+      <item identifierRef="id-6ea7bbc8f9ee4a67adbc97778004f761" />
+      <item identifierRef="id-6ed482df9ba542e8b5ade8069a42993a" />
+      <item identifierRef="id-6ed7f0fb9d3e4684b3ea1c6d70f8b7e4" />
+      <item identifierRef="id-6fcab1be6c54463fb61e344263a4de79" />
+      <item identifierRef="id-70571ae7de81432792cda2ca396b641e" />
+      <item identifierRef="id-70bcf3b8cf2d4ed391c4092d93129b30" />
+      <item identifierRef="id-72188aee8a9a44b0806f179361f14ce9" />
+      <item identifierRef="id-736a31ac4f6643e7a86972e02453e76b" />
+      <item identifierRef="id-74721f02d69641399e4b508d59799ba7" />
+      <item identifierRef="id-74f119fcaefe4add90833519288a3565" />
+      <item identifierRef="id-753e97506e894e9a9b3bec6682d820f5" />
+      <item identifierRef="id-77163329838f43579f750fd8a6efe1c0" />
+      <item identifierRef="id-784c7e7fddf34f1b8b227c85baeb89e2" />
+      <item identifierRef="id-78512620f9bb42318f13106c28de6ecd" />
+      <item identifierRef="id-7b011dabd62c487f9e861472c6dc99ed" />
+      <item identifierRef="id-7b9e3f023f054d239f171c9658d73bbc" />
+      <item identifierRef="id-7be02b1e22574ea5a3d344ce33e47726" />
+      <item identifierRef="id-7cfc378cb4b84c818f6ee2a4976ac642" />
+      <item identifierRef="id-7d4a95f5ea0641eeae0f0f6f24376f23" />
+      <item identifierRef="id-7e5b795d15c641ea8708a2fd64721814" />
+      <item identifierRef="id-7f136f92462a428c961ca12fc9ce4617" />
+      <item identifierRef="id-7f183e98f77741b4828ec059beb6a2c7" />
+      <item identifierRef="id-7f85a902e0584c6a94ff8be07b79c319" />
+      <item identifierRef="id-80f3645d8075485d9f43c08c08b83826" />
+      <item identifierRef="id-81d1bd0eac1e41faab1b567564e84f83" />
+      <item identifierRef="id-81da0b92400c46b49a30812ac4545553" />
+      <item identifierRef="id-826f02c5940847d188782f5e6e58ee54" />
+      <item identifierRef="id-82c931a4124e40958746fa2fa19efa42" />
+      <item identifierRef="id-831eac6131394fa99e770cd70aa28ab1" />
+      <item identifierRef="id-832a1018fba94893a50f374709532d73" />
+      <item identifierRef="id-83f5d7a56f8d498fbb8a77ae707ef26c" />
+      <item identifierRef="id-870e83bd70494f71aaacd8477ca416a9" />
+      <item identifierRef="id-87a30a7a5496473782b501253cae5392" />
+      <item identifierRef="id-8894a0299fac4c9d9ace2559607df98d" />
+      <item identifierRef="id-889ec780ae4a40e2a49caca8e0accc14" />
+      <item identifierRef="id-893ec46b35a6440697acce794f256412" />
+      <item identifierRef="id-89e0e01bb52540f190076a846f622f87" />
+      <item identifierRef="id-8b0cd420d69c4081863af51ab7391eaf" />
+      <item identifierRef="id-8bb33d9c52a940b186b6a89a54addfb7" />
+      <item identifierRef="id-8bc6694f5c4948598a3f586b04841b02" />
+      <item identifierRef="id-8c95d65486b74cbe8f98586af73abb7a" />
+      <item identifierRef="id-8d41ea10f2734a3084a75a6d345615fa" />
+      <item identifierRef="id-8d88873583dc49319db91dcd568a4479" />
+      <item identifierRef="id-8f6e1390aacf42979c66e8c598e17401" />
+      <item identifierRef="id-901c99b88a224c729e25ce3cc395379f" />
+      <item identifierRef="id-911458e511f04600820c232495882fbf" />
+      <item identifierRef="id-9136d63488da4cd8833cb1ee24b86b14" />
+      <item identifierRef="id-91bb8576d773433f8ccf375bc66e75d9" />
+      <item identifierRef="id-92230dc51fe34d8c911d26921ff74930" />
+      <item identifierRef="id-922ec4786c5f46e2a57ffe3f70cd3be8" />
+      <item identifierRef="id-93011b676afc4ca8a3eadaefa860652d" />
+      <item identifierRef="id-930fba7d83754a7992af200f69acd6b9" />
+      <item identifierRef="id-9322f48482f842a394c1b78ea203204b" />
+      <item identifierRef="id-93d71070fe994708b7536a1251fa88dc" />
+      <item identifierRef="id-93f68388037e4a539cf1e730a25cfc69" />
+      <item identifierRef="id-941dfcdf00a8414dac232a4f8640a25e" />
+      <item identifierRef="id-946e457346824d9bbe05644b7e1f1f43" />
+      <item identifierRef="id-94ecfd2c7756491a81e8df3018285635" />
+      <item identifierRef="id-95cc4b014c1942f988de9a6e7b965d58" />
+      <item identifierRef="id-96014d17e41f4be291465fdf441a78ec" />
+      <item identifierRef="id-97a660ffd3584189a577bf61e55a257c" />
+      <item identifierRef="id-992086bbcfae40358c4b53b9dc0c50db" />
+      <item identifierRef="id-99fc6b24a9db4be0bb8cf555924e7b2b" />
+      <item identifierRef="id-9be0debe417a40578b76cf8d899224b9" />
+      <item identifierRef="id-9c37caf7d7754ee187e716b08348e98c" />
+      <item identifierRef="id-9e6f8e0c35b340289112127c95a17b65" />
+      <item identifierRef="id-9ecef4e51753424f9aad5f4073cd2278" />
+      <item identifierRef="id-a1e7516ed05d4f049e6990efa56c5952" />
+      <item identifierRef="id-a22a1f00c7ae487fa9d4edf1d7532b5a" />
+      <item identifierRef="id-a325926e9be84ed884812fd91a5b187d" />
+      <item identifierRef="id-a400b4af68fc4e6794c89ee1861c6a6e" />
+      <item identifierRef="id-a470a803cbc4459d9a86e11b8f6624b9" />
+      <item identifierRef="id-a4aff880e1ee4f11a6486e8782c89ed4" />
+      <item identifierRef="id-a55bcdeb9f3e4e05a7ca99e684ec2dc4" />
+      <item identifierRef="id-a69330d8d4cc4868b93d748b8cabeb7c" />
+      <item identifierRef="id-a6a667eda10e4fbfadc2359118753e6a" />
+      <item identifierRef="id-a7241d6ce0a44374bcf41d414df8858a" />
+      <item identifierRef="id-a762109507b848d88ad460b0cd6d712f" />
+      <item identifierRef="id-a78bb5fc69f244399a36260c0cb463ac" />
+      <item identifierRef="id-a8a37f9a47494af78ad22fc5fd1b358e" />
+      <item identifierRef="id-a8d13cb4d2444cd697a103fde5cebcbe" />
+      <item identifierRef="id-aa4ac2446f084815b9b5a747547426ba" />
+      <item identifierRef="id-aa72c16d3da54da7b0904556a1ea155f" />
+      <item identifierRef="id-aaed3861ae2a4255aff52b2d2650dee5" />
+      <item identifierRef="id-ac5528ff44dc4f01ace4bd04f2254336" />
+      <item identifierRef="id-acdd390331ee4d6d9e98f8444339124d" />
+      <item identifierRef="id-ad9aeb0f09f445168977232fc169fafe" />
+      <item identifierRef="id-ade9220e077b4555a500a6b543988418" />
+      <item identifierRef="id-ae779d4a4efe4d30a1ed6c3a470f2367" />
+      <item identifierRef="id-b029b2e731414916a75a08423347052e" />
+      <item identifierRef="id-b1c6a3315aa6440289ede7d72062b27f" />
+      <item identifierRef="id-b3774706380b4c97b5875c8465d1448c" />
+      <item identifierRef="id-b41489f2ad4f49b58443c54edf260044" />
+      <item identifierRef="id-b44985a3c3d94e89b3aa1d78dacac286" />
+      <item identifierRef="id-b6354aa1cde64915a002c850cb305d30" />
+      <item identifierRef="id-b89269c14cd14c9f99fe8399c21a0844" />
+      <item identifierRef="id-b8c7ceb667054568bfc6233d68e814da" />
+      <item identifierRef="id-bace642b337143c895971cdd59976249" />
+      <item identifierRef="id-bb9e532bc82f488887e280156fc01c1d" />
+      <item identifierRef="id-bcaf6f9ab6aa4eb1a5ea4bdd479f656a" />
+      <item identifierRef="id-bd707a2389414b76acbe907309522ad8" />
+      <item identifierRef="id-bde68fb505894d0586f611decb1435e3" />
+      <item identifierRef="id-be037bd49c6d47f2afb703b534dcdae4" />
+      <item identifierRef="id-be7a0ee8d1374dad8264bd90c257aa67" />
+      <item identifierRef="id-c1d96564a8774b67b687dd91d7227a2b" />
+      <item identifierRef="id-c5e45102c4f0471cbda3a088fb8f44ac" />
+      <item identifierRef="id-c69f9d0fc8ca4c25957bba09363bd690" />
+      <item identifierRef="id-c89a2e93457e409eac789b26e07ce7e9" />
+      <item identifierRef="id-c8ec194c7e1740959792716ab4e26203" />
+      <item identifierRef="id-c93319cac7ee4c15a93e1699dd75c789" />
+      <item identifierRef="id-c98cda8524a34212b7158f89c41cc75a" />
+      <item identifierRef="id-cab823a961714f3c91ae7658378bc976" />
+      <item identifierRef="id-cb18bef97471441d85da7d0a28870b0f" />
+      <item identifierRef="id-cb54f2aadea845ed8f788b1641754529" />
+      <item identifierRef="id-cbf5c350c4e84b5a92149824daddeec5" />
+      <item identifierRef="id-ccd36cf9694c4dcdade5da8c89e670e9" />
+      <item identifierRef="id-cce897f1d77847a682cf0dcbcdd4d600" />
+      <item identifierRef="id-ce7f1b31874f4e9cbf48fbaaab9cf3b5" />
+      <item identifierRef="id-cf35be95754444e9a0637f12ee5baf60" />
+      <item identifierRef="id-cfd8977bf5424fa48b235cf5631342c4" />
+      <item identifierRef="id-d1e714e523e643fba0d7a5d87ece2ab2" />
+      <item identifierRef="id-d1fdf6e1c50d448b883582726fa18280" />
+      <item identifierRef="id-d42322063aec4595a63a0a3bab831b2a" />
+      <item identifierRef="id-d4638db8479143c1ac16584e8a339d55" />
+      <item identifierRef="id-d46ffa19f31744d8a5e9e1c1e41ffc73" />
+      <item identifierRef="id-d47fce1bf5834225be4918ba7ce238f4" />
+      <item identifierRef="id-d4c37cbfd605493cb54e001ddf7296a4" />
+      <item identifierRef="id-d4e84454bbfa43b488101513808a29b8" />
+      <item identifierRef="id-d6e1da3247d04e46bdc2aecc3d74aba0" />
+      <item identifierRef="id-d9742cc8bb5f429f99b97c0274376f64" />
+      <item identifierRef="id-ddc8edf80afb46148d79c16018cddf19" />
+      <item identifierRef="id-ded8552cbedc403a99cbf2e1dc3c989a" />
+      <item identifierRef="id-df7e01145c39463ea4514fcda76c6789" />
+      <item identifierRef="id-e111d56a15484a1c975f275d369ecac6" />
+      <item identifierRef="id-e12fb19d23a740cb9867831a19b0f92e" />
+      <item identifierRef="id-e1c7dae850b64f44b7bad974da279980" />
+      <item identifierRef="id-e1d72550c11b435db2471ca542c4ea1d" />
+      <item identifierRef="id-e3dc4a57b8f245158a8da1f361c91125" />
+      <item identifierRef="id-e605352dd02d4c17a8f7a23805546dc7" />
+      <item identifierRef="id-e646d8ec24a44a5ca5df9da95692c7ef" />
+      <item identifierRef="id-e6784435f1a741f884f75cfb0c379fbf" />
+      <item identifierRef="id-e6944b62926a4565862dab5d65fb2d07" />
+      <item identifierRef="id-e77b36f88dad4d1c968703724f027b02" />
+      <item identifierRef="id-e82d65643ea648bbb90a53d91a3905c2" />
+      <item identifierRef="id-e8af19d9ef8b4a74879d08d40294bec1" />
+      <item identifierRef="id-e994655ccf614103a53b9afd00438517" />
+      <item identifierRef="id-ebdc31e62f0c4b37827df34c9f24fcb1" />
+      <item identifierRef="id-edeb3d8aeb464117b83e70a23e348e09" />
+      <item identifierRef="id-ee07114a93554ce28e39cb45cadefe7a" />
+      <item identifierRef="id-ee6be8805ff840e485a54fc44b955062" />
+      <item identifierRef="id-eec7293c2479470aba0bf914203fa872" />
+      <item identifierRef="id-efc6f9d379014b7d9ff80342b9276440" />
+      <item identifierRef="id-f104be8fe3ad47e6b2dfd46ecd0fc79f" />
+      <item identifierRef="id-f1dd3b97ae344f74975aa86054c26d05" />
+      <item identifierRef="id-f21ccc236aad41faad72fbdd2173ce5d" />
+      <item identifierRef="id-f28922ed1a154dd7bef08d2aa87e138d" />
+      <item identifierRef="id-f31068c458bd454090a801ab20221bed" />
+      <item identifierRef="id-f372f47361e5458681b2ff6ef2b3bb27" />
+      <item identifierRef="id-f50d839587224588aec0dbafa8a68f9a" />
+      <item identifierRef="id-f5b256d92ab44412b81ec314d2272d13" />
+      <item identifierRef="id-f5da88245054407ebd041666f44f45f4" />
+      <item identifierRef="id-f6f087bc2b4743929592506680ff9afb" />
+      <item identifierRef="id-f72afa8ac8e14d1181681ce9ddef64d5" />
+      <item identifierRef="id-f7caca1ba9854f7392bfe92b0c771fab" />
+      <item identifierRef="id-f90b927dd475405c9886bd6eb4a82d52" />
+      <item identifierRef="id-f9787112b8cf4854b6580c9c3f5166ee" />
+      <item identifierRef="id-faf4aaa9b6ce454d811983cac60deab5" />
+      <item identifierRef="id-fb74c0799f6845a9b5d18699ed0f46a7" />
+      <item identifierRef="id-fb86d10f58b54ac695ddee2856f060ff" />
+      <item identifierRef="id-fbbfefe21d8447a6be836ee204eed357" />
+      <item identifierRef="id-fc486e8f4f8b49b09c31fcc88278eab0" />
+      <item identifierRef="id-fffefcc5a8f34425bcbfdbf0bcf6fbbf" />
+    </item>
+    <item>
+      <label xml:lang="de">Views</label>
+      <item identifierRef="id-0b7f2f033fb04bda912297bae6473b5e" />
+    </item>
+  </organizations>
+  <views>
+    <diagrams>
+      <view identifier="id-0b7f2f033fb04bda912297bae6473b5e" xsi:type="Diagram">
+        <name xml:lang="de">Default View</name>
+      </view>
+    </diagrams>
+  </views>
+</model>

@@ -7,13 +7,19 @@ Scannt BPMN- und Archi-XML-Dateien und gibt alle relevanten Elemente aus:
   - Typ (z.B. serviceTask, userTask, WorkPackage)
   - Name (aus dem name-Attribut)
 
-Sonderregel für BPMN serviceTask mit Trigger:Ja:
+Sonderregel 1 — BPMN serviceTask mit Trigger:Ja (Stage 4, unverändert):
   Wenn ein serviceTask in seiner <documentation> "Trigger:Ja" enthält,
   wird der name-Wert direkt als Scriptname übernommen.
   → Ergebnis ist eine fertige flowmapping.txt Zeile ohne manuellen Eingriff.
   → Fehlt der Name trotz Trigger:Ja → Platzhalter <SCRIPT_HIER_EINTRAGEN>
 
-Alle anderen Elemente (kein Trigger:Ja) erscheinen als auskommentierte
+Sonderregel 2 — BPMN scriptTask (Stage 5, Wildcard):
+  Jeder scriptTask wird als ausführbar erkannt.
+  Der documentation-Inhalt ist der Scriptname.
+  → Leer = SKIP (kein Fehler, Warnung im Log)
+  → name-Attribut bleibt frei für lesbare Bezeichnung im Diagramm
+
+Alle anderen Elemente erscheinen als auskommentierte
 Referenz-Zeilen — zur Übersicht, aber nicht zum direkten Einfügen.
 
 Ausgabe:
@@ -56,7 +62,7 @@ def is_bpmn(root: ET.Element) -> bool:
     """Prueft ob eine XML-Datei eine BPMN-Datei ist."""
     for node in root.iter():
         if localname(node.tag) in ("definitions", "process", "serviceTask",
-                                   "userTask", "sendTask"):
+                                   "scriptTask", "userTask", "sendTask"):
             return True
     return False
 
@@ -156,7 +162,7 @@ def scan_bpmn_elements(root: ET.Element, rel_path: str) -> list:
         if not elem_id:
             continue
 
-        # Sonderregel: serviceTask + Trigger:Ja -> Script direkt aus Name
+        # Sonderregel 1 (Stage 4): serviceTask + Trigger:Ja → Script aus name-Attribut
         if ln == "serviceTask" and has_trigger_ja(elem):
             if elem_name:
                 script     = elem_name
@@ -166,6 +172,24 @@ def scan_bpmn_elements(root: ET.Element, rel_path: str) -> list:
                 script     = "<SCRIPT_HIER_EINTRAGEN>"
                 trigger_ja = True
                 warnung    = "WARNUNG: Trigger:Ja aber kein Scriptname als Name eingetragen!"
+
+        # Sonderregel 2 (Stage 5): scriptTask → Script aus documentation-Inhalt
+        elif ln == "scriptTask":
+            # documentation-Inhalt lesen
+            doc_text = ""
+            for ch in elem:
+                if localname(ch.tag) == "documentation":
+                    doc_text = (ch.text or "").strip()
+                    break
+            if doc_text:
+                script     = doc_text
+                trigger_ja = True
+                warnung    = None
+            else:
+                script     = None
+                trigger_ja = False
+                warnung    = "WARNUNG: scriptTask ohne documentation — wird nicht ausgeführt (SKIP)"
+
         else:
             script     = None
             trigger_ja = False
@@ -357,51 +381,58 @@ def write_mapping_reference(path: str, ts: str,
 def main() -> None:
     blueprint_root = resolve_blueprint_root()
 
-    xml_root  = os.path.join(blueprint_root, "01-artifacts", "00-xml", "03-child")
-    log_path  = os.path.join(blueprint_root, "02-stages", "99-logs", "flw02-map_elements.log")
-    txt_path  = os.path.join(blueprint_root, "02-stages", "flw02-map_elements.txt")
+    flow_bpmn_root  = os.path.join(blueprint_root, "01-artifacts", "04-flow", "01-bpmnFLW")
+    flow_archi_root = os.path.join(blueprint_root, "01-artifacts", "04-flow", "00-archimateFLW")
+    log_path        = os.path.join(blueprint_root, "02-stages", "99-logs", "flw02-map_elements.log")
+    txt_path        = os.path.join(blueprint_root, "02-stages", "flw02-map_elements.txt")
 
     os.makedirs(os.path.dirname(log_path), exist_ok=True)
     os.makedirs(os.path.dirname(txt_path), exist_ok=True)
 
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    print(f"[FLW02] {ts} | Starte Scan: {xml_root}")
-
-    if not os.path.isdir(xml_root):
-        print(f"[FLW02] ABORT: XML-Ordner nicht gefunden: {xml_root}")
-        sys.exit(1)
+    print(f"[FLW02] {ts} | Starte Scan")
 
     all_elements = []
     scanned      = []
 
-    for dirpath, _, files in os.walk(xml_root):
-        for fn in sorted(files):
-            if not fn.lower().endswith((".xml", ".bpmn", ".archimate")):
-                continue
-            path = os.path.join(dirpath, fn)
-            rel  = os.path.relpath(path, blueprint_root)
-            scanned.append(rel)
+    scan_roots = [
+        ("bpmn",  flow_bpmn_root),
+        ("archi", flow_archi_root),
+    ]
 
-            try:
-                tree      = ET.parse(path)
-                root_elem = tree.getroot()
-            except Exception as e:
-                print(f"[FLW02] WARN: Datei konnte nicht gelesen werden: {rel}: {e}")
-                continue
+    for scan_type, scan_root in scan_roots:
+        if not os.path.isdir(scan_root):
+            print(f"[FLW02] SKIP (Ordner nicht vorhanden): {scan_root}")
+            continue
+        print(f"[FLW02] {ts} | Scanne [{scan_type}]: {scan_root}")
+        for dirpath, _, files in os.walk(scan_root):
+            for fn in sorted(files):
+                if not fn.lower().endswith((".xml", ".bpmn", ".archimate")):
+                    continue
+                path = os.path.join(dirpath, fn)
+                rel  = os.path.relpath(path, blueprint_root)
+                scanned.append(rel)
 
-            if is_bpmn(root_elem):
-                elems = scan_bpmn_elements(root_elem, rel)
-                ready = sum(1 for e in elems if e["trigger_ja"])
-                print(f"[FLW02] BPMN  | {len(elems):>3} Elemente | {ready:>2} Trigger:Ja | {rel}")
-                all_elements.extend(elems)
+                try:
+                    tree      = ET.parse(path)
+                    root_elem = tree.getroot()
+                except Exception as e:
+                    print(f"[FLW02] WARN: Datei konnte nicht gelesen werden: {rel}: {e}")
+                    continue
 
-            elif is_archi(root_elem):
-                elems = scan_archi_elements(root_elem, rel)
-                print(f"[FLW02] Archi | {len(elems):>3} Elemente |  - Trigger:Ja | {rel}")
-                all_elements.extend(elems)
+                if is_bpmn(root_elem):
+                    elems = scan_bpmn_elements(root_elem, rel)
+                    ready = sum(1 for e in elems if e["trigger_ja"])
+                    print(f"[FLW02] BPMN  | {len(elems):>3} Elemente | {ready:>2} Skripte | {rel}")
+                    all_elements.extend(elems)
 
-            else:
-                print(f"[FLW02] SKIP  | Unbekanntes Format | {rel}")
+                elif is_archi(root_elem):
+                    elems = scan_archi_elements(root_elem, rel)
+                    print(f"[FLW02] Archi | {len(elems):>3} Elemente |  - Skripte | {rel}")
+                    all_elements.extend(elems)
+
+                else:
+                    print(f"[FLW02] SKIP  | Unbekanntes Format | {rel}")
 
     write_log(log_path, ts, all_elements, scanned)
     write_mapping_reference(txt_path, ts, all_elements, scanned)

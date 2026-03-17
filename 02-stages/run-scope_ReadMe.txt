@@ -1,6 +1,6 @@
 #Vorhande Archi <filenamedesmodells>.archimate (ACHTUNG Filename = Modellname in Archi +.+ XML) 
 # SOURCE = Beschreibt woher es kommt bzw. wohin es gehen soll und wird aktiv als Trigger verwendet 
-# archi = aktive Modelle im Modell Folder dient zur Überprüfung ob archi und oef bzw. xlsx files alle vorhanden sind und werden nicht mit einbezogen (kein Visuelle Prüfung der Modellnamen) 
+# archi = aktive Modelle im Modell Folder dient zur Überprüfung ob archi und oef bzw. xlsx files alle vorhanden sind und werden für Archi 5.8 *.ajs Exports als Referenz verwendet. 
 # OEF = vorhande OEF Exports aus Archi für XML und oder CSV
 # XLSX = welches Excel File inkludiert sein soll (vermutung) 
 # CSV = ob elements,properties sowie relations.csv vorhanden sind. 

@@ -64,6 +64,23 @@ dispatch_key    = property:Type
 
 
 # --------------------------------------------------------------------
+# BPMN 2.0 – Camunda 7 & 8 – scriptTask Trigger
+# --------------------------------------------------------------------
+# Erkennt scriptTask-Elemente, deren <documentation> (Moment auf Wildcard) enthält.
+# Dispatch-Key ist das id-Attribut des Tasks 
+#
+# untested
+# --------------------------------------------------------------------
+
+[bpmn_scripttask]
+order        = 20
+source       = bpmn
+element_tag  = scriptTask
+# keine condition  → Wildcard
+# kein dispatch_key → documentation wird intern als Scriptname verwendet
+
+
+# --------------------------------------------------------------------
 # BPMN 2.0 – Camunda 7 & 8 – serviceTask Trigger
 # --------------------------------------------------------------------
 # Erkennt serviceTask-Elemente, deren <documentation> "Trigger:Ja" enthält.
@@ -73,7 +90,7 @@ dispatch_key    = property:Type
 # --------------------------------------------------------------------
 
 [bpmn_servicetask]
-order           = 20
+order           = 30
 source          = bpmn
 element_tag     = serviceTask
 condition.1     = tag:documentation:Trigger:Ja
