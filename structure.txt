@@ -3,9 +3,9 @@ Volumeseriennummer : 5622-22F1
 C:.
 |   .gitattributes
 |   .gitignore
+|   Dir_Setup.bat
 |   Install.txt
 |   LICENSE
-|   R+MUNI - clean.zip
 |   README.md
 |   root.cfg
 |   structure.txt
@@ -66,6 +66,7 @@ C:.
 |   |   |   |       archimate3_View.xsd
 |   |   |   |       MUNI EA.xml
 |   |   |   |       MUNI FLOW.xml
+|   |   |   |       MUNI IMPO.xml
 |   |   |   |       muni2import.xml
 |   |   |   |       
 |   |   |   +---01-bpmnchild
@@ -280,6 +281,8 @@ C:.
 |   |   |   \---02-xychild
 |   |   +---04-import
 |   |   |       elements.csv
+|   |   |       properties.csv
+|   |   |       relations.csv
 |   |   |       
 |   |   \---99-exports
 |   +---03-XLSX
