@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" targetNamespace="http://example.com/bpmn"><bpmn:process id="id-5b10384809f94f15a0bc399b68f7cdf6" name="BUP07-Visuelle Modelle erstellen" isExecutable="true" /><bpmndi:BPMNDiagram id="BPMNDiagram_1"><bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="id-5b10384809f94f15a0bc399b68f7cdf6" /></bpmndi:BPMNDiagram></bpmn:definitions>

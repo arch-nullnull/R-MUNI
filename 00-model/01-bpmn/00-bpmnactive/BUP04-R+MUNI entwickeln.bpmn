@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" targetNamespace="http://example.com/bpmn"><bpmn:process id="id-394ce819ab194ca09c10b6671ea3a587" name="BUP04-R+MUNI entwickeln" isExecutable="true" /><bpmndi:BPMNDiagram id="BPMNDiagram_1"><bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="id-394ce819ab194ca09c10b6671ea3a587" /></bpmndi:BPMNDiagram></bpmn:definitions>

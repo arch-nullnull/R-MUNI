@@ -1,10 +1,14 @@
-
 SOURCE=archi
-MODEL=MUNI IMPO.archimate
+MODEL=MUNI EA.archimate
 
 SOURCE=OEF
-MODEL=muni2import.xml
+MODEL=MUNI EA.xml
 
 SOURCE=MASTER
-MODEL=muni2import.xml
+MODEL=MUNI EA.xml
 
+SOURCE=BPMN
+MODEL=MUNI EA.xml
+
+SOUREC=Flow
+MODEL=MUNI EA.xml

@@ -125,3 +125,8 @@ env/
 
 
 00-model/00-archimate/00-archimateactive/log-0.txt.lck
+/01-artifacts/05-reports
+/02-stages/99-logs
+/02-stages/01-bpmnarchive
+/02-stages/99-logs
+/02-stages/99-logs

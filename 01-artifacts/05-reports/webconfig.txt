@@ -29,10 +29,10 @@
 # -----------------------------------------------------------
 
 NAME=MUNI EA Modell
-PATH=00-archimate/MUNI EA Modell
-PORT=8080
+PATH=99-html/MUNI EA
+PORT=8100
 
 NAME=MUNI FLOW
-PATH=00-archimate/MUNI FLOW
-PORT=8081
+PATH=99-html/MUNI FLOW
+PORT=8101
 
