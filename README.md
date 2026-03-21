@@ -1,173 +1,157 @@
-  ### R+MUNI
-### Open Source EA & Process Modeling Toolset Beta 0.5x
+# R+MUNI Blueprint
+
+> *Eine Vorgehensweise, viele Werkzeuge. Eine Philosophie. Gebaut für die, die wirklich visuell abbilden wollen wie ihre Organisation funktioniert.*
 
 ---
 
-## Über das Projekt
+## Was ist R+MUNI?
 
-R+MUNI ist mein persönliches Projekt — entstanden in meiner Freizeit, aus echtem Interesse und mit echter Überzeugung.
+Es ist mein persönliches Projekt — entstanden in meiner Freizeit, aus echtem Interesse und mit echter Überzeugung.
 
-Ja, im Kern sind es ein paar Scripts die irgendwas machen. Aber für mich ist es weit mehr als das.
+Ja, im Kern sind es eine Vorgehensweise, ein paar Open-Source-Tools und Python-Scripts die irgendwas machen. Aber für mich ist es weit mehr als das — und wer sich die Zeit nimmt, es zu durchschauen, wird es für sich vielleicht auch entdecken...
 
-R+MUNI ist eine Perspektive: etwas Sinnstiftendes zu schaffen, das vielleicht wirklich jemandem helfen kann — **ohne schlechtes Gewissen, ohne versteckte Abo-Fallen, ohne Hintertüren.**
+R+MUNI ist eine Perspektive: etwas **sinnstiftendes** zu schaffen, das vielleicht wirklich jemandem helfen kann — **ohne schlechtes Gewissen, ohne versteckte Abo-Fallen, ohne Hintertüren.**
 
 Das ist die Idee hinter R+MUNI. Und deshalb ist diese Lösung **kostenlos** — und das ist ein Prinzip, das für diesen Blueprint und alle seine Weiterentwicklungen gilt.
 
-**R+MUNI** steht für **Multi Usable Norm Interface** — ein XML-basiertes Kreislaufsystem das Enterprise Architecture Visualisierung mit Prozessmodellierung vereint. Entwickelt für österreichische KMU bis maximal 50 User, die komplexe Fragestellungen (IT-Landschaften, Verwaltungsprozesse, Unternehmensentwicklung) mit freien Tools ganzheitlich darstellen wollen.
+**R+MUNI** steht unter anderem 😉 für **Multi Usable Norm Interface** — ein XML-basiertes Kreislaufsystem, das Enterprise Architecture Visualisierung mit Prozessmodellierung vereint.
+
+Entwickelt für österreichische KMU, die komplexe Fragestellungen (IT-Landschaften, Verwaltungsprozesse, Unternehmensentwicklung uvm.) mit freien Tools ganzheitlich darstellen wollen — mit klaren Grenzen.
+
+Es verbindet drei Dinge, die in kleinen und mittleren Organisationen oft getrennt oder nur in den Köpfen einzelner existieren:
+
+- **Strukturmodellierung** über ArchiMate 3.2 mit Archi 5.8 | *Das Warum*
+- **Prozessabbildung** über BPMN 2.0 mit dem Camunda Modeler | *Das Wie*
+- **Offene, freie Dokumentationsplattform & Informationsmapping** | *Die allen zugängliche Information dazu*
+
+R+MUNI ist dabei die *Single Source of Truth* — alles andere wird daraus abgeleitet. Keine parallelen Wahrheiten, keine manuelle Synchronisation, fast 😉 kein Chaos.
 
 ---
 
-### Was R+MUNI macht
+## Die Philosophie dahinter
 
-- R+MUNI ist ein Arbeitstoolset für Modellierer im KMU und Mittelstand, das man durch das agnostische XML-Konzept für so ziemlich alles zweckentfremden kann (aber nicht muss 😉)
-- Der "ESEL" verbindet **ArchiMate 3.2** (EA-Modellierung) [opengroup.org](https://www.opengroup.org/) und **BPMN 2.0** [bpmn.org](https://www.bpmn.org/) (Prozessmodellierung) über ein gemeinsames XML-Master-Child-Kreislaufkonzept
-- Nutzt **Archi 5.8** als Master-ID-gebendes System über die CSV-Schnittstelle und OEF-Export-Mechanismen
-- Automatisiert Workflows über einen Python-basierten Scriptrunner (`flw00-scriptrunner.py`)
-- Bleibt **tool-agnostisch** — strikt nach offenen Normen, keine proprietären Abhängigkeiten
-- Exportiert valide BPMN 2.0 und ArchiMate OEF — direkt importierbar in Enterprise-Tools (z.B. ADONIS/ADOIT der BOC-Group)
-- Startet Archi HTML Reports und hostet diese unter eigenem Namen (mehrere HTML Reports auf Port-Ebene)
-- 3rd Party Integration über CSV-Routinen in ArchiMate 3.2 bzw. master.xml Kreislauf
-- Archi XLSX Export – CSV Importformat damit man auch über XLSX arbeiten und wieder zurückführen kann (manuelle 3rd Party Integration über Excel) ⚠️ Archi Patron sowie Excel Voraussetzung
-- Archi Modell Import in Jira als Issue um es auch in der Free Edition als "Assetlight" verwenden zu können.
+R+MUNI ist kein Produkt. Es ist eine **Vorgehensweise** nach offenen Normen, mit einer Open-Source-Toollandschaft als **Werkzeugkasten** — der dann auf einen Script-**Baukasten** für die Interaktion unter den Werkzeugen aufbaut.
 
+Jeder Baustein hat seine klare Aufgabe. Jede Reihe hat einen klaren Zweck. Jede Erweiterung baut auf dem auf, was vorher stabil war — und verändert es nicht.
 
----
+Das klingt nach Engineering. Es ist aber vor allem **Haltung**:
+Dinge sollen funktionieren. Dauerhaft. Nachvollziehbar. Ohne versteckte Abhängigkeiten.
 
-### Methodik
-
-- Reduziertes **TOGAF ADM** als Leitplanke für Entwicklung und Arbeitsmodell
-- **ArchiMate 3.2** als bevorzugte Ausdrucksweise für Enterprise Architecture
-- **BPMN 2.0** als bevorzugte Ausdrucksweise für Prozesse
-- Beide Notationen strikt nach Standard — maximale Tool-Agnostik
-- AI Driven DEV Methode mit Claude & CoPilot im R+MUNI Umfeld
-- Täglicher Sprachgebrauch eines Österreichers <-> Normsprachen 
+Der "Esel" ist und bleibt **kostenlos für Endanwender**. Das ist kein Zufall — das ist Grundsatz.
+Archi ist kostenlos. Die Scripts sind kostenlos.
+Wer R+MUNI nutzt, bekommt kein verstecktes Abo und keinen Lock-in.
 
 ---
 
-### Was noch geplant ist
+## Script-Reihen
 
-- Filterlogiken vereinfachen (Usability verbessern)
-- Asset Lookup im Netzwerk über Python Scripting und anschließendes ArchiMate Modell über CSV
-- Camunda 7 Community Edition für Prozessautomatisierung in den Blueprint integrieren
-- Exitpoint bzw. Integration in das O365 ECO System
+R+MUNI stellt aktuell folgende Script-Reihen zur Verfügung:
 
----
+| Reihe | Zweck |
+|---|---|
+| **HLP** | Hilfsfunktionen — Basis für alles andere (Kopieren, Backup, Server, etc.) |
+| **CSV** | Kern-Datenverarbeitung — vom Archi-Export bis zum fertigen Import-Artefakt |
+| **XML** | XML-Verarbeitung und Master-XML-Pflege |
+| **M2B** | Model-to-Blueprint — Strukturübernahme und Mapping |
+| **ATL** | Atlassian-Integration — Confluence und Jira aus dem Modell heraus |
+| **CLE** | Cleaning und Quality Gate — sauber rein, sauber raus |
+| **ECM** | Enterprise Content Management — Artefakte und IDs |
+| **FLW** | Flow-Orchestrierung — Scripts sequenziell ausführen über den Scriptrunner |
 
-## 🛠️ Tech Stack
+Aktuellen Sprint- und Stage-Stand findest du unter:
+[github.com/arch-nullnull/R-MUNI-Doku-public](https://github.com/arch-nullnull/R-MUNI-Doku-public)
 
-| Tool | Rolle |
-|------|-------|
-| [Archi 5.8](https://www.archimatetool.com/) — [Den Entwickler unterstützen ❤️](https://www.archimatetool.com/donate/) | EA Modellierung · Master-ID-System · CSV-Schnittstelle |
-| [Camunda Modeler (Camunda 7)](https://camunda.com/download/modeler/) | BPMN 2.0 Prozessmodellierung |
-| [Python 3](https://www.python.org/) | Automatisierung · Script Flows · Datenverarbeitung |
-| [Notepad++](https://notepad-plus-plus.org/) | Konfiguration & Script-Bearbeitung |
-| [Claude (claude.ai)](https://claude.ai/) | KI-gestützte Entwicklung von Anthropic |
-
----
-
-## 🤖 KI-gestützte Entwicklung
-
-Dieses Projekt wurde nach dem Prinzip des **AI-Driven Development** umgesetzt.
-
-Der gesamte Code wurde mit **Claude (claude.ai) von Anthropic** erarbeitet — geführt von jemandem ohne klassisches Coding-Hintergrundwissen, dafür mit tiefer Expertise in Enterprise Architecture, Prozessmodellierung und komplexen organisatorischen Fragestellungen.
-
-> **~320 Stunden** Lernen, Entwickeln und Methoden verfeinern
-> **~€ 550** persönlicher Invest
-> **1 Person. Freizeit. Echte Überzeugung.**
-
-Die AI-Driven Development Methodik ist als Teil des R+MUNI Blueprints dokumentiert (`AI_DRIVEN_DEV_METHODE.txt`).
+Jede Reihe hat ihre eigenen **Principles** (wie sie funktioniert) und **How2-Dokumente** (wie man sie bedient).
 
 ---
 
-## 📄 Lizenz
+## Baukasten — nicht Monolith
 
-Dieses Projekt ist Open Source und kostenlos nutzbar. Keine Abos. Keine versteckten Kosten. Kein Haken.
+Das Prinzip hinter R+MUNI lässt sich in einem Satz beschreiben:
 
----
+> *1 Ding = 1 Outcome.*
 
-*R+MUNI — entwickelt von [EUMAXL](https://github.com/EUMAXL) · Österreich*
+Kein Baustein macht zwei Dinge. Kein Flow enthält versteckte Logik. Kein Konfigurationsfile liegt an drei Stellen gleichzeitig.
 
-https://ims-blueprint-ticketsystem.atlassian.net/helpcenter/RMNP/article/26443786 wenn es Probleme geben solle und das nicht gleich über Git Hub laufen soll. 
+Das macht R+MUNI **wartbar**, **erklärbar** und **reproduzierbar** — auch wenn man sechs Monate nicht hineingeschaut hat.
 
----
----
+Die Ordnerstruktur folgt einem klaren Schema:
 
-## 🇬🇧 English
+- `00-model` → das Archi-Modell (read-only für Scripts)
+- `01-artifacts` → alle abgeleiteten Artefakte
+- `02-stages` → Entwicklungsstände und Logs
 
-R+MUNI is my personal project — built in my free time, driven by genuine interest and real conviction.
+Konfiguration läuft ausschließlich über `root.cfg` — eine Datei, ein Ort, keine Ausnahmen.
 
-Yes, at its core it's a handful of scripts that do things. But to me, it's so much more than that.
-
-R+MUNI is a perspective: to create something meaningful that might actually help someone — **no bad conscience, no hidden subscriptions, no catch.**
-
-That's the idea behind R+MUNI. And that's why this solution is **free** — and that is a principle that applies to this blueprint and all its future developments.
-
-**R+MUNI** stands for **Multi Usable Norm Interface** — an XML-based circular system that combines Enterprise Architecture visualization with process modeling. Designed for Austrian SMEs with up to 50 users who want to represent complex topics (IT landscapes, administrative processes, organizational development) holistically using free tools.
+Filtermöglichkeiten sind granularer und in der jeweiligen Reihe zu finden...
 
 ---
 
-### What R+MUNI does
+## Mitmachen — als Beta-Kunde oder als Developer
 
-- R+MUNI is a working toolset for modelers in SMEs and mid-sized organizations — thanks to its agnostic XML concept it can be repurposed for just about anything (but doesn't have to be 😉)
-- The "DONKEY" connects **ArchiMate 3.2** (EA modeling) [opengroup.org](https://www.opengroup.org/) and **BPMN 2.0** [bpmn.org](https://www.bpmn.org/) (process modeling) through a shared XML master-child circular concept
-- Uses **Archi 5.8** as the master ID-providing system via CSV interface and OEF export mechanisms
-- Automates workflows through a Python-based script runner (`flw00-scriptrunner.py`)
-- Stays **tool-agnostic** — strictly based on open standards, no proprietary dependencies
-- Exports valid BPMN 2.0 and ArchiMate OEF — directly importable into enterprise tools (e.g. ADONIS/ADOIT by BOC Group)
-- Launches Archi HTML Reports and hosts them under their own name (multiple HTML reports at port level)
-- 3rd party integration via CSV routines into ArchiMate 3.2 and the master.xml cycle
-- Archi XLSX Export – CSV import format so you can work via XLSX and feed it back in (manual 3rd party integration via Excel) ⚠️ Requires Archi Patron and Excel
-- Archi model import into Jira as issues — enabling "asset-light" usage even in the Free Edition
+R+MUNI wird aktiv weiterentwickelt und befindet sich aktuell in **Stage 6 — Beta Feedback Integration & Blueprint Maturity**.
+
+**Als Beta-Kunde** kannst du R+MUNI in deiner Organisation einsetzen, Feedback geben und damit direkt beeinflussen wie das System weiterentwickelt wird. Der Feedback-Weg ist klar geregelt — kein schwarzes Loch, keine leeren Versprechen.
+
+**Als Developer** kannst du auf der Blueprint-Basis aufbauen. Die Dokumentation ist offen, die Prinzipien sind nachvollziehbar, und jede Entscheidung hat einen dokumentierten Grund. R+MUNI ist **AI-driven entwickelt** — der gesamte Entwicklungsprozess mit Claude als Pair-Partner ist dokumentiert und reproduzierbar.
+
+Interesse? Meld dich — über GitHub Issues oder das Atlassian-Portal:
+[ims-blueprint-ticketsystem.atlassian.net/helpcenter/RMNP](https://ims-blueprint-ticketsystem.atlassian.net/helpcenter/RMNP)
 
 ---
 
-### Methodology
+## Technologie-Stack
 
-- Reduced **TOGAF ADM** as guiding framework for development and working model
-- **ArchiMate 3.2** as the preferred language for Enterprise Architecture
-- **BPMN 2.0** as the preferred language for process modeling
-- Both notations strictly according to standard — maximum tool-agnosticism
+R+MUNI setzt bewusst auf **frei verfügbare, stabile Werkzeuge**.
 
----
+Den aktuellen Stand — was, wie und wann installiert wird — findest du in der Installationsanleitung:
+[[Install.txt]]
 
-### What's planned
-
-- Simplifying filter logic (improving usability)
-- Network asset lookup via Python scripting with subsequent ArchiMate model via CSV
-- Integrating Camunda 7 Community Edition for process automation into the blueprint
+Der Grundsatz: **Kein Tool im Kern-Stack kostet Geld.** Ergänzungen sind möglich — aber immer optional, immer transparent.
 
 ---
 
-## 🛠️ Tech Stack
+## Dank & Anerkennung
 
-| Tool | Role |
-|------|------|
-| [Archi 5.8](https://www.archimatetool.com/) — [Support the Developer ❤️](https://www.archimatetool.com/donate/) | EA Modeling · Master ID System · CSV Interface |
-| [Camunda Modeler (Camunda 7)](https://camunda.com/download/modeler/) | BPMN 2.0 Process Modeling |
-| [Python 3](https://www.python.org/) | Automation · Script Flows · Data Processing |
-| [Notepad++](https://notepad-plus-plus.org/) | Config & Script Editing |
-| [Claude (claude.ai)](https://claude.ai/) | AI-Driven Development by Anthropic |
+### Grafik & visuelle Identität
 
----
+Die Flipchart-Illustrationen und die initiale visuelle Sprache von R+MUNI wurden inspiriert durch die Arbeit von **Nadine Rossa**, Grafikerin und Illustratorin.
 
-## 🤖 AI-Driven Development
+Ihre handgezeichnete, klare Bildsprache hat geholfen, komplexe Zusammenhänge sichtbar zu machen — auf Whiteboards, Flipcharts und in der Kommunikation mit Kunden. Die initiale Logo-Idee hat dort ihre Inspiration gefunden.
 
-This project was built using an **AI-Driven Development** approach.
+Die Grafiken selbst wurden eigenständig erstellt bzw. auf Basis eigener Entwürfe mit KI-Unterstützung weiterentwickelt.
 
-All code was authored with **Claude (claude.ai) by Anthropic** — guided by a non-developer using domain expertise in Enterprise Architecture, process modeling and complex organizational questions.
-
-> **~320 hours** of learning, developing and refining methodology
-> **~€ 550** personal investment
-> **1 person. Free time. Real conviction.**
-
-The AI-Driven Development methodology itself is documented as part of the R+MUNI blueprint (`AI_DRIVEN_DEV_METHODE.txt`).
+→ [nadine-rossa.de](https://nadine-rossa.de/) | [sketchnote-love.com](https://sketchnote-love.com/)
 
 ---
 
-## 📄 License
+### Archi Team & Freunde
 
-This project is open source and free to use. No subscriptions. No hidden costs. No catch.
+Das ist der Grund, warum ich überhaupt auf die Idee gekommen bin — ich war so fasziniert von Archi 5.8 und seinen Möglichkeiten, und das noch gratis, dass ich begonnen habe, mir ArchiMate 3.2 anzusehen... Dann TOGAF, dann hab ich langsam verstanden was sich da für eine Welt auftut für einen BPMN 2.0 Jünger 😉
+
+In diesem Sinne: bestes Tool der EU — weiter so! Ich persönlich unterstütze als Person sowie mit jedem Kunden, der eine Installation oder Support bei mir bezieht.
+
+→ [archimatetool.com](https://www.archimatetool.com/) | [Spenden & unterstützen](https://www.archimatetool.com/donate/)
+
+Das Team macht das alles hier erst im Kern möglich! Danke — und Support ist kein Mord, also haut raus!! 😄
 
 ---
 
-*R+MUNI — built by [EUMAXL](https://github.com/EUMAXL) · Austria*
+## Ehrlichkeit zuerst — der "Esel" steht noch auf wackeligen Beinen
+
+R+MUNI ist aktuell **echte Beta** — nicht Marketing-Beta.
+
+Das bedeutet: Ab und zu fällt der Esel noch um. Es gibt Ecken die noch rau sind, Dinge die noch nicht rund laufen, und Schritte die noch manuell begleitet werden müssen. Wer jetzt einsteigt, braucht **Geduld** und die Bereitschaft, dran zu bleiben.
+
+Was das konkret heißt:
+- Es gibt noch **kein fertiges Download-Paket** — wer R+MUNI heute nutzt, begleitet die Entwicklung aktiv
+- Änderungen passieren — dokumentiert, GOV-konform, aber sie passieren
+- Ohne Nachverfolgung der aktuellen Stage und Sprints kann es holprig werden
+
+**[Claude.ai](https://claude.ai/)** ist dabei meine verlässliche Stütze im Entwicklungsprozess — als Pair-Partner, Sparringspartner und Fehlersucher. Ohne diese Kombination wäre R+MUNI nicht da wo es heute ist.
+
+Das Ziel ist klar: Aus der Stage 6 Beta wird ein **stabiles, downloadbares Paket** — zum Installieren, Loslegen, Nutzen. Bis dahin: herzlich willkommen im Bauprozess. 🧱
+
+---
+
+*R+MUNI Blueprint — entwickelt von EUMAXL | Stage 6 aktiv | 2026*
