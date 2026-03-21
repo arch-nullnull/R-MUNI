@@ -19,15 +19,15 @@
 
 # Python Cache & Bytecode
  __pycache__/
-# *.py[cod]
-# *.pyo
+*.py[cod]
+*.pyo
 
 # Temporäre Arbeitsverzeichnisse / OS-Dateien
 Thumbs.db
 desktop.ini
 .DS_Store
-*.tmp
-*.temp
+.tmp
+.temp
 
 
 # ---------------------------------------------------------
@@ -36,8 +36,7 @@ desktop.ini
 #     → nur lokal relevant, nicht für Blueprint-Übergabe
 # ---------------------------------------------------------
 
-03-stages/99-logs/
-01-artifacts/01-scripts/examples/
+02-stages/99-logs/
 *.log
 
 
@@ -47,10 +46,9 @@ desktop.ini
 #     → werden lokal gehalten, nicht versioniert
 # ---------------------------------------------------------
 
-# 02-artifacts/00-xml/99-exports/
-# 02-artifacts/01-scripts/
-# 02-artifacts/02-csv/99-exports/
-# 02-artifacts/03-XLSX/99-exports/
+02-artifacts/00-xml/99-exports/
+02-artifacts/02-csv/99-exports/
+02-artifacts/03-XLSX/99-exports/
 
 
 # ---------------------------------------------------------
@@ -59,8 +57,8 @@ desktop.ini
 #     die Archi importiert – diese sind run-spezifisch
 # ---------------------------------------------------------
 
-# 02-artifacts/02-csv/04-import/
-# 02-artifacts/03-XLSX/04-import/
+02-artifacts/02-csv/04-import/
+02-artifacts/03-XLSX/04-import/
 
 
 # ---------------------------------------------------------
@@ -69,10 +67,11 @@ desktop.ini
 #     → zu groß / zu häufig wechselnd für Versionierung
 # ---------------------------------------------------------
 
-03-stages/00-archimatearchive/
-03-stages/01-bpmnarchive/
-03-stages/02-xyarchive/
-03-stages/03-masterxmlarchive/
+02-stages/00-archimatearchive/
+02-stages/01-bpmnarchive/
+02-stages/02-xyarchive/
+02-stages/03-masterxmlarchive/
+
 
 
 # ---------------------------------------------------------
@@ -110,23 +109,19 @@ desktop.ini
 # ---------------------------------------------------------
 
 venv/
-# .venv/
+.venv/
 env/
-# *.egg-info/
+.egg-info/
 
 
 # ---------------------------------------------------------
 # [10] EDITOR-SPEZIFISCH (Notepad++, VS Code, JetBrains)
 # ---------------------------------------------------------
 
-# .vscode/
-# .idea/
-# *.npp_session
+.vscode/
+.idea/
+*.npp_session
 
 
-00-model/00-archimate/00-archimateactive/log-0.txt.lck
-/01-artifacts/05-reports
-/02-stages/99-logs
-/02-stages/01-bpmnarchive
-/02-stages/99-logs
-/02-stages/99-logs
+
+

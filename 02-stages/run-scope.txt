@@ -12,3 +12,8 @@ MODEL=MUNI EA.xml
 
 SOUREC=Flow
 MODEL=MUNI EA.xml
+
+
+SOURCE=CSV
+MODEL=trash_test.csv
+MAPPING=trash_test.xml 

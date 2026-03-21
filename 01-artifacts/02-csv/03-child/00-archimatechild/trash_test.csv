@@ -1,0 +1,17 @@
+Datum;Fälligkeit;Vorschreibung;Zahlung;Buchungstext
+02.12.2024;02.12.2024;71,00 EUR;71,00 EUR;Automatische Abbuchung (Zahlung)
+01.12.2024;02.12.2024;71,00 EUR;;Teilzahlungsbetrag (Vorschreibung)
+22.11.2024;22.11.2024;0,65 EUR;0,65 EUR;Automatische Überweisung (Auszahlung)
+21.11.2024;21.11.2024;224,35 EUR;;Rechnung (Jahresabrechnung)
+04.11.2024;04.11.2024;45,00 EUR;45,00 EUR;Automatische Abbuchung (Zahlung)
+01.11.2024;04.11.2024;45,00 EUR;;Teilzahlungsbetrag (Vorschreibung)
+01.10.2024;01.10.2024;45,00 EUR;45,00 EUR;Automatische Abbuchung (Zahlung)
+01.10.2024;01.10.2024;45,00 EUR;;Teilzahlungsbetrag (Vorschreibung)
+02.09.2024;02.09.2024;45,00 EUR;45,00 EUR;Automatische Abbuchung (Zahlung)
+01.09.2024;02.09.2024;45,00 EUR;;Teilzahlungsbetrag (Vorschreibung)
+01.08.2024;01.08.2024;45,00 EUR;45,00 EUR;Automatische Abbuchung (Zahlung)
+01.08.2024;01.08.2024;45,00 EUR;;Teilzahlungsbetrag (Vorschreibung)
+01.07.2024;01.07.2024;45,00 EUR;45,00 EUR;Automatische Abbuchung (Zahlung)
+01.07.2024;01.07.2024;45,00 EUR;;Teilzahlungsbetrag (Vorschreibung)
+;;;;
+;;;296,65 EUR;

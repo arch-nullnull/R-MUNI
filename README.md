@@ -30,6 +30,7 @@ Das ist die Idee hinter R+MUNI. Und deshalb ist diese Lösung **kostenlos** — 
 - Archi XLSX Export – CSV Importformat damit man auch über XLSX arbeiten und wieder zurückführen kann (manuelle 3rd Party Integration über Excel) ⚠️ Archi Patron sowie Excel Voraussetzung
 - Archi Modell Import in Jira als Issue um es auch in der Free Edition als "Assetlight" verwenden zu können.
 
+
 ---
 
 ### Methodik
@@ -38,6 +39,8 @@ Das ist die Idee hinter R+MUNI. Und deshalb ist diese Lösung **kostenlos** — 
 - **ArchiMate 3.2** als bevorzugte Ausdrucksweise für Enterprise Architecture
 - **BPMN 2.0** als bevorzugte Ausdrucksweise für Prozesse
 - Beide Notationen strikt nach Standard — maximale Tool-Agnostik
+- AI Driven DEV Methode mit Claude & CoPilot im R+MUNI Umfeld
+- Täglicher Sprachgebrauch eines Österreichers <-> Normsprachen 
 
 ---
 
@@ -46,6 +49,7 @@ Das ist die Idee hinter R+MUNI. Und deshalb ist diese Lösung **kostenlos** — 
 - Filterlogiken vereinfachen (Usability verbessern)
 - Asset Lookup im Netzwerk über Python Scripting und anschließendes ArchiMate Modell über CSV
 - Camunda 7 Community Edition für Prozessautomatisierung in den Blueprint integrieren
+- Exitpoint bzw. Integration in das O365 ECO System
 
 ---
 
