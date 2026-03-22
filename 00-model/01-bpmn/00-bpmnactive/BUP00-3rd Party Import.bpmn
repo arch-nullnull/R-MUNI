@@ -1,2 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" targetNamespace="http://example.com/bpmn"><bpmn:process id="id-0f0b8b3ec7104ab9a902e773a818553f" name="BUP00-3rd Party Import" isExecutable="true" /><bpmndi:BPMNDiagram id="BPMNDiagram_1"><bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="id-0f0b8b3ec7104ab9a902e773a818553f" /></bpmndi:BPMNDiagram></bpmn:definitions>

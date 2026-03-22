@@ -1,2 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" targetNamespace="http://example.com/bpmn"><bpmn:process id="id-bfe411b764cb4400aa04321e5da21131" name="BUP06-Schulung durchführen" isExecutable="true" /><bpmndi:BPMNDiagram id="BPMNDiagram_1"><bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="id-bfe411b764cb4400aa04321e5da21131" /></bpmndi:BPMNDiagram></bpmn:definitions>
