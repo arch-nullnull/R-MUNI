@@ -16,7 +16,7 @@ Hintergrund und Konzept: INST_principles_S5.md (01-principles)
 SCHNELLSTART — REIHENFOLGE
 ================================================================================
 
-  1. Dir_Setup.bat per Doppelklick ausführen — Ordnerstruktur anlegen
+  1. R+MUNI-clean.zip aus dem Repository laden. 
   2. ZIP-Inhalt entpacken nach R+MUNI <KUERZEL>\
   3. root.cfg prüfen (Abschnitt 1.2)
   4. Komponenten installieren (Abschnitte 2 und 3, Addons nach Bedarf aus Abschnitt 4)
