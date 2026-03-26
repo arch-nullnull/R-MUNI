@@ -8,7 +8,7 @@
 
 Es ist mein persönliches Projekt — entstanden in meiner Freizeit, aus echtem Interesse und mit echter Überzeugung.
 
-Ja, im Kern ist es eine Vorgehensweise, ein paar Open-Source-Tools und Python-Scripts die irgendwas machen. Aber für mich ist es weit mehr als das — und wer sich die Zeit nimmt, es zu durchschauen, wird es für sich vielleicht auch entdecken...
+Ja, im Kern sind es eine Vorgehensweise, ein paar Open-Source-Tools und Python-Scripts die irgendwas machen. Aber für mich ist es weit mehr als das — und wer sich die Zeit nimmt, es zu durchschauen, wird es für sich vielleicht auch entdecken...
 
 R+MUNI ist eine Perspektive: etwas **sinnstiftendes** zu schaffen, das vielleicht wirklich jemandem helfen kann — **ohne schlechtes Gewissen, ohne versteckte Abo-Fallen, ohne Hintertüren.**
 
@@ -37,7 +37,7 @@ Jeder Baustein hat seine klare Aufgabe. Jede Reihe hat einen klaren Zweck. Jede 
 Das klingt nach Engineering. Es ist aber vor allem **Haltung**:
 Dinge sollen funktionieren. Dauerhaft. Nachvollziehbar. Ohne versteckte Abhängigkeiten.
 
-Der R+"Esel" ist und bleibt **kostenlos für Endanwender**. Das ist kein Zufall — das ist Grundsatz.
+Der "Esel" ist und bleibt **kostenlos für Endanwender**. Das ist kein Zufall — das ist Grundsatz.
 Archi ist kostenlos. Die Scripts sind kostenlos.
 Wer R+MUNI nutzt, bekommt kein verstecktes Abo und keinen Lock-in.
 
@@ -51,11 +51,11 @@ R+MUNI stellt aktuell folgende Script-Reihen zur Verfügung:
 |---|---|
 | **HLP** | Hilfsfunktionen — Basis für alles andere (Kopieren, Backup, Server, etc.) |
 | **CSV** | Kern-Datenverarbeitung — vom Archi-Export bis zum fertigen Import-Artefakt |
-| **XML** | XML-Kreislauf, Herzschlag und Master-XML-Pflege an das alles andocken kann |
-| **M2B** | Model-to-BPMN 2.0 — Strukturübernahme und Mapping der Archi Business Prozesse nach Camunda BPMN 2.0|
+| **XML** | XML-Verarbeitung und Master-XML-Pflege |
+| **M2B** | Master ↔ BPMN — erstellt aus dem Modell heraus BPMN-Prozesshüllen (Trigger: Business Prozess) |
 | **ATL** | Atlassian-Integration — Confluence und Jira aus dem Modell heraus |
 | **CLE** | Cleaning und Quality Gate — sauber rein, sauber raus |
-| **ECM** | Enterprise Content Management — Artefakte und IDs "Trash CSV -> Archi"|
+| **ECM** | EasyCSVMapper — externe CSV-Quellen in ArchiMate importieren |
 | **FLW** | Flow-Orchestrierung — Scripts sequenziell ausführen über den Scriptrunner |
 
 Aktuellen Sprint- und Stage-Stand findest du unter:
@@ -81,16 +81,15 @@ Die Ordnerstruktur folgt einem klaren Schema:
 - `01-artifacts` → alle abgeleiteten Artefakte
 - `02-stages` → Entwicklungsstände und Logs
 
-Pfadauflösung läuft ausschließlich über `root.cfg` — eine Datei, ein Ort, keine Ausnahmen.
-Scope zuteilung erfolge über run-scope.txt in 02-stages dort definierst du was für dich relevant ist aktuell
+Konfiguration läuft ausschließlich über `root.cfg` — eine Datei, ein Ort, keine Ausnahmen.
 
-Filtermöglichkeiten sind granularer und in der jeweiligen Reihe zu finden... und aktuell meistens auf Wildcard
+Filtermöglichkeiten sind granularer und in der jeweiligen Reihe zu finden...
 
 ---
 
 ## Mitmachen — als Beta-Kunde oder als Developer
 
-R+MUNI wird aktiv weiterentwickelt und befindet sich aktuell in **Stage 8 — Beta Feedback Integration & Blueprint Maturity**.
+R+MUNI wird aktiv weiterentwickelt und befindet sich aktuell in **Stage 7 — Real Beta & Ecosystem Expansion**.
 
 **Als Beta-Kunde** kannst du R+MUNI in deiner Organisation einsetzen, Feedback geben und damit direkt beeinflussen wie das System weiterentwickelt wird. Der Feedback-Weg ist klar geregelt — kein schwarzes Loch, keine leeren Versprechen.
 
@@ -145,14 +144,14 @@ R+MUNI ist aktuell **echte Beta** — nicht Marketing-Beta.
 Das bedeutet: Ab und zu fällt der Esel noch um. Es gibt Ecken die noch rau sind, Dinge die noch nicht rund laufen, und Schritte die noch manuell begleitet werden müssen. Wer jetzt einsteigt, braucht **Geduld** und die Bereitschaft, dran zu bleiben.
 
 Was das konkret heißt:
-- Es gibt noch **kein fertiges Download-Paket** — wer R+MUNI heute nutzt, begleitet die Entwicklung aktiv
+- Es gibt noch **kein offiziell versioniertes Release-Paket** — wer R+MUNI heute nutzt, begleitet die Entwicklung aktiv
 - Änderungen passieren — dokumentiert, GOV-konform, aber sie passieren
 - Ohne Nachverfolgung der aktuellen Stage und Sprints kann es holprig werden
 
 **[Claude.ai](https://claude.ai/)** ist dabei meine verlässliche Stütze im Entwicklungsprozess — als Pair-Partner, Sparringspartner und Fehlersucher. Ohne diese Kombination wäre R+MUNI nicht da wo es heute ist.
 
-Das Ziel ist klar: Aus der Stage 8 Beta wird ein **stabiles, downloadbares Paket** — zum Installieren, Loslegen, Nutzen. Bis dahin: herzlich willkommen im Bauprozess. 🧱
+Das Ziel ist klar: Aus der Beta wird ein **stabiles, downloadbares Paket** — zum Installieren, Loslegen, Nutzen. Bis dahin: herzlich willkommen im Bauprozess. 🧱
 
 ---
 
-*R+MUNI Blueprint — entwickelt von EUMAXL | Stage 8 aktiv | 2026*
+*R+MUNI Blueprint — entwickelt von EUMAXL | Stage 7 aktiv | 2026*

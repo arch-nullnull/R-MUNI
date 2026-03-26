@@ -3,13 +3,11 @@ Volumeseriennummer : 5622-22F1
 C:.
 |   .gitattributes
 |   .gitignore
-|   Dir_Setup.bat
 |   Install.txt
 |   LICENSE
-|   R+MUNI_structure.txt
+|   R+MUNI_Doku_structure.txt
 |   README.md
 |   root.cfg
-|   structure.txt
 |   
 +---00-model
 |   +---00-archimate
@@ -17,6 +15,7 @@ C:.
 |   |   |       log-0.txt
 |   |   |       log-0.txt.lck
 |   |   |       MUNI EA.archimate
+|   |   |       MUNI EA.archimate.bak
 |   |   |       
 |   |   +---01-archimateactivesub
 |   |   |       MUNI FLOW.archimate
@@ -28,15 +27,6 @@ C:.
 |   |           
 |   +---01-bpmn
 |   |   +---00-bpmnactive
-|   |   |       BUP00-3rd Party Import.bpmn
-|   |   |       BUP01-Lösung für Anforderung erarbeiten.bpmn
-|   |   |       BUP02-Lösung präsentieren.bpmn
-|   |   |       BUP03-R+MUNI anpassen.bpmn
-|   |   |       BUP04-R+MUNI entwickeln.bpmn
-|   |   |       BUP05-R+MUNI installieren.bpmn
-|   |   |       BUP06-Schulung durchführen.bpmn
-|   |   |       BUP07-Visuelle Modelle erstellen.bpmn
-|   |   |       
 |   |   \---99-bpmnMUNI
 |   \---02-xyvision
 +---01-artifacts
@@ -44,9 +34,6 @@ C:.
 |   |   |   child_mapping.txt
 |   |   |   
 |   |   +---00-master
-|   |   |       master.xml
-|   |   |       master.xml.bak
-|   |   |       
 |   |   +---01-mapping
 |   |   |       bpmnmastercsvsync.txt
 |   |   |       M2Bmapping.txt
@@ -64,9 +51,6 @@ C:.
 |   |   |   |       archimate3_Model.xsd
 |   |   |   |       archimate3_View.xsd
 |   |   |   |       MUNI EA.xml
-|   |   |   |       MUNI FLOW.xml
-|   |   |   |       MUNI IMPO.xml
-|   |   |   |       muni2import.xml
 |   |   |   |       
 |   |   |   +---01-bpmnchild
 |   |   |   \---02-xychild
@@ -148,124 +132,121 @@ C:.
 |   |   |   XML06-finalize-master.py
 |   |   |   XML07-cleanup-artifacts.py
 |   |   |   
-|   |   +---jArchi
-|   |   |   |   jA01-Validierung Namen.ajs
-|   |   |   |   
-|   |   |   \---examples
-|   |   |       |   Anonymize.ajs
-|   |   |       |   Change Concept Type.ajs
-|   |   |       |   Console.ajs
-|   |   |       |   Create Views and Visual Objects.ajs
-|   |   |       |   Export to Excel.ajs
-|   |   |       |   Export View Image.ajs
-|   |   |       |   Folder Management.ajs
-|   |   |       |   Heat.ajs
-|   |   |       |   Hello World.ajs
-|   |   |       |   New Model with Elements and Relationship.ajs
-|   |   |       |   Open Model and list all Concepts.ajs
-|   |   |       |   Open Model and show Elements in Browser.ajs
-|   |   |       |   Set Bounds and Visual Attributes.ajs
-|   |   |       |   Set Font Sizes.ajs
-|   |   |       |   Statistics.ajs
-|   |   |       |   Write to File and Open in Browser.ajs
-|   |   |       |   
-|   |   |       +---Change type to
-|   |   |       |   |   ConvertConcept.lib.js
-|   |   |       |   |   
-|   |   |       |   +---1. Strategy
-|   |   |       |   |       Capability.ajs
-|   |   |       |   |       Course of Action.ajs
-|   |   |       |   |       Resource.ajs
-|   |   |       |   |       Value Stream.ajs
-|   |   |       |   |       
-|   |   |       |   +---2. Business
-|   |   |       |   |       Business Actor.ajs
-|   |   |       |   |       Business Collaboration.ajs
-|   |   |       |   |       Business Event.ajs
-|   |   |       |   |       Business Function.ajs
-|   |   |       |   |       Business Interaction.ajs
-|   |   |       |   |       Business Interface.ajs
-|   |   |       |   |       Business Object.ajs
-|   |   |       |   |       Business Process.ajs
-|   |   |       |   |       Business Role.ajs
-|   |   |       |   |       Business Service.ajs
-|   |   |       |   |       Contract.ajs
-|   |   |       |   |       Product.ajs
-|   |   |       |   |       Representation.ajs
-|   |   |       |   |       
-|   |   |       |   +---3. Application
-|   |   |       |   |       Application Collaboration.ajs
-|   |   |       |   |       Application Component.ajs
-|   |   |       |   |       Application Event.ajs
-|   |   |       |   |       Application Function.ajs
-|   |   |       |   |       Application Interaction.ajs
-|   |   |       |   |       Application Interface.ajs
-|   |   |       |   |       Application Process.ajs
-|   |   |       |   |       Application Service.ajs
-|   |   |       |   |       Data Object.ajs
-|   |   |       |   |       
-|   |   |       |   +---4. Technology & Physical
-|   |   |       |   |       Artifact.ajs
-|   |   |       |   |       Communication Network.ajs
-|   |   |       |   |       Device.ajs
-|   |   |       |   |       Distribution Network.ajs
-|   |   |       |   |       Equipment.ajs
-|   |   |       |   |       Facility.ajs
-|   |   |       |   |       Material.ajs
-|   |   |       |   |       Node.ajs
-|   |   |       |   |       Path.ajs
-|   |   |       |   |       System Software.ajs
-|   |   |       |   |       Technology Collaboration.ajs
-|   |   |       |   |       Technology Event.ajs
-|   |   |       |   |       Technology Function.ajs
-|   |   |       |   |       Technology Interaction.ajs
-|   |   |       |   |       Technology Interface.ajs
-|   |   |       |   |       Technology Process.ajs
-|   |   |       |   |       Technology Service.ajs
-|   |   |       |   |       
-|   |   |       |   +---5. Motivation
-|   |   |       |   |       Assessment.ajs
-|   |   |       |   |       Constraint.ajs
-|   |   |       |   |       Driver.ajs
-|   |   |       |   |       Goal.ajs
-|   |   |       |   |       Meaning.ajs
-|   |   |       |   |       Outcome.ajs
-|   |   |       |   |       Principle.ajs
-|   |   |       |   |       Requirement.ajs
-|   |   |       |   |       Stakeholder.ajs
-|   |   |       |   |       Value.ajs
-|   |   |       |   |       
-|   |   |       |   +---6. Implementation & Migration
-|   |   |       |   |       Deliverable.ajs
-|   |   |       |   |       Gap.ajs
-|   |   |       |   |       Implementation Event.ajs
-|   |   |       |   |       Plateau.ajs
-|   |   |       |   |       Work Package.ajs
-|   |   |       |   |       
-|   |   |       |   +---7. Other
-|   |   |       |   |       Grouping.ajs
-|   |   |       |   |       Location.ajs
-|   |   |       |   |       
-|   |   |       |   \---8. Relations
-|   |   |       |           Access Relationship.ajs
-|   |   |       |           Aggregation Relationship.ajs
-|   |   |       |           Assignment Relationship.ajs
-|   |   |       |           Association Relationship.ajs
-|   |   |       |           Composition Relationship.ajs
-|   |   |       |           Flow Relationship.ajs
-|   |   |       |           Influence Relationship.ajs
-|   |   |       |           Realization Relationship.ajs
-|   |   |       |           Serving Relationship.ajs
-|   |   |       |           Specialization Relationship.ajs
-|   |   |       |           Triggering Relationship.ajs
-|   |   |       |           
-|   |   |       \---lib
-|   |   |               jszip-101.js
-|   |   |               myexcel.js
-|   |   |               
-|   |   \---__pycache__
-|   |           HLP00_resolve_root.cpython-314.pyc
-|   |           
+|   |   \---jArchi
+|   |       |   jA01-Validierung Namen.ajs
+|   |       |   
+|   |       \---examples
+|   |           |   Anonymize.ajs
+|   |           |   Change Concept Type.ajs
+|   |           |   Console.ajs
+|   |           |   Create Views and Visual Objects.ajs
+|   |           |   Export to Excel.ajs
+|   |           |   Export View Image.ajs
+|   |           |   Folder Management.ajs
+|   |           |   Heat.ajs
+|   |           |   Hello World.ajs
+|   |           |   New Model with Elements and Relationship.ajs
+|   |           |   Open Model and list all Concepts.ajs
+|   |           |   Open Model and show Elements in Browser.ajs
+|   |           |   Set Bounds and Visual Attributes.ajs
+|   |           |   Set Font Sizes.ajs
+|   |           |   Statistics.ajs
+|   |           |   Write to File and Open in Browser.ajs
+|   |           |   
+|   |           +---Change type to
+|   |           |   |   ConvertConcept.lib.js
+|   |           |   |   
+|   |           |   +---1. Strategy
+|   |           |   |       Capability.ajs
+|   |           |   |       Course of Action.ajs
+|   |           |   |       Resource.ajs
+|   |           |   |       Value Stream.ajs
+|   |           |   |       
+|   |           |   +---2. Business
+|   |           |   |       Business Actor.ajs
+|   |           |   |       Business Collaboration.ajs
+|   |           |   |       Business Event.ajs
+|   |           |   |       Business Function.ajs
+|   |           |   |       Business Interaction.ajs
+|   |           |   |       Business Interface.ajs
+|   |           |   |       Business Object.ajs
+|   |           |   |       Business Process.ajs
+|   |           |   |       Business Role.ajs
+|   |           |   |       Business Service.ajs
+|   |           |   |       Contract.ajs
+|   |           |   |       Product.ajs
+|   |           |   |       Representation.ajs
+|   |           |   |       
+|   |           |   +---3. Application
+|   |           |   |       Application Collaboration.ajs
+|   |           |   |       Application Component.ajs
+|   |           |   |       Application Event.ajs
+|   |           |   |       Application Function.ajs
+|   |           |   |       Application Interaction.ajs
+|   |           |   |       Application Interface.ajs
+|   |           |   |       Application Process.ajs
+|   |           |   |       Application Service.ajs
+|   |           |   |       Data Object.ajs
+|   |           |   |       
+|   |           |   +---4. Technology & Physical
+|   |           |   |       Artifact.ajs
+|   |           |   |       Communication Network.ajs
+|   |           |   |       Device.ajs
+|   |           |   |       Distribution Network.ajs
+|   |           |   |       Equipment.ajs
+|   |           |   |       Facility.ajs
+|   |           |   |       Material.ajs
+|   |           |   |       Node.ajs
+|   |           |   |       Path.ajs
+|   |           |   |       System Software.ajs
+|   |           |   |       Technology Collaboration.ajs
+|   |           |   |       Technology Event.ajs
+|   |           |   |       Technology Function.ajs
+|   |           |   |       Technology Interaction.ajs
+|   |           |   |       Technology Interface.ajs
+|   |           |   |       Technology Process.ajs
+|   |           |   |       Technology Service.ajs
+|   |           |   |       
+|   |           |   +---5. Motivation
+|   |           |   |       Assessment.ajs
+|   |           |   |       Constraint.ajs
+|   |           |   |       Driver.ajs
+|   |           |   |       Goal.ajs
+|   |           |   |       Meaning.ajs
+|   |           |   |       Outcome.ajs
+|   |           |   |       Principle.ajs
+|   |           |   |       Requirement.ajs
+|   |           |   |       Stakeholder.ajs
+|   |           |   |       Value.ajs
+|   |           |   |       
+|   |           |   +---6. Implementation & Migration
+|   |           |   |       Deliverable.ajs
+|   |           |   |       Gap.ajs
+|   |           |   |       Implementation Event.ajs
+|   |           |   |       Plateau.ajs
+|   |           |   |       Work Package.ajs
+|   |           |   |       
+|   |           |   +---7. Other
+|   |           |   |       Grouping.ajs
+|   |           |   |       Location.ajs
+|   |           |   |       
+|   |           |   \---8. Relations
+|   |           |           Access Relationship.ajs
+|   |           |           Aggregation Relationship.ajs
+|   |           |           Assignment Relationship.ajs
+|   |           |           Association Relationship.ajs
+|   |           |           Composition Relationship.ajs
+|   |           |           Flow Relationship.ajs
+|   |           |           Influence Relationship.ajs
+|   |           |           Realization Relationship.ajs
+|   |           |           Serving Relationship.ajs
+|   |           |           Specialization Relationship.ajs
+|   |           |           Triggering Relationship.ajs
+|   |           |           
+|   |           \---lib
+|   |                   jszip-101.js
+|   |                   myexcel.js
+|   |                   
 |   +---02-csv
 |   |   +---00-master
 |   |   +---01-mapping
@@ -278,22 +259,10 @@ C:.
 |   |   |       
 |   |   +---03-child
 |   |   |   +---00-archimatechild
-|   |   |   |       Importerelements.csv
-|   |   |   |       Importerproperties.csv
-|   |   |   |       Importerrelations.csv
-|   |   |   |       trash_test.csv
-|   |   |   |       
 |   |   |   +---01-bpmnchild
 |   |   |   \---02-xychild
 |   |   +---04-import
-|   |   |       elements.csv
-|   |   |       properties.csv
-|   |   |       relations.csv
-|   |   |       
 |   |   \---99-exports
-|   |           properties.csv
-|   |           relations.csv
-|   |           
 |   +---03-XLSX
 |   |   +---00-master
 |   |   +---01-mapping
@@ -328,52 +297,6 @@ C:.
     |   run-scope_ReadMe.txt
     |   
     +---00-archimatearchive
-    |       properties.csv
-    |       relations.csv
-    |       
     +---01-bpmnarchive
-    |       BUP00-3rd Party Import.bpmn
-    |       BUP01-Lösung für Anforderung erarbeiten.bpmn
-    |       BUP02-Lösung präsentieren.bpmn
-    |       BUP03-R+MUNI anpassen.bpmn
-    |       BUP04-R+MUNI entwickeln.bpmn
-    |       BUP05-R+MUNI installieren.bpmn
-    |       BUP06-Schulung durchführen.bpmn
-    |       BUP07-Visuelle Modelle erstellen.bpmn
-    |       
     +---02-xyarchive
     \---99-logs
-            CLE00-resolve_root.log
-            CLE26-csv_no_id.log
-            CLE50-stages_all.log
-            CSV00-root.resolved.txt
-            CSV00-validate_environment.log
-            CSV01-validate_model.log
-            CSV03-resolve_run_scope.log
-            CSV04-model_overview.log
-            CSV09-masterXml2Csv.log
-            CSV98-clean_master.log
-            CSV98-clean_master_report.txt
-            CSV99-export_snapshot.log
-            ECM00-root.resolved.txt
-            ECM00-validate_environment.log
-            ECM01-csv_fields_to_artifacts.log
-            ECM01-oef.validated.txt
-            ECM01-resolve_mapping_scope.log
-            ECM01-scope.resolved.txt
-            ECM01-validate_oef_models.log
-            ECM02-csv_to_mapping_to_csv.log
-            ECM02-resolve_mapping_scope.log
-            ECM02-scope.resolved.txt
-            ECM03-id_merge.log
-            HLP00_resolve_root.log
-            HLP09-serve_report.log
-            M2B00-root-check.log
-            M2B00-root.resolved.txt
-            M2B03-clear.log
-            M2B04-reconcile.log
-            M2B05-writeback.log
-            XML00-root.resolved.txt
-            XML06-finalize-master.log
-            XML07-cleanup-artifacts.log
-            

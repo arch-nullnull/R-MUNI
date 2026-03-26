@@ -9,6 +9,7 @@
   <folder name="Other" id="id-74efb945e6214db8b8fac909806a7f87" type="other"/>
   <folder name="Relations" id="id-b14603e1b549489c998396ab333b906d" type="relations"/>
   <folder name="Views" id="id-73c40b5c914244eb97862c0fc367ed75" type="diagrams">
+    <folder name="R+MUNI CORE" id="id-5fbcb6c14e0e41cbbf09e371d7f11e7e"/>
     <element xsi:type="archimate:ArchimateDiagramModel" name="Default View" id="id-c6f9d7013ca5407f841520f7e81eedce"/>
   </folder>
 </archimate:model>
