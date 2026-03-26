@@ -1,10 +1,10 @@
 ================================================================================
 R+MUNI – INSTALLATIONSANLEITUNG
-Stage 5 | Aktiv | R+MUNI Blueprint
+Stage 7 | Aktiv | R+MUNI Blueprint
 ================================================================================
 Erstellt    : 2026-03-02
 Aktualisiert: 2026-03-17
-Stage       : S5 – AKTIV
+Stage       : S7 – AKTIV
 Ablageort   : R+MUNI <KUERZEL>\Install.txt  (Blueprint Root)
 ================================================================================
 
@@ -44,18 +44,47 @@ Erfahrungsberichte fließen in die Dokumentation ein.
 Alle R+MUNI Verzeichnisse erhalten ein Kürzel (max. 4 Zeichen) als Suffix.
 Dir_Setup.bat legt die Struktur automatisch an — Kürzel wird beim Start abgefragt.
 
-Empfohlener Basispfad: C:\Prototyping\
+Empfohlener Basispfad: C:\Prototyping\  (oder beliebiger Laufwerksbuchstabe)
 
-  R+MUNI <KUERZEL>\        Herzstück: Scripts, Modelle, Konfiguration
-                            root.cfg und structure.txt liegen hier
+  <Laufwerk>:\<Installationspfad>\
 
-  R+MUNI Archiv <KUERZEL>\ Backup, Restore, historische Stände
+  R+MUNI Apps\
+      Installationsordner für alle MUNI-Tools (kein GitHub Sync)
 
-  R+MUNI Doku <KUERZEL>\   Dokumentation
-    R+MUNI Doku-creative\   Bilder, Präsentationen, Sales-Materialien
-    R+MUNI Doku\            Kundendokumentation (GOV, Principles, How2 etc.)
+  R+MUNI Archiv <Kundenkürzel>\
+      Kunden-Archivordner — Backup, Restore, historische Stände
 
-  R+MUNI Apps\             Installationspfad für Tools (manuell, kein GitHub Sync)
+  R+MUNI <Kundenkürzel>\
+      R+MUNI Kundenumgebung — Scripts, Modelle, Konfiguration
+      root.cfg und structure.txt liegen hier
+      GitHub Sync: Kunden-Repo (optional Freigabe DEV für Support)
+
+  R+MUNI Doku <Kundenkürzel>\
+      Kundendokumentation
+      GitHub Sync: Kunden-Repo (optional Freigabe DEV für Support)
+        +---00-governance
+        +---01-principles
+        +---02-how2
+        +---03-roesetta_stone
+        +---04-notes
+        +---05-backlog
+        +---06-sprints
+        +---07-creative
+
+  R+MUNI Archi <Kundenkürzel>\
+      Kunden-Archimodelle und historische Stände
+      GitHub Sync: Kunden-Repo (optional Freigabe DEV für Support)
+
+  R-MUNI\
+      GitHub Sync — Blueprint App Repository (öffentlich)
+
+  R-MUNI-Doku-public\
+      GitHub Sync — öffentliche Blueprint Dokumentation
+
+HINWEIS GitHub Sync:
+  Der Kunde hält seine eigenen Repositories — nicht der DEV.
+  DEV-Zugriff für Support erfolgt nur auf explizite Freigabe durch den Kunden.
+  Damit entscheidet der Kunde selbst ob und auf was der DEV Zugriff hat.
 
 
 1.2 Blueprint Root-Struktur und root.cfg
@@ -278,11 +307,15 @@ Alle Komponenten aus Abschnitt 2 (Minimal) vorausgesetzt.
   Hinweis  : Benötigt Git (Abschnitt 3.2) als technischen Unterbau
 
   GitHub Sync-Übersicht:
-    R+MUNI <KUERZEL>\              optional   public
-    R+MUNI Archiv <KUERZEL>\       optional   private
-    R+MUNI Doku <KUERZEL>\
-      R+MUNI Doku-creative\        optional   private
-    R+MUNI Apps\                   nein       —
+    R+MUNI <Kundenkürzel>\         Kunden-Repo   optional
+    R+MUNI Doku <Kundenkürzel>\    Kunden-Repo   optional
+    R+MUNI Archi <Kundenkürzel>\   Kunden-Repo   optional
+    R-MUNI\                        DEV-Repo      public
+    R-MUNI-Doku-public\            DEV-Repo      public
+    R+MUNI Apps\                   kein Sync     —
+
+  Hinweis: Kunden-Repos werden vom Kunden selbst gehalten.
+           DEV-Zugriff nur auf explizite Freigabe durch den Kunden.
 
   Hinweis: Kein Clone für Installation — immer Dir_Setup.bat + ZIP.
            Kürzel im Ordnernamen verhindert GitHub Namenskonflikt.
@@ -446,7 +479,7 @@ Entwickelt und getestet mit:
   KeePass       : 2.60
   Windows       : 11 Enterprise
 
-Stage 5 ist aktiv. Blueprint funktional und produktiv im Einsatz.
+Stage 7 ist aktiv. Blueprint funktional und produktiv im Einsatz.
 ================================================================================
-R+MUNI Blueprint | Aktualisiert: 2026-03-17
+R+MUNI Blueprint | Aktualisiert: 2026-03-25
 ================================================================================
