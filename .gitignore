@@ -1,5 +1,10 @@
 # =============================================================
 # .gitignore — R+MUNI Global (PUBLIC + DEV)
+# =========================================================
+# Zweck: Definiert welche Dateien NICHT ins GitHub Repository
+#        eingecheckt werden sollen.
+# Sprache: Deutsch / Kommentare erklären den jeweiligen Block
+# 
 # Bewusst gebaut nach Blueprint-Ordnerstruktur (structure.txt)
 # S8 | 2026-03-28
 # =============================================================
@@ -52,17 +57,12 @@ __pycache__/
 # ORDNER
 # =============================================================
 
-# --- Laufzeit-Archive ---------------------------------------
-02-stages/00-archimatearchive/
-02-stages/01-bpmnarchive/
-02-stages/02-xyarchive/
-
-# --- Laufzeit-Logs ------------------------------------------
-02-stages/99-logs/
-
 # --- Abgeleitete Artefakte (werden lokal generiert) ---------
+
 01-artifacts/00-xml/00-master/
+01-artifacts/00-xml/04-import/
 01-artifacts/00-xml/99-exports/
+01-artifacts/01-scripts/jArchi/examples/
 01-artifacts/02-csv/00-master/
 01-artifacts/02-csv/03-child/
 01-artifacts/02-csv/99-exports/
@@ -72,6 +72,16 @@ __pycache__/
 01-artifacts/04-flow/00-archimateFLW/
 01-artifacts/04-flow/01-bpmnFLW/
 01-artifacts/05-reports/
+
+
+# --- Laufzeit-Archive ---------------------------------------
+02-stages/00-archimatearchive/
+02-stages/01-bpmnarchive/
+02-stages/02-xyarchive/
+
+# --- Laufzeit-Logs ------------------------------------------
+02-stages/99-logs/
+
 
 
 # =============================================================

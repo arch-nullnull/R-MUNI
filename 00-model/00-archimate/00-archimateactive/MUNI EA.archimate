@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="MUNI EA" id="id-85d917736ecc4ee4809ef88c93d457ff" version="5.0.0">
+  <folder name="Strategy" id="id-5d525160730f485493f8c898f67215da" type="strategy"/>
+  <folder name="Business" id="id-cc01897b6c8446aabefdedcf08ce7909" type="business"/>
+  <folder name="Application" id="id-a1167200c7fd45f5a5c333bfe00f04e6" type="application"/>
+  <folder name="Technology &amp; Physical" id="id-9f69761fbdcc42b99161b7d2c2cad033" type="technology"/>
+  <folder name="Motivation" id="id-1a9842b3d1254ab3a8c24f31c5ef00af" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-731885be417046228f8398c3436cc91a" type="implementation_migration"/>
+  <folder name="Other" id="id-3b3b2b20a9a0413eba3e65f9a05b920f" type="other"/>
+  <folder name="Relations" id="id-6de0e91bd3a3477ebad67fe60d4452a6" type="relations"/>
+  <folder name="Views" id="id-2ff70751b1a54415b999239a997647a8" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Default View" id="id-ca8a495bc82b47d79061a9f5b38a45df"/>
+  </folder>
+</archimate:model>

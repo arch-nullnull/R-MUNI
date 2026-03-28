@@ -3,7 +3,6 @@ Volumeseriennummer : 5622-22F1
 C:.
 |   .gitattributes
 |   .gitignore
-|   .gitignore_old
 |   Install.txt
 |   LICENSE
 |   README.md
@@ -13,6 +12,10 @@ C:.
 +---00-model
 |   +---00-archimate
 |   |   +---00-archimateactive
+|   |   |       log-0.txt
+|   |   |       log-0.txt.lck
+|   |   |       MUNI EA.archimate
+|   |   |       
 |   |   +---01-archimateactivesub
 |   |   \---99-mappingmodel
 |   |           trash_test.xml
@@ -120,8 +123,120 @@ C:.
 |   |   |   XML07-cleanup-artifacts.py
 |   |   |   
 |   |   \---jArchi
-|   |           jA01-Validierung Namen.ajs
-|   |           
+|   |       |   jA01-Validierung Namen.ajs
+|   |       |   
+|   |       \---examples
+|   |           |   Anonymize.ajs
+|   |           |   Change Concept Type.ajs
+|   |           |   Console.ajs
+|   |           |   Create Views and Visual Objects.ajs
+|   |           |   Export to Excel.ajs
+|   |           |   Export View Image.ajs
+|   |           |   Folder Management.ajs
+|   |           |   Heat.ajs
+|   |           |   Hello World.ajs
+|   |           |   New Model with Elements and Relationship.ajs
+|   |           |   Open Model and list all Concepts.ajs
+|   |           |   Open Model and show Elements in Browser.ajs
+|   |           |   Set Bounds and Visual Attributes.ajs
+|   |           |   Set Font Sizes.ajs
+|   |           |   Statistics.ajs
+|   |           |   Write to File and Open in Browser.ajs
+|   |           |   
+|   |           +---Change type to
+|   |           |   |   ConvertConcept.lib.js
+|   |           |   |   
+|   |           |   +---1. Strategy
+|   |           |   |       Capability.ajs
+|   |           |   |       Course of Action.ajs
+|   |           |   |       Resource.ajs
+|   |           |   |       Value Stream.ajs
+|   |           |   |       
+|   |           |   +---2. Business
+|   |           |   |       Business Actor.ajs
+|   |           |   |       Business Collaboration.ajs
+|   |           |   |       Business Event.ajs
+|   |           |   |       Business Function.ajs
+|   |           |   |       Business Interaction.ajs
+|   |           |   |       Business Interface.ajs
+|   |           |   |       Business Object.ajs
+|   |           |   |       Business Process.ajs
+|   |           |   |       Business Role.ajs
+|   |           |   |       Business Service.ajs
+|   |           |   |       Contract.ajs
+|   |           |   |       Product.ajs
+|   |           |   |       Representation.ajs
+|   |           |   |       
+|   |           |   +---3. Application
+|   |           |   |       Application Collaboration.ajs
+|   |           |   |       Application Component.ajs
+|   |           |   |       Application Event.ajs
+|   |           |   |       Application Function.ajs
+|   |           |   |       Application Interaction.ajs
+|   |           |   |       Application Interface.ajs
+|   |           |   |       Application Process.ajs
+|   |           |   |       Application Service.ajs
+|   |           |   |       Data Object.ajs
+|   |           |   |       
+|   |           |   +---4. Technology & Physical
+|   |           |   |       Artifact.ajs
+|   |           |   |       Communication Network.ajs
+|   |           |   |       Device.ajs
+|   |           |   |       Distribution Network.ajs
+|   |           |   |       Equipment.ajs
+|   |           |   |       Facility.ajs
+|   |           |   |       Material.ajs
+|   |           |   |       Node.ajs
+|   |           |   |       Path.ajs
+|   |           |   |       System Software.ajs
+|   |           |   |       Technology Collaboration.ajs
+|   |           |   |       Technology Event.ajs
+|   |           |   |       Technology Function.ajs
+|   |           |   |       Technology Interaction.ajs
+|   |           |   |       Technology Interface.ajs
+|   |           |   |       Technology Process.ajs
+|   |           |   |       Technology Service.ajs
+|   |           |   |       
+|   |           |   +---5. Motivation
+|   |           |   |       Assessment.ajs
+|   |           |   |       Constraint.ajs
+|   |           |   |       Driver.ajs
+|   |           |   |       Goal.ajs
+|   |           |   |       Meaning.ajs
+|   |           |   |       Outcome.ajs
+|   |           |   |       Principle.ajs
+|   |           |   |       Requirement.ajs
+|   |           |   |       Stakeholder.ajs
+|   |           |   |       Value.ajs
+|   |           |   |       
+|   |           |   +---6. Implementation & Migration
+|   |           |   |       Deliverable.ajs
+|   |           |   |       Gap.ajs
+|   |           |   |       Implementation Event.ajs
+|   |           |   |       Plateau.ajs
+|   |           |   |       Work Package.ajs
+|   |           |   |       
+|   |           |   +---7. Other
+|   |           |   |       Grouping.ajs
+|   |           |   |       Location.ajs
+|   |           |   |       
+|   |           |   \---8. Relations
+|   |           |           Access Relationship.ajs
+|   |           |           Aggregation Relationship.ajs
+|   |           |           Assignment Relationship.ajs
+|   |           |           Association Relationship.ajs
+|   |           |           Composition Relationship.ajs
+|   |           |           Flow Relationship.ajs
+|   |           |           Influence Relationship.ajs
+|   |           |           Realization Relationship.ajs
+|   |           |           Serving Relationship.ajs
+|   |           |           Specialization Relationship.ajs
+|   |           |           Triggering Relationship.ajs
+|   |           |           
+|   |           \---lib
+|   |                   jszip-101.js
+|   |                   myexcel.js
+|   |                   
 |   +---02-csv
 |   |   +---00-master
 |   |   +---01-mapping
