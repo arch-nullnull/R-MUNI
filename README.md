@@ -181,7 +181,7 @@ Der Grundsatz: **Kein Tool im Kern-Stack kostet Geld.** Ergänzungen sind mögli
 
 ### Die wichtigsten zuerst
 
-Ensi, Andi, Dad, Kimmy, Mara, Peeezzznnn, Columbo, Gertschi — ihr wisst warum. 😉
+Ensi, Andi, Dad, Kimmy, Mara, Peeezzznnn, Shadow, Columbo, Gertschi — ihr wisst warum. 😉
 
 ---
 
