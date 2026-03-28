@@ -1,0 +1,130 @@
+# =========================================================
+# R+MUNI Blueprint – .gitignore
+# =========================================================
+# Zweck: Definiert welche Dateien NICHT ins GitHub Repository
+#        eingecheckt werden sollen.
+# Sprache: Deutsch / Kommentare erklären den jeweiligen Block
+# =========================================================
+
+
+# ---------------------------------------------------------
+# [1] LAUFZEIT-ARTEFAKTE & TEMPORÄRE DATEIEN
+#     Werden bei jedem Script-Durchlauf neu erzeugt
+#     → kein Mehrwert im Repo
+# ---------------------------------------------------------
+
+# Archi Backup-Dateien (automatisch erzeugt)
+.archimate.bak
+.bak
+
+# Python Cache & Bytecode
+ __pycache__/
+*.py[cod]
+*.pyo
+
+# Temporäre Arbeitsverzeichnisse / OS-Dateien
+Thumbs.db
+desktop.ini
+.DS_Store
+.tmp
+.temp
+
+
+# ---------------------------------------------------------
+# [2] LOGS & RUN-PROTOKOLLE & jArchi examples
+#     03-stages/99-logs/ enthält Laufzeit-Logs
+#     → nur lokal relevant, nicht für Blueprint-Übergabe
+# ---------------------------------------------------------
+
+02-stages/99-logs/
+*.log
+
+
+# ---------------------------------------------------------
+# [3] EXPORT-SNAPSHOTS & WORKING-EXPORTS
+#     99-exports Ordner sind Arbeitskopien / Zwischenstände
+#     → werden lokal gehalten, nicht versioniert
+# ---------------------------------------------------------
+
+02-artifacts/00-xml/99-exports/
+02-artifacts/02-csv/99-exports/
+02-artifacts/03-XLSX/99-exports/
+
+
+# ---------------------------------------------------------
+# [4] IMPORT-VERZEICHNISSE (befüllte Import-CSVs)
+#     04-import enthält die befüllten CSV-Dateien
+#     die Archi importiert – diese sind run-spezifisch
+# ---------------------------------------------------------
+
+02-artifacts/02-csv/04-import/
+02-artifacts/03-XLSX/04-import/
+
+
+# ---------------------------------------------------------
+# [5] ARCHI ARCHIVE / STAGE-ARCHIVE
+#     Lokale Archiv-Snapshots der Modelle
+#     → zu groß / zu häufig wechselnd für Versionierung
+# ---------------------------------------------------------
+
+02-stages/00-archimatearchive/
+02-stages/01-bpmnarchive/
+02-stages/02-xyarchive/
+02-stages/03-masterxmlarchive/
+
+
+
+# ---------------------------------------------------------
+# [6] OBSIDIAN INTERNE KONFIG
+#     .obsidian Ordner enthält persönliche UI-Einstellungen
+#     → nicht für andere Nutzer relevant
+# ---------------------------------------------------------
+
+# .obsidian/
+
+
+# ---------------------------------------------------------
+# [7] GROSSE BINÄR-DATEIEN / ZIP-PAKETE
+#     R+MUNI_clean.zip und ähnliche Pakete nicht einchecken
+#     → über GitHub Releases verteilen
+# ---------------------------------------------------------
+
+# *.zip
+# *.7z
+# *.rar
+
+
+# ---------------------------------------------------------
+# [8] LOKALE KONFIGURATION (root.txt / root.cfg)
+#     Enthält absolute Pfade des lokalen Rechners
+#     → wird NICHT eingecheckt, jeder Nutzer hat seinen eigenen Pfad
+#     → Ausnahme: root.txt als TEMPLATE (leere Pfade) ist OK
+# ---------------------------------------------------------
+
+# root.cfg
+# root.txt → wird NICHT ignoriert, enthält Beispielpfade als Doku
+
+# ---------------------------------------------------------
+# [9] VIRTUELLE UMGEBUNGEN & LOKALE PYTHON-SETUP
+# ---------------------------------------------------------
+
+venv/
+.venv/
+env/
+.egg-info/
+
+
+# ---------------------------------------------------------
+# [10] EDITOR-SPEZIFISCH (Notepad++, VS Code, JetBrains)
+# ---------------------------------------------------------
+
+.vscode/
+.idea/
+*.npp_session
+
+
+
+
+00-model/00-archimate/00-archimateactive/log-0.txt
+00-model/00-archimate/00-archimateactive/log-0.txt.lck
+01-artifacts/01-scripts/__pycache__/HLP00_resolve_root.cpython-314.pyc

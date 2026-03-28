@@ -1,0 +1,19 @@
+
+    Directory: C:\Prototyping\R+MUNI
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          07.03.2026    18:16                00-model
+d----          07.03.2026    18:16                01-artifacts
+d----          15.03.2026    14:17                02-stages
+d----          28.03.2026    11:00                99-doku
+-a---          07.03.2026    18:16             66 .gitattributes
+-a---          28.03.2026    06:29           2773 .gitignore
+-a---          23.03.2026    00:06           3828 .gitignore_old
+-a---          26.03.2026    07:01          20571 Install.txt
+-a---          07.03.2026    18:16          35802 LICENSE
+-a---          26.03.2026    19:42           8354 README.md
+-a---          13.03.2026    01:00           1967 root.cfg
+-a---          28.03.2026    11:08              0 structure_dir.txt
+-a---          28.03.2026    11:01           9566 structure.txt
+

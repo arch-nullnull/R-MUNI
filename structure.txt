@@ -3,25 +3,17 @@ Volumeseriennummer : 5622-22F1
 C:.
 |   .gitattributes
 |   .gitignore
+|   .gitignore_old
 |   Install.txt
 |   LICENSE
-|   R+MUNI_Doku_structure.txt
 |   README.md
 |   root.cfg
+|   structure.txt
 |   
 +---00-model
 |   +---00-archimate
 |   |   +---00-archimateactive
-|   |   |       log-0.txt
-|   |   |       log-0.txt.lck
-|   |   |       MUNI EA.archimate
-|   |   |       MUNI EA.archimate.bak
-|   |   |       
 |   |   +---01-archimateactivesub
-|   |   |       MUNI FLOW.archimate
-|   |   |       MUNI FLOW.archimate.bak
-|   |   |       MUNI IMPO.archimate
-|   |   |       
 |   |   \---99-mappingmodel
 |   |           trash_test.xml
 |   |           
@@ -47,11 +39,6 @@ C:.
 |   |   |       
 |   |   +---03-child
 |   |   |   +---00-archimatechild
-|   |   |   |       archimate3_Diagram.xsd
-|   |   |   |       archimate3_Model.xsd
-|   |   |   |       archimate3_View.xsd
-|   |   |   |       MUNI EA.xml
-|   |   |   |       
 |   |   |   +---01-bpmnchild
 |   |   |   \---02-xychild
 |   |   +---04-import
@@ -133,120 +120,8 @@ C:.
 |   |   |   XML07-cleanup-artifacts.py
 |   |   |   
 |   |   \---jArchi
-|   |       |   jA01-Validierung Namen.ajs
-|   |       |   
-|   |       \---examples
-|   |           |   Anonymize.ajs
-|   |           |   Change Concept Type.ajs
-|   |           |   Console.ajs
-|   |           |   Create Views and Visual Objects.ajs
-|   |           |   Export to Excel.ajs
-|   |           |   Export View Image.ajs
-|   |           |   Folder Management.ajs
-|   |           |   Heat.ajs
-|   |           |   Hello World.ajs
-|   |           |   New Model with Elements and Relationship.ajs
-|   |           |   Open Model and list all Concepts.ajs
-|   |           |   Open Model and show Elements in Browser.ajs
-|   |           |   Set Bounds and Visual Attributes.ajs
-|   |           |   Set Font Sizes.ajs
-|   |           |   Statistics.ajs
-|   |           |   Write to File and Open in Browser.ajs
-|   |           |   
-|   |           +---Change type to
-|   |           |   |   ConvertConcept.lib.js
-|   |           |   |   
-|   |           |   +---1. Strategy
-|   |           |   |       Capability.ajs
-|   |           |   |       Course of Action.ajs
-|   |           |   |       Resource.ajs
-|   |           |   |       Value Stream.ajs
-|   |           |   |       
-|   |           |   +---2. Business
-|   |           |   |       Business Actor.ajs
-|   |           |   |       Business Collaboration.ajs
-|   |           |   |       Business Event.ajs
-|   |           |   |       Business Function.ajs
-|   |           |   |       Business Interaction.ajs
-|   |           |   |       Business Interface.ajs
-|   |           |   |       Business Object.ajs
-|   |           |   |       Business Process.ajs
-|   |           |   |       Business Role.ajs
-|   |           |   |       Business Service.ajs
-|   |           |   |       Contract.ajs
-|   |           |   |       Product.ajs
-|   |           |   |       Representation.ajs
-|   |           |   |       
-|   |           |   +---3. Application
-|   |           |   |       Application Collaboration.ajs
-|   |           |   |       Application Component.ajs
-|   |           |   |       Application Event.ajs
-|   |           |   |       Application Function.ajs
-|   |           |   |       Application Interaction.ajs
-|   |           |   |       Application Interface.ajs
-|   |           |   |       Application Process.ajs
-|   |           |   |       Application Service.ajs
-|   |           |   |       Data Object.ajs
-|   |           |   |       
-|   |           |   +---4. Technology & Physical
-|   |           |   |       Artifact.ajs
-|   |           |   |       Communication Network.ajs
-|   |           |   |       Device.ajs
-|   |           |   |       Distribution Network.ajs
-|   |           |   |       Equipment.ajs
-|   |           |   |       Facility.ajs
-|   |           |   |       Material.ajs
-|   |           |   |       Node.ajs
-|   |           |   |       Path.ajs
-|   |           |   |       System Software.ajs
-|   |           |   |       Technology Collaboration.ajs
-|   |           |   |       Technology Event.ajs
-|   |           |   |       Technology Function.ajs
-|   |           |   |       Technology Interaction.ajs
-|   |           |   |       Technology Interface.ajs
-|   |           |   |       Technology Process.ajs
-|   |           |   |       Technology Service.ajs
-|   |           |   |       
-|   |           |   +---5. Motivation
-|   |           |   |       Assessment.ajs
-|   |           |   |       Constraint.ajs
-|   |           |   |       Driver.ajs
-|   |           |   |       Goal.ajs
-|   |           |   |       Meaning.ajs
-|   |           |   |       Outcome.ajs
-|   |           |   |       Principle.ajs
-|   |           |   |       Requirement.ajs
-|   |           |   |       Stakeholder.ajs
-|   |           |   |       Value.ajs
-|   |           |   |       
-|   |           |   +---6. Implementation & Migration
-|   |           |   |       Deliverable.ajs
-|   |           |   |       Gap.ajs
-|   |           |   |       Implementation Event.ajs
-|   |           |   |       Plateau.ajs
-|   |           |   |       Work Package.ajs
-|   |           |   |       
-|   |           |   +---7. Other
-|   |           |   |       Grouping.ajs
-|   |           |   |       Location.ajs
-|   |           |   |       
-|   |           |   \---8. Relations
-|   |           |           Access Relationship.ajs
-|   |           |           Aggregation Relationship.ajs
-|   |           |           Assignment Relationship.ajs
-|   |           |           Association Relationship.ajs
-|   |           |           Composition Relationship.ajs
-|   |           |           Flow Relationship.ajs
-|   |           |           Influence Relationship.ajs
-|   |           |           Realization Relationship.ajs
-|   |           |           Serving Relationship.ajs
-|   |           |           Specialization Relationship.ajs
-|   |           |           Triggering Relationship.ajs
-|   |           |           
-|   |           \---lib
-|   |                   jszip-101.js
-|   |                   myexcel.js
-|   |                   
+|   |           jA01-Validierung Namen.ajs
+|   |           
 |   +---02-csv
 |   |   +---00-master
 |   |   +---01-mapping
@@ -291,12 +166,142 @@ C:.
 |       +---00-archimate
 |       +---01-bpmn
 |       \---99-html
-\---02-stages
-    |   model-scope.txt
-    |   run-scope.txt
-    |   run-scope_ReadMe.txt
++---02-stages
+|   |   model-scope.txt
+|   |   run-scope.txt
+|   |   run-scope_ReadMe.txt
+|   |   
+|   +---00-archimatearchive
+|   +---01-bpmnarchive
+|   +---02-xyarchive
+|   \---99-logs
+\---99-doku
+    |   README.md
     |   
-    +---00-archimatearchive
-    +---01-bpmnarchive
-    +---02-xyarchive
-    \---99-logs
+    +---00-governance
+    |       Global_GOV_S8.md
+    |       GOV_Global_Template_S8.md
+    |       
+    +---01-principles
+    |       AI_DRIVEN_DEV_METHODE_S8.md
+    |       ASSOCIATE_principles_Template_S8.md
+    |       ATL_FLOW_principles_S8.md
+    |       BETA_GitHub_Nutzung_S8.md
+    |       CLE_principles_S8.md
+    |       CSV_FLOW_principles_S8.md
+    |       ECM_principles_S8.md
+    |       FLOW_SCRIPTRUNNER_principles_S8.md
+    |       HLP_principles_S8.md
+    |       INST_principles_S8.md
+    |       KI_principles_Associate_S8.md
+    |       M2B_FLOW_principles_S8.md
+    |       OBS_principles_Associate_S8.md
+    |       SCRIPT-BAUKASTEN_S8.md
+    |       TMP_principles_S8.md
+    |       TOOLBAUKASTEN_principles_S8.md
+    |       XML_FLOW_principles_S8.md
+    |       
+    +---02-how2
+    |       Associate_How2_S8.md
+    |       ASSOCIATE_How2_Template_S7.md
+    |       ATL_FLOW_How2_Associate_S8.md
+    |       BETA_OFFBOARDING_How2_Associate_S8.md
+    |       CLE_How2_Associate_S8.md
+    |       CSV_FLOW_How2_Associate_S8.md
+    |       ECM_How2_Associate_S8.md
+    |       FLOW_SCRIPTRUNNER_How2_Associate_S8.md
+    |       HLP08_How2_ID-Merge-Run_S8.md
+    |       HLP09_How2_S8.md
+    |       HLP_How2_Associate_S8.md
+    |       how2_Associate_Template_S8.md
+    |       HOW2_Feedbackschleifen_S8.md
+    |       INST_How2_Associate_S8.md
+    |       KI_How2_Associate_S8.md
+    |       M2B_FLOW_How2_Associate_S8.md
+    |       OBS_How2_Associate_S8.md
+    |       STAGE8_ZIELE_S8.md
+    |       TMP_How2_Associate_S8.md
+    |       TOOLBAUKASTEN_How2_Associate_S8.md
+    |       XML_FLOW_How2_Associate_S8.md
+    |       
+    +---03-roesetta_stone
+    +---04-notes
+    |       AI_DRIVEN_DEV_METHODE_S8.md
+    |       ASSOCIATE_Backlog_Template_S8.md
+    |       ASSOCIATE_Notes_Template_S8.md
+    |       ASSOCIATE_Sprint_Template_S8.md
+    |       DUMMY_Blueprint_MD_Obsidian_S8.md
+    |       Stage_Ziele_Template_S8.md
+    |       
+    +---05-backlog
+    +---06-sprints
+    \---07-creative
+        |   README.md
+        |   
+        +---flip
+        |       Beta_1_00.jpg
+        |       PreBeta_3Party.jpg
+        |       
+        \---images
+            +---draw
+            |       360.png
+            |       and.png
+            |       Bomb.png
+            |       Brain.png
+            |       checklist.png
+            |       Checkliste.png
+            |       Gluebirne.png
+            |       Handy.png
+            |       Kaffee.png
+            |       key.png
+            |       Komplexität.png
+            |       Krake.png
+            |       Leuchtturm.png
+            |       Lupe.png
+            |       Meeting.png
+            |       Megaphone.png
+            |       megaphone2.png
+            |       Mehrschichtig.png
+            |       Money.png
+            |       Notebook.png
+            |       Offenheit.png
+            |       Ordner.png
+            |       PDCA2.png
+            |       rocket2.png
+            |       Schlüssel.png
+            |       Schnecke.png
+            |       schnecke2.png
+            |       Schraubenzieher.png
+            |       Tablet-Kurve.png
+            |       Teleskop.png
+            |       thinkdigital.png
+            |       transparenz.png
+            |       Uhr.png
+            |       Unbeständig.png
+            |       Unsicherheit.png
+            |       vernetzung.png
+            |       Vertrauen.png
+            |       Zahnrad.png
+            |       Ziel.png
+            |       Zieleinlauf.png
+            |       
+            +---logo
+            |       Header-Logo.png
+            |       PilsDesign_Logo_Kompakt_Weiss.png
+            |       
+            +---r+muni
+            |       Muni_Logo.png
+            |       Muni_Logo.svg
+            |       Muni_Logo_breit.png
+            |       Muni_Logo_Link.png
+            |       Muni_Logo_small.png
+            |       
+            +---svg claude
+            |       claude_kontext_architektur.svg
+            |       toolbaukasten.svg
+            |       
+            \---Werkzeugkasten
+                    Claude_Denkt4mich.png
+                    Obsidian_Screenshot_Visualisierung.png
+                    Scripts.png
+                    

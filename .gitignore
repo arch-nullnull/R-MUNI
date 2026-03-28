@@ -1,130 +1,90 @@
-# =========================================================
-# R+MUNI Blueprint – .gitignore
-# =========================================================
-# Zweck: Definiert welche Dateien NICHT ins GitHub Repository
-#        eingecheckt werden sollen.
-# Sprache: Deutsch / Kommentare erklären den jeweiligen Block
-# =========================================================
+# =============================================================
+# .gitignore — R+MUNI Global (PUBLIC + DEV)
+# Bewusst gebaut nach Blueprint-Ordnerstruktur (structure.txt)
+# S8 | 2026-03-28
+# =============================================================
 
 
-# ---------------------------------------------------------
-# [1] LAUFZEIT-ARTEFAKTE & TEMPORÄRE DATEIEN
-#     Werden bei jedem Script-Durchlauf neu erzeugt
-#     → kein Mehrwert im Repo
-# ---------------------------------------------------------
+# =============================================================
+# APPLIKATIONEN
+# =============================================================
 
-# Archi Backup-Dateien (automatisch erzeugt)
-.archimate.bak
-.bak
-
-# Python Cache & Bytecode
- __pycache__/
-*.py[cod]
-*.pyo
-
-# Temporäre Arbeitsverzeichnisse / OS-Dateien
+# --- Windows / OS -------------------------------------------
 Thumbs.db
 desktop.ini
-.DS_Store
-.tmp
-.temp
+$RECYCLE.BIN/
+
+# --- Archi (EA Modelling Tool) ------------------------------
+*.archimate.bak
+# Archi schreibt Log direkt neben das Modell wenn es offen ist
+00-model/00-archimate/00-archimateactive/log-0.txt
+00-model/00-archimate/00-archimateactive/log-0.txt.lck
+
+# --- Obsidian -----------------------------------------------
+.obsidian/
+
+# --- Python -------------------------------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
 
-# ---------------------------------------------------------
-# [2] LOGS & RUN-PROTOKOLLE & jArchi examples
-#     03-stages/99-logs/ enthält Laufzeit-Logs
-#     → nur lokal relevant, nicht für Blueprint-Übergabe
-# ---------------------------------------------------------
+# =============================================================
+# EINZELFILES
+# =============================================================
 
-02-stages/99-logs/
+# --- Laufzeit-Scopes (werden lokal generiert) ---------------
+02-stages/model-scope.txt
+02-stages/run-scope.txt
+
+# --- Generische Dateitypen ----------------------------------
+*.tmp
+*.temp
+*.bak
 *.log
+*.lck
+*.resolved.txt
+.DS_Store
 
 
-# ---------------------------------------------------------
-# [3] EXPORT-SNAPSHOTS & WORKING-EXPORTS
-#     99-exports Ordner sind Arbeitskopien / Zwischenstände
-#     → werden lokal gehalten, nicht versioniert
-# ---------------------------------------------------------
+# =============================================================
+# ORDNER
+# =============================================================
 
-02-artifacts/00-xml/99-exports/
-02-artifacts/02-csv/99-exports/
-02-artifacts/03-XLSX/99-exports/
-
-
-# ---------------------------------------------------------
-# [4] IMPORT-VERZEICHNISSE (befüllte Import-CSVs)
-#     04-import enthält die befüllten CSV-Dateien
-#     die Archi importiert – diese sind run-spezifisch
-# ---------------------------------------------------------
-
-02-artifacts/02-csv/04-import/
-02-artifacts/03-XLSX/04-import/
-
-
-# ---------------------------------------------------------
-# [5] ARCHI ARCHIVE / STAGE-ARCHIVE
-#     Lokale Archiv-Snapshots der Modelle
-#     → zu groß / zu häufig wechselnd für Versionierung
-# ---------------------------------------------------------
-
+# --- Laufzeit-Archive ---------------------------------------
 02-stages/00-archimatearchive/
 02-stages/01-bpmnarchive/
 02-stages/02-xyarchive/
-02-stages/03-masterxmlarchive/
+
+# --- Laufzeit-Logs ------------------------------------------
+02-stages/99-logs/
+
+# --- Abgeleitete Artefakte (werden lokal generiert) ---------
+01-artifacts/00-xml/00-master/
+01-artifacts/00-xml/99-exports/
+01-artifacts/02-csv/00-master/
+01-artifacts/02-csv/03-child/
+01-artifacts/02-csv/99-exports/
+01-artifacts/03-XLSX/00-master/
+01-artifacts/03-XLSX/03-child/
+01-artifacts/03-XLSX/99-exports/
+01-artifacts/04-flow/00-archimateFLW/
+01-artifacts/04-flow/01-bpmnFLW/
+01-artifacts/05-reports/
 
 
-
-# ---------------------------------------------------------
-# [6] OBSIDIAN INTERNE KONFIG
-#     .obsidian Ordner enthält persönliche UI-Einstellungen
-#     → nicht für andere Nutzer relevant
-# ---------------------------------------------------------
-
-# .obsidian/
-
-
-# ---------------------------------------------------------
-# [7] GROSSE BINÄR-DATEIEN / ZIP-PAKETE
-#     R+MUNI_clean.zip und ähnliche Pakete nicht einchecken
-#     → über GitHub Releases verteilen
-# ---------------------------------------------------------
-
-# *.zip
-# *.7z
-# *.rar
+# =============================================================
+# NICHT AUSGESCHLOSSEN (explizit dokumentiert)
+# 00-model/                            → eingecheckt
+# *.archimate                          → eingecheckt
+# Scripts in 01-artifacts/01-scripts/  → eingecheckt
+# Mapping-Dateien (.txt)               → eingecheckt
+# root.cfg                             → eingecheckt
+# README.md, Install.txt, LICENSE      → eingecheckt
+# =============================================================
 
 
-# ---------------------------------------------------------
-# [8] LOKALE KONFIGURATION (root.txt / root.cfg)
-#     Enthält absolute Pfade des lokalen Rechners
-#     → wird NICHT eingecheckt, jeder Nutzer hat seinen eigenen Pfad
-#     → Ausnahme: root.txt als TEMPLATE (leere Pfade) ist OK
-# ---------------------------------------------------------
-
-# root.cfg
-# root.txt → wird NICHT ignoriert, enthält Beispielpfade als Doku
-
-# ---------------------------------------------------------
-# [9] VIRTUELLE UMGEBUNGEN & LOKALE PYTHON-SETUP
-# ---------------------------------------------------------
-
-venv/
-.venv/
-env/
-.egg-info/
-
-
-# ---------------------------------------------------------
-# [10] EDITOR-SPEZIFISCH (Notepad++, VS Code, JetBrains)
-# ---------------------------------------------------------
-
-.vscode/
-.idea/
-*.npp_session
-
-
-
-
-00-model/00-archimate/00-archimateactive/log-0.txt
-00-model/00-archimate/00-archimateactive/log-0.txt.lck
-01-artifacts/01-scripts/__pycache__/HLP00_resolve_root.cpython-314.pyc
+# =============================================================
+# GitHub Desktop — automatische Ergänzungen landen hier
+# =============================================================
