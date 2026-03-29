@@ -1,3 +1,6 @@
+R+MUNI Blueprint — Reusable Standards-Based Communication and Integration Framework
+Copyright (C) 2026  Markus Resel
+
 GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -44,7 +47,7 @@ giving you legal permission to copy, distribute and/or modify it.
   For the developers' and authors' protection, the GPL clearly explains
 that there is no warranty for this free software.  For both users' and
 authors' sake, the GPL requires that modified versions be marked as
-changed, so that their problems will not be attributed erroneously to
+changed, so that their problems will not be attributed errantly to
 authors of previous versions.
 
   Some devices are designed to deny users access to install or run
@@ -236,7 +239,7 @@ terms of section 4, provided that you also meet all of these conditions:
 works, which are not by their nature extensions of the covered work,
 and which are not combined with it such as to form a larger program,
 in or on a volume of a storage or distribution medium, is called an
-"aggregate" if the compilation and its resulting copyright are not
+"aggregate" if the compilation and its resulting distribution copyright are not
 used to limit the access or legal rights of the compilation's users
 beyond what the individual works permit.  Inclusion of a covered work
 in an aggregate does not cause this License to apply to the other
@@ -382,7 +385,7 @@ that material) supplement the terms of this License with terms:
     f) Requiring indemnification of licensors and authors of that
     material by anyone who conveys the material (or modified versions of
     it) with contractual assumptions of liability to the recipient, for
-    any liability that these contractual assumptions directly impose on
+    any liability that contractual assumptions directly impose on
     those licensors and authors.
 
   All other non-permissive additional terms are considered "further
@@ -471,7 +474,7 @@ sale, or importing the Program or any portion of it.
   11. Patents.
 
   A "contributor" is a copyright holder who authorizes use under this
-License of the Program or a work on which the Program is based.  The
+License of the Program or a work based on which the Program is based.  The
 work thus licensed is called the contributor's "contributor version".
 
   A contributor's "essential patent claims" are all patent claims
@@ -497,18 +500,18 @@ party means to make such an agreement or commitment not to enforce a
 patent against the party.
 
   If you convey a covered work, knowingly relying on a patent license,
-and the Corresponding Source of the work is not available for anyone
-to copy, free of charge and under the terms of this License, through a
-publicly available network server or other readily accessible means,
-then you must either (1) cause the Corresponding Source to be so
-available, or (2) arrange to deprive yourself of the benefit of the
-patent license for this particular work, or (3) arrange, in a manner
-consistent with the requirements of this License, to extend the patent
-license to downstream recipients.  "Knowingly relying" means you have
-actual knowledge that, but for the patent license, your conveying the
-covered work in a country, or your recipient's use of the covered work
-in a country, would infringe one or more identifiable patents in that
-country that you have reason to believe are valid.
+and the Corresponding Source is not available for anyone to copy, free
+of charge and under the terms of this License, through a publicly
+available network server or other readily accessible means, then you
+must either (1) cause the Corresponding Source to be so available, or
+(2) arrange to deprive yourself of the benefit of the patent license
+for this particular work, or (3) arrange, in a manner consistent with
+the requirements of this License, to extend the patent license to
+downstream recipients.  "Knowingly relying" means you have actual
+knowledge that, but for the patent license, conveying the covered work
+in a country, or your recipient's use of the covered work in a country,
+would infringe one or more identifiable patents in that country that
+you have reason to believe are valid.
 
   If, pursuant to or in connection with a single transaction or
 arrangement, you convey, or propagate by procuring conveyance of, a

@@ -56,9 +56,9 @@ R+MUNI setzt ausschließlich auf frei verfügbare, stabile Open-Source-Werkzeuge
 |---|---|---|
 | **Archi 5.8** | Enterprise Architecture — die Single Source of Truth | [archimatetool.com](https://www.archimatetool.com/) |
 | **Camunda Modeler** | BPMN 2.0 Prozessmodellierung | [camunda.com/download/modeler](https://camunda.com/download/modeler/) |
-| **Python 3.9+** | Automatisierung der Script-Reihen | [python.org](https://www.python.org/) |
+| **Python 3.x** | Automatisierung der Script-Reihen | [python.org](https://www.python.org/) |
 | **jArchi 1.11.0** | JavaScript Scripting-Plugin für Archi | [github.com/archimatetool/archi-scripting-plugin](https://github.com/archimatetool/archi-scripting-plugin) |
-| **OpenJDK 11+** | Java-Runtime (Voraussetzung für Archi & Camunda) | [adoptium.net](https://adoptium.net/) |
+| **OpenJDK 21** | Java-Runtime (Voraussetzung für Archi & Camunda) | [adoptium.net](https://adoptium.net/) |
 | **Notepad++** | Editor für alle Dateitypen (XML, CSV, CFG, MD) | [notepad-plus-plus.org](https://notepad-plus-plus.org/) |
 | **Git** | Technischer Unterbau — Bash & VS Code Integration für Claude | [git-scm.com](https://git-scm.com/) |
 | **GitHub** | Repository-Verwaltung, Backup, Sync | [github.com](https://github.com/) |
@@ -155,7 +155,7 @@ R+MUNI unterscheidet bewusst zwischen drei Rollen — keine Hierarchie, sondern 
 
 ## Mitmachen — als Associate oder als Developer
 
-R+MUNI wird aktiv weiterentwickelt und befindet sich aktuell in **Stage 8 — Beta 1.0**.
+R+MUNI wird aktiv weiterentwickelt und befindet sich aktuell in **Beta 1.0 — Phase 1.xx**.
 
 **Als Associate** kannst du R+MUNI in deiner Organisation einsetzen, Feedback geben und damit direkt beeinflussen wie das System weiterentwickelt wird. Der Feedback-Weg ist klar geregelt — kein schwarzes Loch, keine leeren Versprechen.
 
@@ -222,4 +222,4 @@ Das Ziel ist klar: Aus der Beta wird ein **stabiles, downloadbares Paket** — z
 
 ---
 
-*R+MUNI Blueprint — entwickelt von EUMAXL | Stage 8 — Beta 1.0 | 2026*
+*R+MUNI Blueprint — entwickelt von Markus Resel (EUMAXL) | Beta 1.0 — Phase 1.xx | 2026*
