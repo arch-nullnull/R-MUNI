@@ -104,7 +104,7 @@ R+MUNI organisiert seine Scripts in klar abgegrenzte **Reihen**. Jede Reihe hat 
 | **FLW** | `FLW` | Flow-Orchestrierung — der Scriptrunner selbst |
 
 Die vollständige Dokumentation aller Reihen — Principles, How2 und Detailbeschreibungen — findest du in der DEV-Dokumentation:
-[99-doku/README.MD](99-doku/README.MD)
+[https://github.com/arch-nullnull/R-MUNI/blob/main/99-doku/README.md](99-doku/README.MD)
 
 ### Was du als Associate wissen musst
 
