@@ -1,20 +1,26 @@
 ================================================================================
 AI DRIVEN DEVELOPMENT – METHODE R+MUNI
 ================================================================================
-Projekt         : R+MUNI Blueprint
-Dokument        : AI_DRIVEN_DEV_METHODE_S8
-Tag             : #dev #methodik #aidriven #s8
-Datum           : 2026-03-26
-Stage           : S8 — AKTIV
-Status          : AKTIV
-Verantwortlich  : EUMAXL
-Review          : —
-Jira-Sync       : NEIN
-Letzte Änderung : 2026-03-26 — S8-Vorbereitung: Kap. 9, 11, 12, 15, 16.3, 17 + Header S8-konform
+Erstellt        : 2026-03-06
+Letzte Änderung : 2026-04-01 — Kap. 1 Varianten-Logik DEV/EXP/ASC/MGT, Kap. 4 Atlassian-Trigger + Output-Regel, Kap. 15.3 Meldepflicht ausgebaut | Freigabe: EUMAXL
+                  zuvor: 2026-03-29 — DEV_S101-Resync: Header S101, Kap. 11/12/13 DEV-Inhalte zurück
+                  zuvor: 2026-03-26 — S8-Vorbereitung: Kap. 9, 11, 12, 15, 16.3, 17
 Autor           : EUMAXL
 Charakter       : Persönliche Arbeitsmethode / Entwicklungsphilosophie
-Ablageort       : 00-concept/01-principles/AI_DRIVEN_DEV_METHODE.txt
+Ablageort       : 00-concept/01-principles/AI_DRIVEN_DEV_METHODE_DEV_S102.md
+Stage           : S1.02 — AKTIV
+Tag             : #dev #methode #aidriven #s102
 ================================================================================
+
+---
+title: "AI Driven Development – Methode R+MUNI"
+stage: S1.02
+status: "AKTIV"
+typ: "Prinzipien"
+datum: "2026-04-01"
+autor: EUMAXL
+tags: [rmuni, blueprint, dev, methode, prinzipien, s102]
+---
 
 
 ================================================================================
@@ -24,6 +30,12 @@ Ablageort       : 00-concept/01-principles/AI_DRIVEN_DEV_METHODE.txt
 Persönliche AI Driven Development Methode für R+MUNI.
 Aus der Praxis gewachsen — kein Framework, eine Disziplin.
 Ermöglicht professionelle Systementwicklung ohne Programmierwissen.
+
+Diese Methode existiert in vier Varianten (ab Stage 1.02):
+  DEV    Dieses Dokument — interne Arbeitsgrundlage, vollständig, GOV-konform
+  EXP    Expert-Variante — Prinzip + Verhalten, kein DEV-Anteil (eigener Chat)
+  ASC    Associate-Variante — für Betakunden (R+MUNI Repo)
+  MGT    Platzhalter — noch nicht aktiv
 
 
 ================================================================================
@@ -41,20 +53,13 @@ Entscheidungen bleiben immer beim Menschen.
 3. RAHMENBEDINGUNGEN
 ================================================================================
 
-Profil:
-  IT-Erfahrung: Presales Datacenter (20J), Projektmanagement (6J),
-                Prozess- & Changemanagement (3J)
-  Kein Programmierwissen | GUI-orientiert | Stärke: Systemdenken, Governance
+Profil, Werkzeuge und Verzeichnisstruktur sind Single Source of Truth
+in den Referenzdokumenten gepflegt — nicht hier.
 
-Werkzeuge Core (MINIMAL):
-  Archi 5.8 | Camunda Modeler | Python 3
-
-Werkzeuge Core (DEFAULT):
-  Notepad++ | Git | GitHub | Obsidian | draw.io | Inkscape | PowerShell 7
-  Claude Pro | KeePass | Projektfolder (manuell versioniert)
-
-Addon DEV-only:
-  Atlassian Jira + Confluence (Free Plan) — Ticketing, Sprint-Verwaltung, Doku
+  Install.txt      Werkzeugkasten (Minimal / Default / Addon), Installationspfade,
+                   Versionsstand, Encoding-Hinweise
+  README.md        Hintergrund, Gedanke, Kontext, weiterführende Informationen
+  structure.txt    Verzeichnisübersicht — Scripts arbeiten relativ zu root.cfg
 
 
 ================================================================================
@@ -72,6 +77,27 @@ Addon DEV-only:
 
 Prinzip: Was nicht abgelegt ist existiert nicht. Routine schlägt Improvisation.
 
+Ablage-Regeln:
+  - Nicht lesbare Formate (.xlsx) nicht im Projektfolder ablegen
+  - Mappings und Konfigurationen immer als .txt
+  - GitHub ist zentraler Dreh- und Angelpunkt für Repos und Kundenkommunikation
+  - Atlassian nur nach expliziter Aufforderung — kein automatischer Reflex:
+      Backlog2Jira   → Claude erstellt Story im Jira-Bereich R+MUNI EA
+      MD2Confluence  → Claude erstellt Beitrag im Confluence R+MUNI Bereich
+                       Basis: letztes .md im Chat — bei Unklarheit nachfragen
+  - Kunden halten ihre eigenen Repos — DEV-Zugriff nur auf explizite Freigabe
+
+Output-Regel (verbindlich):
+  - Claude gibt Dokumente immer als .md File im Chat aus — nie als Rohtext
+  - Nie in den Projektfolder schreiben ohne expliziten Auftrag
+  - "Push" durch EUMAXL = .md File im Chat zur Review
+  - EUMAXL entscheidet über Ablage, GitHub-Sync und Projektfolder-Push selbst
+
+Kontextmanagement:
+  - Projektfolder ist die einzige verlässliche Wahrheit
+  - Was drin steht gilt — was nicht drin ist muss im Chat erklärt werden
+  - Session-Ende: klarer Stand + offene Punkte + aktualisierter Folder
+
 
 ================================================================================
 5. KOMMUNIKATION MIT CLAUDE
@@ -82,21 +108,11 @@ Prinzip: Was nicht abgelegt ist existiert nicht. Routine schlägt Improvisation.
   - Claude fragt nach bevor er annimmt
   - Kein "ich mache jetzt einfach mal" ohne Freigabe
   - Stage 3 Freeze / GOV / 1 Script 1 Outcome: Claude kennt und respektiert das
+  - Missverständnisse werden sofort aufgelöst — kein Raten, kein implizites Annehmen
 
 
 ================================================================================
-6. KONTEXTMANAGEMENT
-================================================================================
-
-Der Projektfolder ist die einzige verlässliche Wahrheit.
-Was drin steht gilt. Was nicht drin ist muss im Chat erklärt werden.
-
-Aktualisierung: nach jeder Session mit Änderungen — ersetzen, hinzufügen, löschen.
-Session-Ende:   klarer Stand + offene Punkte + aktualisierter Folder.
-
-
-================================================================================
-7. QUALITÄTSSICHERUNG
+6. QUALITÄTSSICHERUNG
 ================================================================================
 
 Vier-Augen-Prinzip:    Claude erklärt → Entwickler nimmt ab (ohne Code zu lesen)
@@ -106,7 +122,7 @@ Dokumentationspflicht: Kein Sprint ohne Doku. Kein Stage-Ende ohne Vollständigk
 
 
 ================================================================================
-8. STÄRKEN
+7. STÄRKEN
 ================================================================================
 
   + Kein Programmierwissen erforderlich
@@ -117,7 +133,7 @@ Dokumentationspflicht: Kein Sprint ohne Doku. Kein Stage-Ende ohne Vollständigk
 
 
 ================================================================================
-9. GRENZEN
+8. GRENZEN
 ================================================================================
 
   - KI-Verfügbarkeit als Abhängigkeit
@@ -133,7 +149,7 @@ Dokumentationspflicht: Kein Sprint ohne Doku. Kein Stage-Ende ohne Vollständigk
 
 
 ================================================================================
-10. WEITERENTWICKLUNG
+9. WEITERENTWICKLUNG
 ================================================================================
 
 Diese Methode ist lebendig. Erkenntnisse aus der Praxis fließen direkt ein.
@@ -141,67 +157,82 @@ Diese Methode ist lebendig. Erkenntnisse aus der Praxis fließen direkt ein.
 
 
 ================================================================================
-11. ROLLEN-PARALLELBETRIEB
+10. ROLLEN-PARALLELBETRIEB
 ================================================================================
 
-Der Entwickler agiert in mehreren Rollen: DEV / Beta-Tester / Berater.
+Default-Rolle: DEV. Andere Rollen nur auf explizite Anforderung.
+Der Entwickler agiert in mehreren Rollen: DEV / Kundensupport / Berater.
 Ohne explizite Trennung entstehen Rollenvermischung und Informationsverlust.
 
-Kanal: [BETA] = Erfahrungsbericht, kein Transfer
-       [BETA→RMUNI] = explizit gewünschter Transfer in R+MUNI
+Kennzeichnung für Chat-Eingaben:
+  [CUSTO]        → Erfahrungsbericht aus Kundenumgebung
+                   Claude nimmt auf, baut nichts ein, kein Transfer ohne Auftrag
+  [CUSTO→RMUNI]  → Expliziter Transfer-Auftrag
+                   Claude übersetzt, anonymisiert automatisch
+  Kein Tag       → DEV-Kontext — Claude arbeitet im R+MUNI DEV-Rahmen
 
-Transfer-Logik (3 Stufen):
-  1. Erfahrungsbericht aufnehmen
-  2. Transfer explizit auslösen
-  3. Entwickler gibt Ergebnis frei — kein Einbau ohne Freigabe
+Dokument-Identifikation via Header:
+  Projekt ≠ R+MUNI und ≠ ASC → Betakunde → Anonymisierungspflicht gilt automatisch
+  Kein expliziter Tag erforderlich — Claude liest den Header.
 
-Der laufende Stage ist gleichzeitig Lernlabor für die Methodik.
-Claude meldet aktiv wenn er sein Verhalten verändert (→ Kap. 16.3).
-Vollständige Governance: GOV Kapitel 13.
+Freigabe für Kundenkontakt: aktuell durch ASC und R+MUNI selbst erteilt.
+
+Claudes Verhalten:
+  [CUSTO]        aufnehmen, nichts einbauen, auf Nachfrage antworten
+  [CUSTO→RMUNI]  übersetzen, anonymisieren, Ergebnis zur Freigabe vorlegen
+  Unklarheit     → nachfragen, nicht raten, nicht annehmen
+
+Kontrolle bleibt beim Entwickler — Claude folgt der Rolle, definiert sie nicht.
+Claude meldet aktiv wenn er sein Verhalten verändert (→ Kap. 15.3).
+Vollständige Governance: GOV Kapitel 13. Bei Widerspruch gilt GOV 13.
 
 
 ================================================================================
-12. TEMPLATE-METHODIK FÜR AI-FÄHIGE DOKUMENTE
+11. TEMPLATE-METHODIK FÜR AI-FÄHIGE DOKUMENTE
 ================================================================================
 
 Dokumente ohne Claude entstanden + ohne Kontext eingebracht = Drift-Risiko.
+Prinzip: Explizitheit verhindert Drift.
 
 Ein AI-fähiges Dokument enthält immer:
-  ZWECK / KONTEXT     — Was, wofür, für wen?
-  AUSGANGSLAGE        — Was war gegeben, was war das Problem?
-  ERKENNTNIS          — Was wurde entschieden, warum, was bewusst nicht?
-  TRANSFERIERBARKEIT  — Was ist allgemein gültig, was nicht übertragbar?
-  ANONYMISIERUNG      — Was unterliegt GOV 13.4?
+  ZWECK / KONTEXT | AUSGANGSLAGE | ERKENNTNIS | TRANSFERIERBARKEIT | ANONYMISIERUNG
 
-Prinzip: Explizitheit verhindert Drift.
-Templates generieren lassen: Dokumenttyp + Zielumgebung beschreiben → Claude liefert.
+AI-fähig = Claude kann es ohne mündliche Erklärung verarbeiten.
+Nicht AI-fähig → vor Session aufbereiten oder aufbereitungs-Session starten.
+Templates generieren: Dokumenttyp + Zielumgebung nennen → Claude liefert.
 
 Dokumenttypen im Blueprint:
-  Sprint-DEV-Doku     Vollständige Sprint-Dokumentation mit GOV-Check
-  Konzeptnotiz        Destillierte Erkenntnis, noch nicht spruchreif —
-                      kein GOV-Overhead, kein Sprint erforderlich
-  ASSOCIATE-Doku      Zielgruppen-spezifische Dokumentation (→ GOV/Freeze)
-
-Konzeptnotiz als eigenständiger Typ ist bewusst leichtgewichtig:
-Erkenntnis benennen → kurz dokumentieren → später entscheiden ob Sprint.
+  Sprint-DEV-Doku   Vollständige Sprint-Dokumentation mit GOV-Check
+  Konzeptnotiz      Erkenntnis benennen → kurz dokumentieren → später Sprint?
+  ASSOCIATE-Doku    Zielgruppen-spezifische Dokumentation (→ GOV/Freeze)
 
 
 ================================================================================
-13. WISSENSTRANSFER ZWISCHEN ROLLEN — BETA-KANAL
+12. WISSENSTRANSFER ZWISCHEN ROLLEN — CUSTO-KANAL
 ================================================================================
 
 Anonymisierung vor jedem Transfer:
-  Personen → User/Stakeholder | Organisationen → nicht nennen | Systeme → Beta-Umgebung
+  Personen → User/Stakeholder | Organisationen → nicht nennen | Systeme → Kundenumgebung
 
 Transferierbar:       Prozess-Erkenntnisse, Prinzipien, Muster, How-to-Strukturen
 Nicht transferierbar: Konfigurationen, Personenbezüge, Rohdaten, interne Bezeichnungen
 
-Ergebnisse landen in der USER-Reihe (interner Input, nicht öffentlich).
+Transfer-Workflow:
+  1. [CUSTO] einbringen     Claude liest, baut nichts ein, keine Zusammenfassung ohne Auftrag
+  2. [CUSTO→RMUNI] auslösen  Optional: Zieldokument | Zielgruppe | Einschränkungen
+  3. Claude übersetzt        Anonymisierung automatisch, nur transferierbare Erkenntnis
+  4. Entwickler prüft        Inhalt | Anonymisierung | Ton | Transferierbarkeit
+  5. Freigabe + Einbau       CUSTO-Quelle bleibt unverändert und separat
+
+Erfolgreich wenn: keine echten Namen | ohne Quellkenntnis verständlich |
+                  Quelle nicht rekonstruierbar | Entwickler hat freigegeben
+
+Ergebnisse → ASSOCIATE-Reihe (interner Input, nicht öffentlich).
 Vollständige Governance: GOV Kapitel 13.
 
 
 ================================================================================
-14. CLAUDE UND EXTERNE QUELLEN
+13. CLAUDE UND EXTERNE QUELLEN
 ================================================================================
 
 Claude KANN:       Projektfolder lesen, auf Auftrag URLs fetchen
@@ -213,7 +244,7 @@ GitHub-Sync prüft EUMAXL selbst.
 
 
 ================================================================================
-15. KONTEXT-OPTIMIERUNG — PRAXISERKENNTNISSE AUS STAGE 6
+14. KONTEXT-OPTIMIERUNG — PRAXISERKENNTNISSE AUS STAGE 6
 ================================================================================
 
 Mittelmaß-Prinzip:
@@ -224,9 +255,10 @@ Mittelmaß-Prinzip:
 Memory: stärkster Anker für Regeln die niemals driften dürfen
         Praxisregel: dreimal korrigiert → Memory | einmal verletzt → Skill
 
-Skills: nur aktivieren wenn gebraucht, danach deaktivieren
-        Aktiv: r-muni-blueprint (immer) | mlat-context-handler (bei Bedarf)
-               jArchi (nur bei Archi-Arbeit)
+Skills: grundsätzlich deaktiviert.
+        Aktivieren nur wenn explizit gebraucht — danach wieder deaktivieren.
+        jArchi: aktivieren für dedizierte Archi-Sessions (noch nicht vollständig verinnerlicht)
+        Alle anderen Skills: nur auf explizite Entscheidung, nicht als Reflex.
 
 Template-first: Gibt es ein Template → Template laden, kein altes .md.
                 Templates sind im Projektfolder hinterlegt.
@@ -234,10 +266,10 @@ Template-first: Gibt es ein Template → Template laden, kein altes .md.
 
 
 ================================================================================
-16. PROJEKTMANAGEMENT MIT CLAUDE — CHAT-STRUKTUR UND DRIFT-PRÄVENTION
+15. PROJEKTMANAGEMENT MIT CLAUDE — CHAT-STRUKTUR UND DRIFT-PRÄVENTION
 ================================================================================
 
-16.1 Chat-Aufteilung nach Funktion
+15.1 Chat-Aufteilung nach Funktion
 ------------------------------------
 Ein Chat, eine Funktion. Themenüberlappung = Drift-Einladung.
 
@@ -245,7 +277,7 @@ Ein Chat, eine Funktion. Themenüberlappung = Drift-Einladung.
   Methodik-Chat    — Reflexion, Methodik-Weiterentwicklung. Kein Sprint-Output.
   Sprint-Chats     — Je ein Ziel oder Sprint. Fokus bleibt im Scope.
 
-16.2 Chat-Initialisierung — Rolle explizit definieren
+15.2 Chat-Initialisierung — Rolle explizit definieren
 ------------------------------------------------------
 Jeder neue Chat beginnt mit einer expliziten Rollenaussage.
 Claude startet ohne Gedächtnis — die Rolle gibt sofort Orientierung.
@@ -256,11 +288,23 @@ Gut:      "Du bist meine Zielbegleitung in Stage 7. Kein Code, kein Sprint —
 
 Rollenaussage ist keine Formalität — sie ist Investition gegen Drift.
 
-16.3 Verhaltenstransparenz
---------------------------
-Claude meldet aktiv wenn er sein Verhalten verändert.
+15.3 Verhaltenstransparenz — Meldepflicht
+------------------------------------------
+Claude meldet aktiv und explizit im Chat wenn er:
+  - Scope überschreitet oder droht zu expandieren ohne Auftrag
+  - Annahmen trifft statt nachzufragen
+  - Verhalten ändert (Ton, Struktur, Detailtiefe)
+  - GOV-Regeln nicht anwenden kann oder will
+  - Abdriftet — thematisch oder inhaltlich
 
-16.4 Strukturierungsmuster — und wann es bremst
+Meldeformat: kurz, direkt, kein langer Text.
+  Beispiel: "⚠ Verhaltenshinweis: Ich bin dabei scope-mäßig zu expandieren — Freigabe?"
+  Beispiel: "⚠ Verhaltenshinweis: Ich treffe hier eine Annahme — stimmt das so?"
+
+Meldepflicht ist keine Formalität — sie ist Frühwarnsystem gegen Drift.
+EUMAXL hat explizit bestätigt: Meldungen sind erwünscht, auch wenn müde.
+
+15.4 Strukturierungsmuster — und wann es bremst
 ------------------------------------------------
 Claude strukturiert auf Reflex. Oft hilfreich — nicht immer.
 
@@ -272,7 +316,7 @@ Was dann besser ist: Zuhören und spiegeln. Struktur kommt danach — auf Abruf.
 Praxiserkenntnis S7: Nach dem Umschalten auf Zuhören entstand mehr in
 kürzerer Zeit als in strukturierten Sessions zuvor.
 
-16.5 Erkenntnisse sofort sichern
+15.5 Erkenntnisse sofort sichern
 ----------------------------------
 Erkenntnisse die Dokumente verändern → sofort Sprint oder Backlog anlegen.
 Nicht als losen Chat-Inhalt lassen.
@@ -281,7 +325,7 @@ Erkenntnis benennen → Auswirkungen identifizieren → Sprint / Backlog anlegen
 
 
 ================================================================================
-17. KI-TOOL-ROLLENTRENNUNG UND ASSET-PIPELINE
+16. KI-TOOL-ROLLENTRENNUNG UND ASSET-PIPELINE
 ================================================================================
 
 KI-Tools haben unterschiedliche Rollen — Vermischung erzeugt Drift.
@@ -290,22 +334,33 @@ KI-Tools haben unterschiedliche Rollen — Vermischung erzeugt Drift.
              Primär für alle technischen und konzeptionellen Arbeiten.
 
   Copilot    Bewusst kontextfrei — keine R+MUNI-Dokumente.
-             Exploration, Entscheidungsfindung, Sales-Dokumentation.
-             Erkenntnisse fließen als [BETA→RMUNI] kontrolliert zurück.
+             Exploration, Entscheidungsfindung, Sales-Dokumentation,
+             visuelle Assets. Erkenntnisse fließen als [CUSTO→RMUNI]
+             kontrolliert zurück.
 
 Asset-Prinzip (Tool-Lock-Schutz):
-  Konzept- und Strukturarbeit (Diagramme, Entscheidungen, Architektur)
-  → Claude: Kontext vorhanden, GOV-konform, reproduzierbar im Dialog.
+  Konzept- und Strukturarbeit → Claude: Kontext vorhanden, GOV-konform.
+  Reale Dateien / Assets      → Spezialisierte Tools je Format und Ziel.
+  Begründung: Kein Tool-Lock. Claude ist Denkpartner, kein Grafik-Renderer.
 
-  Reale Dateien als verwertbare Assets (SVG, Grafiken, Exportformate)
-  → Außerhalb Claude: spezialisierte Tools je nach Format und Zielumgebung.
 
-  Begründung: Kein Tool-Lock. Jedes Werkzeug bleibt in seiner Stärke.
-              Claude ist kein Grafik-Renderer — er ist ein Denkpartner.
+================================================================================
+17. NAMENSREGEL — GENERELL
+================================================================================
 
-Visuelle Assets (MUNI-Figuren, Flipcharts):
-  Geplant mit Stable Diffusion + LoRA — einmal trainiert, reproduzierbarer Stil.
-  Scope: DEV-only. Freigabe durch EUMAXL ausstehend.
+Echte Namen dürfen nie in R+MUNI-Artefakten, Dokumentationen oder
+Chat-Outputs erscheinen — weder von Personen noch von Kundenorganisationen.
+
+Gilt systemweit — unabhängig von Kontext, Rolle oder Dokument.
+Ausnahme: EUMAXL ist gesetztes Pseudonym — kein Realname.
+
+Zulässige Ersetzungen:
+  Personen       → User, Stakeholder, Team-Mitglied, Anwender
+  Organisationen → nicht nennen — nur Typ (Betakunde, Kunde, Partner)
+  Systeme        → Kundenumgebung, Testinstanz, externe Plattform
+
+Claude wendet die Namensregel automatisch an.
+Vollständige Governance: GOV 13.4.
 
 
 ================================================================================
@@ -315,6 +370,7 @@ Erweiterung Kapitel 11-13 | 2026-03-18
 Erweiterung Kapitel 9 + 14 | 2026-03-19
 Erweiterung Kapitel 15 | 2026-03-20
 Erweiterung Kapitel 16 + Schlankheits-Revision | 2026-03-22
-Erweiterung Kapitel 17 + Konsolidierung S7-final | 2026-03-22
 S8-Vorbereitung: Kap. 9, 11, 12, 15, 16.3, 17 | 2026-03-26
+DEV_S101-Resync: Kap. 3 → Referenzen, Kap. 10-12 DEV-Inhalte, Kap. 17 Namensregel neu | 2026-03-29
+S102: Kap. 1 Varianten-Logik, Kap. 4 Atlassian-Trigger + Output-Regel, Kap. 15.3 Meldepflicht | 2026-04-01
 ================================================================================

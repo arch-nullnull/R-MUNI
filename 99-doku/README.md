@@ -1,73 +1,161 @@
-================================================================================
-Projekt         : R+MUNI Blueprint
-Dokument        : README_Doku-public
-Tag             : #public #readme #doku #s8
-Datum           : 2026-03-28
-Stage           : S8 — AKTIV
-Status          : AKTIV
-Verantwortlich  : EUMAXL
-Review          : —
-Jira-Sync       : NEIN
-================================================================================
+# R+MUNI — Öffentliche Blueprint Dokumentation
 
-# R+MUNI Doku-public — Wegweiser
-
-Willkommen im öffentlichen Dokumentationsbereich von R+MUNI.
-
-Hier liegt alles was du brauchst um R+MUNI zu verstehen, anzuwenden und
-weiterzuentwickeln — strukturiert, versioniert und nachvollziehbar.
-
-Diese Dokumentation richtet sich an **Associates**: Interessierte, externe
-Mitwirkende, Beta-Nutzer und alle die mit R+MUNI arbeiten oder es evaluieren
-wollen — ohne zwingend den vollen DEV-Kontext zu kennen.
-
-> **Hinweis:** R+MUNI befindet sich in aktiver Entwicklung (Stage 8 — Beta).
-> Inhalte entwickeln sich weiter — immer dokumentiert, immer GOV-konform.
+> *Eine Vorgehensweise. Ein Werkzeugkasten. Ein Baukasten. Dokumentiert, offen, reproduzierbar.*
 
 ---
 
-## Ordnerübersicht
+## Was ist diese Dokumentation hier?
 
-| Ordner | Inhalt |
-|---|---|
-| `00-governance` | Das Regelwerk — verbindliche Regeln für Struktur, Sprache, Versionierung und Verhalten im R+MUNI System |
-| `01-principles` | Die Prinzipien — wie R+MUNI funktioniert und warum Dinge so gebaut sind wie sie sind |
-| `02-how2` | Anleitungen — konkrete Schritt-für-Schritt Erklärungen für die Bedienung der Script-Reihen und Workflows |
-| `03-roesetta_stone` | Der Rosetta Stone — Übersetzungshilfen und Referenzdokumente für Fachbegriffe, Modellierungskonzepte und Systemzusammenhänge |
-| `04-notes` | Notizen und Beobachtungen — ergänzende Informationen, Hinweise und Erkenntnisse die keinen eigenen Sprint-Kontext brauchen |
-| `05-backlog` | Backlog — offene Punkte, geplante Erweiterungen und Ideen die noch nicht in aktive Entwicklung übergegangen sind |
-| `06-sprints` | Sprint-Dokumentation — abgeschlossene und laufende Entwicklungszyklen mit Zielen, Ergebnissen und Lessons Learned |
-| `07-creative` | Creative Assets — Grafiken, Illustrationen, SVG-Visuals und andere visuelle Artefakte die im Rahmen von R+MUNI entstanden sind |
+Dieses Repository enthält die öffentliche Entwicklungsdokumentation von **R+MUNI**.  
+Keine Produktseite. Kein Marketing. Eine ehrliche, nachvollziehbare Entwicklungshistorie.
+
+Wer R+MUNI verstehen will — wie es denkt, wie es entscheidet, wie es strukturiert — ist hier richtig.
+
+Das Haupt-Repository mit Scripts und Installationsanleitung findest du hier:  
+→ [github.com/arch-nullnull/R-MUNI](https://github.com/arch-nullnull/R-MUNI)
 
 ---
 
-## Wo fange ich an?
+## Dokumentationsstruktur — was liegt wo
 
-**Neu bei R+MUNI?**
-→ Starte mit `01-principles` — hier erfährst du wie das System denkt.
-→ Danach `02-how2` — hier siehst du wie es sich bedienen lässt.
+R+MUNI unterscheidet drei Dokumenttypen:
 
-**Du möchtest den Hintergrund verstehen?**
-→ `00-governance` erklärt die Regeln die hinter jeder Entscheidung stehen.
-→ `03-roesetta_stone` hilft wenn Begriffe oder Konzepte unklar sind.
+| Typ | Zweck | Beispiel |
+|-----|-------|---------|
+| **Principles** | Wie eine Script-Reihe funktioniert — Architektur, Entscheidungen, Philosophie | `CSV_FLOW_principles_S3.md` |
+| **How2** | Wie man eine Script-Reihe bedient — Schritt für Schritt | `CSV_FLOW_How2_S3.md` |
+| **Sprint-Doku** | Was in einem Entwicklungs-Sprint erarbeitet wurde — Delta zum letzten Freeze | `Sprint-DEV-S7-Z3-Feedbackschleifen_S7.md` |
 
-**Du begleitest die Entwicklung aktiv?**
-→ `05-backlog` zeigt was als nächstes kommt.
-→ `06-sprints` zeigt was bereits erledigt wurde und wie es gelaufen ist.
+Dazu kommen:
 
----
+| Typ | Zweck |
+|-----|-------|
+| **Freeze** | Eingefrorener, stabiler Stand am Ende eines Stage — autarke Wissensbasis |
+| **Backlog** | Offene Punkte die noch nicht umgesetzt sind — kein direkter Eingriff in Kernlogik |
+| **GOV** | Governance — Grundregeln, Freigaben, Verantwortlichkeiten |
 
-## Hinweise zur Dokumentationsstruktur
+### Was bedeutet das `_S<N>` am Dateinamen?
 
-- Alle Dokumente folgen dem **S8-Header-Standard** — Projekt, Stage, Status,
-  Datum und Verantwortlichkeit sind immer ausgewiesen.
-- Obsidian-Links (`[[Dokumentname]]`) verbinden Dokumente untereinander —
-  am besten in Obsidian öffnen für volle Navigation.
-- Dokumente mit dem Suffix `_S8` sind aktuelle Stage-8-Artefakte.
-- Ältere Dokumente aus früheren Stages (z.B. S3, S7) sind als solche
-  gekennzeichnet und inhaltlich eingefroren — sie gelten als Referenz,
-  nicht als aktive Anleitung.
+Alle Dokumente im Beta-Zustand tragen einen Stage-Suffix — z.B. `_S6` oder `_S7`.  
+Das zeigt auf einen Blick in welchem Entwicklungsstand das Dokument entstanden ist.  
+**Immer prüfen aus welchem Stage ein Dokument stammt** — gerade bei frühen Stages (S3/S4) hat sich die Ordnerstruktur noch verändert.
 
 ---
 
-*R+MUNI Blueprint — EUMAXL | Stage 8 aktiv | 2026*
+## Script-Baukasten — das Grundprinzip
+
+R+MUNI folgt einem klaren Grundsatz:
+
+> *1 Script = 1 Task. Kein Script macht zwei Dinge.*
+
+Jedes Script:
+- prüft seine Inputs
+- führt genau eine Funktion aus
+- validiert seine Outputs
+- loggt sein Verhalten
+- bricht bei Fehlern hart ab — kein stilles Scheitern
+
+Scripts werden in **Reihen** organisiert. Jede Reihe hat ein Kürzel:
+
+| Reihe | Zweck |
+|-------|-------|
+| **HLP** | Hilfsfunktionen — Basis für alles andere (Kopieren, Backup, Server) |
+| **CSV** | Kern-Datenverarbeitung — vom Archi-Export bis zum fertigen Import-Artefakt |
+| **XML** | XML-Verarbeitung und Master-XML-Pflege |
+| **M2B** | Master ↔ BPMN — erstellt aus dem Modell heraus BPMN-Prozesshüllen (Trigger: Business Prozess) |
+| **ATL** | Atlassian-Integration — Confluence und Jira aus dem Modell heraus |
+| **CLE** | Cleaning und Quality Gate — sauber rein, sauber raus |
+| **ECM** | EasyCSVMapper — externe CSV-Quellen in ArchiMate importieren |
+| **FLW** | Flow-Orchestrierung — Scripts sequenziell über den Scriptrunner ausführen |
+
+Flows verknüpfen Scripts zu deterministischen Abläufen.  
+Der **FLW Scriptrunner** ist der Interpreter — er liest Flows, erkennt Trigger, führt Scripts aus.  
+Keine Workflow-Engine, keine implizite Runtime — nur explizite, nachvollziehbare Abläufe.
+
+---
+
+## Werkzeugkasten — Tier-Struktur
+
+R+MUNI zwingt niemanden in ein Tool-Ökosystem. Es bietet aber eines an — kostenlos als Basis:
+
+**MINIMAL** — absolutes Kernpaket, reicht für Grundbetrieb
+- Archi 5.8 (ArchiMate 3.2 Modellierung)
+- Camunda Modeler (BPMN 2.0)
+- Python 3 (Basis für alle Scripts)
+
+**DEFAULT** — vollständiger Betrieb, 100% kostenlos
+- Alles aus MINIMAL
+- Notepad++ mit Plugins (XML, CSV, Script-Ausführung)
+- Git + GitHub Desktop (Versionierung, GUI)
+- Obsidian (Blueprint-Navigation)
+- OpenJDK 21, PowerShell 7, draw.io, KeePass
+
+**ADDON** — opt-in, nach Bedarf
+- Atlassian Free (Jira + Confluence) — ab 10 Usern kostenpflichtig
+- BOC Group (Enterprise EA/BPMN — kostenpflichtig)
+- VS Code + MCP Integration (DEV only)
+- O365 Ecosystem (geplant)
+
+> Der Kern bleibt kostenlos. Das ist kein Zufall — das ist Grundsatz.
+
+---
+
+## Ordnerstruktur DEV
+
+```
+R+MUNI <KUERZEL>\
+  root.cfg                    ← einzige Konfigurationsquelle (Pfad anpassen)
+  Install.txt                 ← Installationsanleitung
+  structure.txt               ← Ordnerstruktur-Referenz
+  README.md
+
+  00-model\                   ← Archi + BPMN Modelle (read-only für Scripts)
+    00-archimate\
+      00-archimateactive\     ← aktives Archi-Modell
+      01-archimateactivesub\  ← Submodelle
+      99-mappingmodel\        ← OEF Mapping-Modell (ECM-Reihe)
+    01-bpmn\
+
+  01-artifacts\               ← alle abgeleiteten Artefakte
+    00-xml\                   ← XML-Verarbeitung
+    01-scripts\               ← ALLE Python-Scripts (eine Ablage)
+    02-csv\                   ← CSV-Artefakte (master, mapping, child, import)
+    03-XLSX\                  ← XLSX-Artefakte
+    04-flow\                  ← FLW-Reihe + flowmapping + flowtriggers
+    05-reports\               ← Archi HTML Reports
+
+  02-stages\                  ← Laufzeit-Artefakte und Logs
+    model-scope.txt           ← Archi-Modell Scope
+    run-scope.txt             ← aktiver Verarbeitungs-Scope
+    99-logs\                  ← alle Logs
+```
+
+Konfiguration läuft ausschließlich über `root.cfg` — eine Datei, ein Ort, keine Ausnahmen.  
+Alle Scripts lösen Pfade daraus auf. Nie hardcoded.
+
+---
+
+## Mitmachen
+
+**Als Beta-Kunde** — R+MUNI in deiner Organisation einsetzen und Feedback geben:  
+→ [Ticketsystem / Helpcenter](https://ims-blueprint-ticketsystem.atlassian.net/helpcenter/RMNP/)
+
+**Als Developer** — auf der Blueprint-Basis aufbauen.  
+Die Dokumentation ist offen, jede Entscheidung hat einen dokumentierten Grund.  
+Backlog-Inhalte und interne Sprint-Dokus sind auf Anfrage zugänglich — meld dich über GitHub Issues.
+
+**R+MUNI ist AI-driven entwickelt** — der gesamte Entwicklungsprozess mit Claude als Pair-Partner ist dokumentiert und reproduzierbar. Das ist kein Marketingbegriff, das ist Methodik.
+
+---
+
+## Aktueller Stand
+
+R+MUNI befindet sich in **Stage 7 — Real Beta & Ecosystem Expansion**.  
+Aktive Beta-Kunden laufen produktiv. Das System funktioniert — mit echten Ecken und Kanten.
+
+> Wer jetzt einsteigt, begleitet die Entwicklung aktiv. Das ist kein Nachteil — das ist der Punkt.
+
+---
+
+*R+MUNI Blueprint — entwickelt von EUMAXL | Stage 7 aktiv | 2026*  
+*Fragen, Feedback, Interesse → [GitHub Issues](https://github.com/arch-nullnull/R-MUNI/issues) oder [Ticketsystem](https://ims-blueprint-ticketsystem.atlassian.net/helpcenter/RMNP/)*
