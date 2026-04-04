@@ -2,11 +2,8 @@ ACTIVE_MODELS:
 - MUNI EA.archimate
 
 ACTIVE_SUB_MODELS:
-- MUNI FLOW.archimate
-- MUNI IMPO.archimate
 
 OTHER_ARCHIMATE_FILES:
 - 00-archimateactive/log-0.txt
-- 00-archimateactive/log-0.txt.lck
-- 01-archimateactivesub/MUNI FLOW.archimate.bak
+- 99-mappingmodel/trash_test.xml
 
