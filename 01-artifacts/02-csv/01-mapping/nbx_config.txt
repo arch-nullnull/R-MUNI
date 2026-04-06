@@ -1,0 +1,50 @@
+# nbx_config.txt
+# NBX-Flow Konfiguration
+# Ablageort: 01-artifacts\02-csv\01-mapping\nbx_config.txt
+# Stage: S1.02
+#
+# ── Scan-Ziel ────────────────────────────────────────────────
+#
+# ip_range: IP-Adresse, CIDR oder Bereich
+# Beispiele:
+#   192.168.1.0/24
+#   192.168.1.1-192.168.1.50
+#   192.168.1.1,192.168.1.5,10.0.0.0/8
+#
+ip_range=192.168.1.0/24
+
+# ── Ports ─────────────────────────────────────────────────────
+#
+# Standard Windows/Linux:
+#   22 SSH | 23 Telnet | 25 SMTP | 53 DNS | 80 HTTP | 110 POP3
+#   135 RPC | 139 NetBIOS | 143 IMAP | 389 LDAP | 443 HTTPS
+#   445 SMB | 3306 MySQL | 3389 RDP | 5432 PostgreSQL | 5900 VNC
+#
+# IoT / Smart Home / Mediengeräte:
+#   1900 UPnP/SSDP | 5000 UPnP | 7000 AirPlay | 8008 Google Cast
+#   8009 Chromecast | 8080 HTTP-Alt | 8443 HTTPS-Alt | 8888 HTTP-Alt
+#
+# Drucker / NAS:
+#   9100 RAW Print | 515 LPD | 631 IPP | 548 AFP | 2049 NFS
+#
+# Router / Switches:
+#   23 Telnet | 22 SSH | 80 HTTP | 443 HTTPS | 161 SNMP
+#
+# Windows Dynamic:
+#   49152-49160
+#
+scan_ports=22,23,25,53,80,110,135,139,143,161,389,443,445,515,548,631,1900,2049,3306,3389,5000,5432,5900,7000,8008,8009,8080,8443,8888,9100,49152,49153,49154
+
+# ── nmap Argumente ────────────────────────────────────────────
+#
+# -sV       Service-Versionen erkennen
+# --open    nur offene Ports ausgeben
+# -T3       moderates Timing — vollstaendiger als T4, findet mehr Geraete
+#
+scan_args=-sV --open
+
+# ── Output ───────────────────────────────────────────────────
+#
+# output_label: wird als nbx_source in trash_nbx.csv eingetragen
+#
+output_label=scan_lokal

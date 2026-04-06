@@ -1,19 +1,10 @@
 SOURCE=archi
+MODEL=99-mappingmodel/trash_nbx.archimate
+
+SOURCE=archi
 MODEL=MUNI EA.archimate
 
-SOURCE=OEF
-MODEL=MUNI EA.xml
-
-SOURCE=MASTER
-MODEL=MUNI EA.xml
-
-SOURCE=BPMN
-MODEL=MUNI EA.xml
-
-SOUREC=Flow
-MODEL=MUNI EA.xml
-
-
 SOURCE=CSV
-MODEL=trash_test.csv
-MAPPING=trash_test.xml 
+MODEL=trash_nbx.csv
+MAPPING=trash_nbx.xml
+

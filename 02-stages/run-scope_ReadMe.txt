@@ -4,6 +4,7 @@
 # OEF = vorhande OEF Exports aus Archi für XML und oder CSV
 # XLSX = welches Excel File inkludiert sein soll (vermutung) 
 # CSV = ob elements,properties sowie relations.csv vorhanden sind. 
+# MAPPING = für CSV relevant wenn man ECM ausführt und das mapping sauber machen will (muss)
 # MASTER = welche OEF Modelle für den CSV 2 XML run relevant sind und im Flow berücksichtigt werden sollen. 
 # BPMN = Welche Modelle in den M2B Flow berücksichtigt werden sollen. 
 # FLOW = für das FLOW FLOW relevante Modelle und werden aus den SNAPHOTS kopiert.
@@ -36,6 +37,7 @@ MODEL=Importer.xml
 
 #SOURCE=CSV
 #MODEL=properties.csv
+#MAPPING=<Mappingmodellname> Beispiel für Mapping mittels ECM FLOW 
 
 #SOURCE=CSV
 #MODEL=relations.csv

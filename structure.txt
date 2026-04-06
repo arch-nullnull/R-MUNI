@@ -7,7 +7,7 @@ C:.
 |   LICENSE
 |   README.md
 |   root.cfg
-|   Total_structure_R+MUNI.txt
+|   structure.txt
 |   
 +---.obsidian
 |       app.json
@@ -24,6 +24,11 @@ C:.
 |   |   |       
 |   |   +---01-archimateactivesub
 |   |   \---99-mappingmodel
+|   |           archimate3_Diagram.xsd
+|   |           archimate3_Model.xsd
+|   |           archimate3_View.xsd
+|   |           trash_nbx.archimate
+|   |           trash_nbx.xml
 |   |           trash_test.xml
 |   |           
 |   +---01-bpmn
@@ -120,6 +125,11 @@ C:.
 |   |   |   M2B05-writeback_master.py
 |   |   |   M2B06-writeback_bpmn_id.py
 |   |   |   M2B07-scope_snapshot.py
+|   |   |   NBX00-validate_environment.py
+|   |   |   NBX01-validate_config.py
+|   |   |   NBX02-scan_network.py
+|   |   |   NBX03-normalize_to_csv.py
+|   |   |   NBX04-handoff_report.py
 |   |   |   XML00-resolve_root.py
 |   |   |   XML01-collect_sources.py
 |   |   |   XML02-parse_child_xml.py
@@ -255,6 +265,7 @@ C:.
 |   |   |       
 |   |   +---01-mapping
 |   |   |       csvmapping.txt
+|   |   |       nbx_config.txt
 |   |   |       
 |   |   +---02-sync
 |   |   |       assetsexport-readme.txt
@@ -263,9 +274,15 @@ C:.
 |   |   |       
 |   |   +---03-child
 |   |   |   +---00-archimatechild
+|   |   |   |       trash_nbx.csv
+|   |   |   |       
 |   |   |   +---01-bpmnchild
 |   |   |   \---02-xychild
 |   |   +---04-import
+|   |   |       elements.csv
+|   |   |       properties.csv
+|   |   |       relations.csv
+|   |   |       
 |   |   \---99-exports
 |   +---03-XLSX
 |   |   +---00-master
@@ -301,12 +318,31 @@ C:.
 |   |   run-scope_ReadMe.txt
 |   |   
 |   +---00-archimatearchive
+|   |       nbx_raw.json
+|   |       properties.csv
+|   |       relations.csv
+|   |       
 |   +---01-bpmnarchive
 |   +---02-xyarchive
 |   \---99-logs
+|           CLE20-csv_master.log
 |           CSV00-root.resolved.txt
 |           CSV00-validate_environment.log
 |           CSV01-validate_model.log
+|           CSV03-resolve_run_scope.log
+|           CSV04-model_overview.log
+|           ECM00-root.resolved.txt
+|           ECM00-validate_environment.log
+|           ECM01-csv_fields_to_artifacts.log
+|           ECM02-csv_to_mapping_to_csv.log
+|           ECM03-id_merge.log
+|           NBX00-root.resolved.txt
+|           NBX00-validate_environment.log
+|           NBX01-validate_config.log
+|           NBX02-scan_network.log
+|           NBX03-normalize_to_csv.log
+|           NBX04-handoff_report.log
+|           NBX04-handoff_report.txt
 |           
 \---99-doku
         LICENSE
