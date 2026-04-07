@@ -28,6 +28,7 @@ C:.
 |   |           archimate3_Model.xsd
 |   |           archimate3_View.xsd
 |   |           trash_nbx.archimate
+|   |           trash_nbx.archimate.bak
 |   |           trash_nbx.xml
 |   |           trash_test.xml
 |   |           
@@ -259,10 +260,6 @@ C:.
 |   |           
 |   +---02-csv
 |   |   +---00-master
-|   |   |       elements.csv
-|   |   |       properties.csv
-|   |   |       relations.csv
-|   |   |       
 |   |   +---01-mapping
 |   |   |       csvmapping.txt
 |   |   |       nbx_config.txt
@@ -325,12 +322,6 @@ C:.
 |   +---01-bpmnarchive
 |   +---02-xyarchive
 |   \---99-logs
-|           CLE20-csv_master.log
-|           CSV00-root.resolved.txt
-|           CSV00-validate_environment.log
-|           CSV01-validate_model.log
-|           CSV03-resolve_run_scope.log
-|           CSV04-model_overview.log
 |           ECM00-root.resolved.txt
 |           ECM00-validate_environment.log
 |           ECM01-csv_fields_to_artifacts.log
@@ -341,10 +332,7 @@ C:.
 |           NBX01-validate_config.log
 |           NBX02-scan_network.log
 |           NBX03-normalize_to_csv.log
-|           NBX04-handoff_report.log
-|           NBX04-handoff_report.txt
 |           
 \---99-doku
-        LICENSE
         README.md
         
