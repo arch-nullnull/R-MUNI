@@ -7,4 +7,3 @@ MODEL=MUNI EA.archimate
 SOURCE=CSV
 MODEL=trash_nbx.csv
 MAPPING=trash_nbx.xml
-

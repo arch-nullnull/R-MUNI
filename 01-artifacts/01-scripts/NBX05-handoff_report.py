@@ -1,11 +1,11 @@
-# NBX04-handoff_report.py
+# NBX05-handoff_report.py
 # NBX-Flow – Übergabe-Report
-# Einzige Wirkung: nbx_trash.csv auswerten und menschenlesbaren
+# Einzige Wirkung: trash_nbx.csv auswerten und menschenlesbaren
 #                  Übergabe-Report mit Statistik und nächsten Schritten schreiben
-# Voraussetzung: NBX03 erfolgreich
-# Output: 02-stages\99-logs\NBX04-handoff_report.txt
+# Voraussetzung: NBX04 erfolgreich
+# Output: 02-stages\99-logs\NBX05-handoff_report.txt
 # Folge:  ECM00
-# Stage:  S1.02
+# Stage:  S1.03
 
 import os
 import sys
@@ -18,9 +18,9 @@ from HLP00_resolve_root import get_root_cfg
 
 # ─── Konstanten ───────────────────────────────────────────────────────────────
 
-SCRIPT_NAME    = "NBX04-handoff_report"
-LOG_FILENAME   = "NBX04-handoff_report.log"
-REPORT_FILENAME    = "NBX04-handoff_report.txt"
+SCRIPT_NAME    = "NBX05-handoff_report"
+LOG_FILENAME   = "NBX05-handoff_report.log"
+REPORT_FILENAME    = "NBX05-handoff_report.txt"
 NBX00_OUT          = "NBX00-root.resolved.txt"
 TRASH_FILENAME     = "trash_nbx.csv"
 PROPERTIES_FILENAME = "properties_nbx.csv"
@@ -117,7 +117,7 @@ def main():
     bericht.append("NBX-FLOW — ÜBERGABE-REPORT")
     bericht.append(sep)
     bericht.append(f"Erstellt   : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    bericht.append(f"Stage      : S1.02")
+    bericht.append(f"Stage      : S1.03")
     bericht.append(f"rootfolder : {cfg.get('<rootfolder>', '?')}")
     bericht.append("")
 
@@ -153,7 +153,7 @@ def main():
     bericht.append("           → in .gitignore eintragen")
     bericht.append("")
     bericht.append(sep)
-    bericht.append(f"NBX04 | R+MUNI Blueprint | S1.02")
+    bericht.append(f"NBX05 | R+MUNI Blueprint | S1.03")
     bericht.append(sep)
 
     # 5) Report schreiben

@@ -5,10 +5,12 @@ ACTIVE_SUB_MODELS:
 
 OTHER_ARCHIMATE_FILES:
 - 00-archimateactive/log-0.txt
+- 00-archimateactive/log-0.txt.lck
 - 99-mappingmodel/archimate3_Diagram.xsd
 - 99-mappingmodel/archimate3_Model.xsd
 - 99-mappingmodel/archimate3_View.xsd
 - 99-mappingmodel/trash_nbx.archimate
+- 99-mappingmodel/trash_nbx.archimate.bak
 - 99-mappingmodel/trash_nbx.xml
 - 99-mappingmodel/trash_test.xml
 
