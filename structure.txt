@@ -5,6 +5,7 @@ C:.
 |   .gitignore
 |   Install.txt
 |   LICENSE
+|   plugins.dat
 |   README.md
 |   root.cfg
 |   structure.txt
@@ -21,6 +22,9 @@ C:.
 |   |   +---00-archimateactive
 |   |   |       log-0.txt
 |   |   |       MUNI EA.archimate
+|   |   |       MUNI EA.archimate.bak
+|   |   |       MUNI FLOW.archimate
+|   |   |       VIE11-Structure View.svg
 |   |   |       
 |   |   +---01-archimateactivesub
 |   |   \---99-mappingmodel
@@ -130,7 +134,8 @@ C:.
 |   |   |   NBX01-validate_config.py
 |   |   |   NBX02-scan_network.py
 |   |   |   NBX03-normalize_to_csv.py
-|   |   |   NBX04-handoff_report.py
+|   |   |   NBX04-ip_merge.py
+|   |   |   NBX05-handoff_report.py
 |   |   |   XML00-resolve_root.py
 |   |   |   XML01-collect_sources.py
 |   |   |   XML02-parse_child_xml.py
@@ -260,6 +265,10 @@ C:.
 |   |           
 |   +---02-csv
 |   |   +---00-master
+|   |   |       elements.csv
+|   |   |       properties.csv
+|   |   |       relations.csv
+|   |   |       
 |   |   +---01-mapping
 |   |   |       csvmapping.txt
 |   |   |       nbx_config.txt
@@ -322,6 +331,11 @@ C:.
 |   +---01-bpmnarchive
 |   +---02-xyarchive
 |   \---99-logs
+|           CLE22-csv_archimate_child.log
+|           CSV00-root.resolved.txt
+|           CSV00-validate_environment.log
+|           CSV01-validate_model.log
+|           CSV04-model_overview.log
 |           ECM00-root.resolved.txt
 |           ECM00-validate_environment.log
 |           ECM01-csv_fields_to_artifacts.log
@@ -332,6 +346,9 @@ C:.
 |           NBX01-validate_config.log
 |           NBX02-scan_network.log
 |           NBX03-normalize_to_csv.log
+|           NBX04-ip_merge.log
+|           NBX05-handoff_report.log
+|           NBX05-handoff_report.txt
 |           
 \---99-doku
         README.md
