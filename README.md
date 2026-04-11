@@ -8,7 +8,7 @@
 
 Es ist mein persönliches Projekt — entstanden in meiner Freizeit, aus echtem Interesse und mit echter Überzeugung.
 
-Ja, im Kern sind es eine Vorgehensweise, ein paar Open-Source-Tools und Python-Scripts die irgendwas machen. Aber für mich ist es weit mehr als das — und wer sich die Zeit nimmt, es zu durchschauen, wird es für sich vielleicht auch entdecken...
+Ja, im Kern sind es 4 Vorgehensweisen, ein paar Open-Source-Tools und Python-Scripts. Aber für mich ist es weit mehr — und wer sich die Zeit nimmt, wird es vielleicht auch entdecken...
 
 R+MUNI ist eine Perspektive: etwas **sinnstiftendes** zu schaffen, das vielleicht wirklich jemandem helfen kann — **ohne schlechtes Gewissen, ohne versteckte Abo-Fallen, ohne Hintertüren.**
 
@@ -44,83 +44,61 @@ Wer R+MUNI nutzt, bekommt kein verstecktes Abo und keinen Lock-in.
 
 ---
 
-## Der Toolbaukasten — welche Tools brauchst du?
+## Die vier Säulen
 
-R+MUNI setzt ausschließlich auf frei verfügbare, stabile Open-Source-Werkzeuge. Der gesamte Kern-Stack kostet nichts — das ist kein Zufall, sondern Grundsatz.
+R+MUNI ist in vier Säulen aufgebaut — die ersten drei bilden die Basis, aus der sich die vierte von selbst ergibt.
 
-![Toolbaukasten Übersicht](99-doku/07-creative/images/svg%20claude/toolbaukasten.svg)
+![Die vier Säulen von R+MUNI](__SVG_SAEULEN_PFAD__)
 
-> [[toolbaukasten.svg]]
+> [[svg_saeulen.svg]]
 
-| Tool | Zweck | Link |
+| Säule | Inhalt | Kern-Tools |
 |---|---|---|
-| **Archi 5.8** | Enterprise Architecture — die Single Source of Truth | [archimatetool.com](https://www.archimatetool.com/) |
-| **Camunda Modeler** | BPMN 2.0 Prozessmodellierung | [camunda.com/download/modeler](https://camunda.com/download/modeler/) |
-| **Python 3.x** | Automatisierung der Script-Reihen | [python.org](https://www.python.org/) |
-| **jArchi 1.11.0** | JavaScript Scripting-Plugin für Archi | [github.com/archimatetool/archi-scripting-plugin](https://github.com/archimatetool/archi-scripting-plugin) |
-| **OpenJDK 21** | Java-Runtime (Voraussetzung für Archi & Camunda) | [adoptium.net](https://adoptium.net/) |
-| **Notepad++** | Editor für alle Dateitypen (XML, CSV, CFG, MD) | [notepad-plus-plus.org](https://notepad-plus-plus.org/) |
-| **Git** | Technischer Unterbau — Bash & VS Code Integration für Claude | [git-scm.com](https://git-scm.com/) |
-| **GitHub** | Repository-Verwaltung, Backup, Sync | [github.com](https://github.com/) |
-| **Obsidian** | Markdown-Dokumentation, Vault-Navigation | [obsidian.md](https://obsidian.md/) |
-| **draw.io** | Rein visuelle Diagramme (kein ArchiMate/BPMN) | [drawio.com](https://www.drawio.com/) |
-| **Inkscape** | SVG-Nachbearbeitung | [inkscape.org](https://inkscape.org/) |
-| **PowerShell 7** | Batch-Automation, Python-Orchestrierung | [github.com/PowerShell/PowerShell](https://github.com/PowerShell/PowerShell) |
-| **KeePass** | Credential-Verwaltung | [keepass.info](https://keepass.info/) |
-| **Claude** | Bevorzugte KI-Lösung — Pair-Partner für Entwicklung, Dokumentation und Debugging | [claude.ai](https://claude.ai/) |
+| **01 Visuelle Übersicht** | ArchiMate, BPMN, freie Diagramme | Archi 5.8, Camunda Modeler, draw.io, Inkscape |
+| **02 Dokumentation & Wissen** | Markdown-Vault, Repo, Principles, How2 | Obsidian, Notepad++, GitHub, Git |
+| **03 Struktur & Vorlagen** | Ordnerstruktur, Scripts, Konfiguration, Templates | Python 3, PowerShell 7, Dir_Setup.bat, root.cfg |
+| **04 Step 1 — AI-Nutzung** | Wer 01–03 kennt, hat den Kontext für KI. | Sprachmodell + GOV + AI_DRIVEN_DEV als Basis |
 
-**Summe: 0 EUR**
+**Alle Kernkomponenten: 0 EUR.** Keine versteckten Kosten, keine Pflicht-Abos, kein Lock-in.
 
-> Archi ist das Herz von R+MUNI. Das Team stellt es kostenlos zur Verfügung — wer Mehrwert sieht, kann als Patron unterstützen: [archimatetool.com/donate](https://www.archimatetool.com/donate/)
+Addons (Atlassian, BOC Integration, VS Code) sind optional und werden in [`Install.txt`](Install.txt) beschrieben.
 
 ---
 
-## Der Script-Baukasten — wie funktioniert die Automatisierung?
+## Für wen ist R+MUNI? — Drei Varianten, eine Basis
 
-R+MUNI automatisiert Datenflüsse zwischen den Tools über Python-Scripts. Das Prinzip dahinter ist bewusst einfach:
+![R+MUNI Varianten: CARD, R+MUNI, DEV](__SVG_VARIANTEN_PFAD__)
 
-> *1 Script = 1 Aufgabe.*
+> [[svg_varianten.svg]]
 
-Kein Script macht zwei Dinge gleichzeitig. Kein Flow enthält versteckte Logik. Was ein Script tut, ist aus seinem Namen und seinem Log unmittelbar nachvollziehbar.
+R+MUNI unterscheidet drei Varianten — keine Hierarchie, sondern Kontexttrennung.
 
-### Wie ein Flow funktioniert
+**CARD** ist der spielerische Einstieg — minimal, keine Fachbegriffe, kein formaler Überbau. Vom Buchprojekt bis zum Vereinslayout. In Entwicklung (Phase 2).
 
-Ein **Flow** beschreibt *was* passiert. Die **Scripts** implementieren *wie* es passiert.
+**R+MUNI** ist die Produktivvariante — reduzierte Norm-Sprache, KMU-tauglich. Modellieren, dokumentieren, Flows ausführen. Struktur fix, Konfiguration einmalig. Associate-Templates sind auf diesen Kontext zugeschnitten.
 
+**DEV** ist das vollständige Blueprint-System — GOV-konform, AI-driven entwickelt, vollständige Principles und How2. Basis für alle Ableitungen und Weiterentwicklungen.
 
-### Die Script-Reihen
+**EXPERT** entsteht bei Bedarf als Extraktion aus DEV — volle Norm-Konformität, on-demand, kein dauerhafter eigener Dokumentationsbereich.
 
-R+MUNI organisiert seine Scripts in klar abgegrenzte **Reihen**. Jede Reihe hat einen festen Kürzel-Präfix:
+---
 
-| Reihe | Kürzel | Zweck |
-|---|---|---|
-| **HLP** | `HLP` | Hilfsfunktionen — Basis für alle anderen Reihen (Root-Auflösung, Backup, Server) |
-| **CSV** | `CSV` | Kern-Datenverarbeitung — vom Archi-Export bis zum fertigen Import-Artefakt |
-| **XML** | `XML` | XML-Verarbeitung und Master-XML-Pflege |
-| **M2B** | `M2B` | Master → BPMN — erstellt aus dem Modell heraus BPMN-Prozesshüllen |
-| **ATL** | `ATL` | Atlassian-Integration — Confluence und Jira aus dem Modell heraus |
-| **CLE** | `CLE` | Cleaning und Quality Gate — sauber rein, sauber raus |
-| **ECM** | `ECM` | EasyCSVMapper — externe CSV-Quellen in ArchiMate importieren |
-| **FLW** | `FLW` | Flow-Orchestrierung — der Scriptrunner selbst |
+## Step 1 — AI-Nutzung
 
-Die vollständige Dokumentation aller Reihen — Principles, How2 und Detailbeschreibungen — findest du in der DEV-Dokumentation:
-[https://github.com/arch-nullnull/R-MUNI/blob/main/99-doku/README.md](99-doku/README.MD)
+R+MUNI ist **AI-driven entwickelt** — der gesamte Entwicklungsprozess ist dokumentiert und reproduzierbar.
 
-### Was du als Associate wissen musst
+Wer die drei Säulen kennt — Visuelle Übersicht, Dokumentation und Struktur & Vorlagen — hat automatisch den Kontext der für einen produktiven AI-Einsatz notwendig ist.
 
-Als Associate arbeitest du mit R+MUNI — du entwickelst es nicht. Das bedeutet in der Praxis:
-
-**Du konfigurierst einmalig** die `root.cfg` — eine einzige Datei, ein einziger Eintrag:
 ```
-rootfolder=C:\Prototyping\R+MUNI <KUERZEL>
+Schritt 1:  GOV-Dokument laden                     → verbindliche Regeln
+Schritt 2:  AI_DRIVEN_DEV_METHODE laden            → operative Arbeitsmethode
+Schritt 3:  Projektfolder als Kontext bereitstellen → Single Source of Truth
+            → Pair-Development starten
 ```
-Alle Pfade leiten sich automatisch daraus ab. Danach greifst du diese Datei nur an wenn sich dein Basisverzeichnis ändert.
 
-**Du startest Scripts** über den Scriptrunner (`FLW00-scriptrunner.py`) oder direkt über PowerShell.
+Die vollständige Methode — Session-Ablauf, Kommunikationsregeln, Drift-Prävention — ist in [`AI_DRIVEN_DEV_METHODE`](00-governance/AI_DRIVEN_DEV_METHODE_DEV_S102.md) dokumentiert.
 
-**Du liest `.txt`-Artefakte** (z.B. `run-scope.txt`, `model-scope.txt`) wenn du den aktuellen Workflow-Stand prüfen möchtest — diese sind bewusst menschenlesbar.
-
-**Du öffnest `.log`-Dateien** (in `02-stages\99-logs\`) nur wenn etwas schiefgelaufen ist — sie sind technische Debug-Ausgaben, kein normaler Workflow-Bestandteil.
+Welches Sprachmodell eingesetzt wird, ist in [`Install.txt`](Install.txt) Abschnitt 3.8 beschrieben.
 
 ---
 
@@ -139,17 +117,10 @@ Innerhalb von `R+MUNI <KUERZEL>\` gilt:
 
 > Konfiguration läuft ausschließlich über `root.cfg` — eine Datei, ein Ort, keine Ausnahmen.
 
----
+Die Script-Reihen (HLP, CSV, XML, ECM, NBX, ATL, M2B, FLW, CLE) sind als eigenständige Funktionseinheiten aufgebaut: **1 Script = 1 Aufgabe.** Kein Script macht zwei Dinge gleichzeitig. Was ein Script tut, ist aus seinem Namen und seinem Log unmittelbar nachvollziehbar.
 
-## Wer arbeitet mit R+MUNI? — Drei Rollen, drei Welten
-
-R+MUNI unterscheidet bewusst zwischen drei Rollen — keine Hierarchie, sondern Kontexttrennung.
-
-**Expert** kennt das System von innen. Er arbeitet mit ArchiMate, versteht den Datenfluss, baut Script-Reihen auf und erweitert sie. Vollständige Principles und How2-Dokumente liegen in der öffentlichen Dokumentation: [github.com/arch-nullnull/R-MUNI-Doku-public](https://github.com/arch-nullnull/R-MUNI-Doku-public)
-
-**Associate** nutzt R+MUNI im Organisationskontext — modelliert, dokumentiert, führt Flows aus. Die Struktur ist fix, die Konfiguration einmalig. Associate-Templates und How2-Dokumente sind auf diesen Kontext zugeschnitten.
-
-**MGT** ist die lockere Welt — kein Business-Kontext, keine Compliance, keine Governance. Vom Buchprojekt bis zum Vereinslayout. R+MUNI-Methoden funktionieren auch hier, aber ohne formalen Überbau. In Entwicklung (Phase 2).
+Die vollständige Dokumentation aller Reihen findest du in der DEV-Dokumentation:
+[github.com/arch-nullnull/R-MUNI-Doku-public](https://github.com/arch-nullnull/R-MUNI-Doku-public)
 
 ---
 
@@ -159,9 +130,28 @@ R+MUNI wird aktiv weiterentwickelt und befindet sich aktuell in **Beta 1.0 — P
 
 **Als Associate** kannst du R+MUNI in deiner Organisation einsetzen, Feedback geben und damit direkt beeinflussen wie das System weiterentwickelt wird. Der Feedback-Weg ist klar geregelt — kein schwarzes Loch, keine leeren Versprechen.
 
-**Als Developer** kannst du auf der Blueprint-Basis aufbauen. Die Dokumentation ist offen, die Prinzipien sind nachvollziehbar, und jede Entscheidung hat einen dokumentierten Grund. R+MUNI ist **AI-driven entwickelt** — der gesamte Entwicklungsprozess mit Claude als Pair-Partner ist dokumentiert und reproduzierbar.
+**Als Developer** kannst du auf der Blueprint-Basis aufbauen. Die Dokumentation ist offen, die Prinzipien sind nachvollziehbar, und jede Entscheidung hat einen dokumentierten Grund. R+MUNI ist **AI-driven entwickelt** — der gesamte Entwicklungsprozess ist dokumentiert und reproduzierbar.
 
 Interesse? Meld dich — über GitHub Issues:
+[github.com/arch-nullnull/R-MUNI-Doku-public](https://github.com/arch-nullnull/R-MUNI-Doku-public)
+
+---
+
+## Optionale Leistungen
+
+Das System ist kostenlos — und das bleibt so. Wer bei Einrichtung, Einführung oder laufendem Betrieb Unterstützung möchte, kann das anfragen.
+
+![Optionale Leistungen: Setup, Schulung, Support](__SVG_LEISTUNGEN_PFAD__)
+
+> [[svg_leistungen.svg]]
+
+| Leistung | Inhalt |
+|---|---|
+| **Setup** | Ersteinrichtung aller Komponenten, Konfiguration, erster Funktionstest |
+| **Schulung** | Einführung in ArchiMate, BPMN, R+MUNI Methode und AI-Nutzung |
+| **Support** | Laufende Begleitung, Bug-Analyse, Modell-Review, Sprint-Begleitung |
+
+Kein Automatismus — Kapazität und Workload entscheiden. Kontakt über GitHub Issues:
 [github.com/arch-nullnull/R-MUNI-Doku-public](https://github.com/arch-nullnull/R-MUNI-Doku-public)
 
 ---

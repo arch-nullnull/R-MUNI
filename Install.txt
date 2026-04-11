@@ -1,28 +1,53 @@
 ================================================================================
 R+MUNI – INSTALLATIONSANLEITUNG
-Stage 8 | Beta 1.0 | R+MUNI Blueprint
+Stage 1.04 | Beta 1.0 | R+MUNI Blueprint
 ================================================================================
 Erstellt    : 2026-03-02
-Aktualisiert: 2026-03-28
-Stage       : S8 – BETA 1.0
+Aktualisiert: 2026-04-11
+Stage       : S1.04 — AKTIV
 Ablageort   : R+MUNI <KUERZEL>\Install.txt  (Blueprint Root)
 ================================================================================
 
-Werkzeugkasten-Prinzip: Minimal (Kern) → Default (vollständiger Betrieb) → Addon
-Hintergrund und Konzept: INST_principles_S8.md (01-principles)
+Werkzeugkasten-Prinzip:
+  Struktur & Vorlagen → Visuelle Übersicht → Dokumentation → KI-Einstieg → Addon
+
+Hintergrund und Konzept: INST_principles_S104.md (01-principles)
 
 
 ================================================================================
 SCHNELLSTART — REIHENFOLGE
 ================================================================================
 
-  1. Install_ZIP_4_R+MUNI.zip aus dem Repository laden. 
-  2. ZIP-Inhalt entpacken nach <Installationsordner>R+MUNI <KUERZEL>\
-  3. root.cfg prüfen (Abschnitt 1.2)
-  4. Komponenten installieren (Abschnitte 2 und 3, Addons nach Bedarf aus Abschnitt 4)
-  5. Ersten Funktionstest ausführen (Abschnitt 5)
-  6. Dir_Setup.bat ausführen (Doppelklick) — legt alle R+MUNI Unterverzeichnisse an
-     Bindende Referenz für die vollständige Verzeichnisstruktur: HLP99
+Alle Komponenten sind kostenfrei — Addons ausgenommen (siehe Abschnitt 7).
+
+   1. Aktuelles Release laden
+        https://github.com/arch-nullnull/R-MUNI/releases
+
+   2. Aktuelles Doku-Public-Repo laden
+        https://github.com/arch-nullnull/R-MUNI-Doku-public.git
+
+   3. ZIP-Inhalte entpacken
+
+   4. Root-Ordner erstellen
+        R+MUNI <Kürzel>\  z.B. R+MUNI ASC
+        Empfohlener Basispfad: C:\Prototyping\R+MUNI <Kürzel>\
+
+   5. Variante auswählen (aus dem Doku-Public-Repo):
+        CARD      Spielerischer Einstieg — minimal, keine Fachbegriffe
+        R+MUNI    Produktivvariante — Standard (empfohlen)
+        DEV       Vollständig, GOV-konform — für Expert-Betrieb
+
+   6. Relevante Doku in R+MUNI <Kürzel>\99-doku ablegen
+
+   7. Tool-Installation nach Wunschsetup
+        Reihenfolge wie in diesem Dokument (Abschnitte 2–5)
+
+   8. Ordnerstruktur prüfen (siehe structure.txt)
+        Wenn nicht alle Ordner vorhanden: HLP99 Script ausführen
+
+   9. root.cfg an Installation anpassen (Abschnitt 1.2)
+
+  10. Ersten Funktionstest ausführen (Abschnitt 6)
 
 
 ================================================================================
@@ -80,10 +105,11 @@ Empfohlener Basispfad: C:\Prototyping\  (oder beliebiger Laufwerksbuchstabe)
 
   R-MUNI\
       GitHub Sync — Blueprint App Repository (öffentlich)
+      https://github.com/arch-nullnull/R-MUNI.git
 
   R-MUNI-Doku-public\
       DEV Doku — öffentliche Entwickler- und Expert-Dokumentation
-      https://github.com/arch-nullnull/R-MUNI-Doku-public
+      https://github.com/arch-nullnull/R-MUNI-Doku-public.git
 
 HINWEIS GitHub Sync:
   Der Kunde hält seine eigenen Repositories — nicht der DEV.
@@ -95,7 +121,6 @@ HINWEIS GitHub Sync:
 --------------------------------------------------------------------------------
   R+MUNI <KUERZEL>\
   ├── Install.txt           ← dieses Dokument
-  ├── Dir_Setup.bat         ← Ordnerstruktur anlegen (einmalig, Doppelklick)
   ├── root.cfg              ← Konfiguration: rootfolder=<Pfad>
   ├── structure.txt         ← Ordnerstruktur-Referenz (Script-Pflicht)
   ├── 00-model\             ← ArchiMate + BPMN Modelle
@@ -109,52 +134,97 @@ HINWEIS GitHub Sync:
 
 
 ================================================================================
-2. MINIMAL — absolutes Kern-Trio
+2. STRUKTUR & VORLAGEN
 ================================================================================
 
-Reicht für grundlegenden R+MUNI Betrieb: Modellieren, Scripten, Exportieren.
+Dieser Bereich legt die Grundlage für den R+MUNI Betrieb:
+Versionierung, Synchronisation, Dokumentation und KI-Unterstützung.
 
 
-2.1 Archi 5.8
+2.1 Obsidian — Struktur & Vorlagen / Views
 --------------------------------------------------------------------------------
-  Download : https://www.archimatetool.com/download/
-  Lizenz   : kostenlos, open source
-  Zweck    : ArchiMate 3.2 Modellierung, OEF Export, Master-ID gebendes System
-  Installer: Archi-Win64-Setup-5.8.0.exe
+  Download : https://obsidian.md/
+  Lizenz   : proprietär, kostenlos für persönliche und kommerzielle Nutzung
+  Zweck    : Vault-basierte MD Dokumentation und Wissensmanagement
+             Vorlagen und Views für Blueprint-Struktur
+  Installer: Obsidian aktuell
+  Hinweis  : Kann durch unternehmenseigene MD-Lösung ersetzt werden
 
-  Modelle im Blueprint:
-    00-model\00-archimate\00-archimateactive\    → aktive Modelle
-    00-model\00-archimate\01-archimateactivesub\ → Sub-Modelle
-
-  Pflicht-Plugins (via Help → Manage Plug-ins → Install New):
-    jArchi (1.11.0)    JavaScript Scripting in Archi — Basis für alle .ajs Scripts
-                       Benötigt OpenJDK 21 — siehe Default Setup Abschnitt 3.5
-
-  Plugin-Installation:
-    Menü → Help → Manage Plug-ins → Install New → .archiplugin Datei wählen
-    Archi neu starten nach jeder Plugin-Installation.
-
-  Aktive BPMN Modelle: 00-model\01-bpmn\00-bpmnactive\
+  Einrichtung:
+    Obsidian starten → Vaults verwalten → Ordner als Vault öffnen
+    Vault: C:\Prototyping\R+MUNI <KUERZEL>\99-doku\
 
 
-2.2 Camunda Modeler
+2.2 GitHub Desktop — Sync & Vorlagen / Support
 --------------------------------------------------------------------------------
-  Download : https://camunda.com/download/modeler/
-  Lizenz   : kostenlos
-  Zweck    : BPMN 2.0 Modellierung und Prozessanreicherung
-  Hinweis  : Camunda 7 Format verwenden — Blueprint ist darauf optimiert
-             Kein Installer — ZIP entpacken nach:
-             C:\Prototyping\R+MUNI Apps\camunda-modeler
-             Versionsangabe aus Ordnernamen entfernen — direkt ausführbar.
+  Download : https://github.com/desktop/desktop/releases
+  Lizenz   : MIT
+  Zweck    : GUI für GitHub Sync — kein CLI erforderlich
+             Verwaltung der R+MUNI Repositories
+             Vorlagen-Sync und Support-Kommunikation
+  Hinweis  : Benötigt Git als technischen Unterbau (siehe 2.2.1)
+
+  GitHub Sync-Übersicht:
+    R+MUNI <Kundenkürzel>\         Kunden-Repo      optional
+    R+MUNI Archiv <Kundenkürzel>\  Kunden-Archiv    optional
+    R+MUNI Apps\                   kein Sync        —
+
+  Hinweis: Kunden-Repos werden vom Kunden selbst gehalten.
+           DEV-Zugriff nur auf explizite Freigabe durch den Kunden.
+  Hinweis: Kein Clone für Installation — immer Dir_Setup.bat + ZIP.
+           Kürzel im Ordnernamen verhindert GitHub Namenskonflikt.
 
 
-2.3 Python 3
+
+
+2.3 PowerShell 7
 --------------------------------------------------------------------------------
-  Download : https://www.python.org/downloads/
-  Lizenz   : kostenlos, open source
-  Zweck    : Basis für alle R+MUNI Scripts (CSV, XML, HLP, FLW, ATL, M2B)
+  Download : https://github.com/PowerShell/PowerShell/releases
+  Lizenz   : MIT
+  Zweck    : Scripts starten, Ordnerstruktur verwalten,
+             Batch-Operationen im Blueprint-Verzeichnis
+  Installer: PowerShell aktuell (x64 .msi)
+
+  Als Standard-Terminal setzen:
+    Windows Einstellungen → System → Für Entwickler → Terminal → PowerShell 7
+  Prüfen: pwsh --version
+
+
+2.5 Notepad++
+--------------------------------------------------------------------------------
+  Download : https://github.com/notepad-plus-plus/notepad-plus-plus/releases
+  Lizenz   : GPL v2
+  Zweck    : Editieren von XML, CSV, txt, Python Scripts, jArchi Scripts
+  Installer: npp aktuell (x64)
+  Pfad     : C:\Prototyping\R+MUNI Apps\notepadplusplus
+
+  Beim ersten Start: Startdialog schließen (Haken "Do not show again").
+
+  Plugins installieren via: Menü → Plugins → Plugins Admin
+  Alle folgenden Plugins installieren — keine weglassen:
+
+  Via Plugin Admin (herunterladen und installieren):
+    XML Tools       XML formatieren, validieren, XPath — für master.xml und BPMN
+    XML Navigator   Baumstruktur von XML Dateien sichtbar machen
+    CSV Lint        Master CSVs auf Struktur und Encoding prüfen
+    CSVQuery        CSV Inhalte direkt abfragen ohne Excel
+    NPPEXEC         Python Scripts direkt aus Notepad++ starten
+    Compare         Dateiversionen vergleichen
+    JSTool          JavaScript formatieren — für jArchi Scripts (.ajs)
+                    Nicht immer im Plugin Admin verfügbar —
+                    bei Bedarf manuell installieren (liegt im R+MUNI Installer Ordner)
+    Explorer        Dateibrowser direkt in Notepad++
+    Python Scripts  Python Automatisierungen in Notepad++ ausführen
+    Converter       Encoding prüfen und auf UTF-8 konvertieren
+
+
+2.6 Python 3
+--------------------------------------------------------------------------------
+  Download : https://github.com/python/cpython/releases
+  Lizenz   : PSF License (Python Software Foundation)
+  Zweck    : Basis für alle R+MUNI Scripts (CSV, XML, HLP, FLW, ATL, M2B, NBX, ECM)
   Wahl     : "Standalone Installer" — nicht die Windows Store-Version
-  Installer: python-3.14.2-amd64.exe (oder höher)
+  Installer: python aktuell (amd64)
 
   Installationsschritte:
     1. Installer starten
@@ -167,259 +237,128 @@ Reicht für grundlegenden R+MUNI Betrieb: Modellieren, Scripten, Exportieren.
   Prüfen (Terminal nach Installation neu starten):
     python --version
 
-  Pflicht-Pakete für aktuelle Scripts:
+  Pflicht-Pakete:
     pip install lxml openpyxl
 
     lxml     → XML05-clear_merge.py
     openpyxl → CSV07, CSV08 (XLSX Verarbeitung)
 
+  Zusatzpakete für NBX-Reihe (Netzwerk-Scan):
+    pip install python-nmap
 
-================================================================================
-3. DEFAULT R+MUNI SETUP — vollständiger Betrieb
-================================================================================
+    python-nmap → NBX02 Netzwerk-Scan (benötigt zusätzlich nmap binary — siehe 2.5.1)
 
-Vollständiges Arbeitspaket für echten R+MUNI Betrieb und Weiterentwicklung.
-Alle Komponenten aus Abschnitt 2 (Minimal) vorausgesetzt.
-
-
-3.1 Notepad++
---------------------------------------------------------------------------------
-  Download : https://notepad-plus-plus.org/
-  Lizenz   : kostenlos, open source
-  Zweck    : Editieren von XML, CSV, txt, Python Scripts, jArchi Scripts
-  Installer: npp.x.x.Installer.x64.exe
-  Pfad     : C:\Prototyping\R+MUNI Apps\notepadplusplus
-
-  Beim ersten Start: Startdialog schließen (Haken "Do not show again").
-
-  Plugins installieren via: Menü → Plugins → Plugins Admin
-
-  PLUGINS — PFLICHT für R+MUNI Arbeit (alle via Plugin Admin):
-    XML Tools       XML formatieren, validieren, XPath — für master.xml und BPMN
-                    https://github.com/morbac/xmltools
-    XML Navigator   Baumstruktur von XML Dateien sichtbar machen
-                    https://github.com/wpsurfer/nppxmlnavigator (bis Version 1.2)
-    CSV Lint        Master CSVs auf Struktur und Encoding prüfen
-                    https://github.com/BdR76/CSVLint
-    CSVQuery        CSV Inhalte direkt abfragen ohne Excel
-                    https://github.com/jonathanpotts/NppCsvQuery
-    NPPEXEC         Python Scripts direkt aus Notepad++ starten
-                    https://github.com/d0vgan/nppexec
-    Compare         Dateiversionen vergleichen
-                    https://github.com/pnedev/compare-plugin
-
-  PLUGINS — NÜTZLICH (alle via Plugin Admin):
-    Converter       Encoding prüfen und auf UTF-8 konvertieren
-                    https://github.com/npp-plugins/converter
-    JSTool          JavaScript formatieren — für jArchi Scripts (.ajs)
-                    Plugin Admin — Fallback manuell: https://github.com/sunjw/jstoolnpp
-                    Achtung: nicht immer im Plugin Admin verfügbar —
-                    bei Bedarf manuell installieren (liegt im R+MUNI Installer Ordner)
-    Explorer        Dateibrowser direkt in Notepad++ — via Plugin Admin
-    Python Scripts  Python Automatisierungen in Notepad++ ausführen
-                    https://github.com/bruderstein/PythonScript
-
-  PLUGINS — NICHT R+MUNI spezifisch (nicht installieren):
-    Code Alignment, MIME Tools, NPPExport — kein Blueprint-Bezug
+  2.6.1 nmap (binary — Abhängigkeit NBX-Reihe)
+  ........................................................................
+    Download : https://github.com/nmap/nmap
+    Lizenz   : NPSL (Nmap Public Source License — GPLv2-basiert, kostenlos für Endnutzer)
+    Zweck    : Netzwerk-Scanner — technische Abhängigkeit NBX02
+    Installer: nmap aktuell (Windows Self-Installer)
+    Hinweis  : nmap muss im System-PATH verfügbar sein
+               Nach Installation Terminal neu starten
+    Prüfen   : nmap --version
+    Nur erforderlich wenn NBX-Reihe (Netzwerk-Scan) genutzt wird.
 
 
-3.2 Git
---------------------------------------------------------------------------------
-  Download : https://git-scm.com/
-  Lizenz   : kostenlos, open source
-  Zweck    : Technische Basis für GitHub Desktop
-             Git Bash als Shell-Erweiterung zu PowerShell
-  Installer: Git-2.53.0.2-64-bit.exe (oder höher)
-  Pfad     : C:\Prototyping\R+MUNI Apps\git
-
-  Installations-Hinweis:
-    "Use Git from the Windows Command Prompt" aktivieren (PATH Eintrag)
-    Editor: Notepad++ wählen (bereits installiert aus Schritt 3.1)
-  Prüfen: git --version
-
-
-3.3 PowerShell 7
---------------------------------------------------------------------------------
-  Download : https://github.com/PowerShell/PowerShell/releases
-  Lizenz   : kostenlos, open source
-  Zweck    : Scripts starten, Ordnerstruktur verwalten,
-             Batch-Operationen im Blueprint-Verzeichnis
-  Installer: PowerShell-7.5.5-win-x64.msi (oder höher)
-
-  Als Standard-Terminal setzen:
-    Windows Einstellungen → System → Für Entwickler → Terminal → PowerShell 7
-  Prüfen: pwsh --version
-
-
-3.4 Obsidian
---------------------------------------------------------------------------------
-  Download : https://obsidian.md/
-  Lizenz   : kostenlos für persönliche Nutzung
-  Zweck    : Vault-basierte MD Dokumentation und Wissensmanagement
-             Verknüpft alle R+MUNI Verzeichnisse als durchsuchbare Vaults
-  Installer: Obsidian-1.12.4.exe (oder höher)
-  Hinweis  : Kann durch unternehmenseigene MD-Lösung ersetzt werden
-
-  Einrichtung:
-    Obsidian starten → Vaults verwalten → Ordner als Vault öffnen
-    Empfohlene Vaults:
-      C:\Prototyping\R+MUNI <KUERZEL>\
-      C:\Prototyping\R+MUNI Doku <KUERZEL>\R+MUNI Doku\
-
-
-3.5 OpenJDK 21
+2.7 OpenJDK 21 — Archi Script-Unterstützung
 --------------------------------------------------------------------------------
   Download : https://adoptium.net/de/
-  Lizenz   : kostenlos, open source
+  Lizenz   : GPLv2 + Classpath Exception
   Zweck    : Java Runtime für jArchi (GraalVM JavaScript Engine in Archi)
-  Installer: OpenJDK21U-jdk_x64_windows_hotspot_21.0.10_7.msi
+  Installer: OpenJDK 21 LTS aktuell (x64, Windows .msi)
   Hinweis  : Ohne OpenJDK können jArchi Scripts (.ajs) nicht ausgeführt werden
 
   Prüfen: java --version
 
 
-3.6 Archi Plugins — Erweiterung
+================================================================================
+3. VISUELLE ÜBERSICHT
+================================================================================
+
+Werkzeuge für Modellierung, Diagramme und visuelle Artefakte.
+Jedes Werkzeug hat einen klar definierten Bereich — kein Tool ersetzt ein anderes.
+
+
+3.1 Archi 5.x — ArchiMate 3.2 Modellierung
 --------------------------------------------------------------------------------
-  Zusätzlich zu jArchi aus Abschnitt 2.1:
+  Download : https://github.com/archimatetool/archi/releases
+  Lizenz   : MIT
 
-  coArchi (2_1.3.2)
-    Funktion : Cloud-basierte Revisionsverwaltung für ArchiMate Modelle
-               direkt in Archi — Alternative zu HLP06/HLP07 Backup/Restore
-    Hinweis  : HLP06/HLP07 ist die lokale Non-Cloud Alternative
-               coArchi nur wenn Cloud-Sync gewünscht ist
-    Installer: coArchi2_1.3.2.archiplugin
+  WAS:   ArchiMate 3.2 Enterprise Architecture Modellierung
+         Single Source of Truth für alle R+MUNI Artefakte
+         Alle CSVs, XMLs und Ableitungen kommen aus dem Archi-Modell
 
-  excelArchi (1.1.1)
-    Funktion : Excel Import/Export für strukturierte Datenpflege in Archi
-    Installer: excelArchi_1.1.1.archiplugin
+  WARUM: Archi ist das Herzstück von R+MUNI.
+         Das Modell gibt die Master-ID — alle anderen Werkzeuge leiten daraus ab.
+         OEF-Export ist Basis für Integration und Automatisierung.
 
-  lightboxArchi (1.3.0)
-    Funktion : Verbesserte View-Darstellung direkt in Archi
-    Installer: lightboxArchi_1.3.0.archiplugin
+  WOHIN: Modelle liegen in:
+           00-model\00-archimate\00-archimateactive\    → aktive Modelle
+           00-model\00-archimate\01-archimateactivesub\ → Sub-Modelle
+           00-model\01-bpmn\00-bpmnactive\              → aktive BPMN Modelle
 
-  Plugin-Installation: Help → Manage Plug-ins → Install New
+  Installer: Archi-Win64-Setup aktuell
 
 
-3.7 GitHub Desktop
+3.2 Camunda Modeler — BPMN 2.0
 --------------------------------------------------------------------------------
-  Download : https://desktop.github.com/
-  Lizenz   : kostenlos
-  Zweck    : GUI für GitHub Sync — kein CLI erforderlich
-             Verwaltung der R+MUNI Repositories
-  Hinweis  : Benötigt Git (Abschnitt 3.2) als technischen Unterbau
-
-  GitHub Sync-Übersicht:
-    R+MUNI <Kundenkürzel>\         Kunden-Repo      optional
-    R+MUNI Doku <Kundenkürzel>\    Kunden-Repo      optional
-    R+MUNI Archi <Kundenkürzel>\   Kunden-Repo      optional
-    R-MUNI\                        Blueprint Repo   public
-    R-MUNI-Doku-public\            Blueprint Doku   public
-    R+MUNI Apps\                   kein Sync        —
-
-  Hinweis: Kunden-Repos werden vom Kunden selbst gehalten.
-           DEV-Zugriff nur auf explizite Freigabe durch den Kunden.
-
-  Hinweis: Kein Clone für Installation — immer Dir_Setup.bat + ZIP.
-           Kürzel im Ordnernamen verhindert GitHub Namenskonflikt.
+  Download : https://github.com/camunda/camunda-modeler/releases
+  Lizenz   : Apache 2.0
+  Zweck    : BPMN 2.0 Modellierung und Prozessanreicherung
+  Hinweis  : Camunda 7 Format verwenden — Blueprint ist darauf optimiert
 
 
-3.8 AI-Unterstützung — Sprachmodell
+3.3 draw.io — Unstrukturierte Diagramme
 --------------------------------------------------------------------------------
-  Zweck    : AI-unterstützte Entwicklung und Betrieb im Blueprint
-
-  Sprachmodelle sind wie die Office-Palette — jedes ist für einen Schwerpunkt
-  optimiert. Man kann in Excel einen Aufsatz schreiben, aber gemacht ist es
-  fürs Rechnen. Genauso haben KI-Modelle unterschiedliche Stärken.
-  Detaillierter Vergleich und Empfehlung: siehe R+MUNI Blog
-
-  Claude (empfohlen für Blueprint-Weiterentwicklung und Code)
-    Download : https://claude.ai/
-    Lizenz   : Pro Abo empfohlen für vollständigen Betrieb
-    Zweck    : AI Driven Development Methodik — Code, Logik, Strukturarbeit
-    Hinweis  : Bevorzugtes Modell für R+MUNI Entwicklung und technische Arbeit
-
-  Copilot (Microsoft 365 / GitHub)
-    Zweck    : Sinnvoll wenn M365 bereits im Einsatz — direkt in bekannter
-               Umgebung nutzbar, gut für Office-Dokumente und GitHub Integration
-    Hinweis  : Oft bereits in bestehenden Unternehmenslizenzen inkludiert
-
-  ChatGPT Plus / Gemini
-    Zweck    : Sprachliche Glättung, Außenwirkung, Marketing-Texte, Grafiken
-               Gut wenn Kunde bereits ein Abo hat
-    Hinweis  : Prüfen ob bereits ein Unternehmensvertrag besteht
-
-
-3.9 draw.io
---------------------------------------------------------------------------------
-  Download : https://www.drawio.com/
-  Lizenz   : kostenlos, open source
+  Download : https://github.com/jgraph/drawio-desktop/releases
+  Lizenz   : Apache 2.0
   Zweck    : Rein visuelle Diagramme ohne ArchiMate/BPMN Normbindung
-             z.B. Infrastruktur-Skizzen, ad-hoc Visualisierungen
-  Installer: draw.io-x.x.x-windows-installer.exe
+             z.B. Infrastruktur-Skizzen, ad-hoc Visualisierungen,
+             Erklärbilder für Stakeholder ohne Modell-Hintergrund
+  Installer: draw.io aktuell (Windows Installer)
   Hinweis  : Kein Ersatz für Archi oder Camunda Modeler
+             Für alles was keine Norm braucht aber trotzdem visualisiert werden soll
 
 
-3.10 KeePass
+3.4 Inkscape — SVG Bearbeitung
 --------------------------------------------------------------------------------
-  Download : https://keepass.info/
-  Lizenz   : kostenlos, open source
-  Zweck    : Passwort-Verwaltung für Tool-Zugänge, API Keys, Credentials
-  Installer: KeePass-2.60-Setup.exe
-  Format   : .kdbx — NICHT im Blueprint-Verzeichnis ablegen
-  Empfehlung: verschlüsselter USB oder OneDrive (separat gesichert)
+  Download : https://gitlab.com/inkscape/inkscape/-/releases
+  Lizenz   : GPL v2+
+  Zweck    : Bearbeitung und Erstellung von SVG Dateien
+             Visuelle Assets für README, Dokumentation und Außenwirkung
+             Export von Archi Views als bearbeitbare SVGs
+  Installer: Inkscape aktuell (Windows Installer)
+  Hinweis  : Plain SVG Format verwenden (Freeze-8-Regel für Obsidian-Kompatibilität)
 
 
 ================================================================================
-4. ADDONS — Erweiterungen nach Usecase
+4. DOKUMENTATION
 ================================================================================
 
-Addons erweitern R+MUNI um spezifische Funktionen oder Integrations-Exitpoints.
-Usecase und Kostenpunkt vor Installation prüfen.
-
-
-4.1 Atlassian — Jira & Confluence
+4.1 Notepad++ — Dokumentations-Editor
 --------------------------------------------------------------------------------
-  URL      : https://www.atlassian.com/
-  Lizenz   : Free Plan bis 10 User / kostenpflichtig ab Standard Plan
-  Zweck    : Advanced Ticketing, Sprint-Verwaltung, Dokumentation,
-             EA-Objekt-Verlinkung via ATL-Flow
-  Achtung  : Usecase prüfen — ab 10 direkten Benutzern im System kostenpflichtig
-             Externe Kunden über Customer-Zugang abbildbar (mit Einschränkungen)
-
-  Jira Projekt R+MUNI EA (Key: MUNIEA) — 9 Komponenten manuell anlegen:
-    Strategy, Business, Application, Technology & Physical,
-    Motivation, Implementation & Migration, Relations, Other, Views
-
-  Free Plan Einschränkungen:
-    Public Link ist Premium-Feature — externe Verlinkung nicht möglich
-    10-User Limit wird bei Team-Wachstum schnell erreicht
-
-
-4.2 BOC Integration — Enterprise EA & BPMN (Exitpoint)
---------------------------------------------------------------------------------
-  ADOIT : https://www.boc-group.com/de/adoit/  — Enterprise Architecture
-  ADONIS: https://www.boc-group.com/de/adonis/ — Enterprise BPMN
-  Lizenz : kostenpflichtig (Enterprise, Cloud)
-  Zweck  : Exitpoint für Enterprise EA und BPMN Modellierung
-           R+MUNI Artefakte direkt importierbar (validiert 2026-03-07)
-  Format : ArchiMate → OEF Export aus Archi 5.x
-           BPMN → direkt aus Camunda Modeler
-
-
-4.3 VS Code — Erweiterte Entwicklungsumgebung
---------------------------------------------------------------------------------
-  Download : https://code.visualstudio.com/
-  Lizenz   : kostenlos, open source
-  Zweck    : IDE für Python/jArchi Scripts
-             Vollständige Entwicklungsumgebung direkt im Blueprint-Verzeichnis
-  Hinweis  : Notepad++ ist für Standard-Betrieb vollständig ausreichend
-
-  Weiterführende Dokumentation (Expert- und DEV-Setups):
-    https://github.com/arch-nullnull/R-MUNI-Doku-public
+  Bereits in Abschnitt 2.4 installiert.
+  Im Dokumentationskontext: primäres Werkzeug für alle .md, .txt und .cfg Dateien.
+  Encoding-Prüfung: Notepad++ → Encoding Menü → UTF-8 (ohne BOM empfohlen).
 
 
 ================================================================================
-5. ERSTER FUNKTIONSTEST
+5. KI-EINSTIEG — STEP 1 ZUR AI-NUTZUNG
+================================================================================
+
+Der KI-Einstieg folgt der R+MUNI AI Driven Development Methode.
+Reihenfolge einhalten — jeder Schritt baut auf dem vorherigen auf.
+
+  Schritt 1: Struktur & Vorlagen sicherstellen (Abschnitt 2 vollständig)
+  Schritt 2: Visuelle Übersicht kennen (Abschnitt 3)
+  Schritt 3: Dokumentation bereit (Abschnitt 4)
+  Schritt 4: KI-Tool auswählen und einrichten (Abschnitt 2.3)
+
+Detaillierte Methodik: AI_DRIVEN_DEV_METHODE_DEV_S10nc.md
+
+
+================================================================================
+6. ERSTER FUNKTIONSTEST
 ================================================================================
 
 Nach der Installation folgenden Befehl im Terminal ausführen
@@ -434,7 +373,203 @@ Wenn das läuft ist die Basis korrekt installiert.
 
 
 ================================================================================
-6. ENCODING HINWEIS
+7. ADDONS — Erweiterungen nach Usecase
+================================================================================
+
+Addons erweitern R+MUNI um spezifische Funktionen.
+Usecase und Kostenpunkt vor Installation prüfen.
+Kein Addon ist für den R+MUNI Grundbetrieb erforderlich.
+
+
+7.1 LibreOffice — Alternative Office-Lösung
+--------------------------------------------------------------------------------
+  Download : https://www.libreoffice.org/download/download-libreoffice/
+  Lizenz   : MPL 2.0 (Mozilla Public License)
+  Zweck    : Office-Alternative für Umgebungen ohne Microsoft 365
+             Calc für CSV/XLSX Bearbeitung, Writer für Dokumentenexport
+  Hinweis  : Nur erforderlich wenn kein Microsoft Office vorhanden
+
+
+7.2 OBS Studio — Remote Streaming
+--------------------------------------------------------------------------------
+  Download : https://github.com/obsproject/obs-studio/releases
+  Lizenz   : GPL v2
+  Zweck    : Screen-Recording und Remote Streaming
+             Demo-Videos, Remote-Sessions, Live-Übertragung
+  Hinweis  : Option — nur bei Bedarf für Streaming oder Aufzeichnung
+
+
+7.3 Claude + Addons — Git & VS Code
+--------------------------------------------------------------------------------
+  Claude
+    URL      : https://claude.ai/
+    Lizenz   : kostenpflichtig (Pro Abo)
+    Zweck    : KI-gestützte Entwicklung — Code, Logik, Strukturarbeit
+    Hinweis  : Eines von mehreren möglichen KI-Tools (siehe Abschnitt 2.3)
+               Empfehlung für Addon-Betrieb: Git Bash und VS Code ergänzen
+
+  Git
+    Download : https://github.com/git/git/releases
+    Lizenz   : GPL v2
+    Zweck    : Technische Basis für GitHub Desktop und Claude Code
+               Git Bash als Shell-Erweiterung für erweiterte Git-Operationen
+    Installer: Git aktuell (64-bit)
+    Pfad     : C:\Prototyping\R+MUNI Apps\git
+
+    Installations-Hinweis:
+      "Use Git from the Windows Command Prompt" aktivieren (PATH Eintrag)
+      Editor: Notepad++ wählen
+    Prüfen: git --version
+
+  VS Code
+    Download : https://github.com/microsoft/vscode/releases
+    Lizenz   : MIT
+    Zweck    : IDE für Python/jArchi Scripts
+               Vollständige Entwicklungsumgebung direkt im Blueprint-Verzeichnis
+    Hinweis  : Notepad++ ist für Standard-Betrieb vollständig ausreichend
+               VS Code nur bei erweitertem Entwicklungsbedarf
+
+
+
+
+7.4 Archi Addons
+--------------------------------------------------------------------------------
+  Zusätzlich zu Archi aus Abschnitt 3.1:
+
+  coArchi
+    Funktion : Repo Support — Cloud-basierte Revisionsverwaltung für ArchiMate
+               Modelle direkt in Archi — Alternative zu HLP06/HLP07 Backup/Restore
+    Hinweis  : HLP06/HLP07 ist die lokale Non-Cloud Alternative
+               coArchi nur wenn Cloud-Sync gewünscht ist
+
+  excelArchi
+    Funktion : Automatische Verarbeitung — Excel Import/Export für strukturierte
+               Datenpflege in Archi
+
+  lightboxArchi
+    Funktion : View Verbesserung — verbesserte View-Darstellung direkt in Archi
+
+  Plugin-Installation: Help → Manage Plug-ins → Install New
+
+
+7.5 KeePass — Minimaler Passwortschutz
+--------------------------------------------------------------------------------
+  Download : https://keepass.info/download.html
+  Lizenz   : GPL v2
+  Zweck    : Passwort-Verwaltung für Tool-Zugänge, API Keys, Credentials
+  Format   : .kdbx — NICHT im Blueprint-Verzeichnis ablegen
+  Empfehlung: verschlüsselter USB oder OneDrive (separat gesichert)
+
+  2-Faktor Addon für GitHub (wenn noch kein 2FA vorhanden):
+    GitHub unterstützt verschiedene 2FA-Methoden — Einrichtung direkt in den
+    GitHub Account-Einstellungen unter Security → Two-factor authentication.
+    Empfehlung: Authenticator-App (z.B. via KeePass TOTP Plugin oder separate App)
+
+
+7.6 KI-Toolset — AIOF KI-Empfehlungen für R+MUNI
+--------------------------------------------------------------------------------
+  Zweck    : KI-unterstützte Entwicklung und Betrieb im Blueprint
+             R+MUNI nutzt KI als Entwicklungswerkzeug — nicht als Produktbestandteil.
+             Die Methodik (AI Driven DEV) ist tool-agnostisch und funktioniert
+             mit jedem der unten genannten Werkzeuge.
+
+  Empfohlene KI-Tools für R+MUNI (Flat-Rate-Modell — Voraussetzung):
+
+  Claude (Anthropic)
+    URL      : https://claude.ai/
+    Kosten   : Pro ca. $20/Monat | Max 5x ca. $100/Monat | Max 20x ca. $200/Monat
+    Stärken  : Langer Kontextfenster, stark in Dokumentation und Code,
+               Projektfolder-Integration, MCP-Unterstützung
+    Hinweis  : Für R+MUNI DEV-Betrieb ist Pro als Einstieg ausreichend.
+               Max 5x empfohlen bei intensiver täglicher Nutzung.
+               Kontingent-Empfehlung: Pro $20 + ca. €15 Reserve on Top
+               für Spitzenlasten — ergibt realistisches Monatsbudget.
+               Achtung: Verrechnungsmodell kann sich ändern — vor Abo prüfen.
+
+  ChatGPT Pro
+    URL      : https://chat.openai.com/
+    Kosten   : ca. $20/Monat
+    Stärken  : Breite Modellpalette, stabil, gut für Code und Dokumentation
+
+  Gemini Advanced
+    URL      : https://gemini.google.com/
+    Kosten   : ca. €22/Monat (Google One Bundle)
+    Stärken  : Starker Langkontext, Google-Ökosystem-Integration
+    Hinweis  : Gut wenn Google Workspace bereits im Einsatz ist
+
+  Copilot Pro
+    URL      : https://copilot.microsoft.com/
+    Kosten   : ca. €22/Monat
+    Stärken  : Microsoft-Ökosystem, direkte M365-Integration
+    Hinweis  : Sinnvoll wenn M365 bereits lizenziert ist
+
+  Lokal — Ollama
+    URL      : https://ollama.com/
+    Kosten   : einmalige Hardware — danach kostenlos
+    Modelle  : Llama3, Mistral, Qwen (lokal lauffähig)
+    Stärken  : Keine laufenden Kosten, keine Datenweitergabe
+    Hinweis  : Modellqualität unter Cloud-Niveau — Fallback-Option
+
+  Detaillierter Vergleich und Kalibrierungs-Session: BACKLOG_AIOF_DEV_S103.md
+  Weiterführende Dokumentation: R+MUNI Blog / R-MUNI-Doku-public
+
+
+7.7 KI-Kalibrierung
+--------------------------------------------------------------------------------
+  Zweck    : Kalibrierung des gewählten KI-Tools auf R+MUNI Methodik und GOV
+  Werkzeuge: ChatGPT Pro, Copilot Pro, Claude — je nach AIOF-Entscheidung
+
+  Kalibrierung ist ein eigener Sprint — nicht nebenbei durchführen.
+  Basis für die Kalibrierung: AI_DRIVEN_DEV_METHODE_DEV_S10nc.md
+  Detaillierter Ablauf: BACKLOG_AIOF_DEV_S103.md
+
+  Jedes KI-Tool braucht eine eigene Kalibrierungs-Session.
+  Claude-spezifische Kalibrierungen sind nicht auf andere Tools übertragbar.
+
+
+7.8 Atlassian — Jira & Confluence Integration
+--------------------------------------------------------------------------------
+  URL      : https://www.atlassian.com/
+  Lizenz   : Free Plan bis 10 User / kostenpflichtig ab Standard Plan
+  Zweck    : Enterprise Dokumentation & Ticketing, Kundensupport,
+             Advanced Sprint-Verwaltung, EA-Objekt-Verlinkung via ATL-Flow
+  Exitpoint: Atlassian ist Exitpoint — kein Default-Setup
+             IST-Situation des Kunden bestimmt ob Atlassian gebraucht wird
+  Achtung  : Usecase prüfen — ab 10 direkten Benutzern im System kostenpflichtig
+
+  Jira Projekt R+MUNI EA (Key: MUNIEA) — 9 Komponenten manuell anlegen:
+    Strategy, Business, Application, Technology & Physical,
+    Motivation, Implementation & Migration, Relations, Other, Views
+
+  Free Plan Einschränkungen:
+    Public Link ist Premium-Feature — externe Verlinkung nicht möglich
+    10-User Limit wird bei Team-Wachstum schnell erreicht
+
+
+7.9 BOC Integration — Enterprise EA (Exitpoint)
+--------------------------------------------------------------------------------
+  ADOIT : https://www.boc-group.com/de/adoit/  — Enterprise Architecture
+  ADONIS: https://www.boc-group.com/de/adonis/ — Enterprise BPMN
+  Lizenz : kostenpflichtig (Enterprise, Cloud)
+  Zweck  : Exitpoint für Enterprise EA und BPMN Modellierung
+           R+MUNI Artefakte direkt importierbar (validiert 2026-03-07)
+  Exitpoint: Nur wenn Enterprise EA-Tool explizit benötigt wird
+  Format : ArchiMate → OEF Export aus Archi 5.x
+           BPMN → direkt aus Camunda Modeler
+
+
+7.10 Camunda 8 — Erweiterte BPMN Modellierung
+--------------------------------------------------------------------------------
+  URL      : https://camunda.com/
+  Lizenz   : kostenpflichtig (Cloud / Self-Managed)
+  Zweck    : Erweiterte BPMN Modellierung und Prozessautomatisierung
+             Für Umgebungen die über Camunda 7 hinausgehen
+  Hinweis  : R+MUNI Grundbetrieb ist auf Camunda 7 optimiert
+             Camunda 8 nur wenn explizit benötigt und lizenziert
+
+
+================================================================================
+8. ENCODING HINWEIS
 ================================================================================
 
 Alle Dateien im Blueprint müssen UTF-8 sein — ohne BOM empfohlen.
@@ -453,7 +588,7 @@ Archi Import schlägt bei falschem Encoding ohne klare Fehlermeldung fehl.
 
 
 ================================================================================
-7. VERSIONSHINWEISE
+9. VERSIONSHINWEISE
 ================================================================================
 
 Entwickelt und getestet mit:
@@ -463,18 +598,20 @@ Entwickelt und getestet mit:
     coArchi       : 2_1.3.2
     excelArchi    : 1.1.1
     lightboxArchi : 1.3.0
-  Camunda       : Modeler aktuell, BPMN 2.0 normkonform
-  OpenJDK       : 21.0.10 LTS (Adoptium)
-  PowerShell    : 7.5.5
-  Notepad++     : aktuelle Version
-  Git           : 2.53.0.2
+  Camunda       : Modeler aktuell, BPMN 2.0 normkonform, Camunda 7 Format
+  OpenJDK       : 21 LTS (Adoptium)
+  PowerShell    : 7 aktuell
+  Notepad++     : aktuell
+  Git           : aktuell
   GitHub Desktop: aktuell
-  Obsidian      : 1.12.4
-  draw.io       : 29.6.1
-  KeePass       : 2.60
+  Obsidian      : aktuell
+  draw.io       : aktuell
+  Inkscape      : aktuell
+  KeePass       : aktuell
+  nmap          : aktuell
   Windows       : 11 Enterprise
 
-Stage 8 — Beta 1.0. Blueprint bereit für externen Einsatz.
+Stage 1.04 — Beta 1.0. Blueprint bereit für externen Einsatz.
 ================================================================================
-R+MUNI Blueprint | Aktualisiert: 2026-03-28
+R+MUNI Blueprint | Aktualisiert: 2026-04-11
 ================================================================================
