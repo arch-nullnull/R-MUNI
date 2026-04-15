@@ -5,8 +5,9 @@ C:.
 |   .gitignore
 |   Install.txt
 |   LICENSE
-|   plugins.dat
+|   NOTICE
 |   README.md
+|   RELEASE_NOTE_S105.md
 |   root.cfg
 |   structure.txt
 |   
@@ -20,22 +21,8 @@ C:.
 +---00-model
 |   +---00-archimate
 |   |   +---00-archimateactive
-|   |   |       log-0.txt
-|   |   |       MUNI EA.archimate
-|   |   |       MUNI EA.archimate.bak
-|   |   |       MUNI FLOW.archimate
-|   |   |       VIE11-Structure View.svg
-|   |   |       
 |   |   +---01-archimateactivesub
 |   |   \---99-mappingmodel
-|   |           archimate3_Diagram.xsd
-|   |           archimate3_Model.xsd
-|   |           archimate3_View.xsd
-|   |           trash_nbx.archimate
-|   |           trash_nbx.archimate.bak
-|   |           trash_nbx.xml
-|   |           trash_test.xml
-|   |           
 |   +---01-bpmn
 |   |   +---00-bpmnactive
 |   |   \---99-bpmnMUNI
@@ -136,6 +123,13 @@ C:.
 |   |   |   NBX03-normalize_to_csv.py
 |   |   |   NBX04-ip_merge.py
 |   |   |   NBX05-handoff_report.py
+|   |   |   SVG00-validate_environment.py
+|   |   |   SVG01-inventory.py
+|   |   |   SVG02-rename.py
+|   |   |   SVG03-embed.py
+|   |   |   SVG04-trace.py
+|   |   |   SVG05-resize.py
+|   |   |   SVG06-handoff_report.py
 |   |   |   XML00-resolve_root.py
 |   |   |   XML01-collect_sources.py
 |   |   |   XML02-parse_child_xml.py
@@ -145,130 +139,11 @@ C:.
 |   |   |   XML06-finalize-master.py
 |   |   |   XML07-cleanup-artifacts.py
 |   |   |   
-|   |   +---jArchi
-|   |   |   |   jA01-Validierung Namen.ajs
-|   |   |   |   
-|   |   |   \---examples
-|   |   |       |   Anonymize.ajs
-|   |   |       |   Change Concept Type.ajs
-|   |   |       |   Console.ajs
-|   |   |       |   Create Views and Visual Objects.ajs
-|   |   |       |   Export to Excel.ajs
-|   |   |       |   Export View Image.ajs
-|   |   |       |   Folder Management.ajs
-|   |   |       |   Heat.ajs
-|   |   |       |   Hello World.ajs
-|   |   |       |   New Model with Elements and Relationship.ajs
-|   |   |       |   Open Model and list all Concepts.ajs
-|   |   |       |   Open Model and show Elements in Browser.ajs
-|   |   |       |   Set Bounds and Visual Attributes.ajs
-|   |   |       |   Set Font Sizes.ajs
-|   |   |       |   Statistics.ajs
-|   |   |       |   Write to File and Open in Browser.ajs
-|   |   |       |   
-|   |   |       +---Change type to
-|   |   |       |   |   ConvertConcept.lib.js
-|   |   |       |   |   
-|   |   |       |   +---1. Strategy
-|   |   |       |   |       Capability.ajs
-|   |   |       |   |       Course of Action.ajs
-|   |   |       |   |       Resource.ajs
-|   |   |       |   |       Value Stream.ajs
-|   |   |       |   |       
-|   |   |       |   +---2. Business
-|   |   |       |   |       Business Actor.ajs
-|   |   |       |   |       Business Collaboration.ajs
-|   |   |       |   |       Business Event.ajs
-|   |   |       |   |       Business Function.ajs
-|   |   |       |   |       Business Interaction.ajs
-|   |   |       |   |       Business Interface.ajs
-|   |   |       |   |       Business Object.ajs
-|   |   |       |   |       Business Process.ajs
-|   |   |       |   |       Business Role.ajs
-|   |   |       |   |       Business Service.ajs
-|   |   |       |   |       Contract.ajs
-|   |   |       |   |       Product.ajs
-|   |   |       |   |       Representation.ajs
-|   |   |       |   |       
-|   |   |       |   +---3. Application
-|   |   |       |   |       Application Collaboration.ajs
-|   |   |       |   |       Application Component.ajs
-|   |   |       |   |       Application Event.ajs
-|   |   |       |   |       Application Function.ajs
-|   |   |       |   |       Application Interaction.ajs
-|   |   |       |   |       Application Interface.ajs
-|   |   |       |   |       Application Process.ajs
-|   |   |       |   |       Application Service.ajs
-|   |   |       |   |       Data Object.ajs
-|   |   |       |   |       
-|   |   |       |   +---4. Technology & Physical
-|   |   |       |   |       Artifact.ajs
-|   |   |       |   |       Communication Network.ajs
-|   |   |       |   |       Device.ajs
-|   |   |       |   |       Distribution Network.ajs
-|   |   |       |   |       Equipment.ajs
-|   |   |       |   |       Facility.ajs
-|   |   |       |   |       Material.ajs
-|   |   |       |   |       Node.ajs
-|   |   |       |   |       Path.ajs
-|   |   |       |   |       System Software.ajs
-|   |   |       |   |       Technology Collaboration.ajs
-|   |   |       |   |       Technology Event.ajs
-|   |   |       |   |       Technology Function.ajs
-|   |   |       |   |       Technology Interaction.ajs
-|   |   |       |   |       Technology Interface.ajs
-|   |   |       |   |       Technology Process.ajs
-|   |   |       |   |       Technology Service.ajs
-|   |   |       |   |       
-|   |   |       |   +---5. Motivation
-|   |   |       |   |       Assessment.ajs
-|   |   |       |   |       Constraint.ajs
-|   |   |       |   |       Driver.ajs
-|   |   |       |   |       Goal.ajs
-|   |   |       |   |       Meaning.ajs
-|   |   |       |   |       Outcome.ajs
-|   |   |       |   |       Principle.ajs
-|   |   |       |   |       Requirement.ajs
-|   |   |       |   |       Stakeholder.ajs
-|   |   |       |   |       Value.ajs
-|   |   |       |   |       
-|   |   |       |   +---6. Implementation & Migration
-|   |   |       |   |       Deliverable.ajs
-|   |   |       |   |       Gap.ajs
-|   |   |       |   |       Implementation Event.ajs
-|   |   |       |   |       Plateau.ajs
-|   |   |       |   |       Work Package.ajs
-|   |   |       |   |       
-|   |   |       |   +---7. Other
-|   |   |       |   |       Grouping.ajs
-|   |   |       |   |       Location.ajs
-|   |   |       |   |       
-|   |   |       |   \---8. Relations
-|   |   |       |           Access Relationship.ajs
-|   |   |       |           Aggregation Relationship.ajs
-|   |   |       |           Assignment Relationship.ajs
-|   |   |       |           Association Relationship.ajs
-|   |   |       |           Composition Relationship.ajs
-|   |   |       |           Flow Relationship.ajs
-|   |   |       |           Influence Relationship.ajs
-|   |   |       |           Realization Relationship.ajs
-|   |   |       |           Serving Relationship.ajs
-|   |   |       |           Specialization Relationship.ajs
-|   |   |       |           Triggering Relationship.ajs
-|   |   |       |           
-|   |   |       \---lib
-|   |   |               jszip-101.js
-|   |   |               myexcel.js
-|   |   |               
-|   |   \---__pycache__
-|   |           HLP00_resolve_root.cpython-314.pyc
+|   |   \---jArchi
+|   |           jA01-Validierung Namen.ajs
 |   |           
 |   +---02-csv
 |   |   +---00-master
-|   |   |       elements.csv
-|   |   |       properties.csv
-|   |   |       relations.csv
-|   |   |       
 |   |   +---01-mapping
 |   |   |       csvmapping.txt
 |   |   |       nbx_config.txt
@@ -280,15 +155,9 @@ C:.
 |   |   |       
 |   |   +---03-child
 |   |   |   +---00-archimatechild
-|   |   |   |       trash_nbx.csv
-|   |   |   |       
 |   |   |   +---01-bpmnchild
 |   |   |   \---02-xychild
 |   |   +---04-import
-|   |   |       elements.csv
-|   |   |       properties.csv
-|   |   |       relations.csv
-|   |   |       
 |   |   \---99-exports
 |   +---03-XLSX
 |   |   +---00-master
@@ -324,32 +193,145 @@ C:.
 |   |   run-scope_ReadMe.txt
 |   |   
 |   +---00-archimatearchive
-|   |       nbx_raw.json
-|   |       properties.csv
-|   |       relations.csv
-|   |       
 |   +---01-bpmnarchive
 |   +---02-xyarchive
 |   \---99-logs
-|           CLE22-csv_archimate_child.log
-|           CSV00-root.resolved.txt
-|           CSV00-validate_environment.log
-|           CSV01-validate_model.log
-|           CSV04-model_overview.log
-|           ECM00-root.resolved.txt
-|           ECM00-validate_environment.log
-|           ECM01-csv_fields_to_artifacts.log
-|           ECM02-csv_to_mapping_to_csv.log
-|           ECM03-id_merge.log
-|           NBX00-root.resolved.txt
-|           NBX00-validate_environment.log
-|           NBX01-validate_config.log
-|           NBX02-scan_network.log
-|           NBX03-normalize_to_csv.log
-|           NBX04-ip_merge.log
-|           NBX05-handoff_report.log
-|           NBX05-handoff_report.txt
++---98-templates
+|   +---CARD
+|   |       TMP00-Template_card_S102.md
+|   |       TMP00_card_template_S102.svg
+|   |       TMP01-Template_context_S102.md
+|   |       
+|   +---DEV [Expert]
+|   |       BACKLOG_Template_DEV_S105.md
+|   |       DEV_Sprint_Template_S105.md
+|   |       FREEZE_N_Template_S105.md
+|   |       how2_DEV_Template_S105.md
+|   |       LL_Template_S105.md
+|   |       principles_Template_S105.md
+|   |       
+|   \---MUNI
+|           how2_MUNI_Template_S105.md
 |           
 \---99-doku
-        README.md
-        
+    |   README.md
+    |   svg_config.txt
+    |   
+    \---07-creative
+        +---00-flip
+        |       Beta_1_00.jpg
+        |       Beta_1_5.jpg
+        |       Flow.png
+        |       Full_Stage3.png
+        |       Muni Version 1.png
+        |       Muni.png
+        |       PreBeta_3Party.jpg
+        |       R+MUNI-Tree.jpg
+        |       R+MUNIS4_U1jpg.jpg
+        |       R+MUNIS55.jpg
+        |       R+MUNIS7.jpg
+        |       R+MUNI_S4.jpg
+        |       ScriptUpdate102.jpg
+        |       
+        +---01-draw
+        |       360.png
+        |       and.png
+        |       Bomb.png
+        |       Brain.png
+        |       checklist.png
+        |       Checkliste.png
+        |       Gluebirne.png
+        |       Handy.png
+        |       Kaffee.png
+        |       key.png
+        |       Komplexität.png
+        |       Krake.png
+        |       Leuchtturm.png
+        |       Lupe.png
+        |       Meeting.png
+        |       Megaphone.png
+        |       megaphone2.png
+        |       Mehrschichtig.png
+        |       Money.png
+        |       Notebook.png
+        |       Offenheit.png
+        |       Ordner.png
+        |       PDCA2.png
+        |       rocket2.png
+        |       Schlüssel.png
+        |       Schnecke.png
+        |       schnecke2.png
+        |       Schraubenzieher.png
+        |       Tablet-Kurve.png
+        |       Teleskop.png
+        |       thinkdigital.png
+        |       transparenz.png
+        |       Uhr.png
+        |       Unbeständig.png
+        |       Unsicherheit.png
+        |       vernetzung.png
+        |       Vertrauen.png
+        |       Zahnrad.png
+        |       Ziel.png
+        |       Zieleinlauf.png
+        |       
+        +---01-images
+        +---02-r+muni
+        |       Muni_Logo.png
+        |       Muni_Logo_breit.png
+        |       Muni_Logo_Link.png
+        |       Muni_Logo_small.png
+        |       
+        +---03-svg
+        |       3(4)_variantenS104.svg
+        |       4_Beine_S104.svg
+        |       claude_kontext_architektur.svg
+        |       Leistungen_S104.svg
+        |       munidell_ki_empfehlung_S104.svg
+        |       munidell_tabelle_S104.svg
+        |       Muni_Logo.svg
+        |       toolbaukasten_S104.svg
+        |       VIE00-Motivation View.svg
+        |       VIE01-Strategy View.svg
+        |       VIE02-Business View.svg
+        |       VIE03-Application View.svg
+        |       VIE04-Technology View.svg
+        |       VIE05-Implementation View.svg
+        |       
+        +---04-logo
+        |       Header-Logo.png
+        |       PilsDesign_Logo_Kompakt_Weiss.png
+        |       
+        +---05-Werkzeugkasten
+        |       10_Cent_pro_Script.png
+        |       AIOF_Incoming.png
+        |       Business_View.png
+        |       Claude-Atlassiansync.png
+        |       claude-work-with-me.png
+        |       Claude_Denkt4mich.png
+        |       Cloude_hat_Keinen_Bock_Mer.png
+        |       DEV_Keller.jpg
+        |       Dokuvers.png
+        |       ECM_Mapping.png
+        |       ECM_RUN.png
+        |       FileSystem_View.svg
+        |       Jira-Sync-Claude.png
+        |       MUNI EA.pdf
+        |       Obsidian_Screenshot_Visualisierung.png
+        |       Powershell7.png
+        |       R+MUNIMotiviert.png
+        |       R+MUNI_CARD_TILTxD.png
+        |       R+MUNI_fordert_xD.png
+        |       Remote_Streaming.png
+        |       RMUNISHELL-Entwickler-Test.png
+        |       ScheißaufClaude.png
+        |       Scripts.png
+        |       
+        \---99-svg_TMP
+                Bomb.png
+                Bomb.svg
+                Header_Logo_34_asdf.png
+                Header_Logo_34_asdf.svg
+                Muni_Version_1.png
+                Muni_Version_1.svg
+                

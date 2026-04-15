@@ -1,0 +1,28 @@
+R+MUNI Blueprint — NOTICE
+==========================
+
+Project:    R+MUNI Blueprint — Reusable Standards-Based Communication
+            and Integration Framework
+Author:     Markus Resel (EUMAXL)
+Year:       2026
+License:    MIT License (see LICENSE file)
+Repository: https://github.com/arch-nullnull/R-MUNI-Doku-public
+
+---
+
+Third-Party Tools
+-----------------
+
+R+MUNI builds upon a stack of free and open-source tools.
+Licenses, download links, and version details for all tools
+are documented in Install.txt (Sections 2–7 and Section 9).
+
+---
+
+Note on License Change
+-----------------------
+
+This project was previously distributed under the GNU General
+Public License v3.0 (GPL-3.0). As of 2026, it has been
+re-licensed under the MIT License by the sole copyright holder,
+Markus Resel (EUMAXL).

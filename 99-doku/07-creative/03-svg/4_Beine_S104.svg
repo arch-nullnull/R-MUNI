@@ -1,0 +1,210 @@
+<svg width="100%" viewBox="0 0 680 920" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Die vier Beine — R+MUNI Blueprint</title>
+<desc>Vier Beine des R+MUNI Toolstacks plus vollständige Addon-Übersicht</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+<style>
+text { font-family: sans-serif; fill: #1a1a1a; }
+.th  { font-size: 14px; font-weight: 600; }
+.ts  { font-size: 12px; font-weight: 400; }
+.muted { fill: #555550; }
+</style>
+</defs>
+
+<!-- TITEL -->
+<text class="th" x="340" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#1a1a1a">Die vier Beine</text>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- BEIN 01 — Visuelle Übersicht -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<rect x="28" y="44" width="148" height="290" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<rect x="28" y="44" width="148" height="46" rx="10" fill="#1D9E75"/>
+<rect x="28" y="72" width="148" height="18" fill="#1D9E75"/>
+<text class="th" x="102" y="59" text-anchor="middle" dominant-baseline="central" fill="#ffffff">01</text>
+<text class="ts" x="102" y="77" text-anchor="middle" dominant-baseline="central" fill="#E1F5EE">Visuelle Übersicht</text>
+
+<rect x="40" y="100" width="124" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="102" y="112" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">Archi 5.8</text>
+
+<rect x="40" y="130" width="124" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="102" y="142" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">ArchiMate 3.2</text>
+
+<rect x="40" y="160" width="124" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="102" y="172" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">Camunda Modeler</text>
+
+<rect x="40" y="190" width="124" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="102" y="202" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">BPMN 2.0</text>
+
+<rect x="40" y="220" width="124" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="102" y="232" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">draw.io</text>
+
+<rect x="40" y="250" width="124" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="102" y="262" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">Inkscape</text>
+
+<rect x="40" y="304" width="124" height="22" rx="6" fill="#0F6E56"/>
+<text class="ts" x="102" y="315" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">0 EUR</text>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- BEIN 02 — Dokumentation -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<rect x="188" y="44" width="148" height="290" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+<rect x="188" y="44" width="148" height="46" rx="10" fill="#7F77DD"/>
+<rect x="188" y="72" width="148" height="18" fill="#7F77DD"/>
+<text class="th" x="262" y="59" text-anchor="middle" dominant-baseline="central" fill="#ffffff">02</text>
+<text class="ts" x="262" y="77" text-anchor="middle" dominant-baseline="central" fill="#EEEDFE">Dokumentation</text>
+
+<rect x="200" y="100" width="124" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="262" y="112" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">Obsidian</text>
+
+<rect x="200" y="130" width="124" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="262" y="142" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">Markdown Vault</text>
+
+<rect x="200" y="160" width="124" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="262" y="172" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">Notepad++</text>
+
+<rect x="200" y="190" width="124" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="262" y="202" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">GitHub Desktop</text>
+
+<rect x="200" y="220" width="124" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="262" y="232" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">Principles &amp; GOV</text>
+
+<rect x="200" y="250" width="124" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="262" y="262" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">How2-Reihen</text>
+
+<rect x="200" y="304" width="124" height="22" rx="6" fill="#534AB7"/>
+<text class="ts" x="262" y="315" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">0 EUR</text>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- BEIN 03 — Struktur & Vorlagen -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<rect x="348" y="44" width="148" height="290" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<rect x="348" y="44" width="148" height="46" rx="10" fill="#BA7517"/>
+<rect x="348" y="72" width="148" height="18" fill="#BA7517"/>
+<text class="th" x="422" y="59" text-anchor="middle" dominant-baseline="central" fill="#ffffff">03</text>
+<text class="ts" x="422" y="77" text-anchor="middle" dominant-baseline="central" fill="#FAEEDA">Struktur &amp; Vorlagen</text>
+
+<rect x="360" y="100" width="124" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="422" y="112" text-anchor="middle" dominant-baseline="central" fill="#412402" font-weight="600">Python 3</text>
+
+<rect x="360" y="130" width="124" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="422" y="142" text-anchor="middle" dominant-baseline="central" fill="#412402" font-weight="600">PowerShell 7</text>
+
+<rect x="360" y="160" width="124" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="422" y="172" text-anchor="middle" dominant-baseline="central" fill="#412402" font-weight="600">root.cfg</text>
+
+<rect x="360" y="190" width="124" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="422" y="202" text-anchor="middle" dominant-baseline="central" fill="#412402" font-weight="600">Sprint-Templates</text>
+
+<rect x="360" y="220" width="124" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="422" y="232" text-anchor="middle" dominant-baseline="central" fill="#412402" font-weight="600">GOV-Templates</text>
+
+<rect x="360" y="250" width="124" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="422" y="262" text-anchor="middle" dominant-baseline="central" fill="#412402" font-weight="600">Script-Reihen</text>
+
+<rect x="360" y="304" width="124" height="22" rx="6" fill="#854F0B"/>
+<text class="ts" x="422" y="315" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">0 EUR</text>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- BEIN 04 — AI-Nutzung -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<rect x="508" y="44" width="148" height="290" rx="10" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+<rect x="508" y="44" width="148" height="46" rx="10" fill="#D85A30"/>
+<rect x="508" y="72" width="148" height="18" fill="#D85A30"/>
+<text class="th" x="582" y="59" text-anchor="middle" dominant-baseline="central" fill="#ffffff">04</text>
+<text class="ts" x="582" y="77" text-anchor="middle" dominant-baseline="central" fill="#FAECE7">Step 1 AI-Nutzung</text>
+
+<text class="ts muted" x="582" y="98" text-anchor="middle" dominant-baseline="central" font-style="italic">Synthese: 01+02+03</text>
+
+<rect x="520" y="112" width="124" height="24" rx="6" fill="#F0997B" stroke="#D85A30" stroke-width="0.5"/>
+<text class="ts" x="582" y="124" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">GOV laden</text>
+
+<rect x="520" y="142" width="124" height="24" rx="6" fill="#F0997B" stroke="#D85A30" stroke-width="0.5"/>
+<text class="ts" x="582" y="154" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">AI_DRIVEN laden</text>
+
+<rect x="520" y="172" width="124" height="24" rx="6" fill="#F0997B" stroke="#D85A30" stroke-width="0.5"/>
+<text class="ts" x="582" y="184" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">Projektfolder</text>
+
+<rect x="520" y="202" width="124" height="24" rx="6" fill="#F0997B" stroke="#D85A30" stroke-width="0.5"/>
+<text class="ts" x="582" y="214" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">Skills aktivieren</text>
+
+<rect x="520" y="232" width="124" height="24" rx="6" fill="#F0997B" stroke="#D85A30" stroke-width="0.5"/>
+<text class="ts" x="582" y="244" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">Pair-Dev starten</text>
+
+<rect x="520" y="304" width="124" height="22" rx="6" fill="#993C1D"/>
+<text class="ts" x="582" y="315" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">0 EUR</text>
+
+<!-- SYNTHESE-PFEILE -->
+<line x1="102" y1="338" x2="102" y2="358" stroke="#aaaaaa" stroke-width="0.5" marker-end="url(#arrow)"/>
+<line x1="262" y1="338" x2="262" y2="358" stroke="#aaaaaa" stroke-width="0.5" marker-end="url(#arrow)"/>
+<line x1="422" y1="338" x2="422" y2="358" stroke="#aaaaaa" stroke-width="0.5" marker-end="url(#arrow)"/>
+<line x1="102" y1="366" x2="582" y2="366" stroke="#aaaaaa" stroke-width="0.5"/>
+<line x1="582" y1="366" x2="582" y2="348" stroke="#aaaaaa" stroke-width="0.5" marker-end="url(#arrow)"/>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- ADDON-BLOCK -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<line x1="28" y1="386" x2="652" y2="386" stroke="#cccccc" stroke-width="0.8"/>
+<text class="th" x="340" y="404" text-anchor="middle" dominant-baseline="central" fill="#0C447C" font-size="13">Addons — Erweiterungen nach Usecase</text>
+<text class="ts muted" x="340" y="420" text-anchor="middle" dominant-baseline="central">Kein Addon ist für den R+MUNI Grundbetrieb erforderlich — Usecase und Kostenpunkt vor Installation prüfen.</text>
+
+<!-- ACHTUNG-Banner -->
+<rect x="28" y="432" width="624" height="28" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+<text x="340" y="446" text-anchor="middle" dominant-baseline="central" font-family="sans-serif" font-size="11" font-weight="700" fill="#712B13">⚠  KOSTENPFLICHTIGE 3PARTY APPS  (inkl. Archi Plugins via Patreon)</text>
+
+<!-- Atlassian -->
+<rect x="28" y="472" width="148" height="104" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text class="th" x="102" y="490" text-anchor="middle" dominant-baseline="central" fill="#0C447C">Atlassian</text>
+<text class="ts" x="102" y="507" text-anchor="middle" dominant-baseline="central">Jira &amp; Confluence</text>
+<line x1="36" y1="516" x2="168" y2="516" stroke="#cccccc" stroke-width="0.5"/>
+<text class="ts muted" x="102" y="529" text-anchor="middle" dominant-baseline="central">Ticketing, Doku,</text>
+<text class="ts muted" x="102" y="543" text-anchor="middle" dominant-baseline="central">ATL-Flow, Sprints</text>
+<rect x="36" y="555" width="132" height="18" rx="4" fill="#E24B4A"/>
+<text class="ts" x="102" y="564" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">kostenpflichtig ab 10+</text>
+
+<!-- BOC -->
+<rect x="188" y="472" width="148" height="104" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text class="th" x="262" y="490" text-anchor="middle" dominant-baseline="central" fill="#0C447C">BOC</text>
+<text class="ts" x="262" y="507" text-anchor="middle" dominant-baseline="central">ADOIT / ADONIS</text>
+<line x1="196" y1="516" x2="328" y2="516" stroke="#cccccc" stroke-width="0.5"/>
+<text class="ts muted" x="262" y="529" text-anchor="middle" dominant-baseline="central">Enterprise EA &amp;</text>
+<text class="ts muted" x="262" y="543" text-anchor="middle" dominant-baseline="central">BPMN Exitpoint</text>
+<rect x="196" y="555" width="132" height="18" rx="4" fill="#E24B4A"/>
+<text class="ts" x="262" y="564" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">kostenpflichtig</text>
+
+<!-- VS Code / Git -->
+<rect x="348" y="472" width="148" height="104" rx="8" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
+<text class="th" x="422" y="490" text-anchor="middle" dominant-baseline="central" fill="#27500A">VS Code · Git</text>
+<text class="ts" x="422" y="507" text-anchor="middle" dominant-baseline="central">Erweiterte IDE</text>
+<line x1="356" y1="516" x2="488" y2="516" stroke="#cccccc" stroke-width="0.5"/>
+<text class="ts muted" x="422" y="529" text-anchor="middle" dominant-baseline="central">Python / jArchi</text>
+<text class="ts muted" x="422" y="543" text-anchor="middle" dominant-baseline="central">MIT / GPL — kostenlos</text>
+<rect x="356" y="555" width="132" height="18" rx="4" fill="#1D9E75"/>
+<text class="ts" x="422" y="564" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">0 EUR</text>
+
+<!-- LibreOffice / OBS -->
+<rect x="508" y="472" width="148" height="104" rx="8" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
+<text class="th" x="582" y="490" text-anchor="middle" dominant-baseline="central" fill="#27500A">LibreOffice · OBS</text>
+<text class="ts" x="582" y="507" text-anchor="middle" dominant-baseline="central">Office · Streaming</text>
+<line x1="516" y1="516" x2="648" y2="516" stroke="#cccccc" stroke-width="0.5"/>
+<text class="ts muted" x="582" y="529" text-anchor="middle" dominant-baseline="central">MPL 2.0 / GPL</text>
+<text class="ts muted" x="582" y="543" text-anchor="middle" dominant-baseline="central">nur bei Bedarf</text>
+<rect x="516" y="555" width="132" height="18" rx="4" fill="#1D9E75"/>
+<text class="ts" x="582" y="564" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">0 EUR</text>
+
+<!-- KI-Toolset -->
+<rect x="28" y="588" width="624" height="82" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text class="th" x="340" y="604" text-anchor="middle" dominant-baseline="central" fill="#633806">KI-Toolset — Flat-Rate Modell empfohlen</text>
+<text class="ts muted" x="340" y="621" text-anchor="middle" dominant-baseline="central">Claude Pro ~$20/Mo  ·  ChatGPT Pro ~$20/Mo  ·  Gemini Advanced ~€22/Mo  ·  Copilot Pro  ·  Ollama (lokal, kostenlos)</text>
+<rect x="36" y="635" width="290" height="18" rx="4" fill="#E24B4A"/>
+<text class="ts" x="181" y="644" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">⚠  kostenpflichtig — 3Party Anbieter</text>
+<rect x="354" y="635" width="290" height="18" rx="4" fill="#1D9E75"/>
+<text class="ts" x="499" y="644" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">Ollama: 0 EUR (lokal / open source)</text>
+
+<!-- Archi Plugins -->
+<rect x="28" y="682" width="624" height="58" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+<text class="th" x="340" y="699" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">Archi Plugins — via Patreon</text>
+<text class="ts muted" x="340" y="716" text-anchor="middle" dominant-baseline="central">coArchi (Cloud-Sync)  ·  excelArchi (Excel Import/Export)</text>
+<text class="ts muted" x="340" y="732" text-anchor="middle" dominant-baseline="central">lightboxArchi (View-Darstellung)  —  via Patreon: patreon.com/cw/architool</text>
+</svg>

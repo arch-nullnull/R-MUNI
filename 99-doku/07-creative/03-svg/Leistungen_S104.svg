@@ -1,0 +1,124 @@
+<svg width="100%" viewBox="0 0 680 545" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Optionale Leistungen — R+MUNI</title>
+<desc>Übersicht der optionalen R+MUNI Leistungen: Setup, Schulung, Support</desc>
+<defs>
+<style>
+text { font-family: sans-serif; fill: #1a1a1a; }
+.th  { font-size: 14px; font-weight: 600; }
+.ts  { font-size: 12px; font-weight: 400; }
+.muted { fill: #555550; }
+</style>
+</defs>
+
+<!-- TITEL -->
+<text class="th" x="340" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#1a1a1a">Optionale Leistungen</text>
+
+<!-- UNTERTITEL -->
+<rect x="28" y="40" width="624" height="26" rx="6" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+<text class="ts muted" x="340" y="53" text-anchor="middle" dominant-baseline="central">Das System ist kostenlos. Wer Unterstützung möchte — hier ist der Rahmen.</text>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- KACHEL SETUP -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<rect x="28" y="78" width="192" height="460" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<rect x="28" y="78" width="192" height="52" rx="10" fill="#1D9E75"/>
+<rect x="28" y="110" width="192" height="20" fill="#1D9E75"/>
+<text class="th" x="124" y="96" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-size="15">SETUP</text>
+<text class="ts" x="124" y="116" text-anchor="middle" dominant-baseline="central" fill="#E1F5EE">Ersteinrichtung</text>
+
+<rect x="40" y="140" width="168" height="26" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="124" y="153" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">Installation R+MUNI Core</text>
+
+<rect x="40" y="172" width="168" height="26" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="124" y="185" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">Anpassung an Userumgebung</text>
+
+<rect x="40" y="204" width="168" height="26" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="124" y="217" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">Einrichten der Backup Scripts</text>
+
+<rect x="40" y="236" width="168" height="26" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="124" y="249" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">Einrichten GitHub Sync</text>
+
+<rect x="40" y="268" width="168" height="26" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="124" y="281" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">Funktionstest</text>
+
+<line x1="40" y1="312" x2="208" y2="312" stroke="#0F6E56" stroke-width="0.5" opacity="0.4"/>
+
+<text class="ts muted" x="124" y="342" text-anchor="middle" dominant-baseline="central">Wer schnell und unkompliziert</text>
+<text class="ts muted" x="124" y="360" text-anchor="middle" dominant-baseline="central">aufsatteln möchte.</text>
+
+<rect x="40" y="512" width="168" height="24" rx="6" fill="#0F6E56"/>
+<text class="ts" x="124" y="524" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">Kapazität entscheidet</text>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- KACHEL SCHULUNG -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<rect x="244" y="78" width="192" height="460" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+<rect x="244" y="78" width="192" height="52" rx="10" fill="#7F77DD"/>
+<rect x="244" y="110" width="192" height="20" fill="#7F77DD"/>
+<text class="th" x="340" y="96" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-size="15">SCHULUNG</text>
+<text class="ts" x="340" y="116" text-anchor="middle" dominant-baseline="central" fill="#EEEDFE">Einführung &amp; Training</text>
+
+<rect x="256" y="140" width="168" height="26" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="340" y="153" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">Scriptreihen &amp; Anwendung</text>
+
+<rect x="256" y="172" width="168" height="36" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="340" y="184" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">AI-Nutzung Best Practices</text>
+<text class="ts" x="340" y="199" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">aus der Entwicklung</text>
+
+<rect x="256" y="214" width="168" height="36" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="340" y="226" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">Erstes eigenes Modell</text>
+<text class="ts" x="340" y="241" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">in R+MUNI</text>
+
+<rect x="256" y="256" width="168" height="36" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="340" y="268" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">R+MUNI App Ökosystem</text>
+<text class="ts" x="340" y="283" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">Anwenderschulung</text>
+
+<rect x="256" y="298" width="168" height="26" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="340" y="311" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">Praxistipps</text>
+
+<line x1="256" y1="342" x2="424" y2="342" stroke="#534AB7" stroke-width="0.5" opacity="0.4"/>
+
+<text class="ts muted" x="340" y="362" text-anchor="middle" dominant-baseline="central">Wer sich ohne großes</text>
+<text class="ts muted" x="340" y="380" text-anchor="middle" dominant-baseline="central">Selbststudium in das</text>
+<text class="ts muted" x="340" y="398" text-anchor="middle" dominant-baseline="central">Muniversum einführen</text>
+<text class="ts muted" x="340" y="416" text-anchor="middle" dominant-baseline="central">lassen will.</text>
+
+<rect x="256" y="512" width="168" height="24" rx="6" fill="#534AB7"/>
+<text class="ts" x="340" y="524" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">Kapazität entscheidet</text>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- KACHEL SUPPORT -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<rect x="460" y="78" width="192" height="460" rx="10" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+<rect x="460" y="78" width="192" height="52" rx="10" fill="#D85A30"/>
+<rect x="460" y="110" width="192" height="20" fill="#D85A30"/>
+<text class="th" x="556" y="96" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-size="15">SUPPORT</text>
+<text class="ts" x="556" y="116" text-anchor="middle" dominant-baseline="central" fill="#FAECE7">Begleitung &amp; Beratung</text>
+
+<rect x="472" y="140" width="168" height="26" rx="6" fill="#F0997B" stroke="#993C1D" stroke-width="0.5"/>
+<text class="ts" x="556" y="153" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">Laufende Begleitung</text>
+
+<rect x="472" y="172" width="168" height="36" rx="6" fill="#F0997B" stroke="#993C1D" stroke-width="0.5"/>
+<text class="ts" x="556" y="184" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">GitHub DEV Sync</text>
+<text class="ts" x="556" y="199" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">für schnelle Fixes</text>
+
+<rect x="472" y="214" width="168" height="36" rx="6" fill="#F0997B" stroke="#993C1D" stroke-width="0.5"/>
+<text class="ts" x="556" y="226" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">Sprint-Begleitung</text>
+<text class="ts" x="556" y="241" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">DEV von Kundenwünschen</text>
+
+<rect x="472" y="256" width="168" height="26" rx="6" fill="#F0997B" stroke="#993C1D" stroke-width="0.5"/>
+<text class="ts" x="556" y="269" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">Begleitung bei Modellierung</text>
+
+<rect x="472" y="288" width="168" height="26" rx="6" fill="#F0997B" stroke="#993C1D" stroke-width="0.5"/>
+<text class="ts" x="556" y="301" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">Supportanfragen</text>
+
+<line x1="472" y1="332" x2="640" y2="332" stroke="#993C1D" stroke-width="0.5" opacity="0.4"/>
+
+<text class="ts muted" x="556" y="352" text-anchor="middle" dominant-baseline="central">Wer sich nicht sicher ist</text>
+<text class="ts muted" x="556" y="370" text-anchor="middle" dominant-baseline="central">ob er es alleine schafft.</text>
+
+<rect x="472" y="512" width="168" height="24" rx="6" fill="#993C1D"/>
+<text class="ts" x="556" y="524" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">Kapazität entscheidet</text>
+
+
+</svg>

@@ -1,0 +1,101 @@
+<svg width="100%" viewBox="0 0 680 800" role="img" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+text { font-family: sans-serif; fill: #1a1a1a; }
+.th  { font-size: 14px; font-weight: 600; }
+.ts  { font-size: 12px; font-weight: 400; }
+.muted { fill: #555550; }
+</style>
+</defs>
+
+<!-- TITEL -->
+<text class="th" x="340" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#1a1a1a">KI-Empfehlung je Munidell Stufe</text>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- CARD — Purple -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<rect x="28" y="44" width="624" height="156" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+<rect x="28" y="44" width="624" height="46" rx="10" fill="#7F77DD"/>
+<rect x="28" y="72" width="624" height="18" fill="#7F77DD"/>
+<text class="th" x="340" y="59" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-size="15">Card</text>
+<text class="ts" x="340" y="79" text-anchor="middle" dominant-baseline="central" fill="#EEEDFE">Spielerischer Einstieg</text>
+
+<rect x="40" y="100" width="600" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="50" y="112" dominant-baseline="central" fill="#26215C" font-weight="600">Modell: KI-Tool nach Wahl · optional</text>
+
+<rect x="40" y="130" width="600" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="50" y="142" dominant-baseline="central" fill="#26215C" font-weight="600">Modus: Prompt als Methode · 3 Views · hoher Drift OK · Einsteiger</text>
+
+<rect x="40" y="160" width="600" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="50" y="172" dominant-baseline="central" fill="#26215C" font-weight="600">Empfehlung: bewusst kein KI-Tool-Zwang · Drift ist hier Feature nicht Bug</text>
+
+<rect x="40" y="188" width="600" height="24" rx="6" fill="#534AB7"/>
+<text class="ts" x="50" y="200" dominant-baseline="central" fill="#ffffff" font-weight="600">Status: konzeptionell abgeschlossen · offen für andere Modelle</text>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- R+MUNI (Associate) — Teal -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<rect x="28" y="228" width="624" height="156" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<rect x="28" y="228" width="624" height="46" rx="10" fill="#1D9E75"/>
+<rect x="28" y="256" width="624" height="18" fill="#1D9E75"/>
+<text class="th" x="340" y="243" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-size="15">R+MUNI</text>
+<text class="ts" x="340" y="263" text-anchor="middle" dominant-baseline="central" fill="#E1F5EE">Für Organisationen &amp; KMU</text>
+
+<rect x="40" y="284" width="600" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="50" y="296" dominant-baseline="central" fill="#04342C" font-weight="600">Modell: KI-Tool Pro → dann Free (geplant)</text>
+
+<rect x="40" y="314" width="600" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="50" y="326" dominant-baseline="central" fill="#04342C" font-weight="600">Modus: ISO 9001 minimal · geführt · kein EA-Wissen nötig</text>
+
+<rect x="40" y="344" width="600" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="50" y="356" dominant-baseline="central" fill="#04342C" font-weight="600">Empfehlung: Pro in Einführung sinnvoll · Free reicht wenn Templates stabil stehen</text>
+
+<rect x="40" y="372" width="600" height="24" rx="6" fill="#0F6E56"/>
+<text class="ts" x="50" y="384" dominant-baseline="central" fill="#ffffff" font-weight="600">Status: planerisch richtig · kein Zwang zu mehr</text>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- Expert — Amber -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<rect x="28" y="412" width="624" height="156" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<rect x="28" y="412" width="624" height="46" rx="10" fill="#BA7517"/>
+<rect x="28" y="440" width="624" height="18" fill="#BA7517"/>
+<text class="th" x="340" y="427" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-size="15">Expert</text>
+<text class="ts" x="340" y="447" text-anchor="middle" dominant-baseline="central" fill="#FAEEDA">Vollprogramm</text>
+
+<rect x="40" y="468" width="600" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="50" y="480" dominant-baseline="central" fill="#412402" font-weight="600">Modell: KI-Tool Pro — Entwicklungsphase 2–3 Monate</text>
+
+<rect x="40" y="498" width="600" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="50" y="510" dominant-baseline="central" fill="#412402" font-weight="600">Modus: aktive Logik-Arbeit · danach: 2–3 Änderungen/Quartal</text>
+
+<rect x="40" y="528" width="600" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="50" y="540" dominant-baseline="central" fill="#412402" font-weight="600">Empfehlung: KI-Tool Pro ausreichend · nach Stabilisierung → Free prüfen wenn Frequenz sinkt</text>
+
+<rect x="40" y="556" width="600" height="24" rx="6" fill="#854F0B"/>
+<text class="ts" x="50" y="568" dominant-baseline="central" fill="#ffffff" font-weight="600">Status: aktiv in Entwicklung · Bewertung in ~3 Monaten</text>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- DEV — Coral -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<rect x="28" y="596" width="624" height="156" rx="10" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+<rect x="28" y="596" width="624" height="46" rx="10" fill="#D85A30"/>
+<rect x="28" y="624" width="624" height="18" fill="#D85A30"/>
+<text class="th" x="340" y="611" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-size="15">DEV</text>
+<text class="ts" x="340" y="631" text-anchor="middle" dominant-baseline="central" fill="#FAECE7">Developer &amp; Expert</text>
+
+<rect x="40" y="652" width="600" height="24" rx="6" fill="#F0997B" stroke="#D85A30" stroke-width="0.5"/>
+<text class="ts" x="50" y="664" dominant-baseline="central" fill="#4A1B0C" font-weight="600">Modell: KI-Tool Pro + Kontingent (kundenbezahlt indirekt)</text>
+
+<rect x="40" y="682" width="600" height="24" rx="6" fill="#F0997B" stroke="#D85A30" stroke-width="0.5"/>
+<text class="ts" x="50" y="694" dominant-baseline="central" fill="#4A1B0C" font-weight="600">Modus: 1 Thema pro Chat · du als GOV/Idee · KI-Tool als Python Hero</text>
+
+<rect x="40" y="712" width="600" height="24" rx="6" fill="#F0997B" stroke="#D85A30" stroke-width="0.5"/>
+<text class="ts" x="50" y="724" dominant-baseline="central" fill="#4A1B0C" font-weight="600">Empfehlung: KI-Tool Pro bleibt — bei echter Parallelarbeit für 3+ Kunden → Team prüfen</text>
+
+<rect x="40" y="740" width="600" height="24" rx="6" fill="#993C1D"/>
+<text class="ts" x="50" y="752" dominant-baseline="central" fill="#ffffff" font-weight="600">Status: läuft · kein Handlungsbedarf</text>
+
+<!-- FUSSZEILE -->
+<line x1="28" y1="778" x2="652" y2="778" stroke="#cccccc" stroke-width="0.5"/>
+<text class="ts muted" x="340" y="792" text-anchor="middle" dominant-baseline="central">Kein Zwang — Empfehlung auf Basis aktueller Nutzungsrealität · API bewusst ausgeklammert</text>
+</svg>

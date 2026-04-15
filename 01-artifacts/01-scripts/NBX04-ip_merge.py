@@ -7,7 +7,7 @@
 # Output: 01-artifacts\02-csv\03-child\00-archimatechild\trash_nbx.csv (gemergt)
 #         02-stages\99-logs\NBX04-ip_merge.log
 # Folge:  NBX05
-# Stage:  S1.03
+# Stage:  S1.05
 
 import os
 import sys
@@ -65,26 +65,28 @@ def parse_resolved_txt(pfad):
     return result
 
 
-def port_str_aus_zeile(zeile):
+def port_str_aus_description(zeile):
     """
-    Port-String aus einer service-Zeile rekonstruieren.
-    3PartyID Format: nbx_<ip_underscore>_<protocol>_<port>
-    Beispiel: nbx_192_168_1_1_tcp_22 → '22/tcp'
-    Name-Spalte enthält den Service-Namen (z.B. 'ssh', 'http') → '22/tcp:ssh'
+    Port-String direkt aus Description lesen.
+    NBX03 schreibt Description als: 'Product | Version | Port 22/tcp'
+    Letztes Segment nach ' | ' enthält 'Port 22/tcp'.
+    Fallback: Name-Spalte (enthält Service-Namen wie 'ssh', 'http').
     """
-    party_id     = zeile.get("3PartyID", "")
+    description  = zeile.get("Description", "").strip()
     service_name = zeile.get("Name", "").strip()
-    try:
-        teile    = party_id.split("_")
-        # letzten zwei Segmente = port + protocol (in dieser Reihenfolge: ..._protocol_port)
-        port     = teile[-1]
-        protocol = teile[-2]
-        basis    = f"{port}/{protocol}"
-        if service_name and service_name != f"{port}/{protocol}":
-            return f"{basis}:{service_name}"
-        return basis
-    except Exception:
-        return service_name or party_id
+
+    # Description parsen — letztes Segment suchen das mit 'Port ' beginnt
+    if description:
+        teile = [t.strip() for t in description.split("|")]
+        for teil in reversed(teile):
+            if teil.lower().startswith("port "):
+                port_info = teil[5:].strip()   # 'Port ' abschneiden → '22/tcp'
+                if service_name and service_name not in port_info:
+                    return f"{port_info}:{service_name}"
+                return port_info
+
+    # Fallback: nur Service-Name
+    return service_name
 
 
 # ─── Hauptlogik ───────────────────────────────────────────────────────────────
@@ -131,7 +133,7 @@ def main():
 
     log(f"trash_nbx.csv gelesen : {len(zeilen_roh)} Zeile(n) (roh)", log_path)
 
-    # 4) Merge: service-Zeilen auf host-Zeilen aggregieren
+    # 4) Durchlauf 1 — alle Hosts einsammeln
     hosts      = {}   # ip → host-dict
     host_order = []   # Reihenfolge erhalten
     services   = {}   # ip → [port_str, ...]
@@ -142,20 +144,24 @@ def main():
 
     for zeile in zeilen_roh:
         typ = zeile.get("nbx_objecttype", "").strip()
-
         if typ == "host":
             ip = zeile.get("nbx_raw_id", "").strip()
-            if ip not in hosts:
+            if ip and ip not in hosts:
                 hosts[ip] = dict(zeile)
                 host_order.append(ip)
                 services[ip] = []
             count_hosts += 1
 
-        elif typ == "service":
+    log(f"Durchlauf 1 — Hosts   : {count_hosts}", log_path)
+
+    # 5) Durchlauf 2 — alle Services zuordnen (Reihenfolge in CSV irrelevant)
+    for zeile in zeilen_roh:
+        typ = zeile.get("nbx_objecttype", "").strip()
+        if typ == "service":
             # nbx_raw_id bei service = 'IP:Port' (NBX03 Konvention)
             raw_id = zeile.get("nbx_raw_id", "").strip()
             ip     = raw_id.split(":")[0] if ":" in raw_id else raw_id
-            pstr   = port_str_aus_zeile(zeile)
+            pstr   = port_str_aus_description(zeile)
 
             if ip in hosts:
                 services[ip].append(pstr)
@@ -164,30 +170,20 @@ def main():
                 count_skip += 1
             count_services += 1
 
-        else:
-            log(f"  [WARNUNG] Unbekannter Typ '{typ}' bei {zeile.get('3PartyID','')} "
-                f"— als host uebernommen", log_path)
-            ip = zeile.get("nbx_raw_id", f"unknown_{len(hosts)}").strip()
-            if ip not in hosts:
-                hosts[ip] = dict(zeile)
-                host_order.append(ip)
-                services[ip] = []
-
-    log(f"Hosts          : {count_hosts}", log_path)
-    log(f"Services       : {count_services}", log_path)
+    log(f"Durchlauf 2 — Services: {count_services}", log_path)
     if count_skip:
-        log(f"Uebersprungen  : {count_skip}", log_path)
+        log(f"Uebersprungen          : {count_skip}", log_path)
 
-    # 5) Ergebnis zusammenbauen
+    # 6) Ergebnis zusammenbauen — eine Zeile pro Host
     zeilen_merged = []
     for ip in host_order:
         eintrag = hosts[ip]
         eintrag["open_ports"] = " | ".join(services[ip]) if services[ip] else ""
         zeilen_merged.append(eintrag)
 
-    log(f"Merged         : {len(zeilen_merged)} Zeile(n) (eine pro Host)", log_path)
+    log(f"Merged                 : {len(zeilen_merged)} Zeile(n) (eine pro Host)", log_path)
 
-    # 6) trash_nbx.csv zurückschreiben
+    # 7) trash_nbx.csv zurückschreiben
     try:
         with open(trash_pfad, "w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(
@@ -204,7 +200,7 @@ def main():
         log(f"[FEHLER] trash_nbx.csv konnte nicht geschrieben werden: {e}", log_path)
         sys.exit(1)
 
-    # 7) Abschluss
+    # 8) Abschluss
     log("=" * 60, log_path)
     log("ABSCHLUSS: IP-Merge abgeschlossen — NBX05 startbereit", log_path)
     log("=" * 60, log_path)

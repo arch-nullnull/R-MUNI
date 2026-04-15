@@ -1,0 +1,55 @@
+# ==============================================================================
+# svg_config.txt — Konfiguration SVG-Reihe
+# ==============================================================================
+# Ablageort : <rootfolder>\99-doku\svg_config.txt
+# Zweck     : Konfiguration für SVG00–SVG05 (Image to SVG Konvertierung)
+# Hinweis   : In .gitignore eintragen wenn Quellordner sensible Pfade enthält
+# ==============================================================================
+# R+MUNI Blueprint | Stage S1.04 | 2026-04-12
+# ==============================================================================
+
+# --- Inkscape ------------------------------------------------------------------
+# Vollständiger Pfad zur inkscape.exe
+# Nicht aus root.cfg abgeleitet — Inkscape ist externes Tool.
+# Bei abweichendem Installationspfad hier anpassen.
+inkscape_exe=C:\Prototyping\R+MUNI Apps\inkscape\bin\inkscape.exe
+
+# --- Ordner -------------------------------------------------------------------
+# Quellordner mit Bilddateien (absoluter Pfad)
+# Kann außerhalb des Blueprint-Repos liegen.
+# Nur oberste Ebene wird gescannt — keine Rekursion.
+svg_source_folder=C:\Prototyping\R+MUNI\99-doku\07-creative\99-svg_TMP
+
+# Zielordner für SVG-Output (absoluter Pfad)
+# Kann identisch mit Quellordner sein oder separater Ordner.
+# Muss vor erstem Lauf manuell angelegt werden — wird nicht automatisch erzeugt.
+svg_target_folder=C:\Prototyping\R+MUNI\99-doku\07-creative\99-svg_TMP
+
+# --- Verhalten ----------------------------------------------------------------
+# Vorhandene SVG-Dateien überschreiben?
+# false = sicherer Default — vorhandene SVG werden übersprungen
+# true  = vorhandene SVG gleichen Namens werden überschrieben
+svg_overwrite=true
+
+# --- Formate ------------------------------------------------------------------
+# Kommagetrennte Liste der zu verarbeitenden Dateierweiterungen.
+# Case-insensitiv. Einschränkbar z.B. auf: png,jpg
+svg_formats=png,jpg,jpeg,bmp,tif,tiff,gif,webp
+
+# --- SVG04 Trace (Option B) ---------------------------------------------------
+# Nur relevant wenn SVG04-trace.py verwendet wird.
+# Von SVG00–SVG03 und SVG05 ignoriert.
+#
+# Helligkeitsschwelle für Schwarz-Weiß-Trace (0.0–1.0)
+# Höher = mehr helle Fläche wird als Hintergrund behandelt
+svg_trace_threshold=0.5
+#
+# Trace-Modus: brightness | edge | color
+# brightness  Schwarz-Weiß-Trace — gut für Strichzeichnungen (Default)
+# edge        Kantenerkennung — gut für Umrisse
+# color       Farb-Trace — experimentell, erzeugt viele Pfade
+svg_trace_mode=brightness
+
+# ==============================================================================
+# svg_config.txt | SVG-Reihe | R+MUNI Blueprint | Stage S1.04
+# ==============================================================================
