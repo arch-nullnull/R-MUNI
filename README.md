@@ -6,15 +6,13 @@
 
 ## Was ist R+MUNI?
 
-R+MUNI ist ein Blueprint-System für Enterprise Architecture Management — entstanden aus echtem Interesse und mit echter Überzeugung.
+R+MUNI ist ein Blueprint-System für Visualisierung
 
-Im Kern sind es vier Vorgehensweisen. Aber wer sich die Zeit nimmt, es zu durchschauen, wird mehr entdecken.
-
-R+MUNI ist eine Perspektive: etwas **sinnstiftendes** zu schaffen, das wirklich jemandem helfen kann — **ohne schlechtes Gewissen, ohne versteckte Abo-Fallen, ohne Hintertüren.**
+Im Kern sind es vier Vorgehensweisen. **ohne schlechtes Gewissen, ohne versteckte Abo-Fallen, ohne Hintertüren.**
 
 **R+MUNI** steht unter anderem 😉 für **Multi Usable Norm Interface** — ein XML-basiertes Kreislaufsystem, das Enterprise Architecture Visualisierung mit Prozessmodellierung vereint.
 
-Entwickelt für österreichische KMU, die komplexe Fragestellungen (IT-Landschaften, Verwaltungsprozesse, Unternehmensentwicklung uvm.) mit freien Tools ganzheitlich darstellen wollen — mit klaren Grenzen.
+Entwickelt für österreichische KMU, die komplexe Fragestellungen (IT-Landschaften, Verwaltungsprozesse, Unternehmensentwicklung uvm.) mit freien Tools ganzheitlich darstellen wollen oder einefach leid sind Excel Listen zu übertragen.
 
 ---
 
@@ -28,12 +26,12 @@ R+MUNI baut auf vier Säulen auf, die ineinandergreifen:
 ArchiMate 3.2, BPMN 2.0, SVG für alles dazwischen — *Das Bild*
 
 **Säule 02 — Dokumentation & Wissen**
-Markdown-Vault, GitHub, Principles & How2-Reihen — *Die Ordnung*
+Markdown-Vault, GitHub, Principles & How2-Reihen, Reporting Funktionen — *Die Ordnung*
 
 **Säule 03 — Struktur & Vorlagen**
 Python-Scripts, PowerShell, Templates, root.cfg — *Der erste Schritt*
 
-**Säule 04 — Step 1 AI-Nutzung**
+**Säule 04 — Step 1 AI-Nutzung erster Schritt in Richtung digigalte Automatisierung **
 Wer 01–03 kennt, hat den Kontext für KI-gestütztes Pair-Development — *Die Anschlussfähigkeit*
 
 R+MUNI ist dabei die *Single Source of Truth* — alles andere wird daraus abgeleitet. Keine parallelen Wahrheiten, keine manuelle Synchronisation, fast 😉 kein Chaos.
@@ -125,7 +123,7 @@ Alle Pfade leiten sich automatisch daraus ab. Danach greifst du diese Datei nur 
 
 ## Ordnerstruktur — der rote Faden
 
-R+MUNI folgt einer fixen Ordnerstruktur, die einmalig durch `Dir_Setup.bat` angelegt wird. Die **bindende Referenz** für alle Details ist `HLP99`.
+R+MUNI folgt einer fixen Ordnerstruktur, die einmalig anzulegen ist. Die **bindende Referenz** für alle Details ist `HLP99`.
 
 Innerhalb von `R+MUNI <KUERZEL>\` gilt:
 
@@ -147,8 +145,10 @@ Innerhalb von `R+MUNI <KUERZEL>\` gilt:
 R+MUNI unterscheidet bewusst zwischen vier Varianten — keine Hierarchie, sondern Kontexttrennung.
 
 **CARD** ist der spielerische Einstieg — minimal, ohne Fachbegriffe, sofort nutzbar. Für Vereine, Privatpersonen und alle die R+MUNI ohne Vorkenntnisse erkunden wollen. Wer tiefer will findet den Weg.
+Wurde in Stage 1.2 als Probe mit Magic the Gathering als mögliche Variante erstellt kann aber real für jeden gewünschten "Usecase" aufgrund der geringen komplexität angepasst werden. (Also 1.2 Templates nehmen oder selbst bauen ;))
 
 **R+MUNI** ist die eigentliche Lösung — für KMU bis 25 Personen die strukturiert arbeiten wollen. Reduzierte Norm-Sprache, praxistauglich, ausreichend für erste Compliance-Anforderungen. Kein Vollregelwerk notwendig.
+Wurde in Stage S8 bzw. Release 1 entwickelt und ist dort noch unter Associate Variante zu finden. Wird aber neu mit R+MUNI aufgebaut wenn es mich freut ;)
 
 **EXPERT** ist das Vollprogramm — TOGAF ADM, ArchiMate 3.2 und BPMN 2.0 nach Norm, vollständig maschinenlesbar. Wird nicht separat geführt sondern bei Bedarf direkt aus der DEV-Umgebung abgeleitet. Für Normspezialisten und fortgeschrittene Anwender.
 

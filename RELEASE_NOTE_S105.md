@@ -6,7 +6,7 @@
 
 ## Danke zuerst
 
-Ensi, Andi, Dad, Kimmy, Mara, Peeezzznnn, Shadow, Columbo, Gertschi — ihr wisst warum. 😉
+Ensi, Andi, Dad, Kimmy, Mara, Peeezzznnn, Shadow, Columbo, Gertschi — ihr wisst (nichtgmal) warum. 😉
 
 ---
 
@@ -16,7 +16,7 @@ Das war ursprünglich ein Lernprojekt. Ich wollte ArchiMate 3.2 verstehen — un
 
 Irgendwann war es kein Lernprojekt mehr. Es war ein System.
 
-Ja, es ist ausgeartet. Ich gebe es zu. 😄
+Ja, es ist ausgeartet. Ich gebe es zu.....550h ist dann doch etwas übertrieben für einen Einstiegstest in die Thematik 😄
 
 ---
 
@@ -44,7 +44,7 @@ Ja, es ist ausgeartet. Ich gebe es zu. 😄
 ## Wo R+MUNI jetzt steht
 
 R+MUNI ist nach Phase 1.05 kein Lernprojekt mehr. Es ist ein funktionierendes,
-dokumentiertes Blueprint-System für Enterprise Architecture Management —
+dokumentiertes Blueprint-System für Visualisierung —
 entwickelt für österreichische KMU die komplexe Strukturen mit freien Tools
 abbilden wollen.
 
@@ -62,6 +62,8 @@ Lokales LLM in Evaluation. Riskmanagement als Blueprint-Erweiterung.
 S2.0 ist der erste Stage nach vollständigem KI-Exit-Point.
 
 Wenig neue Features. Viel Stabilisierung.
+
+Hoffen, dass ich im neuen Job auch noch Zeit habe sowas einfach mal zu machen! 
 
 ---
 
