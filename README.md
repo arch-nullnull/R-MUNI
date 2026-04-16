@@ -16,7 +16,7 @@ Nicht um die Antworten zu liefern, sondern um die Entscheidungsgrundlage ganzhei
 
 ## Die vier Beine
 
-![Die vier Beine](99-doku/07-creative/03-svg/4_Beine_S104.svg)
+![Die vier Beine](99-doku/07-creative/03-svg/4_Beine_S105.svg)
 
 R+MUNI steht auf vier Beinen:
 
@@ -57,7 +57,7 @@ Wer R+MUNI nutzt, bekommt kein verstecktes Abo und keinen Lock-in, außer du mag
 
 R+MUNI setzt ausschließlich auf frei verfügbare, stabile Open-Source-Werkzeuge. Der gesamte Kern-Stack kostet nichts — das ist kein Zufall, sondern Grundsatz.
 
-![Toolbaukasten Übersicht](99-doku/07-creative/03-svg/toolbaukasten_S105.svg)
+![Toolbaukasten Übersicht](99-doku/07-creative/03-svg/toolbaukasten_S104.svg)
 
 
 > Archi ist das Herz von R+MUNI. Das Team stellt es kostenlos zur Verfügung — wer Mehrwert sieht, kann als Patron unterstützen: [archimatetool.com/donate](https://www.archimatetool.com/donate/)
