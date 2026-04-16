@@ -10,19 +10,19 @@ text { font-family: sans-serif; }
 </style>
 </defs>
 
-<!-- TITEL — Rainbow per Buchstabe, ArchiMate Layer-Farben -->
-<text class="th" x="222" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#E8C900">D</text>
-<text class="th" x="231" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#7DC17D">i</text>
-<text class="th" x="239" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#4DA6E0">e</text>
-<text class="th" x="255" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#D4763B">v</text>
-<text class="th" x="263" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#E8C900">i</text>
-<text class="th" x="271" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#7DC17D">e</text>
-<text class="th" x="280" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#4DA6E0">r</text>
-<text class="th" x="298" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#D4763B">B</text>
-<text class="th" x="308" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#E8C900">e</text>
-<text class="th" x="317" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#7DC17D">i</text>
-<text class="th" x="325" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#4DA6E0">n</text>
-<text class="th" x="334" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#D4763B">e</text>
+<!-- TITEL — Rainbow per Buchstabe, zentriert auf x=340 -->
+<text class="th" x="292" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#E8C900">D</text>
+<text class="th" x="300" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#7DC17D">i</text>
+<text class="th" x="307" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#4DA6E0">e</text>
+<text class="th" x="321" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#D4763B">v</text>
+<text class="th" x="328" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#E8C900">i</text>
+<text class="th" x="335" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#7DC17D">e</text>
+<text class="th" x="342" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#4DA6E0">r</text>
+<text class="th" x="356" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#D4763B">B</text>
+<text class="th" x="365" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#E8C900">e</text>
+<text class="th" x="372" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#7DC17D">i</text>
+<text class="th" x="379" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#4DA6E0">n</text>
+<text class="th" x="388" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#D4763B">e</text>
 
 <!-- BEIN 01 — Visuelle Übersicht -->
 <rect x="28" y="44" width="148" height="290" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
