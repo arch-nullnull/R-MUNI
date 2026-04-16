@@ -1,40 +1,38 @@
-# R+MUNI Blueprint
+# R+MUNI
 
-> *Eine Vorgehensweise, viele Werkzeuge. Eine Philosophie. Gebaut für die, die wirklich visuell abbilden wollen wie ihre Organisation funktioniert.*
+> *Eine Vorgehensweise, viele Werkzeuge. Eine Philosophie.*
 
 ---
 
 ## Was ist R+MUNI?
 
-R+MUNI ist ein Blueprint-System für Visualisierung
+R+MUNI ist ein Applikations Ökosystem für Visualisierung
+Im Kern sind es vier "Beine" die den (R) "ESEL" tragen. **ohne schlechtes Gewissen, ohne versteckte Abo-Fallen, ohne Hintertüren.**
 
-Im Kern sind es vier Vorgehensweisen. **ohne schlechtes Gewissen, ohne versteckte Abo-Fallen, ohne Hintertüren.**
-
-**R+MUNI** steht unter anderem 😉 für **Multi Usable Norm Interface** — ein XML-basiertes Kreislaufsystem, das Enterprise Architecture Visualisierung mit Prozessmodellierung vereint.
-
-Entwickelt für österreichische KMU, die komplexe Fragestellungen (IT-Landschaften, Verwaltungsprozesse, Unternehmensentwicklung uvm.) mit freien Tools ganzheitlich darstellen wollen oder einefach leid sind Excel Listen zu übertragen.
+Entwickelt für den österreichischen KMU und für fast alle Fragestellungen geeignet! 
+Nicht um die Antworten zu liefern, sondern um die Entscheidungsgrundlage ganzheitlich darzustellen. 
 
 ---
 
-## Die vier Säulen
+## Die vier Beine
 
-![Die vier Säulen](99-doku/07-creative/03-svg/4_Beine_S104.svg)
+![Die vier Beine](99-doku/07-creative/03-svg/4_Beine_S104.svg)
 
-R+MUNI baut auf vier Säulen auf, die ineinandergreifen:
+R+MUNI steht auf vier Beinen:
 
-**Säule 01 — Visuelle Übersicht**
+**Bein 01 — Visuelle Übersicht**
 ArchiMate 3.2, BPMN 2.0, SVG für alles dazwischen — *Das Bild*
 
-**Säule 02 — Dokumentation & Wissen**
+**Bein 02 — Dokumentation & Wissen**
 Markdown-Vault, GitHub, Principles & How2-Reihen, Reporting Funktionen — *Die Ordnung*
 
-**Säule 03 — Struktur & Vorlagen**
+**Bein 03 — Struktur & Vorlagen**
 Python-Scripts, PowerShell, Templates, root.cfg — *Der erste Schritt*
 
-**Säule 04 — Step 1 AI-Nutzung erster Schritt in Richtung digigalte Automatisierung **
+**Bein 04 — Erster Schritt in Richtung digigalte Automatisierung **
 Wer 01–03 kennt, hat den Kontext für KI-gestütztes Pair-Development — *Die Anschlussfähigkeit*
 
-R+MUNI ist dabei die *Single Source of Truth* — alles andere wird daraus abgeleitet. Keine parallelen Wahrheiten, keine manuelle Synchronisation, fast 😉 kein Chaos.
+R+MUNI ist dabei die *Single Source of Truth* — alles andere wird daraus abgeleitet. Keine parallelen Wahrheiten notwendig, keine manuelle Excel Synchronisation, fast 😉 kein Chaos.
 
 Details zur KI-Nutzung: [Install.txt](Install.txt) Abschnitt 3.8
 
@@ -51,7 +49,7 @@ Dinge sollen funktionieren. Dauerhaft. Nachvollziehbar. Ohne versteckte Abhängi
 
 Der "Esel" ist und bleibt **kostenlos für Endanwender**. Das ist kein Zufall — das ist Grundsatz.
 Archi ist kostenlos. Die Scripts sind kostenlos.
-Wer R+MUNI nutzt, bekommt kein verstecktes Abo und keinen Lock-in.
+Wer R+MUNI nutzt, bekommt kein verstecktes Abo und keinen Lock-in, außer du magst gewisse Mehrwerte aus einer Applikation nutzen....
 
 ---
 
@@ -61,9 +59,6 @@ R+MUNI setzt ausschließlich auf frei verfügbare, stabile Open-Source-Werkzeuge
 
 ![Toolbaukasten Übersicht](99-doku/07-creative/03-svg/toolbaukasten_S104.svg)
 
-![Toolbaukasten Tabelle](99-doku/07-creative/03-svg/munidell_tabelle_S104.svg)
-
-**Summe: 0 EUR**
 
 > Archi ist das Herz von R+MUNI. Das Team stellt es kostenlos zur Verfügung — wer Mehrwert sieht, kann als Patron unterstützen: [archimatetool.com/donate](https://www.archimatetool.com/donate/)
 
@@ -98,10 +93,10 @@ R+MUNI organisiert seine Scripts in klar abgegrenzte **Reihen**. Jede Reihe hat 
 | **NBX** | `NBX` | Netzwerk-Scan — IST-Erfassung via nmap, Output für ECM |
 | **SVG** | `SVG` | SVG-Reihe — automatisierte Konvertierung von Rasterbildern zu SVG |
 
-Die vollständige Dokumentation aller Reihen (Principles, How2, Templates) liegt im separaten Dokumentations-Repository und ist eigenständig zu beziehen:
+Die vollständige Dokumentation aller Reihen (Principles, How2, Templates) liegt im separaten Dokumentations-Repository und ist public ;):
 [github.com/arch-nullnull/R-MUNI-Doku-public](https://github.com/arch-nullnull/R-MUNI-Doku-public)
 
-Dieses Repo enthält bereits die Standard-Templates und die Dokumentation für die SVG-Reihe als Einstieg.
+Dieses Repo enthält bereits einige Templates. Dennoch am besten die Templates aus der DEV Variante ziehen und neu extrahieren. 
 
 ### Was du als CARD-Nutzer wissen musst
 
@@ -113,7 +108,7 @@ rootfolder=<installationspfad>\R+MUNI <KUERZEL>
 ```
 Alle Pfade leiten sich automatisch daraus ab. Danach greifst du diese Datei nur an wenn sich dein Basisverzeichnis ändert.
 
-**Du startest Scripts** über den Scriptrunner (`FLW00-scriptrunner.py`) oder direkt über PowerShell.
+**Du baust dir deine Scriptreiehen** über den Scriptrunner (`FLW00-scriptrunner.py`) oder direkt über führst sie einfach in der PowerShell direkt aus. 
 
 **Du liest `.txt`-Artefakte** (z.B. `run-scope.txt`, `model-scope.txt`) wenn du den aktuellen Workflow-Stand prüfen möchtest — diese sind bewusst menschenlesbar.
 
@@ -123,18 +118,17 @@ Alle Pfade leiten sich automatisch daraus ab. Danach greifst du diese Datei nur 
 
 ## Ordnerstruktur — der rote Faden
 
-R+MUNI folgt einer fixen Ordnerstruktur, die einmalig anzulegen ist. Die **bindende Referenz** für alle Details ist `HLP99`.
+R+MUNI folgt einer fixen Ordnerstruktur, die einmalig anzulegen ist. Die **bindende Referenz** für alle Details ist `structure.txt`.
 
 Innerhalb von `R+MUNI <KUERZEL>\` gilt:
 
 ```
-  root.cfg        ← einzige Konfiguration (einmalig anpassen)
+  root.cfg        ← (fast) einzige Konfiguration (einmalig anpassen)
   00-model\       ← Archi-Modell (read-only für Scripts)
   01-artifacts\   ← alle abgeleiteten Artefakte
   02-stages\      ← Laufzeit-Artefakte und Logs
 ```
 
-> Konfiguration läuft ausschließlich über `root.cfg` — eine Datei, ein Ort, keine Ausnahmen.
 
 ---
 
@@ -145,33 +139,17 @@ Innerhalb von `R+MUNI <KUERZEL>\` gilt:
 R+MUNI unterscheidet bewusst zwischen vier Varianten — keine Hierarchie, sondern Kontexttrennung.
 
 **CARD** ist der spielerische Einstieg — minimal, ohne Fachbegriffe, sofort nutzbar. Für Vereine, Privatpersonen und alle die R+MUNI ohne Vorkenntnisse erkunden wollen. Wer tiefer will findet den Weg.
-Wurde in Stage 1.2 als Probe mit Magic the Gathering als mögliche Variante erstellt kann aber real für jeden gewünschten "Usecase" aufgrund der geringen komplexität angepasst werden. (Also 1.2 Templates nehmen oder selbst bauen ;))
+(Also 1.2 Templates nehmen oder selbst bauen ;))
 
-**R+MUNI** ist die eigentliche Lösung — für KMU bis 25 Personen die strukturiert arbeiten wollen. Reduzierte Norm-Sprache, praxistauglich, ausreichend für erste Compliance-Anforderungen. Kein Vollregelwerk notwendig.
+**R+MUNI** ist die eigentliche Lösung — für KMU bis 25 Personen konzipiert ist. Reduzierte Norm-Sprache, praxistauglich, ausreichend für erste Compliance-Anforderungen. Kein Vollregelwerk notwendig.
 Wurde in Stage S8 bzw. Release 1 entwickelt und ist dort noch unter Associate Variante zu finden. Wird aber neu mit R+MUNI aufgebaut wenn es mich freut ;)
 
-**EXPERT** ist das Vollprogramm — TOGAF ADM, ArchiMate 3.2 und BPMN 2.0 nach Norm, vollständig maschinenlesbar. Wird nicht separat geführt sondern bei Bedarf direkt aus der DEV-Umgebung abgeleitet. Für Normspezialisten und fortgeschrittene Anwender.
+**EXPERT** ist das Vollprogramm — TOGAF ADM, ArchiMate 3.2 und BPMN 2.0 nach Norm, vollständig maschinenlesbar. Wird nicht separat geführt sondern bei Bedarf direkt aus der DEV-Umgebung abgeleitet. 
+Für Normspezialisten oder die es noch werden möchten.
 
-**DEV** ist der interne Entwicklungsmodus — Basis für alle anderen Varianten. Nicht für den direkten Einsatz außerhalb des Blueprint-Betriebs gedacht.
+**DEV** ist der interne Entwicklungsmodus — Basis für alle anderen Varianten. Diese Variante ist lebend und kann als Basis für jede andere herangezogen und entsprechend reduziert werden.
 
 Die vollständige Dokumentation aller Varianten: [github.com/arch-nullnull/R-MUNI-Doku-public](https://github.com/arch-nullnull/R-MUNI-Doku-public)
-
----
-
-## Optionale Leistungen
-
-![Optionale Leistungen](99-doku/07-creative/03-svg/Leistungen_S104.svg)
-
-Das System ist kostenlos. Wer Unterstützung möchte — hier ist der Rahmen:
-
-| Leistung | Inhalt | Für wen |
-|---|---|---|
-| **Setup** | Installation, Konfiguration, erster Funktionstest | Wer R+MUNI schnell in Betrieb nehmen will |
-| **Schulung** | Grundlagen ArchiMate + BPMN, R+MUNI Methode, Script-Reihen im Überblick | Teams & CARD-Nutzer |
-| **Support** | Laufende Begleitung, Bug-Analyse, Modell-Review | Wer R+MUNI im Einsatz hat |
-
-Interesse? GitHub Issues: [github.com/arch-nullnull/R-MUNI-Doku-public](https://github.com/arch-nullnull/R-MUNI-Doku-public)
-Kein Automatismus — Kapazität entscheidet.
 
 ---
 
