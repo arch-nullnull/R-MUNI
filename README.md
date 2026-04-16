@@ -29,7 +29,7 @@ Markdown-Vault, GitHub, Principles & How2-Reihen, Reporting Funktionen — *Die 
 **Bein 03 — Struktur & Vorlagen**
 Python-Scripts, PowerShell, Templates, root.cfg — *Der erste Schritt*
 
-**Bein 04 — Erster Schritt in Richtung digigalte Automatisierung **
+**Bein 04 — Erster Schritt in Richtung digitale Automatisierung **
 Wer 01–03 kennt, hat den Kontext für KI-gestütztes Pair-Development — *Die Anschlussfähigkeit*
 
 R+MUNI ist dabei die *Single Source of Truth* — alles andere wird daraus abgeleitet. Keine parallelen Wahrheiten notwendig, keine manuelle Excel Synchronisation, fast 😉 kein Chaos.
@@ -57,7 +57,7 @@ Wer R+MUNI nutzt, bekommt kein verstecktes Abo und keinen Lock-in, außer du mag
 
 R+MUNI setzt ausschließlich auf frei verfügbare, stabile Open-Source-Werkzeuge. Der gesamte Kern-Stack kostet nichts — das ist kein Zufall, sondern Grundsatz.
 
-![Toolbaukasten Übersicht](99-doku/07-creative/03-svg/toolbaukasten_S104.svg)
+![Toolbaukasten Übersicht](99-doku/07-creative/03-svg/toolbaukasten_S105.svg)
 
 
 > Archi ist das Herz von R+MUNI. Das Team stellt es kostenlos zur Verfügung — wer Mehrwert sieht, kann als Patron unterstützen: [archimatetool.com/donate](https://www.archimatetool.com/donate/)
@@ -108,7 +108,7 @@ rootfolder=<installationspfad>\R+MUNI <KUERZEL>
 ```
 Alle Pfade leiten sich automatisch daraus ab. Danach greifst du diese Datei nur an wenn sich dein Basisverzeichnis ändert.
 
-**Du baust dir deine Scriptreiehen** über den Scriptrunner (`FLW00-scriptrunner.py`) oder direkt über führst sie einfach in der PowerShell direkt aus. 
+**Du baust dir deine Scriptreiehen** über den Scriptrunner (`FLW00-scriptrunner.py`) oder führst sie einfach in der PowerShell direkt aus. 
 
 **Du liest `.txt`-Artefakte** (z.B. `run-scope.txt`, `model-scope.txt`) wenn du den aktuellen Workflow-Stand prüfen möchtest — diese sind bewusst menschenlesbar.
 

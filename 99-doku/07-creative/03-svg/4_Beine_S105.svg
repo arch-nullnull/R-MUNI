@@ -1,0 +1,110 @@
+<svg width="100%" viewBox="0 0 680 360" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Die vier Beine — R+MUNI Blueprint</title>
+<desc>Vier Beine des R+MUNI Toolstacks</desc>
+<defs>
+<style>
+text { font-family: sans-serif; }
+.th  { font-size: 14px; font-weight: 600; }
+.ts  { font-size: 12px; font-weight: 400; }
+.muted { fill: #555550; }
+</style>
+</defs>
+
+<!-- TITEL — Rainbow per Buchstabe, ArchiMate Layer-Farben -->
+<text class="th" x="222" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#E8C900">D</text>
+<text class="th" x="231" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#7DC17D">i</text>
+<text class="th" x="239" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#4DA6E0">e</text>
+<text class="th" x="255" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#D4763B">v</text>
+<text class="th" x="263" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#E8C900">i</text>
+<text class="th" x="271" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#7DC17D">e</text>
+<text class="th" x="280" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#4DA6E0">r</text>
+<text class="th" x="298" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#D4763B">B</text>
+<text class="th" x="308" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#E8C900">e</text>
+<text class="th" x="317" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#7DC17D">i</text>
+<text class="th" x="325" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#4DA6E0">n</text>
+<text class="th" x="334" y="26" text-anchor="middle" dominant-baseline="central" font-size="15" fill="#D4763B">e</text>
+
+<!-- BEIN 01 — Visuelle Übersicht -->
+<rect x="28" y="44" width="148" height="290" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<rect x="28" y="44" width="148" height="46" rx="10" fill="#1D9E75"/>
+<rect x="28" y="72" width="148" height="18" fill="#1D9E75"/>
+<text class="th" x="102" y="59" text-anchor="middle" dominant-baseline="central" fill="#ffffff">01</text>
+<text class="ts" x="102" y="77" text-anchor="middle" dominant-baseline="central" fill="#E1F5EE">Visuelle Übersicht</text>
+<rect x="40" y="100" width="124" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="102" y="112" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">Archi 5.8</text>
+<rect x="40" y="130" width="124" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="102" y="142" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">ArchiMate 3.2</text>
+<rect x="40" y="160" width="124" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="102" y="172" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">Camunda Modeler</text>
+<rect x="40" y="190" width="124" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="102" y="202" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">BPMN 2.0</text>
+<rect x="40" y="220" width="124" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="102" y="232" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">draw.io</text>
+<rect x="40" y="250" width="124" height="24" rx="6" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.5"/>
+<text class="ts" x="102" y="262" text-anchor="middle" dominant-baseline="central" fill="#04342C" font-weight="600">Inkscape</text>
+<rect x="40" y="304" width="124" height="22" rx="6" fill="#0F6E56"/>
+<text class="ts" x="102" y="315" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">0 EUR</text>
+
+<!-- BEIN 02 — Dokumentation -->
+<rect x="188" y="44" width="148" height="290" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+<rect x="188" y="44" width="148" height="46" rx="10" fill="#7F77DD"/>
+<rect x="188" y="72" width="148" height="18" fill="#7F77DD"/>
+<text class="th" x="262" y="59" text-anchor="middle" dominant-baseline="central" fill="#ffffff">02</text>
+<text class="ts" x="262" y="77" text-anchor="middle" dominant-baseline="central" fill="#EEEDFE">Dokumentation</text>
+<rect x="200" y="100" width="124" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="262" y="112" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">Obsidian</text>
+<rect x="200" y="130" width="124" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="262" y="142" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">Markdown Vault</text>
+<rect x="200" y="160" width="124" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="262" y="172" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">Notepad++</text>
+<rect x="200" y="190" width="124" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="262" y="202" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">GitHub Desktop</text>
+<rect x="200" y="220" width="124" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="262" y="232" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">Principles &amp; GOV</text>
+<rect x="200" y="250" width="124" height="24" rx="6" fill="#AFA9EC" stroke="#534AB7" stroke-width="0.5"/>
+<text class="ts" x="262" y="262" text-anchor="middle" dominant-baseline="central" fill="#26215C" font-weight="600">How2-Reihen</text>
+<rect x="200" y="304" width="124" height="22" rx="6" fill="#534AB7"/>
+<text class="ts" x="262" y="315" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">0 EUR</text>
+
+<!-- BEIN 03 — Struktur & Vorlagen -->
+<rect x="348" y="44" width="148" height="290" rx="10" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<rect x="348" y="44" width="148" height="46" rx="10" fill="#BA7517"/>
+<rect x="348" y="72" width="148" height="18" fill="#BA7517"/>
+<text class="th" x="422" y="59" text-anchor="middle" dominant-baseline="central" fill="#ffffff">03</text>
+<text class="ts" x="422" y="77" text-anchor="middle" dominant-baseline="central" fill="#FAEEDA">Struktur &amp; Vorlagen</text>
+<rect x="360" y="100" width="124" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="422" y="112" text-anchor="middle" dominant-baseline="central" fill="#412402" font-weight="600">Python 3</text>
+<rect x="360" y="130" width="124" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="422" y="142" text-anchor="middle" dominant-baseline="central" fill="#412402" font-weight="600">PowerShell 7</text>
+<rect x="360" y="160" width="124" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="422" y="172" text-anchor="middle" dominant-baseline="central" fill="#412402" font-weight="600">root.cfg</text>
+<rect x="360" y="190" width="124" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="422" y="202" text-anchor="middle" dominant-baseline="central" fill="#412402" font-weight="600">Sprint-Templates</text>
+<rect x="360" y="220" width="124" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="422" y="232" text-anchor="middle" dominant-baseline="central" fill="#412402" font-weight="600">GOV-Templates</text>
+<rect x="360" y="250" width="124" height="24" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<text class="ts" x="422" y="262" text-anchor="middle" dominant-baseline="central" fill="#412402" font-weight="600">Script-Reihen</text>
+<rect x="360" y="304" width="124" height="22" rx="6" fill="#854F0B"/>
+<text class="ts" x="422" y="315" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">0 EUR</text>
+
+<!-- BEIN 04 — AI-Nutzung -->
+<rect x="508" y="44" width="148" height="290" rx="10" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+<rect x="508" y="44" width="148" height="46" rx="10" fill="#D85A30"/>
+<rect x="508" y="72" width="148" height="18" fill="#D85A30"/>
+<text class="th" x="582" y="59" text-anchor="middle" dominant-baseline="central" fill="#ffffff">04</text>
+<text class="ts" x="582" y="77" text-anchor="middle" dominant-baseline="central" fill="#FAECE7">Step 1 AI-Nutzung</text>
+<text class="ts muted" x="582" y="98" text-anchor="middle" dominant-baseline="central" font-style="italic">Synthese: 01+02+03</text>
+<rect x="520" y="112" width="124" height="24" rx="6" fill="#F0997B" stroke="#D85A30" stroke-width="0.5"/>
+<text class="ts" x="582" y="124" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">GOV laden</text>
+<rect x="520" y="142" width="124" height="24" rx="6" fill="#F0997B" stroke="#D85A30" stroke-width="0.5"/>
+<text class="ts" x="582" y="154" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">AI_DRIVEN laden</text>
+<rect x="520" y="172" width="124" height="24" rx="6" fill="#F0997B" stroke="#D85A30" stroke-width="0.5"/>
+<text class="ts" x="582" y="184" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">Projektfolder</text>
+<rect x="520" y="202" width="124" height="24" rx="6" fill="#F0997B" stroke="#D85A30" stroke-width="0.5"/>
+<text class="ts" x="582" y="214" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">Skills aktivieren</text>
+<rect x="520" y="232" width="124" height="24" rx="6" fill="#F0997B" stroke="#D85A30" stroke-width="0.5"/>
+<text class="ts" x="582" y="244" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C" font-weight="600">Pair-Dev starten</text>
+<rect x="520" y="304" width="124" height="22" rx="6" fill="#993C1D"/>
+<text class="ts" x="582" y="315" text-anchor="middle" dominant-baseline="central" fill="#ffffff" font-weight="600">0 EUR</text>
+
+</svg>
