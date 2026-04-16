@@ -161,8 +161,7 @@ R+MUNI wird aktiv weiterentwickelt und befindet sich aktuell in **Beta — Phase
 
 **Als Developer** kannst du auf der Blueprint-Basis aufbauen. Die Dokumentation ist offen, die Prinzipien sind nachvollziehbar, und jede Entscheidung hat einen dokumentierten Grund. R+MUNI ist **AI-driven entwickelt** — der gesamte Entwicklungsprozess ist dokumentiert und reproduzierbar.
 
-Interesse? Meld dich — über GitHub Issues:
-[github.com/arch-nullnull/R-MUNI-Doku-public](https://github.com/arch-nullnull/R-MUNI-Doku-public)
+Interesse? Meld dich — über GitHub Issues
 
 ---
 
@@ -180,7 +179,7 @@ Der Grundsatz: **Kein Tool im Kern-Stack kostet Geld.** Ergänzungen sind mögli
 ## Hintergrund & Entstehung
 
 Die Reise von R+MUNI — vom ersten Lernprojekt bis zum Blueprint — ist ehrlich dokumentiert:
-[RELEASE_NOTE_S105](https://github.com/arch-nullnull/R-MUNI/blob/main/04-notes/RELEASE_NOTE_S105.md)
+[RELEASE_NOTE_S105](https://github.com/arch-nullnull/R-MUNI/blob/main/RELEASE_NOTE_S105.md)
 
 ---
 
