@@ -180,7 +180,7 @@ Der Grundsatz: **Kein Tool im Kern-Stack kostet Geld.** Ergänzungen sind mögli
 ## Hintergrund & Entstehung
 
 Die Reise von R+MUNI — vom ersten Lernprojekt bis zum Blueprint — ist ehrlich dokumentiert:
-[RELEASE_NOTE_S105](https://github.com/arch-nullnull/R-MUNI-Doku-public/blob/main/04-notes/RELEASE_NOTE_S105.md)
+[RELEASE_NOTE_S105](https://github.com/arch-nullnull/R-MUNI/blob/main/04-notes/RELEASE_NOTE_S105.md)
 
 ---
 
