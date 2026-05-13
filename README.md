@@ -93,10 +93,9 @@ R+MUNI organisiert seine Scripts in klar abgegrenzte **Reihen**. Jede Reihe hat 
 | **NBX** | `NBX` | Netzwerk-Scan — IST-Erfassung via nmap, Output für ECM |
 | **SVG** | `SVG` | SVG-Reihe — automatisierte Konvertierung von Rasterbildern zu SVG |
 
-Die vollständige Dokumentation aller Reihen (Principles, How2, Templates) liegt im separaten Dokumentations-Repository und ist public ;):
-[github.com/arch-nullnull/R-MUNI-Doku-public](https://github.com/arch-nullnull/R-MUNI-Doku-public)
+Die vollständige Dokumentation aller Reihen (Principles, How2, Templates) liegt im separaten Dokumentations-Repository
 
-Dieses Repo enthält bereits einige Templates. Dennoch am besten die Templates aus der DEV Variante ziehen und neu extrahieren. 
+Dieses Repo enthält bereits einige Templates.
 
 ### Was du als CARD-Nutzer wissen musst
 
