@@ -148,7 +148,7 @@ Für Normspezialisten oder die es noch werden möchten.
 
 **DEV** ist der interne Entwicklungsmodus — Basis für alle anderen Varianten. Diese Variante ist lebend und kann als Basis für jede andere herangezogen und entsprechend reduziert werden.
 
-Die vollständige Dokumentation aller Varianten: [github.com/arch-nullnull/R-MUNI-Doku-public](https://github.com/arch-nullnull/R-MUNI-Doku-public)
+Die vollständige Dokumentation wird im Rahmen der Installation bereitgestellt. 
 
 ---
 
